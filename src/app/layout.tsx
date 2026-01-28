@@ -12,9 +12,11 @@ export default function RootLayout({
         <header className="mb-8 border-b border-gray-200 p-4">
           <div className="flex items-center gap-4 max-w-6xl mx-auto">
             <div className="flex items-center gap-2">
-              <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">M</span>
-              </div>
+              <img 
+                src="/logo.png" 
+                alt="Minimaverse Logo" 
+                className="h-10 w-auto"
+              />
               <h1 className="text-2xl font-bold">Minimaverse</h1>
             </div>
             <p className="text-sm text-gray-600 ml-4 flex-1">
