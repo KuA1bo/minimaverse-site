@@ -30,6 +30,18 @@ export default function HomePage() {
           This site does not represent the official Minima team.
         </p>
       </section>
+
+      <section className="bg-blue-50 p-4 rounded-lg border border-blue-200">
+        <h2 className="font-semibold mb-2">Open Questions</h2>
+        <p>
+          The Minima protocol is under active development. Key open questions include:
+          node discovery in offline environments, long-term storage efficiency on embedded devices,
+          and formal verification of the consensus mechanism. This site will document answers as they become publicly available.
+        </p>
+        <a href="/open-questions" className="text-blue-600 hover:underline mt-2 inline-block">
+          View all open questions →
+        </a>
+      </section>
     </div>
   );
 }
