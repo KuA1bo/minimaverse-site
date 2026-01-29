@@ -21,24 +21,24 @@ export default function HomePage() {
         </p>
       </section>
 
-      <section className="border-t pt-8">
+      <section className="border-t border-gray-700 pt-8">
         <h2 className="text-2xl font-semibold mb-4">Purpose of this site</h2>
         <p className="mb-4">
           Minimaverse is a neutral, community-driven information hub that documents the Minima ecosystem, its historical development, core components, and publicly verifiable integrations.
         </p>
-        <p className="text-red-600 font-medium">
+        <p className="text-red-400 font-medium">
           This site does not represent the official Minima team.
         </p>
       </section>
 
-      <section className="bg-blue-50 p-4 rounded-lg border border-blue-200">
-        <h2 className="font-semibold mb-2">Open Questions</h2>
-        <p>
+      <section className="bg-gray-900 border border-gray-700 p-4 rounded-lg">
+        <h2 className="font-semibold mb-2 text-gray-200">Open Questions</h2>
+        <p className="text-gray-300">
           The Minima protocol is under active development. Key open questions include:
           node discovery in offline environments, long-term storage efficiency on embedded devices,
           and formal verification of the consensus mechanism. This site will document answers as they become publicly available.
         </p>
-        <a href="/open-questions" className="text-blue-600 hover:underline mt-2 inline-block">
+        <a href="/open-questions" className="text-blue-400 hover:text-blue-300 mt-2 inline-block">
           View all open questions →
         </a>
       </section>
