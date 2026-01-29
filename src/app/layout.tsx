@@ -14,9 +14,9 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
         <title>Minimaverse</title>
       </head>
-      <body className="flex flex-col min-h-screen bg-black text-gray-200">
+      <body className="flex flex-col min-h-[100dvh] bg-black text-gray-200">
         {/* Header */}
-        <header className="mb-8 border-b border-gray-700 p-4">
+        <header className="mb-6 border-b border-gray-700 p-4">
           <div className="flex items-center gap-4 max-w-6xl mx-auto">
             <div className="flex items-center gap-2">
               <img 
@@ -43,11 +43,11 @@ export default function RootLayout({
           </div>
         </header>
 
-        <main className="flex-grow max-w-6xl mx-auto w-full px-4 py-6">
+        <main className="max-w-6xl mx-auto w-full px-4 py-4">
           {children}
         </main>
 
-        <footer className="mt-12 border-t border-gray-700 py-6 text-center text-gray-400 text-sm">
+        <footer className="mt-8 border-t border-gray-700 py-4 text-center text-gray-400 text-sm">
           &copy; 2026 Minimaverse. All rights reserved.  
           • <a href="/privacy" className="hover:underline text-gray-300">Privacy Policy</a>
           • <a href="/terms" className="hover:underline text-gray-300">Terms of Use</a>
