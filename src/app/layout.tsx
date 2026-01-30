@@ -14,7 +14,7 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no, date=no, email=no, address=no" />
         <title>Minimaverse</title>
       </head>
-      <body className="flex flex-col min-h-[100dvh] bg-black text-gray-200">
+      <body className="flex flex-col min-h-screen bg-black text-gray-200 overflow-y-auto">
         {/* Header */}
         <header className="mb-6 border-b border-gray-700 p-4">
           <div className="flex items-center gap-4 max-w-6xl mx-auto">
@@ -43,7 +43,7 @@ export default function RootLayout({
           </div>
         </header>
 
-        <main className="max-w-6xl mx-auto w-full px-4 py-4">
+        <main className="flex-grow max-w-6xl mx-auto w-full px-4 py-4">
           {children}
         </main>
 
