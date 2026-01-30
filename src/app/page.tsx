@@ -1,7 +1,7 @@
 // src/app/page.tsx
 export default function HomePage() {
   return (
-    <div className="max-w-4xl mx-auto space-y-10">
+    <div className="max-w-4xl mx-auto space-y-10 overflow-hidden">
       <section>
         <h1 className="text-3xl font-bold mb-6">What is Minima</h1>
         <p className="mb-4">
