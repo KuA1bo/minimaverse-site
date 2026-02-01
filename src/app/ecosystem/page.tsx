@@ -109,17 +109,35 @@ export default function EcosystemPage() {
           <div>
             <h3 className="font-medium text-gray-200">Minima Wallet</h3>
             <p className="text-gray-400 text-sm">
-              Official mobile wallet application for managing Minima assets and interacting with the protocol.
-              Available for iOS and Android devices.
+              Official wallet for managing Minima assets and interacting with the protocol.
+              Available as web interface and mobile application for Android devices.
             </p>
-            <a
-              href="https://minima.global/wallet"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 text-sm block mt-1"
-            >
-              Source: Official Website
-            </a>
+            <div className="mt-2 space-y-1">
+              <a
+                href="https://wallet.minima.global"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 text-sm block"
+              >
+                Access: Web Wallet
+              </a>
+              <a
+                href="https://play.google.com/store/search?q=minima&c=apps&hl=en"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 text-sm block"
+              >
+                Download: Google Play Store
+              </a>
+              <a
+                href="https://github.com/minima-global/Minima/blob/master/jar/minima-1.0.46.6.apk"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 text-sm block"
+              >
+                Download: Android APK (GitHub)
+              </a>
+            </div>
           </div>
         </div>
       </section>
