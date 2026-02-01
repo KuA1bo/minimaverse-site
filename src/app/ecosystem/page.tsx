@@ -39,7 +39,7 @@ export default function EcosystemPage() {
               Focused on data provenance and tamper-evident verification.
             </p>
             <a
-              href="https://minima.global/integritas"
+              href="https://docs.integritas.technology"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 text-sm block mt-1"
