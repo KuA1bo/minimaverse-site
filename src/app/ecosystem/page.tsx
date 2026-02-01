@@ -61,12 +61,12 @@ export default function EcosystemPage() {
               Provides access to protocol commands, transaction creation, and node management.
             </p>
             <a
-              href="https://docs.minima.global"
+              href="https://docs.minima.global/docs/development/terminal-commands"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 text-sm block mt-1"
             >
-              Source: Documentation
+              Source: Terminal Commands
             </a>
           </div>
 
@@ -209,3 +209,4 @@ export default function EcosystemPage() {
     </div>
   );
 }
+
