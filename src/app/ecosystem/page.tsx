@@ -76,7 +76,7 @@ export default function EcosystemPage() {
               Blockchain explorer for viewing transactions, blocks, and network activity on the Minima protocol.
             </p>
             <a
-              href="https://scan.minima.global"
+              href="https://explorer.minima.global"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 text-sm block mt-1"
