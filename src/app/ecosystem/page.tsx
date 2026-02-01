@@ -91,12 +91,12 @@ export default function EcosystemPage() {
               Software development kits and application programming interfaces for building applications on Minima.
             </p>
             <a
-              href="https://docs.minima.global/developers"
+              href="https://docs.minima.global/docs/development/using-typescript"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 text-sm block mt-1"
             >
-              Source: Developer Documentation
+              Source: TypeScript Development Guide
             </a>
           </div>
         </div>
