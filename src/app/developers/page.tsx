@@ -105,7 +105,7 @@ export default function DevelopersPage() {
               Install and run a full Minima node on your device to begin development and testing.
             </p>
             <a
-              href="https://docs.minima.global/docs/node"
+              href="https://minima.global/ru/technology/run-a-node"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 text-sm block mt-2"
