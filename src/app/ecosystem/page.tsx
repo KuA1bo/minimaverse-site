@@ -203,17 +203,13 @@ export default function EcosystemPage() {
           <div>
             <h3 className="font-medium text-gray-200">IoT & Embedded Systems</h3>
             <p className="text-gray-400 text-sm">
-              Minima nodes deployed on embedded hardware, IoT devices, and edge infrastructure.
-              Enables direct participation in consensus from physical devices without cloud dependency.
+              The Minima protocol architecture is designed to support full-node operation on resource-constrained devices.
+              Direct participation in consensus without cloud dependency is a core protocol capability.
             </p>
-            <a
-              href="https://minima.global/technology"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 text-sm block mt-1"
-            >
-              Source: Technical Overview
-            </a>
+            <p className="text-gray-500 text-xs mt-2">
+              Status: <span className="text-yellow-400">In development</span> — Verified production deployments 
+              on IoT/embedded platforms by corporate partners are not yet publicly available.
+            </p>
           </div>
         </div>
       </section>
