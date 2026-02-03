@@ -59,7 +59,7 @@ export default function DevelopersPage() {
             </p>
             <div className="mt-2 space-y-2">
               <a
-                href="https://discord.gg/minima"
+                href="https://discord.com/invite/minimaglobal"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:text-blue-300 text-sm block"
