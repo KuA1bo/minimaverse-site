@@ -30,21 +30,6 @@ export default function DevelopersPage() {
               Access: Full Documentation
             </a>
           </div>
-
-          <div>
-            <h3 className="font-medium text-gray-200">Development Guides</h3>
-            <p className="text-gray-400 text-sm">
-              Step-by-step tutorials for building decentralized applications, smart contracts, and integrating with Minima.
-            </p>
-            <a
-              href="https://docs.minima.global/docs/development"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 text-sm block mt-2"
-            >
-              Access: Development Guides
-            </a>
-          </div>
         </div>
       </section>
 
