@@ -214,23 +214,6 @@ export default function EcosystemPage() {
         </div>
       </section>
 
-      {/* Experimental Projects */}
-      <section className="bg-gray-900 border border-gray-700 p-6 rounded-lg">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-200">Experimental Projects</h2>
-        <div className="space-y-4">
-          <div>
-            <h3 className="font-medium text-gray-200">Research & Development</h3>
-            <p className="text-gray-400 text-sm">
-              Various experimental applications and research initiatives built on or exploring the Minima protocol.
-              These projects are in early stages and may not be production-ready.
-            </p>
-            <p className="text-gray-500 text-xs mt-2">
-              Status: Experimental — verify current state through project repositories.
-            </p>
-          </div>
-        </div>
-      </section>
-
       <section>
         <p className="text-red-400 text-sm">
           This site does not represent the official Minima team. Information is provided for reference only.
