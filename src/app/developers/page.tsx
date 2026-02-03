@@ -117,15 +117,16 @@ export default function DevelopersPage() {
           <div>
             <h3 className="font-medium text-gray-200">Build a MiniDapp</h3>
             <p className="text-gray-400 text-sm">
-              Create your first decentralized application on the Minima protocol using TypeScript.
+              Create decentralized applications on the Minima protocol. Learn about transactions, 
+              smart contracts, peer-to-peer communication, and the MiniDapp system.
             </p>
             <a
-              href="https://docs.minima.global/docs/development/using-typescript"
+              href="https://docs.minima.global/docs/development"
               target="_blank"
               rel="noopener noreferrer"
               className="text-blue-400 hover:text-blue-300 text-sm block mt-2"
             >
-              Guide: MiniDapp Development
+              Guide: Development Overview
             </a>
           </div>
         </div>
