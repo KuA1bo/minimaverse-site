@@ -147,16 +147,53 @@ export default function EcosystemPage() {
         <h2 className="text-2xl font-semibold mb-4 text-gray-200">Centralized Exchanges</h2>
         <div className="space-y-4">
           <div>
-            <h3 className="font-medium text-gray-200">Exchange Listings</h3>
+            <h3 className="font-medium text-gray-200">MEXC</h3>
             <p className="text-gray-400 text-sm">
-              Minima tokens are available for trading on select centralized exchanges.
-              Trading pairs and availability may vary by jurisdiction.
+              Trading pair: MINIMA/USDT
             </p>
-            <p className="text-gray-500 text-xs mt-2">
-              Note: Exchange information is subject to change. Verify directly with exchange platforms.
+            <a
+              href="https://www.mexc.com/ru-RU/exchange/MINIMA_USDT"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 text-sm block mt-1"
+            >
+              Trade: MEXC
+            </a>
+          </div>
+
+          <div>
+            <h3 className="font-medium text-gray-200">BitMart</h3>
+            <p className="text-gray-400 text-sm">
+              Trading pair: MINIMA/USDT
             </p>
+            <a
+              href="https://www.bitmart.com/ru-RU/trade/MINIMA_USDT?type=spot"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 text-sm block mt-1"
+            >
+              Trade: BitMart
+            </a>
+          </div>
+
+          <div>
+            <h3 className="font-medium text-gray-200">XT.com</h3>
+            <p className="text-gray-400 text-sm">
+              Trading pair: MINIMA/USDT
+            </p>
+            <a
+              href="https://www.xt.com/en/trade/minima_usdt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 text-sm block mt-1"
+            >
+              Trade: XT.com
+            </a>
           </div>
         </div>
+        <p className="text-gray-500 text-xs mt-4">
+          Note: Exchange information is subject to change. Verify trading pairs and availability directly on exchange platforms.
+        </p>
       </section>
 
       {/* Edge Deployments */}
