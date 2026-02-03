@@ -81,7 +81,7 @@ export default function DevelopersPage() {
           <div>
             <h3 className="font-medium text-gray-200">Core Protocol</h3>
             <p className="text-gray-400 text-sm">
-              Main Minima protocol implementation and node software.
+              Main Minima protocol implementation and node software. Source code, issue tracking, and releases.
             </p>
             <a
               href="https://github.com/minima-global/Minima"
@@ -90,21 +90,6 @@ export default function DevelopersPage() {
               className="text-blue-400 hover:text-blue-300 text-sm block mt-2"
             >
               Source: GitHub Repository
-            </a>
-          </div>
-
-          <div>
-            <h3 className="font-medium text-gray-200">Contributing</h3>
-            <p className="text-gray-400 text-sm">
-              Guidelines for contributing to the Minima project, including code style, testing, and pull request process.
-            </p>
-            <a
-              href="https://github.com/minima-global/Minima/blob/master/CONTRIBUTING.md"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 text-sm block mt-2"
-            >
-              Source: Contributing Guide
             </a>
           </div>
         </div>
