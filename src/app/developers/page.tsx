@@ -33,53 +33,6 @@ export default function DevelopersPage() {
         </div>
       </section>
 
-      {/* Community Resources */}
-      <section className="bg-gray-900 border border-gray-700 p-6 rounded-lg">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-200">Community Resources</h2>
-        <div className="space-y-4">
-          <div>
-            <h3 className="font-medium text-gray-200">Technical Discussions</h3>
-            <p className="text-gray-400 text-sm">
-              Join technical discussions, ask questions, and collaborate with other developers in the Minima community.
-            </p>
-            <div className="mt-2 space-y-2">
-              <a
-                href="https://discord.com/invite/minimaglobal"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-blue-400 hover:text-blue-300 text-sm block"
-              >
-                Join: Discord Server
-              </a>
-              <p className="text-gray-500 text-xs">
-                Instructions: Select role in #role-picker channel. Complete developer skills survey in #developer-surveys.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* GitHub Repositories */}
-      <section className="bg-gray-900 border border-gray-700 p-6 rounded-lg">
-        <h2 className="text-2xl font-semibold mb-4 text-gray-200">GitHub Repositories</h2>
-        <div className="space-y-4">
-          <div>
-            <h3 className="font-medium text-gray-200">Core Protocol</h3>
-            <p className="text-gray-400 text-sm">
-              Main Minima protocol implementation and node software. Source code, issue tracking, and releases.
-            </p>
-            <a
-              href="https://github.com/minima-global/Minima"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-blue-400 hover:text-blue-300 text-sm block mt-2"
-            >
-              Source: GitHub Repository
-            </a>
-          </div>
-        </div>
-      </section>
-
       {/* Getting Started */}
       <section className="bg-gray-900 border border-gray-700 p-6 rounded-lg">
         <h2 className="text-2xl font-semibold mb-4 text-gray-200">Getting Started</h2>
@@ -113,6 +66,53 @@ export default function DevelopersPage() {
             >
               Guide: Development Overview
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* GitHub Repositories */}
+      <section className="bg-gray-900 border border-gray-700 p-6 rounded-lg">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-200">GitHub Repositories</h2>
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-medium text-gray-200">Core Protocol</h3>
+            <p className="text-gray-400 text-sm">
+              Main Minima protocol implementation and node software. Source code, issue tracking, and releases.
+            </p>
+            <a
+              href="https://github.com/minima-global/Minima"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 text-sm block mt-2"
+            >
+              Source: GitHub Repository
+            </a>
+          </div>
+        </div>
+      </section>
+
+      {/* Community Resources */}
+      <section className="bg-gray-900 border border-gray-700 p-6 rounded-lg">
+        <h2 className="text-2xl font-semibold mb-4 text-gray-200">Community Resources</h2>
+        <div className="space-y-4">
+          <div>
+            <h3 className="font-medium text-gray-200">Technical Discussions</h3>
+            <p className="text-gray-400 text-sm">
+              Join technical discussions, ask questions, and collaborate with other developers in the Minima community.
+            </p>
+            <div className="mt-2 space-y-2">
+              <a
+                href="https://discord.com/invite/minimaglobal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 text-sm block"
+              >
+                Join: Discord Server
+              </a>
+              <p className="text-gray-500 text-xs">
+                Instructions: Select role in #role-picker channel. Complete developer skills survey in #developer-surveys.
+              </p>
+            </div>
           </div>
         </div>
       </section>
