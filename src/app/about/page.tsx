@@ -17,7 +17,7 @@ export default function AboutPage() {
             Minima — это первый в мире полностью децентрализованный блокчейн-протокол, в котором каждый узел является полным узлом. В отличие от традиционных блокчейнов, где требуется значительная вычислительная мощность, Minima позволяет каждому устройству (включая мобильные телефоны и IoT-устройства) участвовать в сети на равных правах.
           </p>
           <p className="text-sm text-gray-500">
-            Источник: <Link href="https://minima.global/whitepaper" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Minima Whitepaper</Link>
+            Источник: <Link href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Minima Whitepaper v1.1</Link>
           </p>
         </section>
 
@@ -41,7 +41,7 @@ export default function AboutPage() {
                 Протокол использует гибридный механизм консенсуса, сочетающий элементы доказательства работы (PoW) и доказательства участия (PoS). Это обеспечивает безопасность сети при минимальном энергопотреблении.
               </p>
               <p className="text-sm text-gray-500">
-                Статус: <span className="text-green-500">confirmed</span> | Источник: <Link href="https://minima.global/whitepaper" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Minima Whitepaper</Link>
+                Статус: <span className="text-green-500">confirmed</span> | Источник: <Link href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Minima Whitepaper v1.1</Link>
               </p>
             </div>
 
@@ -111,6 +111,42 @@ export default function AboutPage() {
           </div>
         </section>
 
+        <section className="mb-8 bg-gray-900 border border-gray-700 rounded-lg p-6">
+          <h2 className="text-2xl font-semibold mb-4">Принципы децентрализации</h2>
+          
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-xl font-medium text-gray-300 mb-2">1. Равенство узлов</h3>
+              <p className="text-gray-300 mb-2">
+                В сети Minima все узлы имеют равные права и возможности. Нет различия между "полними" и "лёгкими" узлами — каждый участник сети хранит и проверяет полную историю блокчейна.
+              </p>
+              <p className="text-sm text-gray-500">
+                Статус: <span className="text-green-500">confirmed</span> | Источник: <Link href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Minima Whitepaper v1.1</Link>
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-medium text-gray-300 mb-2">2. Доступность для всех устройств</h3>
+              <p className="text-gray-300 mb-2">
+                Протокол разработан так, чтобы работать на устройствах с ограниченными ресурсами — мобильных телефонах, одноплатных компьютерах (Raspberry Pi) и IoT-устройствах.
+              </p>
+              <p className="text-sm text-gray-500">
+                Статус: <span className="text-green-500">confirmed</span> | Источник: <Link href="https://docs.minima.global/docs/architecture" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Architecture Documentation</Link>
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-medium text-gray-300 mb-2">3. Сопротивление цензуре</h3>
+              <p className="text-gray-300 mb-2">
+                Благодаря полной децентрализации и отсутствию центральных точек отказа, сеть Minima устойчива к цензуре и внешнему контролю.
+              </p>
+              <p className="text-sm text-gray-500">
+                Статус: <span className="text-green-500">confirmed</span> | Источник: <Link href="https://minima.global/technology" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Technology Overview</Link>
+              </p>
+            </div>
+          </div>
+        </section>
+
         <div className="bg-gray-900 border border-gray-700 rounded-lg p-4 text-sm text-gray-500">
           <p>
             This site does not represent the official Minima team. All information is compiled from publicly available sources.
@@ -127,3 +163,4 @@ export default function AboutPage() {
     </div>
   );
 }
+
