@@ -1,47 +1,122 @@
-// src/app/page.tsx
+import Link from 'next/link';
+
 export default function HomePage() {
   return (
-    <div className="max-w-4xl mx-auto space-y-10 overflow-hidden">
-      <section>
-        <h1 className="text-3xl font-bold mb-6">What is Minima</h1>
-        <p className="mb-4">
-          Minima is a next-generation blockchain protocol designed to be fully decentralized by default.
-        </p>
-        <p className="mb-4">
-          It enables every user to run a full validating and constructing node on everyday devices, including mobile phones and low-power hardware.
-        </p>
-        <p className="mb-4">
-          By eliminating reliance on centralized infrastructure, Minima creates a network that is owned, operated and secured by its users themselves.
-        </p>
-        <p className="mb-4">
-          This architecture allows participants to remain fully autonomous while still being accountable within a shared consensus system.
-        </p>
-        <p>
-          Minima focuses on long-term protocol sustainability, censorship resistance, and true decentralization at scale.
-        </p>
-      </section>
+    <div className="min-h-screen bg-black text-gray-200 flex flex-col">
+      <header className="border-b border-gray-700 py-6">
+        <div className="container mx-auto px-4 max-w-4xl">
+          <h1 className="text-3xl font-bold">Welcome to Minimaverse</h1>
+          <p className="text-gray-400 mt-2">Community-driven information hub for the Minima protocol</p>
+        </div>
+      </header>
 
-      <section className="border-t border-gray-700 pt-8">
-        <h2 className="text-2xl font-semibold mb-4">Purpose of this site</h2>
-        <p className="mb-4">
-          Minimaverse is a neutral, community-driven information hub that documents the Minima ecosystem, its historical development, core components, and publicly verifiable integrations.
-        </p>
-        <p className="text-red-400 font-medium">
-          This site does not represent the official Minima team.
-        </p>
-      </section>
+      <main className="container mx-auto px-4 py-8 max-w-4xl flex-grow">
+        <section className="mb-8 bg-gray-900 border border-gray-700 rounded-lg p-6">
+          <h2 className="text-2xl font-semibold mb-4">About This Site</h2>
+          <p className="text-gray-300 mb-4">
+            Minimaverse is an independent, community-driven information hub dedicated to the Minima protocol. This site provides verified technical information, documentation links, and ecosystem resources for developers, researchers, and institutional observers.
+          </p>
+          <p className="text-gray-300 mb-4">
+            We focus on factual, hype-free content with clear sourcing and transparent status indicators for all information.
+          </p>
+        </section>
 
-      <section className="bg-gray-900 border border-gray-700 p-4 rounded-lg">
-        <h2 className="font-semibold mb-2 text-gray-200">Open Questions</h2>
-        <p className="text-gray-300">
-          The Minima protocol is under active development. Key open questions include:
-          node discovery in offline environments, long-term storage efficiency on embedded devices,
-          and formal verification of the consensus mechanism. This site will document answers as they become publicly available.
-        </p>
-        <a href="/open-questions" className="text-blue-400 hover:text-blue-300 mt-2 inline-block">
-          View all open questions →
-        </a>
-      </section>
+        <section className="mb-8 bg-gray-900 border border-gray-700 rounded-lg p-6">
+          <h2 className="text-2xl font-semibold mb-4">Project Principles</h2>
+          
+          <div className="space-y-4">
+            <div>
+              <h3 className="text-xl font-medium text-gray-300 mb-2">1. Verified Facts Only</h3>
+              <p className="text-gray-300">
+                All information is sourced from official documentation, whitepapers, or publicly verified announcements. No speculation, price predictions, or unconfirmed rumors.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-medium text-gray-300 mb-2">2. Transparent Sourcing</h3>
+              <p className="text-gray-300">
+                Every fact includes a link to its primary source. One fact = one verified source.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-medium text-gray-300 mb-2">3. Clear Status Indicators</h3>
+              <p className="text-gray-300">
+                All features and projects are marked with clear status labels: confirmed, in development, or experimental.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="text-xl font-medium text-gray-300 mb-2">4. Neutral Tone</h3>
+              <p className="text-gray-300">
+                No marketing language, hype, or subjective evaluations. Just facts.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section className="mb-8 bg-gray-900 border border-gray-700 rounded-lg p-6">
+          <h2 className="text-2xl font-semibold mb-4">Quick Links</h2>
+          
+          <div className="grid md:grid-cols-2 gap-4">
+            <div>
+              <h3 className="font-medium text-gray-300 mb-2">For Developers</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <Link href="/developers" className="text-blue-400 hover:underline">
+                    → Developer Resources
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/nodes" className="text-blue-400 hover:underline">
+                    → Run a Node
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/tools" className="text-blue-400 hover:underline">
+                    → Tools & Utilities
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-medium text-gray-300 mb-2">Protocol Information</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <Link href="/about" className="text-blue-400 hover:underline">
+                    → What is Minima
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/ecosystem" className="text-blue-400 hover:underline">
+                    → Ecosystem
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/timeline" className="text-blue-400 hover:underline">
+                    → Verified Milestones
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <div className="bg-gray-900 border border-gray-700 rounded-lg p-4 text-sm text-gray-500">
+          <p>
+            This site does not represent the official Minima team. All information is compiled from publicly available sources.
+          </p>
+        </div>
+      </main>
+
+      <footer className="border-t border-gray-700 py-6 mt-8">
+        <div className="container mx-auto px-4 max-w-4xl text-center text-gray-500 text-sm">
+          <p>Minimaverse — Community-driven information hub</p>
+          <p className="mt-1">Data verified from official sources</p>
+        </div>
+      </footer>
     </div>
   );
 }
+
