@@ -147,10 +147,11 @@ export default function AboutPage() {
           </div>
         </section>
 
-        <div className="bg-gray-900 border border-gray-700 rounded-lg p-4 text-sm text-gray-500">
-          <p>
-            This site does not represent the official Minima team. All information is compiled from publicly available sources.
-          </p>
+        <div className="bg-amber-900/10 border-l-4 border-amber-500 p-4 text-sm text-amber-300">
+          <div className="flex items-start">
+            <span className="mr-2 mt-0.5">⚠️</span>
+            <span>This site does not represent the official Minima team. All information is compiled from publicly available sources.</span>
+          </div>
         </div>
       </main>
 
