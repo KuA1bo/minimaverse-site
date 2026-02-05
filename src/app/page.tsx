@@ -6,30 +6,27 @@ export default function HomePage() {
       <header className="border-b border-gray-700 py-8">
         <div className="container mx-auto px-4 max-w-4xl">
           <h1 className="text-4xl font-bold">Minimaverse</h1>
-          <p className="text-gray-400 mt-3">
-            Device-first blockchain • Full nodes everywhere • Infrastructure, not hype
-          </p>
-          <p className="text-gray-500 mt-1 text-sm">
+          <p className="text-gray-500 mt-2 text-lg">
             Community-driven information hub for the Minima protocol
           </p>
           
-          <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:gap-4">
+          <div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:gap-4">
             <Link 
               href="/protocol" 
-              className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-500 text-blue-400 font-medium rounded-lg hover:bg-blue-500/10 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-500 text-blue-400 font-medium rounded-lg hover:bg-blue-500/10 transition-colors min-w-[200px]"
             >
               How Minima Works
             </Link>
             <Link 
               href="/nodes" 
-              className="inline-flex items-center justify-center px-6 py-3 mt-3 sm:mt-0 text-gray-400 hover:text-blue-400 transition-colors"
+              className="inline-flex items-center justify-center px-6 py-3 mt-3 sm:mt-0 text-gray-400 hover:text-blue-400 transition-colors min-w-[200px]"
             >
               Run a Node
             </Link>
           </div>
           
-          <p className="mt-4 text-xs text-gray-600">
-            All information sourced from official Minima documentation
+          <p className="mt-6 text-xs text-gray-600 max-w-2xl">
+            All information sourced from official Minima documentation and verified public announcements
           </p>
         </div>
       </header>
@@ -144,3 +141,4 @@ export default function HomePage() {
     </div>
   );
 }
+
