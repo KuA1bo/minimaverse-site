@@ -60,27 +60,6 @@ export default function HomePage() {
           
           <div className="grid md:grid-cols-2 gap-4">
             <div>
-              <h3 className="font-medium text-gray-300 mb-2">For Developers</h3>
-              <ul className="space-y-2 text-gray-400">
-                <li>
-                  <Link href="/developers" className="text-blue-400 hover:underline">
-                    → Developer Resources
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/nodes" className="text-blue-400 hover:underline">
-                    → Run a Node
-                  </Link>
-                </li>
-                <li>
-                  <Link href="/tools" className="text-blue-400 hover:underline">
-                    → Tools & Utilities
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
               <h3 className="font-medium text-gray-300 mb-2">Protocol Information</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
@@ -96,6 +75,27 @@ export default function HomePage() {
                 <li>
                   <Link href="/timeline" className="text-blue-400 hover:underline">
                     → Verified Milestones
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-medium text-gray-300 mb-2">For Developers</h3>
+              <ul className="space-y-2 text-gray-400">
+                <li>
+                  <Link href="/developers" className="text-blue-400 hover:underline">
+                    → Developer Resources
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/nodes" className="text-blue-400 hover:underline">
+                    → Run a Node
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/tools" className="text-blue-400 hover:underline">
+                    → Tools & Utilities
                   </Link>
                 </li>
               </ul>
