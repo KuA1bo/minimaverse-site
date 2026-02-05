@@ -1,3 +1,4 @@
+// src/app/tools/page.tsx
 import Link from 'next/link';
 
 export default function ToolsPage() {
@@ -50,9 +51,13 @@ export default function ToolsPage() {
               <p className="text-gray-300 mb-2">
                 Official mobile wallet available on Google Play and as APK download.
               </p>
-              <p className="text-sm text-gray-500">
-                Status: <span className="text-green-500">confirmed</span> | Source: <Link href="https://play.google.com/store/search?q=minima&c=apps" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Google Play</Link>
-              </p>
+              <div className="text-sm text-gray-500 space-y-1 mt-1">
+                <p>
+                  Status: <span className="text-green-500">confirmed</span> | Sources: 
+                  <Link href="https://play.google.com/store/search?q=minima&c=apps&hl=en" className="text-blue-400 hover:underline ml-1" target="_blank" rel="noopener noreferrer">Google Play</Link>,
+                  <Link href="https://github.com/minima-global/Minima/blob/master/jar/minima-1.0.46.6.apk" className="text-blue-400 hover:underline ml-1" target="_blank" rel="noopener noreferrer">APK Download</Link>
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -72,22 +77,12 @@ export default function ToolsPage() {
             </div>
 
             <div>
-              <h3 className="text-xl font-medium text-gray-300 mb-2">Minima Script</h3>
+              <h3 className="text-xl font-medium text-gray-300 mb-2">Minima Script & RPC API</h3>
               <p className="text-gray-300 mb-2">
-                Built-in scripting language for writing smart contracts and transaction logic.
+                Built-in scripting language and RESTful API for programmatic interaction with Minima nodes.
               </p>
               <p className="text-sm text-gray-500">
-                Status: <span className="text-green-500">confirmed</span> | Source: <Link href="https://docs.minima.global/docs/development/minima-script" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Minima Script Docs</Link>
-              </p>
-            </div>
-
-            <div>
-              <h3 className="text-xl font-medium text-gray-300 mb-2">RPC API</h3>
-              <p className="text-gray-300 mb-2">
-                RESTful API for programmatic interaction with Minima nodes.
-              </p>
-              <p className="text-sm text-gray-500">
-                Status: <span className="text-green-500">confirmed</span> | Source: <Link href="https://docs.minima.global/docs/development/rpc-api" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">RPC API Documentation</Link>
+                Status: <span className="text-green-500">confirmed</span> | Source: <Link href="https://docs.minima.global/docs/development" className="text-blue-400 hover:underline" target="_blank" rel="noopener noreferrer">Development Documentation</Link>
               </p>
             </div>
           </div>
