@@ -20,7 +20,7 @@ export default function RootLayout({
           <div className="flex items-center gap-4 max-w-6xl mx-auto">
             <div className="flex items-center gap-2">
               <img 
-                src="/logo.png" 
+                src="/logo.webp" 
                 alt="Minimaverse Logo" 
                 className="h-10 w-auto"
                 width={40}
