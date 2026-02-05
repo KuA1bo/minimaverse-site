@@ -1,4 +1,3 @@
-// src/app/layout.tsx
 import './globals.css';
 
 export default function RootLayout({
@@ -36,6 +35,8 @@ export default function RootLayout({
               <a href="/about" className="font-medium text-gray-300 hover:text-white">About</a>
               <a href="/ecosystem" className="font-medium text-gray-300 hover:text-white">Ecosystem</a>
               <a href="/developers" className="font-medium text-gray-300 hover:text-white">Developers</a>
+              <a href="/nodes" className="font-medium text-gray-300 hover:text-white">Nodes</a>
+              <a href="/tools" className="font-medium text-gray-300 hover:text-white">Tools</a>
               <a href="/partners" className="font-medium text-gray-300 hover:text-white">Partners</a>
               <a href="/timeline" className="font-medium text-gray-300 hover:text-white">Timeline</a>
               <a href="/news" className="font-medium text-gray-300 hover:text-white">News</a>
@@ -56,3 +57,4 @@ export default function RootLayout({
     </html>
   );
 }
+
