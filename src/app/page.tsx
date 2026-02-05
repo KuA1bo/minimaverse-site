@@ -74,7 +74,7 @@ export default function HomePage() {
                 </li>
                 <li>
                   <Link href="/timeline" className="text-blue-400 hover:underline">
-                    → Verified Milestones
+                    → Verified Milestones (Timeline)
                   </Link>
                 </li>
               </ul>
