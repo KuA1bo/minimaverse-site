@@ -5,6 +5,9 @@ export default function NodesPage() {
     <div className="min-h-screen bg-black text-gray-200 flex flex-col">
       <header className="border-b border-gray-700 py-6">
         <div className="container mx-auto px-4 max-w-4xl">
+          <Link href="/" className="text-blue-400 hover:underline mb-4 inline-block">
+            ← Back to Minimaverse
+          </Link>
           <h1 className="text-3xl font-bold">Run a Node</h1>
           <p className="text-gray-400 mt-2">Setup and configuration guide</p>
         </div>
