@@ -48,10 +48,9 @@ export default function RootLayout({
           {children}
         </main>
 
-        {/* Global Footer - ONLY ONE FOOTER FOR ALL PAGES */}
+        {/* Global Footer - Clean version */}
         <footer className="mt-8 border-t border-gray-700 py-4 text-center text-gray-400 text-sm">
-          <p>Minimaverse — Community-driven information hub</p>
-          <p className="mt-1">
+          <p>
             © 2026 Minimaverse. Content licensed under{' '}
             <a 
               href="https://creativecommons.org/licenses/by-nc/4.0/" 
