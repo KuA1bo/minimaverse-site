@@ -28,7 +28,7 @@ export default function RootLayout({
               <h1 className="text-2xl font-bold text-white">Minimaverse</h1>
             </div>
             <p className="text-sm text-gray-400 ml-4 flex-1">
-              Device-first blockchain • Full nodes everywhere • Infrastructure, not hype
+              Minima • Device-first blockchain • Full nodes everywhere • Infrastructure, not hype
             </p>
             <nav className="hidden md:flex gap-6">
               <a href="/" className="font-medium text-gray-300 hover:text-white">Home</a>
