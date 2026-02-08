@@ -3,15 +3,14 @@ import Link from 'next/link';
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-black text-gray-200 flex flex-col">
-      <header className="border-b border-gray-700 py-8">
+      <header className="border-b border-gray-700 py-12">
         <div className="container mx-auto px-4 max-w-4xl flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
           <div className="flex-1">
-            <h1 className="text-4xl font-bold">Minimaverse</h1>
-            <p className="text-gray-500 mt-2 text-lg">
+            <p className="text-gray-500 text-lg">
               Community-driven information hub for the Minima protocol
             </p>
             
-            <div className="mt-10 flex flex-col sm:flex-row sm:items-center sm:gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row sm:items-center sm:gap-4">
               <Link 
                 href="/protocol" 
                 className="inline-flex items-center justify-center px-6 py-3 border-2 border-blue-500 text-blue-400 font-medium rounded-lg hover:bg-blue-500/10 transition-colors min-w-[200px]"
