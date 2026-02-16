@@ -76,7 +76,7 @@ export default function NodesPage() {
             <li>Access full blockchain data and verification capabilities</li>
           </ul>
           <div className="text-sm text-gray-500 mt-3">
-            Source: <a href="https://minima.global/technology/overview" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Minima Technology Overview</a>
+            Source: <a href="https://minima.global/technology/overview" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Minima Edge Consensus Architecture</a>
           </div>
         </section>
 
