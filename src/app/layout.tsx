@@ -77,8 +77,11 @@ export default function RootLayout({
               <Link href="/disclaimer" className="underline ml-1 hover:text-gray-300">Disclaimer</Link>
             </p>
             <p className="flex justify-center gap-4 flex-wrap">
+              {/* License link - points to raw file on GitHub to avoid 404 */}
               <a 
-                href="/LICENSE" 
+                href="https://github.com/KuA1bo/minimaverse-site/raw/main/LICENSE" 
+                target="_blank" 
+                rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors"
               >
                 License (MIT)
