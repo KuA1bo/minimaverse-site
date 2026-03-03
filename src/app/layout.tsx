@@ -1,8 +1,11 @@
+// src/app/layout.tsx
+// Root layout component for Minimaverse - Next.js App Router
+
 import './globals.css';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 
-// ✅ Явное указание метаданных и иконок
+// Metadata configuration for SEO and favicons
 export const metadata: Metadata = {
   title: 'Minimaverse',
   description: 'Minima Protocol Universe Documentation',
@@ -16,6 +19,7 @@ export const metadata: Metadata = {
   },
 };
 
+// Root layout component - wraps all pages in the application
 export default function RootLayout({
   children,
 }: {
@@ -25,12 +29,16 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col min-h-screen bg-black text-gray-200 overflow-y-auto">
         
-        {/* Header */}
+        {/* Global Header - appears on all pages */}
         <header className="mb-6 border-b border-gray-700 p-4">
           <div className="flex items-center gap-4 max-w-6xl mx-auto">
-            {/* Логотип */}
+            
+            {/* Logo and site title - links to homepage */}
             <div className="flex items-center gap-2">
-              <Link href="/" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+              <Link 
+                href="/" 
+                className="flex items-center gap-2 hover:opacity-80 transition-opacity"
+              >
                 <img
                   src="/logo.webp"
                   alt="Minimaverse Logo"
@@ -40,30 +48,50 @@ export default function RootLayout({
               </Link>
             </div>
 
-            {/* Навигация */}
-            <nav className="flex-1 flex justify-end gap-6">
-              <Link href="/about" className="hover:text-white transition-colors">About</Link>
-              <Link href="/protocol" className="hover:text-white transition-colors">Protocol</Link>
-              <Link href="/ecosystem" className="hover:text-white transition-colors">Ecosystem</Link>
-              <Link href="/developers" className="hover:text-white transition-colors">Developers</Link>
-              <Link href="/nodes" className="hover:text-white transition-colors">Nodes</Link>
-              <Link href="/news" className="hover:text-white transition-colors">News</Link>
+            {/* Main navigation links */}
+            <nav className="flex-1 flex justify-end gap-4 md:gap-6 flex-wrap">
+              <Link href="/about" className="hover:text-white transition-colors text-sm md:text-base">About</Link>
+              <Link href="/protocol" className="hover:text-white transition-colors text-sm md:text-base">Protocol</Link>
+              <Link href="/ecosystem" className="hover:text-white transition-colors text-sm md:text-base">Ecosystem</Link>
+              <Link href="/developers" className="hover:text-white transition-colors text-sm md:text-base">Developers</Link>
+              <Link href="/tools" className="hover:text-white transition-colors text-sm md:text-base">Tools</Link>
+              <Link href="/timeline" className="hover:text-white transition-colors text-sm md:text-base">Timeline</Link>
+              <Link href="/partners" className="hover:text-white transition-colors text-sm md:text-base">Partners</Link>
+              <Link href="/nodes" className="hover:text-white transition-colors text-sm md:text-base">Nodes</Link>
+              <Link href="/news" className="hover:text-white transition-colors text-sm md:text-base">News</Link>
             </nav>
           </div>
         </header>
 
-        {/* Main Content */}
+        {/* Main content area - page-specific content renders here */}
         <main className="flex-1 max-w-6xl mx-auto w-full p-4">
           {children}
         </main>
 
-        {/* Footer */}
+        {/* Global Footer - appears on all pages */}
         <footer className="mt-12 border-t border-gray-700 p-6">
           <div className="max-w-6xl mx-auto text-center text-gray-500 text-sm">
-            <p>© 2026 Minimaverse. Documentation project.</p>
-            <p className="mt-2">
+            <p className="mb-2">© 2026 Minimaverse. Independent documentation project.</p>
+            <p className="mb-4">
               Not affiliated with Minima Foundation. 
               <Link href="/disclaimer" className="underline ml-1 hover:text-gray-300">Disclaimer</Link>
+            </p>
+            <p className="flex justify-center gap-4 flex-wrap">
+              <a 
+                href="/LICENSE" 
+                className="hover:text-gray-300 transition-colors"
+              >
+                License (MIT)
+              </a>
+              <span>•</span>
+              <a 
+                href="https://github.com/KuA1bo/minimaverse-site" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="hover:text-gray-300 transition-colors"
+              >
+                GitHub Repository
+              </a>
             </p>
           </div>
         </footer>
