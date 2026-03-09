@@ -76,16 +76,22 @@ export default function RootLayout({
               Not affiliated with Minima Foundation. 
               <Link href="/disclaimer" className="underline ml-1 hover:text-gray-300">Disclaimer</Link>
             </p>
-            <p className="flex justify-center gap-4 flex-wrap">
-              {/* Contact link - for project feedback */}
+            <p className="flex justify-center gap-3 md:gap-4 flex-wrap">
+              {/* Meta-links: project information */}
               <Link 
                 href="/contact" 
                 className="hover:text-gray-300 transition-colors"
               >
                 Contact
               </Link>
-              <span>•</span>
-              {/* License link - points to raw file on GitHub */}
+              <span className="text-gray-700">•</span>
+              <Link 
+                href="/open-questions" 
+                className="hover:text-gray-300 transition-colors"
+              >
+                Open Questions
+              </Link>
+              <span className="text-gray-700">•</span>
               <a 
                 href="https://github.com/KuA1bo/minimaverse-site/raw/main/LICENSE" 
                 target="_blank" 
@@ -94,15 +100,14 @@ export default function RootLayout({
               >
                 License (MIT)
               </a>
-              <span>•</span>
-              {/* GitHub repository link */}
+              <span className="text-gray-700">•</span>
               <a 
                 href="https://github.com/KuA1bo/minimaverse-site" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:text-gray-300 transition-colors"
               >
-                GitHub Repository
+                GitHub
               </a>
             </p>
           </div>
