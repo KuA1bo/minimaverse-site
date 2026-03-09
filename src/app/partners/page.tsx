@@ -1,278 +1,489 @@
+// src/app/partners/page.tsx
+// Partners page - verified confirmed partnerships in the Minima ecosystem
+
 import Link from 'next/link';
 
 export default function PartnersPage() {
   return (
-    <div className="min-h-screen bg-black text-gray-200 flex flex-col">
-      {/* Header with Back button and GitHub icon */}
-      <header className="border-b border-gray-700 py-6">
-        <div className="container mx-auto px-4 max-w-4xl flex justify-between items-start">
+    <div className="max-w-4xl mx-auto">
+      
+      {/* Unified Header */}
+      <header className="mb-8">
+        <div className="flex justify-between items-start">
           <div>
-            <Link href="/" className="text-blue-400 hover:underline mb-4 inline-block">
+            <Link 
+              href="/" 
+              className="text-gray-400 hover:text-white transition-colors inline-block mb-4"
+            >
               ← Back to Minimaverse
             </Link>
-            <h1 className="text-3xl font-bold">Confirmed Partnerships</h1>
+            <h1 className="text-3xl font-bold text-white mb-2">Confirmed Partnerships</h1>
+            <p className="text-gray-400">Publicly verified collaborations and integrations</p>
           </div>
           <a 
             href="https://github.com/KuA1bo/minimaverse-site" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="text-gray-400 hover:text-gray-200 transition-colors"
+            className="text-gray-400 hover:text-white transition-colors"
             aria-label="View source on GitHub"
           >
             <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-              <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
             </svg>
           </a>
         </div>
       </header>
 
-      <main className="container mx-auto px-4 py-8 max-w-4xl flex-grow">
-        <section className="mb-8">
-          <p className="text-gray-300 mb-4">
-            This page lists publicly confirmed partnerships and collaborations associated with the Minima ecosystem.
+      {/* Primary Sources Box */}
+      <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 mb-8">
+        <h3 className="text-white font-medium mb-3">📚 Primary Sources for This Page</h3>
+        <ul className="space-y-2 text-sm">
+          <li>
+            <span className="text-gray-400">Official Blog:</span>{' '}
+            <a 
+              href="https://minima.global/blog" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline ml-1"
+            >
+              minima.global/blog
+            </a>
+          </li>
+          <li>
+            <span className="text-gray-400">Documentation:</span>{' '}
+            <a 
+              href="https://docs.minima.global" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline ml-1"
+            >
+              docs.minima.global
+            </a>
+          </li>
+          <li>
+            <span className="text-gray-400">GitHub:</span>{' '}
+            <a 
+              href="https://github.com/minima-global" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline ml-1"
+            >
+              github.com/minima-global
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      {/* Content */}
+      <article className="prose prose-invert max-w-none">
+        
+        {/* Intro */}
+        <section className="mb-10">
+          <p className="text-gray-300 leading-relaxed">
+            This page lists publicly confirmed partnerships and collaborations associated with 
+            the Minima ecosystem. All entries include verifiable publication dates and official 
+            announcements. Only partnerships with public confirmation are included.
           </p>
-          <p className="text-gray-300 mb-6">
-            All entries include verifiable publication dates and official announcements. Only partnerships with public confirmation are included.
+          <p className="text-gray-400 text-sm mt-4">
+            Status legend:{' '}
+            <span className="text-green-500">● confirmed</span>{' '}
+            <span className="text-gray-500">|</span>{' '}
+            <span className="text-yellow-500">● in-development</span>{' '}
+            <span className="text-gray-500">|</span>{' '}
+            <span className="text-gray-500">● community-maintained</span>
           </p>
         </section>
 
-        <section className="mb-8 bg-gray-900 border border-gray-700 p-6 rounded-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-gray-200">Confirmed Partnerships (Chronological)</h2>
+        {/* Confirmed Partnerships Timeline */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold text-white mb-4">Confirmed Partnerships (Chronological)</h2>
           
-          <div className="space-y-5">
-            {/* March 25, 2025 - Zeekr */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+          <div className="space-y-4">
+            {/* Zeekr - March 25, 2025 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">March 25, 2025</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">Minima and Zeekr</h3>
-              <p className="text-gray-400 text-sm mt-1">
-                Developing an on-demand EV charging solution enabling secure access to private charging stations to solve accessibility challenges.
+              <h3 className="text-white font-medium mb-2">Minima and Zeekr</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Developing an on-demand EV charging solution enabling secure access to private 
+                charging stations to solve accessibility challenges.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/minima-x-zeekr" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/minima-x-zeekr" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
 
-            {/* March 3, 2025 - SchoolTry */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+            {/* SchoolTry - March 3, 2025 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">March 3, 2025</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">SchoolTry</h3>
-              <p className="text-gray-400 text-sm mt-1">
-                Launching Minima blockchain curriculum in April 2025 to reach 2 million Nigerian students.
+              <h3 className="text-white font-medium mb-2">SchoolTry</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Launching Minima blockchain curriculum in April 2025 to reach 2 million 
+                Nigerian students.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/schooltry_partners_with_minima" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/schooltry_partners_with_minima" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
 
-            {/* December 3, 2024 - Arm */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+            {/* Arm - December 3, 2024 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">December 3, 2024</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">Arm Flexible Access Program</h3>
-              <p className="text-gray-400 text-sm mt-1">
-                Minima applied to participate in Arm's program to advance development of the Minima chip.
+              <h3 className="text-white font-medium mb-2">Arm Flexible Access Program</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Minima applied to participate in Arm's program to advance development of 
+                the Minima chip.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/arm-and-minima" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/arm-and-minima" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
 
-            {/* November 27, 2024 - Trust Exchange */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+            {/* Trust Exchange - November 27, 2024 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">November 27, 2024</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">Trust Exchange</h3>
-              <p className="text-gray-400 text-sm mt-1">
-                Partnership to pioneer decentralized real-world asset (RWA) verification with blockchain-based data attestation.
+              <h3 className="text-white font-medium mb-2">Trust Exchange</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Partnership to pioneer decentralized real-world asset (RWA) verification 
+                with blockchain-based data attestation.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/trust-exchange-and-minima" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/trust-exchange-and-minima" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
 
-            {/* October 17, 2024 - CPIN */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+            {/* CPIN - October 17, 2024 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">October 17, 2024</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">CPIN</h3>
-              <p className="text-gray-400 text-sm mt-1">
-                Strategic partnership to secure renewable energy data using Minima's infrastructure.
+              <h3 className="text-white font-medium mb-2">CPIN</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Strategic partnership to secure renewable energy data using Minima's 
+                infrastructure.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/minima-global-announces-strategic-partnership-with-cpin-to-secure-renewable-energy-data" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/minima-global-announces-strategic-partnership-with-cpin-to-secure-renewable-energy-data" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
 
-            {/* July 24, 2024 - Mercury Global */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+            {/* Mercury Global - July 24, 2024 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">July 24, 2024</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">Mercury Global</h3>
-              <p className="text-gray-400 text-sm mt-1">
-                Pilot project to create a decentralized alternative to SWIFT for global payment networks using Maxima protocol.
+              <h3 className="text-white font-medium mb-2">Mercury Global</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Pilot project to create a decentralized alternative to SWIFT for global 
+                payment networks using Minima protocol.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/minima-partners-with-mercury-global-to-pilot-decentralised-swift-alternative-to-reshape-global-payment-networks" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/minima-partners-with-mercury-global-to-pilot-decentralised-swift-alternative-to-reshape-global-payment-networks" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
 
-            {/* July 9, 2024 - Sfero */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+            {/* Sfero - July 9, 2024 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">July 9, 2024</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">Sfero</h3>
-              <p className="text-gray-400 text-sm mt-1">
+              <h3 className="text-white font-medium mb-2">Sfero</h3>
+              <p className="text-gray-300 text-sm mb-3">
                 Partnership to revolutionize retail payment systems using Minima infrastructure.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/minima-partners-with-sfero-to-revolutionize-retail-payments" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/minima-partners-with-sfero-to-revolutionize-retail-payments" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
 
-            {/* June 12, 2024 - McLaren GT4 */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+            {/* McLaren GT4 - June 12, 2024 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">June 12, 2024</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">McLaren GT4</h3>
-              <p className="text-gray-400 text-sm mt-1">
-                Minima powers world's first blockchain-based race data recorder for McLaren GT4 supercar at Spa.
+              <h3 className="text-white font-medium mb-2">McLaren GT4</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Minima powers world's first blockchain-based race data recorder for 
+                McLaren GT4 supercar at Spa.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/minima-l1-blockchain-powers-the-worlds-first-on-chain-race-data-logger-for-mclaren-gt4-supercar-at-spa" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/minima-l1-blockchain-powers-the-worlds-first-on-chain-race-data-logger-for-mclaren-gt4-supercar-at-spa" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
 
-            {/* April 30, 2024 - OPP */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+            {/* OPP - April 30, 2024 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">April 30, 2024</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">OPP (Online Payment Platform)</h3>
-              <p className="text-gray-400 text-sm mt-1">
-                Bringing private EV charging stations worldwide to the $7.3B electric vehicle market through tokenized access.
+              <h3 className="text-white font-medium mb-2">OPP (Online Payment Platform)</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Bringing private EV charging stations worldwide to the $7.3B electric 
+                vehicle market through tokenized access.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/minima-partners-with-opp-online-payment-platform-to-commodify-private-charging-points-worldwide-in-7-3b-ev-market" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/minima-partners-with-opp-online-payment-platform-to-commodify-private-charging-points-worldwide-in-7-3b-ev-market" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
 
-            {/* March 27, 2024 - ABB SynerLeap */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+            {/* ABB SynerLeap - March 27, 2024 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">March 27, 2024</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">ABB SynerLeap</h3>
-              <p className="text-gray-400 text-sm mt-1">
-                Collaboration with ABB's innovation hub to drive advancements in energy and industrial IoT.
+              <h3 className="text-white font-medium mb-2">ABB SynerLeap</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Collaboration with ABB's innovation hub to drive advancements in energy 
+                and industrial IoT.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/minima-partners-with-abb-innovation-hub-synerleap-to-drive-innovation-in-energy-industrial-iot" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/minima-partners-with-abb-innovation-hub-synerleap-to-drive-innovation-in-energy-industrial-iot" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
 
-            {/* March 19, 2024 - Gaia-X */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+            {/* Gaia-X - March 19, 2024 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">March 19, 2024</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">Gaia-X</h3>
-              <p className="text-gray-400 text-sm mt-1">
+              <h3 className="text-white font-medium mb-2">Gaia-X</h3>
+              <p className="text-gray-300 text-sm mb-3">
                 Minima joins Gaia-X initiative for European data infrastructure sovereignty.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/minima-thrilled-to-announce-it-is-a-member-of-gaia-x" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/minima-thrilled-to-announce-it-is-a-member-of-gaia-x" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
 
-            {/* March 11, 2024 - Streamr */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+            {/* Streamr - March 11, 2024 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">March 11, 2024</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">Streamr</h3>
-              <p className="text-gray-400 text-sm mt-1">
-                Partnership to pioneer secure real-time data streaming solutions on Minima infrastructure.
+              <h3 className="text-white font-medium mb-2">Streamr</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Partnership to pioneer secure real-time data streaming solutions on 
+                Minima infrastructure.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/minima-partners-with-streamr-to-pioneer-secure-live-data-streaming" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/minima-partners-with-streamr-to-pioneer-secure-live-data-streaming" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
 
-            {/* February 19, 2024 - Wicrypt */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+            {/* Wicrypt - February 19, 2024 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">February 19, 2024</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">Wicrypt</h3>
-              <p className="text-gray-400 text-sm mt-1">
-                DePIN-focused partnership with Wicrypt Wi-Fi network to democratize internet access globally.
+              <h3 className="text-white font-medium mb-2">Wicrypt</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                DePIN-focused partnership with Wicrypt Wi-Fi network to democratize 
+                internet access globally.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/minima-a-depin-focused-layer1-blockchain-is-joining-forces-with-wi-fi-network-wicrypt-to-democratise-internet-access" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/minima-a-depin-focused-layer1-blockchain-is-joining-forces-with-wi-fi-network-wicrypt-to-democratise-internet-access" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
 
-            {/* February 14, 2024 - LTA Labs */}
-            <div className="border-l-4 border-blue-500 pl-4 py-2">
-              <div className="flex justify-between items-start mb-1">
+            {/* LTA Labs - February 14, 2024 */}
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 border-l-4 border-l-blue-500">
+              <div className="flex justify-between items-start mb-2">
                 <span className="text-sm text-gray-400">February 14, 2024</span>
                 <span className="text-xs bg-green-900 text-green-300 px-2 py-1 rounded">confirmed</span>
               </div>
-              <h3 className="font-medium text-gray-200">LTA Labs</h3>
-              <p className="text-gray-400 text-sm mt-1">
-                Collaboration to develop a range of financial products leveraging Minima infrastructure.
+              <h3 className="text-white font-medium mb-2">LTA Labs</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Collaboration to develop a range of financial products leveraging 
+                Minima infrastructure.
               </p>
-              <div className="text-sm text-gray-500 mt-1">
-                Source: <a href="https://minima.global/post/lta-labs-partners-with-minima-to-power-its-financial-product-suite" target="_blank" rel="noopener noreferrer" className="text-blue-400 hover:underline">Official Announcement</a>
-              </div>
+              <p className="text-gray-500 text-xs">
+                Source:{' '}
+                <a 
+                  href="https://minima.global/post/lta-labs-partners-with-minima-to-power-its-financial-product-suite" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline"
+                >
+                  Official Announcement
+                </a>
+              </p>
             </div>
           </div>
         </section>
 
-        <section className="mb-8 bg-gray-900 border border-gray-700 p-6 rounded-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-gray-200">Inclusion Criteria</h2>
-          <div className="space-y-3 text-gray-400 text-sm">
-            <p>• Partnership must be publicly announced by official Minima channels</p>
-            <p>• Publication date must be verifiable</p>
-            <p>• Direct link to source (press release, official statement, or documentation)</p>
-            <p>• No speculative, rumored, or unconfirmed collaborations</p>
-            <p>• Academic/research collaborations require official institutional confirmation</p>
+        {/* Inclusion Criteria */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold text-white mb-4">Inclusion Criteria</h2>
+          
+          <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4">
+            <ul className="space-y-2">
+              <li className="flex items-start gap-3">
+                <span className="text-blue-400 mt-1">✓</span>
+                <span className="text-gray-300 text-sm">Partnership must be publicly announced by official Minima channels</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-400 mt-1">✓</span>
+                <span className="text-gray-300 text-sm">Publication date must be verifiable</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-400 mt-1">✓</span>
+                <span className="text-gray-300 text-sm">Direct link to source (press release, official statement, or documentation)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-400 mt-1">✓</span>
+                <span className="text-gray-300 text-sm">No speculative, rumored, or unconfirmed collaborations</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-blue-400 mt-1">✓</span>
+                <span className="text-gray-300 text-sm">Academic/research collaborations require official institutional confirmation</span>
+              </li>
+            </ul>
           </div>
         </section>
 
-        <div className="bg-amber-900/10 border-l-4 border-amber-500 p-4 text-sm text-amber-300">
-          <div className="flex items-start">
-            <span className="mr-2 mt-0.5">⚠️</span>
-            <span>This site does not represent the official Minima team. All information is compiled from publicly available sources.</span>
-          </div>
+        {/* Universal Disclaimer Block - REQUIRED ON EVERY PAGE */}
+        <div className="bg-amber-900/20 border border-amber-700/50 rounded-lg p-4 mb-8">
+          <p className="text-amber-200 text-sm">
+            <strong>⚠️ Disclaimer:</strong> This site does not represent the official Minima team. 
+            All information is compiled from publicly available sources.{' '}
+            <Link href="/disclaimer" className="underline hover:text-amber-100">
+              Learn more
+            </Link>
+          </p>
         </div>
-      </main>
 
-      {/* Local footer REMOVED to prevent duplication with global footer from layout.tsx */}
+        {/* Last Updated */}
+        <section className="border-t border-gray-700 pt-6">
+          <p className="text-gray-500 text-sm">
+            Last updated: February 17, 2026
+          </p>
+        </section>
+
+      </article>
     </div>
   );
 }
-
