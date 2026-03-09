@@ -100,12 +100,12 @@ export default function ContactPage() {
             <li>
               Discord Community:{' '}
               <a 
-                href="https://discord.gg/minima" 
+                href="https://discord.com/invite/minimaglobal" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-blue-400 hover:text-blue-300 underline"
               >
-                discord.gg/minima
+                discord.com/invite/minimaglobal
               </a>
             </li>
           </ul>
