@@ -233,19 +233,14 @@ export default function DevelopersPage() {
           </div>
         </section>
 
-        {/* Notice Box */}
+        {/* Universal Disclaimer Block - REQUIRED ON EVERY PAGE */}
         <div className="bg-amber-900/20 border border-amber-700/50 rounded-lg p-4 mb-8">
           <p className="text-amber-200 text-sm">
-            <strong>Note:</strong> This documentation is maintained independently. For the most 
-            up-to-date developer resources, always start with{' '}
-            <a 
-              href="https://build.minima.global/" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="underline hover:text-amber-100"
-            >
-              build.minima.global
-            </a>.
+            <strong>⚠️ Disclaimer:</strong> This site does not represent the official Minima team. 
+            All information is compiled from publicly available sources.{' '}
+            <Link href="/disclaimer" className="underline hover:text-amber-100">
+              Learn more
+            </Link>
           </p>
         </div>
 
