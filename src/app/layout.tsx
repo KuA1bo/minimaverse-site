@@ -79,10 +79,10 @@ export default function RootLayout({
             <p className="flex justify-center gap-3 md:gap-4 flex-wrap">
               {/* Meta-links: project information */}
               <Link 
-                href="/contact" 
+                href="/links" 
                 className="hover:text-gray-300 transition-colors"
               >
-                Contact
+                Links
               </Link>
               <span className="text-gray-700">•</span>
               <Link 
