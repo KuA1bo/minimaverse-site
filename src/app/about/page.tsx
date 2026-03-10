@@ -74,8 +74,8 @@ export default function AboutPage() {
         </ul>
       </div>
 
-      {/* Content */}
-      <article className="prose prose-invert max-w-none">
+      {/* Content - Added animate-fade-in class */}
+      <article className="prose prose-invert max-w-none animate-fade-in">
         
         {/* Section 1: About This Documentation Project */}
         <section className="mb-10">
@@ -340,4 +340,3 @@ export default function AboutPage() {
     </div>
   );
 }
-
