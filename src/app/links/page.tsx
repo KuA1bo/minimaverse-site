@@ -33,10 +33,50 @@ export default function LinksPage() {
         </div>
       </header>
 
+      {/* Primary Sources Box */}
+      <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 mb-8">
+        <h3 className="text-white font-medium mb-3">📚 Primary Sources for This Page</h3>
+        <ul className="space-y-2 text-sm">
+          <li>
+            <span className="text-gray-400">Official Website:</span>{' '}
+            <a 
+              href="https://minima.global" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline ml-1"
+            >
+              minima.global
+            </a>
+          </li>
+          <li>
+            <span className="text-gray-400">Documentation:</span>{' '}
+            <a 
+              href="https://docs.minima.global" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline ml-1"
+            >
+              docs.minima.global
+            </a>
+          </li>
+          <li>
+            <span className="text-gray-400">GitHub:</span>{' '}
+            <a 
+              href="https://github.com/minima-global" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-blue-400 hover:text-blue-300 underline ml-1"
+            >
+              github.com/minima-global
+            </a>
+          </li>
+        </ul>
+      </div>
+
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Section 1: Project Feedback (for this documentation site) */}
+        {/* Section 1: Project Feedback */}
         <section className="mb-10">
           <h2 className="text-2xl font-bold text-white mb-4">Project Feedback</h2>
           <p className="text-gray-300 leading-relaxed mb-4">
@@ -98,7 +138,72 @@ export default function LinksPage() {
           </ul>
         </section>
 
-        {/* Section 3: Official Resources */}
+        {/* NEW Section 3: Official Email Contacts */}
+        <section className="mb-10">
+          <h2 className="text-2xl font-bold text-white mb-4">Official Email Contacts</h2>
+          <p className="text-gray-300 leading-relaxed mb-4">
+            For formal inquiries, partnerships, or technical support, contact Minima directly:
+          </p>
+          
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            {/* Enterprise / Partnerships */}
+            <a 
+              href="mailto:enterprise@minima.global" 
+              className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-blue-500 transition-colors block group"
+            >
+              <div className="flex items-start gap-3">
+                <span className="text-blue-400 text-xl">🤝</span>
+                <div>
+                  <span className="text-white font-medium text-sm group-hover:text-blue-300 transition-colors">
+                    Partnerships
+                  </span>
+                  <p className="text-gray-500 text-xs mt-1">Enterprise collaborations & business inquiries</p>
+                  <p className="text-blue-400 text-xs mt-2 underline">enterprise@minima.global</p>
+                </div>
+              </div>
+            </a>
+
+            {/* General Questions */}
+            <a 
+              href="mailto:info@minima.global" 
+              className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-blue-500 transition-colors block group"
+            >
+              <div className="flex items-start gap-3">
+                <span className="text-blue-400 text-xl">ℹ️</span>
+                <div>
+                  <span className="text-white font-medium text-sm group-hover:text-blue-300 transition-colors">
+                    General Info
+                  </span>
+                  <p className="text-gray-500 text-xs mt-1">General questions & public inquiries</p>
+                  <p className="text-blue-400 text-xs mt-2 underline">info@minima.global</p>
+                </div>
+              </div>
+            </a>
+
+            {/* Technical Support */}
+            <a 
+              href="mailto:querysupport@minima.global" 
+              className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-blue-500 transition-colors block group"
+            >
+              <div className="flex items-start gap-3">
+                <span className="text-blue-400 text-xl">🔧</span>
+                <div>
+                  <span className="text-white font-medium text-sm group-hover:text-blue-300 transition-colors">
+                    Technical Support
+                  </span>
+                  <p className="text-gray-500 text-xs mt-1">Protocol issues & developer assistance</p>
+                  <p className="text-blue-400 text-xs mt-2 underline">querysupport@minima.global</p>
+                </div>
+              </div>
+            </a>
+          </div>
+          
+          <p className="text-gray-500 text-xs mt-4 italic">
+            Note: Email responses may take 3-5 business days. For urgent matters, use Discord or Telegram channels above.
+          </p>
+        </section>
+
+        {/* Section 4: Official Resources */}
         <section className="mb-10">
           <h2 className="text-2xl font-bold text-white mb-4">Official Resources</h2>
           <p className="text-gray-300 leading-relaxed mb-4">
@@ -171,7 +276,7 @@ export default function LinksPage() {
           </div>
         </section>
 
-        {/* Section 4: Regional Community Channels */}
+        {/* Section 5: Regional Community Channels */}
         <section className="mb-10">
           <h2 className="text-2xl font-bold text-white mb-4">Regional Community Channels</h2>
           <p className="text-gray-300 leading-relaxed mb-4">
@@ -236,7 +341,7 @@ export default function LinksPage() {
           </p>
         </section>
 
-        {/* Section 5: Response Time */}
+        {/* Section 6: Response Time */}
         <section className="mb-8">
           <h2 className="text-2xl font-bold text-white mb-4">Response Time</h2>
           <p className="text-gray-300 leading-relaxed">
@@ -246,7 +351,19 @@ export default function LinksPage() {
           </p>
         </section>
 
-        <section className="border-t border-gray-700 pt-6 mt-12">
+        {/* Universal Disclaimer Block */}
+        <div className="bg-amber-900/20 border border-amber-700/50 rounded-lg p-4 mb-8">
+          <p className="text-amber-200 text-sm">
+            <strong>⚠️ Disclaimer:</strong> This site does not represent the official Minima team. 
+            All information is compiled from publicly available sources.{' '}
+            <Link href="/disclaimer" className="underline hover:text-amber-100">
+              Learn more
+            </Link>
+          </p>
+        </div>
+
+        {/* Last Updated */}
+        <section className="border-t border-gray-700 pt-6">
           <p className="text-gray-500 text-sm">
             Last updated: February 17, 2026
           </p>
@@ -256,4 +373,3 @@ export default function LinksPage() {
     </div>
   );
 }
-
