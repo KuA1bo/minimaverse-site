@@ -1,104 +1,92 @@
-/* src/app/globals.css */
-/* Global styles for Minimaverse - with subtle animations */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* ===== ANIMATIONS ===== */
-
-/* Fade-in animation for page content */
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+:root {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 0, 0, 0;
+  --background-end-rgb: 0, 0, 0;
 }
 
-/* Apply fade-in to main content areas */
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+/* === Smooth scroll === */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+/* === Custom selection color === */
+::selection {
+  background-color: rgba(59, 130, 246, 0.3);
+  color: rgb(219, 234, 254);
+}
+
+/* === Enhanced focus for accessibility === */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgb(59, 130, 246);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* === Fade-in animation (existing) === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 .animate-fade-in {
   animation: fadeIn 0.3s ease-out forwards;
 }
 
-/* Staggered fade-in for lists/cards (optional, use with delay utilities) */
-.animate-fade-in-delay-1 { animation-delay: 0.1s; }
-.animate-fade-in-delay-2 { animation-delay: 0.2s; }
-.animate-fade-in-delay-3 { animation-delay: 0.3s; }
-.animate-fade-in-delay-4 { animation-delay: 0.4s; }
-
-/* Smooth scroll behavior for anchor links */
-html {
-  scroll-behavior: smooth;
+/* === Fade-in-up animation (NEW) === */
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(12px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+  opacity: 0;
 }
 
-/* ===== ACCESSIBILITY ===== */
+/* === Staggered delay utility classes === */
+.delay-75 { animation-delay: 75ms; }
+.delay-150 { animation-delay: 150ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
 
-/* Reduce motion for users who prefer it */
+/* === Ping animation for status badges === */
+@keyframes ping {
+  75%, 100% { 
+    transform: scale(2); 
+    opacity: 0; 
+  }
+}
+.animate-ping {
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* === Respect reduced motion === */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-}
-
-/* Focus visible for keyboard navigation */
-:focus-visible {
-  outline: 2px solid theme('colors.blue.500');
-  outline-offset: 2px;
-}
-
-/* ===== BASE STYLES ===== */
-
-body {
-  @apply bg-black text-gray-200 antialiased;
-}
-
-/* Prose overrides for better dark mode readability */
-.prose {
-  @apply text-gray-300;
-}
-
-.prose a {
-  @apply text-blue-400 hover:text-blue-300 transition-colors;
-}
-
-.prose h1,
-.prose h2,
-.prose h3,
-.prose h4 {
-  @apply text-white;
-}
-
-.prose code {
-  @apply bg-gray-800 text-gray-200 px-1.5 py-0.5 rounded text-sm;
-}
-
-/* ===== UTILITIES ===== */
-
-/* Subtle hover lift for cards (optional enhancement) */
-.hover-lift {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.hover-lift:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-/* Pulse animation for attention (use sparingly) */
-@keyframes subtlePulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.85; }
-}
-
-.animate-subtle-pulse {
-  animation: subtlePulse 2s ease-in-out infinite;
 }
