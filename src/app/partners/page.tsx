@@ -75,7 +75,7 @@ export default function PartnersPage() {
       </div>
 
       {/* Content */}
-      <article className="prose prose-invert max-w-none">
+      <article className="prose prose-invert max-w-none animate-fade-in">
         
         {/* Intro */}
         <section className="mb-10">
