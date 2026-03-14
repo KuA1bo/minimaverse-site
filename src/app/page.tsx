@@ -93,7 +93,7 @@ export default function HomePage() {
       </div>
 
       {/* Content */}
-      <article className="prose prose-invert max-w-none">
+      <article className="prose prose-invert max-w-none animate-fade-in">
         
         {/* About This Site */}
         <section className="mb-10">
