@@ -1,6 +1,6 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
-// Content verified against: minima.global + Whitepaper v1.1 + Tx-PoW docs
+// Content verified against: docs.minima.global + Whitepaper v1.1
 
 import Link from 'next/link';
 
@@ -82,9 +82,9 @@ export default function ProtocolPage() {
       <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 mb-8 opacity-0 animate-fade-in-up delay-75">
         <h3 className="text-white font-medium mb-3">📚 Primary Sources</h3>
         <ul className="space-y-2 text-sm text-gray-300">
-          <li>• <ExternalLink href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf" className="text-blue-400 hover:text-blue-300">Whitepaper v1.1</ExternalLink> — full protocol specification</li>
+          <li>• <ExternalLink href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf" className="text-blue-400 hover:text-blue-300">Whitepaper v1.1 (PDF)</ExternalLink> — full protocol specification</li>
           <li>• <ExternalLink href="https://docs.minima.global/docs/core/minimawhitepaper/txpow" className="text-blue-400 hover:text-blue-300">Tx-PoW Documentation</ExternalLink> — consensus mechanics</li>
-          <li>• <ExternalLink href="https://minima.global" className="text-blue-400 hover:text-blue-300">minima.global/technology</ExternalLink> — architecture overview</li>
+          <li>• <ExternalLink href="https://docs.minima.global/docs/learn/network-overview" className="text-blue-400 hover:text-blue-300">Network Overview</ExternalLink> — architecture and layers</li>
         </ul>
       </div>
 
@@ -106,8 +106,8 @@ export default function ProtocolPage() {
             chain history independently.
           </p>
           <p className="text-sm text-gray-500 mt-4">
-            <ExternalLink href="https://minima.global" className="text-blue-400 hover:text-blue-300">
-              Source: minima.global — "The backbone of a secure censorship resistant web"
+            <ExternalLink href="https://docs.minima.global/docs/core/minimawhitepaper/consensusforksandimmutableprotocols" className="text-blue-400 hover:text-blue-300">
+              Source: Consensus, Forks and Immutable Protocols
             </ExternalLink>
           </p>
         </section>
@@ -172,8 +172,8 @@ export default function ProtocolPage() {
             </div>
           </div>
           <p className="text-sm text-gray-500 mt-4">
-            <ExternalLink href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf" className="text-blue-400 hover:text-blue-300">
-              Source: Whitepaper v1.1 — Sections: "A Cascading Chain", "Storage-less MMR UTXO"
+            <ExternalLink href="https://docs.minima.global/docs/learn/mmr-database" className="text-blue-400 hover:text-blue-300">
+              Source: MMR Database Documentation
             </ExternalLink>
           </p>
         </section>
@@ -216,8 +216,8 @@ export default function ProtocolPage() {
             </table>
           </div>
           <p className="text-sm text-gray-500 mt-3">
-            <ExternalLink href="https://minima.global" className="text-blue-400 hover:text-blue-300">
-              Source: minima.global — Protocol Layers Overview
+            <ExternalLink href="https://docs.minima.global/docs/learn/glossary#maxima" className="text-blue-400 hover:text-blue-300">
+              Source: Maxima — Glossary
             </ExternalLink>
           </p>
         </section>
@@ -264,8 +264,8 @@ export default function ProtocolPage() {
             </li>
           </ul>
           <p className="text-sm text-gray-500 mt-4">
-            <ExternalLink href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf" className="text-blue-400 hover:text-blue-300">
-              Source: Whitepaper v1.1 — Technical Specifications
+            <ExternalLink href="https://docs.minima.global/docs/core/minimawhitepaper/introduction" className="text-blue-400 hover:text-blue-300">
+              Source: Whitepaper Introduction (Docs)
             </ExternalLink>
           </p>
         </section>
