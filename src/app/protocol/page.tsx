@@ -1,11 +1,16 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
-// Content verified against: docs.minima.global + Whitepaper v1.1
+// Final version: section icons + fixed links + clean hrefs + visual enhancements
 
 import Link from 'next/link';
 
 // ExternalLink component for all external links with ↗ icon
-const ExternalLink = ({ href, children, className = '', ariaLabel }: { 
+const ExternalLink = ({ 
+  href, 
+  children, 
+  className = '', 
+  ariaLabel 
+}: { 
   href: string; 
   children: React.ReactNode; 
   className?: string;
@@ -19,7 +24,7 @@ const ExternalLink = ({ href, children, className = '', ariaLabel }: {
     aria-label={ariaLabel}
   >
     {children}
-    <svg className="w-3 h-3 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <svg className="w-3 h-3 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
     </svg>
   </a>
@@ -27,21 +32,22 @@ const ExternalLink = ({ href, children, className = '', ariaLabel }: {
 
 // StatusBadge component for feature status indicators
 const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'community' }) => {
-  const styles = {
-    'confirmed': 'bg-green-900/40 text-green-300 border-green-700/50',
-    'in-development': 'bg-yellow-900/40 text-yellow-300 border-yellow-700/50',
-    'community': 'bg-gray-700/40 text-gray-300 border-gray-600/50'
+  const config = {
+    'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500' },
+    'in-development': { bg: 'bg-yellow-900/40', text: 'text-yellow-300', border: 'border-yellow-700/50', dot: 'bg-yellow-500' },
+    'community': { bg: 'bg-gray-700/40', text: 'text-gray-300', border: 'border-gray-600/50', dot: 'bg-gray-400' },
   };
-  const dotStyles = {
-    'confirmed': 'bg-green-500',
-    'in-development': 'bg-yellow-500 animate-ping',
-    'community': 'bg-gray-400'
-  };
+  const style = config[status];
   
   return (
-    <span className={`inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-xs border ${styles[status]}`}>
-      <span className={`w-1.5 h-1.5 rounded-full ${dotStyles[status]}`} />
-      {status}
+    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ${style.bg} ${style.text} text-xs font-medium border ${style.border}`}>
+      <span className="relative flex h-2 w-2">
+        {status === 'in-development' && (
+          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75" />
+        )}
+        <span className={`relative inline-flex rounded-full h-2 w-2 ${style.dot}`} />
+      </span>
+      {status === 'confirmed' ? 'confirmed' : status === 'in-development' ? 'in-development' : 'community-maintained'}
     </span>
   );
 };
@@ -50,21 +56,20 @@ export default function ProtocolPage() {
   return (
     <div className="max-w-4xl mx-auto">
       
-      {/* Unified Header */}
+      {/* Unified Header with gradient accent */}
       <header className="mb-8">
         <div className="flex justify-between items-start">
-          <div className="w-full">
+          <div className="relative inline-block w-full">
             <Link 
               href="/" 
               className="text-gray-400 hover:text-white transition-colors inline-block mb-4"
             >
               ← Back to Minimaverse
             </Link>
-            <h1 className="text-3xl font-bold text-white mb-2 relative">
-              Minima Protocol
-              <span className="absolute -bottom-2 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
-            </h1>
+            <h1 className="text-3xl font-bold text-white mb-2">Minima Protocol</h1>
             <p className="text-gray-400">Architecture, consensus, and technical specifications</p>
+            {/* Gradient accent line under title */}
+            <span className="absolute -bottom-2 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
           <ExternalLink 
             href="https://github.com/KuA1bo/minimaverse-site" 
@@ -78,8 +83,10 @@ export default function ProtocolPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box — consolidated reference point */}
-      <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 mb-8 opacity-0 animate-fade-in-up delay-75">
+      {/* Primary Sources Box */}
+      <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 mb-8 
+                      transition-all duration-200 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5 
+                      opacity-0 animate-fade-in-up delay-75">
         <h3 className="text-white font-medium mb-3">📚 Primary Sources</h3>
         <ul className="space-y-2 text-sm text-gray-300">
           <li>• <ExternalLink href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf" className="text-blue-400 hover:text-blue-300">Whitepaper v1.1 (PDF)</ExternalLink> — full protocol specification</li>
@@ -91,9 +98,9 @@ export default function ProtocolPage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Section 1: Introduction — Edge Consensus */}
+        {/* Section 1: Edge Consensus */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
-          <h2 className="text-2xl font-bold text-white mb-4">Edge Consensus Architecture</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">🌐 Edge Consensus Architecture</h2>
           <p className="text-gray-300 leading-relaxed">
             Minima implements <strong>edge consensus</strong>, where block production and validation 
             are carried out by every device connected to the network. Unlike traditional blockchains 
@@ -112,12 +119,13 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {/* Section 2: Tx-PoW — Collaborative Proof of Work */}
+        {/* Section 2: Tx-PoW */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
-          <h2 className="text-2xl font-bold text-white mb-4">Tx-PoW: Collaborative Proof of Work</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">⛏️ Tx-PoW: Collaborative Proof of Work</h2>
           
           <div className="space-y-4">
-            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-200">
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 
+                            transition-all duration-200 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5">
               <h3 className="text-white font-medium mb-2">How Tx-PoW Works</h3>
               <p className="text-gray-300 text-sm mb-3">
                 Each transaction in Minima performs a small amount of Proof of Work (~10 seconds 
@@ -128,7 +136,8 @@ export default function ProtocolPage() {
               <StatusBadge status="confirmed" />
             </div>
 
-            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-200">
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 
+                            transition-all duration-200 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5">
               <h3 className="text-white font-medium mb-2">Security Through Collaboration</h3>
               <p className="text-gray-300 text-sm mb-3">
                 Minima nodes collaborate rather than compete. The total network security equals 
@@ -146,12 +155,13 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {/* Section 3: Cascading Chain + MMR UTXO */}
+        {/* Section 3: Data Structures */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
-          <h2 className="text-2xl font-bold text-white mb-4">Efficient Data Structures</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">🗄️ Efficient Data Structures</h2>
           
           <div className="space-y-4">
-            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-200">
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 
+                            transition-all duration-200 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5">
               <h3 className="text-white font-medium mb-2">Cascading Chain with Superblocks</h3>
               <p className="text-gray-300 text-sm mb-3">
                 Minima's Cascading Chain structure efficiently manages blockchain growth through 
@@ -161,7 +171,8 @@ export default function ProtocolPage() {
               <StatusBadge status="confirmed" />
             </div>
 
-            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-200">
+            <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 
+                            transition-all duration-200 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5">
               <h3 className="text-white font-medium mb-2">Merkle Mountain Range (MMR) UTXO</h3>
               <p className="text-gray-300 text-sm mb-3">
                 Minima utilizes a Merkle Mountain Range database to store only the UTXOs relevant 
@@ -180,7 +191,7 @@ export default function ProtocolPage() {
 
         {/* Section 4: Protocol Layers */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
-          <h2 className="text-2xl font-bold text-white mb-4">Protocol Layers</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">🧱 Protocol Layers</h2>
           
           <div className="overflow-x-auto">
             <table className="w-full border border-gray-700 rounded-lg">
@@ -216,15 +227,15 @@ export default function ProtocolPage() {
             </table>
           </div>
           <p className="text-sm text-gray-500 mt-3">
-            <ExternalLink href="https://docs.minima.global/docs/learn/glossary#maxima" className="text-blue-400 hover:text-blue-300">
-              Source: Maxima — Glossary
+            <ExternalLink href="https://docs.minima.global/docs/learn/network-overview" className="text-blue-400 hover:text-blue-300">
+              Source: Network Overview
             </ExternalLink>
           </p>
         </section>
 
-        {/* Section 5: Key Technical Specifications */}
+        {/* Section 5: Technical Specifications */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
-          <h2 className="text-2xl font-bold text-white mb-4">Technical Specifications</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">⚙️ Technical Specifications</h2>
           
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
@@ -264,17 +275,18 @@ export default function ProtocolPage() {
             </li>
           </ul>
           <p className="text-sm text-gray-500 mt-4">
-            <ExternalLink href="https://docs.minima.global/docs/core/minimawhitepaper/introduction" className="text-blue-400 hover:text-blue-300">
-              Source: Whitepaper Introduction (Docs)
+            <ExternalLink href="https://docs.minima.global/docs/core/at-a-glance" className="text-blue-400 hover:text-blue-300">
+              Source: Core Features Overview
             </ExternalLink>
           </p>
         </section>
 
         {/* Section 6: Network Participation */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
-          <h2 className="text-2xl font-bold text-white mb-4">Network Participation Requirements</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">👥 Network Participation Requirements</h2>
           
-          <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5 transition-all duration-200">
+          <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 
+                          transition-all duration-200 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5">
             <p className="text-gray-300 text-sm mb-3">
               To maintain network health and personal security, Minima users should connect their 
               node at least once per week. This ensures:
@@ -292,7 +304,9 @@ export default function ProtocolPage() {
         </section>
 
         {/* Universal Disclaimer Block */}
-        <div className="bg-amber-900/20 border border-amber-700/50 rounded-lg p-4 mb-8 opacity-0 animate-fade-in-up delay-200">
+        <div className="bg-amber-900/20 border border-amber-700/50 rounded-lg p-4 mb-8 
+                        transition-all duration-200 hover:border-amber-600/70 
+                        opacity-0 animate-fade-in-up delay-200">
           <p className="text-amber-200 text-sm">
             <strong>⚠️ Disclaimer:</strong> This site does not represent the official Minima team. 
             All information is compiled from publicly available sources.{' '}
