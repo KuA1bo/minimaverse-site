@@ -1,6 +1,6 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
-// Hybrid version: full content + visual enhancements + clean links
+// Final version: section icons + clean links + fixed duplicate header + visual polish
 
 import Link from 'next/link';
 
@@ -124,6 +124,7 @@ export default function EcosystemPage() {
         
         {/* Intro */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+          <h2 className="text-2xl font-bold text-white mb-4">📦 Verified Projects & Tools</h2>
           <p className="text-gray-300 leading-relaxed">
             This page documents verified projects, tools, and services that operate on or integrate 
             with the Minima Protocol. Inclusion does not constitute endorsement — all entries are 
@@ -141,7 +142,7 @@ export default function EcosystemPage() {
 
         {/* Core Infrastructure */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
-          <h2 className="text-2xl font-bold text-white mb-4">Core Infrastructure</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">🏗️ Core Infrastructure</h2>
           
           <div className="space-y-4">
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 
@@ -188,7 +189,7 @@ export default function EcosystemPage() {
 
         {/* Developer Tools */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
-          <h2 className="text-2xl font-bold text-white mb-4">Developer Tools</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">🛠️ Developer Tools</h2>
           
           <div className="space-y-4">
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 
@@ -249,7 +250,7 @@ export default function EcosystemPage() {
 
         {/* Wallets */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
-          <h2 className="text-2xl font-bold text-white mb-4">Wallets</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">👛 Wallets</h2>
           
           <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 
                           transition-all duration-200 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5">
@@ -286,7 +287,7 @@ export default function EcosystemPage() {
 
         {/* Centralized Exchanges */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
-          <h2 className="text-2xl font-bold text-white mb-4">Centralized Exchanges</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">💱 Centralized Exchanges</h2>
           
           <div className="space-y-4">
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 
@@ -333,7 +334,7 @@ export default function EcosystemPage() {
 
         {/* Edge Deployments */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
-          <h2 className="text-2xl font-bold text-white mb-4">Edge Deployments</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">📡 Edge Deployments</h2>
           
           <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 
                           transition-all duration-200 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/5">
