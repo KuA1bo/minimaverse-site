@@ -1,6 +1,6 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
-// Final version: verified links, no duplicates, accessibility-ready
+// Hybrid version: full content + visual enhancements + section icons
 
 import Link from 'next/link';
 
@@ -109,7 +109,7 @@ export default function AboutPage() {
           <li>
             <span className="text-gray-400">Documentation:</span>{' '}
             <ExternalLink 
-              href="https://docs.minima.global/"
+              href="https://docs.minima.global"
               className="text-blue-400 hover:text-blue-300 underline ml-1"
             >
               docs.minima.global
@@ -123,7 +123,7 @@ export default function AboutPage() {
         
         {/* Section 1: About This Project */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
-          <h2 className="text-2xl font-bold text-white mb-4">About This Project</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">📄 About This Project</h2>
           <p className="text-gray-300 leading-relaxed">
             <strong>Minimaverse</strong> is an independent documentation project focused on the 
             Minima Protocol ecosystem. This website is not affiliated with, endorsed by, or 
@@ -138,7 +138,7 @@ export default function AboutPage() {
 
         {/* Section 2: What is Minima Protocol */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
-          <h2 className="text-2xl font-bold text-white mb-4">What is Minima Protocol</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">⛓️ What is Minima Protocol</h2>
           <p className="text-gray-300 leading-relaxed mb-4">
             Minima is a decentralized blockchain protocol designed to run on any device, from 
             mobile phones to IoT hardware, while maintaining full node participation for every 
@@ -176,7 +176,7 @@ export default function AboutPage() {
 
         {/* Section 3: Core Technical Features */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
-          <h2 className="text-2xl font-bold text-white mb-4">Core Technical Features</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">⚙️ Core Technical Features</h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 
@@ -243,7 +243,7 @@ export default function AboutPage() {
           <p className="text-gray-500 text-xs mt-4">
             Explore technical docs:{' '}
             <ExternalLink 
-              href="https://docs.minima.global/"
+              href="https://docs.minima.global"
               className="text-blue-400 hover:text-blue-300 underline"
             >
               docs.minima.global
@@ -253,7 +253,7 @@ export default function AboutPage() {
 
         {/* Section 4: Comparison Table */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
-          <h2 className="text-2xl font-bold text-white mb-4">Minima vs Traditional Blockchains</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">⚖️ Minima vs Traditional Blockchains</h2>
           
           <div className="overflow-x-auto">
             <table className="w-full border border-gray-700 rounded-lg">
@@ -302,7 +302,7 @@ export default function AboutPage() {
 
         {/* Section 5: Decentralization Principles */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
-          <h2 className="text-2xl font-bold text-white mb-4">Decentralization Principles</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">🔐 Decentralization Principles</h2>
           
           <ul className="space-y-4">
             <li className="flex items-start gap-3">
@@ -338,7 +338,7 @@ export default function AboutPage() {
 
         {/* Section 6: Current Status & Considerations */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
-          <h2 className="text-2xl font-bold text-white mb-4">Current Status & Considerations</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">📋 Current Status & Considerations</h2>
           
           <div className="space-y-4">
             <div className="bg-gray-800/50 border border-gray-700 rounded-lg p-4 
@@ -372,13 +372,13 @@ export default function AboutPage() {
 
         {/* Section 7: Developer Resources */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
-          <h2 className="text-2xl font-bold text-white mb-4">Developer Resources</h2>
+          <h2 className="text-2xl font-bold text-white mb-4">🛠️ Developer Resources</h2>
           <p className="text-gray-300 leading-relaxed mb-4">
             For developers interested in building on Minima Protocol:
           </p>
           
           <ExternalLink 
-            href="https://build.minima.global/" 
+            href="https://build.minima.global" 
             className="block bg-blue-900/30 border border-blue-700/50 rounded-lg p-4 
                       hover:border-blue-600 hover:shadow-lg hover:shadow-blue-500/10 
                       transition-all duration-200 group"
