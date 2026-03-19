@@ -294,7 +294,7 @@ export default function EcosystemPage() {
               <h3 className="text-white font-medium mb-2">MEXC</h3>
               <p className="text-gray-300 text-sm mb-2">Trading pair: MINIMA/USDT</p>
               <ExternalLink 
-                href="https://www.mexc.com/ru-RU/exchange/MINIMA_USDT" 
+                href="https://www.mexc.com/exchange/MINIMA_USDT" 
                 className="text-blue-400 hover:text-blue-300 underline text-sm"
               >
                 Trade on MEXC
@@ -306,7 +306,7 @@ export default function EcosystemPage() {
               <h3 className="text-white font-medium mb-2">BitMart</h3>
               <p className="text-gray-300 text-sm mb-2">Trading pair: MINIMA/USDT</p>
               <ExternalLink 
-                href="https://www.bitmart.com/ru-RU/trade/MINIMA_USDT?type=spot" 
+                href="https://www.bitmart.com/trade/MINIMA_USDT?type=spot" 
                 className="text-blue-400 hover:text-blue-300 underline text-sm"
               >
                 Trade on BitMart
