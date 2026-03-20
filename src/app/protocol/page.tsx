@@ -1,6 +1,6 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
-// Final version: section icons + fixed links + clean hrefs + visual enhancements
+// Final version: section icons + fixed links + terminology correction (Complete node) + clean hrefs
 
 import Link from 'next/link';
 
@@ -298,7 +298,7 @@ export default function ProtocolPage() {
             </ul>
             <p className="text-gray-300 text-sm mt-3">
               <strong>Note:</strong> There are no miners, no token incentives for validation, 
-              and no ever-growing database. Every user runs a complete node. Forever.
+              and no ever-growing database. Every user runs a Complete node. Forever.
             </p>
           </div>
         </section>
