@@ -1,7 +1,7 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
 // Upscayl-style visual enhancements applied (content unchanged)
-// Fixed: header line break + updated date + GitHub icon position & glow + smaller icon + tighter brighter glow + icon lower
+// Fixed: header line break + updated date + GitHub icon position & glow + smaller icon + tighter brighter glow + icon lower + core docs link updated
 
 import Link from 'next/link';
 
@@ -285,10 +285,10 @@ export default function AboutPage() {
           <p className="text-gray-500 text-xs mt-4">
             Explore technical docs:{' '}
             <ExternalLink 
-              href="https://docs.minima.global  "
+              href="https://docs.minima.global/docs/core/at-a-glance"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
-              docs.minima.global
+              docs.minima.global/docs/core/at-a-glance
             </ExternalLink>
           </p>
         </section>
