@@ -1,7 +1,6 @@
 // src/app/layout.tsx
 // Root layout component for Minimaverse - Next.js App Router
-// Upscayl-style background + enhanced animated orbs
-// Fixed: removed logo glow in header (black background conflict)
+// Fixed: logo blending with header background
 
 import './globals.css';
 import Link from 'next/link';
@@ -47,15 +46,13 @@ export const metadata: Metadata = {
   },
 };
 
-// Enhanced background orbs - Upscayl style: vibrant, breathing, content-aware
+// Enhanced background orbs - Upscayl style
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-    {/* Purple orb - left side, more intense */}
     <div 
       className="absolute top-1/4 -left-32 w-80 h-80 bg-purple-500/40 rounded-full blur-2xl animate-float-slow will-change-transform transform-gpu" 
       aria-hidden="true"
     />
-    {/* Blue orb - right side, more intense */}
     <div 
       className="absolute top-3/4 -right-32 w-80 h-80 bg-blue-500/40 rounded-full blur-2xl animate-float-slower will-change-transform transform-gpu" 
       aria-hidden="true"
@@ -63,7 +60,7 @@ const BackgroundOrbs = () => (
   </div>
 );
 
-// Root layout component - wraps all pages in the application
+// Root layout component
 export default function RootLayout({
   children,
 }: {
@@ -82,7 +79,7 @@ export default function RootLayout({
           
           <div className="flex items-center gap-4 max-w-6xl mx-auto px-4 py-3">
             
-            {/* Logo - glow removed for black header background */}
+            {/* Logo - fixed blending with header background */}
             <div className="flex items-center gap-3">
               <Link 
                 href="/" 
@@ -91,7 +88,7 @@ export default function RootLayout({
                 <img
                   src="/logo.webp"
                   alt="Minimaverse Logo"
-                  className="w-10 h-10 object-contain"
+                  className="w-10 h-10 object-contain bg-transparent mix-blend-screen"
                 />
                 <span className="text-xl font-bold bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                   Minimaverse
