@@ -1,7 +1,7 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
 // Upscayl-style visual enhancements applied (content unchanged)
-// Fixed: header line break + updated date
+// Fixed: header line break + updated date + GitHub icon position & glow + smaller icon + tighter brighter glow + icon lower
 
 import Link from 'next/link';
 
@@ -98,10 +98,11 @@ export default function AboutPage() {
             <p className="text-gray-400">Technical overview and project context</p>
           </div>
           
-          {/* GitHub icon - no arrow, centered glow, shifted left */}
-          <div className="flex items-start justify-end relative -translate-x-10">
+          {/* GitHub icon - smaller size, tighter brighter glow, positioned lower, no arrow, shifted left */}
+          <div className="flex items-center justify-end relative -translate-x-10 mt-8">
+            {/* Tighter brighter centered glow - half radius, brighter opacity */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-10 h-10 bg-purple-500/50 rounded-full blur-xl" />
+              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>
             <ExternalLink 
               href="https://github.com/KuA1bo/minimaverse-site  " 
@@ -109,7 +110,7 @@ export default function AboutPage() {
               ariaLabel="View source on GitHub"
               hideArrow={true}
             >
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
               </svg>
             </ExternalLink>
@@ -452,4 +453,3 @@ export default function AboutPage() {
     </div>
   );
 }
-
