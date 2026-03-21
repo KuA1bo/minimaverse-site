@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 // Root layout component for Minimaverse - Next.js App Router
-// Enhanced with Upscayl-style visuals: glassmorphism, gradients, animated nav
+// Upscayl-style background + enhanced animated orbs
 
 import './globals.css';
 import Link from 'next/link';
@@ -46,6 +46,22 @@ export const metadata: Metadata = {
   },
 };
 
+// Enhanced background orbs - Upscayl style: vibrant, breathing, content-aware
+const BackgroundOrbs = () => (
+  <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    {/* Purple orb - left side, more intense */}
+    <div 
+      className="absolute top-1/4 -left-32 w-80 h-80 bg-purple-500/40 rounded-full blur-2xl animate-float-slow will-change-transform transform-gpu" 
+      aria-hidden="true"
+    />
+    {/* Blue orb - right side, more intense */}
+    <div 
+      className="absolute top-3/4 -right-32 w-80 h-80 bg-blue-500/40 rounded-full blur-2xl animate-float-slower will-change-transform transform-gpu" 
+      aria-hidden="true"
+    />
+  </div>
+);
+
 // Root layout component - wraps all pages in the application
 export default function RootLayout({
   children,
@@ -54,43 +70,38 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="flex flex-col min-h-screen bg-black text-gray-200 overflow-y-auto relative">
+      <body className="flex flex-col min-h-screen text-gray-200 overflow-y-auto relative">
         
-        {/* Animated background orbs (same as homepage) */}
-        <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-          <div className="absolute top-1/4 -left-32 w-96 h-96 bg-purple-600/10 rounded-full blur-3xl animate-float-slow" />
-          <div className="absolute top-3/4 -right-32 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl animate-float-slower" />
-        </div>
+        <BackgroundOrbs />
 
-        {/* Global Header - appears on all pages */}
-        <header className="sticky top-0 z-50 mb-8 backdrop-blur-xl bg-black/40 border-b border-gray-700/50 
-                          transition-all duration-300 hover:border-purple-500/30">
-          {/* Animated gradient line */}
+        {/* Global Header */}
+        <header className="sticky top-0 z-50 mb-8 backdrop-blur-xl bg-black/30 border-b border-gray-700/40 
+                          transition-all duration-300 hover:border-purple-500/40">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
           
           <div className="flex items-center gap-4 max-w-6xl mx-auto px-4 py-3">
             
-            {/* Logo and site title - links to homepage */}
+            {/* Logo */}
             <div className="flex items-center gap-3">
               <Link 
                 href="/" 
                 className="group flex items-center gap-2 hover:scale-105 transition-transform duration-300"
               >
                 <div className="relative">
-                  <div className="absolute inset-0 bg-purple-500/30 rounded-lg blur-md group-hover:blur-lg transition-all duration-300" />
+                  <div className="absolute inset-0 bg-purple-500/40 rounded-lg blur-md group-hover:blur-lg transition-all duration-300" />
                   <img
                     src="/logo.webp"
                     alt="Minimaverse Logo"
                     className="relative w-10 h-10 object-contain"
                   />
                 </div>
-                <span className="text-xl font-bold bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+                <span className="text-xl font-bold bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                   Minimaverse
                 </span>
               </Link>
             </div>
 
-            {/* Main navigation links */}
+            {/* Navigation */}
             <nav className="flex-1 flex justify-end gap-1 md:gap-2 flex-wrap">
               {[
                 { href: '/about', label: 'About' },
@@ -109,28 +120,24 @@ export default function RootLayout({
                   className="group relative px-3 py-2 text-sm md:text-base text-gray-400 hover:text-white transition-colors duration-300"
                 >
                   {item.label}
-                  {/* Animated underline - centered expansion */}
                   <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-gradient-to-r from-purple-500 to-blue-500 
                                  group-hover:w-full transition-all duration-300" />
-                  {/* Glow effect on hover */}
-                  <span className="absolute inset-0 bg-purple-500/10 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10" />
                 </Link>
               ))}
             </nav>
           </div>
         </header>
 
-        {/* Main content area - page-specific content renders here */}
+        {/* Main content */}
         <main className="flex-1 max-w-6xl mx-auto w-full px-4 relative z-10">
           {children}
         </main>
 
-        {/* Global Footer - appears on all pages */}
-        <footer className="relative z-10 mt-16 backdrop-blur-xl bg-black/40 border-t border-gray-700/50 
-                          transition-all duration-300 hover:border-purple-500/30">
+        {/* Footer */}
+        <footer className="relative z-10 mt-16 backdrop-blur-xl bg-black/30 border-t border-gray-700/40 
+                          transition-all duration-300 hover:border-purple-500/40">
           <div className="max-w-6xl mx-auto px-4 py-8">
             
-            {/* Footer sections grid */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 text-center md:text-left">
               
               {/* Quick Links */}
@@ -163,7 +170,7 @@ export default function RootLayout({
                 </div>
               </div>
 
-              {/* Social / Legal */}
+              {/* Legal */}
               <div className="space-y-3">
                 <h4 className="text-white font-semibold flex items-center justify-center md:justify-start gap-2">
                   <span className="text-lg">📢</span> Legal
@@ -179,10 +186,8 @@ export default function RootLayout({
               </div>
             </div>
 
-            {/* Divider with gradient */}
-            <div className="relative h-px bg-gradient-to-r from-transparent via-gray-600 to-transparent mb-6" />
+            <div className="relative h-px bg-gray-700 mb-6" />
 
-            {/* Bottom bar */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-gray-500">
               <p className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
