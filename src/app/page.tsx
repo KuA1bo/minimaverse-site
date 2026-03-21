@@ -1,6 +1,6 @@
 // src/app/page.tsx
 // Home page - entry point for Minimaverse documentation hub
-// Enhanced with Upscayl-inspired visuals: animated orbs, glassmorphism, gradient glows
+// Enhanced with Upscayl-inspired visuals + Progressive Enhancement for Firefox/Brave
 
 import Link from 'next/link';
 
@@ -52,12 +52,17 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
   );
 };
 
-// Animated background orbs component
+// Optimized background orbs - Firefox/Brave compatible via CSS @supports
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-    <div className="absolute top-1/4 -left-32 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-float-slow" />
-    <div className="absolute top-3/4 -right-32 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-float-slower" />
-    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-cyan-600/10 rounded-full blur-3xl animate-pulse-slow" />
+    <div 
+      className="absolute top-1/4 -left-24 w-72 h-72 bg-purple-500/20 rounded-full animate-float-slow will-change-transform transform-gpu" 
+      aria-hidden="true"
+    />
+    <div 
+      className="absolute top-3/4 -right-24 w-72 h-72 bg-blue-500/20 rounded-full animate-float-slower will-change-transform transform-gpu" 
+      aria-hidden="true"
+    />
   </div>
 );
 
@@ -68,13 +73,14 @@ export default function HomePage() {
       
       {/* Hero Section - unique to homepage */}
       <section className="mb-12 py-12 border-b border-gray-700/50 opacity-0 animate-fade-in-up delay-75 relative">
-        {/* Animated gradient border */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/20 via-blue-500/20 to-cyan-500/20 rounded-2xl blur-xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
+        {/* Animated gradient border - simplified for compatibility */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
           <div className="flex-1">
             <h1 className="text-4xl sm:text-5xl font-bold mb-4 relative inline-block">
-              <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
+              {/* Gradient text with solid fallback via CSS @supports */}
+              <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Minimaverse
               </span>
               {/* Animated gradient accent line under title */}
@@ -111,8 +117,8 @@ export default function HomePage() {
           </div>
           
           <div className="flex items-start justify-end relative">
-            {/* Glow effect behind GitHub icon */}
-            <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-xl" />
+            {/* Glow effect behind GitHub icon - simplified */}
+            <div className="absolute inset-0 bg-purple-500/20 rounded-full blur-sm" />
             <ExternalLink 
               href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6"
@@ -127,11 +133,11 @@ export default function HomePage() {
       </section>
 
       {/* Primary Sources Box */}
-      <div className="relative bg-gray-800/30 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 mb-8 
+      <div className="relative bg-gray-800/30 border border-gray-700/50 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
-        {/* Animated gradient border on hover */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/10 group-hover:via-blue-500/10 group-hover:to-cyan-500/10 transition-all duration-500 rounded-2xl" />
+        {/* Animated gradient border on hover - simplified */}
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
         
         <div className="relative">
           <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
@@ -177,12 +183,14 @@ export default function HomePage() {
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
             <span className="text-3xl">📋</span>
-            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">About This Site</span>
+            {/* Gradient text with fallback */}
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Site</span>
           </h2>
           
-          <div className="relative bg-gray-800/30 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 
+          <div className="relative bg-gray-800/30 border border-gray-700/50 rounded-2xl p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 group overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            {/* Animated top border - simplified */}
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             
             <p className="text-gray-300 text-sm mb-3 leading-relaxed">
               <strong className="text-white">Minimaverse</strong> is an independent, community-driven information hub 
@@ -209,7 +217,8 @@ export default function HomePage() {
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
             <span className="text-3xl">✅</span>
-            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Project Principles</span>
+            {/* Gradient text with fallback */}
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Project Principles</span>
           </h2>
           
           <div className="space-y-4">
@@ -219,9 +228,10 @@ export default function HomePage() {
               { icon: '✓', title: 'Clear Status Indicators', text: 'All features and projects are marked with clear status labels: confirmed, in development, or experimental.' },
               { icon: '✓', title: 'Neutral Tone', text: 'No marketing language, hype, or subjective evaluations. Just facts.' },
             ].map((principle, index) => (
-              <div key={index} className="relative bg-gray-800/30 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 
+              <div key={index} className="relative bg-gray-800/30 border border-gray-700/50 rounded-2xl p-6 
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 group overflow-hidden hover:-translate-y-1">
-                <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+                {/* Animated side border - simplified */}
+                <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
                 <h3 className="text-white font-semibold mb-2 flex items-center gap-2">
                   <span className="text-purple-400 text-lg">{principle.icon}</span>
                   {principle.title}
@@ -238,7 +248,8 @@ export default function HomePage() {
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
             <span className="text-3xl">🔗</span>
-            <span className="bg-gradient-to-r from-white to-gray-400 bg-clip-text text-transparent">Quick Links</span>
+            {/* Gradient text with fallback */}
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Quick Links</span>
           </h2>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -262,7 +273,7 @@ export default function HomePage() {
                 ]
               },
             ].map((section, index) => (
-              <div key={index} className="relative bg-gray-800/30 backdrop-blur-xl border border-gray-700/50 rounded-2xl p-6 
+              <div key={index} className="relative bg-gray-800/30 border border-gray-700/50 rounded-2xl p-6 
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/10 group overflow-hidden hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <h3 className="text-white font-semibold mb-4 flex items-center gap-2 relative">
@@ -290,10 +301,11 @@ export default function HomePage() {
         </section>
 
         {/* Universal Disclaimer Block */}
-        <div className="relative bg-amber-900/20 backdrop-blur-xl border border-amber-700/50 rounded-2xl p-6 mb-8 
+        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
                         opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-orange-500" />
+          {/* Top accent line */}
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
             <strong className="flex items-center gap-2 mb-2">
               <span className="text-lg">⚠️</span>
