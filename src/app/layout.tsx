@@ -1,6 +1,7 @@
 // src/app/layout.tsx
 // Root layout component for Minimaverse - Next.js App Router
 // Upscayl-style background + enhanced animated orbs
+// Fixed: removed logo glow in header (black background conflict)
 
 import './globals.css';
 import Link from 'next/link';
@@ -81,20 +82,17 @@ export default function RootLayout({
           
           <div className="flex items-center gap-4 max-w-6xl mx-auto px-4 py-3">
             
-            {/* Logo */}
+            {/* Logo - glow removed for black header background */}
             <div className="flex items-center gap-3">
               <Link 
                 href="/" 
                 className="group flex items-center gap-2 hover:scale-105 transition-transform duration-300"
               >
-                <div className="relative">
-                  <div className="absolute inset-0 bg-purple-500/40 rounded-lg blur-md group-hover:blur-lg transition-all duration-300" />
-                  <img
-                    src="/logo.webp"
-                    alt="Minimaverse Logo"
-                    className="relative w-10 h-10 object-contain"
-                  />
-                </div>
+                <img
+                  src="/logo.webp"
+                  alt="Minimaverse Logo"
+                  className="w-10 h-10 object-contain"
+                />
                 <span className="text-xl font-bold bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                   Minimaverse
                 </span>
@@ -210,3 +208,4 @@ export default function RootLayout({
     </html>
   );
 }
+
