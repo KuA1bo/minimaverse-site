@@ -152,3 +152,55 @@ input:focus-visible {
     scroll-behavior: auto !important;
   }
 }
+
+/* === Progressive Enhancement for Firefox/Brave === */
+
+/* Base: simple blur for all browsers */
+[class*="animate-float"] {
+  filter: blur(8px);
+}
+
+/* Enhanced: stronger blur only if supported (Chrome/Safari) */
+@supports (backdrop-filter: blur(12px)) {
+  [class*="animate-float"] {
+    filter: blur(16px);
+  }
+  .backdrop-blur-xl {
+    backdrop-filter: blur(12px);
+  }
+}
+
+/* Firefox: disable blur entirely for performance */
+@-moz-document url-prefix() {
+  [class*="animate-float"] {
+    filter: none !important;
+    opacity: 0.15 !important;
+  }
+  .animate-float-slow,
+  .animate-float-slower {
+    animation-duration: 15s !important;
+  }
+}
+
+/* Brave: fallback for bg-clip-text */
+@supports not (background-clip: text) {
+  .bg-clip-text.text-transparent {
+    background: none !important;
+    color: white !important;
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+  }
+}
+
+/* Simplify hover effects for browsers with strict privacy settings */
+@media (prefers-reduced-transparency: reduce) {
+  .group-hover\:w-full {
+    transition: width 0.2s ease !important;
+  }
+}
+
+/* Ensure GPU acceleration where possible */
+[class*="animate-"] {
+  contain: layout style paint;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
