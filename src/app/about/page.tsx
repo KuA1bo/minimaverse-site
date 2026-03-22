@@ -1,7 +1,7 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
 // Upscayl-style visual enhancements applied (content unchanged)
-// Fixed: header line break + updated date + GitHub icon position & glow + smaller icon + tighter brighter glow + icon lower + core docs link updated
+// Fixed: gradient line under subtitle + GitHub icon matches /protocol
 
 import Link from 'next/link';
 
@@ -77,30 +77,32 @@ export default function AboutPage() {
       
       <BackgroundOrbs />
 
-      {/* Unified Header with gradient accent */}
+      {/* Unified Header with gradient accent - matches /protocol */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
         <div className="relative flex justify-between items-start">
-          <div className="relative">
+          {/* Header text block - pb-3 for line spacing */}
+          <div className="relative inline-block w-full pb-3">
             <Link 
               href="/" 
-              className="text-gray-400 hover:text-white transition-colors block mb-2 group"
+              className="text-gray-400 hover:text-white transition-colors inline-block mb-4 group"
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
-            <h1 className="text-3xl font-bold mb-2 relative block">
+            <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 About Minima Protocol
               </span>
-              <span className="absolute -bottom-2 left-0 right-0 h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-full animate-gradient-x" />
             </h1>
             <p className="text-gray-400">Technical overview and project context</p>
+            {/* Gradient accent line under subtitle - ORIGINAL STYLE: thin, fade right */}
+            <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
           
-          {/* GitHub icon - smaller size, tighter brighter glow, positioned lower, no arrow, shifted left */}
-          <div className="flex items-center justify-end relative -translate-x-10 mt-8">
-            {/* Tighter brighter centered glow - half radius, brighter opacity */}
+          {/* GitHub icon - matches /protocol: lower position, glow centered */}
+          <div className="flex items-center justify-end relative -translate-x-10 mt-12">
+            {/* Centered glow - matches icon size exactly */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>
@@ -285,10 +287,10 @@ export default function AboutPage() {
           <p className="text-gray-500 text-xs mt-4">
             Explore technical docs:{' '}
             <ExternalLink 
-              href="https://docs.minima.global/docs/core/at-a-glance"
+              href="https://docs.minima.global  "
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
-              docs.minima.global/docs/core/at-a-glance
+              docs.minima.global
             </ExternalLink>
           </p>
         </section>
@@ -441,7 +443,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Last Updated - enhanced with corrected date */}
+        {/* Last Updated - enhanced */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
