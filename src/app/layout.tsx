@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 // Root layout component for Minimaverse - Next.js App Router
-// Fixed: responsive global header for 320px + href trailing spaces
+// Fixed: responsive global header for 320px (hybrid sticky mode) + href trailing spaces
 
 import './globals.css';
 import Link from 'next/link';
@@ -72,8 +72,8 @@ export default function RootLayout({
         
         <BackgroundOrbs />
 
-        {/* Global Header - RESPONSIVE FIX for 320px */}
-        <header className="sticky top-0 z-50 mb-6 sm:mb-8 backdrop-blur-xl bg-black/30 border-b border-gray-700/40 
+        {/* Global Header - HYBRID STICKY MODE (scrollable on mobile, fixed on desktop) */}
+        <header className="relative sm:sticky sm:top-0 z-50 mb-6 sm:mb-8 backdrop-blur-xl bg-black/30 border-b border-gray-700/40 
                           transition-all duration-300 hover:border-purple-500/40">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
           
