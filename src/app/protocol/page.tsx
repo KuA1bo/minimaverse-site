@@ -1,7 +1,7 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
 // Visual enhancements applied per site design system (content unchanged)
-// Fixed: responsive header for mobile (320px) + Last updated date to March 20, 2026
+// Fixed: responsive GitHub icon offset (small on mobile, full on tablet/desktop)
 
 import Link from 'next/link';
 
@@ -57,7 +57,7 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
   );
 };
 
-// Enhanced background orbs - animated style (will be extended with stars in next session)
+// Enhanced background orbs - animated style
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
     <div 
@@ -77,11 +77,11 @@ export default function ProtocolPage() {
       
       <BackgroundOrbs />
 
-      {/* Unified Header with gradient accent - RESPONSIVE FIX for 320px */}
+      {/* Unified Header with gradient accent - RESPONSIVE OFFSET FIX */}
       <header className="mb-6 sm:mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
-        <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+        <div className="relative flex justify-between items-start gap-4">
           {/* Header text block */}
           <div className="relative inline-block w-full pb-2 sm:pb-3">
             <Link 
@@ -100,11 +100,11 @@ export default function ProtocolPage() {
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
           
-          {/* GitHub icon - responsive positioning */}
-          <div className="flex items-center justify-end relative sm:-translate-x-10 sm:mt-12 self-end sm:self-auto">
-            {/* Centered glow - responsive blur */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-purple-500/80 rounded-full blur-lg sm:blur-xl" />
+          {/* GitHub icon - RESPONSIVE OFFSET (small on mobile, full on tablet/desktop) */}
+          <div className="flex items-center justify-end relative -translate-x-2 mt-2 sm:-translate-x-10 sm:mt-12 flex-shrink-0">
+            {/* Glow - HIDDEN on mobile (<640px), visible on sm+ (≥640px) */}
+            <div className="hidden sm:flex absolute inset-0 items-center justify-center">
+              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>
             <ExternalLink 
               href="https://github.com/KuA1bo/minimaverse-site" 
@@ -407,11 +407,11 @@ export default function ProtocolPage() {
           </p>
         </div>
 
-        {/* Last Updated - enhanced with corrected date */}
+        {/* Last Updated - enhanced */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: March 20, 2026
+            Last updated: February 20, 2026
           </p>
         </section>
 
