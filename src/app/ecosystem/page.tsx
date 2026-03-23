@@ -1,7 +1,7 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
 // Upscayl-style visual enhancements applied (content unchanged)
-// Fixed: Clickable links in Core Infrastructure section
+// Fixed: Primary Sources heading consistency + Core Infrastructure links + reduced glow
 
 import Link from 'next/link';
 
@@ -128,13 +128,13 @@ export default function EcosystemPage() {
         
         <div className="relative">
           <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
-            <span className="text-2xl">📚</span> Primary Sources for This Page
+            <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-center gap-2 group/link">
               <span className="text-gray-400">Minima GitHub:</span>
               <ExternalLink 
-                href="https://github.com/minima-global  " 
+                href="https://github.com/minima-global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 github.com/minima-global
@@ -143,7 +143,7 @@ export default function EcosystemPage() {
             <li className="flex items-center gap-2 group/link">
               <span className="text-gray-400">Documentation:</span>
               <ExternalLink 
-                href="https://docs.minima.global  " 
+                href="https://docs.minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 docs.minima.global
@@ -152,7 +152,7 @@ export default function EcosystemPage() {
             <li className="flex items-center gap-2 group/link">
               <span className="text-gray-400">Explorer:</span>
               <ExternalLink 
-                href="https://explorer.minima.global  " 
+                href="https://explorer.minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 explorer.minima.global
@@ -166,12 +166,7 @@ export default function EcosystemPage() {
       <article className="prose prose-invert max-w-none">
         
         {/* Intro */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📦</span>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Verified Projects & Tools</span>
-          </h2>
-          
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
@@ -193,7 +188,7 @@ export default function EcosystemPage() {
         </section>
 
         {/* Core Infrastructure */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🏗️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Core Infrastructure</span>
@@ -247,7 +242,7 @@ export default function EcosystemPage() {
         </section>
 
         {/* Developer Tools */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🛠️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Developer Tools</span>
@@ -258,20 +253,17 @@ export default function EcosystemPage() {
               {
                 title: 'Minima Terminal',
                 text: 'Command-line interface for interacting with Minima nodes. Provides access to protocol commands, transaction creation, and node management.',
-                link: { href: 'https://docs.minima.global/docs/development/terminal-commands  ', text: 'Terminal Commands Documentation' },
-                status: 'confirmed' as const
+                link: { href: 'https://docs.minima.global/docs/development/terminal-commands  ', text: 'Terminal Commands Documentation' }
               },
               {
                 title: 'Minima Scan (Explorer)',
                 text: 'Blockchain explorer for viewing transactions, blocks, and network activity on the Minima protocol.',
-                link: { href: 'https://explorer.minima.global  ', text: 'explorer.minima.global' },
-                status: 'confirmed' as const
+                link: { href: 'https://explorer.minima.global  ', text: 'explorer.minima.global' }
               },
               {
                 title: 'SDK & APIs',
                 text: 'Software development kits and application programming interfaces for building applications on Minima.',
-                link: { href: 'https://docs.minima.global/docs/development/using-typescript  ', text: 'TypeScript Development Guide' },
-                status: 'confirmed' as const
+                link: { href: 'https://docs.minima.global/docs/development/using-typescript  ', text: 'TypeScript Development Guide' }
               },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
@@ -286,7 +278,7 @@ export default function EcosystemPage() {
                   {item.link.text}
                 </ExternalLink>
                 <p className="text-gray-500 text-xs mt-2 relative">
-                  Status: <StatusBadge status={item.status} /> | Official source
+                  Status: <StatusBadge status="confirmed" /> | Official source
                 </p>
               </div>
             ))}
@@ -294,7 +286,7 @@ export default function EcosystemPage() {
         </section>
 
         {/* Wallets */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👛</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Wallets</span>
@@ -336,7 +328,7 @@ export default function EcosystemPage() {
         </section>
 
         {/* Centralized Exchanges */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">💱</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Centralized Exchanges</span>
@@ -369,7 +361,7 @@ export default function EcosystemPage() {
         </section>
 
         {/* Edge Deployments */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📡</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Edge Deployments</span>
@@ -396,7 +388,7 @@ export default function EcosystemPage() {
         {/* Universal Disclaimer Block - enhanced */}
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
-                        opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
+                        opacity-0 animate-fade-in-up delay-75 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
             <strong className="flex items-center gap-2 mb-2">
@@ -412,7 +404,7 @@ export default function EcosystemPage() {
         </div>
 
         {/* Last Updated - enhanced */}
-        <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
+        <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
             Last updated: February 20, 2026
