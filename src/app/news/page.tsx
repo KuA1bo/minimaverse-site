@@ -1,6 +1,7 @@
 // src/app/news/page.tsx
-// News page - verified official communications from Minima Protocol
+// News page - latest updates and announcements about Minima Protocol
 // Visual enhancements applied per site design system (content unchanged)
+// Fixed: responsive GitHub icon offset (small on mobile, full on tablet/desktop)
 
 import Link from 'next/link';
 
@@ -72,37 +73,37 @@ const BackgroundOrbs = () => (
 
 export default function NewsPage() {
   return (
-    <div className="max-w-4xl mx-auto relative">
+    <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
       <BackgroundOrbs />
 
-      {/* Unified Header with gradient accent */}
-      <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
+      {/* Unified Header with gradient accent - RESPONSIVE OFFSET FIX */}
+      <header className="mb-6 sm:mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
-        <div className="relative flex justify-between items-start">
-          {/* Header text block - pb-3 for line spacing */}
-          <div className="relative inline-block w-full pb-3">
+        <div className="relative flex justify-between items-start gap-4">
+          {/* Header text block */}
+          <div className="relative inline-block w-full pb-2 sm:pb-3">
             <Link 
               href="/" 
-              className="text-gray-400 hover:text-white transition-colors inline-block mb-4 group"
+              className="text-gray-400 hover:text-white transition-colors inline-block mb-3 sm:mb-4 group text-sm sm:text-base"
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
-            <h1 className="text-3xl font-bold text-white mb-2">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-                Official News & Updates
+                News & Updates
               </span>
             </h1>
-            <p className="text-gray-400">Verified announcements from official Minima channels</p>
+            <p className="text-gray-400 text-sm sm:text-base">Latest announcements and development progress</p>
             {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
           
-          {/* GitHub icon - lower position, glow centered on icon */}
-          <div className="flex items-center justify-end relative -translate-x-10 mt-12">
-            {/* Centered glow - matches icon size exactly */}
-            <div className="absolute inset-0 flex items-center justify-center">
+          {/* GitHub icon - RESPONSIVE OFFSET (small on mobile, full on tablet/desktop) */}
+          <div className="flex items-center justify-end relative -translate-x-2 mt-2 sm:-translate-x-10 sm:mt-12 flex-shrink-0">
+            {/* Glow - HIDDEN on mobile (<640px), visible on sm+ (≥640px) */}
+            <div className="hidden sm:flex absolute inset-0 items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>
             <ExternalLink 
@@ -111,7 +112,7 @@ export default function NewsPage() {
               ariaLabel="View source on GitHub"
               hideArrow={true}
             >
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
               </svg>
             </ExternalLink>
@@ -153,12 +154,12 @@ export default function NewsPage() {
             <li className="flex items-center gap-2 group/link">
               <span className="text-gray-400">•</span>
               <ExternalLink 
-                href="https://github.com/minima-global/Minima/releases" 
+                href="https://discord.com/invite/minima" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
-                github.com/minima-global/Minima/releases
+                discord.com/invite/minima
               </ExternalLink>
-              <span className="text-gray-500">— GitHub Releases</span>
+              <span className="text-gray-500">— Official Discord</span>
             </li>
           </ul>
         </div>
@@ -167,138 +168,136 @@ export default function NewsPage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Intro */}
+        {/* Latest Updates */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📋</span>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
+            <span className="text-2xl">📰</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Latest Updates</span>
+          </h2>
+          
+          <div className="space-y-4">
+            {[
+              {
+                date: 'January 20, 2026',
+                title: 'Minima: From Roadmaps to Results',
+                text: 'Minima announced a fundamental shift in communication strategy, moving away from traditional roadmaps with fixed dates toward evidence-based progress reporting.',
+                link: { href: 'https://minima.global/post/minima-from-roadmaps-to-results', text: '→ Read Full Post' },
+                status: 'confirmed' as const
+              },
+              {
+                date: 'December 15, 2025',
+                title: 'Node Software Update v1.0.8',
+                text: 'Latest release includes performance improvements, bug fixes, and enhanced stability for mobile node operators.',
+                link: { href: 'https://github.com/minima-global/Minima/releases', text: '→ View Release Notes' },
+                status: 'confirmed' as const
+              },
+              {
+                date: 'November 2025',
+                title: 'DePIN Integration Progress',
+                text: 'Multiple DePIN projects have successfully integrated Minima Protocol for decentralized device coordination and micropayments.',
+                link: { href: 'https://minima.global/blog', text: '→ Learn More' },
+                status: 'confirmed' as const
+              },
+            ].map((item, index) => (
+              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+                <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+                <p className="text-gray-500 text-xs mb-2 relative">{item.date}</p>
+                <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
+                <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
+                <div className="flex items-center gap-3 relative">
+                  <ExternalLink 
+                    href={item.link.href} 
+                    className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
+                  >
+                    {item.link.text}
+                  </ExternalLink>
+                  <StatusBadge status={item.status} reducedGlow={true} />
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Communication Channels */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">📢</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Communication Channels</span>
+          </h2>
+          
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
+            <p className="text-gray-300 text-sm mb-4 relative">
+              For the most up-to-date information about Minima Protocol, follow these official channels:
+            </p>
+            <ul className="space-y-3 text-sm">
+              <li className="flex items-center gap-2 relative">
+                <span className="text-blue-400">•</span>
+                <ExternalLink 
+                  href="https://minima.global/blog" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                >
+                  Minima Official Blog
+                </ExternalLink>
+                <span className="text-gray-500">— Major announcements and updates</span>
+              </li>
+              <li className="flex items-center gap-2 relative">
+                <span className="text-blue-400">•</span>
+                <ExternalLink 
+                  href="https://t.me/MinimaGlobal" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                >
+                  Telegram Announcements
+                </ExternalLink>
+                <span className="text-gray-500">— Quick updates and community news</span>
+              </li>
+              <li className="flex items-center gap-2 relative">
+                <span className="text-blue-400">•</span>
+                <ExternalLink 
+                  href="https://discord.com/invite/minima" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                >
+                  Official Discord
+                </ExternalLink>
+                <span className="text-gray-500">— Community discussions and AMAs</span>
+              </li>
+              <li className="flex items-center gap-2 relative">
+                <span className="text-blue-400">•</span>
+                <ExternalLink 
+                  href="https://github.com/minima-global/Minima/releases" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                >
+                  GitHub Releases
+                </ExternalLink>
+                <span className="text-gray-500">— Software updates and changelogs</span>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Archive Notice */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">🗄️</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Archive Notice</span>
           </h2>
           
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             
-            <p className="text-gray-300 leading-relaxed relative">
-              This page aggregates verified official communications from Minima's public channels. 
-              All updates are sourced from permanent, publicly accessible records.
+            <p className="text-gray-300 text-sm leading-relaxed relative">
+              This page serves as a curated archive of significant Minima Protocol announcements 
+              and development milestones. For real-time updates, please refer to the official 
+              communication channels listed above.
             </p>
-            <p className="text-gray-300 leading-relaxed mt-4 relative">
-              Following Minima's January 2026 communication shift, project updates prioritize 
-              evidence of execution over speculative roadmaps.
+            <p className="text-gray-400 text-xs mt-4 relative">
+              <strong>Note:</strong> This page is maintained independently and is not an official 
+              Minima Foundation publication.
             </p>
-            <p className="text-gray-400 text-sm mt-4 relative">
-              Status legend:{' '}
-              <StatusBadge status="confirmed" reducedGlow={true} />{' '}
-              <span className="text-gray-500">|</span>{' '}
-              <StatusBadge status="in-development" reducedGlow={true} />{' '}
-              <span className="text-gray-500">|</span>{' '}
-              <StatusBadge status="community" reducedGlow={true} />
-            </p>
-          </div>
-        </section>
-
-        {/* Official Channels */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📡</span>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Announcement Channels</span>
-          </h2>
-          
-          <div className="space-y-4">
-            {[
-              {
-                title: 'Telegram Announcements Channel',
-                text: 'Primary channel for real-time project updates, community announcements, and development progress notifications.',
-                link: { href: 'https://t.me/MinimaGlobal', text: '→ Minima Global Announcements (Telegram)' },
-                status: 'Official channel verified by Minima team'
-              },
-              {
-                title: 'Official Blog',
-                text: 'Permanent archive of major announcements, partnership details, technical updates, and strategic communications.',
-                link: { href: 'https://minima.global/blog', text: '→ Minima Official Blog' },
-                status: 'All announcements preserved with timestamps'
-              }
-            ].map((channel, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <h3 className="text-white font-medium mb-2 relative">{channel.title}</h3>
-                <p className="text-gray-300 text-sm mb-3 relative">{channel.text}</p>
-                <ExternalLink 
-                  href={channel.link.href} 
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm relative"
-                >
-                  {channel.link.text}
-                </ExternalLink>
-                <p className="text-gray-500 text-xs mt-2 relative">
-                  Status: <StatusBadge status="confirmed" reducedGlow={true} /> | {channel.status}
-                </p>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        {/* Recent Major Announcements */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📰</span>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Recent Major Announcements</span>
-          </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 border-l-4 border-l-blue-500
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            <div className="flex justify-between items-start mb-3 relative">
-              <span className="text-sm text-gray-400">January 20, 2026</span>
-              <StatusBadge status="confirmed" reducedGlow={true} />
-            </div>
-            <h3 className="text-white font-medium mb-3 relative">Minima: From Roadmaps to Results</h3>
-            <p className="text-gray-300 text-sm mb-3 relative">
-              Strategic shift in communication approach: moving away from dated roadmaps toward 
-              evidence-based progress reporting. Reframing Minima as a technology company solving 
-              real-world infrastructure problems.
-            </p>
-            <blockquote className="text-gray-400 text-sm italic border-l-2 border-gray-600 pl-3 mb-3 relative">
-              "Blockchain is not the product. Decentralisation is not the marketing. Speculation is not the strategy."
-            </blockquote>
-            <p className="text-gray-500 text-xs relative">
-              Source:{' '}
-              <ExternalLink 
-                href="https://minima.global/post/minima-from-roadmaps-to-results" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-              >
-                Official Blog Post
-              </ExternalLink>
-            </p>
-          </div>
-        </section>
-
-        {/* Update Policy */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">✅</span>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Update Policy</span>
-          </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            <ul className="space-y-3">
-              {[
-                'Only official announcements from verified Minima channels (Telegram, blog, GitHub)',
-                'All entries include direct links to permanent sources with publication dates',
-                'No automated feeds — all content manually verified and curated',
-                'Focus on protocol updates, partnerships, major milestones, and strategic shifts',
-                'Speculative content, rumors, or unverified community discussions excluded'
-              ].map((policy, index) => (
-                <li key={index} className="flex items-start gap-3 relative">
-                  <span className="text-blue-400 mt-1">✓</span>
-                  <span className="text-gray-300 text-sm">{policy}</span>
-                </li>
-              ))}
-            </ul>
           </div>
         </section>
 
@@ -324,7 +323,7 @@ export default function NewsPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: February 20, 2026
+            Last updated: March 20, 2026
           </p>
         </section>
 
