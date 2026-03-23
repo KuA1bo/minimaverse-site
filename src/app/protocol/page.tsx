@@ -1,7 +1,7 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
 // Visual enhancements applied per site design system (content unchanged)
-// Fixed: gradient accent line + GitHub icon lower + glow centered
+// Fixed: responsive header for mobile (320px) + href trailing spaces
 
 import Link from 'next/link';
 
@@ -57,7 +57,7 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
   );
 };
 
-// Enhanced background orbs - animated style
+// Enhanced background orbs - animated style (will be extended with stars in next session)
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
     <div 
@@ -73,38 +73,38 @@ const BackgroundOrbs = () => (
 
 export default function ProtocolPage() {
   return (
-    <div className="max-w-4xl mx-auto relative">
+    <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
       <BackgroundOrbs />
 
-      {/* Unified Header with gradient accent */}
-      <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
+      {/* Unified Header with gradient accent - RESPONSIVE FIX for 320px */}
+      <header className="mb-6 sm:mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
-        <div className="relative flex justify-between items-start">
-          {/* Header text block - pb-3 for line spacing */}
-          <div className="relative inline-block w-full pb-3">
+        <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4">
+          {/* Header text block */}
+          <div className="relative inline-block w-full pb-2 sm:pb-3">
             <Link 
               href="/" 
-              className="text-gray-400 hover:text-white transition-colors inline-block mb-4 group"
+              className="text-gray-400 hover:text-white transition-colors inline-block mb-3 sm:mb-4 group text-sm sm:text-base"
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
-            <h1 className="text-3xl font-bold text-white mb-2">
+            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Minima Protocol
               </span>
             </h1>
-            <p className="text-gray-400">Architecture, consensus, and technical specifications</p>
-            {/* Gradient accent line under subtitle - ORIGINAL STYLE: thin, fade right */}
+            <p className="text-gray-400 text-sm sm:text-base">Architecture, consensus, and technical specifications</p>
+            {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
           
-          {/* GitHub icon - lower position, glow centered on icon */}
-          <div className="flex items-center justify-end relative -translate-x-10 mt-12">
-            {/* Centered glow - matches icon size exactly */}
+          {/* GitHub icon - responsive positioning */}
+          <div className="flex items-center justify-end relative sm:-translate-x-10 sm:mt-12 self-end sm:self-auto">
+            {/* Centered glow - responsive blur */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
+              <div className="w-7 h-7 sm:w-8 sm:h-8 bg-purple-500/80 rounded-full blur-lg sm:blur-xl" />
             </div>
             <ExternalLink 
               href="https://github.com/KuA1bo/minimaverse-site" 
@@ -112,7 +112,7 @@ export default function ProtocolPage() {
               ariaLabel="View source on GitHub"
               hideArrow={true}
             >
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
               </svg>
             </ExternalLink>
