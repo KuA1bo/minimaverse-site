@@ -1,6 +1,7 @@
 // src/app/disclaimer/page.tsx
 // Disclaimer page - Legal notice and project information
 // Visual enhancements applied per site design system (content unchanged)
+// Fixed: Last updated date to March 20, 2026
 
 import Link from 'next/link';
 
@@ -318,11 +319,11 @@ export default function DisclaimerPage() {
           </p>
         </div>
 
-        {/* Last Updated - enhanced */}
+        {/* Last Updated - enhanced with corrected date */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: February 20, 2026
+            Last updated: March 20, 2026
           </p>
         </section>
 
