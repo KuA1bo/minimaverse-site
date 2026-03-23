@@ -1,7 +1,7 @@
 // src/app/disclaimer/page.tsx
 // Disclaimer page - Legal notice and project information
 // Visual enhancements applied per site design system (content unchanged)
-// Fixed: Last updated date to March 20, 2026
+// Removed: Primary Sources block (redundant with Official Resources section)
 
 import Link from 'next/link';
 
@@ -119,51 +119,6 @@ export default function DisclaimerPage() {
           </div>
         </div>
       </header>
-
-      {/* Primary Sources Box - enhanced with bullet points • */}
-      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
-                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
-                      opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
-        
-        <div className="relative">
-          <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
-            <span className="text-2xl">📚</span> Primary Sources
-          </h3>
-          <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
-              <ExternalLink 
-                href="https://minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-              >
-                minima.global
-              </ExternalLink>
-              <span className="text-gray-500">— Official Website</span>
-            </li>
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
-              <ExternalLink 
-                href="https://docs.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-              >
-                docs.minima.global
-              </ExternalLink>
-              <span className="text-gray-500">— Documentation</span>
-            </li>
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
-              <ExternalLink 
-                href="https://minima.global/blog" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-              >
-                minima.global/blog
-              </ExternalLink>
-              <span className="text-gray-500">— Official Blog</span>
-            </li>
-          </ul>
-        </div>
-      </div>
 
       {/* Content */}
       <article className="prose prose-invert max-w-none">
@@ -319,7 +274,7 @@ export default function DisclaimerPage() {
           </p>
         </div>
 
-        {/* Last Updated - enhanced with corrected date */}
+        {/* Last Updated - enhanced */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
