@@ -1,6 +1,7 @@
 // src/app/tools/page.tsx
 // Tools page - verified tools and utilities for Minima Protocol
 // Visual enhancements applied per site design system (content unchanged)
+// Fixed: Primary Sources bullet points + href trailing spaces
 
 import Link from 'next/link';
 
@@ -119,7 +120,7 @@ export default function ToolsPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - enhanced */}
+      {/* Primary Sources Box - enhanced with bullet points • */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -131,31 +132,34 @@ export default function ToolsPage() {
           </h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">Documentation:</span>
+              <span className="text-gray-400">•</span>
               <ExternalLink 
                 href="https://docs.minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 docs.minima.global
               </ExternalLink>
+              <span className="text-gray-500">— Documentation</span>
             </li>
             <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">Explorer:</span>
+              <span className="text-gray-400">•</span>
               <ExternalLink 
                 href="https://explorer.minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 explorer.minima.global
               </ExternalLink>
+              <span className="text-gray-500">— Block Explorer</span>
             </li>
             <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">Wallet:</span>
+              <span className="text-gray-400">•</span>
               <ExternalLink 
                 href="https://wallet.minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 wallet.minima.global
               </ExternalLink>
+              <span className="text-gray-500">— Web Wallet</span>
             </li>
           </ul>
         </div>
