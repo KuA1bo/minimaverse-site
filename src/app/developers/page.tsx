@@ -1,6 +1,6 @@
 // src/app/developers/page.tsx
 // Developers page - verified resources for building on Minima Protocol
-// Upscayl-style visual enhancements applied (content unchanged)
+// Visual enhancements applied per site design system (content unchanged)
 // Fixed: Primary Sources heading consistency + Learning Paths links
 
 import Link from 'next/link';
@@ -57,7 +57,7 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Enhanced background orbs - Upscayl style
+// Enhanced background orbs - animated style
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
     <div 
@@ -107,7 +107,7 @@ export default function DevelopersPage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -194,7 +194,7 @@ export default function DevelopersPage() {
           </h2>
           
           <ExternalLink 
-            href="https://build.minima.global/  " 
+            href="https://build.minima.global/" 
             className="block relative bg-blue-900/30 border border-blue-700/50 rounded-2xl p-6 
                       hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/15 
                       transition-all duration-300 group overflow-hidden"
@@ -245,12 +245,12 @@ export default function DevelopersPage() {
               {
                 title: 'Full Documentation',
                 text: 'Comprehensive API references, protocol specifications, and technical guides for Minima development.',
-                link: { href: 'https://docs.minima.global  ', text: 'docs.minima.global' }
+                link: { href: 'https://docs.minima.global', text: 'docs.minima.global' }
               },
               {
                 title: 'Protocol Architecture',
                 text: "Deep dive into Minima's consensus mechanism, data structures, and network design.",
-                link: { href: 'https://docs.minima.global/docs/core/at-a-glance  ', text: 'Core Features Overview' }
+                link: { href: 'https://docs.minima.global/docs/core/at-a-glance', text: 'Core Features Overview' }
               },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
@@ -285,16 +285,16 @@ export default function DevelopersPage() {
                 title: '📚 Learn the Basics',
                 text: 'Foundational concepts and protocol overview for new developers.',
                 links: [
-                  { href: 'https://docs.minima.global/docs/development/minidapp-structure  ', text: 'MiniDapp Structure' },
-                  { href: 'https://docs.minima.global/docs/learn/scripting  ', text: 'Smart Contracts Basics' }
+                  { href: 'https://docs.minima.global/docs/development/minidapp-structure', text: 'MiniDapp Structure' },
+                  { href: 'https://docs.minima.global/docs/learn/scripting', text: 'Smart Contracts Basics' }
                 ]
               },
               {
                 title: '📝 Build Applications',
                 text: 'Practical guides for creating MiniDapps and smart contracts on Minima.',
                 links: [
-                  { href: 'https://docs.minima.global/docs/development/contracts-basics  ', text: 'KISS Scripting Basics' },
-                  { href: 'https://docs.minima.global/docs/development/using-typescript  ', text: 'TypeScript SDK Guide' }
+                  { href: 'https://docs.minima.global/docs/development/contracts-basics', text: 'KISS Scripting Basics' },
+                  { href: 'https://docs.minima.global/docs/development/using-typescript', text: 'TypeScript SDK Guide' }
                 ]
               },
             ].map((path, index) => (
@@ -334,12 +334,12 @@ export default function DevelopersPage() {
               {
                 title: 'Official Tutorials',
                 text: 'Step-by-step guides from the Minima documentation team.',
-                link: { href: 'https://docs.minima.global/docs/buildonminima/txntutorial/start  ', text: 'Smart Contract Tutorial Series' }
+                link: { href: 'https://docs.minima.global/docs/buildonminima/txntutorial/start', text: 'Smart Contract Tutorial Series' }
               },
               {
                 title: '🐙 Community Tutorials',
                 text: 'Additional transaction examples and patterns from community contributors.',
-                link: { href: 'https://github.com/MBCOT/Minima-Tutorials/  ', text: 'MBCOT Minima Tutorials', icon: true, status: 'community' as const }
+                link: { href: 'https://github.com/MBCOT/Minima-Tutorials/', text: 'MBCOT Minima Tutorials', icon: true, status: 'community' as const }
               },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
@@ -383,19 +383,19 @@ export default function DevelopersPage() {
             </p>
             <div className="space-y-3 relative">
               <ExternalLink 
-                href="https://www.youtube.com/watch?v=iLp-n7I2zbM&list=PLut-fF0yR_xWEeUgSFLkT6WyLbTovD_w4  " 
+                href="https://www.youtube.com/watch?v=iLp-n7I2zbM&list=PLut-fF0yR_xWEeUgSFLkT6WyLbTovD_w4" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
               >
                 ▶️ Part 1: Introduction to Minima
               </ExternalLink>
               <ExternalLink 
-                href="https://www.youtube.com/watch?v=nykHIXIuQiI&list=PLut-fF0yR_xWEeUgSFLkT6WyLbTovD_w4&index=2  " 
+                href="https://www.youtube.com/watch?v=nykHIXIuQiI&list=PLut-fF0yR_xWEeUgSFLkT6WyLbTovD_w4&index=2" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
               >
                 ▶️ Part 2: Create a Timelock Contract
               </ExternalLink>
               <ExternalLink 
-                href="https://www.youtube.com/watch?v=WeFswRU3WBE&t  " 
+                href="https://www.youtube.com/watch?v=WeFswRU3WBE&t" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
               >
                 ▶️ How to Use Script IDE
@@ -424,7 +424,7 @@ export default function DevelopersPage() {
                 and testing.
               </p>
               <ExternalLink 
-                href="https://docs.minima.global/docs/run-a-node  " 
+                href="https://docs.minima.global/docs/run-a-node" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm relative"
               >
                 Guide: Run a Node
@@ -453,7 +453,7 @@ export default function DevelopersPage() {
                 Main Minima protocol implementation and node software.
               </p>
               <ExternalLink 
-                href="https://github.com/minima-global/Minima  " 
+                href="https://github.com/minima-global/Minima" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 mb-2 relative"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -462,7 +462,7 @@ export default function DevelopersPage() {
                 github.com/minima-global/Minima
               </ExternalLink>
               <ExternalLink 
-                href="https://github.com/minima-global/Minima/tree/master/src/org/minima  " 
+                href="https://github.com/minima-global/Minima/tree/master/src/org/minima" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm text-xs block relative"
               >
                 → Core source: /src/org/minima
@@ -481,7 +481,7 @@ export default function DevelopersPage() {
                 Official Android APK and third-party Kotlin library for Minima integration.
               </p>
               <ExternalLink 
-                href="https://github.com/minima-global/minimaapk  " 
+                href="https://github.com/minima-global/minimaapk" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block mb-2 relative"
               >
                 Minima APK (Android)
@@ -490,7 +490,7 @@ export default function DevelopersPage() {
                 Status: <StatusBadge status="confirmed" /> | Official Minima Global
               </p>
               <ExternalLink 
-                href="https://github.com/mihbor/minimak  " 
+                href="https://github.com/mihbor/minimak" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 relative"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -521,7 +521,7 @@ export default function DevelopersPage() {
               Real-time technical discussions, Q&A, and collaboration with other Minima developers.
             </p>
             <ExternalLink 
-              href="https://discord.gg/minimaglobal  " 
+              href="https://discord.gg/minimaglobal" 
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm relative"
             >
               discord.gg/minimaglobal
