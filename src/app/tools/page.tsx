@@ -1,6 +1,6 @@
 // src/app/tools/page.tsx
 // Tools page - verified tools and utilities for Minima Protocol
-// Upscayl-style visual enhancements applied (content unchanged)
+// Visual enhancements applied per site design system (content unchanged)
 
 import Link from 'next/link';
 
@@ -56,7 +56,7 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Enhanced background orbs - Upscayl style
+// Enhanced background orbs - animated style
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
     <div 
@@ -106,7 +106,7 @@ export default function ToolsPage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -202,17 +202,17 @@ export default function ToolsPage() {
               {
                 title: 'Minima Terminal',
                 text: 'Command-line interface for advanced node management, transaction creation, and smart contract deployment.',
-                link: { href: 'https://docs.minima.global/docs/development/terminal-commands  ', text: 'Terminal Commands Documentation' }
+                link: { href: 'https://docs.minima.global/docs/development/terminal-commands', text: 'Terminal Commands Documentation' }
               },
               {
                 title: 'Minima Scan (Explorer)',
                 text: 'Blockchain explorer for viewing transactions, blocks, addresses, and network statistics on the Minima protocol.',
-                link: { href: 'https://explorer.minima.global  ', text: 'explorer.minima.global' }
+                link: { href: 'https://explorer.minima.global', text: 'explorer.minima.global' }
               },
               {
                 title: 'Web Wallet',
                 text: 'Browser-based wallet for managing Minima tokens, sending/receiving transactions, and interacting with MiniDapps.',
-                link: { href: 'https://wallet.minima.global  ', text: 'wallet.minima.global' }
+                link: { href: 'https://wallet.minima.global', text: 'wallet.minima.global' }
               },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
@@ -242,13 +242,13 @@ export default function ToolsPage() {
               </p>
               <div className="space-y-2 relative">
                 <ExternalLink 
-                  href="https://play.google.com/store/search?q=minima&c=apps&hl=en  " 
+                  href="https://play.google.com/store/search?q=minima&c=apps&hl=en" 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
                 >
                   📱 Google Play Store
                 </ExternalLink>
                 <ExternalLink 
-                  href="https://github.com/minima-global/Minima/blob/master/jar/minima-1.0.46.6.apk  " 
+                  href="https://github.com/minima-global/Minima/blob/master/jar/minima-1.0.46.6.apk" 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
                 >
                   🤖 Android APK (GitHub)
@@ -273,17 +273,17 @@ export default function ToolsPage() {
               {
                 title: 'TypeScript SDK',
                 text: 'Official SDK for building applications and MiniDapps using TypeScript/JavaScript. Provides high-level abstractions for protocol interaction.',
-                link: { href: 'https://docs.minima.global/docs/development/using-typescript  ', text: 'TypeScript Development Guide' }
+                link: { href: 'https://docs.minima.global/docs/development/using-typescript', text: 'TypeScript Development Guide' }
               },
               {
                 title: '📜 KISS VM (Smart Contract Scripting)',
                 text: 'Complete language specification: grammar, globals, and 40+ functions for writing smart contracts on Minima (SHA2/3, CHECKSIG, MULTISIG, and more).',
-                link: { href: 'https://docs.minima.global/docs/development/contracts-kissvm  ', text: 'KISS VM Documentation' }
+                link: { href: 'https://docs.minima.global/docs/development/contracts-kissvm', text: 'KISS VM Documentation' }
               },
               {
                 title: '🔌 Terminal Commands & RPC',
                 text: 'Node interaction via command-line interface and RPC API for automation, transaction creation, and programmatic control.',
-                link: { href: 'https://docs.minima.global/docs/development/terminal-commands  ', text: 'Terminal Commands Documentation' }
+                link: { href: 'https://docs.minima.global/docs/development/terminal-commands', text: 'Terminal Commands Documentation' }
               },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
