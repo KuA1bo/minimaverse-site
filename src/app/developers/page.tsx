@@ -1,6 +1,7 @@
 // src/app/developers/page.tsx
 // Developers page - verified resources for building on Minima Protocol
 // Upscayl-style visual enhancements applied (content unchanged)
+// Added: Primary Sources block for consistency with other pages
 // Fixed: Learning Paths links - MiniDapp Structure + Smart Contracts Basics
 
 import Link from 'next/link';
@@ -120,11 +121,53 @@ export default function DevelopersPage() {
         </div>
       </header>
 
+      {/* Primary Sources Box - enhanced */}
+      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
+                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+                      opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
+        
+        <div className="relative">
+          <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
+            <span className="text-2xl">📚</span> Primary Sources for This Page
+          </h3>
+          <ul className="space-y-3 text-sm">
+            <li className="flex items-center gap-2 group/link">
+              <span className="text-gray-400">Minima GitHub:</span>
+              <ExternalLink 
+                href="https://github.com/minima-global" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+              >
+                github.com/minima-global
+              </ExternalLink>
+            </li>
+            <li className="flex items-center gap-2 group/link">
+              <span className="text-gray-400">Documentation:</span>
+              <ExternalLink 
+                href="https://docs.minima.global" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+              >
+                docs.minima.global
+              </ExternalLink>
+            </li>
+            <li className="flex items-center gap-2 group/link">
+              <span className="text-gray-400">Explorer:</span>
+              <ExternalLink 
+                href="https://explorer.minima.global" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+              >
+                explorer.minima.global
+              </ExternalLink>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
         {/* Intro */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
@@ -145,7 +188,7 @@ export default function DevelopersPage() {
         </section>
 
         {/* Official Developer Portal */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🚀</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Developer Portal</span>
@@ -192,7 +235,7 @@ export default function DevelopersPage() {
         </section>
 
         {/* Technical Documentation */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📚</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Technical Documentation</span>
@@ -231,7 +274,7 @@ export default function DevelopersPage() {
         </section>
 
         {/* 🎓 Learning Paths */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🎓</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Learning Paths</span>
@@ -281,7 +324,7 @@ export default function DevelopersPage() {
         </section>
 
         {/* 📝 Tutorials */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📝</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Tutorials</span>
@@ -325,7 +368,7 @@ export default function DevelopersPage() {
         </section>
 
         {/* 🖥️ Video Resources */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🖥️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Video Resources</span>
@@ -366,7 +409,7 @@ export default function DevelopersPage() {
         </section>
 
         {/* Getting Started */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🚀</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Getting Started</span>
@@ -395,7 +438,7 @@ export default function DevelopersPage() {
         </section>
 
         {/* 💻 Source Code */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🐙</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Source Code</span>
@@ -464,7 +507,7 @@ export default function DevelopersPage() {
         </section>
 
         {/* Community & Support */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">💬</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Community & Support</span>
@@ -498,7 +541,7 @@ export default function DevelopersPage() {
         {/* Universal Disclaimer Block - enhanced */}
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
-                        opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
+                        opacity-0 animate-fade-in-up delay-300 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
             <strong className="flex items-center gap-2 mb-2">
@@ -514,7 +557,7 @@ export default function DevelopersPage() {
         </div>
 
         {/* Last Updated - enhanced */}
-        <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
+        <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-75">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
             Last updated: February 20, 2026
@@ -525,4 +568,3 @@ export default function DevelopersPage() {
     </div>
   );
 }
-
