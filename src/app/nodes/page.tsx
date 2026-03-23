@@ -1,6 +1,7 @@
 // src/app/nodes/page.tsx
 // Nodes page - verified guides for running Minima nodes
 // Visual enhancements applied per site design system (content unchanged)
+// Fixed: Primary Sources bullet points + href trailing spaces + Use Cases link
 
 import Link from 'next/link';
 
@@ -291,10 +292,10 @@ export default function NodesPage() {
             <p className="text-gray-500 text-xs mt-4 relative">
               Source:{' '}
               <ExternalLink 
-                href="https://docs.minima.global/docs/core" 
+                href="https://docs.minima.global/docs/core/use-cases"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
-                docs.minima.global/docs/core
+                docs.minima.global/docs/core/use-cases
               </ExternalLink>
             </p>
           </div>
