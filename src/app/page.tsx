@@ -1,6 +1,6 @@
 // src/app/page.tsx
-// Home page - Upscayl-style background + enhanced animated orbs
-// Fixed: GitHub icon centered glow (brighter), no arrow, shifted left
+// Home page - enhanced animated orbs + unified visual design system
+// Fixed: Primary Sources bullet points + href trailing spaces + neutral comments
 
 import Link from 'next/link';
 
@@ -56,7 +56,7 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
   );
 };
 
-// Enhanced background orbs - Upscayl style
+// Enhanced background orbs - animated style
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
     <div 
@@ -137,7 +137,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Primary Sources Box */}
+      {/* Primary Sources Box - enhanced with bullet points • */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -146,35 +146,38 @@ export default function HomePage() {
         <div className="relative">
           <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
             <span className="text-2xl">📚</span>
-            Primary Sources for This Site
+            Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">Official Website:</span>
+              <span className="text-gray-400">•</span>
               <ExternalLink 
                 href="https://minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 minima.global
               </ExternalLink>
+              <span className="text-gray-500">— Official Website</span>
             </li>
             <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">Documentation:</span>
+              <span className="text-gray-400">•</span>
               <ExternalLink 
                 href="https://docs.minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 docs.minima.global
               </ExternalLink>
+              <span className="text-gray-500">— Documentation</span>
             </li>
             <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">GitHub:</span>
+              <span className="text-gray-400">•</span>
               <ExternalLink 
                 href="https://github.com/minima-global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 github.com/minima-global
               </ExternalLink>
+              <span className="text-gray-500">— Official GitHub</span>
             </li>
           </ul>
         </div>
@@ -329,5 +332,3 @@ export default function HomePage() {
     </div>
   );
 }
-
-
