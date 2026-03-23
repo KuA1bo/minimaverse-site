@@ -1,6 +1,6 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
-// Upscayl-style visual enhancements applied (content unchanged)
+// Visual enhancements applied per site design system (content unchanged)
 // Fixed: gradient line under subtitle + GitHub icon matches /protocol
 
 import Link from 'next/link';
@@ -57,7 +57,7 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
   );
 };
 
-// Enhanced background orbs - Upscayl style
+// Enhanced background orbs - animated style
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
     <div 
@@ -107,7 +107,7 @@ export default function AboutPage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -134,7 +134,7 @@ export default function AboutPage() {
             <li className="flex items-center gap-2 group/link">
               <span className="text-gray-400">Whitepaper:</span>
               <ExternalLink 
-                href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf  "
+                href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 Minima Whitepaper v1.1 (PDF)
@@ -143,7 +143,7 @@ export default function AboutPage() {
             <li className="flex items-center gap-2 group/link">
               <span className="text-gray-400">What is Minima:</span>
               <ExternalLink 
-                href="https://docs.minima.global/docs/core  "
+                href="https://docs.minima.global/docs/core"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 docs.minima.global/docs/core
@@ -152,7 +152,7 @@ export default function AboutPage() {
             <li className="flex items-center gap-2 group/link">
               <span className="text-gray-400">Documentation:</span>
               <ExternalLink 
-                href="https://docs.minima.global  "
+                href="https://docs.minima.global"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 docs.minima.global
@@ -226,7 +226,7 @@ export default function AboutPage() {
           <p className="text-gray-500 text-xs mt-4">
             Source:{' '}
             <ExternalLink 
-              href="https://docs.minima.global/docs/core  "
+              href="https://docs.minima.global/docs/core"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               docs.minima.global/docs/core
@@ -287,7 +287,7 @@ export default function AboutPage() {
           <p className="text-gray-500 text-xs mt-4">
             Explore technical docs:{' '}
             <ExternalLink 
-              href="https://docs.minima.global  "
+              href="https://docs.minima.global"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               docs.minima.global
@@ -397,7 +397,7 @@ export default function AboutPage() {
           </p>
           
           <ExternalLink 
-            href="https://build.minima.global  " 
+            href="https://build.minima.global" 
             className="block relative bg-blue-900/30 border border-blue-700/50 rounded-2xl p-6 
                       hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/15 
                       transition-all duration-300 group overflow-hidden"
