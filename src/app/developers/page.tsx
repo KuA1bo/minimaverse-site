@@ -1,8 +1,7 @@
 // src/app/developers/page.tsx
 // Developers page - verified resources for building on Minima Protocol
 // Upscayl-style visual enhancements applied (content unchanged)
-// Added: Primary Sources block for consistency with other pages
-// Fixed: Learning Paths links - MiniDapp Structure + Smart Contracts Basics
+// Fixed: Primary Sources heading consistency + Learning Paths links
 
 import Link from 'next/link';
 
@@ -129,7 +128,7 @@ export default function DevelopersPage() {
         
         <div className="relative">
           <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
-            <span className="text-2xl">📚</span> Primary Sources for This Page
+            <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
             <li className="flex items-center gap-2 group/link">
