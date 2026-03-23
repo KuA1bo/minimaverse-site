@@ -1,6 +1,6 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
-// Upscayl-style visual enhancements applied (content unchanged)
+// Visual enhancements applied per site design system (content unchanged)
 // Fixed: Primary Sources heading consistency + Core Infrastructure links + reduced glow
 
 import Link from 'next/link';
@@ -57,7 +57,7 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Enhanced background orbs - Upscayl style
+// Enhanced background orbs - animated style
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
     <div 
@@ -107,7 +107,7 @@ export default function EcosystemPage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -206,7 +206,7 @@ export default function EcosystemPage() {
                 validators.
               </p>
               <ExternalLink 
-                href="https://github.com/minima-global/Minima  " 
+                href="https://github.com/minima-global/Minima" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 relative"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -229,7 +229,7 @@ export default function EcosystemPage() {
                 and distributed environments. Focused on data provenance and tamper-evident verification.
               </p>
               <ExternalLink 
-                href="https://docs.integritas.technology  " 
+                href="https://docs.integritas.technology" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm relative"
               >
                 docs.integritas.technology
@@ -253,17 +253,17 @@ export default function EcosystemPage() {
               {
                 title: 'Minima Terminal',
                 text: 'Command-line interface for interacting with Minima nodes. Provides access to protocol commands, transaction creation, and node management.',
-                link: { href: 'https://docs.minima.global/docs/development/terminal-commands  ', text: 'Terminal Commands Documentation' }
+                link: { href: 'https://docs.minima.global/docs/development/terminal-commands', text: 'Terminal Commands Documentation' }
               },
               {
                 title: 'Minima Scan (Explorer)',
                 text: 'Blockchain explorer for viewing transactions, blocks, and network activity on the Minima protocol.',
-                link: { href: 'https://explorer.minima.global  ', text: 'explorer.minima.global' }
+                link: { href: 'https://explorer.minima.global', text: 'explorer.minima.global' }
               },
               {
                 title: 'SDK & APIs',
                 text: 'Software development kits and application programming interfaces for building applications on Minima.',
-                link: { href: 'https://docs.minima.global/docs/development/using-typescript  ', text: 'TypeScript Development Guide' }
+                link: { href: 'https://docs.minima.global/docs/development/using-typescript', text: 'TypeScript Development Guide' }
               },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
@@ -303,19 +303,19 @@ export default function EcosystemPage() {
             </p>
             <div className="space-y-2 relative">
               <ExternalLink 
-                href="https://wallet.minima.global  " 
+                href="https://wallet.minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
               >
                 🌐 Web Wallet
               </ExternalLink>
               <ExternalLink 
-                href="https://play.google.com/store/search?q=minima&c=apps&hl=en  " 
+                href="https://play.google.com/store/search?q=minima&c=apps&hl=en" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
               >
                 📱 Google Play Store
               </ExternalLink>
               <ExternalLink 
-                href="https://github.com/minima-global/Minima/blob/master/jar/minima-1.0.46.6.apk  " 
+                href="https://github.com/minima-global/Minima/blob/master/jar/minima-1.0.46.6.apk" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
               >
                 🤖 Android APK (GitHub)
@@ -336,9 +336,9 @@ export default function EcosystemPage() {
           
           <div className="space-y-4">
             {[
-              { title: 'MEXC', pair: 'Trading pair: MINIMA/USDT', link: { href: 'https://www.mexc.com/exchange/MINIMA_USDT  ', text: 'Trade on MEXC' } },
-              { title: 'BitMart', pair: 'Trading pair: MINIMA/USDT', link: { href: 'https://www.bitmart.com/trade/MINIMA_USDT?type=spot  ', text: 'Trade on BitMart' } },
-              { title: 'XT.com', pair: 'Trading pair: MINIMA/USDT', link: { href: 'https://www.xt.com/en/trade/minima_usdt  ', text: 'Trade on XT.com' } },
+              { title: 'MEXC', pair: 'Trading pair: MINIMA/USDT', link: { href: 'https://www.mexc.com/exchange/MINIMA_USDT', text: 'Trade on MEXC' } },
+              { title: 'BitMart', pair: 'Trading pair: MINIMA/USDT', link: { href: 'https://www.bitmart.com/trade/MINIMA_USDT?type=spot', text: 'Trade on BitMart' } },
+              { title: 'XT.com', pair: 'Trading pair: MINIMA/USDT', link: { href: 'https://www.xt.com/en/trade/minima_usdt', text: 'Trade on XT.com' } },
             ].map((exchange, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
