@@ -1,6 +1,6 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
-// Upscayl-style visual enhancements applied (content unchanged)
+// Visual enhancements applied per site design system (content unchanged)
 // Fixed: gradient accent line + GitHub icon lower + glow centered
 
 import Link from 'next/link';
@@ -57,7 +57,7 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
   );
 };
 
-// Enhanced background orbs - Upscayl style
+// Enhanced background orbs - animated style
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
     <div 
@@ -107,7 +107,7 @@ export default function ProtocolPage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -134,7 +134,7 @@ export default function ProtocolPage() {
             <li className="flex items-center gap-2 group/link">
               <span className="text-gray-400">•</span>
               <ExternalLink 
-                href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf  " 
+                href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 Whitepaper v1.1 (PDF)
@@ -144,7 +144,7 @@ export default function ProtocolPage() {
             <li className="flex items-center gap-2 group/link">
               <span className="text-gray-400">•</span>
               <ExternalLink 
-                href="https://docs.minima.global/docs/core/minimawhitepaper/txpow  " 
+                href="https://docs.minima.global/docs/core/minimawhitepaper/txpow" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 Tx-PoW Documentation
@@ -154,7 +154,7 @@ export default function ProtocolPage() {
             <li className="flex items-center gap-2 group/link">
               <span className="text-gray-400">•</span>
               <ExternalLink 
-                href="https://docs.minima.global/docs/learn/network-overview  " 
+                href="https://docs.minima.global/docs/learn/network-overview" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 Network Overview
@@ -193,7 +193,7 @@ export default function ProtocolPage() {
           </div>
           <p className="text-sm text-gray-500 mt-4">
             <ExternalLink 
-              href="https://docs.minima.global/docs/core/minimawhitepaper/consensusforksandimmutableprotocols  " 
+              href="https://docs.minima.global/docs/core/minimawhitepaper/consensusforksandimmutableprotocols" 
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               Source: Consensus, Forks and Immutable Protocols
@@ -232,7 +232,7 @@ export default function ProtocolPage() {
           </div>
           <p className="text-sm text-gray-500 mt-4">
             <ExternalLink 
-              href="https://docs.minima.global/docs/core/minimawhitepaper/txpow  " 
+              href="https://docs.minima.global/docs/core/minimawhitepaper/txpow" 
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               Source: Tx-PoW Documentation
@@ -271,7 +271,7 @@ export default function ProtocolPage() {
           </div>
           <p className="text-sm text-gray-500 mt-4">
             <ExternalLink 
-              href="https://docs.minima.global/docs/learn/mmr-database  " 
+              href="https://docs.minima.global/docs/learn/mmr-database" 
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               Source: MMR Database Documentation
@@ -316,7 +316,7 @@ export default function ProtocolPage() {
           </div>
           <p className="text-sm text-gray-500 mt-3">
             <ExternalLink 
-              href="https://docs.minima.global/docs/learn/network-overview  " 
+              href="https://docs.minima.global/docs/learn/network-overview" 
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               Source: Network Overview
@@ -354,7 +354,7 @@ export default function ProtocolPage() {
           </div>
           <p className="text-sm text-gray-500 mt-4">
             <ExternalLink 
-              href="https://docs.minima.global/docs/core/at-a-glance  " 
+              href="https://docs.minima.global/docs/core/at-a-glance" 
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               Source: Core Features Overview
