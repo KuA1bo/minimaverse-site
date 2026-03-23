@@ -1,7 +1,7 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
 // Visual enhancements applied per site design system (content unchanged)
-// Fixed: responsive header for mobile (320px) + href trailing spaces
+// Fixed: responsive header for mobile (320px) + Last updated date to March 20, 2026
 
 import Link from 'next/link';
 
@@ -407,11 +407,11 @@ export default function ProtocolPage() {
           </p>
         </div>
 
-        {/* Last Updated - enhanced */}
+        {/* Last Updated - enhanced with corrected date */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: February 20, 2026
+            Last updated: March 20, 2026
           </p>
         </section>
 
