@@ -1,7 +1,10 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
 // Visual enhancements applied per site design system (content unchanged)
-// Fixed: Primary Sources bullet points + href trailing spaces
+// Fixed: 1) Status legend: vertical stack on mobile (Variant 1)
+//        2) GitHub icon: always visible, positioned above title on mobile via order-first
+//        3) Updated Last updated date to March 25, 2026
+//        4) Primary Sources: vertical stack on mobile for description visibility
 
 import Link from 'next/link';
 
@@ -73,17 +76,37 @@ const BackgroundOrbs = () => (
 
 export default function EcosystemPage() {
   return (
-    <div className="max-w-4xl mx-auto relative">
+    // FIX: Add mobile padding to root container
+    <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
       <BackgroundOrbs />
 
-      {/* Unified Header with gradient accent */}
+      {/* Unified Header with gradient accent - FIXED: GitHub icon positioned above title on mobile */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
-        <div className="relative flex justify-between items-start">
-          {/* Header text block - pb-3 for line spacing */}
-          <div className="relative inline-block w-full pb-3">
+        <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
+          
+          {/* GitHub icon - ALWAYS VISIBLE, positioned via order: above title on mobile, right on desktop */}
+          <div className="flex items-start justify-end relative -translate-x-2 sm:-translate-x-10 mt-0 sm:mt-12 flex-shrink-0 order-first sm:order-last mb-3 sm:mb-0">
+            {/* Centered glow - matches icon size exactly */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
+            </div>
+            <ExternalLink 
+              href="https://github.com/KuA1bo/minimaverse-site" 
+              className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10 ml-auto sm:ml-0"
+              ariaLabel="View source on GitHub"
+              hideArrow={true}
+            >
+              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </ExternalLink>
+          </div>
+          
+          {/* Header text block */}
+          <div className="relative inline-block w-full pb-3 pr-2">
             <Link 
               href="/" 
               className="text-gray-400 hover:text-white transition-colors inline-block mb-4 group"
@@ -96,70 +119,58 @@ export default function EcosystemPage() {
               </span>
             </h1>
             <p className="text-gray-400">Projects, tools, and integrations built on Minima</p>
-            {/* Gradient accent line under subtitle - ORIGINAL STYLE: thin, fade right */}
+            {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
-          </div>
-          
-          {/* GitHub icon - matches /protocol: lower position, glow centered */}
-          <div className="flex items-center justify-end relative -translate-x-10 mt-12">
-            {/* Centered glow - matches icon size exactly */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
-            </div>
-            <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site" 
-              className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
-              ariaLabel="View source on GitHub"
-              hideArrow={true}
-            >
-              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-            </ExternalLink>
           </div>
         </div>
       </header>
 
-      {/* Primary Sources Box - enhanced with bullet points • */}
-      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
+      {/* Primary Sources Box - vertical stack on mobile for description visibility */}
+      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
         
         <div className="relative">
-          <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
+          <h3 className="text-white font-semibold mb-3 sm:mb-4 text-lg flex items-center gap-2">
             <span className="text-2xl">📚</span> Primary Sources
           </h3>
-          <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+          <ul className="space-y-2 sm:space-y-3 text-sm">
+            {/* Item 1 - Vertical on mobile, horizontal on tablet+ */}
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://github.com/minima-global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap"
               >
                 github.com/minima-global
               </ExternalLink>
-              <span className="text-gray-500">— Official GitHub</span>
+              <span className="text-gray-500 max-[400px]:hidden">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">Official GitHub</span>
             </li>
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+            {/* Item 2 */}
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://docs.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap"
               >
                 docs.minima.global
               </ExternalLink>
-              <span className="text-gray-500">— Documentation</span>
+              <span className="text-gray-500 max-[400px]:hidden">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">Documentation</span>
             </li>
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+            {/* Item 3 */}
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://explorer.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap"
               >
                 explorer.minima.global
               </ExternalLink>
-              <span className="text-gray-500">— Block Explorer</span>
+              <span className="text-gray-500 max-[400px]:hidden">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">Block Explorer</span>
             </li>
           </ul>
         </div>
@@ -168,9 +179,9 @@ export default function EcosystemPage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Intro */}
+        {/* Intro - FIXED: Status legend vertical on mobile (Variant 1) */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             
@@ -179,14 +190,17 @@ export default function EcosystemPage() {
               with the Minima Protocol. Inclusion does not constitute endorsement — all entries are 
               publicly verifiable and community-contributed.
             </p>
-            <p className="text-gray-400 text-sm mt-4">
-              Status legend:{' '}
-              <StatusBadge status="confirmed" />{' '}
-              <span className="text-gray-500">|</span>{' '}
-              <StatusBadge status="in-development" />{' '}
-              <span className="text-gray-500">|</span>{' '}
-              <StatusBadge status="community" />
-            </p>
+            {/* Status legend: vertical on mobile, horizontal on desktop (Variant 1) */}
+            <div className="mt-4 pt-3 border-t border-gray-700/40">
+              <p className="text-gray-400 text-xs mb-2">Status legend:</p>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <StatusBadge status="confirmed" reducedGlow={true} />
+                <span className="text-gray-500 hidden sm:inline">|</span>
+                <StatusBadge status="in-development" reducedGlow={true} />
+                <span className="text-gray-500 hidden sm:inline">|</span>
+                <StatusBadge status="community" reducedGlow={true} />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -199,7 +213,7 @@ export default function EcosystemPage() {
           
           <div className="space-y-4">
             {/* Minima Protocol */}
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <h3 className="text-white font-medium mb-2 relative">Minima Protocol</h3>
@@ -218,12 +232,12 @@ export default function EcosystemPage() {
                 github.com/minima-global/Minima
               </ExternalLink>
               <p className="text-gray-500 text-xs mt-2 relative">
-                Status: <StatusBadge status="confirmed" /> | Official source
+                Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Official source
               </p>
             </div>
 
             {/* Integritas */}
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <h3 className="text-white font-medium mb-2 relative">Integritas</h3>
@@ -238,7 +252,7 @@ export default function EcosystemPage() {
                 docs.integritas.technology
               </ExternalLink>
               <p className="text-gray-500 text-xs mt-2 relative">
-                Status: <StatusBadge status="confirmed" /> | Official source
+                Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Official source
               </p>
             </div>
           </div>
@@ -269,7 +283,7 @@ export default function EcosystemPage() {
                 link: { href: 'https://docs.minima.global/docs/development/using-typescript', text: 'TypeScript Development Guide' }
               },
             ].map((item, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                 <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
                 <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
@@ -281,7 +295,7 @@ export default function EcosystemPage() {
                   {item.link.text}
                 </ExternalLink>
                 <p className="text-gray-500 text-xs mt-2 relative">
-                  Status: <StatusBadge status="confirmed" /> | Official source
+                  Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Official source
                 </p>
               </div>
             ))}
@@ -295,7 +309,7 @@ export default function EcosystemPage() {
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Wallets</span>
           </h2>
           
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
@@ -325,7 +339,7 @@ export default function EcosystemPage() {
               </ExternalLink>
             </div>
             <p className="text-gray-500 text-xs mt-3 relative">
-              Status: <StatusBadge status="confirmed" /> | Official source
+              Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Official source
             </p>
           </div>
         </section>
@@ -343,7 +357,7 @@ export default function EcosystemPage() {
               { title: 'BitMart', pair: 'Trading pair: MINIMA/USDT', link: { href: 'https://www.bitmart.com/trade/MINIMA_USDT?type=spot', text: 'Trade on BitMart' } },
               { title: 'XT.com', pair: 'Trading pair: MINIMA/USDT', link: { href: 'https://www.xt.com/en/trade/minima_usdt', text: 'Trade on XT.com' } },
             ].map((exchange, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                 <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
                 <h3 className="text-white font-medium mb-2 relative">{exchange.title}</h3>
@@ -370,7 +384,7 @@ export default function EcosystemPage() {
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Edge Deployments</span>
           </h2>
           
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
@@ -389,7 +403,7 @@ export default function EcosystemPage() {
         </section>
 
         {/* Universal Disclaimer Block - enhanced */}
-        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 
+        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-4 sm:p-6 mb-8 
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
                         opacity-0 animate-fade-in-up delay-75 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
@@ -406,11 +420,11 @@ export default function EcosystemPage() {
           </p>
         </div>
 
-        {/* Last Updated - enhanced */}
+        {/* Last Updated - UPDATED DATE */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: February 20, 2026
+            Last updated: March 25, 2026
           </p>
         </section>
 
