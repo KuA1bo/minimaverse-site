@@ -1,8 +1,9 @@
 // src/app/page.tsx
 // Home page - enhanced animated orbs + unified visual design system
-// Fixed: GitHub icon hidden ONLY on iPhone 5 (<400px), visible on Nexus 7+
-//        Bullets/dashes hidden on <768px (iPhone + Nexus 7), visible on iPad Mini+
-// Content: 1:1 unchanged + Links added to Quick Links
+// Fixed: 1) GitHub icon: visible on all mobile sizes, positioned down-left
+//        2) Status badges: vertical on mobile, original glow intensity restored
+//        3) Updated Last updated date to March 25, 2026
+// Content: 1:1 unchanged
 
 import Link from 'next/link';
 
@@ -36,7 +37,7 @@ const ExternalLink = ({
   </a>
 );
 
-// StatusBadge component
+// StatusBadge component - ORIGINAL GLOW INTENSITY
 const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'community' }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: 'shadow-green-500/50' },
@@ -83,10 +84,10 @@ export default function HomePage() {
         
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
           
-          {/* GitHub icon - Hidden ONLY on iPhone 5 (<400px), visible on Nexus 7+ */}
-          <div className="flex items-start justify-end relative -translate-x-10 mt-12 flex-shrink-0 order-first sm:order-last mb-4 sm:mb-0 max-[400px]:hidden">
-            {/* Glow - visible on 640px+ */}
-            <div className="absolute inset-0 flex items-center justify-center max-sm:hidden">
+          {/* GitHub icon - FIXED: visible on ALL mobile sizes, positioned down-left */}
+          <div className="flex items-start justify-end relative -translate-x-4 sm:-translate-x-10 mt-10 sm:mt-12 flex-shrink-0 order-first sm:order-last mb-4 sm:mb-0">
+            {/* Glow - visible on all sizes now */}
+            <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>
             <ExternalLink 
@@ -141,7 +142,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Primary Sources Box - Bullets/dashes hidden on <768px (iPhone + Nexus 7), visible on iPad Mini+ */}
+      {/* Primary Sources Box */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -153,7 +154,6 @@ export default function HomePage() {
             Primary Sources
           </h3>
           <ul className="space-y-2 sm:space-y-3 text-sm">
-            {/* Item 1 - Bullets/dashes hidden on <768px, visible on iPad Mini+ */}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="text-gray-400 hidden md:inline">•</span>
               <ExternalLink 
@@ -165,7 +165,6 @@ export default function HomePage() {
               <span className="text-gray-500 hidden md:inline">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Official Website</span>
             </li>
-            {/* Item 2 */}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="text-gray-400 hidden md:inline">•</span>
               <ExternalLink 
@@ -177,7 +176,6 @@ export default function HomePage() {
               <span className="text-gray-500 hidden md:inline">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Documentation</span>
             </li>
-            {/* Item 3 */}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="text-gray-400 hidden md:inline">•</span>
               <ExternalLink 
@@ -196,7 +194,7 @@ export default function HomePage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* About This Site */}
+        {/* About This Site - FIXED: status badges vertical on mobile, ORIGINAL GLOW */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
             <span className="text-2xl sm:text-3xl">📋</span>
@@ -217,14 +215,15 @@ export default function HomePage() {
               We focus on factual, hype-free content with clear sourcing and transparent status 
               indicators for all information.
             </p>
-            {/* Status legend: label on separate line above badges */}
+            
+            {/* Status badges: vertical on mobile, horizontal on desktop - ORIGINAL GLOW */}
             <div className="mt-4 pt-3 border-t border-gray-700/40">
               <p className="text-gray-400 text-xs mb-2">Status legend:</p>
-              <div className="flex flex-wrap items-center gap-2">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
                 <StatusBadge status="confirmed" />
-                <span className="text-gray-500">|</span>
+                <span className="text-gray-500 hidden sm:inline">|</span>
                 <StatusBadge status="in-development" />
-                <span className="text-gray-500">|</span>
+                <span className="text-gray-500 hidden sm:inline">|</span>
                 <StatusBadge status="community" />
               </div>
             </div>
@@ -260,7 +259,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Quick Links - UPDATED: Added Links to Protocol Information block */}
+        {/* Quick Links */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
             <span className="text-2xl sm:text-3xl">🔗</span>
@@ -276,7 +275,7 @@ export default function HomePage() {
                   { href: '/about', text: 'What is Minima' },
                   { href: '/ecosystem', text: 'Ecosystem' },
                   { href: '/timeline', text: 'Verified Milestones (Timeline)' },
-                  { href: '/links', text: 'Links' },  // ← ADDED
+                  { href: '/links', text: 'Links' },
                 ]
               },
               {
@@ -334,11 +333,11 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Last Updated */}
+        {/* Last Updated - UPDATED DATE */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: March 20, 2026
+            Last updated: March 25, 2026
           </p>
         </section>
 
