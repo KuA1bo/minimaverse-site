@@ -1,6 +1,8 @@
 // src/app/page.tsx
 // Home page - enhanced animated orbs + unified visual design system
-// Fixed: Primary Sources bullet points + href trailing spaces + neutral comments
+// Fixed: 1) GitHub icon positioned ABOVE title on mobile (320px)
+//        2) Primary Sources: removed duplicate description text on mobile
+// Content: 1:1 unchanged, only responsive class adjustments
 
 import Link from 'next/link';
 
@@ -72,41 +74,63 @@ const BackgroundOrbs = () => (
 
 export default function HomePage() {
   return (
-    <div className="relative max-w-4xl mx-auto">
+    // FIX: Add mobile padding to root container
+    <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
       <BackgroundOrbs />
       
       {/* Hero Section */}
       <section className="mb-12 py-12 border-b border-gray-700/40 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
+        {/* FIX: GitHub icon now appears ABOVE title on mobile via order-first */}
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
-          <div className="flex-1">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4 relative inline-block">
+          
+          {/* GitHub icon - MOBILE: top-right via order-first; DESKTOP: right via order-last */}
+          <div className="flex items-start justify-end relative -translate-x-1 sm:-translate-x-10 mt-0 sm:mt-12 flex-shrink-0 order-first sm:order-last mb-3 sm:mb-0 w-full sm:w-auto">
+            {/* Glow - hidden on mobile (<640px) */}
+            <div className="hidden sm:flex absolute inset-0 items-center justify-center">
+              <div className="w-12 h-12 bg-purple-500/60 rounded-full blur-xl" />
+            </div>
+            <ExternalLink 
+              href="https://github.com/KuA1bo/minimaverse-site" 
+              className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10 ml-auto sm:ml-0"
+              ariaLabel="View source on GitHub"
+              hideArrow={true}
+            >
+              <svg className="w-9 h-9 sm:w-10 sm:h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+            </ExternalLink>
+          </div>
+          
+          {/* Title content block */}
+          <div className="flex-1 min-w-0">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 relative inline-block">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Minimaverse
               </span>
               <span className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-full animate-gradient-x" />
             </h1>
-            <p className="text-gray-400 text-lg mb-6 leading-relaxed">
+            <p className="text-gray-400 text-base sm:text-lg mb-6 leading-relaxed">
               Community-driven information hub for the Minima Protocol
             </p>
             
             <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
               <Link 
                 href="/protocol" 
-                className="group inline-flex items-center justify-center px-8 py-3.5 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-500 hover:to-blue-500 transition-all duration-300 min-w-[220px] shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 hover:-translate-y-0.5"
+                className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-500 hover:to-blue-500 transition-all duration-300 min-w-[200px] sm:min-w-[220px] shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 hover:-translate-y-0.5 text-sm sm:text-base"
               >
                 How Minima Works
-                <svg className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
               <Link 
                 href="/nodes" 
-                className="group inline-flex items-center justify-center px-8 py-3.5 mt-3 sm:mt-0 border-2 border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-purple-500/50 hover:text-white hover:bg-purple-500/10 transition-all duration-300 min-w-[220px] hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 hover:-translate-y-0.5"
+                className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 mt-3 sm:mt-0 border-2 border-gray-600 text-gray-300 font-semibold rounded-xl hover:border-purple-500/50 hover:text-white hover:bg-purple-500/10 transition-all duration-300 min-w-[200px] sm:min-w-[220px] hover:shadow-lg hover:shadow-purple-500/20 hover:scale-105 hover:-translate-y-0.5 text-sm sm:text-base"
               >
                 Run a Node
-                <svg className="w-5 h-5 ml-2 group-hover:rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:rotate-45 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                 </svg>
               </Link>
@@ -116,68 +140,56 @@ export default function HomePage() {
               All information sourced from official Minima documentation and verified public announcements
             </p>
           </div>
-          
-          {/* GitHub icon - brighter centered glow, no arrow, shifted left ~1cm */}
-          <div className="flex items-start justify-end relative -translate-x-10">
-            {/* Brighter centered glow effect */}
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-12 h-12 bg-purple-500/60 rounded-full blur-xl" />
-            </div>
-            <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site" 
-              className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
-              ariaLabel="View source on GitHub"
-              hideArrow={true}
-            >
-              <svg className="w-10 h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
-              </svg>
-            </ExternalLink>
-          </div>
         </div>
       </section>
 
-      {/* Primary Sources Box - enhanced with bullet points • */}
-      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
+      {/* Primary Sources Box - FIXED: removed duplicate description spans */}
+      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
         
         <div className="relative">
-          <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
+          <h3 className="text-white font-semibold mb-3 sm:mb-4 text-lg flex items-center gap-2">
             <span className="text-2xl">📚</span>
             Primary Sources
           </h3>
-          <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+          <ul className="space-y-2 sm:space-y-3 text-sm">
+            {/* Item 1: Single description span - stacks on mobile, inline on desktop */}
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 hidden sm:inline">•</span>
               <ExternalLink 
                 href="https://minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
               >
                 minima.global
               </ExternalLink>
-              <span className="text-gray-500">— Official Website</span>
+              <span className="text-gray-500 hidden sm:inline">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">Official Website</span>
             </li>
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+            {/* Item 2 */}
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 hidden sm:inline">•</span>
               <ExternalLink 
                 href="https://docs.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
               >
                 docs.minima.global
               </ExternalLink>
-              <span className="text-gray-500">— Documentation</span>
+              <span className="text-gray-500 hidden sm:inline">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">Documentation</span>
             </li>
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+            {/* Item 3 */}
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 hidden sm:inline">•</span>
               <ExternalLink 
                 href="https://github.com/minima-global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
               >
                 github.com/minima-global
               </ExternalLink>
-              <span className="text-gray-500">— Official GitHub</span>
+              <span className="text-gray-500 hidden sm:inline">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">Official GitHub</span>
             </li>
           </ul>
         </div>
@@ -188,12 +200,12 @@ export default function HomePage() {
         
         {/* About This Site */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
-          <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-            <span className="text-3xl">📋</span>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
+            <span className="text-2xl sm:text-3xl">📋</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Site</span>
           </h2>
           
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             
@@ -207,21 +219,24 @@ export default function HomePage() {
               We focus on factual, hype-free content with clear sourcing and transparent status 
               indicators for all information.
             </p>
-            <p className="text-gray-400 text-xs mt-4 flex flex-wrap items-center gap-2">
-              Status legend:{' '}
-              <StatusBadge status="confirmed" />{' '}
-              <span className="text-gray-500">|</span>{' '}
-              <StatusBadge status="in-development" />{' '}
-              <span className="text-gray-500">|</span>{' '}
-              <StatusBadge status="community" />
-            </p>
+            {/* Status legend: label on separate line above badges */}
+            <div className="mt-4 pt-3 border-t border-gray-700/40">
+              <p className="text-gray-400 text-xs mb-2">Status legend:</p>
+              <div className="flex flex-wrap items-center gap-2">
+                <StatusBadge status="confirmed" />
+                <span className="text-gray-500">|</span>
+                <StatusBadge status="in-development" />
+                <span className="text-gray-500">|</span>
+                <StatusBadge status="community" />
+              </div>
+            </div>
           </div>
         </section>
 
         {/* Project Principles */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
-          <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-            <span className="text-3xl">✅</span>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
+            <span className="text-2xl sm:text-3xl">✅</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Project Principles</span>
           </h2>
           
@@ -232,7 +247,7 @@ export default function HomePage() {
               { icon: '✓', title: 'Clear Status Indicators', text: 'All features and projects are marked with clear status labels: confirmed, in development, or experimental.' },
               { icon: '✓', title: 'Neutral Tone', text: 'No marketing language, hype, or subjective evaluations. Just facts.' },
             ].map((principle, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                 <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
                 <h3 className="text-white font-semibold mb-2 flex items-center gap-2">
@@ -249,8 +264,8 @@ export default function HomePage() {
 
         {/* Quick Links */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
-          <h2 className="text-3xl font-bold mb-6 flex items-center gap-3">
-            <span className="text-3xl">🔗</span>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
+            <span className="text-2xl sm:text-3xl">🔗</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Quick Links</span>
           </h2>
           
@@ -275,10 +290,10 @@ export default function HomePage() {
                 ]
               },
             ].map((section, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <h3 className="text-white font-semibold mb-4 flex items-center gap-2 relative">
+                <h3 className="text-white font-semibold mb-3 sm:mb-4 flex items-center gap-2 relative">
                   <span className="text-2xl">{section.icon}</span>
                   {section.title}
                 </h3>
@@ -303,7 +318,7 @@ export default function HomePage() {
         </section>
 
         {/* Universal Disclaimer Block */}
-        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 
+        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-4 sm:p-6 mb-8 
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
                         opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
