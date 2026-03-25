@@ -1,8 +1,8 @@
 // src/app/page.tsx
 // Home page - enhanced animated orbs + unified visual design system
-// Fixed: 1) GitHub icon positioned ABOVE title on mobile (320px)
-//        2) Primary Sources: removed duplicate description text on mobile
-// Content: 1:1 unchanged, only responsive class adjustments
+// Fixed: Bullets/dashes hidden on <768px (iPhone + Nexus 7), visible on iPad Mini+
+//        GitHub glow visible on 640px+ (Nexus 7+, iPad, Desktop)
+// Content: 1:1 unchanged + Links added to Quick Links
 
 import Link from 'next/link';
 
@@ -74,7 +74,6 @@ const BackgroundOrbs = () => (
 
 export default function HomePage() {
   return (
-    // FIX: Add mobile padding to root container
     <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
       <BackgroundOrbs />
       
@@ -82,22 +81,21 @@ export default function HomePage() {
       <section className="mb-12 py-12 border-b border-gray-700/40 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
-        {/* FIX: GitHub icon now appears ABOVE title on mobile via order-first */}
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
           
-          {/* GitHub icon - MOBILE: top-right via order-first; DESKTOP: right via order-last */}
-          <div className="flex items-start justify-end relative -translate-x-1 sm:-translate-x-10 mt-0 sm:mt-12 flex-shrink-0 order-first sm:order-last mb-3 sm:mb-0 w-full sm:w-auto">
-            {/* Glow - hidden on mobile (<640px) */}
-            <div className="hidden sm:flex absolute inset-0 items-center justify-center">
-              <div className="w-12 h-12 bg-purple-500/60 rounded-full blur-xl" />
+          {/* GitHub icon - Glow visible on 640px+ (Nexus 7+, iPad, Desktop) */}
+          <div className="flex items-start justify-end relative -translate-x-10 mt-12 flex-shrink-0 order-first sm:order-last mb-4 sm:mb-0">
+            {/* Glow - hidden on <640px (iPhone 5), visible on 640px+ */}
+            <div className="absolute inset-0 flex items-center justify-center max-sm:hidden">
+              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>
             <ExternalLink 
               href="https://github.com/KuA1bo/minimaverse-site" 
-              className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10 ml-auto sm:ml-0"
+              className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
             >
-              <svg className="w-9 h-9 sm:w-10 sm:h-10" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
               </svg>
             </ExternalLink>
@@ -143,7 +141,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Primary Sources Box - FIXED: removed duplicate description spans */}
+      {/* Primary Sources Box - Bullets/dashes hidden on <768px (iPhone + Nexus 7), visible on iPad Mini+ */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -155,41 +153,41 @@ export default function HomePage() {
             Primary Sources
           </h3>
           <ul className="space-y-2 sm:space-y-3 text-sm">
-            {/* Item 1: Single description span - stacks on mobile, inline on desktop */}
-            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-gray-400 hidden sm:inline">•</span>
+            {/* Item 1 - Bullets/dashes hidden on <768px, visible on iPad Mini+ */}
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="text-gray-400 hidden md:inline">•</span>
               <ExternalLink 
                 href="https://minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
               >
                 minima.global
               </ExternalLink>
-              <span className="text-gray-500 hidden sm:inline">—</span>
-              <span className="text-gray-500 text-xs sm:text-sm">Official Website</span>
+              <span className="text-gray-500 hidden md:inline">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Official Website</span>
             </li>
             {/* Item 2 */}
-            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-gray-400 hidden sm:inline">•</span>
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="text-gray-400 hidden md:inline">•</span>
               <ExternalLink 
                 href="https://docs.minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
               >
                 docs.minima.global
               </ExternalLink>
-              <span className="text-gray-500 hidden sm:inline">—</span>
-              <span className="text-gray-500 text-xs sm:text-sm">Documentation</span>
+              <span className="text-gray-500 hidden md:inline">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Documentation</span>
             </li>
             {/* Item 3 */}
-            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-gray-400 hidden sm:inline">•</span>
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="text-gray-400 hidden md:inline">•</span>
               <ExternalLink 
                 href="https://github.com/minima-global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
               >
                 github.com/minima-global
               </ExternalLink>
-              <span className="text-gray-500 hidden sm:inline">—</span>
-              <span className="text-gray-500 text-xs sm:text-sm">Official GitHub</span>
+              <span className="text-gray-500 hidden md:inline">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Official GitHub</span>
             </li>
           </ul>
         </div>
@@ -262,7 +260,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Quick Links */}
+        {/* Quick Links - UPDATED: Added Links to Protocol Information block */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
             <span className="text-2xl sm:text-3xl">🔗</span>
@@ -278,6 +276,7 @@ export default function HomePage() {
                   { href: '/about', text: 'What is Minima' },
                   { href: '/ecosystem', text: 'Ecosystem' },
                   { href: '/timeline', text: 'Verified Milestones (Timeline)' },
+                  { href: '/links', text: 'Links' },  // ← ADDED
                 ]
               },
               {
