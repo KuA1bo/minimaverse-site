@@ -1,7 +1,7 @@
 // src/app/page.tsx
 // Home page - enhanced animated orbs + unified visual design system
-// Fixed: Bullets/dashes hidden on <768px (iPhone + Nexus 7), visible on iPad Mini+
-//        GitHub glow visible on 640px+ (Nexus 7+, iPad, Desktop)
+// Fixed: GitHub icon hidden ONLY on iPhone 5 (<400px), visible on Nexus 7+
+//        Bullets/dashes hidden on <768px (iPhone + Nexus 7), visible on iPad Mini+
 // Content: 1:1 unchanged + Links added to Quick Links
 
 import Link from 'next/link';
@@ -83,9 +83,9 @@ export default function HomePage() {
         
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
           
-          {/* GitHub icon - Glow visible on 640px+ (Nexus 7+, iPad, Desktop) */}
-          <div className="flex items-start justify-end relative -translate-x-10 mt-12 flex-shrink-0 order-first sm:order-last mb-4 sm:mb-0">
-            {/* Glow - hidden on <640px (iPhone 5), visible on 640px+ */}
+          {/* GitHub icon - Hidden ONLY on iPhone 5 (<400px), visible on Nexus 7+ */}
+          <div className="flex items-start justify-end relative -translate-x-10 mt-12 flex-shrink-0 order-first sm:order-last mb-4 sm:mb-0 max-[400px]:hidden">
+            {/* Glow - visible on 640px+ */}
             <div className="absolute inset-0 flex items-center justify-center max-sm:hidden">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>

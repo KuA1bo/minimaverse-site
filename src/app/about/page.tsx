@@ -1,7 +1,9 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
 // Visual enhancements applied per site design system (content unchanged)
-// Fixed: Primary Sources bullet points + href trailing spaces
+// Fixed: 1) Primary Sources - vertical stack on mobile for description visibility
+//        2) GitHub icon hidden on iPhone 5 (<400px) to prevent title overlap
+//        3) href trailing spaces removed
 
 import Link from 'next/link';
 
@@ -73,17 +75,18 @@ const BackgroundOrbs = () => (
 
 export default function AboutPage() {
   return (
-    <div className="max-w-4xl mx-auto relative">
+    // FIX: Add mobile padding to root container
+    <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
       <BackgroundOrbs />
 
-      {/* Unified Header with gradient accent - matches /protocol */}
+      {/* Unified Header with gradient accent - FIXED for iPhone 5 */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
         <div className="relative flex justify-between items-start">
-          {/* Header text block - pb-3 for line spacing */}
-          <div className="relative inline-block w-full pb-3">
+          {/* Header text block - pb-3 for line spacing, pr-2 for mobile spacing */}
+          <div className="relative inline-block w-full pb-3 pr-2">
             <Link 
               href="/" 
               className="text-gray-400 hover:text-white transition-colors inline-block mb-4 group"
@@ -96,13 +99,13 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-gray-400">Technical overview and project context</p>
-            {/* Gradient accent line under subtitle - ORIGINAL STYLE: thin, fade right */}
+            {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
           
-          {/* GitHub icon - matches /protocol: lower position, glow centered */}
-          <div className="flex items-center justify-end relative -translate-x-10 mt-12">
-            {/* Centered glow - matches icon size exactly */}
+          {/* GitHub icon - FIXED: hidden on iPhone 5 (<400px) to prevent overlap */}
+          <div className="flex items-center justify-end relative -translate-x-10 mt-12 max-[400px]:hidden">
+            {/* Centered glow */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>
@@ -120,7 +123,7 @@ export default function AboutPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - enhanced with bullet points • */}
+      {/* Primary Sources Box - FIXED: vertical stack on mobile for description visibility */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -131,35 +134,41 @@ export default function AboutPage() {
             <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+            {/* Item 1 - Vertical on mobile, horizontal on tablet+ */}
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf"
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap"
               >
                 Minima Whitepaper v1.1 (PDF)
               </ExternalLink>
-              <span className="text-gray-500">— full protocol specification</span>
+              <span className="text-gray-500 max-[400px]:hidden">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">full protocol specification</span>
             </li>
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+            {/* Item 2 */}
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://docs.minima.global/docs/core"
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap"
               >
                 docs.minima.global/docs/core
               </ExternalLink>
-              <span className="text-gray-500">— core concepts overview</span>
+              <span className="text-gray-500 max-[400px]:hidden">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">core concepts overview</span>
             </li>
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+            {/* Item 3 */}
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://docs.minima.global"
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap"
               >
                 docs.minima.global
               </ExternalLink>
-              <span className="text-gray-500">— complete developer docs</span>
+              <span className="text-gray-500 max-[400px]:hidden">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">complete developer docs</span>
             </li>
           </ul>
         </div>
