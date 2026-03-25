@@ -1,8 +1,8 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
 // Visual enhancements applied per site design system (content unchanged)
-// Fixed: 1) Status legend: vertical stack on mobile (Variant 1)
-//        2) GitHub icon: always visible, positioned above title on mobile via order-first
+// Fixed: 1) GitHub icon: lowered position on mobile to prevent glow clipping
+//        2) Status legend: vertical stack on mobile (Variant 1)
 //        3) Updated Last updated date to March 25, 2026
 //        4) Primary Sources: vertical stack on mobile for description visibility
 
@@ -81,15 +81,15 @@ export default function EcosystemPage() {
       
       <BackgroundOrbs />
 
-      {/* Unified Header with gradient accent - FIXED: GitHub icon positioned above title on mobile */}
-      <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
+      {/* Unified Header with gradient accent - FIXED: GitHub icon lowered on mobile to prevent glow clipping */}
+      <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative pt-4">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
           
-          {/* GitHub icon - ALWAYS VISIBLE, positioned via order: above title on mobile, right on desktop */}
-          <div className="flex items-start justify-end relative -translate-x-2 sm:-translate-x-10 mt-0 sm:mt-12 flex-shrink-0 order-first sm:order-last mb-3 sm:mb-0">
-            {/* Centered glow - matches icon size exactly */}
+          {/* GitHub icon - FIXED: lowered position on mobile (mt-6 instead of mt-0) to prevent glow clipping */}
+          <div className="flex items-start justify-end relative -translate-x-2 sm:-translate-x-10 mt-6 sm:mt-12 flex-shrink-0 order-first sm:order-last mb-3 sm:mb-0">
+            {/* Centered glow */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
             </div>
