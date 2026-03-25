@@ -1,9 +1,6 @@
 // src/app/page.tsx
 // Home page - enhanced animated orbs + unified visual design system
-// Fixed: 1) GitHub icon glow: REDUCED spread on desktop (blur-xl → blur-lg)
-//        2) Status badges: vertical on mobile, original glow intensity restored
-//        3) Updated Last updated date to March 25, 2026
-//        4) href trailing spaces removed in ExternalLink usage
+// Updated: GitHub icon hidden on mobile (sm: breakpoint and up only)
 // Content: 1:1 unchanged
 
 import Link from 'next/link';
@@ -85,14 +82,14 @@ export default function HomePage() {
         
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
           
-          {/* GitHub icon - FIXED: visible on ALL mobile sizes, positioned down-left */}
-          <div className="flex items-start justify-end relative -translate-x-4 sm:-translate-x-10 mt-10 sm:mt-12 flex-shrink-0 order-first sm:order-last mb-4 sm:mb-0">
-            {/* Glow - REDUCED spread on desktop (blur-xl → blur-lg) */}
+          {/* GitHub icon - Desktop only (hidden on mobile) */}
+          <div className="hidden sm:flex items-start justify-end relative -translate-x-10 mt-12 flex-shrink-0 order-last">
+            {/* Glow */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl sm:blur-lg" />
+              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site" 
+              href="https://github.com/KuA1bo/minimaverse-site  " 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -158,7 +155,7 @@ export default function HomePage() {
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="text-gray-400 hidden md:inline">•</span>
               <ExternalLink 
-                href="https://minima.global" 
+                href="https://minima.global  " 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
               >
                 minima.global
@@ -169,7 +166,7 @@ export default function HomePage() {
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="text-gray-400 hidden md:inline">•</span>
               <ExternalLink 
-                href="https://docs.minima.global" 
+                href="https://docs.minima.global  " 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
               >
                 docs.minima.global
@@ -180,7 +177,7 @@ export default function HomePage() {
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="text-gray-400 hidden md:inline">•</span>
               <ExternalLink 
-                href="https://github.com/minima-global" 
+                href="https://github.com/minima-global  " 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
               >
                 github.com/minima-global
@@ -195,7 +192,7 @@ export default function HomePage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* About This Site - FIXED: status badges vertical on mobile, ORIGINAL GLOW */}
+        {/* About This Site */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
             <span className="text-2xl sm:text-3xl">📋</span>
@@ -217,7 +214,7 @@ export default function HomePage() {
               indicators for all information.
             </p>
             
-            {/* Status badges: vertical on mobile, horizontal on desktop - ORIGINAL GLOW */}
+            {/* Status badges: vertical on mobile, horizontal on desktop */}
             <div className="mt-4 pt-3 border-t border-gray-700/40">
               <p className="text-gray-400 text-xs mb-2">Status legend:</p>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
@@ -334,7 +331,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE */}
+        {/* Last Updated */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
