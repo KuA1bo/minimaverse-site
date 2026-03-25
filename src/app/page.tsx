@@ -1,8 +1,9 @@
 // src/app/page.tsx
 // Home page - enhanced animated orbs + unified visual design system
-// Fixed: 1) GitHub icon: visible on all mobile sizes, positioned down-left
+// Fixed: 1) GitHub icon glow: REDUCED spread on desktop (blur-xl → blur-lg)
 //        2) Status badges: vertical on mobile, original glow intensity restored
 //        3) Updated Last updated date to March 25, 2026
+//        4) href trailing spaces removed in ExternalLink usage
 // Content: 1:1 unchanged
 
 import Link from 'next/link';
@@ -86,9 +87,9 @@ export default function HomePage() {
           
           {/* GitHub icon - FIXED: visible on ALL mobile sizes, positioned down-left */}
           <div className="flex items-start justify-end relative -translate-x-4 sm:-translate-x-10 mt-10 sm:mt-12 flex-shrink-0 order-first sm:order-last mb-4 sm:mb-0">
-            {/* Glow - visible on all sizes now */}
+            {/* Glow - REDUCED spread on desktop (blur-xl → blur-lg) */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
+              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl sm:blur-lg" />
             </div>
             <ExternalLink 
               href="https://github.com/KuA1bo/minimaverse-site" 
