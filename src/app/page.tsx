@@ -1,6 +1,7 @@
 // src/app/page.tsx
 // Home page - enhanced animated orbs + unified visual design system
-// Updated: GitHub icon hidden on mobile (sm: breakpoint and up only)
+// Updated: Hero content padding adjusted to prevent hover effect clipping
+// Note: All comments in English only
 // Content: 1:1 unchanged
 
 import Link from 'next/link';
@@ -100,8 +101,8 @@ export default function HomePage() {
             </ExternalLink>
           </div>
           
-          {/* Title content block */}
-          <div className="flex-1 min-w-0">
+          {/* Title content block - Added pl-2 sm:pl-4 to prevent hover clipping */}
+          <div className="flex-1 min-w-0 pl-2 sm:pl-4">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 relative inline-block">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Minimaverse
@@ -335,7 +336,7 @@ export default function HomePage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: March 25, 2026
+            Last updated: March 26, 2026
           </p>
         </section>
 
