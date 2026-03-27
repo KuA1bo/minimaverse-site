@@ -1,11 +1,12 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
-// Updated: GitHub icon hidden on mobile, added Cascading Chain source link
+// Updated: GitHub icon hidden on mobile, Primary Sources mobile cleanup, Cascading Chain link repositioned
+// Note: All comments in English only
 // Content: 1:1 unchanged
 
 import Link from 'next/link';
 
-// ExternalLink component for all external links with ↗ icon (enhanced with hideArrow)
+// ExternalLink component for all external links with arrow icon
 const ExternalLink = ({ 
   href, 
   children, 
@@ -35,7 +36,7 @@ const ExternalLink = ({
   </a>
 );
 
-// StatusBadge component for feature status indicators (enhanced with glow + hover)
+// StatusBadge component for feature status indicators
 const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'community' }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: 'shadow-green-500/50' },
@@ -131,35 +132,38 @@ export default function ProtocolPage() {
             <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 Whitepaper v1.1 (PDF)
               </ExternalLink>
-              <span className="text-gray-500">— full protocol specification</span>
+              <span className="text-gray-500 max-[400px]:hidden">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">full protocol specification</span>
             </li>
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://docs.minima.global/docs/core/minimawhitepaper/txpow" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 Tx-PoW Documentation
               </ExternalLink>
-              <span className="text-gray-500">— consensus mechanics</span>
+              <span className="text-gray-500 max-[400px]:hidden">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">consensus mechanics</span>
             </li>
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://docs.minima.global/docs/learn/network-overview" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 Network Overview
               </ExternalLink>
-              <span className="text-gray-500">— architecture and layers</span>
+              <span className="text-gray-500 max-[400px]:hidden">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">architecture and layers</span>
             </li>
           </ul>
         </div>
@@ -248,32 +252,38 @@ export default function ProtocolPage() {
           </h2>
           
           <div className="space-y-4">
-            {/* Cascading Chain Card */}
+            
+            {/* Card 1: Cascading Chain with Superblocks */}
             <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">Cascading Chain with Superblocks</h3>
-              <p className="text-gray-300 text-sm mb-3 relative">Minima's Cascading Chain structure efficiently manages blockchain growth through Superblocks. This approach keeps the chain compact and scalable without sacrificing security, enabling fast synchronization even on resource-constrained devices.</p>
+              <p className="text-gray-300 text-sm mb-3 relative">
+                Minima&apos;s Cascading Chain structure efficiently manages blockchain growth through Superblocks. This approach keeps the chain compact and scalable without sacrificing security, enabling fast synchronization even on resource-constrained devices.
+              </p>
               <StatusBadge status="confirmed" />
             </div>
-            {/* Cascading Chain Source Link - outside the card, like MMR */}
-            <p className="text-sm text-gray-500 -mt-2 pl-2">
+            {/* Link below Cascading Chain card - outside container, like MMR UTXO */}
+            <p className="text-sm text-gray-500 mt-2">
               <ExternalLink 
                 href="https://docs.minima.global/docs/learn/the-blockchain#the-cascading-chain" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
-                Source: The Cascading Chain
+                Learn more: The Cascading Chain
               </ExternalLink>
             </p>
-            
-            {/* MMR UTXO Card */}
+
+            {/* Card 2: MMR UTXO */}
             <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">Merkle Mountain Range (MMR) UTXO</h3>
-              <p className="text-gray-300 text-sm mb-3 relative">Minima utilizes a Merkle Mountain Range database to store only the UTXOs relevant to each node's private keys. This "storage-less" approach allows each node to operate with just ~300 MB RAM, making Minima highly resource-efficient.</p>
+              <p className="text-gray-300 text-sm mb-3 relative">
+                Minima utilizes a Merkle Mountain Range database to store only the UTXOs relevant to each node&apos;s private keys. This &quot;storage-less&quot; approach allows each node to operate with just ~300 MB RAM, making Minima highly resource-efficient.
+              </p>
               <StatusBadge status="confirmed" />
             </div>
+            
           </div>
           <p className="text-sm text-gray-500 mt-4">
             <ExternalLink 
