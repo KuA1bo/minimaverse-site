@@ -1,6 +1,6 @@
 // src/app/page.tsx
 // Home page - enhanced animated orbs + unified visual design system
-// Updated: Hero content padding adjusted to prevent hover effect clipping
+// Updated: Hero content padding adjusted to prevent button hover overflow on mobile
 // Note: All comments in English only
 // Content: 1:1 unchanged
 
@@ -101,8 +101,8 @@ export default function HomePage() {
             </ExternalLink>
           </div>
           
-          {/* Title content block - Added pl-2 sm:pl-4 to prevent hover clipping */}
-          <div className="flex-1 min-w-0 pl-2 sm:pl-4">
+          {/* Title content block - Added pl-2 pr-2 sm:pl-4 sm:pr-4 to prevent hover overflow */}
+          <div className="flex-1 min-w-0 pl-2 pr-2 sm:pl-4 sm:pr-4">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 relative inline-block">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Minimaverse
