@@ -1,7 +1,7 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
-// Visual enhancements applied per site design system (content unchanged)
-// Fixed: responsive GitHub icon offset (small on mobile, full on tablet/desktop)
+// Updated: GitHub icon hidden on mobile, added Cascading Chain source link
+// Content: 1:1 unchanged
 
 import Link from 'next/link';
 
@@ -77,7 +77,7 @@ export default function ProtocolPage() {
       
       <BackgroundOrbs />
 
-      {/* Unified Header with gradient accent - RESPONSIVE OFFSET FIX */}
+      {/* Unified Header with gradient accent */}
       <header className="mb-6 sm:mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
@@ -100,19 +100,19 @@ export default function ProtocolPage() {
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
           
-          {/* GitHub icon - RESPONSIVE OFFSET (small on mobile, full on tablet/desktop) */}
-          <div className="flex items-center justify-end relative -translate-x-2 mt-2 sm:-translate-x-10 sm:mt-12 flex-shrink-0">
-            {/* Glow - HIDDEN on mobile (<640px), visible on sm+ (≥640px) */}
-            <div className="hidden sm:flex absolute inset-0 items-center justify-center">
-              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
+          {/* GitHub icon - Desktop only (hidden on mobile), unified with homepage */}
+          <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
+            {/* Glow */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site" 
+              href="https://github.com/KuA1bo/minimaverse-site  " 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
             >
-              <svg className="w-7 h-7 sm:w-8 sm:h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
               </svg>
             </ExternalLink>
@@ -248,26 +248,32 @@ export default function ProtocolPage() {
           </h2>
           
           <div className="space-y-4">
-            {[
-              {
-                title: 'Cascading Chain with Superblocks',
-                text: "Minima's Cascading Chain structure efficiently manages blockchain growth through Superblocks. This approach keeps the chain compact and scalable without sacrificing security, enabling fast synchronization even on resource-constrained devices.",
-                status: 'confirmed' as const
-              },
-              {
-                title: 'Merkle Mountain Range (MMR) UTXO',
-                text: 'Minima utilizes a Merkle Mountain Range database to store only the UTXOs relevant to each node\'s private keys. This "storage-less" approach allows each node to operate with just ~300 MB RAM, making Minima highly resource-efficient.',
-                status: 'confirmed' as const
-              },
-            ].map((item, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
-                <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-                <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
-                <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
-                <StatusBadge status={item.status} />
-              </div>
-            ))}
+            {/* Cascading Chain Card */}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              <h3 className="text-white font-medium mb-2 relative">Cascading Chain with Superblocks</h3>
+              <p className="text-gray-300 text-sm mb-3 relative">Minima's Cascading Chain structure efficiently manages blockchain growth through Superblocks. This approach keeps the chain compact and scalable without sacrificing security, enabling fast synchronization even on resource-constrained devices.</p>
+              <StatusBadge status="confirmed" />
+            </div>
+            {/* Cascading Chain Source Link - outside the card, like MMR */}
+            <p className="text-sm text-gray-500 -mt-2 pl-2">
+              <ExternalLink 
+                href="https://docs.minima.global/docs/learn/the-blockchain#the-cascading-chain" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+              >
+                Source: The Cascading Chain
+              </ExternalLink>
+            </p>
+            
+            {/* MMR UTXO Card */}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              <h3 className="text-white font-medium mb-2 relative">Merkle Mountain Range (MMR) UTXO</h3>
+              <p className="text-gray-300 text-sm mb-3 relative">Minima utilizes a Merkle Mountain Range database to store only the UTXOs relevant to each node's private keys. This "storage-less" approach allows each node to operate with just ~300 MB RAM, making Minima highly resource-efficient.</p>
+              <StatusBadge status="confirmed" />
+            </div>
           </div>
           <p className="text-sm text-gray-500 mt-4">
             <ExternalLink 
@@ -407,11 +413,11 @@ export default function ProtocolPage() {
           </p>
         </div>
 
-        {/* Last Updated - enhanced */}
+        {/* Last Updated - UPDATED DATE */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: February 20, 2026
+            Last updated: March 26, 2026
           </p>
         </section>
 
