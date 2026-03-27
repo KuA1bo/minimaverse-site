@@ -1,11 +1,7 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
-// Visual enhancements applied per site design system (content unchanged)
-// Fixed: 1) GitHub icon: lowered position on mobile to prevent glow clipping (like /ecosystem)
-//        2) Comparison table: horizontal scroll on mobile for long text
-//        3) Updated Last updated date to March 25, 2026
-//        4) Primary Sources: vertical stack on mobile for description visibility
-// NOTE: Desktop version complete - no desktop changes made
+// Updated: GitHub icon hidden on mobile, unified with homepage style
+// Content: 1:1 unchanged
 
 import Link from 'next/link';
 
@@ -77,26 +73,25 @@ const BackgroundOrbs = () => (
 
 export default function AboutPage() {
   return (
-    // FIX: Add mobile padding to root container
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
       <BackgroundOrbs />
 
-      {/* Unified Header with gradient accent - FIXED: GitHub icon lowered on mobile to prevent glow clipping */}
+      {/* Unified Header with gradient accent */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative pt-4">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
           
-          {/* GitHub icon - FIXED: lowered position on mobile (mt-6 instead of mt-0) to prevent glow clipping */}
-          <div className="flex items-start justify-end relative -translate-x-2 sm:-translate-x-10 mt-6 sm:mt-12 flex-shrink-0 order-first sm:order-last mb-3 sm:mb-0">
+          {/* GitHub icon - Desktop only (hidden on mobile), unified with homepage */}
+          <div className="hidden sm:flex items-start justify-end relative -translate-x-10 mt-12 flex-shrink-0 order-last">
             {/* Centered glow */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
+              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site" 
-              className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10 ml-auto sm:ml-0"
+              href="https://github.com/KuA1bo/minimaverse-site  " 
+              className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
             >
@@ -126,7 +121,7 @@ export default function AboutPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - vertical stack on mobile for description visibility */}
+      {/* Primary Sources Box */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -310,14 +305,13 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* Section 4: Comparison Table - FIXED: horizontal scroll on mobile */}
+        {/* Section 4: Comparison Table */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚖️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Minima vs Traditional Blockchains</span>
           </h2>
           
-          {/* FIX: Added overflow-x-auto for horizontal scroll on mobile */}
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl overflow-hidden 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 overflow-x-auto">
             <div className="overflow-x-auto">
@@ -463,7 +457,7 @@ export default function AboutPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: March 25, 2026
+            Last updated: March 26, 2026
           </p>
         </section>
 
