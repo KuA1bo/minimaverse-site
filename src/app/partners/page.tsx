@@ -1,10 +1,12 @@
 // src/app/partners/page.tsx
 // Partners page - verified confirmed partnerships in the Minima ecosystem
-// Visual enhancements applied per site design system (content unchanged)
+// Updated: GitHub icon hidden on mobile, Primary Sources mobile cleanup, Status legend layout
+// Note: All comments in English only
+// Content: 1:1 unchanged
 
 import Link from 'next/link';
 
-// ExternalLink component for all external links with ↗ icon (enhanced with hideArrow)
+// ExternalLink component for all external links with arrow icon
 const ExternalLink = ({ 
   href, 
   children, 
@@ -34,7 +36,7 @@ const ExternalLink = ({
   </a>
 );
 
-// StatusBadge component for feature status indicators (enhanced with glow + hover)
+// StatusBadge component for feature status indicators
 const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'in-development' | 'community', reducedGlow?: boolean }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: reducedGlow ? 'shadow-green-500/25' : 'shadow-green-500/50' },
@@ -72,7 +74,7 @@ const BackgroundOrbs = () => (
 
 export default function PartnersPage() {
   return (
-    <div className="max-w-4xl mx-auto relative">
+    <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
       <BackgroundOrbs />
 
@@ -81,7 +83,7 @@ export default function PartnersPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
         <div className="relative flex justify-between items-start">
-          {/* Header text block - pb-3 for line spacing */}
+          {/* Header text block */}
           <div className="relative inline-block w-full pb-3">
             <Link 
               href="/" 
@@ -99,14 +101,14 @@ export default function PartnersPage() {
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
           
-          {/* GitHub icon - lower position, glow centered on icon */}
-          <div className="flex items-center justify-end relative -translate-x-10 mt-12">
-            {/* Centered glow - matches icon size exactly */}
+          {/* GitHub icon - Desktop only (hidden on mobile), unified with homepage */}
+          <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
+            {/* Glow */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
+              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site" 
+              href="https://github.com/KuA1bo/minimaverse-site  " 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -119,7 +121,7 @@ export default function PartnersPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - enhanced with bullet points • */}
+      {/* Primary Sources Box - matches /developers desktop style */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -130,35 +132,38 @@ export default function PartnersPage() {
             <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://minima.global/blog" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 minima.global/blog
               </ExternalLink>
-              <span className="text-gray-500">— Official Blog</span>
+              <span className="text-gray-500 max-[400px]:hidden">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">Official Blog</span>
             </li>
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://docs.minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 docs.minima.global
               </ExternalLink>
-              <span className="text-gray-500">— Documentation</span>
+              <span className="text-gray-500 max-[400px]:hidden">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">Documentation</span>
             </li>
-            <li className="flex items-center gap-2 group/link">
-              <span className="text-gray-400">•</span>
+            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://github.com/minima-global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 github.com/minima-global
               </ExternalLink>
-              <span className="text-gray-500">— Official GitHub</span>
+              <span className="text-gray-500 max-[400px]:hidden">—</span>
+              <span className="text-gray-500 text-xs sm:text-sm">Official GitHub</span>
             </li>
           </ul>
         </div>
@@ -183,14 +188,18 @@ export default function PartnersPage() {
               the Minima ecosystem. All entries include verifiable publication dates and official 
               announcements. Only partnerships with public confirmation are included.
             </p>
-            <p className="text-gray-400 text-sm mt-4 relative">
-              Status legend:{' '}
-              <StatusBadge status="confirmed" reducedGlow={true} />{' '}
-              <span className="text-gray-500">|</span>{' '}
-              <StatusBadge status="in-development" reducedGlow={true} />{' '}
-              <span className="text-gray-500">|</span>{' '}
-              <StatusBadge status="community" reducedGlow={true} />
-            </p>
+            
+            {/* Status legend - vertical on mobile with divider */}
+            <div className="mt-4 pt-3 border-t border-gray-700/40">
+              <p className="text-gray-400 text-xs mb-2">Status legend:</p>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <StatusBadge status="confirmed" reducedGlow={true} />
+                <span className="text-gray-500 hidden sm:inline">|</span>
+                <StatusBadge status="in-development" reducedGlow={true} />
+                <span className="text-gray-500 hidden sm:inline">|</span>
+                <StatusBadge status="community" reducedGlow={true} />
+              </div>
+            </div>
           </div>
         </section>
 
@@ -270,7 +279,7 @@ export default function PartnersPage() {
           </div>
         </section>
 
-        {/* Universal Disclaimer Block - enhanced */}
+        {/* Universal Disclaimer Block */}
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
                         opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
@@ -288,11 +297,11 @@ export default function PartnersPage() {
           </p>
         </div>
 
-        {/* Last Updated - enhanced */}
+        {/* Last Updated - UPDATED DATE */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: February 20, 2026
+            Last updated: March 26, 2026
           </p>
         </section>
 
