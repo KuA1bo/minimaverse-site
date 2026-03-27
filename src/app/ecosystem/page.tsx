@@ -1,10 +1,7 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
-// Visual enhancements applied per site design system (content unchanged)
-// Fixed: 1) GitHub icon: lowered position on mobile to prevent glow clipping
-//        2) Status legend: vertical stack on mobile (Variant 1)
-//        3) Updated Last updated date to March 25, 2026
-//        4) Primary Sources: vertical stack on mobile for description visibility
+// Updated: GitHub icon hidden on mobile, Android APK link updated
+// Content: 1:1 unchanged
 
 import Link from 'next/link';
 
@@ -76,26 +73,25 @@ const BackgroundOrbs = () => (
 
 export default function EcosystemPage() {
   return (
-    // FIX: Add mobile padding to root container
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
       <BackgroundOrbs />
 
-      {/* Unified Header with gradient accent - FIXED: GitHub icon lowered on mobile to prevent glow clipping */}
+      {/* Unified Header with gradient accent */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative pt-4">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
           
-          {/* GitHub icon - FIXED: lowered position on mobile (mt-6 instead of mt-0) to prevent glow clipping */}
-          <div className="flex items-start justify-end relative -translate-x-2 sm:-translate-x-10 mt-6 sm:mt-12 flex-shrink-0 order-first sm:order-last mb-3 sm:mb-0">
+          {/* GitHub icon - Desktop only (hidden on mobile), unified with homepage */}
+          <div className="hidden sm:flex items-start justify-end relative -translate-x-10 mt-12 flex-shrink-0 order-last">
             {/* Centered glow */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
+              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site" 
-              className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10 ml-auto sm:ml-0"
+              href="https://github.com/KuA1bo/minimaverse-site  " 
+              className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
             >
@@ -125,7 +121,7 @@ export default function EcosystemPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - vertical stack on mobile for description visibility */}
+      {/* Primary Sources Box */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -179,7 +175,7 @@ export default function EcosystemPage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Intro - FIXED: Status legend vertical on mobile (Variant 1) */}
+        {/* Intro */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
@@ -190,7 +186,7 @@ export default function EcosystemPage() {
               with the Minima Protocol. Inclusion does not constitute endorsement — all entries are 
               publicly verifiable and community-contributed.
             </p>
-            {/* Status legend: vertical on mobile, horizontal on desktop (Variant 1) */}
+            {/* Status legend: vertical on mobile, horizontal on desktop */}
             <div className="mt-4 pt-3 border-t border-gray-700/40">
               <p className="text-gray-400 text-xs mb-2">Status legend:</p>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
@@ -332,7 +328,7 @@ export default function EcosystemPage() {
                 📱 Google Play Store
               </ExternalLink>
               <ExternalLink 
-                href="https://github.com/minima-global/Minima/blob/master/jar/minima-1.0.46.6.apk" 
+                href="https://github.com/minima-global/Minima/tree/master/jar" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
               >
                 🤖 Android APK (GitHub)
@@ -402,7 +398,7 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Universal Disclaimer Block - enhanced */}
+        {/* Universal Disclaimer Block */}
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-4 sm:p-6 mb-8 
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
                         opacity-0 animate-fade-in-up delay-75 group overflow-hidden">
@@ -424,7 +420,7 @@ export default function EcosystemPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: March 25, 2026
+            Last updated: March 26, 2026
           </p>
         </section>
 
