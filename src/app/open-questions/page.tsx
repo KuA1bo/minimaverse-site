@@ -1,11 +1,12 @@
 // src/app/open-questions/page.tsx
 // Open Questions page - redirect to official Discord for community questions
-// Visual enhancements applied per site design system (content unchanged)
-// Fixed: Last updated date to March 20, 2026 + href trailing spaces
+// Updated: GitHub icon hidden on mobile, Additional Resources mobile cleanup
+// Note: All comments in English only
+// Content: 1:1 unchanged
 
 import Link from 'next/link';
 
-// ExternalLink component for all external links with ↗ icon (enhanced with hideArrow)
+// ExternalLink component for all external links with arrow icon
 const ExternalLink = ({ 
   href, 
   children, 
@@ -35,7 +36,7 @@ const ExternalLink = ({
   </a>
 );
 
-// StatusBadge component for feature status indicators (enhanced with glow + hover)
+// StatusBadge component for feature status indicators
 const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'in-development' | 'community', reducedGlow?: boolean }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: reducedGlow ? 'shadow-green-500/25' : 'shadow-green-500/50' },
@@ -73,7 +74,7 @@ const BackgroundOrbs = () => (
 
 export default function OpenQuestionsPage() {
   return (
-    <div className="max-w-4xl mx-auto relative">
+    <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
       <BackgroundOrbs />
 
@@ -82,7 +83,7 @@ export default function OpenQuestionsPage() {
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
         <div className="relative flex justify-between items-start">
-          {/* Header text block - pb-3 for line spacing */}
+          {/* Header text block */}
           <div className="relative inline-block w-full pb-3">
             <Link 
               href="/" 
@@ -100,14 +101,14 @@ export default function OpenQuestionsPage() {
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
           
-          {/* GitHub icon - lower position, glow centered on icon */}
-          <div className="flex items-center justify-end relative -translate-x-10 mt-12">
-            {/* Centered glow - matches icon size exactly */}
+          {/* GitHub icon - Desktop only (hidden on mobile), unified with homepage */}
+          <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
+            {/* Glow */}
             <div className="absolute inset-0 flex items-center justify-center">
-              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-xl" />
+              <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site" 
+              href="https://github.com/KuA1bo/minimaverse-site  " 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -244,7 +245,7 @@ export default function OpenQuestionsPage() {
           </div>
         </section>
 
-        {/* Additional Resources */}
+        {/* Additional Resources - matches /developers desktop style */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔗</span>
@@ -255,42 +256,45 @@ export default function OpenQuestionsPage() {
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
-            <ul className="space-y-3 text-sm relative">
-              <li className="flex items-center gap-2 group/link">
-                <span className="text-gray-400">•</span>
+            <ul className="space-y-3 text-sm">
+              <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <span className="text-gray-400 max-[400px]:hidden">•</span>
                 <ExternalLink 
                   href="https://docs.minima.global" 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   docs.minima.global
                 </ExternalLink>
-                <span className="text-gray-500">— Official Documentation</span>
+                <span className="text-gray-500 max-[400px]:hidden">—</span>
+                <span className="text-gray-500 text-xs sm:text-sm">Official Documentation</span>
               </li>
-              <li className="flex items-center gap-2 group/link">
-                <span className="text-gray-400">•</span>
+              <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <span className="text-gray-400 max-[400px]:hidden">•</span>
                 <ExternalLink 
                   href="https://minima.global/blog" 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   minima.global/blog
                 </ExternalLink>
-                <span className="text-gray-500">— Minima Blog (Announcements)</span>
+                <span className="text-gray-500 max-[400px]:hidden">—</span>
+                <span className="text-gray-500 text-xs sm:text-sm">Minima Blog (Announcements)</span>
               </li>
-              <li className="flex items-center gap-2 group/link">
-                <span className="text-gray-400">•</span>
+              <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+                <span className="text-gray-400 max-[400px]:hidden">•</span>
                 <ExternalLink 
                   href="https://t.me/MinimaGlobal" 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   t.me/MinimaGlobal
                 </ExternalLink>
-                <span className="text-gray-500">— Telegram Announcements</span>
+                <span className="text-gray-500 max-[400px]:hidden">—</span>
+                <span className="text-gray-500 text-xs sm:text-sm">Telegram Announcements</span>
               </li>
             </ul>
           </div>
         </section>
 
-        {/* Universal Disclaimer Block - enhanced */}
+        {/* Universal Disclaimer Block */}
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
                         opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
@@ -308,11 +312,11 @@ export default function OpenQuestionsPage() {
           </p>
         </div>
 
-        {/* Last Updated - enhanced with corrected date */}
+        {/* Last Updated - UPDATED DATE */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: March 20, 2026
+            Last updated: March 26, 2026
           </p>
         </section>
 
