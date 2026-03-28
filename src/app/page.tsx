@@ -1,8 +1,8 @@
 // src/app/page.tsx
 // Home page - enhanced animated orbs + unified visual design system
-// Updated: Hero content padding adjusted to prevent button hover overflow on mobile
+// Updated: Added Open Questions link to Quick Links section
 // Note: All comments in English only
-// Content: 1:1 unchanged
+// Content: 1:1 unchanged except specified addition
 
 import Link from 'next/link';
 
@@ -274,6 +274,7 @@ export default function HomePage() {
                   { href: '/about', text: 'What is Minima' },
                   { href: '/ecosystem', text: 'Ecosystem' },
                   { href: '/timeline', text: 'Verified Milestones (Timeline)' },
+                  { href: '/open-questions', text: 'Open Questions' },
                   { href: '/links', text: 'Links' },
                 ]
               },
