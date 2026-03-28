@@ -1,10 +1,12 @@
 // src/app/layout.tsx
 // Root layout component for Minimaverse - Next.js App Router
-// Fixed: responsive global header for 320px (hybrid sticky mode) + href trailing spaces
+// Fixed: colorScheme moved to viewport export for Dark Reader compatibility
+// Note: All comments in English only
+// Content: 1:1 unchanged
 
 import './globals.css';
 import Link from 'next/link';
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 // ExternalLink component for external links (reusable)
 const ExternalLink = ({ 
@@ -44,6 +46,11 @@ export const metadata: Metadata = {
       { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
     ],
   },
+};
+
+// Viewport configuration for browser/extension compatibility
+export const viewport: Viewport = {
+  colorScheme: 'dark', // Tells Dark Reader and browsers: "this site is already dark"
 };
 
 // Enhanced background orbs - animated style
