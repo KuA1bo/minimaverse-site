@@ -1,6 +1,6 @@
 // src/app/timeline/page.tsx
 // Timeline page - verified historical milestones of Minima Protocol
-// Updated: GitHub icon hidden on mobile, Primary Sources mobile cleanup, Status legend layout
+// Fixed: Primary Sources mobile layout, Timeline Philosophy status legend vertical on mobile
 // Note: All comments in English only
 // Content: 1:1 unchanged
 
@@ -138,7 +138,7 @@ export default function TimelinePage() {
               <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://minima.global/blog" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all min-w-0"
               >
                 minima.global/blog
               </ExternalLink>
@@ -149,7 +149,7 @@ export default function TimelinePage() {
               <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://docs.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all min-w-0"
               >
                 docs.minima.global
               </ExternalLink>
@@ -160,7 +160,7 @@ export default function TimelinePage() {
               <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://github.com/minima-global/Minima/releases" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all min-w-0"
               >
                 github.com/minima-global/Minima/releases
               </ExternalLink>
@@ -230,15 +230,25 @@ export default function TimelinePage() {
               verified, reflecting Minima's commitment to evidence-based progress reporting 
               and long-term infrastructure building.
             </p>
-            <p className="text-gray-500 text-xs mt-3 relative">
-              Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Source:{' '}
-              <ExternalLink 
-                href="https://minima.global/post/minima-from-roadmaps-to-results" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-              >
-                Minima Official Blog
-              </ExternalLink>
-            </p>
+            
+            {/* Status + Source - vertical on mobile, horizontal on desktop */}
+            <div className="mt-3 pt-3 border-t border-gray-700/40">
+              <p className="text-gray-500 text-xs flex flex-col sm:flex-row sm:items-center gap-2 relative">
+                <span className="flex items-center gap-1">
+                  Status: <StatusBadge status="confirmed" reducedGlow={true} />
+                </span>
+                <span className="hidden sm:inline text-gray-500">|</span>
+                <span className="flex items-center gap-1">
+                  Source:{' '}
+                  <ExternalLink 
+                    href="https://minima.global/post/minima-from-roadmaps-to-results" 
+                    className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all min-w-0"
+                  >
+                    Minima Official Blog
+                  </ExternalLink>
+                </span>
+              </p>
+            </div>
           </div>
         </section>
 
