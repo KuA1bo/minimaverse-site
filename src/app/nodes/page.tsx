@@ -1,6 +1,6 @@
 // src/app/nodes/page.tsx
 // Nodes page - verified guides for running Minima nodes
-// Updated: Link fixes for Primary Sources, System Requirements, Use Cases pattern; GitHub icon hidden on mobile
+// Fixed: Primary Sources mobile layout for long URLs
 // Note: All comments in English only
 // Content: 1:1 unchanged
 
@@ -136,7 +136,7 @@ export default function NodesPage() {
               <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://docs.minima.global/docs/run-a-node" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all min-w-0"
               >
                 docs.minima.global/docs/run-a-node
               </ExternalLink>
@@ -147,7 +147,7 @@ export default function NodesPage() {
               <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://docs.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all min-w-0"
               >
                 docs.minima.global
               </ExternalLink>
@@ -158,7 +158,7 @@ export default function NodesPage() {
               <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://github.com/minima-global/Minima/tree/master/jar" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all min-w-0"
               >
                 github.com/minima-global/Minima/tree/master/jar
               </ExternalLink>
