@@ -1,6 +1,6 @@
 // src/app/tools/page.tsx
 // Tools page - verified tools and utilities for Minima Protocol
-// Updated: Shifted GitHub APK link right on desktop/tablet (sm:ml-4)
+// Updated: All links moved below cards (outside containers) for consistency
 // Note: All comments in English only
 // Content: 1:1 unchanged
 
@@ -121,7 +121,7 @@ export default function ToolsPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - UNCHANGED (no icons added as requested) */}
+      {/* Primary Sources Box - UNCHANGED (links inside box) */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -210,41 +210,65 @@ export default function ToolsPage() {
           </h2>
           
           <div className="space-y-4">
-            {[
-              {
-                title: 'Minima Terminal',
-                text: 'Command-line interface for advanced node management, transaction creation, and smart contract deployment.',
-                link: { href: 'https://docs.minima.global/docs/development/terminal-commands', text: '📚 Terminal Commands Documentation' }
-              },
-              {
-                title: 'Minima Scan (Explorer)',
-                text: 'Blockchain explorer for viewing transactions, blocks, addresses, and network statistics on the Minima protocol.',
-                link: { href: 'https://explorer.minima.global', text: '🌐 explorer.minima.global' }
-              },
-              {
-                title: 'Web Wallet',
-                text: 'Browser-based wallet for managing Minima tokens, sending/receiving transactions, and interacting with MiniDapps.',
-                link: { href: 'https://wallet.minima.global', text: '🌐 wallet.minima.global' }
-              },
-            ].map((item, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
-                <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-                <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
-                <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
-                <ExternalLink 
-                  href={item.link.href} 
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm relative"
-                >
-                  {item.link.text}
-                </ExternalLink>
-                <p className="text-gray-500 text-xs mt-2 relative">
-                  Status: <StatusBadge status="confirmed" /> | Official source
-                </p>
-              </div>
-            ))}
+            
+            {/* Minima Terminal */}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              <h3 className="text-white font-medium mb-2 relative">Minima Terminal</h3>
+              <p className="text-gray-300 text-sm mb-3 relative">
+                Command-line interface for advanced node management, transaction creation, and smart contract deployment.
+              </p>
+              <StatusBadge status="confirmed" />
+            </div>
+            <p className="text-sm text-gray-500 mt-2">
+              <ExternalLink 
+                href="https://docs.minima.global/docs/development/terminal-commands" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+              >
+                📚 Terminal Commands Documentation
+              </ExternalLink>
+            </p>
 
-            {/* Mobile Wallet - special layout with multiple links */}
+            {/* Minima Scan */}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              <h3 className="text-white font-medium mb-2 relative">Minima Scan (Explorer)</h3>
+              <p className="text-gray-300 text-sm mb-3 relative">
+                Blockchain explorer for viewing transactions, blocks, addresses, and network statistics on the Minima protocol.
+              </p>
+              <StatusBadge status="confirmed" />
+            </div>
+            <p className="text-sm text-gray-500 mt-2">
+              <ExternalLink 
+                href="https://explorer.minima.global" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+              >
+                🌐 explorer.minima.global
+              </ExternalLink>
+            </p>
+
+            {/* Web Wallet */}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              <h3 className="text-white font-medium mb-2 relative">Web Wallet</h3>
+              <p className="text-gray-300 text-sm mb-3 relative">
+                Browser-based wallet for managing Minima tokens, sending/receiving transactions, and interacting with MiniDapps.
+              </p>
+              <StatusBadge status="confirmed" />
+            </div>
+            <p className="text-sm text-gray-500 mt-2">
+              <ExternalLink 
+                href="https://wallet.minima.global" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+              >
+                🌐 wallet.minima.global
+              </ExternalLink>
+            </p>
+
+            {/* Mobile Wallet - special layout with multiple links below */}
             <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -252,27 +276,26 @@ export default function ToolsPage() {
               <p className="text-gray-300 text-sm mb-3 relative">
                 Official mobile wallet available on Google Play and as direct APK download.
               </p>
-              <div className="space-y-2 relative">
-                <ExternalLink 
-                  href="https://play.google.com/store/search?q=minima&c=apps&hl=en" 
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
-                >
-                  📱 Google Play Store
-                </ExternalLink>
-                <ExternalLink 
-                  href="https://github.com/minima-global/minimaapk" 
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 block relative sm:ml-4"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                  </svg>
-                  Android APK (GitHub)
-                </ExternalLink>
-              </div>
-              <p className="text-gray-500 text-xs mt-2 relative">
-                Status: <StatusBadge status="confirmed" /> | Official source
-              </p>
+              <StatusBadge status="confirmed" />
             </div>
+            <div className="space-y-2 relative">
+              <ExternalLink 
+                href="https://play.google.com/store/search?q=minima&c=apps&hl=en" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
+              >
+                📱 Google Play Store
+              </ExternalLink>
+              <ExternalLink 
+                href="https://github.com/minima-global/minimaapk" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 block relative sm:ml-4"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                Android APK (GitHub)
+              </ExternalLink>
+            </div>
+
           </div>
         </section>
 
@@ -284,39 +307,64 @@ export default function ToolsPage() {
           </h2>
           
           <div className="space-y-4">
-            {[
-              {
-                title: 'TypeScript SDK',
-                text: 'Official SDK for building applications and MiniDapps using TypeScript/JavaScript. Provides high-level abstractions for protocol interaction.',
-                link: { href: 'https://docs.minima.global/docs/development/using-typescript', text: '📚 TypeScript Development Guide' }
-              },
-              {
-                title: '📜 KISS VM (Smart Contract Scripting)',
-                text: 'Complete language specification: grammar, globals, and 40+ functions for writing smart contracts on Minima (SHA2/3, CHECKSIG, MULTISIG, and more).',
-                link: { href: 'https://docs.minima.global/docs/development/contracts-kissvm', text: '📚 KISS VM Documentation' }
-              },
-              {
-                title: '🔌 Terminal Commands & RPC',
-                text: 'Node interaction via command-line interface and RPC API for automation, transaction creation, and programmatic control.',
-                link: { href: 'https://docs.minima.global/docs/run-a-node/startup-parameters#rpc', text: '📚 RPC Startup Parameters' }
-              },
-            ].map((item, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
-                <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-                <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
-                <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
-                <ExternalLink 
-                  href={item.link.href} 
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm relative"
-                >
-                  {item.link.text}
-                </ExternalLink>
-                <p className="text-gray-500 text-xs mt-2 relative">
-                  Status: <StatusBadge status="confirmed" /> | Official source
-                </p>
-              </div>
-            ))}
+            
+            {/* TypeScript SDK */}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              <h3 className="text-white font-medium mb-2 relative">TypeScript SDK</h3>
+              <p className="text-gray-300 text-sm mb-3 relative">
+                Official SDK for building applications and MiniDapps using TypeScript/JavaScript. Provides high-level abstractions for protocol interaction.
+              </p>
+              <StatusBadge status="confirmed" />
+            </div>
+            <p className="text-sm text-gray-500 mt-2">
+              <ExternalLink 
+                href="https://docs.minima.global/docs/development/using-typescript" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+              >
+                📚 TypeScript Development Guide
+              </ExternalLink>
+            </p>
+
+            {/* KISS VM */}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              <h3 className="text-white font-medium mb-2 relative">📜 KISS VM (Smart Contract Scripting)</h3>
+              <p className="text-gray-300 text-sm mb-3 relative">
+                Complete language specification: grammar, globals, and 40+ functions for writing smart contracts on Minima (SHA2/3, CHECKSIG, MULTISIG, and more).
+              </p>
+              <StatusBadge status="confirmed" />
+            </div>
+            <p className="text-sm text-gray-500 mt-2">
+              <ExternalLink 
+                href="https://docs.minima.global/docs/development/contracts-kissvm" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+              >
+                📚 KISS VM Documentation
+              </ExternalLink>
+            </p>
+
+            {/* Terminal Commands & RPC */}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              <h3 className="text-white font-medium mb-2 relative">🔌 Terminal Commands & RPC</h3>
+              <p className="text-gray-300 text-sm mb-3 relative">
+                Node interaction via command-line interface and RPC API for automation, transaction creation, and programmatic control.
+              </p>
+              <StatusBadge status="confirmed" />
+            </div>
+            <p className="text-sm text-gray-500 mt-2">
+              <ExternalLink 
+                href="https://docs.minima.global/docs/run-a-node/startup-parameters#rpc" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+              >
+                📚 RPC Startup Parameters
+              </ExternalLink>
+            </p>
+
           </div>
         </section>
 
