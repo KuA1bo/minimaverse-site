@@ -1,6 +1,6 @@
 // src/app/developers/page.tsx
 // Developers page - verified resources for building on Minima Protocol
-// Updated: GitHub icon hidden on mobile, Status legend with divider, Primary Sources cleanup
+// Updated: Added icons to external links (excluding Primary Sources block)
 // Note: All comments in English only
 // Content: 1:1 unchanged
 
@@ -121,7 +121,7 @@ export default function DevelopersPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box */}
+      {/* Primary Sources Box - UNCHANGED (no icons added as requested) */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -231,7 +231,7 @@ export default function DevelopersPage() {
                   <li>• Developer community channels</li>
                 </ul>
                 <p className="text-blue-400 text-sm mt-4 font-medium inline-flex items-center gap-1">
-                  build.minima.global
+                  🌐 build.minima.global
                   <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
@@ -256,12 +256,12 @@ export default function DevelopersPage() {
               {
                 title: 'Full Documentation',
                 text: 'Comprehensive API references, protocol specifications, and technical guides for Minima development.',
-                link: { href: 'https://docs.minima.global', text: 'docs.minima.global' }
+                link: { href: 'https://docs.minima.global', text: '📚 docs.minima.global' }
               },
               {
                 title: 'Protocol Architecture',
                 text: "Deep dive into Minima's consensus mechanism, data structures, and network design.",
-                link: { href: 'https://docs.minima.global/docs/core/at-a-glance', text: 'Core Features Overview' }
+                link: { href: 'https://docs.minima.global/docs/core/at-a-glance', text: '📚 Core Features Overview' }
               },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
@@ -296,16 +296,16 @@ export default function DevelopersPage() {
                 title: '📚 Learn the Basics',
                 text: 'Foundational concepts and protocol overview for new developers.',
                 links: [
-                  { href: 'https://docs.minima.global/docs/development/minidapp-structure', text: 'MiniDapp Structure' },
-                  { href: 'https://docs.minima.global/docs/learn/scripting', text: 'Smart Contracts Basics' }
+                  { href: 'https://docs.minima.global/docs/development/minidapp-structure', text: '📚 MiniDapp Structure' },
+                  { href: 'https://docs.minima.global/docs/learn/scripting', text: '📚 Smart Contracts Basics' }
                 ]
               },
               {
                 title: '📝 Build Applications',
                 text: 'Practical guides for creating MiniDapps and smart contracts on Minima.',
                 links: [
-                  { href: 'https://docs.minima.global/docs/development/contracts-basics', text: 'KISS Scripting Basics' },
-                  { href: 'https://docs.minima.global/docs/development/using-typescript', text: 'TypeScript SDK Guide' }
+                  { href: 'https://docs.minima.global/docs/development/contracts-basics', text: '📚 KISS Scripting Basics' },
+                  { href: 'https://docs.minima.global/docs/development/using-typescript', text: '📚 TypeScript SDK Guide' }
                 ]
               },
             ].map((path, index) => (
@@ -345,12 +345,12 @@ export default function DevelopersPage() {
               {
                 title: 'Official Tutorials',
                 text: 'Step-by-step guides from the Minima documentation team.',
-                link: { href: 'https://docs.minima.global/docs/buildonminima/txntutorial/start', text: 'Smart Contract Tutorial Series' }
+                link: { href: 'https://docs.minima.global/docs/buildonminima/txntutorial/start', text: '📚 Smart Contract Tutorial Series' }
               },
               {
                 title: '🐙 Community Tutorials',
                 text: 'Additional transaction examples and patterns from community contributors.',
-                link: { href: 'https://github.com/MBCOT/Minima-Tutorials/', text: 'MBCOT Minima Tutorials', icon: true, status: 'community' as const }
+                link: { href: 'https://github.com/MBCOT/Minima-Tutorials/', text: '🐙 MBCOT Minima Tutorials', icon: true, status: 'community' as const }
               },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
@@ -438,7 +438,7 @@ export default function DevelopersPage() {
                 href="https://docs.minima.global/docs/run-a-node" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm relative"
               >
-                Guide: Run a Node
+                📚 Guide: Run a Node
               </ExternalLink>
               <p className="text-gray-500 text-xs mt-2 relative">
                 Status: <StatusBadge status="confirmed" /> | Official source
@@ -467,16 +467,13 @@ export default function DevelopersPage() {
                 href="https://github.com/minima-global/Minima" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 mb-2 relative"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                github.com/minima-global/Minima
+                🐙 github.com/minima-global/Minima
               </ExternalLink>
               <ExternalLink 
                 href="https://github.com/minima-global/Minima/tree/master/src/org/minima" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm text-xs block relative"
               >
-                → Core source: /src/org/minima
+                🐙 → Core source: /src/org/minima
               </ExternalLink>
               <p className="text-gray-500 text-xs mt-2 relative">
                 Status: <StatusBadge status="confirmed" /> | Official source
@@ -495,7 +492,7 @@ export default function DevelopersPage() {
                 href="https://github.com/minima-global/minimaapk" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block mb-2 relative"
               >
-                Minima APK (Android)
+                🐙 Minima APK (Android)
               </ExternalLink>
               <p className="text-gray-500 text-xs mb-2 relative">
                 Status: <StatusBadge status="confirmed" /> | Official Minima Global
@@ -504,10 +501,7 @@ export default function DevelopersPage() {
                 href="https://github.com/mihbor/minimak" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 relative"
               >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                minimak (Kotlin Library)
+                🐙 minimak (Kotlin Library)
               </ExternalLink>
               <p className="text-gray-500 text-xs mt-2 relative">
                 Status: <StatusBadge status="community" /> | Third-party library by @mihbor
@@ -535,7 +529,7 @@ export default function DevelopersPage() {
               href="https://discord.gg/minimaglobal" 
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm relative"
             >
-              discord.gg/minimaglobal
+              💬 discord.gg/minimaglobal
             </ExternalLink>
             <p className="text-gray-500 text-xs mt-2 relative">
               Status: <StatusBadge status="confirmed" /> | Official community channel
