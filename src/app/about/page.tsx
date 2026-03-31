@@ -1,6 +1,7 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
-// Updated: GitHub icon hidden on mobile, unified with homepage style
+// Updated: Removed duplicate tool icon from Edge Pioneers card
+// Note: All comments in English only
 // Content: 1:1 unchanged
 
 import Link from 'next/link';
@@ -416,7 +417,6 @@ export default function AboutPage() {
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
             <div className="relative flex items-start gap-4">
-              <span className="text-blue-400 text-2xl mt-1">🛠️</span>
               <div>
                 <h3 className="text-white font-medium group-hover:text-blue-300 transition-colors">
                   Edge Pioneers Program
@@ -425,7 +425,7 @@ export default function AboutPage() {
                   Official developer portal: documentation, SDKs, tutorials, and community support.
                 </p>
                 <p className="text-blue-400 text-sm mt-3 inline-flex items-center gap-1">
-                  build.minima.global
+                  🌐 build.minima.global
                   <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
