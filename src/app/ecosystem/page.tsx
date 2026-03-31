@@ -1,6 +1,6 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
-// Updated: Added icons to external links (excluding Primary Sources block)
+// Updated: Wallets block mobile layout, GitHub icons for GitHub links
 // Note: All comments in English only
 // Content: 1:1 unchanged
 
@@ -209,7 +209,7 @@ export default function EcosystemPage() {
           </h2>
           
           <div className="space-y-4">
-            {/* Minima Protocol */}
+            {/* Minima Protocol - GitHub SVG icon */}
             <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -223,7 +223,10 @@ export default function EcosystemPage() {
                 href="https://github.com/minima-global/Minima" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 relative"
               >
-                🐙 github.com/minima-global/Minima
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                github.com/minima-global/Minima
               </ExternalLink>
               <p className="text-gray-500 text-xs mt-2 relative">
                 Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Official source
@@ -306,7 +309,7 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Wallets */}
+        {/* Wallets - Updated: vertical links on mobile, GitHub SVG icon for APK link */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👛</span>
@@ -337,9 +340,12 @@ export default function EcosystemPage() {
               </ExternalLink>
               <ExternalLink 
                 href="https://github.com/minima-global/Minima/tree/master/jar" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 block"
               >
-                🐙 Android APK (GitHub)
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                Android APK (GitHub)
               </ExternalLink>
             </div>
             <p className="text-gray-500 text-xs mt-3 relative">
