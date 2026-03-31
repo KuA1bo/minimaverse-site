@@ -1,6 +1,6 @@
 // src/app/tools/page.tsx
 // Tools page - verified tools and utilities for Minima Protocol
-// Updated: Primary Sources layout matches /developers desktop style
+// Updated: Shifted GitHub APK link right on desktop/tablet (sm:ml-4)
 // Note: All comments in English only
 // Content: 1:1 unchanged
 
@@ -121,7 +121,7 @@ export default function ToolsPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - matches /developers desktop style */}
+      {/* Primary Sources Box - UNCHANGED (no icons added as requested) */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -214,17 +214,17 @@ export default function ToolsPage() {
               {
                 title: 'Minima Terminal',
                 text: 'Command-line interface for advanced node management, transaction creation, and smart contract deployment.',
-                link: { href: 'https://docs.minima.global/docs/development/terminal-commands', text: 'Terminal Commands Documentation' }
+                link: { href: 'https://docs.minima.global/docs/development/terminal-commands', text: '📚 Terminal Commands Documentation' }
               },
               {
                 title: 'Minima Scan (Explorer)',
                 text: 'Blockchain explorer for viewing transactions, blocks, addresses, and network statistics on the Minima protocol.',
-                link: { href: 'https://explorer.minima.global', text: 'explorer.minima.global' }
+                link: { href: 'https://explorer.minima.global', text: '🌐 explorer.minima.global' }
               },
               {
                 title: 'Web Wallet',
                 text: 'Browser-based wallet for managing Minima tokens, sending/receiving transactions, and interacting with MiniDapps.',
-                link: { href: 'https://wallet.minima.global', text: 'wallet.minima.global' }
+                link: { href: 'https://wallet.minima.global', text: '🌐 wallet.minima.global' }
               },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
@@ -261,9 +261,12 @@ export default function ToolsPage() {
                 </ExternalLink>
                 <ExternalLink 
                   href="https://github.com/minima-global/minimaapk" 
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 block relative sm:ml-4"
                 >
-                  🤖 Android APK (GitHub)
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  Android APK (GitHub)
                 </ExternalLink>
               </div>
               <p className="text-gray-500 text-xs mt-2 relative">
@@ -285,17 +288,17 @@ export default function ToolsPage() {
               {
                 title: 'TypeScript SDK',
                 text: 'Official SDK for building applications and MiniDapps using TypeScript/JavaScript. Provides high-level abstractions for protocol interaction.',
-                link: { href: 'https://docs.minima.global/docs/development/using-typescript', text: 'TypeScript Development Guide' }
+                link: { href: 'https://docs.minima.global/docs/development/using-typescript', text: '📚 TypeScript Development Guide' }
               },
               {
                 title: '📜 KISS VM (Smart Contract Scripting)',
                 text: 'Complete language specification: grammar, globals, and 40+ functions for writing smart contracts on Minima (SHA2/3, CHECKSIG, MULTISIG, and more).',
-                link: { href: 'https://docs.minima.global/docs/development/contracts-kissvm', text: 'KISS VM Documentation' }
+                link: { href: 'https://docs.minima.global/docs/development/contracts-kissvm', text: '📚 KISS VM Documentation' }
               },
               {
                 title: '🔌 Terminal Commands & RPC',
                 text: 'Node interaction via command-line interface and RPC API for automation, transaction creation, and programmatic control.',
-                link: { href: 'https://docs.minima.global/docs/run-a-node/startup-parameters#rpc', text: 'RPC Startup Parameters' }
+                link: { href: 'https://docs.minima.global/docs/run-a-node/startup-parameters#rpc', text: '📚 RPC Startup Parameters' }
               },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
