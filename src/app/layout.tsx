@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 // Root layout component for Minimaverse - Next.js App Router
-// Fixed: colorScheme moved to viewport export for Dark Reader compatibility
+// Updated: metadata title/description for SEO and neutral positioning
 // Note: All comments in English only
 // Content: 1:1 unchanged
 
@@ -36,8 +36,8 @@ const ExternalLink = ({
 
 // Metadata configuration for SEO and favicons
 export const metadata: Metadata = {
-  title: 'Minimaverse',
-  description: 'Minima Protocol Universe Documentation',
+  title: 'Minimaverse — Minima Ecosystem Hub',
+  description: 'Unofficial, neutral information hub covering the Minima protocol, core components, development history, and publicly verifiable updates.',
   icons: {
     icon: [
       { url: '/icon.png', sizes: '192x192', type: 'image/png' },
