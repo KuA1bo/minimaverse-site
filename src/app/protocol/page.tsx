@@ -1,6 +1,6 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
-// Updated: GitHub icon hidden on mobile, Primary Sources mobile cleanup, Cascading Chain link repositioned
+// Updated: Added non-breaking space before arrow icon to keep it attached to last word, allowing proper wrap
 // Note: All comments in English only
 // Content: 1:1 unchanged
 
@@ -29,9 +29,12 @@ const ExternalLink = ({
   >
     {children}
     {!hideArrow && (
-      <svg className="w-3 h-3 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-      </svg>
+      <>
+        &nbsp;
+        <svg className="w-3 h-3 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+        </svg>
+      </>
     )}
   </a>
 );
@@ -405,7 +408,7 @@ export default function ProtocolPage() {
           </div>
         </section>
 
-        {/* Universal Disclaimer Block - enhanced */}
+        {/* Universal Disclaimer Block */}
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
                         opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
