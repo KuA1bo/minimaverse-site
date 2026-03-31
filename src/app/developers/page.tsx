@@ -1,6 +1,6 @@
 // src/app/developers/page.tsx
 // Developers page - verified resources for building on Minima Protocol
-// Updated: Replaced emoji icons with GitHub SVG icons in Core Protocol & Mobile & Libraries blocks
+// Updated: Removed duplicate arrow icon in Edge Pioneers Program card
 // Note: All comments in English only
 // Content: 1:1 unchanged
 
@@ -121,7 +121,7 @@ export default function DevelopersPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - UNCHANGED (no icons added as requested) */}
+      {/* Primary Sources Box */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -183,7 +183,7 @@ export default function DevelopersPage() {
               the Minima Protocol. All links point to official or community-verified sources.
             </p>
             
-            {/* Status legend - with divider line like homepage "About This Site" */}
+            {/* Status legend - with divider line */}
             <div className="mt-4 pt-3 border-t border-gray-700/40">
               <p className="text-gray-400 text-xs mb-2">Status legend:</p>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
@@ -210,6 +210,7 @@ export default function DevelopersPage() {
                       hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/15 
                       transition-all duration-300 group overflow-hidden"
             ariaLabel="Visit Edge Pioneers developer portal"
+            hideArrow={true}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
@@ -572,7 +573,7 @@ export default function DevelopersPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE */}
+        {/* Last Updated */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-75">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
