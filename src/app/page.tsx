@@ -1,8 +1,8 @@
 // src/app/page.tsx
 // Home page - enhanced animated orbs + unified visual design system
-// Updated: Added Open Questions link to Quick Links section
+// Updated: Hero text for neutral positioning and ecosystem accuracy
 // Note: All comments in English only
-// Content: 1:1 unchanged except specified addition
+// Content: Updated hero section text only; rest 1:1 unchanged
 
 import Link from 'next/link';
 
@@ -101,7 +101,7 @@ export default function HomePage() {
             </ExternalLink>
           </div>
           
-          {/* Title content block - Added pl-2 pr-2 sm:pl-4 sm:pr-4 to prevent hover overflow */}
+          {/* Title content block */}
           <div className="flex-1 min-w-0 pl-2 pr-2 sm:pl-4 sm:pr-4">
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4 relative inline-block">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
@@ -110,7 +110,7 @@ export default function HomePage() {
               <span className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-full animate-gradient-x" />
             </h1>
             <p className="text-gray-400 text-base sm:text-lg mb-6 leading-relaxed">
-              Community-driven information hub for the Minima Protocol
+              Neutral information hub for the Minima ecosystem.
             </p>
             
             <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
@@ -135,7 +135,7 @@ export default function HomePage() {
             </div>
             
             <p className="mt-6 text-xs text-gray-500 max-w-2xl">
-              All information sourced from official Minima documentation and verified public announcements
+              Covering protocol architecture, core components, development history, and verified community interactions. All information is sourced from official documentation and public announcements.
             </p>
           </div>
         </div>
