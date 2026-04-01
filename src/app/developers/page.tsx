@@ -1,6 +1,6 @@
 // src/app/developers/page.tsx
 // Developers page - verified resources for building on Minima Protocol
-// Updated: Removed duplicate arrow icon in Edge Pioneers Program card
+// Updated: Learning Paths links moved outside cards (global pattern applied)
 // Note: All comments in English only
 // Content: 1:1 unchanged
 
@@ -121,7 +121,7 @@ export default function DevelopersPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box */}
+      {/* Primary Sources Box - UNCHANGED (as requested) */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -204,14 +204,10 @@ export default function DevelopersPage() {
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Developer Portal</span>
           </h2>
           
-          <ExternalLink 
-            href="https://build.minima.global/" 
-            className="block relative bg-blue-900/30 border border-blue-700/50 rounded-2xl p-6 
-                      hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/15 
-                      transition-all duration-300 group overflow-hidden"
-            ariaLabel="Visit Edge Pioneers developer portal"
-            hideArrow={true}
-          >
+          {/* Card */}
+          <div className="relative bg-blue-900/30 border border-blue-700/50 rounded-2xl p-6 
+                        hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/15 
+                        transition-all duration-300 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
             <div className="relative flex items-start gap-4">
@@ -231,17 +227,18 @@ export default function DevelopersPage() {
                   <li>• Sample projects and templates</li>
                   <li>• Developer community channels</li>
                 </ul>
-                <p className="text-blue-400 text-sm mt-4 font-medium inline-flex items-center gap-1">
-                  🌐 build.minima.global
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </p>
                 <p className="text-gray-500 text-xs mt-2">
                   Status: <StatusBadge status="confirmed" /> | Official Minima Foundation resource
                 </p>
               </div>
             </div>
+          </div>
+          {/* Link outside card */}
+          <ExternalLink 
+            href="https://build.minima.global/" 
+            className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 ml-1 mt-2"
+          >
+            🌐 build.minima.global
           </ExternalLink>
         </section>
 
@@ -252,7 +249,7 @@ export default function DevelopersPage() {
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Technical Documentation</span>
           </h2>
           
-          <div className="space-y-4">
+          <div className="space-y-6">
             {[
               {
                 title: 'Full Documentation',
@@ -265,26 +262,30 @@ export default function DevelopersPage() {
                 link: { href: 'https://docs.minima.global/docs/core/at-a-glance', text: '📚 Core Features Overview' }
               },
             ].map((item, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
-                <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-                <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
-                <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
+              <div key={index} className="space-y-2">
+                {/* Card */}
+                <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                                transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+                  <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+                  <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
+                  <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
+                  <p className="text-gray-500 text-xs relative">
+                    Status: <StatusBadge status="confirmed" /> | Official source
+                  </p>
+                </div>
+                {/* Link outside card */}
                 <ExternalLink 
                   href={item.link.href} 
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm relative"
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm ml-1"
                 >
                   {item.link.text}
                 </ExternalLink>
-                <p className="text-gray-500 text-xs mt-2 relative">
-                  Status: <StatusBadge status="confirmed" /> | Official source
-                </p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Learning Paths */}
+        {/* Learning Paths - FIXED: links moved outside cards */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🎓</span>
@@ -310,25 +311,29 @@ export default function DevelopersPage() {
                 ]
               },
             ].map((path, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <h3 className="text-white font-medium mb-2 relative">{path.title}</h3>
-                <p className="text-gray-300 text-sm mb-3 relative">{path.text}</p>
-                <div className="space-y-2 relative">
+              <div key={index} className="space-y-2">
+                {/* Card */}
+                <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                                transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  <h3 className="text-white font-medium mb-2 relative">{path.title}</h3>
+                  <p className="text-gray-300 text-sm mb-3 relative">{path.text}</p>
+                  <p className="text-gray-500 text-xs relative">
+                    Status: <StatusBadge status="confirmed" /> | Official source
+                  </p>
+                </div>
+                {/* Links outside card */}
+                <div className="space-y-2">
                   {path.links.map((link, linkIndex) => (
                     <ExternalLink 
                       key={linkIndex}
                       href={link.href} 
-                      className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
+                      className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
                     >
                       {link.text}
                     </ExternalLink>
                   ))}
                 </div>
-                <p className="text-gray-500 text-xs mt-2 relative">
-                  Status: <StatusBadge status="confirmed" /> | Official source
-                </p>
               </div>
             ))}
           </div>
@@ -341,7 +346,7 @@ export default function DevelopersPage() {
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Tutorials</span>
           </h2>
           
-          <div className="space-y-4">
+          <div className="space-y-6">
             {[
               {
                 title: 'Official Tutorials',
@@ -354,14 +359,21 @@ export default function DevelopersPage() {
                 link: { href: 'https://github.com/MBCOT/Minima-Tutorials/', text: 'MBCOT Minima Tutorials', icon: true, status: 'community' as const }
               },
             ].map((item, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
-                <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-                <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
-                <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
+              <div key={index} className="space-y-2">
+                {/* Card */}
+                <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                                transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+                  <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+                  <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
+                  <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
+                  <p className="text-gray-500 text-xs relative">
+                    Status: <StatusBadge status={item.link.status || 'confirmed'} /> | {item.link.status === 'community' ? 'Community-maintained' : 'Official source'}
+                  </p>
+                </div>
+                {/* Link outside card - GitHub icon added for MBCOT */}
                 <ExternalLink 
                   href={item.link.href} 
-                  className={`text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm ${item.link.icon ? 'inline-flex items-center gap-2' : ''} relative`}
+                  className={`text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm ${item.link.icon ? 'inline-flex items-center gap-2' : ''} ml-1`}
                 >
                   {item.link.icon && (
                     <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -370,9 +382,6 @@ export default function DevelopersPage() {
                   )}
                   {item.link.text}
                 </ExternalLink>
-                <p className="text-gray-500 text-xs mt-2 relative">
-                  Status: <StatusBadge status={item.link.status || 'confirmed'} /> | {item.link.status === 'community' ? 'Community-maintained' : 'Official source'}
-                </p>
               </div>
             ))}
           </div>
@@ -385,6 +394,7 @@ export default function DevelopersPage() {
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Video Resources</span>
           </h2>
           
+          {/* Card */}
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -393,29 +403,30 @@ export default function DevelopersPage() {
             <p className="text-gray-300 text-sm mb-4 relative">
               Video walkthroughs for visual learners. Created by Pedy Cherry, Minima Global architect.
             </p>
-            <div className="space-y-3 relative">
-              <ExternalLink 
-                href="https://www.youtube.com/watch?v=iLp-n7I2zbM&list=PLut-fF0yR_xWEeUgSFLkT6WyLbTovD_w4" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
-              >
-                ▶️ Part 1: Introduction to Minima
-              </ExternalLink>
-              <ExternalLink 
-                href="https://www.youtube.com/watch?v=nykHIXIuQiI&list=PLut-fF0yR_xWEeUgSFLkT6WyLbTovD_w4&index=2" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
-              >
-                ▶️ Part 2: Create a Timelock Contract
-              </ExternalLink>
-              <ExternalLink 
-                href="https://www.youtube.com/watch?v=WeFswRU3WBE&t" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
-              >
-                ▶️ How to Use Script IDE
-              </ExternalLink>
-            </div>
-            <p className="text-gray-500 text-xs mt-3 relative">
+            <p className="text-gray-500 text-xs relative">
               Status: <StatusBadge status="confirmed" /> | Official Minima Global content
             </p>
+          </div>
+          {/* Links outside card */}
+          <div className="space-y-2 mt-2">
+            <ExternalLink 
+              href="https://www.youtube.com/watch?v=iLp-n7I2zbM&list=PLut-fF0yR_xWEeUgSFLkT6WyLbTovD_w4" 
+              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
+            >
+              ▶️ Part 1: Introduction to Minima
+            </ExternalLink>
+            <ExternalLink 
+              href="https://www.youtube.com/watch?v=nykHIXIuQiI&list=PLut-fF0yR_xWEeUgSFLkT6WyLbTovD_w4&index=2" 
+              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
+            >
+              ▶️ Part 2: Create a Timelock Contract
+            </ExternalLink>
+            <ExternalLink 
+              href="https://www.youtube.com/watch?v=WeFswRU3WBE&t" 
+              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
+            >
+              ▶️ How to Use Script IDE
+            </ExternalLink>
           </div>
         </section>
 
@@ -426,24 +437,28 @@ export default function DevelopersPage() {
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Getting Started</span>
           </h2>
           
-          <div className="space-y-4">
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
-              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-              <h3 className="text-white font-medium mb-2 relative">Run a Full Node</h3>
-              <p className="text-gray-300 text-sm mb-3 relative">
-                Install and configure a Minima node on your device. Required for local development 
-                and testing.
-              </p>
+          <div className="space-y-6">
+            <div className="space-y-2">
+              {/* Card */}
+              <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+                <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+                <h3 className="text-white font-medium mb-2 relative">Run a Full Node</h3>
+                <p className="text-gray-300 text-sm mb-3 relative">
+                  Install and configure a Minima node on your device. Required for local development 
+                  and testing.
+                </p>
+                <p className="text-gray-500 text-xs relative">
+                  Status: <StatusBadge status="confirmed" /> | Official source
+                </p>
+              </div>
+              {/* Link outside card */}
               <ExternalLink 
                 href="https://docs.minima.global/docs/run-a-node" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm relative"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm ml-1"
               >
                 📚 Guide: Run a Node
               </ExternalLink>
-              <p className="text-gray-500 text-xs mt-2 relative">
-                Status: <StatusBadge status="confirmed" /> | Official source
-              </p>
             </div>
           </div>
         </section>
@@ -455,70 +470,88 @@ export default function DevelopersPage() {
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Source Code</span>
           </h2>
           
-          <div className="space-y-4">
-            {/* Core Protocol - GitHub links with SVG icon */}
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <h3 className="text-white font-medium mb-2 relative">Core Protocol</h3>
-              <p className="text-gray-300 text-sm mb-3 relative">
-                Main Minima protocol implementation and node software.
-              </p>
-              <ExternalLink 
-                href="https://github.com/minima-global/Minima" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 mb-2 relative"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                github.com/minima-global/Minima
-              </ExternalLink>
-              <ExternalLink 
-                href="https://github.com/minima-global/Minima/tree/master/src/org/minima" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm text-xs block relative"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                → Core source: /src/org/minima
-              </ExternalLink>
-              <p className="text-gray-500 text-xs mt-2 relative">
-                Status: <StatusBadge status="confirmed" /> | Official source
-              </p>
+          <div className="space-y-6">
+            {/* Core Protocol */}
+            <div className="space-y-2">
+              {/* Card */}
+              <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <h3 className="text-white font-medium mb-2 relative">Core Protocol</h3>
+                <p className="text-gray-300 text-sm mb-3 relative">
+                  Main Minima protocol implementation and node software.
+                </p>
+                <p className="text-gray-500 text-xs relative">
+                  Status: <StatusBadge status="confirmed" /> | Official source
+                </p>
+              </div>
+              {/* Links outside card */}
+              <div className="space-y-2">
+                <ExternalLink 
+                  href="https://github.com/minima-global/Minima" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 ml-1"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  github.com/minima-global/Minima
+                </ExternalLink>
+                <ExternalLink 
+                  href="https://github.com/minima-global/Minima/tree/master/src/org/minima" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm text-xs inline-flex items-center gap-2 ml-1"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  → Core source: /src/org/minima
+                </ExternalLink>
+              </div>
             </div>
 
-            {/* Mobile & Libraries - GitHub links with SVG icon */}
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <h3 className="text-white font-medium mb-2 relative">Mobile & Libraries</h3>
-              <p className="text-gray-300 text-sm mb-3 relative">
-                Official Android APK and third-party Kotlin library for Minima integration.
-              </p>
-              <ExternalLink 
-                href="https://github.com/minima-global/minimaapk" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block mb-2 relative"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                Minima APK (Android)
-              </ExternalLink>
-              <p className="text-gray-500 text-xs mb-2 relative">
-                Status: <StatusBadge status="confirmed" /> | Official Minima Global
-              </p>
-              <ExternalLink 
-                href="https://github.com/mihbor/minimak" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 relative"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                minimak (Kotlin Library)
-              </ExternalLink>
-              <p className="text-gray-500 text-xs mt-2 relative">
-                Status: <StatusBadge status="community" /> | Third-party library by @mihbor
-              </p>
+            {/* Mobile & Libraries - Split into two entries with individual statuses */}
+            <div className="space-y-6">
+              {/* Card */}
+              <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <h3 className="text-white font-medium mb-2 relative">Mobile & Libraries</h3>
+                <p className="text-gray-300 text-sm mb-3 relative">
+                  Official Android APK and third-party Kotlin library for Minima integration.
+                </p>
+              </div>
+              {/* Links outside card - each with its own status */}
+              <div className="space-y-3">
+                {/* Minima APK - confirmed */}
+                <div>
+                  <ExternalLink 
+                    href="https://github.com/minima-global/minimaapk" 
+                    className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 ml-1"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    Minima APK (Android)
+                  </ExternalLink>
+                  <p className="text-gray-500 text-xs mt-1 ml-1">
+                    Status: <StatusBadge status="confirmed" /> | Official Minima Global
+                  </p>
+                </div>
+                {/* minimak - community-maintained */}
+                <div>
+                  <ExternalLink 
+                    href="https://github.com/mihbor/minimak" 
+                    className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 ml-1"
+                  >
+                    <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                    </svg>
+                    minimak (Kotlin Library)
+                  </ExternalLink>
+                  <p className="text-gray-500 text-xs mt-1 ml-1">
+                    Status: <StatusBadge status="community" /> | Third-party library by @mihbor
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -530,28 +563,32 @@ export default function DevelopersPage() {
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Community & Support</span>
           </h2>
           
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            <h3 className="text-white font-medium mb-2 relative">Discord Developer Channel</h3>
-            <p className="text-gray-300 text-sm mb-3 relative">
-              Real-time technical discussions, Q&A, and collaboration with other Minima developers.
-            </p>
+          <div className="space-y-6">
+            {/* Card */}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
+              <h3 className="text-white font-medium mb-2 relative">Discord Developer Channel</h3>
+              <p className="text-gray-300 text-sm mb-3 relative">
+                Real-time technical discussions, Q&A, and collaboration with other Minima developers.
+              </p>
+              <p className="text-gray-500 text-xs relative">
+                Status: <StatusBadge status="confirmed" /> | Official community channel
+              </p>
+              <p className="text-gray-500 text-xs mt-2 italic relative">
+                Tip: Discussions happen in <span className="text-gray-300">#dev-chat</span>. 
+                To post there, select the <span className="text-gray-300">Community Developer</span> role 
+                in <span className="text-gray-300">#role-picker</span>.
+              </p>
+            </div>
+            {/* Link outside card */}
             <ExternalLink 
               href="https://discord.gg/minimaglobal" 
-              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm relative"
+              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm ml-1"
             >
               💬 discord.gg/minimaglobal
             </ExternalLink>
-            <p className="text-gray-500 text-xs mt-2 relative">
-              Status: <StatusBadge status="confirmed" /> | Official community channel
-            </p>
-            <p className="text-gray-500 text-xs mt-2 italic relative">
-              Tip: Discussions happen in <span className="text-gray-300">#dev-chat</span>. 
-              To post there, select the <span className="text-gray-300">Community Developer</span> role 
-              in <span className="text-gray-300">#role-picker</span>.
-            </p>
           </div>
         </section>
 
