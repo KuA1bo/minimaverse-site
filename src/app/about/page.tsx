@@ -1,8 +1,8 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
-// Updated: Removed duplicate tool icon from Edge Pioneers card
+// Updated: Removed duplicate tool icon from Edge Pioneers card, arrow positioned after link text
 // Note: All comments in English only
-// Content: 1:1 unchanged
+// Content: 1:1 unchanged (except icon removal + arrow position)
 
 import Link from 'next/link';
 
@@ -413,6 +413,7 @@ export default function AboutPage() {
                       hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/15 
                       transition-all duration-300 group overflow-hidden"
             ariaLabel="Visit Edge Pioneers developer portal"
+            hideArrow={true}
           >
             <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
@@ -424,9 +425,10 @@ export default function AboutPage() {
                 <p className="text-gray-400 text-sm mt-2">
                   Official developer portal: documentation, SDKs, tutorials, and community support.
                 </p>
+                {/* Arrow icon AFTER link text - no duplicate tool icon (already in section header) */}
                 <p className="text-blue-400 text-sm mt-3 inline-flex items-center gap-1">
                   🌐 build.minima.global
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 </p>
