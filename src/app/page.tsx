@@ -1,8 +1,8 @@
 // src/app/page.tsx
 // Home page - enhanced animated orbs + unified visual design system
-// Updated: Hero text for neutral positioning and ecosystem accuracy
+// Updated: Enhanced hero copy, Start Here CTA, Primary Sources mobile fixes
 // Note: All comments in English only
-// Content: Updated hero section text only; rest 1:1 unchanged
+// Content: Hero section enhanced; rest 1:1 unchanged
 
 import Link from 'next/link';
 
@@ -109,8 +109,12 @@ export default function HomePage() {
               </span>
               <span className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-full animate-gradient-x" />
             </h1>
-            <p className="text-gray-400 text-base sm:text-lg mb-6 leading-relaxed">
-              Neutral information hub for the Minima ecosystem.
+            {/* UPDATED: Stronger value proposition */}
+            <p className="text-gray-400 text-base sm:text-lg mb-4 leading-relaxed">
+              Independent, verified knowledge base for the Minima protocol.
+            </p>
+            <p className="text-gray-500 text-sm mb-6">
+              Built for developers, researchers, and node operators.
             </p>
             
             <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
@@ -132,8 +136,16 @@ export default function HomePage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
                 </svg>
               </Link>
+              {/* NEW: Start Here CTA */}
+              <Link 
+                href="/about" 
+                className="text-gray-400 hover:text-white text-sm underline decoration-gray-600 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 mt-3 sm:mt-0 sm:ml-2"
+              >
+                Start Here →
+              </Link>
             </div>
             
+            {/* UPDATED: More specific scope description */}
             <p className="mt-6 text-xs text-gray-500 max-w-2xl">
               Covering protocol architecture, core components, development history, and verified community interactions. All information is sourced from official documentation and public announcements.
             </p>
@@ -157,7 +169,7 @@ export default function HomePage() {
               <span className="text-gray-400 hidden md:inline">•</span>
               <ExternalLink 
                 href="https://minima.global  " 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium break-all min-w-0"
               >
                 minima.global
               </ExternalLink>
@@ -168,7 +180,7 @@ export default function HomePage() {
               <span className="text-gray-400 hidden md:inline">•</span>
               <ExternalLink 
                 href="https://docs.minima.global  " 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium break-all min-w-0"
               >
                 docs.minima.global
               </ExternalLink>
@@ -179,7 +191,7 @@ export default function HomePage() {
               <span className="text-gray-400 hidden md:inline">•</span>
               <ExternalLink 
                 href="https://github.com/minima-global  " 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium break-all min-w-0"
               >
                 github.com/minima-global
               </ExternalLink>
