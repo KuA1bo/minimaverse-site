@@ -17,9 +17,8 @@ body {
   background-attachment: fixed;
 }
 
-/* === Smooth scroll === */
+/* === Scroll behavior - instant for v1.0.0 (JS smooth scroll in v1.0.1) === */
 html {
-  scroll-behavior: smooth;
   scroll-padding-top: 2rem;
 }
 
@@ -80,7 +79,7 @@ input:focus-visible {
   animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-/* === Upscayl-style animations === */
+/* === Decorative background animations === */
 @keyframes float-slow {
   0%, 100% { transform: translate(0, 0) scale(1); }
   33% { transform: translate(20px, -20px) scale(1.05); }
