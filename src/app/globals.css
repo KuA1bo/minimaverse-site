@@ -17,7 +17,7 @@ body {
   background-attachment: fixed;
 }
 
-/* === Scroll behavior - instant for v1.0.0 (JS smooth scroll in v1.0.1) === */
+/* === Scroll behavior === */
 html {
   scroll-padding-top: 2rem;
 }
@@ -119,21 +119,76 @@ input:focus-visible {
   animation: gradient-x 3s ease infinite;
 }
 
-/* === Respect reduced motion === */
+/* === 🚀 PERFORMANCE: Only respect OS-level reduced motion preference === */
 @media (prefers-reduced-motion: reduce) {
+  .animate-ping,
+  .animate-pulse,
+  .animate-pulse-slow,
+  .animate-float-slow,
+  .animate-float-slower,
+  .animate-gradient-x {
+    animation: none !important;
+  }
+
+  [class*="animate-float"],
+  .blur-2xl,
+  .backdrop-blur-xl {
+    filter: blur(4px) !important;
+    backdrop-filter: blur(4px) !important;
+  }
+
+  .hover\:shadow-2xl:hover,
+  .shadow-2xl {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  }
+
+  body {
+    background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb))) !important;
+    background-attachment: scroll !important;
+  }
+
+  body::before {
+    display: none !important;
+  }
+
   *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    transition-duration: 0.1s !important;
   }
 }
 
-/* === Progressive Enhancement for Firefox/Brave === */
-[class*="animate-float"] {
-  filter: blur(12px);
+/* === 🎛️ Manual reduced-motion mode (for footer toggle) === */
+html.reduced-motion *,
+html.reduced-motion *::before,
+html.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
 }
 
+html.reduced-motion [class*="animate-float"],
+html.reduced-motion .blur-2xl,
+html.reduced-motion .backdrop-blur-xl {
+  filter: blur(4px) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+html.reduced-motion .hover\:shadow-2xl:hover,
+html.reduced-motion .shadow-2xl {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+html.reduced-motion body::before {
+  display: none !important;
+}
+
+/* === 🧩 Utility: content-visibility for below-fold sections === */
+.content-vis-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* === Progressive Enhancement for Firefox/Brave === */
 @supports (backdrop-filter: blur(12px)) {
   [class*="animate-float"] { filter: blur(20px); }
   .backdrop-blur-xl { backdrop-filter: blur(12px); }
@@ -168,7 +223,7 @@ input:focus-visible {
   transform: translateZ(0);
 }
 
-/* === Subtle noise texture for background depth === */
+/* === Subtle noise texture === */
 body::before {
   content: "";
   position: fixed;
@@ -183,7 +238,6 @@ body::before {
   opacity: 0.6;
 }
 
-/* Ensure content sits above noise */
 body > * {
   position: relative;
   z-index: 2;
