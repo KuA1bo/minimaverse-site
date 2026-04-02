@@ -17,10 +17,14 @@ export default function HtmlClassSync() {
     const osPrefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     
     // VERY conservative auto-detect: only on extremely weak hardware
-    // (≤2 cores AND ≤2GB RAM) — avoids false positives on modern mobile/tablets
+    // Using bracket notation to avoid TypeScript errors on experimental Navigator APIs
+    const nav = navigator as any;
+    const cores = nav.hardwareConcurrency as number | undefined;
+    const memory = nav.deviceMemory as number | undefined;
+    
     const isExtremelyWeak = 
-      (typeof navigator.hardwareConcurrency === 'number' && navigator.hardwareConcurrency <= 2) &&
-      (typeof navigator.deviceMemory === 'number' && navigator.deviceMemory <= 2);
+      (typeof cores === 'number' && cores <= 2) &&
+      (typeof memory === 'number' && memory <= 2);
     
     // Load saved preference (manual toggle) — this takes priority
     const saved = localStorage.getItem(storageKey);
