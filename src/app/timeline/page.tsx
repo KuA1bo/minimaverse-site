@@ -1,8 +1,6 @@
 // src/app/timeline/page.tsx
 // Timeline page - verified historical milestones of Minima Protocol
-// Fixed: Primary Sources mobile layout, Timeline Philosophy status legend vertical on mobile
-// Note: All comments in English only
-// Content: 1:1 unchanged
+// Fixed: Primary Sources mobile layout for long URLs
 
 import Link from 'next/link';
 
@@ -138,7 +136,7 @@ export default function TimelinePage() {
               <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://minima.global/blog" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all min-w-0"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs sm:text-sm"
               >
                 minima.global/blog
               </ExternalLink>
@@ -149,7 +147,7 @@ export default function TimelinePage() {
               <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://docs.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all min-w-0"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs sm:text-sm"
               >
                 docs.minima.global
               </ExternalLink>
@@ -160,7 +158,7 @@ export default function TimelinePage() {
               <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://github.com/minima-global/Minima/releases" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all min-w-0"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs sm:text-sm"
               >
                 github.com/minima-global/Minima/releases
               </ExternalLink>
@@ -242,7 +240,7 @@ export default function TimelinePage() {
                   Source:{' '}
                   <ExternalLink 
                     href="https://minima.global/post/minima-from-roadmaps-to-results" 
-                    className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all min-w-0"
+                    className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs sm:text-sm"
                   >
                     Minima Official Blog
                   </ExternalLink>
