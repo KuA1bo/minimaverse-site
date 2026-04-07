@@ -1,7 +1,6 @@
 // src/app/layout.tsx
 // Root layout component for Minimaverse - Next.js App Router
-// Updated: Economy mode opt-in logic, fixed relative imports
-// Note: All comments in English only
+// Fixed: Left orb pushed further off-screen on mobile to avoid glare
 
 import './globals.css';
 import Link from 'next/link';
@@ -53,12 +52,23 @@ export const viewport: Viewport = {
 
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+    {/* Orb 1 - Purple (top-left) */}
+    {/* Mobile: Pushed further left (-left-48) and smaller (w-48) to avoid glare */}
     <div 
-      className="absolute top-1/4 -left-32 w-80 h-80 bg-purple-500/40 rounded-full blur-2xl animate-float-slow will-change-transform transform-gpu" 
+      className="orb-breathing absolute top-1/4 -left-48 sm:-left-32
+                 w-48 h-48 sm:w-80 sm:h-80 
+                 bg-purple-500/10 sm:bg-purple-500/40 
+                 blur-xl sm:blur-2xl
+                 rounded-full" 
       aria-hidden="true"
     />
+    
+    {/* Orb 2 - Blue (bottom-right) - UNCHANGED */}
     <div 
-      className="absolute top-3/4 -right-32 w-80 h-80 bg-blue-500/40 rounded-full blur-2xl animate-float-slower will-change-transform transform-gpu" 
+      className="orb-breathing absolute top-3/4 -right-32 
+                 sm:w-80 sm:h-80 sm:bg-blue-500/40 sm:blur-2xl
+                 w-56 h-56 bg-blue-500/15 blur-xl
+                 rounded-full" 
       aria-hidden="true"
     />
   </div>
