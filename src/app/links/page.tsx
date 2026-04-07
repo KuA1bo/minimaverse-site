@@ -1,12 +1,10 @@
 // src/app/links/page.tsx
 // Useful Links page - verified channels and resources for Minima Protocol
-// Updated: Hide ExternalLink arrows on mobile, GitHub icon hidden on mobile, Primary Sources mobile layout
-// Note: All comments in English only
-// Content: 1:1 unchanged
+// Fixed: Show external link arrows on all devices, Primary Sources mobile layout
 
 import Link from 'next/link';
 
-// ExternalLink component for all external links with arrow icon (hidden on mobile)
+// ExternalLink component for all external links with arrow icon
 const ExternalLink = ({ 
   href, 
   children, 
@@ -29,7 +27,7 @@ const ExternalLink = ({
   >
     {children}
     {!hideArrow && (
-      <svg className="w-3 h-3 text-gray-500 flex-shrink-0 hidden sm:inline-flex" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+      <svg className="w-3 h-3 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
       </svg>
     )}
@@ -136,7 +134,7 @@ export default function LinksPage() {
               <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs sm:text-sm"
               >
                 minima.global
               </ExternalLink>
@@ -147,7 +145,7 @@ export default function LinksPage() {
               <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://docs.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs sm:text-sm"
               >
                 docs.minima.global
               </ExternalLink>
@@ -158,7 +156,7 @@ export default function LinksPage() {
               <span className="text-gray-400 max-[400px]:hidden">•</span>
               <ExternalLink 
                 href="https://github.com/minima-global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs sm:text-sm"
               >
                 github.com/minima-global
               </ExternalLink>
@@ -314,7 +312,7 @@ export default function LinksPage() {
           </p>
         </section>
 
-        {/* Section 5: Official Resources - arrows hidden on mobile */}
+        {/* Section 5: Official Resources */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔗</span>
@@ -349,7 +347,7 @@ export default function LinksPage() {
           </div>
         </section>
 
-        {/* Section 6: Regional Community Channels - arrows hidden on mobile */}
+        {/* Section 6: Regional Community Channels */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🌍</span>
