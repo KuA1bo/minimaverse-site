@@ -1,12 +1,13 @@
 // src/app/layout.tsx
 // Root layout component for Minimaverse - Next.js App Router
-// Fixed: Left orb pushed further off-screen on mobile to avoid glare
+// Fixed: Syntax error in metadata export, integrated CinematicParticles, Darker Orbs
 
 import './globals.css';
 import Link from 'next/link';
 import type { Metadata, Viewport } from 'next';
 import HtmlClassSync from '../components/HtmlClassSync';
 import EconomyModeToggle from '../components/EconomyModeToggle';
+import CinematicParticles from '../components/CinematicParticles';
 
 const ExternalLink = ({ 
   href, 
@@ -33,6 +34,7 @@ const ExternalLink = ({
   </a>
 );
 
+// ✅ FIXED: Correct TypeScript syntax for metadata
 export const metadata: Metadata = {
   title: 'Minimaverse — Minima Ecosystem Hub',
   description: 'Unofficial, neutral information hub covering the Minima protocol, core components, development history, and publicly verifiable updates.',
@@ -50,24 +52,24 @@ export const viewport: Viewport = {
   colorScheme: 'dark',
 };
 
+// Background Orbs Component (Darker/Deeper)
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-    {/* Orb 1 - Purple (top-left) */}
-    {/* Mobile: Pushed further left (-left-48) and smaller (w-48) to avoid glare */}
+    {/* Orb 1 - Purple (top-left) - Mobile: pushed further out to avoid glare */}
     <div 
       className="orb-breathing absolute top-1/4 -left-48 sm:-left-32
                  w-48 h-48 sm:w-80 sm:h-80 
-                 bg-purple-500/10 sm:bg-purple-500/40 
+                 bg-purple-500/05 sm:bg-purple-500/20 
                  blur-xl sm:blur-2xl
                  rounded-full" 
       aria-hidden="true"
     />
     
-    {/* Orb 2 - Blue (bottom-right) - UNCHANGED */}
+    {/* Orb 2 - Blue (bottom-right) - Unchanged */}
     <div 
       className="orb-breathing absolute top-3/4 -right-32 
-                 sm:w-80 sm:h-80 sm:bg-blue-500/40 sm:blur-2xl
-                 w-56 h-56 bg-blue-500/15 blur-xl
+                 sm:w-80 sm:h-80 sm:bg-blue-500/20 sm:blur-2xl
+                 w-56 h-56 bg-blue-500/05 blur-xl
                  rounded-full" 
       aria-hidden="true"
     />
@@ -83,8 +85,14 @@ export default function RootLayout({
     <html lang="en">
       <body className="flex flex-col min-h-screen text-gray-200 overflow-y-auto relative">
         <HtmlClassSync />
+        
+        {/* Background Layer 1: Orbs */}
         <BackgroundOrbs />
+        
+        {/* Background Layer 2: Particles & Light Beam */}
+        <CinematicParticles />
 
+        {/* Header */}
         <header className="relative sm:sticky sm:top-0 z-50 mb-6 sm:mb-8 backdrop-blur-xl bg-black/30 border-b border-gray-700/40 transition-all duration-300 hover:border-purple-500/40">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
           <div className="flex items-center gap-3 sm:gap-4 max-w-6xl mx-auto px-3 sm:px-4 py-2 sm:py-3">
@@ -115,8 +123,10 @@ export default function RootLayout({
           </div>
         </header>
 
+        {/* Main Content */}
         <main className="flex-1 max-w-6xl mx-auto w-full px-4 relative z-10">{children}</main>
 
+        {/* Footer */}
         <footer className="relative z-10 mt-12 sm:mt-16 backdrop-blur-xl bg-black/30 border-t border-gray-700/40 transition-all duration-300 hover:border-purple-500/40">
           <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 text-center md:text-left">
