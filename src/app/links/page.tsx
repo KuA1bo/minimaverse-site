@@ -1,6 +1,5 @@
 // src/app/links/page.tsx
 // Useful Links page - verified channels and resources for Minima Protocol
-// Fixed: Show external link arrows on all devices, Primary Sources mobile layout
 
 import Link from 'next/link';
 

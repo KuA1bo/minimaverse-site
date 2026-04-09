@@ -1,6 +1,5 @@
 // src/app/nodes/page.tsx
 // Nodes page - verified guides for running Minima nodes
-// Fixed: URL word-breaking on mobile devices
 
 import Link from 'next/link';
 

@@ -1,7 +1,5 @@
 // src/app/page.tsx
 // Home page - enhanced animated orbs + unified visual design system
-// Updated: Enhanced hero copy, Start Here CTA, Primary Sources mobile fixes
-// Note: All comments in English only
 // Content: Hero section enhanced; rest 1:1 unchanged
 
 import Link from 'next/link';

@@ -1,8 +1,5 @@
 // src/app/open-questions/page.tsx
 // Open Questions page - redirect to official Discord for community questions
-// Updated: GitHub icon hidden on mobile, Additional Resources mobile cleanup
-// Note: All comments in English only
-// Content: 1:1 unchanged
 
 import Link from 'next/link';
 

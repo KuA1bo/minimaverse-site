@@ -1,8 +1,5 @@
 // src/app/developers/page.tsx
 // Developers page - verified resources for building on Minima Protocol
-// Updated: Learning Paths links moved outside cards (global pattern applied)
-// Note: All comments in English only
-// Content: 1:1 unchanged
 
 import Link from 'next/link';
 

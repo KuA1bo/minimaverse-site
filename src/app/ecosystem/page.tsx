@@ -1,8 +1,5 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
-// Updated: Links moved outside cards, spacing fixes for GitHub/APK links
-// Note: All comments in English only
-// Content: 1:1 unchanged
 
 import Link from 'next/link';
 
