@@ -1,8 +1,5 @@
 // src/app/news/page.tsx
 // News page - latest updates and announcements about Minima Protocol
-// Fixed: Escaped apostrophes in article titles to prevent JSX syntax errors
-// Note: All comments in English only
-// Content: 1:1 unchanged
 
 import Link from 'next/link';
 

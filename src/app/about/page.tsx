@@ -1,8 +1,5 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
-// Updated: Removed duplicate tool icon from Edge Pioneers card, arrow positioned after link text
-// Note: All comments in English only
-// Content: 1:1 unchanged (except icon removal + arrow position)
 
 import Link from 'next/link';
 

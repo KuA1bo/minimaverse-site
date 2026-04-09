@@ -1,8 +1,5 @@
 // src/app/partners/page.tsx
 // Partners page - verified confirmed partnerships in the Minima ecosystem
-// Updated: GitHub icon hidden on mobile, Primary Sources mobile cleanup, Status legend layout
-// Note: All comments in English only
-// Content: 1:1 unchanged
 
 import Link from 'next/link';
 

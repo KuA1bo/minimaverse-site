@@ -1,8 +1,5 @@
 // src/app/tools/page.tsx
 // Tools page - verified tools and utilities for Minima Protocol
-// Updated: All links moved below cards (outside containers) for consistency
-// Note: All comments in English only
-// Content: 1:1 unchanged
 
 import Link from 'next/link';
 

@@ -1,6 +1,5 @@
 // src/app/layout.tsx
 // Root layout component for Minimaverse - Next.js App Router
-// Fixed: Syntax error in metadata export, integrated CinematicParticles, Darker Orbs
 
 import './globals.css';
 import Link from 'next/link';

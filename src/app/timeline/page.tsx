@@ -1,6 +1,5 @@
 // src/app/timeline/page.tsx
 // Timeline page - verified historical milestones of Minima Protocol
-// Fixed: Primary Sources mobile layout for long URLs
 
 import Link from 'next/link';
 

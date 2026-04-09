@@ -1,8 +1,5 @@
 // src/app/disclaimer/page.tsx
 // Disclaimer page - Legal notice and project information
-// Updated: GitHub icon hidden on mobile, Official Resources mobile layout, date updated
-// Note: All comments in English only
-// Content: 1:1 unchanged
 
 import Link from 'next/link';
 

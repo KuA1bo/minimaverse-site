@@ -1,8 +1,5 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
-// Updated: Added non-breaking space before arrow icon to keep it attached to last word, allowing proper wrap
-// Note: All comments in English only
-// Content: 1:1 unchanged
 
 import Link from 'next/link';
 
