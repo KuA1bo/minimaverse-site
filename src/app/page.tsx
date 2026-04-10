@@ -1,6 +1,5 @@
 // src/app/page.tsx
 // Home page - enhanced animated orbs + unified visual design system
-// Content: Hero section enhanced; rest 1:1 unchanged
 
 import Link from 'next/link';
 
@@ -107,9 +106,9 @@ export default function HomePage() {
               </span>
               <span className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-full animate-gradient-x" />
             </h1>
-            {/* UPDATED: Stronger value proposition */}
+            {/* ✅ UPDATED: Community-driven signal added */}
             <p className="text-gray-400 text-base sm:text-lg mb-4 leading-relaxed">
-              Independent, verified knowledge base for the Minima protocol.
+              Community-driven, independent knowledge base for the Minima protocol.
             </p>
             <p className="text-gray-500 text-sm mb-6">
               Built for developers, researchers, and node operators.
@@ -343,11 +342,11 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Last Updated */}
+        {/* Last Updated - ✅ UPDATED TO TODAY */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: March 26, 2026
+            Last updated: April 10, 2026
           </p>
         </section>
 
