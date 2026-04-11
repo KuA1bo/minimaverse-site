@@ -254,38 +254,38 @@ export default function OpenQuestionsPage() {
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
             <ul className="space-y-3 text-sm">
-              <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-gray-400 max-[400px]:hidden">•</span>
+              <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+                <span className="hidden md:inline text-gray-400">•</span>
                 <ExternalLink 
                   href="https://docs.minima.global" 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   docs.minima.global
                 </ExternalLink>
-                <span className="text-gray-500 max-[400px]:hidden">—</span>
-                <span className="text-gray-500 text-xs sm:text-sm">Official Documentation</span>
+                <span className="hidden md:inline text-gray-500">—</span>
+                <span className="text-gray-500 text-xs md:text-sm">Official Documentation</span>
               </li>
-              <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-gray-400 max-[400px]:hidden">•</span>
+              <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+                <span className="hidden md:inline text-gray-400">•</span>
                 <ExternalLink 
                   href="https://minima.global/blog" 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   minima.global/blog
                 </ExternalLink>
-                <span className="text-gray-500 max-[400px]:hidden">—</span>
-                <span className="text-gray-500 text-xs sm:text-sm">Minima Blog (Announcements)</span>
+                <span className="hidden md:inline text-gray-500">—</span>
+                <span className="text-gray-500 text-xs md:text-sm">Minima Blog (Announcements)</span>
               </li>
-              <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-                <span className="text-gray-400 max-[400px]:hidden">•</span>
+              <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+                <span className="hidden md:inline text-gray-400">•</span>
                 <ExternalLink 
                   href="https://t.me/MinimaGlobal" 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   t.me/MinimaGlobal
                 </ExternalLink>
-                <span className="text-gray-500 max-[400px]:hidden">—</span>
-                <span className="text-gray-500 text-xs sm:text-sm">Telegram Announcements</span>
+                <span className="hidden md:inline text-gray-500">—</span>
+                <span className="text-gray-500 text-xs md:text-sm">Telegram Announcements</span>
               </li>
             </ul>
           </div>
@@ -313,7 +313,7 @@ export default function OpenQuestionsPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: March 26, 2026
+            Last updated: April 11, 2026
           </p>
         </section>
 

@@ -129,38 +129,38 @@ export default function ToolsPage() {
             <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
-            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-gray-400 max-[400px]:hidden">•</span>
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
                 href="https://docs.minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 docs.minima.global
               </ExternalLink>
-              <span className="text-gray-500 max-[400px]:hidden">—</span>
-              <span className="text-gray-500 text-xs sm:text-sm">Documentation</span>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Documentation</span>
             </li>
-            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-gray-400 max-[400px]:hidden">•</span>
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
                 href="https://explorer.minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 explorer.minima.global
               </ExternalLink>
-              <span className="text-gray-500 max-[400px]:hidden">—</span>
-              <span className="text-gray-500 text-xs sm:text-sm">Block Explorer</span>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Block Explorer</span>
             </li>
-            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-gray-400 max-[400px]:hidden">•</span>
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
                 href="https://wallet.minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 wallet.minima.global
               </ExternalLink>
-              <span className="text-gray-500 max-[400px]:hidden">—</span>
-              <span className="text-gray-500 text-xs sm:text-sm">Web Wallet</span>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Web Wallet</span>
             </li>
           </ul>
         </div>
@@ -387,7 +387,7 @@ export default function ToolsPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: March 26, 2026
+            Last updated: April 11, 2026
           </p>
         </section>
 
