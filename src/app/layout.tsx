@@ -33,7 +33,7 @@ const ExternalLink = ({
   </a>
 );
 
-// ✅ FIXED: Correct TypeScript syntax for metadata
+// FIXED: Correct TypeScript syntax
 export const metadata: Metadata = {
   title: 'Minimaverse — Minima Ecosystem Hub',
   description: 'Unofficial, neutral information hub covering the Minima protocol, core components, development history, and publicly verifiable updates.',
@@ -51,24 +51,24 @@ export const viewport: Viewport = {
   colorScheme: 'dark',
 };
 
-// Background Orbs Component (Darker/Deeper)
+// Background Orbs Component (Optimized Blur & Opacity)
 const BackgroundOrbs = () => (
-  <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-    {/* Orb 1 - Purple (top-left) - Mobile: pushed further out to avoid glare */}
+  <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 hidden sm:block">
+    {/* Orb 1 - Purple (top-left) - Blur adjusted for glassmorphism */}
     <div 
       className="orb-breathing absolute top-1/4 -left-48 sm:-left-32
                  w-48 h-48 sm:w-80 sm:h-80 
-                 bg-purple-500/05 sm:bg-purple-500/20 
-                 blur-xl sm:blur-2xl
+                 bg-purple-500/50 sm:bg-purple-500/70 
+                 blur-3xl
                  rounded-full" 
       aria-hidden="true"
     />
     
-    {/* Orb 2 - Blue (bottom-right) - Unchanged */}
+    {/* Orb 2 - Blue (bottom-right) - Blur adjusted for glassmorphism */}
     <div 
       className="orb-breathing absolute top-3/4 -right-32 
-                 sm:w-80 sm:h-80 sm:bg-blue-500/20 sm:blur-2xl
-                 w-56 h-56 bg-blue-500/05 blur-xl
+                 sm:w-80 sm:h-80 sm:bg-blue-500/70 sm:blur-3xl
+                 w-56 h-56 bg-blue-500/50 blur-3xl
                  rounded-full" 
       aria-hidden="true"
     />
@@ -85,7 +85,7 @@ export default function RootLayout({
       <body className="flex flex-col min-h-screen text-gray-200 overflow-y-auto relative">
         <HtmlClassSync />
         
-        {/* Background Layer 1: Orbs */}
+        {/* Background Layer 1: Orbs (Desktop only) */}
         <BackgroundOrbs />
         
         {/* Background Layer 2: Particles & Light Beam */}

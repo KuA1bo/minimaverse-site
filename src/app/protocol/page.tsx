@@ -59,24 +59,11 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
 };
 
 // Enhanced background orbs - animated style
-const BackgroundOrbs = () => (
-  <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-    <div 
-      className="absolute top-1/4 -left-32 w-80 h-80 bg-purple-500/40 rounded-full blur-2xl animate-float-slow will-change-transform transform-gpu" 
-      aria-hidden="true"
-    />
-    <div 
-      className="absolute top-3/4 -right-32 w-80 h-80 bg-blue-500/40 rounded-full blur-2xl animate-float-slower will-change-transform transform-gpu" 
-      aria-hidden="true"
-    />
-  </div>
-);
 
 export default function ProtocolPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
-      <BackgroundOrbs />
 
       {/* Unified Header with gradient accent */}
       <header className="mb-6 sm:mb-8 opacity-0 animate-fade-in-up delay-75 relative">
