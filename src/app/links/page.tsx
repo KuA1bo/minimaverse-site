@@ -59,11 +59,18 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
     <div 
-      className="absolute top-1/4 -left-32 w-80 h-80 bg-purple-500/40 rounded-full blur-2xl animate-float-slow will-change-transform transform-gpu" 
+      className="absolute top-1/4 -left-48 sm:-left-32
+                 w-48 h-48 sm:w-80 sm:h-80 
+                 bg-purple-500/05 sm:bg-purple-500/20 
+                 blur-xl sm:blur-2xl
+                 rounded-full" 
       aria-hidden="true"
     />
     <div 
-      className="absolute top-3/4 -right-32 w-80 h-80 bg-blue-500/40 rounded-full blur-2xl animate-float-slower will-change-transform transform-gpu" 
+      className="absolute top-3/4 -right-32 
+                 sm:w-80 sm:h-80 sm:bg-blue-500/20 sm:blur-2xl
+                 w-56 h-56 bg-blue-500/05 blur-xl
+                 rounded-full" 
       aria-hidden="true"
     />
   </div>
@@ -129,38 +136,39 @@ export default function LinksPage() {
             <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
-            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-gray-400 max-[400px]:hidden">•</span>
+            {/* ✅ FIXED: Separators hidden on tablet (md:), vertical stack on mobile/tablet */}
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
                 href="https://minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs sm:text-sm"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
               >
                 minima.global
               </ExternalLink>
-              <span className="text-gray-500 max-[400px]:hidden">—</span>
-              <span className="text-gray-500 text-xs sm:text-sm">Official Website</span>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Official Website</span>
             </li>
-            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-gray-400 max-[400px]:hidden">•</span>
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
                 href="https://docs.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs sm:text-sm"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
               >
                 docs.minima.global
               </ExternalLink>
-              <span className="text-gray-500 max-[400px]:hidden">—</span>
-              <span className="text-gray-500 text-xs sm:text-sm">Documentation</span>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Documentation</span>
             </li>
-            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-gray-400 max-[400px]:hidden">•</span>
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
                 href="https://github.com/minima-global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs sm:text-sm"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
               >
                 github.com/minima-global
               </ExternalLink>
-              <span className="text-gray-500 max-[400px]:hidden">—</span>
-              <span className="text-gray-500 text-xs sm:text-sm">Official GitHub</span>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Official GitHub</span>
             </li>
           </ul>
         </div>

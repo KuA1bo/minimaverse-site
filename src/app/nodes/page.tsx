@@ -129,38 +129,38 @@ export default function NodesPage() {
             <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
-            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-gray-400 max-[400px]:hidden">•</span>
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
                 href="https://docs.minima.global/docs/run-a-node" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs sm:text-sm"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
               >
                 docs.minima.global/docs/run-a-node
               </ExternalLink>
-              <span className="text-gray-500 max-[400px]:hidden">—</span>
-              <span className="text-gray-500 text-xs sm:text-sm">Run a Node Guide</span>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Run a Node Guide</span>
             </li>
-            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-gray-400 max-[400px]:hidden">•</span>
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
                 href="https://docs.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs sm:text-sm"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
               >
                 docs.minima.global
               </ExternalLink>
-              <span className="text-gray-500 max-[400px]:hidden">—</span>
-              <span className="text-gray-500 text-xs sm:text-sm">Documentation</span>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Documentation</span>
             </li>
-            <li className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="text-gray-400 max-[400px]:hidden">•</span>
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
                 href="https://github.com/minima-global/Minima/tree/master/jar" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs sm:text-sm"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
               >
                 github.com/minima-global/Minima/tree/master/jar
               </ExternalLink>
-              <span className="text-gray-500 max-[400px]:hidden">—</span>
-              <span className="text-gray-500 text-xs sm:text-sm">Latest Builds</span>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Latest Builds</span>
             </li>
           </ul>
         </div>
