@@ -56,23 +56,10 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
 };
 
 // Enhanced background orbs - animated style
-const BackgroundOrbs = () => (
-  <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-    <div 
-      className="absolute top-1/4 -left-32 w-80 h-80 bg-purple-500/40 rounded-full blur-2xl animate-float-slow will-change-transform transform-gpu" 
-      aria-hidden="true"
-    />
-    <div 
-      className="absolute top-3/4 -right-32 w-80 h-80 bg-blue-500/40 rounded-full blur-2xl animate-float-slower will-change-transform transform-gpu" 
-      aria-hidden="true"
-    />
-  </div>
-);
 
 export default function HomePage() {
   return (
     <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
-      <BackgroundOrbs />
       
       {/* Hero Section */}
       <section className="mb-12 py-12 border-b border-gray-700/40 opacity-0 animate-fade-in-up delay-75 relative">

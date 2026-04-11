@@ -55,32 +55,11 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Enhanced background orbs - animated style
-const BackgroundOrbs = () => (
-  <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-    <div 
-      className="absolute top-1/4 -left-48 sm:-left-32
-                 w-48 h-48 sm:w-80 sm:h-80 
-                 bg-purple-500/05 sm:bg-purple-500/20 
-                 blur-xl sm:blur-2xl
-                 rounded-full" 
-      aria-hidden="true"
-    />
-    <div 
-      className="absolute top-3/4 -right-32 
-                 sm:w-80 sm:h-80 sm:bg-blue-500/20 sm:blur-2xl
-                 w-56 h-56 bg-blue-500/05 blur-xl
-                 rounded-full" 
-      aria-hidden="true"
-    />
-  </div>
-);
-
 export default function LinksPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
-      <BackgroundOrbs />
+      {/* NO BackgroundOrbs here - using global from layout.tsx */}
 
       {/* Unified Header with gradient accent */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
@@ -136,7 +115,6 @@ export default function LinksPage() {
             <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
-            {/* ✅ FIXED: Separators hidden on tablet (md:), vertical stack on mobile/tablet */}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
