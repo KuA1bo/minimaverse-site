@@ -55,8 +55,6 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Enhanced background orbs - animated style
-
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
@@ -358,7 +356,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Section 6: Current Status & Considerations */}
+        {/* Section 6: Current Status & Considerations - UPDATED with neutral wording */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
@@ -369,7 +367,8 @@ export default function AboutPage() {
             {[
               { title: 'Protocol Maturity', text: 'The core Minima Protocol is complete and immutable by design. Future development focuses on application layers and tooling built atop the protocol.' },
               { title: 'No Token Incentives', text: 'Minima does not implement token rewards for node operation. This conscious design choice avoids centralization pressures associated with paid mining.' },
-              { title: 'User Participation Requirement', text: 'Users must connect periodically (minimum weekly) to update MMR proofs and validate the Cascading Proof Chain. This is the trade-off for extreme decentralization.' },
+              // ✅ UPDATED: Neutral wording - requirement comes from protocol, not people
+              { title: 'User Participation Requirement', text: 'The protocol requires periodic connection (minimum weekly) to update MMR proofs and validate the Cascading Proof Chain. This is the trade-off for extreme decentralization.' },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
@@ -378,6 +377,22 @@ export default function AboutPage() {
                 <p className="text-gray-300 text-sm relative">{item.text}</p>
               </div>
             ))}
+            
+            {/* Crowdfunding mention */}
+            <div className="relative bg-purple-900/20 border border-purple-700/40 rounded-2xl p-4 sm:p-6 
+                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <h3 className="text-white font-medium mb-2 relative flex items-center gap-2">
+                <span className="text-lg">🚀</span>
+                Crowdfunding Opportunity
+              </h3>
+              <p className="text-gray-300 text-sm relative">
+                Minima AG is currently crowdfunding on Republic Europe. Learn more about this limited-time opportunity:{' '}
+                <Link href="/news" className="text-purple-400 hover:text-purple-300 underline decoration-purple-500/30 hover:decoration-purple-400 underline-offset-4 transition-all duration-300 font-medium">
+                  View announcement on News page →
+                </Link>
+              </p>
+            </div>
           </div>
         </section>
 
@@ -443,7 +458,7 @@ export default function AboutPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: March 26, 2026
+            Last updated: April 13, 2026
           </p>
         </section>
 

@@ -55,8 +55,6 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Enhanced background orbs - animated style
-
 export default function NewsPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
@@ -165,6 +163,15 @@ export default function NewsPage() {
           
           <div className="space-y-4">
             {[
+              // ✅ NEW: Crowdfunding Announcement (Top priority)
+              {
+                date: 'March 30, 2026',
+                title: 'Crowdfunding on Republic Europe: Invest in Minima AG',
+                text: "Minima is crowdfunding — giving long-term supporters and the public the opportunity to invest in Minima AG ahead of our planned Series A later this year. Minima exists to power a world where machines and AI don't just think: they transact, cooperate, and prove what is true. As autonomy accelerates, trust must exist at the edge, inside the machines themselves. Minima is building the trust layer for autonomous machines, using a radically compact blockchain protocol that can run directly on devices, at the silicon layer. The round has exceeded its initial target; over-subscription is open for a limited time.",
+                link: { href: 'https://europe.republic.com/minima', text: '→ Register to Gain Access on Republic Europe' },
+                status: 'confirmed' as const,
+                highlight: true // Special visual treatment
+              },
               {
                 date: 'March 24, 2026',
                 title: "Blockchain Doesn't Belong in the Cloud",
@@ -202,31 +209,80 @@ export default function NewsPage() {
                 status: 'confirmed' as const
               },
             ].map((item, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
-                <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-                <p className="text-gray-500 text-xs mb-2 relative">{item.date}</p>
-                <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
-                <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
-                <div className="space-y-2 relative">
-                  <ExternalLink 
-                    href={item.link.href} 
-                    className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
-                  >
-                    {item.link.text}
-                  </ExternalLink>
-                  {item.video && (
+              <div 
+                key={index} 
+                className={`relative rounded-2xl p-6 transition-all duration-300 group overflow-hidden hover:-translate-y-1
+                  ${item.highlight 
+                    ? 'bg-gradient-to-br from-purple-900/30 to-blue-900/30 border-2 border-purple-500/50 shadow-lg shadow-purple-500/10' 
+                    : 'bg-gray-800/40 border border-gray-700/40 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15'
+                  }`}
+              >
+                {/* Animated accent line for highlighted item */}
+                {item.highlight && (
+                  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 animate-gradient-x" />
+                )}
+                {!item.highlight && (
+                  <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+                )}
+                
+                <div className="relative">
+                  <div className="flex items-center gap-2 mb-2">
+                    <p className={`text-xs ${item.highlight ? 'text-purple-300 font-medium' : 'text-gray-500'}`}>
+                      {item.date}
+                    </p>
+                    {item.highlight && (
+                      <span className="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-medium border border-purple-500/30">
+                        Active Campaign
+                      </span>
+                    )}
+                  </div>
+                  
+                  <h3 className={`font-medium mb-2 ${item.highlight ? 'text-white text-lg' : 'text-white'}`}>
+                    {item.title}
+                  </h3>
+                  
+                  <p className={`text-sm mb-3 ${item.highlight ? 'text-gray-200' : 'text-gray-300'}`}>
+                    {item.text}
+                  </p>
+                  
+                  <div className="space-y-2">
                     <ExternalLink 
-                      href={item.video.href} 
-                      className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
+                      href={item.link.href} 
+                      className={`underline-offset-4 transition-all duration-300 text-sm block inline-flex items-center gap-1
+                        ${item.highlight 
+                          ? 'text-purple-300 hover:text-purple-200 decoration-purple-500/40 hover:decoration-purple-400' 
+                          : 'text-blue-400 hover:text-purple-400 decoration-blue-500/30 hover:decoration-purple-500/60'
+                        }`}
                     >
-                      {item.video.text}
+                      {item.link.text}
+                      <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
                     </ExternalLink>
-                  )}
+                    {item.video && (
+                      <ExternalLink 
+                        href={item.video.href} 
+                        className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
+                      >
+                        {item.video.text}
+                      </ExternalLink>
+                    )}
+                  </div>
+                  
+                  <div className="flex items-center gap-2 mt-3">
+                    <p className="text-gray-500 text-xs">
+                      Status: <StatusBadge status={item.status} reducedGlow={true} />
+                    </p>
+                    {item.highlight && (
+                      <span className="text-gray-500 text-xs">•</span>
+                    )}
+                    {item.highlight && (
+                      <p className="text-gray-400 text-xs italic">
+                        Approved by Republic Europe on 30/03/26
+                      </p>
+                    )}
+                  </div>
                 </div>
-                <p className="text-gray-500 text-xs mt-2 relative">
-                  Status: <StatusBadge status={item.status} reducedGlow={true} />
-                </p>
               </div>
             ))}
           </div>
@@ -340,7 +396,7 @@ export default function NewsPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 11, 2026
+            Last updated: April 13, 2026
           </p>
         </section>
 
@@ -348,3 +404,4 @@ export default function NewsPage() {
     </div>
   );
 }
+

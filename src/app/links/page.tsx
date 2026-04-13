@@ -230,7 +230,8 @@ export default function LinksPage() {
             {[
               { title: 'CoinMarketCap', text: 'Price tracking, market cap, volume, and supply data for MINIMA token.', link: { href: 'https://coinmarketcap.com/currencies/minima-global/', text: 'View on CoinMarketCap' } },
               { title: 'CoinGecko', text: 'Independent crypto price charts, exchanges, community metrics.', link: { href: 'https://www.coingecko.com/en/coins/minima', text: 'View on CoinGecko' } },
-              { title: 'CertiK Skynet', text: 'Security audit scores, on-chain analytics, and project transparency metrics.', link: { href: 'https://skynet.certik.com/projects/minima', text: 'View on CertiK Skynet' } }
+              { title: 'CertiK Skynet', text: 'Security audit scores, on-chain analytics, and project transparency metrics.', link: { href: 'https://skynet.certik.com/projects/minima', text: 'View on CertiK Skynet' } },
+              { title: 'Hacken Audit (Jan 2023)', text: 'Independent smart contract and protocol security audit. Full report available for download.', link: { href: 'https://hacken.io/audits/minima/pt-minima-minima-network-jan2023/', text: 'View Report (PDF)' } }
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
@@ -297,7 +298,7 @@ export default function LinksPage() {
           </p>
         </section>
 
-        {/* Section 5: Official Resources */}
+        {/* Section 5: Official Resources - UPDATED with Crowdfunding card */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔗</span>
@@ -309,6 +310,28 @@ export default function LinksPage() {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+            {/* ✅ NEW: Crowdfunding Card (Temporary/Active) */}
+            <ExternalLink 
+              href="https://europe.republic.com/minima"
+              className="relative bg-gradient-to-br from-purple-900/30 to-blue-900/30 border-2 border-purple-500/50 rounded-2xl p-4 
+                        hover:border-purple-400/70 hover:shadow-2xl hover:shadow-purple-500/20 
+                        transition-all duration-300 block group overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative">
+                <div className="flex items-center justify-between mb-1">
+                  <span className="text-white font-medium group-hover:text-purple-300 transition-colors">🚀 Crowdfunding</span>
+                  <span className="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-medium border border-purple-500/30">
+                    Active
+                  </span>
+                </div>
+                <p className="text-gray-400 text-xs mb-2">Invest in Minima AG on Republic Europe</p>
+                <p className="text-purple-400 text-xs font-medium">europe.republic.com/minima →</p>
+                <p className="text-gray-500 text-[10px] mt-2 italic">Approved by Republic Europe on 30/03/26</p>
+              </div>
+            </ExternalLink>
+            
+            {/* Existing resources */}
             {[
               { href: 'https://minima.global/', icon: '🌐', title: 'Website', url: 'minima.global' },
               { href: 'https://github.com/minima-global', icon: '💻', title: 'GitHub', url: 'github.com/minima-global' },
@@ -410,7 +433,7 @@ export default function LinksPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: March 26, 2026
+            Last updated: April 13, 2026
           </p>
         </section>
 
