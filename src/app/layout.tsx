@@ -170,6 +170,10 @@ export default function RootLayout({
                 </ExternalLink>
               </p>
             </div>
+            {/* ✅ NEW: Footer signature */}
+            <p className="text-gray-600 text-[11px] mt-3 text-center sm:text-right opacity-80 hover:opacity-100 transition-opacity duration-300">
+              Built with love for the Minima ecosystem 🫶
+            </p>
           </div>
         </footer>
       </body>
