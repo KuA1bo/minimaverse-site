@@ -55,8 +55,6 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Enhanced background orbs - animated style
-
 export default function OpenQuestionsPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
@@ -202,15 +200,14 @@ export default function OpenQuestionsPage() {
                   Official Discord channel for community questions. Questions are reviewed and answered 
                   during scheduled AMA sessions with the Minima team.
                 </p>
+                {/* ✅ FIXED: Added "→" prefix, removed manual SVG duplicate */}
                 <ExternalLink 
                   href="https://discord.com/channels/562272317930209280/1244940478756028446" 
                   className="inline-flex items-center gap-2 text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
                   ariaLabel="Open #stage-question Discord channel"
                 >
-                  Open #stage-question on Discord
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
+                  → Open #stage-question on Discord
+                  {/* ✅ Manual SVG removed — component adds it automatically */}
                 </ExternalLink>
               </div>
             </div>
@@ -229,7 +226,7 @@ export default function OpenQuestionsPage() {
           </div>
         </section>
 
-        {/* Additional Resources - matches /developers desktop style */}
+        {/* Additional Resources - UPDATED: dots for tablet/desktop, none for mobile */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔗</span>
@@ -242,37 +239,34 @@ export default function OpenQuestionsPage() {
             
             <ul className="space-y-3 text-sm">
               <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
-                <span className="hidden md:inline text-gray-400">•</span>
+                <span className="text-gray-400 hidden sm:inline">•</span>
                 <ExternalLink 
                   href="https://docs.minima.global" 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   docs.minima.global
                 </ExternalLink>
-                <span className="hidden md:inline text-gray-500">—</span>
-                <span className="text-gray-500 text-xs md:text-sm">Official Documentation</span>
+                <span className="text-gray-500 text-xs md:text-sm">— Official Documentation</span>
               </li>
               <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
-                <span className="hidden md:inline text-gray-400">•</span>
+                <span className="text-gray-400 hidden sm:inline">•</span>
                 <ExternalLink 
                   href="https://minima.global/blog" 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   minima.global/blog
                 </ExternalLink>
-                <span className="hidden md:inline text-gray-500">—</span>
-                <span className="text-gray-500 text-xs md:text-sm">Minima Blog (Announcements)</span>
+                <span className="text-gray-500 text-xs md:text-sm">— Minima Blog (Announcements)</span>
               </li>
               <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
-                <span className="hidden md:inline text-gray-400">•</span>
+                <span className="text-gray-400 hidden sm:inline">•</span>
                 <ExternalLink 
                   href="https://t.me/MinimaGlobal" 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   t.me/MinimaGlobal
                 </ExternalLink>
-                <span className="hidden md:inline text-gray-500">—</span>
-                <span className="text-gray-500 text-xs md:text-sm">Telegram Announcements</span>
+                <span className="text-gray-500 text-xs md:text-sm">— Telegram Announcements</span>
               </li>
             </ul>
           </div>

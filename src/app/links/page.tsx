@@ -210,7 +210,7 @@ export default function LinksPage() {
                       href={channel.link} 
                       className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
                     >
-                      {channel.link.replace('https://', '')}
+                      → {channel.link.replace('https://', '')}
                     </ExternalLink>
                   </div>
                 </li>
@@ -228,10 +228,10 @@ export default function LinksPage() {
           
           <div className="space-y-4">
             {[
-              { title: 'CoinMarketCap', text: 'Price tracking, market cap, volume, and supply data for MINIMA token.', link: { href: 'https://coinmarketcap.com/currencies/minima-global/', text: 'View on CoinMarketCap' } },
-              { title: 'CoinGecko', text: 'Independent crypto price charts, exchanges, community metrics.', link: { href: 'https://www.coingecko.com/en/coins/minima', text: 'View on CoinGecko' } },
-              { title: 'CertiK Skynet', text: 'Security audit scores, on-chain analytics, and project transparency metrics.', link: { href: 'https://skynet.certik.com/projects/minima', text: 'View on CertiK Skynet' } },
-              { title: 'Hacken Audit (Jan 2023)', text: 'Independent smart contract and protocol security audit. Full report available for download.', link: { href: 'https://hacken.io/audits/minima/pt-minima-minima-network-jan2023/', text: 'View Report (PDF)' } }
+              { title: 'CoinMarketCap', text: 'Price tracking, market cap, volume, and supply data for MINIMA token.', link: { href: 'https://coinmarketcap.com/currencies/minima-global/', text: '→ View on CoinMarketCap' } },
+              { title: 'CoinGecko', text: 'Independent crypto price charts, exchanges, community metrics.', link: { href: 'https://www.coingecko.com/en/coins/minima', text: '→ View on CoinGecko' } },
+              { title: 'CertiK Skynet', text: 'Security audit scores, on-chain analytics, and project transparency metrics.', link: { href: 'https://skynet.certik.com/projects/minima', text: '→ View on CertiK Skynet' } },
+              { title: 'Hacken Audit (Jan 2023)', text: 'Independent smart contract and protocol security audit. Full report available for download.', link: { href: 'https://hacken.io/audits/minima/pt-minima-minima-network-jan2023/', text: '→ View Report (PDF)' } }
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
@@ -298,7 +298,7 @@ export default function LinksPage() {
           </p>
         </section>
 
-        {/* Section 5: Official Resources - UPDATED with Crowdfunding card */}
+        {/* Section 5: Official Resources - COMPLETELY REDESIGNED */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔗</span>
@@ -309,32 +309,33 @@ export default function LinksPage() {
             Verified links to official Minima Foundation platforms:
           </p>
           
+          {/* ✅ NEW: Clean grid, natural heights, crowdfund spans full width */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {/* ✅ NEW: Crowdfunding Card (Temporary/Active) */}
+            {/* Crowdfunding - Full width highlight */}
             <ExternalLink 
               href="https://europe.republic.com/minima"
-              className="relative bg-gradient-to-br from-purple-900/30 to-blue-900/30 border-2 border-purple-500/50 rounded-2xl p-4 
-                        hover:border-purple-400/70 hover:shadow-2xl hover:shadow-purple-500/20 
+              className="md:col-span-2 relative bg-gradient-to-r from-purple-900/20 to-blue-900/20 border-2 border-purple-500/40 rounded-2xl p-4 
+                        hover:border-purple-400/60 hover:shadow-lg hover:shadow-purple-500/15 
                         transition-all duration-300 block group overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative">
-                <div className="flex items-center justify-between mb-1">
-                  <span className="text-white font-medium group-hover:text-purple-300 transition-colors">🚀 Crowdfunding</span>
-                  <span className="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-medium border border-purple-500/30">
-                    Active
-                  </span>
+                <div className="flex items-center justify-between mb-2">
+                  <span className="text-white font-semibold flex items-center gap-2">🚀 Crowdfunding on Republic Europe</span>
+                  <span className="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-medium border border-purple-500/30">Active</span>
                 </div>
-                <p className="text-gray-400 text-xs mb-2">Invest in Minima AG on Republic Europe</p>
-                <p className="text-purple-400 text-xs font-medium">europe.republic.com/minima →</p>
-                <p className="text-gray-500 text-[10px] mt-2 italic">Approved by Republic Europe on 30/03/26</p>
+                <p className="text-gray-300 text-sm mb-3">Invest in Minima AG ahead of Series A. Over-subscription open.</p>
+                <div className="flex items-center gap-2 text-xs font-mono text-purple-400">
+                  europe.republic.com/minima <span className="opacity-50">→</span>
+                </div>
+                <p className="text-gray-500 text-[10px] mt-3 italic">Approved by Republic Europe on 30/03/26</p>
               </div>
             </ExternalLink>
             
-            {/* Existing resources */}
+            {/* Standard Resources - Clean 2-column cards */}
             {[
-              { href: 'https://minima.global/', icon: '🌐', title: 'Website', url: 'minima.global' },
-              { href: 'https://github.com/minima-global', icon: '💻', title: 'GitHub', url: 'github.com/minima-global' },
+              { href: 'https://minima.global/', icon: '🌐', title: 'Official Website', url: 'minima.global' },
+              { href: 'https://github.com/minima-global', icon: '💻', title: 'Official GitHub', url: 'github.com/minima-global' },
               { href: 'https://twitter.com/Minima_Global', icon: '🐦', title: 'Twitter / X', url: 'twitter.com/Minima_Global' },
               { href: 'https://www.youtube.com/channel/UCDe2j57uQrUVtVizFbDpsoQ', icon: '📺', title: 'YouTube', url: 'youtube.com/channel/UCDe2j57uQrUVtVizFbDpsoQ' },
               { href: 'https://newsletter.minima.global/', icon: '📰', title: 'SubStack Newsletter', url: 'newsletter.minima.global' },
@@ -344,12 +345,16 @@ export default function LinksPage() {
                 key={index}
                 href={resource.href}
                 className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 
-                          hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+                          hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/15 
                           transition-all duration-300 block group overflow-hidden"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="text-white font-medium group-hover:text-purple-300 transition-colors relative">{resource.icon} {resource.title}</span>
-                <p className="text-gray-500 text-sm break-all relative">{resource.url}</p>
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="relative flex items-start justify-between gap-3">
+                  <div className="flex-1">
+                    <span className="text-white font-medium block mb-1">{resource.icon} {resource.title}</span>
+                    <p className="text-gray-400 text-xs font-mono break-all">{resource.url}</p>
+                  </div>
+                </div>
               </ExternalLink>
             ))}
           </div>
@@ -375,13 +380,14 @@ export default function LinksPage() {
               { flag: '🇻🇳', name: 'Vietnamese Community', link: 'https://t.me/MinimaVietNam' },
               { flag: '🇨🇳', name: 'Chinese Community', link: 'https://t.me/minimachina' }
             ].map((channel, index) => (
-              <li key={index}>
+              <li key={index} className="flex items-center justify-between gap-2">
                 <ExternalLink 
                   href={channel.link} 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 flex items-center gap-2"
                 >
-                  {channel.flag} {channel.name} <span className="text-gray-500 text-xs">(community-maintained)</span>
+                  {channel.flag} {channel.name}
                 </ExternalLink>
+                <span className="text-gray-500 text-xs whitespace-nowrap">(community-maintained)</span>
               </li>
             ))}
           </ul>

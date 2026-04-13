@@ -55,8 +55,6 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Enhanced background orbs - animated style
-
 export default function NodesPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
@@ -337,7 +335,7 @@ export default function NodesPage() {
           </p>
         </section>
 
-        {/* Advanced Node Types */}
+        {/* Advanced Node Types - UPDATED MEG block with "→" prefix */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔧</span>
@@ -349,8 +347,8 @@ export default function NodesPage() {
               { title: 'Archive Node', text: 'Full historical blockchain data storage for archival purposes and complete transaction history verification.', link: { href: 'https://docs.minima.global/docs/run-a-node/archive-node', text: '→ Setup Guide' } },
               { title: 'Mega Node', text: 'High-performance node configuration for maximum network contribution and enhanced throughput capabilities.', link: { href: 'https://docs.minima.global/docs/run-a-node/mega-node', text: '→ Setup Guide' } },
               { title: 'Minima E-Gateway (MEG)', text: 'Enterprise-grade gateway for integrating Minima with external systems and legacy infrastructure.', links: [
-                { href: 'https://docs.minima.global/docs/run-a-node/meg-about', text: 'Documentation' },
-                { href: 'https://docs.minima.global/docs/run-a-node/meg-setup', text: 'Configuration Guide' }
+                { href: 'https://docs.minima.global/docs/run-a-node/meg-about', text: '→ Documentation' },
+                { href: 'https://docs.minima.global/docs/run-a-node/meg-setup', text: '→ Configuration Guide' }
               ]}
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
