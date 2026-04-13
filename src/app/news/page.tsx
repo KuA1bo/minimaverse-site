@@ -163,14 +163,13 @@ export default function NewsPage() {
           
           <div className="space-y-4">
             {[
-              // ✅ NEW: Crowdfunding Announcement (Top priority)
               {
                 date: 'March 30, 2026',
                 title: 'Crowdfunding on Republic Europe: Invest in Minima AG',
                 text: "Minima is crowdfunding — giving long-term supporters and the public the opportunity to invest in Minima AG ahead of our planned Series A later this year. Minima exists to power a world where machines and AI don't just think: they transact, cooperate, and prove what is true. As autonomy accelerates, trust must exist at the edge, inside the machines themselves. Minima is building the trust layer for autonomous machines, using a radically compact blockchain protocol that can run directly on devices, at the silicon layer. The round has exceeded its initial target; over-subscription is open for a limited time.",
                 link: { href: 'https://europe.republic.com/minima', text: '→ Register to Gain Access on Republic Europe' },
                 status: 'confirmed' as const,
-                highlight: true // Special visual treatment
+                highlight: true
               },
               {
                 date: 'March 24, 2026',
@@ -217,7 +216,6 @@ export default function NewsPage() {
                     : 'bg-gray-800/40 border border-gray-700/40 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15'
                   }`}
               >
-                {/* Animated accent line for highlighted item */}
                 {item.highlight && (
                   <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 animate-gradient-x" />
                 )}
@@ -246,6 +244,7 @@ export default function NewsPage() {
                   </p>
                   
                   <div className="space-y-2">
+                    {/* ✅ Стрелка "→" в тексте + компонент автоматически добавит SVG в конец */}
                     <ExternalLink 
                       href={item.link.href} 
                       className={`underline-offset-4 transition-all duration-300 text-sm block inline-flex items-center gap-1
@@ -255,9 +254,6 @@ export default function NewsPage() {
                         }`}
                     >
                       {item.link.text}
-                      <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                      </svg>
                     </ExternalLink>
                     {item.video && (
                       <ExternalLink 
@@ -404,4 +400,3 @@ export default function NewsPage() {
     </div>
   );
 }
-
