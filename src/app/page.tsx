@@ -331,7 +331,7 @@ export default function HomePage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 11, 2026
+            Last updated: April 13, 2026
           </p>
         </section>
 

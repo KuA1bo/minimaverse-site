@@ -55,8 +55,6 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Enhanced background orbs - animated style
-
 export default function ToolsPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
@@ -105,7 +103,7 @@ export default function ToolsPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - UNCHANGED (links inside box) */}
+      {/* Primary Sources Box - UPDATED with community node alternative */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -142,12 +140,23 @@ export default function ToolsPage() {
               <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
                 href="https://wallet.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 opacity-60"
               >
                 wallet.minima.global
               </ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
-              <span className="text-gray-500 text-xs md:text-sm">Web Wallet</span>
+              <span className="text-gray-500 text-xs md:text-sm">Web Wallet (temporarily unavailable)</span>
+            </li>
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
+              <ExternalLink 
+                href="https://minimammr.com/" 
+                className="text-green-400 hover:text-green-300 underline decoration-green-500/30 hover:decoration-green-400/60 underline-offset-4 transition-all duration-300"
+              >
+                minimammr.com
+              </ExternalLink>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Community Node (MMR endpoint)</span>
             </li>
           </ul>
         </div>
@@ -182,6 +191,151 @@ export default function ToolsPage() {
                 <span className="text-gray-500 hidden sm:inline">|</span>
                 <StatusBadge status="community" />
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* NEW: DEX, Bridge & Minimask Launch Guide */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">🚀</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">New Launches: DEX, Bridge & Minimask</span>
+          </h2>
+          
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-6
+                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
+            <p className="text-gray-300 leading-relaxed mb-4 relative">
+              The Minima ecosystem now includes a decentralized exchange (DEX), cross-chain bridge, 
+              and browser wallet extension. Follow this step-by-step guide to get started:
+            </p>
+            
+            <div className="space-y-4 relative">
+              {/* Step 1 */}
+              <div className="flex gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold flex items-center justify-center">1</span>
+                <div>
+                  <p className="text-gray-300 text-sm">
+                    Visit <ExternalLink href="https://minimaxt.org" className="text-blue-400 hover:text-purple-400 underline">minimaxt.org</ExternalLink> (DEX). 
+                    You'll see a prompt to install MiniMask.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Step 2 - UPDATED with official guide link */}
+              <div className="flex gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold flex items-center justify-center">2</span>
+                <div>
+                  <p className="text-gray-300 text-sm">
+                    Go to <ExternalLink href="https://minimask.org" className="text-blue-400 hover:text-purple-400 underline">minimask.org</ExternalLink>, 
+                    download and unzip the extension. Enable <ExternalLink href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked" className="text-blue-400 hover:text-purple-400 underline">Developer Mode</ExternalLink> in your browser (Chrome/Brave/Edge) and click "Load Unpacked" to install.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Step 3 - UPDATED for clarity */}
+              <div className="flex gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold flex items-center justify-center">3</span>
+                <div>
+                  <p className="text-gray-300 text-sm">
+                    Return to <ExternalLink href="https://minimaxt.org" className="text-blue-400 hover:text-purple-400 underline">minimaxt.org</ExternalLink>, 
+                    restore or create a wallet (the interface supports up to 5 separate wallets), set a password, and start trading Minima ↔ USDT.
+                  </p>
+                </div>
+              </div>
+              
+              {/* Step 4 */}
+              <div className="flex gap-3">
+                <span className="flex-shrink-0 w-6 h-6 rounded-full bg-purple-500/20 text-purple-300 text-xs font-bold flex items-center justify-center">4</span>
+                <div>
+                  <p className="text-gray-300 text-sm">
+                    To swap USDT in/out of Minima, use the bridge at <ExternalLink href="https://mxusd.global" className="text-blue-400 hover:text-purple-400 underline">mxusd.global</ExternalLink>.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
+            {/* Note + Warning about In-App Chat */}
+            <div className="mt-4 pt-4 border-t border-gray-700/40 space-y-3">
+              <p className="text-gray-400 text-xs relative">
+                💡 <strong>Note:</strong> The DEX has its own wallet creation page — you don't need MiniMask installed for basic trading. 
+                Use the <ExternalLink href="https://block.minima.global/" className="text-blue-400 hover:text-purple-400 underline">Block Explorer</ExternalLink> if tokens appear missing.
+              </p>
+              
+              {/* ⚠️ MOVED HERE: Clear warning about minimaxt.org chat */}
+              <div className="bg-amber-900/10 border border-amber-700/30 rounded-lg p-3">
+                <p className="text-amber-400/90 text-xs relative flex items-start gap-2">
+                  <span className="text-base">⚠️</span>
+                  <span>
+                    <strong>In-App Chat on minimaxt.org:</strong> The chat room is unmoderated. New messages will appear publicly after a 5-minute delay.
+                  </span>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          {/* Quick Access Cards */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+            <ExternalLink 
+              href="https://minimaxt.org"
+              className="relative bg-purple-900/20 border border-purple-700/50 rounded-2xl p-4 
+                        hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+                        transition-all duration-300 block group overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="text-white font-medium group-hover:text-purple-300 transition-colors relative">🦄 DEX</span>
+              <p className="text-gray-400 text-xs mt-1 relative">Trade Minima ↔ USDT</p>
+              <p className="text-purple-400 text-xs mt-2 relative">minimaxt.org</p>
+            </ExternalLink>
+            
+            <ExternalLink 
+              href="https://mxusd.global"
+              className="relative bg-blue-900/20 border border-blue-700/50 rounded-2xl p-4 
+                        hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/15 
+                        transition-all duration-300 block group overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="text-white font-medium group-hover:text-blue-300 transition-colors relative">🌉 Bridge</span>
+              <p className="text-gray-400 text-xs mt-1 relative">Cross-chain USDT swaps</p>
+              <p className="text-blue-400 text-xs mt-2 relative">mxusd.global</p>
+            </ExternalLink>
+            
+            <ExternalLink 
+              href="https://minimask.org"
+              className="relative bg-cyan-900/20 border border-cyan-700/50 rounded-2xl p-4 
+                        hover:border-cyan-500/50 hover:shadow-2xl hover:shadow-cyan-500/15 
+                        transition-all duration-300 block group overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="text-white font-medium group-hover:text-cyan-300 transition-colors relative">🎭 Minimask</span>
+              <p className="text-gray-400 text-xs mt-1 relative">Browser wallet extension</p>
+              <p className="text-cyan-400 text-xs mt-2 relative">minimask.org</p>
+            </ExternalLink>
+          </div>
+          
+          {/* Feedback Channels (WARNING REMOVED) */}
+          <div className="mt-6 pt-4 border-t border-gray-700/40">
+            <p className="text-gray-400 text-sm mb-2 relative">🔧 Feedback Channels:</p>
+            <div className="space-y-1 text-sm relative">
+              <ExternalLink 
+                href="https://discord.com/channels/562272317930209280/1492121137948266616"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 block"
+              >
+                💬 DEX Feedback Thread
+              </ExternalLink>
+              <ExternalLink 
+                href="https://discord.com/channels/562272317930209280/1492101909153189989"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 block"
+              >
+                💬 MiniMask Feedback Thread
+              </ExternalLink>
+              <ExternalLink 
+                href="https://discord.com/channels/562272317930209280/1492101583859744788"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 block"
+              >
+                💬 Bridge Feedback Thread
+              </ExternalLink>
             </div>
           </div>
         </section>
@@ -246,13 +400,14 @@ export default function ToolsPage() {
             <p className="text-sm text-gray-500 mt-2">
               <ExternalLink 
                 href="https://wallet.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 opacity-60"
               >
-                🌐 wallet.minima.global
+                🌐 wallet.minima.global (temporarily unavailable)
               </ExternalLink>
+              <span className="text-gray-500 text-xs ml-2">→ Use <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink> as community alternative</span>
             </p>
 
-            {/* Mobile Wallet - special layout with multiple links below */}
+            {/* Mobile Wallet */}
             <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -374,7 +529,7 @@ export default function ToolsPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 11, 2026
+            Last updated: April 13, 2026
           </p>
         </section>
 
