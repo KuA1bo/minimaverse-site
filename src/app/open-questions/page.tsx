@@ -226,7 +226,7 @@ export default function OpenQuestionsPage() {
           </div>
         </section>
 
-        {/* Additional Resources - UPDATED: dots for tablet/desktop, none for mobile */}
+        {/* Additional Resources - UPDATED: Clean mobile layout (no dash), responsive dots */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔗</span>
@@ -237,8 +237,8 @@ export default function OpenQuestionsPage() {
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
-            <ul className="space-y-3 text-sm">
-              <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+            <ul className="space-y-4 text-sm">
+              <li className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
                 <span className="text-gray-400 hidden sm:inline">•</span>
                 <ExternalLink 
                   href="https://docs.minima.global" 
@@ -246,9 +246,10 @@ export default function OpenQuestionsPage() {
                 >
                   docs.minima.global
                 </ExternalLink>
-                <span className="text-gray-500 text-xs md:text-sm">— Official Documentation</span>
+                <span className="text-gray-500 text-xs md:text-sm hidden md:inline">—</span>
+                <span className="text-gray-500 text-xs md:text-sm">Official Documentation</span>
               </li>
-              <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <li className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
                 <span className="text-gray-400 hidden sm:inline">•</span>
                 <ExternalLink 
                   href="https://minima.global/blog" 
@@ -256,9 +257,10 @@ export default function OpenQuestionsPage() {
                 >
                   minima.global/blog
                 </ExternalLink>
-                <span className="text-gray-500 text-xs md:text-sm">— Minima Blog (Announcements)</span>
+                <span className="text-gray-500 text-xs md:text-sm hidden md:inline">—</span>
+                <span className="text-gray-500 text-xs md:text-sm">Minima Blog (Announcements)</span>
               </li>
-              <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <li className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
                 <span className="text-gray-400 hidden sm:inline">•</span>
                 <ExternalLink 
                   href="https://t.me/MinimaGlobal" 
@@ -266,7 +268,8 @@ export default function OpenQuestionsPage() {
                 >
                   t.me/MinimaGlobal
                 </ExternalLink>
-                <span className="text-gray-500 text-xs md:text-sm">— Telegram Announcements</span>
+                <span className="text-gray-500 text-xs md:text-sm hidden md:inline">—</span>
+                <span className="text-gray-500 text-xs md:text-sm">Telegram Announcements</span>
               </li>
             </ul>
           </div>

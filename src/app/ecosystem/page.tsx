@@ -55,8 +55,6 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Enhanced background orbs - animated style
-
 export default function EcosystemPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
@@ -207,7 +205,7 @@ export default function EcosystemPage() {
             {/* Link outside card */}
             <ExternalLink 
               href="https://github.com/minima-global/Minima" 
-              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 ml-1"
+              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
@@ -230,8 +228,8 @@ export default function EcosystemPage() {
                 Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Official source
               </p>
             </div>
-            {/* Links outside card - spacing fixed */}
-            <div className="space-y-2 ml-1">
+            {/* Links outside card */}
+            <div className="space-y-2">
               <ExternalLink 
                 href="https://integritas.technology/" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
@@ -287,7 +285,7 @@ export default function EcosystemPage() {
                 {/* Link outside card */}
                 <ExternalLink 
                   href={item.link.href} 
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm ml-1"
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
                 >
                   {item.link.text}
                 </ExternalLink>
@@ -296,7 +294,7 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Wallets */}
+        {/* Wallets - MICRO-FIXED: Google Play consistent format (Android app) on all devices */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👛</span>
@@ -317,29 +315,57 @@ export default function EcosystemPage() {
               Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Official source
             </p>
           </div>
-          {/* Links outside card - spacing fixed for GitHub/APK */}
-          <div className="space-y-2 mt-2">
-            <ExternalLink 
-              href="https://wallet.minima.global" 
-              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
-            >
-              🌐 Web Wallet
-            </ExternalLink>
-            <ExternalLink 
-              href="https://play.google.com/store/search?q=minima&c=apps&hl=en" 
-              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
-            >
-              📱 Google Play Store
-            </ExternalLink>
-            <ExternalLink 
-              href="https://github.com/minima-global/Minima/tree/master/jar" 
-              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 ml-1"
-            >
-              <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-              </svg>
-              Android APK (GitHub)
-            </ExternalLink>
+          
+          {/* Links - Each on own line on mobile, horizontal on desktop */}
+          <div className="mt-3 space-y-3">
+            {/* Web Wallet */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="hidden sm:inline text-gray-400">•</span>
+              <ExternalLink 
+                href="https://wallet.minima.global" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm opacity-60"
+                hideArrow={true}
+              >
+                🌐 wallet.minima.global (temporarily unavailable)
+              </ExternalLink>
+              <span className="hidden sm:inline text-gray-500">—</span>
+              <span className="hidden sm:inline text-gray-500 text-xs sm:text-sm">
+                Alternative: <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink>
+              </span>
+            </div>
+            
+            {/* Mobile-only alternative hint */}
+            <div className="sm:hidden bg-gray-800/30 border border-gray-700/30 rounded-lg px-3 py-2">
+              <p className="text-gray-400 text-xs flex items-start gap-1.5">
+                <span className="text-green-400 mt-0.5">💡</span>
+                Use <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink> as community alternative while the official web wallet is unavailable.
+              </p>
+            </div>
+            
+            {/* Google Play - Consistent format: (Android app) on all devices */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="hidden sm:inline text-gray-400">•</span>
+              <ExternalLink 
+                href="https://play.google.com/store/search?q=minima&c=apps&hl=en" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
+              >
+                📱 Google Play Store (Android app)
+              </ExternalLink>
+            </div>
+            
+            {/* GitHub APK */}
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
+              <span className="hidden sm:inline text-gray-400">•</span>
+              <ExternalLink 
+                href="https://github.com/minima-global/Minima/tree/master/jar" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2"
+              >
+                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                </svg>
+                Android APK (GitHub)
+              </ExternalLink>
+            </div>
           </div>
         </section>
 
@@ -367,7 +393,7 @@ export default function EcosystemPage() {
                 {/* Link outside card */}
                 <ExternalLink 
                   href={exchange.link.href} 
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm ml-1"
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
                 >
                   {exchange.link.text}
                 </ExternalLink>
