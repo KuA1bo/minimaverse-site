@@ -33,7 +33,6 @@ const ExternalLink = ({
   </a>
 );
 
-// FIXED: Correct TypeScript syntax
 export const metadata: Metadata = {
   title: 'Minimaverse — Minima Ecosystem Hub',
   description: 'Unofficial, neutral information hub covering the Minima protocol, core components, development history, and publicly verifiable updates.',
@@ -51,24 +50,24 @@ export const viewport: Viewport = {
   colorScheme: 'dark',
 };
 
-// Background Orbs Component (Optimized Blur & Opacity)
+// Background Orbs Component (Desktop only: lg+, Brightness /45)
 const BackgroundOrbs = () => (
-  <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 hidden sm:block">
-    {/* Orb 1 - Purple (top-left) - Blur adjusted for glassmorphism */}
+  <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 hidden lg:block">
+    {/* Orb 1 - Purple (top-left) - Desktop only, Brightness /45 */}
     <div 
-      className="orb-breathing absolute top-1/4 -left-48 sm:-left-32
-                 w-48 h-48 sm:w-80 sm:h-80 
-                 bg-purple-500/50 sm:bg-purple-500/70 
-                 blur-3xl
+      className="orb-breathing absolute top-1/4 -left-48 lg:-left-32
+                 w-48 h-48 lg:w-80 lg:h-80 
+                 bg-purple-500/10 lg:bg-purple-500/45 
+                 blur-xl lg:blur-2xl
                  rounded-full" 
       aria-hidden="true"
     />
     
-    {/* Orb 2 - Blue (bottom-right) - Blur adjusted for glassmorphism */}
+    {/* Orb 2 - Blue (bottom-right) - Desktop only, Brightness /45 */}
     <div 
       className="orb-breathing absolute top-3/4 -right-32 
-                 sm:w-80 sm:h-80 sm:bg-blue-500/70 sm:blur-3xl
-                 w-56 h-56 bg-blue-500/50 blur-3xl
+                 lg:w-80 lg:h-80 lg:bg-blue-500/45 lg:blur-2xl
+                 w-56 h-56 bg-blue-500/10 blur-xl
                  rounded-full" 
       aria-hidden="true"
     />
@@ -85,10 +84,10 @@ export default function RootLayout({
       <body className="flex flex-col min-h-screen text-gray-200 overflow-y-auto relative">
         <HtmlClassSync />
         
-        {/* Background Layer 1: Orbs (Desktop only) */}
+        {/* Background Layer 1: Orbs (Desktop only: lg+) */}
         <BackgroundOrbs />
         
-        {/* Background Layer 2: Particles & Light Beam */}
+        {/* Background Layer 2: Particles (All devices) */}
         <CinematicParticles />
 
         {/* Header */}
@@ -170,7 +169,7 @@ export default function RootLayout({
                 </ExternalLink>
               </p>
             </div>
-            {/* ✅ NEW: Footer signature */}
+            {/* Footer signature */}
             <p className="text-gray-600 text-[11px] mt-3 text-center sm:text-right opacity-80 hover:opacity-100 transition-opacity duration-300">
               Built with love for the Minima ecosystem 🫶
             </p>
