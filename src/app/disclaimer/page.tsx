@@ -1,6 +1,5 @@
 // src/app/disclaimer/page.tsx
 // Disclaimer page - Legal notice and project information
-// Updated: Project Maintenance link matches /links style (icon visible on mobile)
 
 import Link from 'next/link';
 
@@ -80,13 +79,11 @@ export default function DisclaimerPage() {
               </span>
             </h1>
             <p className="text-gray-400">Legal notice and project information</p>
-            {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
           
-          {/* GitHub icon - Desktop only (hidden on mobile), unified with homepage */}
+          {/* GitHub icon - Desktop only */}
           <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
-            {/* Glow */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
@@ -126,7 +123,7 @@ export default function DisclaimerPage() {
           </div>
         </section>
 
-        {/* Official Resources - mobile layout matches Primary Sources */}
+        {/* Official Resources */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔗</span>
@@ -219,8 +216,83 @@ export default function DisclaimerPage() {
           </div>
         </section>
 
-        {/* Project Maintenance - UPDATED: link + icon visible on mobile */}
+        {/* License (NEW) */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">📜</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
+              License
+            </span>
+          </h2>
+          
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            
+            <p className="text-gray-300 leading-relaxed relative">
+              All content on this website is licensed under the{' '}
+              <ExternalLink 
+                href="https://github.com/KuA1bo/minimaverse-site/raw/main/LICENSE"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+              >
+                MIT License
+              </ExternalLink>. 
+              You are free to use, modify, and distribute this content for non-commercial purposes, 
+              provided you give appropriate credit and include this license notice.
+            </p>
+          </div>
+        </section>
+
+        {/* Trademarks (NEW) */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">™️</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
+              Trademarks
+            </span>
+          </h2>
+          
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
+            <p className="text-gray-300 leading-relaxed relative">
+              <strong className="text-white">Minima</strong>, <strong className="text-white">Minima Global</strong>, 
+              and related marks are trademarks or registered trademarks of Minima Foundation. 
+              This project is not affiliated with or endorsed by Minima Foundation. 
+              We use these terms solely for informational and educational purposes to describe 
+              the Minima Protocol ecosystem.
+            </p>
+          </div>
+        </section>
+
+        {/* Privacy & Data (NEW) */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">🔒</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
+              Privacy & Data
+            </span>
+          </h2>
+          
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+            <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+            
+            <p className="text-gray-300 leading-relaxed relative">
+              This website does not collect, store, or process any personal data. 
+              We do not use cookies, analytics, or tracking scripts. 
+              Your visit to this site is completely private and anonymous.
+            </p>
+            <p className="text-gray-300 leading-relaxed mt-4 relative">
+              The site is hosted on Vercel, which may collect standard server logs 
+              (IP address, browser type, access times) for operational purposes only.
+            </p>
+          </div>
+        </section>
+
+        {/* Project Maintenance */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🛠️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Project Maintenance</span>
@@ -239,12 +311,10 @@ export default function DisclaimerPage() {
                 href="https://github.com/KuA1bo/minimaverse-site/issues" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 flex items-center gap-2 relative"
               >
-                {/* ✅ GitHub icon: visible on ALL devices (removed hidden sm:inline) */}
                 <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                 </svg>
                 Open an Issue on GitHub
-                {/* ✅ Arrow icon added automatically by ExternalLink component */}
               </ExternalLink>
             </p>
           </div>
@@ -266,7 +336,7 @@ export default function DisclaimerPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE */}
+        {/* Last Updated */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />

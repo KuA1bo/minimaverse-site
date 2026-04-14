@@ -3,7 +3,7 @@
 
 import Link from 'next/link';
 
-// Reusable component for external links with icon (enhanced with hideArrow)
+// Reusable component for external links with icon
 const ExternalLink = ({ 
   href, 
   children, 
@@ -33,7 +33,7 @@ const ExternalLink = ({
   </a>
 );
 
-// Reusable status badge component (enhanced with glow + hover)
+// Reusable status badge component
 const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'in-development' | 'community', reducedGlow?: boolean }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: reducedGlow ? 'shadow-green-500/25' : 'shadow-green-500/50' },
@@ -66,9 +66,8 @@ export default function AboutPage() {
         
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
           
-          {/* GitHub icon - Desktop only (hidden on mobile), unified with homepage */}
+          {/* GitHub icon - Desktop only */}
           <div className="hidden sm:flex items-start justify-end relative -translate-x-10 mt-12 flex-shrink-0 order-last">
-            {/* Centered glow */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
@@ -98,7 +97,6 @@ export default function AboutPage() {
               </span>
             </h1>
             <p className="text-gray-400">Technical overview and project context</p>
-            {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
         </div>
@@ -115,7 +113,6 @@ export default function AboutPage() {
             <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-2 sm:space-y-3 text-sm">
-            {/* Item 1 - Vertical on mobile/tablet, horizontal on desktop */}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
@@ -127,7 +124,6 @@ export default function AboutPage() {
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">full protocol specification</span>
             </li>
-            {/* Item 2 */}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
@@ -139,7 +135,6 @@ export default function AboutPage() {
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">core concepts overview</span>
             </li>
-            {/* Item 3 */}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
@@ -155,7 +150,7 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {/* Content with fade-in animation */}
+      {/* Content */}
       <article className="prose prose-invert max-w-none">
         
         {/* Section 1: About This Project */}
@@ -182,8 +177,32 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Section 2: What is Minima Protocol */}
+        {/* Section 2: Who We Are (NEW) */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">👥</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
+              Who We Are
+            </span>
+          </h2>
+          
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            
+            <p className="text-gray-300 leading-relaxed relative">
+              Minimaverse is maintained by <strong className="text-white">community volunteers</strong> who believe 
+              in Minima's vision of true decentralization. We are developers, node operators, and long-term 
+              holders contributing to ecosystem growth through documentation and education.
+            </p>
+            <p className="text-gray-300 leading-relaxed mt-4 relative">
+              This project is built with ❤️ for the Minima community — by the community.
+            </p>
+          </div>
+        </section>
+
+        {/* Section 3: What is Minima Protocol */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⛓️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">What is Minima Protocol</span>
@@ -227,8 +246,8 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* Section 3: Core Technical Features */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        {/* Section 4: Core Technical Features */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚙️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Core Technical Features</span>
@@ -236,36 +255,12 @@ export default function AboutPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              {
-                title: 'Compact State (~300 MB RAM)',
-                text: 'Complete blockchain history fits in minimal storage through aggressive pruning and Cascading Proof Chain architecture.',
-                status: 'confirmed' as const
-              },
-              {
-                title: 'Cascading Proof Chain',
-                text: '256 difficulty levels with logarithmic growth. Stores cumulative PoW in finite chain headers while pruning almost all blocks.',
-                status: 'confirmed' as const
-              },
-              {
-                title: 'Burn Mechanism',
-                text: 'Instead of transaction fees, outputs sum to less than inputs. Burned coins reduce total supply, preventing DDoS without miner-centric fee markets.',
-                status: 'confirmed' as const
-              },
-              {
-                title: 'MMR UTXO (Storage-less)',
-                text: 'Users track only their own coins with Merkle proofs instead of full UTXO database. Reduces storage by orders of magnitude.',
-                status: 'confirmed' as const
-              },
-              {
-                title: 'Maxima P2P Network',
-                text: 'Layer 2 backbone for Lightning, Sidechains, DEX. All Maxima messages perform PoW, contributing to Layer 1 security.',
-                status: 'confirmed' as const
-              },
-              {
-                title: 'Pulse Network',
-                text: 'Every 10 minutes, nodes send PING + PoW to peers. Verifies node health, syncs mempool, adds continuous security. No zombies allowed.',
-                status: 'confirmed' as const
-              },
+              { title: 'Compact State (~300 MB RAM)', text: 'Complete blockchain history fits in minimal storage through aggressive pruning and Cascading Proof Chain architecture.', status: 'confirmed' as const },
+              { title: 'Cascading Proof Chain', text: '256 difficulty levels with logarithmic growth. Stores cumulative PoW in finite chain headers while pruning almost all blocks.', status: 'confirmed' as const },
+              { title: 'Burn Mechanism', text: 'Instead of transaction fees, outputs sum to less than inputs. Burned coins reduce total supply, preventing DDoS without miner-centric fee markets.', status: 'confirmed' as const },
+              { title: 'MMR UTXO (Storage-less)', text: 'Users track only their own coins with Merkle proofs instead of full UTXO database. Reduces storage by orders of magnitude.', status: 'confirmed' as const },
+              { title: 'Maxima P2P Network', text: 'Layer 2 backbone for Lightning, Sidechains, DEX. All Maxima messages perform PoW, contributing to Layer 1 security.', status: 'confirmed' as const },
+              { title: 'Pulse Network', text: 'Every 10 minutes, nodes send PING + PoW to peers. Verifies node health, syncs mempool, adds continuous security. No zombies allowed.', status: 'confirmed' as const },
             ].map((feature, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
@@ -288,8 +283,8 @@ export default function AboutPage() {
           </p>
         </section>
 
-        {/* Section 4: Comparison Table */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        {/* Section 5: Comparison Table */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚖️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Minima vs Traditional Blockchains</span>
@@ -327,8 +322,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Section 5: Decentralization Principles */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        {/* Section 6: Decentralization Principles */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔐</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Decentralization Principles</span>
@@ -356,8 +351,51 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Section 6: Current Status & Considerations - UPDATED with neutral wording */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        {/* Section 7: How to Contribute (NEW) */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">🤝</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
+              How to Contribute
+            </span>
+          </h2>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {[
+              { title: 'Report Issues', desc: 'Found a typo or outdated information? Open an issue on GitHub.', icon: '🐛' },
+              { title: 'Suggest Content', desc: 'Have a topic that should be covered? We welcome suggestions.', icon: '💡' },
+              { title: 'Translate', desc: 'Help translate Minimaverse into your native language.', icon: '🌐' },
+              { title: 'Share Knowledge', desc: 'Write guides, tutorials, or technical deep-dives.', icon: '📝' },
+            ].map((item, index) => (
+              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative flex items-start gap-3">
+                  <span className="text-2xl">{item.icon}</span>
+                  <div>
+                    <h3 className="text-white font-medium mb-1">{item.title}</h3>
+                    <p className="text-gray-400 text-sm">{item.desc}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <div className="mt-6 text-center">
+            <ExternalLink 
+              href="https://github.com/KuA1bo/minimaverse-site"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg transition-colors duration-300"
+            >
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+              </svg>
+              Visit GitHub Repository
+            </ExternalLink>
+          </div>
+        </section>
+
+        {/* Section 8: Current Status & Considerations */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Current Status & Considerations</span>
@@ -367,7 +405,6 @@ export default function AboutPage() {
             {[
               { title: 'Protocol Maturity', text: 'The core Minima Protocol is complete and immutable by design. Future development focuses on application layers and tooling built atop the protocol.' },
               { title: 'No Token Incentives', text: 'Minima does not implement token rewards for node operation. This conscious design choice avoids centralization pressures associated with paid mining.' },
-              // ✅ UPDATED: Neutral wording - requirement comes from protocol, not people
               { title: 'User Participation Requirement', text: 'The protocol requires periodic connection (minimum weekly) to update MMR proofs and validate the Cascading Proof Chain. This is the trade-off for extreme decentralization.' },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
@@ -396,8 +433,8 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Section 7: Developer Resources */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        {/* Section 9: Developer Resources */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🛠️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Developer Resources</span>
@@ -424,7 +461,6 @@ export default function AboutPage() {
                 <p className="text-gray-400 text-sm mt-2">
                   Official developer portal: documentation, SDKs, tutorials, and community support.
                 </p>
-                {/* Arrow icon AFTER link text - no duplicate tool icon (already in section header) */}
                 <p className="text-blue-400 text-sm mt-3 inline-flex items-center gap-1">
                   🌐 build.minima.global
                   <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -436,7 +472,7 @@ export default function AboutPage() {
           </ExternalLink>
         </section>
 
-        {/* Universal Disclaimer Block - enhanced */}
+        {/* Universal Disclaimer Block */}
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-4 sm:p-6 mb-8 
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
                         opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
@@ -454,7 +490,7 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE */}
+        {/* Last Updated */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
