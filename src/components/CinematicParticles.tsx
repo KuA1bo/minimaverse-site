@@ -32,8 +32,8 @@ export default function CinematicParticles() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       
-      // 60–100 частиц в зависимости от ширины экрана
-      const count = Math.min(100, Math.floor(window.innerWidth / 20));
+      // Particle density: scales with screen width, capped at 150
+      const count = Math.min(150, Math.floor(window.innerWidth / 12));
       particles = [];
       
       for (let i = 0; i < count; i++) {
@@ -41,10 +41,11 @@ export default function CinematicParticles() {
           x: Math.random() * canvas.width,
           y: Math.random() * canvas.height,
           size: Math.random() * 1.5 + 0.5,
-          // ⚡ ИЗМЕНЕНО: Увеличена базовая скорость для более заметного движения
-          speedX: (Math.random() - 0.5) * 0.4, 
-          speedY: (Math.random() - 0.5) * 0.4 - 0.15, // Лёгкий дрейф вверх
-          opacity: Math.random() * 0.5 + 0.1,
+          // Balanced speed: smooth but perceptible motion
+          speedX: (Math.random() - 0.5) * 0.32,
+          speedY: (Math.random() - 0.5) * 0.32 - 0.12,
+          // Subtle opacity variation for depth
+          opacity: Math.random() * 0.4 + 0.05,
           phase: Math.random() * Math.PI * 2,
         });
       }
@@ -58,29 +59,29 @@ export default function CinematicParticles() {
 
       ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-      // --- ЛУЧ СВЕТА УБРАН (ЧИСТЫЙ КОСМОС) ---
+      // Pure space background — no light beam overlay
 
       const time = Date.now() * 0.001;
       
       particles.forEach((p) => {
-        // ⚡ ИЗМЕНЕНО: Увеличена амплитуда "плавания" (синусоида)
-        p.x += p.speedX + Math.sin(time + p.phase) * 0.3;
+        // Organic floating with gentle sine oscillation
+        p.x += p.speedX + Math.sin(time + p.phase) * 0.25;
         p.y += p.speedY;
 
-        // Зацикливание за пределами экрана
+        // Seamless wrapping for infinite space effect
         if (p.y < -10) p.y = canvas.height + 10;
         if (p.y > canvas.height + 10) p.y = -10;
         if (p.x < -10) p.x = canvas.width + 10;
         if (p.x > canvas.width + 10) p.x = -10;
 
-        // Рисуем частицу
+        // Render particle
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        // Нежно-фиолетовый оттенок
+        // Soft purple-tinted white for brand consistency
         ctx.fillStyle = `rgba(180, 170, 255, ${p.opacity})`;
         ctx.fill();
 
-        // Свечение для крупных
+        // Depth-of-field glow for larger particles
         if (p.size > 1.2) {
           ctx.shadowBlur = 6;
           ctx.shadowColor = "rgba(139, 92, 246, 0.5)";
@@ -106,7 +107,7 @@ export default function CinematicParticles() {
     };
   }, []);
 
-  // Не рендерим canvas, если экономика включена при загрузке
+  // Skip rendering if economy mode or reduced motion is active on load
   if (typeof window !== "undefined" && 
      (localStorage.getItem("economyMode") === "true" || window.matchMedia("(prefers-reduced-motion: reduce)").matches)) {
     return null;
