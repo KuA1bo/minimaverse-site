@@ -4,70 +4,279 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 2, 2, 5;
-  --background-end-rgb: 0, 0, 2;
+  --background-start-rgb: 3, 3, 5;    /* Neutral dark, barely perceptible cool tone */
+  --background-end-rgb: 0, 0, 1;      /* Near absolute black */
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
+  background: 
+    radial-gradient(ellipse at top, rgba(85, 85, 100, 0.03), transparent 65%),
+    radial-gradient(ellipse at bottom, rgba(75, 85, 105, 0.03), transparent 65%),
+    linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
   background-attachment: fixed;
 }
 
-html { scroll-padding-top: 2rem; }
-::selection { background-color: rgba(59, 130, 246, 0.3); color: rgb(219, 234, 254); }
-a:focus-visible, button:focus-visible, input:focus-visible { outline: 2px solid rgb(59, 130, 246); outline-offset: 2px; border-radius: 4px; }
+/* === Scroll behavior === */
+html {
+  scroll-padding-top: 2rem;
+}
 
-@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-.animate-fade-in { animation: fadeIn 0.3s ease-out forwards; }
+/* === Custom selection color === */
+::selection {
+  background-color: rgba(59, 130, 246, 0.3);
+  color: rgb(219, 234, 254);
+}
 
-@keyframes fadeInUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
-.animate-fade-in-up { animation: fadeInUp 0.4s ease-out forwards; opacity: 0; }
+/* === Enhanced focus for accessibility === */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+  outline: 2px solid rgb(59, 130, 246);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
 
+/* === Fade-in animation === */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.animate-fade-in {
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+/* === Fade-in-up animation === */
+@keyframes fadeInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(12px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
+}
+.animate-fade-in-up {
+  animation: fadeInUp 0.4s ease-out forwards;
+  opacity: 0;
+}
+
+/* === Staggered delay utility classes === */
 .delay-75 { animation-delay: 75ms; }
 .delay-150 { animation-delay: 150ms; }
 .delay-200 { animation-delay: 200ms; }
 .delay-300 { animation-delay: 300ms; }
 
-@keyframes ping { 75%, 100% { transform: scale(2); opacity: 0; } }
-.animate-ping { animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite; }
+/* === Ping animation for status badges === */
+@keyframes ping {
+  75%, 100% { 
+    transform: scale(2); 
+    opacity: 0; 
+  }
+}
+.animate-ping {
+  animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
 
+/* === 🌬️ INTENSE BREATHING animation for orbs === */
 @keyframes breathe-intense {
-  0%, 100% { transform: scale(1) translate(0, 0); opacity: 0.4; filter: blur(24px); }
-  25% { transform: scale(1.08) translate(8px, -8px); opacity: 0.6; filter: blur(28px); }
-  50% { transform: scale(1.12) translate(0, -12px); opacity: 0.7; filter: blur(32px); }
-  75% { transform: scale(1.05) translate(-8px, -6px); opacity: 0.5; filter: blur(26px); }
+  0%, 100% { 
+    transform: scale(1) translate(0, 0); 
+    opacity: 0.4;
+    filter: blur(20px);
+  }
+  25% { 
+    transform: scale(1.15) translate(10px, -10px); 
+    opacity: 0.7;
+    filter: blur(24px);
+  }
+  50% { 
+    transform: scale(1.25) translate(0, -15px); 
+    opacity: 0.9;
+    filter: blur(28px);
+  }
+  75% { 
+    transform: scale(1.1) translate(-10px, -8px); 
+    opacity: 0.6;
+    filter: blur(22px);
+  }
 }
 
-@keyframes float-slow { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(20px, -20px) scale(1.05); } 66% { transform: translate(-15px, 15px) scale(0.98); } }
-@keyframes float-slower { 0%, 100% { transform: translate(0, 0) scale(1); } 33% { transform: translate(-20px, 20px) scale(0.98); } 66% { transform: translate(15px, -15px) scale(1.05); } }
-@keyframes pulse-slow { 0%, 100% { opacity: 0.3; transform: scale(1); } 50% { opacity: 0.6; transform: scale(1.2); } }
-@keyframes gradient-x { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
+/* === Decorative background animations === */
+@keyframes float-slow {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(20px, -20px) scale(1.05); }
+  66% { transform: translate(-15px, 15px) scale(0.98); }
+}
 
-.animate-float-slow { animation: float-slow 10s ease-in-out infinite; }
-.animate-float-slower { animation: float-slower 14s ease-in-out infinite; }
-.animate-pulse-slow { animation: pulse-slow 6s ease-in-out infinite; }
-.animate-gradient-x { background-size: 200% 200%; animation: gradient-x 3s ease infinite; }
+@keyframes float-slower {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-20px, 20px) scale(0.98); }
+  66% { transform: translate(15px, -15px) scale(1.05); }
+}
 
-.orb-breathing { animation: breathe-intense 8s ease-in-out infinite; will-change: transform, opacity, filter; contain: layout style paint; }
-.orb-breathing:nth-child(2) { animation-delay: -4s; }
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.2); }
+}
 
+@keyframes gradient-x {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+.animate-float-slow {
+  animation: float-slow 10s ease-in-out infinite;
+}
+
+.animate-float-slower {
+  animation: float-slower 14s ease-in-out infinite;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 6s ease-in-out infinite;
+}
+
+.animate-gradient-x {
+  background-size: 200% 200%;
+  animation: gradient-x 3s ease infinite;
+}
+
+/* === Apply intense breathing to orbs === */
+.orb-breathing {
+  animation: breathe-intense 6s ease-in-out infinite;
+  will-change: transform, opacity, filter;
+  contain: layout style paint;
+}
+
+.orb-breathing:nth-child(2) {
+  animation-delay: -3s; /* Offset for natural feel */
+}
+
+/* === 🚀 PERFORMANCE: Only respect OS-level reduced motion preference === */
 @media (prefers-reduced-motion: reduce) {
-  .animate-ping, .animate-pulse, .animate-pulse-slow, .animate-float-slow, .animate-float-slower, .animate-gradient-x, .orb-breathing { animation: none !important; }
-  [class*="animate-float"], .blur-2xl, .backdrop-blur-xl { filter: blur(4px) !important; backdrop-filter: blur(4px) !important; }
-  .hover\:shadow-2xl:hover, .shadow-2xl { box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important; }
-  body { background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb))) !important; background-attachment: scroll !important; }
-  *, *::before, *::after { transition-duration: 0.1s !important; }
+  .animate-ping,
+  .animate-pulse,
+  .animate-pulse-slow,
+  .animate-float-slow,
+  .animate-float-slower,
+  .animate-gradient-x,
+  .orb-breathing {
+    animation: none !important;
+  }
+
+  [class*="animate-float"],
+  .blur-2xl,
+  .backdrop-blur-xl {
+    filter: blur(4px) !important;
+    backdrop-filter: blur(4px) !important;
+  }
+
+  .hover\:shadow-2xl:hover,
+  .shadow-2xl {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+  }
+
+  body {
+    background: linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb))) !important;
+    background-attachment: scroll !important;
+  }
+
+  body::before {
+    display: none !important;
+  }
+
+  *, *::before, *::after {
+    transition-duration: 0.1s !important;
+  }
 }
 
-html.reduced-motion *, html.reduced-motion *::before, html.reduced-motion *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; }
-html.reduced-motion [class*="animate-float"], html.reduced-motion .blur-2xl, html.reduced-motion .backdrop-blur-xl, html.reduced-motion .orb-breathing { filter: blur(4px) !important; backdrop-filter: blur(4px) !important; animation: none !important; }
-html.reduced-motion .hover\:shadow-2xl:hover, html.reduced-motion .shadow-2xl { box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important; }
-.content-vis-auto { content-visibility: auto; contain-intrinsic-size: 0 500px; }
+/* === 🎛️ Manual reduced-motion mode (for footer toggle) === */
+html.reduced-motion *,
+html.reduced-motion *::before,
+html.reduced-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
 
-@supports (backdrop-filter: blur(12px)) { [class*="animate-float"] { filter: blur(20px); } .backdrop-blur-xl { backdrop-filter: blur(12px); } }
-@-moz-document url-prefix() { [class*="animate-float"] { filter: blur(8px) !important; opacity: 0.25 !important; } .animate-float-slow, .animate-float-slower { animation-duration: 18s !important; } }
-@supports not (background-clip: text) { .bg-clip-text.text-transparent { background: none !important; color: white !important; text-shadow: 0 0 15px rgba(168, 85, 247, 0.6); } }
-@media (prefers-reduced-transparency: reduce) { .group-hover\:w-full { transition: width 0.2s ease !important; } }
-[class*="animate-"] { contain: layout style paint; will-change: transform, opacity; transform: translateZ(0); }
-body > * { position: relative; z-index: 2; }
+html.reduced-motion [class*="animate-float"],
+html.reduced-motion .blur-2xl,
+html.reduced-motion .backdrop-blur-xl,
+html.reduced-motion .orb-breathing {
+  filter: blur(4px) !important;
+  backdrop-filter: blur(4px) !important;
+  animation: none !important;
+}
+
+html.reduced-motion .hover\:shadow-2xl:hover,
+html.reduced-motion .shadow-2xl {
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1) !important;
+}
+
+html.reduced-motion body::before {
+  display: none !important;
+}
+
+/* === 🧩 Utility: content-visibility for below-fold sections === */
+.content-vis-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* === Progressive Enhancement for Firefox/Brave === */
+@supports (backdrop-filter: blur(12px)) {
+  [class*="animate-float"] { filter: blur(20px); }
+  .backdrop-blur-xl { backdrop-filter: blur(12px); }
+}
+
+@-moz-document url-prefix() {
+  [class*="animate-float"] {
+    filter: blur(8px) !important;
+    opacity: 0.25 !important;
+  }
+  .animate-float-slow,
+  .animate-float-slower {
+    animation-duration: 18s !important;
+  }
+}
+
+@supports not (background-clip: text) {
+  .bg-clip-text.text-transparent {
+    background: none !important;
+    color: white !important;
+    text-shadow: 0 0 15px rgba(168, 85, 247, 0.6);
+  }
+}
+
+@media (prefers-reduced-transparency: reduce) {
+  .group-hover\:w-full { transition: width 0.2s ease !important; }
+}
+
+[class*="animate-"] {
+  contain: layout style paint;
+  will-change: transform, opacity;
+  transform: translateZ(0);
+}
+
+/* === Subtle noise texture === */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: 
+    radial-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    radial-gradient(rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 40px 40px, 60px 60px;
+  background-position: 0 0, 20px 20px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.6;
+}
+
+body > * {
+  position: relative;
+  z-index: 2;
+}
