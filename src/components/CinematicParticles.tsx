@@ -15,76 +15,97 @@ export default function CinematicParticles() {
     let particles: Array<{
       x: number;
       y: number;
-      size: number;
+      baseSize: number;
+      depth: number;
       speedX: number;
       speedY: number;
-      opacity: number;
+      baseOpacity: number;
       phase: number;
+      twinkleSpeed: number;
+      twinklePhase: number;
     }> = [];
 
+    // Check if economy mode or reduced motion is enabled
     const isEconomy = () => {
       if (typeof window === "undefined") return true;
       return localStorage.getItem("economyMode") === "true" ||
              window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     };
 
+    // Initialize particles: Dense starfield with +10% size & brightness
     const init = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      ctx.scale(dpr, dpr);
+
+      const width = window.innerWidth;
+      const height = window.innerHeight;
       
-      // Particle density: scales with screen width, capped at 150
-      const count = Math.min(150, Math.floor(window.innerWidth / 12));
+      // Dense starfield: ~160-230 particles on desktop
+      const count = Math.min(230, Math.floor(width / 7));
       particles = [];
       
       for (let i = 0; i < count; i++) {
+        // Uniform depth distribution: 0.2 to 1.0
+        const depth = Math.random() * 0.8 + 0.2;
+        
         particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
-          size: Math.random() * 1.5 + 0.5,
-          // Balanced speed: smooth but perceptible motion
-          speedX: (Math.random() - 0.5) * 0.32,
-          speedY: (Math.random() - 0.5) * 0.32 - 0.12,
-          // Subtle opacity variation for depth
-          opacity: Math.random() * 0.4 + 0.05,
+          x: Math.random() * width,
+          y: Math.random() * height,
+          // +10% size for more prominent dust grains
+          baseSize: (Math.random() * 0.8 + 0.4) * 1.1,
+          depth,
+          // Slightly reduced speed to prevent visual chaos at high density
+          speedX: (Math.random() - 0.5) * 0.18 * depth,
+          speedY: (Math.random() - 0.5) * 0.18 * depth - 0.03 * depth,
+          // +10% base brightness, scaled by depth
+          baseOpacity: (Math.random() * 0.44 + 0.11) * depth,
           phase: Math.random() * Math.PI * 2,
+          twinkleSpeed: Math.random() * 0.9 + 0.4,
+          twinklePhase: Math.random() * Math.PI * 2,
         });
       }
     };
 
+    // Main draw loop
     const draw = () => {
       if (isEconomy()) {
         cancelAnimationFrame(animationFrameId);
         return;
       }
 
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      // Pure space background — no light beam overlay
-
+      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
       const time = Date.now() * 0.001;
       
       particles.forEach((p) => {
-        // Organic floating with gentle sine oscillation
-        p.x += p.speedX + Math.sin(time + p.phase) * 0.25;
+        // Gentle organic drift
+        p.x += p.speedX + Math.sin(time + p.phase) * 0.1 * p.depth;
         p.y += p.speedY;
 
-        // Seamless wrapping for infinite space effect
-        if (p.y < -10) p.y = canvas.height + 10;
-        if (p.y > canvas.height + 10) p.y = -10;
-        if (p.x < -10) p.x = canvas.width + 10;
-        if (p.x > canvas.width + 10) p.x = -10;
+        // Seamless wrapping
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        if (p.y < -20) p.y = height + 20;
+        if (p.y > height + 20) p.y = -20;
+        if (p.x < -20) p.x = width + 20;
+        if (p.x > width + 20) p.x = -20;
+
+        // Scale size with depth, twinkle opacity
+        const size = p.baseSize * (1.0 + p.depth * 0.4);
+        const twinkleFactor = 0.6 + 0.4 * Math.sin(time * p.twinkleSpeed + p.twinklePhase);
+        const currentOpacity = p.baseOpacity * twinkleFactor;
 
         // Render particle
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-        // Soft purple-tinted white for brand consistency
-        ctx.fillStyle = `rgba(180, 170, 255, ${p.opacity})`;
+        ctx.arc(p.x, p.y, size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(180, 170, 255, ${currentOpacity})`;
         ctx.fill();
 
-        // Depth-of-field glow for larger particles
-        if (p.size > 1.2) {
-          ctx.shadowBlur = 6;
-          ctx.shadowColor = "rgba(139, 92, 246, 0.5)";
+        // Glow for mid/foreground particles (+10% intensity)
+        if (p.depth > 0.6) {
+          ctx.shadowBlur = 5 * p.depth;
+          ctx.shadowColor = `rgba(139, 92, 246, ${currentOpacity * 0.44})`;
           ctx.fill();
           ctx.shadowBlur = 0;
         }
@@ -96,14 +117,13 @@ export default function CinematicParticles() {
     init();
     draw();
 
-    window.addEventListener("resize", init);
-    window.addEventListener("storage", () => {
-      if (!isEconomy()) draw();
-    });
+    const handleResize = () => init();
+    window.addEventListener("resize", handleResize);
+    window.addEventListener("storage", () => { if (!isEconomy()) draw(); });
 
     return () => {
       cancelAnimationFrame(animationFrameId);
-      window.removeEventListener("resize", init);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
