@@ -4,15 +4,15 @@
 
 :root {
   --foreground-rgb: 255, 255, 255;
-  --background-start-rgb: 3, 3, 5;    /* Neutral dark, barely perceptible cool tone */
-  --background-end-rgb: 0, 0, 1;      /* Near absolute black */
+  --background-start-rgb: 2, 2, 3;    /* Near absolute black */
+  --background-end-rgb: 0, 0, 0;      /* Pure black */
 }
 
 body {
   color: rgb(var(--foreground-rgb));
   background: 
-    radial-gradient(ellipse at top, rgba(85, 85, 100, 0.03), transparent 65%),
-    radial-gradient(ellipse at bottom, rgba(75, 85, 105, 0.03), transparent 65%),
+    /* Balanced purple accent (0.025) - depth without distraction */
+    radial-gradient(ellipse at top, rgba(88, 28, 135, 0.025), transparent 65%),
     linear-gradient(to bottom, rgb(var(--background-start-rgb)), rgb(var(--background-end-rgb)));
   background-attachment: fixed;
 }
@@ -80,7 +80,6 @@ input:focus-visible {
 }
 
 /* === 🌬️ SLOW & MAJESTIC BREATHING animation for orbs === */
-/* Updated: Slower duration (14s) for a calmer, premium feel */
 @keyframes breathe-intense {
   0%, 100% { 
     transform: scale(1) translate(0, 0); 
@@ -146,7 +145,7 @@ input:focus-visible {
 
 /* === Apply SLOW breathing to orbs (14s duration) === */
 .orb-breathing {
-  animation: breathe-intense 14s ease-in-out infinite; /* Changed from 6s to 14s */
+  animation: breathe-intense 14s ease-in-out infinite;
   will-change: transform, opacity, filter;
   contain: layout style paint;
 }
