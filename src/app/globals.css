@@ -79,7 +79,8 @@ input:focus-visible {
   animation: ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
 
-/* === 🌬️ INTENSE BREATHING animation for orbs === */
+/* === 🌬️ SLOW & MAJESTIC BREATHING animation for orbs === */
+/* Updated: Slower duration (14s) for a calmer, premium feel */
 @keyframes breathe-intense {
   0%, 100% { 
     transform: scale(1) translate(0, 0); 
@@ -143,15 +144,15 @@ input:focus-visible {
   animation: gradient-x 3s ease infinite;
 }
 
-/* === Apply intense breathing to orbs === */
+/* === Apply SLOW breathing to orbs (14s duration) === */
 .orb-breathing {
-  animation: breathe-intense 6s ease-in-out infinite;
+  animation: breathe-intense 14s ease-in-out infinite; /* Changed from 6s to 14s */
   will-change: transform, opacity, filter;
   contain: layout style paint;
 }
 
 .orb-breathing:nth-child(2) {
-  animation-delay: -3s; /* Offset for natural feel */
+  animation-delay: -7s; /* Offset half the duration for natural feel */
 }
 
 /* === 🚀 PERFORMANCE: Only respect OS-level reduced motion preference === */
