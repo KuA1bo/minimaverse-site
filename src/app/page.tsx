@@ -55,8 +55,6 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
   );
 };
 
-// Enhanced background orbs - animated style
-
 export default function HomePage() {
   return (
     <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
@@ -94,7 +92,6 @@ export default function HomePage() {
               <span className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-full animate-gradient-x" />
             </h1>
             
-            {/* ✅ FINAL HERO COPY (Oxford comma applied) */}
             <p className="text-gray-400 text-base sm:text-lg mb-4 leading-relaxed">
               Independent knowledge base for the Minima protocol.
             </p>
@@ -102,7 +99,8 @@ export default function HomePage() {
               Verified documentation, node guides, and ecosystem resources — no hype, no noise.
             </p>
             
-            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4">
+            {/* ✅ FIXED: px-2 sm:px-0 gives buttons breathing room for scale effect on mobile/tablet */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 px-2 sm:px-0">
               <Link 
                 href="/protocol" 
                 className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-500 hover:to-blue-500 transition-all duration-300 min-w-[200px] sm:min-w-[220px] shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 hover:-translate-y-0.5 text-sm sm:text-base"
@@ -122,7 +120,6 @@ export default function HomePage() {
                 </svg>
               </Link>
               
-              {/* ✅ PREMIUM START HERE: Vercel/Stripe level micro-interaction */}
               <Link 
                 href="/about" 
                 className="group inline-flex items-center gap-1 text-gray-400 hover:text-purple-400 text-sm underline decoration-gray-600 hover:decoration-purple-500/60 underline-offset-4 transition-colors duration-200 ease-out mt-3 sm:mt-0 sm:ml-2 cursor-pointer"
@@ -327,7 +324,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Last Updated - ✅ FINAL DATE */}
+        {/* Last Updated */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
