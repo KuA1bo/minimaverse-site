@@ -32,7 +32,7 @@ export default function CinematicParticles() {
              window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     };
 
-    // Initialize particles: Dense starfield with +10% size & brightness
+    // Initialize particles: Dense starfield with mobile +10% density
     const init = () => {
       const dpr = window.devicePixelRatio || 1;
       canvas.width = window.innerWidth * dpr;
@@ -42,8 +42,12 @@ export default function CinematicParticles() {
       const width = window.innerWidth;
       const height = window.innerHeight;
       
-      // Dense starfield: ~160-230 particles on desktop
-      const count = Math.min(230, Math.floor(width / 7));
+      // Base density calculation
+      const baseCount = Math.min(230, Math.floor(width / 7));
+      // +10% more particles on mobile devices (<768px)
+      const mobileMultiplier = width < 768 ? 1.1 : 1.0;
+      const count = Math.floor(baseCount * mobileMultiplier);
+      
       particles = [];
       
       for (let i = 0; i < count; i++) {
