@@ -59,7 +59,7 @@ export default function HomePage() {
   return (
     <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
       
-      {/* Hero Section */}
+      {/* Hero Section - Final 10/10 version */}
       <section className="mb-12 py-12 border-b border-gray-700/40 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
@@ -92,15 +92,24 @@ export default function HomePage() {
               <span className="absolute -bottom-3 left-0 right-0 h-1 bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 rounded-full animate-gradient-x" />
             </h1>
             
-            <p className="text-gray-400 text-base sm:text-lg mb-4 leading-relaxed">
+            <p className="text-gray-400 text-base sm:text-lg mb-3 leading-relaxed">
               Independent knowledge base for the Minima protocol.
             </p>
-            <p className="text-gray-500 text-sm mb-6">
+            <p className="text-gray-400 text-sm mb-2">
               Verified documentation, node guides, and ecosystem resources — no hype, no noise.
             </p>
             
-            {/* ✅ FIXED: px-2 sm:px-0 gives buttons breathing room for scale effect on mobile/tablet */}
-            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 px-2 sm:px-0">
+            {/* ✅ FINAL MICRO-SUBHEADING: Sharper copy + visual hierarchy */}
+            <p className="text-gray-400/65 text-xs mt-2 flex flex-wrap gap-x-3 gap-y-1">
+              <span>Understand Minima.</span>
+              <span className="hidden sm:inline">•</span>
+              <span>Set up your own node.</span>
+              <span className="hidden sm:inline">•</span>
+              <span>Explore the ecosystem.</span>
+            </p>
+            
+            {/* Buttons container - with breathing room for hover effects */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 px-2 sm:px-0 mt-4">
               <Link 
                 href="/protocol" 
                 className="group inline-flex items-center justify-center px-6 sm:px-8 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-xl hover:from-purple-500 hover:to-blue-500 transition-all duration-300 min-w-[200px] sm:min-w-[220px] shadow-lg shadow-purple-500/25 hover:shadow-purple-500/40 hover:scale-105 hover:-translate-y-0.5 text-sm sm:text-base"
@@ -324,11 +333,11 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Last Updated */}
+        {/* Last Updated - Current date */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 13, 2026
+            Last updated: April 15, 2026
           </p>
         </section>
 
