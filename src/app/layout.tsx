@@ -1,9 +1,9 @@
 // src/app/layout.tsx
-// Root layout component for Minimaverse - Next.js App Router
-// Fixed: Correct metadata export syntax + Vercel Analytics
+// Root layout for Minimaverse - Next.js App Router
 
 import './globals.css';
 import Link from 'next/link';
+import Image from 'next/image';
 import type { Metadata, Viewport } from 'next';
 import { Analytics } from "@vercel/analytics/next";
 import { SpeedInsights } from "@vercel/speed-insights/next";
@@ -25,7 +25,6 @@ const ExternalLink = ({
   </a>
 );
 
-// ✅ ИСПРАВЛЕНО: правильный синтаксис экспорта метаданных
 export const metadata: Metadata = {
   title: 'Minimaverse — Minima Ecosystem Hub',
   description: 'Unofficial, neutral information hub covering the Minima protocol, core components, development history, and publicly verifiable updates.',
@@ -37,10 +36,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = { colorScheme: 'dark' };
 
-// Background Orbs Component (Desktop only: lg+, Blue orb reduced to /25)
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 hidden lg:block">
-    {/* Orb 1 - Purple (top-left) */}
     <div 
       className="orb-breathing absolute top-1/4 -left-48 lg:-left-32
                  w-48 h-48 lg:w-80 lg:h-80 
@@ -48,8 +45,6 @@ const BackgroundOrbs = () => (
                  blur-xl lg:blur-2xl rounded-full" 
       aria-hidden="true"
     />
-    
-    {/* Orb 2 - Blue (bottom-right) */}
     <div 
       className="orb-breathing absolute top-3/4 -right-32 
                  lg:w-80 lg:h-80 lg:bg-blue-500/25 lg:blur-xl
@@ -67,17 +62,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <BackgroundOrbs />
         <CinematicParticles />
         
-        {/* ✅ Vercel Analytics & Performance Monitoring */}
         <Analytics />
         <SpeedInsights />
 
-        {/* Header */}
         <header className="relative sm:sticky sm:top-0 z-50 mb-6 sm:mb-8 backdrop-blur-xl bg-black/30 border-b border-gray-700/40 transition-all duration-300 hover:border-purple-500/40">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
           <div className="flex items-center gap-3 sm:gap-4 max-w-6xl mx-auto px-3 sm:px-4 py-2 sm:py-3">
             <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
               <Link href="/" className="group flex items-center gap-2 hover:scale-105 transition-transform duration-300">
-                <img src="/logo.webp" alt="Minimaverse Logo" className="w-8 h-8 sm:w-10 sm:h-10 object-contain bg-transparent mix-blend-screen" />
+                <Image 
+                  src="/logo.webp" 
+                  alt="Minimaverse Logo" 
+                  width={40} 
+                  height={40} 
+                  className="w-8 h-8 sm:w-10 sm:h-10 object-contain bg-transparent mix-blend-screen"
+                  priority 
+                />
                 <span className="text-base sm:text-xl font-bold bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Minimaverse</span>
               </Link>
             </div>
@@ -98,10 +98,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </div>
         </header>
 
-        {/* Main Content */}
         <main className="flex-1 max-w-6xl mx-auto w-full px-4 relative z-10">{children}</main>
 
-        {/* Footer */}
         <footer className="relative z-10 mt-12 sm:mt-16 backdrop-blur-xl bg-black/30 border-t border-gray-700/40 transition-all duration-300 hover:border-purple-500/40">
           <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 text-center md:text-left">
