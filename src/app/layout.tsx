@@ -1,9 +1,12 @@
 // src/app/layout.tsx
 // Root layout component for Minimaverse - Next.js App Router
+// Updated: Integrated Vercel Analytics & Speed Insights
 
 import './globals.css';
 import Link from 'next/link';
 import type { Metadata, Viewport } from 'next';
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import HtmlClassSync from '../components/HtmlClassSync';
 import EconomyModeToggle from '../components/EconomyModeToggle';
 import CinematicParticles from '../components/CinematicParticles';
@@ -62,6 +65,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <HtmlClassSync />
         <BackgroundOrbs />
         <CinematicParticles />
+        
+        {/* ✅ Vercel Analytics & Performance Monitoring */}
+        <Analytics />
+        <SpeedInsights />
 
         {/* Header */}
         <header className="relative sm:sticky sm:top-0 z-50 mb-6 sm:mb-8 backdrop-blur-xl bg-black/30 border-b border-gray-700/40 transition-all duration-300 hover:border-purple-500/40">
