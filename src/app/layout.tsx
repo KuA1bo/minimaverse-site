@@ -9,23 +9,12 @@ import EconomyModeToggle from '../components/EconomyModeToggle';
 import CinematicParticles from '../components/CinematicParticles';
 
 const ExternalLink = ({ 
-  href, 
-  children, 
-  className = "",
-  ariaLabel
+  href, children, className = "", ariaLabel
 }: { 
-  href: string; 
-  children: React.ReactNode; 
-  className?: string;
-  ariaLabel?: string;
+  href: string; children: React.ReactNode; className?: string; ariaLabel?: string;
 }) => (
-  <a 
-    href={href.trim()} 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className={`inline-flex items-center gap-1 ${className}`}
-    aria-label={ariaLabel}
-  >
+  <a href={href.trim()} target="_blank" rel="noopener noreferrer"
+     className={`inline-flex items-center gap-1 ${className}`} aria-label={ariaLabel}>
     {children}
     <svg className="w-3 h-3 text-gray-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
@@ -37,57 +26,41 @@ export const metadata: Metadata = {
   title: 'Minimaverse — Minima Ecosystem Hub',
   description: 'Unofficial, neutral information hub covering the Minima protocol, core components, development history, and publicly verifiable updates.',
   icons: {
-    icon: [
-      { url: '/icon.png', sizes: '192x192', type: 'image/png' },
-    ],
-    apple: [
-      { url: '/apple-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
+    icon: [{ url: '/icon.png', sizes: '192x192', type: 'image/png' }],
+    apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
   },
 };
 
-export const viewport: Viewport = {
-  colorScheme: 'dark',
-};
+export const viewport: Viewport = { colorScheme: 'dark' };
 
-// Background Orbs Component (Desktop only: lg+, Brightness /45)
+// Background Orbs Component (Desktop only: lg+, Blue orb reduced to /25)
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 hidden lg:block">
-    {/* Orb 1 - Purple (top-left) - Desktop only, Brightness /45 */}
+    {/* Orb 1 - Purple (top-left) */}
     <div 
       className="orb-breathing absolute top-1/4 -left-48 lg:-left-32
                  w-48 h-48 lg:w-80 lg:h-80 
                  bg-purple-500/10 lg:bg-purple-500/45 
-                 blur-xl lg:blur-2xl
-                 rounded-full" 
+                 blur-xl lg:blur-2xl rounded-full" 
       aria-hidden="true"
     />
     
-    {/* Orb 2 - Blue (bottom-right) - Desktop only, Brightness /45 */}
+    {/* Orb 2 - Blue (bottom-right) - FIXED: Reduced brightness & blur */}
     <div 
       className="orb-breathing absolute top-3/4 -right-32 
-                 lg:w-80 lg:h-80 lg:bg-blue-500/45 lg:blur-2xl
-                 w-56 h-56 bg-blue-500/10 blur-xl
-                 rounded-full" 
+                 lg:w-80 lg:h-80 lg:bg-blue-500/25 lg:blur-xl
+                 w-56 h-56 bg-blue-500/10 blur-xl rounded-full" 
       aria-hidden="true"
     />
   </div>
 );
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen text-gray-200 overflow-y-auto relative">
         <HtmlClassSync />
-        
-        {/* Background Layer 1: Orbs (Desktop only: lg+) */}
         <BackgroundOrbs />
-        
-        {/* Background Layer 2: Particles (All devices) */}
         <CinematicParticles />
 
         {/* Header */}
@@ -102,14 +75,10 @@ export default function RootLayout({
             </div>
             <nav className="flex-1 flex justify-end flex-wrap gap-x-1.5 gap-y-1 sm:gap-2">
               {[
-                { href: '/about', label: 'About' },
-                { href: '/protocol', label: 'Protocol' },
-                { href: '/ecosystem', label: 'Ecosystem' },
-                { href: '/developers', label: 'Developers' },
-                { href: '/tools', label: 'Tools' },
-                { href: '/timeline', label: 'Timeline' },
-                { href: '/partners', label: 'Partners' },
-                { href: '/nodes', label: 'Nodes' },
+                { href: '/about', label: 'About' }, { href: '/protocol', label: 'Protocol' },
+                { href: '/ecosystem', label: 'Ecosystem' }, { href: '/developers', label: 'Developers' },
+                { href: '/tools', label: 'Tools' }, { href: '/timeline', label: 'Timeline' },
+                { href: '/partners', label: 'Partners' }, { href: '/nodes', label: 'Nodes' },
                 { href: '/news', label: 'News' },
               ].map((item) => (
                 <Link key={item.href} href={item.href} className="group relative px-2 py-1.5 sm:px-3 sm:py-2 text-[11px] sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 whitespace-nowrap">
@@ -156,9 +125,7 @@ export default function RootLayout({
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                 © 2026 Minimaverse — Independent documentation project
               </p>
-              <div className="flex items-center gap-3">
-                <EconomyModeToggle />
-              </div>
+              <div className="flex items-center gap-3"><EconomyModeToggle /></div>
               <p className="flex items-center gap-2 text-center md:text-right">
                 <span className="text-gray-600 hidden sm:inline">•</span>
                 Not affiliated with Minima Foundation
@@ -169,7 +136,6 @@ export default function RootLayout({
                 </ExternalLink>
               </p>
             </div>
-            {/* Footer signature */}
             <p className="text-gray-600 text-[11px] mt-3 text-center sm:text-right opacity-80 hover:opacity-100 transition-opacity duration-300">
               Built with love for the Minima ecosystem 🫶
             </p>
