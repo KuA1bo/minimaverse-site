@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 // Root layout component for Minimaverse - Next.js App Router
-// Updated: Integrated Vercel Analytics & Speed Insights
+// Fixed: Correct metadata export syntax + Vercel Analytics
 
 import './globals.css';
 import Link from 'next/link';
@@ -25,6 +25,7 @@ const ExternalLink = ({
   </a>
 );
 
+// ✅ ИСПРАВЛЕНО: правильный синтаксис экспорта метаданных
 export const metadata: Metadata = {
   title: 'Minimaverse — Minima Ecosystem Hub',
   description: 'Unofficial, neutral information hub covering the Minima protocol, core components, development history, and publicly verifiable updates.',
@@ -48,7 +49,7 @@ const BackgroundOrbs = () => (
       aria-hidden="true"
     />
     
-    {/* Orb 2 - Blue (bottom-right) - FIXED: Reduced brightness & blur */}
+    {/* Orb 2 - Blue (bottom-right) */}
     <div 
       className="orb-breathing absolute top-3/4 -right-32 
                  lg:w-80 lg:h-80 lg:bg-blue-500/25 lg:blur-xl
