@@ -1,9 +1,10 @@
 // src/app/page.tsx
-// Home page - enhanced animated orbs + unified visual design system
+// Home page - Minimaverse independent information hub
+// Updated: Added JSON-LD structured data for SEO
 
 import Link from 'next/link';
 
-// ExternalLink component (with optional arrow)
+// ExternalLink component for all external links with optional arrow icon
 const ExternalLink = ({ 
   href, 
   children, 
@@ -33,7 +34,7 @@ const ExternalLink = ({
   </a>
 );
 
-// StatusBadge component - ORIGINAL GLOW INTENSITY
+// StatusBadge component for feature status indicators
 const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'community' }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: 'shadow-green-500/50' },
@@ -55,11 +56,36 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
   );
 };
 
+// JSON-LD structured data component for search engine optimization
+const JsonLd = () => (
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "Minimaverse",
+        "url": "https://minimaverse.com",
+        "description": "Independent information hub for the Minima Protocol. Verified documentation, node guides, ecosystem resources.",
+        "publisher": {
+          "@type": "Organization",
+          "name": "Minimaverse Community",
+          "url": "https://minimaverse.com"
+        },
+        "inLanguage": "en"
+      })
+    }}
+  />
+);
+
 export default function HomePage() {
   return (
     <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
       
-      {/* Hero Section - Final 10/10 version */}
+      {/* JSON-LD structured data for search engines */}
+      <JsonLd />
+      
+      {/* Hero Section */}
       <section className="mb-12 py-12 border-b border-gray-700/40 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
@@ -67,7 +93,7 @@ export default function HomePage() {
           
           {/* GitHub icon - Desktop only (hidden on mobile) */}
           <div className="hidden sm:flex items-start justify-end relative -translate-x-10 mt-12 flex-shrink-0 order-last">
-            {/* Glow */}
+            {/* Glow effect */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
@@ -99,7 +125,7 @@ export default function HomePage() {
               Verified documentation, node guides, and ecosystem resources — no hype, no noise.
             </p>
             
-            {/* ✅ FINAL MICRO-SUBHEADING: Sharper copy + visual hierarchy */}
+            {/* Micro-subheading: concise action-oriented tags */}
             <p className="text-gray-400/65 text-xs mt-2 flex flex-wrap gap-x-3 gap-y-1">
               <span>Understand Minima.</span>
               <span className="hidden sm:inline">•</span>
@@ -108,7 +134,7 @@ export default function HomePage() {
               <span>Explore the ecosystem.</span>
             </p>
             
-            {/* Buttons container - with breathing room for hover effects */}
+            {/* Action buttons */}
             <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 px-2 sm:px-0 mt-4">
               <Link 
                 href="/protocol" 
@@ -149,8 +175,7 @@ export default function HomePage() {
         
         <div className="relative">
           <h3 className="text-white font-semibold mb-3 sm:mb-4 text-lg flex items-center gap-2">
-            <span className="text-2xl">📚</span>
-            Primary Sources
+            <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-2 sm:space-y-3 text-sm">
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
@@ -333,7 +358,7 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Last Updated - Current date */}
+        {/* Last Updated */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
