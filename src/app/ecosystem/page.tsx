@@ -1,5 +1,7 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
+// Updated: Added official Minima Faucet to Developer Tools section
+
 
 import Link from 'next/link';
 
@@ -291,6 +293,37 @@ export default function EcosystemPage() {
                 </ExternalLink>
               </div>
             ))}
+
+            {/* Minima Faucet - NEW: Official test token faucet (team member resource) */}
+            {/* Card */}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+              <h3 className="text-white font-medium mb-2 relative">Minima Faucet</h3>
+              <p className="text-gray-300 text-sm mb-3 relative">
+                Free distribution of test tokens for experimenting with the Minima blockchain. 
+                Distributes 0.0001 MINIMA per request, resets every few minutes.
+              </p>
+              <p className="text-gray-500 text-xs relative">
+                Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Community resource (team member)
+              </p>
+            </div>
+            {/* Faucet Link - Outside card with animated drop icon */}
+            <ExternalLink 
+              href="https://eurobuddha.com/faucet/" 
+              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2"
+            >
+              {/* Faucet icon with subtle pulse animation */}
+              <svg className="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+              </svg>
+              eurobuddha.com/faucet
+            </ExternalLink>
+            {/* Usage hint */}
+            <p className="text-gray-500 text-xs mt-2 italic">
+              💡 To get your address: use <code className="bg-gray-700/50 px-1 rounded">getAddress</code> in Terminal or "Receive" in Wallet MiniDapp.
+            </p>
+
           </div>
         </section>
 
