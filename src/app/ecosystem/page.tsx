@@ -1,7 +1,5 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
-// Updated: Added official Minima Faucet to Developer Tools section
-
 
 import Link from 'next/link';
 
@@ -327,7 +325,7 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Wallets - MICRO-FIXED: Google Play consistent format (Android app) on all devices */}
+        {/* Wallets - UPDATED: wallet.minima.global link active, consistent blue styling */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👛</span>
@@ -351,15 +349,14 @@ export default function EcosystemPage() {
           
           {/* Links - Each on own line on mobile, horizontal on desktop */}
           <div className="mt-3 space-y-3">
-            {/* Web Wallet */}
+            {/* Web Wallet - UPDATED: active link, blue color, arrow visible */}
             <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
               <span className="hidden sm:inline text-gray-400">•</span>
               <ExternalLink 
                 href="https://wallet.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm opacity-60"
-                hideArrow={true}
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
               >
-                🌐 wallet.minima.global (temporarily unavailable)
+                🌐 wallet.minima.global
               </ExternalLink>
               <span className="hidden sm:inline text-gray-500">—</span>
               <span className="hidden sm:inline text-gray-500 text-xs sm:text-sm">
@@ -371,7 +368,7 @@ export default function EcosystemPage() {
             <div className="sm:hidden bg-gray-800/30 border border-gray-700/30 rounded-lg px-3 py-2">
               <p className="text-gray-400 text-xs flex items-start gap-1.5">
                 <span className="text-green-400 mt-0.5">💡</span>
-                Use <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink> as community alternative while the official web wallet is unavailable.
+                Alternative: <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink>
               </p>
             </div>
             
@@ -486,7 +483,7 @@ export default function EcosystemPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 13, 2026
+            Last updated: April 20, 2026
           </p>
         </section>
 

@@ -103,7 +103,7 @@ export default function ToolsPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - UPDATED with community node alternative */}
+      {/* Primary Sources Box - UPDATED: wallet link active, consistent styling */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -140,12 +140,12 @@ export default function ToolsPage() {
               <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
                 href="https://wallet.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 opacity-60"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 wallet.minima.global
               </ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
-              <span className="text-gray-500 text-xs md:text-sm">Web Wallet (temporarily unavailable)</span>
+              <span className="text-gray-500 text-xs md:text-sm">Web Wallet</span>
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
@@ -387,7 +387,7 @@ export default function ToolsPage() {
               </ExternalLink>
             </p>
 
-            {/* Web Wallet - UPDATED: responsive layout like /ecosystem */}
+            {/* Web Wallet - UPDATED: link active, consistent blue styling */}
             <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
@@ -401,22 +401,21 @@ export default function ToolsPage() {
             <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 ml-1">
               <ExternalLink 
                 href="https://wallet.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm opacity-60"
-                hideArrow={true} // ✅ Hide arrow on mobile
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
               >
-                🌐 wallet.minima.global (temporarily unavailable)
+                🌐 wallet.minima.global
               </ExternalLink>
               {/* Alternative: visible on desktop only */}
               <span className="hidden sm:inline text-gray-500">→</span>
               <span className="hidden sm:inline text-gray-500 text-xs sm:text-sm">
-                Use <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink> as community alternative
+                Alternative: <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink>
               </span>
             </div>
             {/* Mobile-only alternative hint */}
             <div className="sm:hidden bg-gray-800/30 border border-gray-700/30 rounded-lg px-3 py-2 ml-1 mt-1">
               <p className="text-gray-400 text-xs flex items-start gap-1.5">
                 <span className="text-green-400 mt-0.5">💡</span>
-                Use <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink> as community alternative while the official web wallet is unavailable.
+                Alternative: <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink>
               </p>
             </div>
 
@@ -542,7 +541,7 @@ export default function ToolsPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 13, 2026
+            Last updated: April 20, 2026
           </p>
         </section>
 
