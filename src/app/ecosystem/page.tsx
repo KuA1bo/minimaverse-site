@@ -292,8 +292,7 @@ export default function EcosystemPage() {
               </div>
             ))}
 
-            {/* Minima Faucet - NEW: Official test token faucet (team member resource) */}
-            {/* Card */}
+            {/* Minima Faucet */}
             <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
@@ -306,18 +305,16 @@ export default function EcosystemPage() {
                 Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Community resource (team member)
               </p>
             </div>
-            {/* Faucet Link - Outside card with animated drop icon */}
+            {/* Faucet Link */}
             <ExternalLink 
               href="https://eurobuddha.com/faucet/" 
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2"
             >
-              {/* Faucet icon with subtle pulse animation */}
               <svg className="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
               </svg>
               eurobuddha.com/faucet
             </ExternalLink>
-            {/* Usage hint */}
             <p className="text-gray-500 text-xs mt-2 italic">
               💡 To get your address: use <code className="bg-gray-700/50 px-1 rounded">getAddress</code> in Terminal or "Receive" in Wallet MiniDapp.
             </p>
@@ -325,7 +322,7 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Wallets - UPDATED: wallet.minima.global link active, consistent blue styling */}
+        {/* Wallets - UPDATED: Mobile order changed */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👛</span>
@@ -347,55 +344,96 @@ export default function EcosystemPage() {
             </p>
           </div>
           
-          {/* Links - Each on own line on mobile, horizontal on desktop */}
+          {/* Links Container */}
           <div className="mt-3 space-y-3">
-            {/* Web Wallet - UPDATED: active link, blue color, arrow visible */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="hidden sm:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://wallet.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
-              >
-                🌐 wallet.minima.global
-              </ExternalLink>
-              <span className="hidden sm:inline text-gray-500">—</span>
-              <span className="hidden sm:inline text-gray-500 text-xs sm:text-sm">
-                Alternative: <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink>
-              </span>
+            
+            {/* === MOBILE ORDER (hidden on desktop) === */}
+            <div className="sm:hidden space-y-3">
+              {/* 1. Android APK (GitHub) */}
+              <div>
+                <ExternalLink 
+                  href="https://github.com/minima-global/Minima/tree/master/jar" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  Android APK (GitHub)
+                </ExternalLink>
+              </div>
+              
+              {/* 2. Web Wallet */}
+              <div>
+                <ExternalLink 
+                  href="https://wallet.minima.global" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
+                >
+                  🌐 wallet.minima.global
+                </ExternalLink>
+              </div>
+              
+              {/* 3. Alternative hint */}
+              <div>
+                <p className="text-gray-400 text-xs flex items-start gap-1.5">
+                  <span className="text-green-400 mt-0.5">💡</span>
+                  Alternative: <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink>
+                </p>
+              </div>
+              
+              {/* 4. Google Play */}
+              <div>
+                <ExternalLink 
+                  href="https://play.google.com/store/search?q=minima&c=apps&hl=en" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
+                >
+                  📱 Google Play Store (Android app)
+                </ExternalLink>
+              </div>
             </div>
             
-            {/* Mobile-only alternative hint */}
-            <div className="sm:hidden bg-gray-800/30 border border-gray-700/30 rounded-lg px-3 py-2">
-              <p className="text-gray-400 text-xs flex items-start gap-1.5">
-                <span className="text-green-400 mt-0.5">💡</span>
-                Alternative: <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink>
-              </p>
+            {/* === DESKTOP ORDER (hidden on mobile) - UNCHANGED === */}
+            <div className="hidden sm:block space-y-3">
+              {/* Web Wallet + Alternative on same line */}
+              <div className="flex items-center gap-2">
+                <span className="text-gray-400">•</span>
+                <ExternalLink 
+                  href="https://wallet.minima.global" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
+                >
+                  🌐 wallet.minima.global
+                </ExternalLink>
+                <span className="text-gray-500">—</span>
+                <span className="text-gray-500 text-sm">
+                  Alternative: <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink>
+                </span>
+              </div>
+              
+              {/* Google Play */}
+              <div className="flex items-center gap-2">
+                <span className="text-gray-400">•</span>
+                <ExternalLink 
+                  href="https://play.google.com/store/search?q=minima&c=apps&hl=en" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
+                >
+                  📱 Google Play Store (Android app)
+                </ExternalLink>
+              </div>
+              
+              {/* GitHub APK */}
+              <div className="flex items-center gap-2">
+                <span className="text-gray-400">•</span>
+                <ExternalLink 
+                  href="https://github.com/minima-global/Minima/tree/master/jar" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                  Android APK (GitHub)
+                </ExternalLink>
+              </div>
             </div>
             
-            {/* Google Play - Consistent format: (Android app) on all devices */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="hidden sm:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://play.google.com/store/search?q=minima&c=apps&hl=en" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
-              >
-                📱 Google Play Store (Android app)
-              </ExternalLink>
-            </div>
-            
-            {/* GitHub APK */}
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
-              <span className="hidden sm:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://github.com/minima-global/Minima/tree/master/jar" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                </svg>
-                Android APK (GitHub)
-              </ExternalLink>
-            </div>
           </div>
         </section>
 
