@@ -1,5 +1,6 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
+// Updated: Added minimammr.com to Primary Sources, mobile wallet links reordered
 
 import Link from 'next/link';
 
@@ -104,7 +105,7 @@ export default function EcosystemPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box */}
+      {/* Primary Sources Box - UPDATED: Added minimammr.com */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -147,6 +148,18 @@ export default function EcosystemPage() {
               </ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Block Explorer</span>
+            </li>
+            {/* NEW: minimammr.com as community node source */}
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
+              <ExternalLink 
+                href="https://minimammr.com/" 
+                className="text-green-400 hover:text-green-300 underline decoration-green-500/30 hover:decoration-green-400/60 underline-offset-4 transition-all duration-300 text-nowrap"
+              >
+                minimammr.com
+              </ExternalLink>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Community Node (MMR endpoint)</span>
             </li>
           </ul>
         </div>
@@ -322,7 +335,7 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Wallets - UPDATED: Mobile order changed */}
+        {/* Wallets - Mobile order: APK → wallet → alt → Play */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👛</span>
