@@ -434,8 +434,9 @@ export default function ToolsPage() {
               <StatusBadge status="confirmed" />
             </div>
             <div className="space-y-2 relative">
+              {/* UPDATED LINK */}
               <ExternalLink 
-                href="https://play.google.com/store/search?q=minima&c=apps&hl=en" 
+                href="https://play.google.com/store/apps/details?id=com.minima.android" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
               >
                 📱 Google Play Store
