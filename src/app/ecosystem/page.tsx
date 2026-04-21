@@ -395,10 +395,10 @@ export default function EcosystemPage() {
                 </p>
               </div>
               
-              {/* 4. Google Play */}
+              {/* 4. Google Play - ✅ ОБНОВЛЁННАЯ ССЫЛКА */}
               <div>
                 <ExternalLink 
-                  href="https://play.google.com/store/search?q=minima&c=apps&hl=en" 
+                  href="https://play.google.com/store/apps/details?id=com.minima.android" 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
                 >
                   📱 Google Play Store (Android app)
@@ -437,11 +437,11 @@ export default function EcosystemPage() {
                 </ExternalLink>
               </div>
               
-              {/* Google Play - NOW SECOND */}
+              {/* Google Play - ✅ ОБНОВЛЁННАЯ ССЫЛКА */}
               <div className="flex items-center gap-2">
                 <span className="text-gray-400">•</span>
                 <ExternalLink 
-                  href="https://play.google.com/store/search?q=minima&c=apps&hl=en" 
+                  href="https://play.google.com/store/apps/details?id=com.minima.android" 
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
                 >
                   📱 Google Play Store (Android app)
