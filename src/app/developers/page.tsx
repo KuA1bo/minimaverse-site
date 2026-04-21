@@ -105,7 +105,7 @@ export default function DevelopersPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box */}
+      {/* Primary Sources Box - UPDATED: Links sorted by length (short → long) */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -116,17 +116,7 @@ export default function DevelopersPage() {
             <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
-            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
-              <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://github.com/minima-global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-              >
-                github.com/minima-global
-              </ExternalLink>
-              <span className="hidden md:inline text-gray-500">—</span>
-              <span className="text-gray-500 text-xs md:text-sm">Official GitHub</span>
-            </li>
+            {/* 1. Shortest: docs.minima.global (18 chars) */}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
@@ -138,6 +128,7 @@ export default function DevelopersPage() {
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Documentation</span>
             </li>
+            {/* 2. explorer.minima.global (22 chars) */}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
@@ -148,6 +139,18 @@ export default function DevelopersPage() {
               </ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Block Explorer</span>
+            </li>
+            {/* 3. Longest: github.com/minima-global (24 chars) */}
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
+              <ExternalLink 
+                href="https://github.com/minima-global" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+              >
+                github.com/minima-global
+              </ExternalLink>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Official GitHub</span>
             </li>
           </ul>
         </div>
@@ -594,11 +597,11 @@ export default function DevelopersPage() {
           </p>
         </div>
 
-        {/* Last Updated */}
+        {/* Last Updated - UPDATED DATE to April 21, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-75">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 13, 2026
+            Last updated: April 21, 2026
           </p>
         </section>
 
@@ -606,4 +609,3 @@ export default function DevelopersPage() {
     </div>
   );
 }
-
