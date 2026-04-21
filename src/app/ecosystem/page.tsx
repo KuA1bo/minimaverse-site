@@ -125,7 +125,7 @@ export default function EcosystemPage() {
                 minimammr.com
               </ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
-              <span className="text-gray-500 text-xs md:text-sm">Community Node (MMR endpoint)</span>
+              <span className="text-gray-500 text-xs md:text-sm">Community Node</span>
             </li>
             {/* 2. docs.minima.global (18 chars) */}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
