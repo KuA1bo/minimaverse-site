@@ -117,17 +117,6 @@ export default function NodesPage() {
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
-                href="https://docs.minima.global/docs/run-a-node" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
-              >
-                docs.minima.global/docs/run-a-node
-              </ExternalLink>
-              <span className="hidden md:inline text-gray-500">—</span>
-              <span className="text-gray-500 text-xs md:text-sm">Run a Node Guide</span>
-            </li>
-            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
-              <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
                 href="https://docs.minima.global" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
               >
@@ -135,6 +124,17 @@ export default function NodesPage() {
               </ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Documentation</span>
+            </li>
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
+              <ExternalLink 
+                href="https://docs.minima.global/docs/run-a-node" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
+              >
+                docs.minima.global/docs/run-a-node
+              </ExternalLink>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Run a Node Guide</span>
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
