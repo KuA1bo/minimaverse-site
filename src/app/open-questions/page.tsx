@@ -21,7 +21,7 @@ const ExternalLink = ({
     href={href.trim()} 
     target="_blank" 
     rel="noopener noreferrer"
-    className={`inline-flex items-center gap-1 ${className}`}
+    className={`inline-flex items-center gap-1 ${className} cursor-pointer z-10`}
     aria-label={ariaLabel}
   >
     {children}
@@ -200,14 +200,12 @@ export default function OpenQuestionsPage() {
                   Official Discord channel for community questions. Questions are reviewed and answered 
                   during scheduled AMA sessions with the Minima team.
                 </p>
-                {/* ✅ FIXED: Added "→" prefix, removed manual SVG duplicate */}
                 <ExternalLink 
                   href="https://discord.com/channels/562272317930209280/1244940478756028446" 
                   className="inline-flex items-center gap-2 text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium"
                   ariaLabel="Open #stage-question Discord channel"
                 >
                   → Open #stage-question on Discord
-                  {/* ✅ Manual SVG removed — component adds it automatically */}
                 </ExternalLink>
               </div>
             </div>
@@ -226,7 +224,7 @@ export default function OpenQuestionsPage() {
           </div>
         </section>
 
-        {/* Additional Resources - UPDATED: Clean mobile layout (no dash), responsive dots */}
+        {/* Additional Resources - FIXED: href matches link text + order swapped */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔗</span>
@@ -249,17 +247,7 @@ export default function OpenQuestionsPage() {
                 <span className="text-gray-500 text-xs md:text-sm hidden md:inline">—</span>
                 <span className="text-gray-500 text-xs md:text-sm">Official Documentation</span>
               </li>
-              <li className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
-                <span className="text-gray-400 hidden sm:inline">•</span>
-                <ExternalLink 
-                  href="https://minima.global/blog" 
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-                >
-                  minima.global/blog
-                </ExternalLink>
-                <span className="text-gray-500 text-xs md:text-sm hidden md:inline">—</span>
-                <span className="text-gray-500 text-xs md:text-sm">Minima Blog (Announcements)</span>
-              </li>
+              {/* 2. Telegram - CORRECTED href */}
               <li className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
                 <span className="text-gray-400 hidden sm:inline">•</span>
                 <ExternalLink 
@@ -270,6 +258,18 @@ export default function OpenQuestionsPage() {
                 </ExternalLink>
                 <span className="text-gray-500 text-xs md:text-sm hidden md:inline">—</span>
                 <span className="text-gray-500 text-xs md:text-sm">Telegram Announcements</span>
+              </li>
+              {/* 3. Blog - CORRECTED href */}
+              <li className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
+                <span className="text-gray-400 hidden sm:inline">•</span>
+                <ExternalLink 
+                  href="https://minima.global/blog" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                >
+                  minima.global/blog
+                </ExternalLink>
+                <span className="text-gray-500 text-xs md:text-sm hidden md:inline">—</span>
+                <span className="text-gray-500 text-xs md:text-sm">Minima Blog (Announcements)</span>
               </li>
             </ul>
           </div>
@@ -293,11 +293,11 @@ export default function OpenQuestionsPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE */}
+        {/* Last Updated - UPDATED DATE to April 21, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 13, 2026
+            Last updated: April 21, 2026
           </p>
         </section>
 
