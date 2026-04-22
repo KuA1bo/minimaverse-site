@@ -283,7 +283,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Quick Links */}
+        {/* Quick Links - links sorted by text length: shortest → longest */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
             <span className="text-2xl sm:text-3xl">🔗</span>
@@ -296,20 +296,20 @@ export default function HomePage() {
                 title: 'Protocol Information',
                 icon: '📖',
                 links: [
-                  { href: '/about', text: 'What is Minima' },
-                  { href: '/ecosystem', text: 'Ecosystem' },
-                  { href: '/timeline', text: 'Verified Milestones (Timeline)' },
-                  { href: '/open-questions', text: 'Open Questions' },
                   { href: '/links', text: 'Links' },
+                  { href: '/ecosystem', text: 'Ecosystem' },
+                  { href: '/about', text: 'What is Minima' },
+                  { href: '/open-questions', text: 'Open Questions' },
+                  { href: '/timeline', text: 'Verified Milestones (Timeline)' },
                 ]
               },
               {
                 title: 'For Developers',
                 icon: '⚙️',
                 links: [
-                  { href: '/developers', text: 'Developer Resources' },
                   { href: '/nodes', text: 'Run a Node' },
                   { href: '/tools', text: 'Tools & Utilities' },
+                  { href: '/developers', text: 'Developer Resources' },
                 ]
               },
             ].map((section, index) => (
@@ -358,11 +358,11 @@ export default function HomePage() {
           </p>
         </div>
 
-        {/* Last Updated */}
+        {/* Last Updated - UPDATED DATE */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 15, 2026
+            Last updated: April 21, 2026
           </p>
         </section>
 
