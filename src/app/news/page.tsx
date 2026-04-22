@@ -299,6 +299,29 @@ export default function NewsPage() {
               For the most up-to-date information about Minima Protocol, follow these official channels:
             </p>
             <ul className="space-y-3 text-sm">
+              {/* Sorted by link text length: shortest → longest */}
+              <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 relative">
+                <span className="hidden md:inline text-gray-400">•</span>
+                <ExternalLink 
+                  href="https://github.com/minima-global/Minima/releases" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                >
+                  GitHub Releases
+                </ExternalLink>
+                <span className="hidden md:inline text-gray-500">—</span>
+                <span className="text-gray-500 text-xs md:text-sm">Software updates and changelogs</span>
+              </li>
+              <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 relative">
+                <span className="hidden md:inline text-gray-400">•</span>
+                <ExternalLink 
+                  href="https://discord.com/invite/minimaglobal" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                >
+                  Official Discord
+                </ExternalLink>
+                <span className="hidden md:inline text-gray-500">—</span>
+                <span className="text-gray-500 text-xs md:text-sm">Community discussions and AMAs</span>
+              </li>
               <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 relative">
                 <span className="hidden md:inline text-gray-400">•</span>
                 <ExternalLink 
@@ -320,28 +343,6 @@ export default function NewsPage() {
                 </ExternalLink>
                 <span className="hidden md:inline text-gray-500">—</span>
                 <span className="text-gray-500 text-xs md:text-sm">Quick updates and community news</span>
-              </li>
-              <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 relative">
-                <span className="hidden md:inline text-gray-400">•</span>
-                <ExternalLink 
-                  href="https://discord.com/invite/minimaglobal" 
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-                >
-                  Official Discord
-                </ExternalLink>
-                <span className="hidden md:inline text-gray-500">—</span>
-                <span className="text-gray-500 text-xs md:text-sm">Community discussions and AMAs</span>
-              </li>
-              <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 relative">
-                <span className="hidden md:inline text-gray-400">•</span>
-                <ExternalLink 
-                  href="https://github.com/minima-global/Minima/releases" 
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-                >
-                  GitHub Releases
-                </ExternalLink>
-                <span className="hidden md:inline text-gray-500">—</span>
-                <span className="text-gray-500 text-xs md:text-sm">Software updates and changelogs</span>
               </li>
             </ul>
           </div>
@@ -392,7 +393,7 @@ export default function NewsPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 13, 2026
+            Last updated: April 22, 2026
           </p>
         </section>
 
