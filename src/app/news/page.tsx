@@ -244,7 +244,7 @@ export default function NewsPage() {
                   </p>
                   
                   <div className="space-y-2">
-                    {/* ✅ Стрелка "→" в тексте + компонент автоматически добавит SVG в конец */}
+                    {/* ✅ Arrow "→" in text + component automatically adds SVG at the end */}
                     <ExternalLink 
                       href={item.link.href} 
                       className={`underline-offset-4 transition-all duration-300 text-sm block inline-flex items-center gap-1
