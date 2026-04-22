@@ -5,7 +5,7 @@ module.exports = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   safelist: [
-    // Анимации
+    // Animations
     'animate-fade-in-up',
     'animate-float-slow',
     'animate-float-slower',
@@ -13,12 +13,12 @@ module.exports = {
     'animate-gradient-x',
     'animate-ping',
     'animate-pulse',
-    // Задержки
+    // Delays
     'delay-75',
     'delay-150',
     'delay-200',
     'delay-300',
-    // Градиенты
+    // Gradients
     'bg-gradient-to-r',
     'from-purple-500',
     'via-blue-500',
@@ -33,14 +33,14 @@ module.exports = {
     'bg-black/40',
     'bg-gray-800/30',
     'bg-gray-800/50',
-    // Тени и свечение
+    // Shadows and glow
     'shadow-purple-500/10',
     'shadow-blue-500/10',
     'shadow-green-500/50',
     'shadow-yellow-500/50',
     'hover:shadow-2xl',
     'hover:shadow-purple-500/20',
-    // Позиционирование
+    // Positioning
     'sticky',
     'top-0',
     'z-50',
@@ -50,7 +50,7 @@ module.exports = {
     'border-gray-700/50',
     'hover:border-purple-500/50',
     'hover:border-blue-500/50',
-    // Оптимизации
+    // Optimizations
     'will-change-transform',
     'transform-gpu',
     'blur-2xl',
