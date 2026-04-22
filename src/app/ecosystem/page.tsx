@@ -395,7 +395,7 @@ export default function EcosystemPage() {
                 </p>
               </div>
               
-              {/* 4. Google Play - ✅ ОБНОВЛЁННАЯ ССЫЛКА */}
+              {/* 4. Google Play - ✅ UPDATED LINK */}
               <div>
                 <ExternalLink 
                   href="https://play.google.com/store/apps/details?id=com.minima.android" 
@@ -437,7 +437,7 @@ export default function EcosystemPage() {
                 </ExternalLink>
               </div>
               
-              {/* Google Play - ✅ ОБНОВЛЁННАЯ ССЫЛКА */}
+              {/* Google Play - ✅ UPDATED LINK */}
               <div className="flex items-center gap-2">
                 <span className="text-gray-400">•</span>
                 <ExternalLink 
