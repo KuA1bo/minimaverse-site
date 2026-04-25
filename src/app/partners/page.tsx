@@ -199,10 +199,9 @@ export default function PartnersPage() {
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             
+            {/* SEO-optimized intro text with target keywords */}
             <p className="text-gray-300 leading-relaxed relative">
-              This page lists publicly confirmed partnerships and collaborations associated with 
-              the Minima ecosystem. All entries include verifiable publication dates and official 
-              announcements. Only partnerships with public confirmation are included.
+              Minima partnerships include collaborations across mobility, IoT, payments, and decentralized infrastructure. This page provides a verified list of Minima ecosystem partners with official sources and timelines.
             </p>
             
             {/* Status legend - vertical on mobile with divider */}
