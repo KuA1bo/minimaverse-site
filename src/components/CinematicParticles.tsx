@@ -1,3 +1,6 @@
+// src/components/CinematicParticles.tsx
+// Cinematic floating particles background animation with performance optimizations
+
 "use client";
 
 import { useEffect, useRef } from "react";
@@ -46,7 +49,8 @@ export default function CinematicParticles() {
       const baseCount = Math.min(230, Math.floor(width / 7));
       // +10% more particles on mobile devices (<768px)
       const mobileMultiplier = width < 768 ? 1.1 : 1.0;
-      const count = Math.floor(baseCount * mobileMultiplier);
+      // -5% then -15% particle count reduction for performance tuning (cumulative: ~19.25% less)
+      const count = Math.floor(baseCount * mobileMultiplier * 0.95 * 0.85);
       
       particles = [];
       
@@ -60,9 +64,9 @@ export default function CinematicParticles() {
           // +10% size for more prominent dust grains
           baseSize: (Math.random() * 0.8 + 0.4) * 1.1,
           depth,
-          // Slightly reduced speed to prevent visual chaos at high density
-          speedX: (Math.random() - 0.5) * 0.18 * depth,
-          speedY: (Math.random() - 0.5) * 0.18 * depth - 0.03 * depth,
+          // -10% then -10% speed reduction for smoother animation (cumulative: ~19% slower)
+          speedX: (Math.random() - 0.5) * 0.18 * 0.9 * 0.9 * depth,
+          speedY: (Math.random() - 0.5) * 0.18 * 0.9 * 0.9 * depth - 0.03 * 0.9 * 0.9 * depth,
           // +10% base brightness, scaled by depth
           baseOpacity: (Math.random() * 0.44 + 0.11) * depth,
           phase: Math.random() * Math.PI * 2,
@@ -83,8 +87,8 @@ export default function CinematicParticles() {
       const time = Date.now() * 0.001;
       
       particles.forEach((p) => {
-        // Gentle organic drift
-        p.x += p.speedX + Math.sin(time + p.phase) * 0.1 * p.depth;
+        // Gentle organic drift - cumulative -19% speed adjustment on X-axis wobble
+        p.x += p.speedX + Math.sin(time + p.phase) * 0.1 * 0.9 * 0.9 * p.depth;
         p.y += p.speedY;
 
         // Seamless wrapping
