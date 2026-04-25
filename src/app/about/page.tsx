@@ -2,6 +2,7 @@
 // About page - factual overview of Minima Protocol and Minimaverse project
 
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 // Reusable component for external links with icon
 const ExternalLink = ({ 
@@ -55,10 +56,31 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
+// Structured data for Schema.org AboutPage
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "AboutPage",
+  "name": "What is Minima Protocol",
+  "description": "Minima is a decentralized blockchain designed to run a full node on any device.",
+  "url": "https://minimaverse.com/about",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Minimaverse",
+    "url": "https://minimaverse.com"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Minima",
+    "description": "A minimalist, mobile-first Layer 1 blockchain protocol."
+  }
+};
+
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
+      {/* Structured data for SEO - AboutPage schema */}
+      <JsonLd data={structuredData} />
 
       {/* Unified Header with gradient accent */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative pt-4">
@@ -72,7 +94,7 @@ export default function AboutPage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -91,16 +113,36 @@ export default function AboutPage() {
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
+            
+            {/* Internal navigation links for SEO authority distribution */}
+            <div className="flex flex-wrap gap-2 mb-3">
+              <Link href="/partners" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Partners</Link>
+              <span className="text-gray-700">•</span>
+              <Link href="/nodes" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Nodes</Link>
+              <span className="text-gray-700">•</span>
+              <Link href="/ecosystem" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Ecosystem</Link>
+            </div>
+            
+            {/* Updated H1 title for better SEO intent match */}
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-                About Minima Protocol
+                What is Minima Protocol
               </span>
             </h1>
-            <p className="text-gray-400">Technical overview and project context</p>
+            {/* Updated subtitle for clarity and keyword coverage */}
+            <p className="text-gray-400">Decentralized blockchain for any device</p>
+            {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
         </div>
       </header>
+
+      {/* Simple explanation paragraph - added for SEO and UX */}
+      <p className="text-gray-300 leading-relaxed mb-6 opacity-0 animate-fade-in-up delay-100">
+        Minima is a decentralized blockchain designed to run a full node on any device — 
+        from smartphones to IoT hardware — while maintaining complete network participation 
+        for every user.
+      </p>
 
       {/* Primary Sources Box */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 
@@ -177,7 +219,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Section 2: Who We Are (NEW) */}
+        {/* Section 2: Who We Are */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👥</span>
@@ -201,11 +243,11 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Section 3: What is Minima Protocol */}
+        {/* Section 3: Protocol Mechanics (Renamed to avoid conflict with homepage CTA) */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⛓️</span>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">What is Minima Protocol</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Protocol Mechanics</span>
           </h2>
           <p className="text-gray-300 leading-relaxed mb-4">
             Minima is a decentralized blockchain protocol designed to run on any device, from 
@@ -351,7 +393,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Section 7: How to Contribute (NEW) */}
+        {/* Section 7: How to Contribute */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🤝</span>
@@ -381,7 +423,7 @@ export default function AboutPage() {
             ))}
           </div>
           
-          {/* ✅ PREMIUM GITHUB BUTTON - Same effect as hero buttons */}
+          {/* GitHub button */}
           <div className="mt-6 text-center px-2">
             <ExternalLink 
               href="https://github.com/KuA1bo/minimaverse-site"
@@ -496,7 +538,7 @@ export default function AboutPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 21, 2026
+            Last updated: April 26, 2026
           </p>
         </section>
 
