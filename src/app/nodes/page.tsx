@@ -2,6 +2,7 @@
 // Nodes page - verified guides for running Minima nodes
 
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 // ExternalLink component for all external links with arrow icon
 const ExternalLink = ({ 
@@ -55,10 +56,33 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
+// Structured data for Schema.org ItemList (list of node guides)
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Minima Node Setup Guide",
+  "description": "Verified guides for running Minima nodes on any platform: Windows, Android, macOS, Linux, Docker, Raspberry Pi.",
+  "url": "https://minimaverse.com/nodes",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Windows Node Setup", "url": "https://docs.minima.global/docs/run-a-node/windows" },
+    { "@type": "ListItem", "position": 2, "name": "Android Node Setup", "url": "https://docs.minima.global/docs/run-a-node/android" },
+    { "@type": "ListItem", "position": 3, "name": "macOS Node Setup", "url": "https://docs.minima.global/docs/run-a-node/mac" },
+    { "@type": "ListItem", "position": 4, "name": "Linux CLI Node Setup", "url": "https://docs.minima.global/docs/run-a-node/desktop-cli" },
+    { "@type": "ListItem", "position": 5, "name": "Docker Node Deployment", "url": "https://docs.minima.global/docs/run-a-node/linux-vps-docker" }
+  ],
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Minimaverse",
+    "url": "https://minimaverse.com"
+  }
+};
+
 export default function NodesPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
+      {/* Structured data for SEO - ItemList schema */}
+      <JsonLd data={structuredData} />
 
       {/* Unified Header with gradient accent */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
@@ -73,12 +97,24 @@ export default function NodesPage() {
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
+            
+            {/* Internal navigation links for SEO authority distribution */}
+            <div className="flex flex-wrap gap-2 mb-3">
+              <Link href="/ecosystem" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Ecosystem</Link>
+              <span className="text-gray-700">•</span>
+              <Link href="/partners" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Partners</Link>
+              <span className="text-gray-700">•</span>
+              <Link href="/about" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">What is Minima</Link>
+            </div>
+            
+            {/* Updated H1 title for better SEO intent match */}
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-                Run a Node
+                Minima Node Setup Guide
               </span>
             </h1>
-            <p className="text-gray-400">Setup, configuration, and node types guide</p>
+            {/* Updated subtitle for clarity and keyword coverage */}
+            <p className="text-gray-400">Verified guides for running Minima nodes on any platform</p>
             {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
@@ -90,7 +126,7 @@ export default function NodesPage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -434,7 +470,7 @@ export default function NodesPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 13, 2026
+            Last updated: April 25, 2026
           </p>
         </section>
 
