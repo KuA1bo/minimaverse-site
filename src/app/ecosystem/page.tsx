@@ -2,6 +2,7 @@
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
 
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 // ExternalLink component for all external links with arrow icon
 const ExternalLink = ({ 
@@ -55,10 +56,31 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
+// Structured data for Schema.org CollectionPage (ecosystem projects list)
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Minima Ecosystem Projects (Verified List)",
+  "description": "Verified projects, tools, wallets, and integrations built on the Minima Protocol. Infrastructure, developer tools, exchanges, and edge deployments.",
+  "url": "https://minimaverse.com/ecosystem",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Minimaverse",
+    "url": "https://minimaverse.com"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Minima",
+    "description": "A minimalist, mobile-first Layer 1 blockchain protocol."
+  }
+};
+
 export default function EcosystemPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
+      {/* Structured data for SEO - CollectionPage schema */}
+      <JsonLd data={structuredData} />
 
       {/* Unified Header with gradient accent */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative pt-4">
@@ -73,7 +95,7 @@ export default function EcosystemPage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -92,12 +114,24 @@ export default function EcosystemPage() {
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
+            
+            {/* Internal navigation links for SEO authority distribution */}
+            <div className="flex flex-wrap gap-2 mb-3">
+              <Link href="/partners" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Partners</Link>
+              <span className="text-gray-700">•</span>
+              <Link href="/nodes" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Nodes</Link>
+              <span className="text-gray-700">•</span>
+              <Link href="/about" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">What is Minima</Link>
+            </div>
+            
+            {/* Updated H1 title for better SEO intent match */}
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-                Ecosystem Overview
+                Minima Ecosystem Projects
               </span>
             </h1>
-            <p className="text-gray-400">Projects, tools, and integrations built on Minima</p>
+            {/* Updated subtitle for clarity and keyword coverage */}
+            <p className="text-gray-400">Verified list of projects, tools, and integrations</p>
             {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
@@ -536,7 +570,7 @@ export default function EcosystemPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 21, 2026
+            Last updated: April 25, 2026
           </p>
         </section>
 
