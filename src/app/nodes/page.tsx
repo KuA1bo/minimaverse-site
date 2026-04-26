@@ -384,8 +384,8 @@ export default function NodesPage() {
                           group overflow-hidden hover:-translate-y-1 expert-card-glow">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
-            {/* Attribution badge - absolute positioned, top-left */}
-            <div className="absolute top-4 left-4">
+            {/* Attribution badge: left on mobile, right on desktop */}
+            <div className="absolute top-4 left-4 sm:left-auto sm:right-4">
               <span className="text-xs text-purple-300 font-medium flex items-center gap-1">
                 <span className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" />
                 by Paddy Cherry
