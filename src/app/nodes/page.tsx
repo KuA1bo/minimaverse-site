@@ -371,7 +371,42 @@ export default function NodesPage() {
           </p>
         </section>
 
-        {/* Advanced Node Types - UPDATED MEG block with "→" prefix */}
+        {/* Expert Guide by Minima Architect */}
+        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">✨</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Expert Guide</span>
+          </h2>
+          
+          {/* Expert card with subtle pulsing border animation (defined in globals.css) */}
+          <div className="relative bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-purple-500/30 rounded-2xl p-6 
+                          transition-transform duration-300 hover:border-purple-400/60 hover:shadow-2xl hover:shadow-purple-500/20 
+                          group overflow-hidden hover:-translate-y-1 expert-card-glow">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
+            {/* Attribution badge */}
+            <div className="absolute top-4 right-4">
+              <span className="text-xs text-purple-300 font-medium flex items-center gap-1">
+                <span className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" />
+                by Paddy Cherry
+              </span>
+            </div>
+            
+            <h3 className="text-white font-medium mb-2 relative">Alternative Setup Guide</h3>
+            <p className="text-gray-300 text-sm mb-3 relative">
+              Comprehensive walkthrough with peer lists, MDS configuration, and Docker deployment tips 
+              from Minima Global architect. Includes ready-to-use commands and troubleshooting.
+            </p>
+            <ExternalLink 
+              href="https://spartacusrex.com/run-a-node.html" 
+              className="text-purple-400 hover:text-purple-300 underline decoration-purple-500/30 hover:decoration-purple-400/60 underline-offset-4 transition-all duration-300 text-sm relative"
+            >
+              spartacusrex.com/run-a-node
+            </ExternalLink>
+          </div>
+        </section>
+
+        {/* Advanced Node Types */}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔧</span>
@@ -466,11 +501,11 @@ export default function NodesPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE */}
+        {/* Last Updated */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 25, 2026
+            Last updated: April 26, 2026
           </p>
         </section>
 
