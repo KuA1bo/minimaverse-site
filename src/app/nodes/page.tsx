@@ -384,25 +384,41 @@ export default function NodesPage() {
                           group overflow-hidden hover:-translate-y-1 expert-card-glow">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
-            {/* Attribution badge */}
-            <div className="absolute top-4 right-4">
+            {/* Attribution badge - absolute positioned, top-left */}
+            <div className="absolute top-4 left-4">
               <span className="text-xs text-purple-300 font-medium flex items-center gap-1">
                 <span className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" />
                 by Paddy Cherry
               </span>
             </div>
             
-            <h3 className="text-white font-medium mb-2 relative">Alternative Setup Guide</h3>
-            <p className="text-gray-300 text-sm mb-3 relative">
-              Comprehensive walkthrough with peer lists, MDS configuration, and Docker deployment tips 
-              from Minima Global architect. Includes ready-to-use commands and troubleshooting.
-            </p>
-            <ExternalLink 
-              href="https://spartacusrex.com/run-a-node.html" 
-              className="text-purple-400 hover:text-purple-300 underline decoration-purple-500/30 hover:decoration-purple-400/60 underline-offset-4 transition-all duration-300 text-sm relative"
-            >
-              spartacusrex.com/run-a-node
-            </ExternalLink>
+            {/* Content wrapper with balanced padding below absolute badge */}
+            <div className="pt-6">
+              <h3 className="text-white font-medium mb-2 relative">Alternative Setup Guide</h3>
+              <p className="text-gray-300 text-sm mb-3 relative">
+                Comprehensive walkthrough with peer lists, MDS configuration, and Docker deployment tips 
+                from Minima Global architect. Includes ready-to-use commands and troubleshooting.
+              </p>
+              
+              {/* Links section - Downloads first, then Guide */}
+              <div className="space-y-2">
+                <ExternalLink 
+                  href="https://spartacusrex.com/downloads.html" 
+                  className="text-purple-400 hover:text-purple-300 underline decoration-purple-500/30 hover:decoration-purple-400/60 underline-offset-4 transition-all duration-300 text-sm relative inline-flex items-center gap-1"
+                >
+                  <span className="text-base">⬇️</span>
+                  spartacusrex.com/downloads
+                </ExternalLink>
+                <br />
+                <ExternalLink 
+                  href="https://spartacusrex.com/run-a-node.html" 
+                  className="text-purple-400 hover:text-purple-300 underline decoration-purple-500/30 hover:decoration-purple-400/60 underline-offset-4 transition-all duration-300 text-sm relative inline-flex items-center gap-1"
+                >
+                  <span className="text-base">📖</span>
+                  spartacusrex.com/run-a-node
+                </ExternalLink>
+              </div>
+            </div>
           </div>
         </section>
 
