@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 
 /**
- * Toggle button for "Economy Mode" - reduces animations/blurs for better performance
+ * Toggle button for "Low Graphics Mode" - reduces animations/blurs for better performance
  * Saves preference to localStorage and syncs with html.reduced-motion class
  */
 export default function EconomyModeToggle() {
@@ -46,11 +46,11 @@ export default function EconomyModeToggle() {
           : 'bg-gray-700/30 text-gray-400 hover:bg-gray-700/50 border-gray-600/30'
       }`}
       aria-pressed={enabled}
-      aria-label={enabled ? 'Disable economy mode' : 'Enable economy mode'}
-      title={enabled ? 'Economy mode: ON (animations reduced)' : 'Economy mode: OFF (full visuals)'}
+      aria-label={enabled ? 'Disable low graphics mode' : 'Enable low graphics mode'}
+      title={enabled ? 'Low graphics mode: ON (animations reduced)' : 'Low graphics mode: OFF (full visuals)'}
     >
       <span className={`w-2 h-2 rounded-full transition-colors ${enabled ? 'bg-green-400 animate-pulse' : 'bg-gray-500'}`} />
-      <span>⚡ Economy</span>
+      <span>⚡ Low Graphics</span>
     </button>
   );
 }

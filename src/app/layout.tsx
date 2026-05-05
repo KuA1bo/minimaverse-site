@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 // Root layout for Minimaverse - Next.js App Router
-// Updated: Added canonical URL for SEO consistency
+// Updated: Added SupportBlock, refined footer signature & labels
 
 import './globals.css';
 import Link from 'next/link';
@@ -11,6 +11,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import HtmlClassSync from '../components/HtmlClassSync';
 import EconomyModeToggle from '../components/EconomyModeToggle';
 import CinematicParticles from '../components/CinematicParticles';
+import SupportBlock from '@/components/SupportBlock';
 
 // ExternalLink component for all external links with arrow icon
 const ExternalLink = ({ 
@@ -219,6 +220,9 @@ export default function RootLayout({
                 </div>
               </div>
             </div>
+
+            {/* Support Block - Donation section */}
+            <SupportBlock />
             
             {/* Divider */}
             <div className="relative h-px bg-gray-700 mb-4 sm:mb-6" />
@@ -247,7 +251,7 @@ export default function RootLayout({
             
             {/* Signature Line */}
             <p className="text-gray-600 text-[11px] mt-3 text-center sm:text-right opacity-80 hover:opacity-100 transition-opacity duration-300">
-              Built with love for the Minima ecosystem 🫶
+              Built for transparency &amp; community 🌐
             </p>
           </div>
         </footer>
