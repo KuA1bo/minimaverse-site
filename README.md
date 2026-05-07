@@ -46,7 +46,7 @@ Voluntary contributions cover domain and project maintenance. Non-refundable.
 - **MINIMA (Native):** `MxG081NYSWDGZMKSYCYBKW9TJRS3PCMFDV5NWKFKEQKQNPWBTYFYJ9CTVFU0BAR`
 - **USDT (TRC20):** `TF5NBncPz9d8BoRqK8EfAHhTzsapLDujv4`
 
-📩 Questions? Contact [@Minimaverse](https://t.me/Minimaverse) on Telegram
+📩 Support & project inquiries: [@Minimaverse](https://t.me/Minimaverse) on Telegram
 
 ## 📄 License
 
