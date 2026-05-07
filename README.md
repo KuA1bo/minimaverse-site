@@ -32,6 +32,13 @@ We welcome contributions that align with our content principles. Please review o
 - [CONTRIBUTING.md](CONTRIBUTING.md) — Contribution guidelines and content policies
 - [LICENSE](LICENSE) — MIT License for code usage
 
+## 💼 For Projects
+
+Building in the Minima ecosystem? Minimaverse accepts submissions for ecosystem listings.  
+Neutral, verified, no hype — just facts.
+
+📩 Contact: [@Minimaverse](https://t.me/Minimaverse) on Telegram
+
 ## 📄 License
 
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
