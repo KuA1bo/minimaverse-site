@@ -1,6 +1,6 @@
 // src/app/page.tsx
 // Home page - Minimaverse independent information hub
-// Updated: Added JSON-LD structured data for SEO
+// Updated: Added Organization JSON-LD schema for brand recognition
 
 import Link from 'next/link';
 
@@ -56,7 +56,7 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
   );
 };
 
-// JSON-LD structured data component for search engine optimization
+// JSON-LD structured data for WebSite schema
 const JsonLd = () => (
   <script
     type="application/ld+json"
@@ -78,12 +78,35 @@ const JsonLd = () => (
   />
 );
 
+// Organization structured data for brand recognition & Knowledge Graph
+const OrganizationJsonLd = () => (
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+      __html: JSON.stringify({
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Minimaverse",
+        "url": "https://minimaverse.com",
+        "description": "Independent information hub for the Minima Protocol",
+        "logo": "https://minimaverse.com/logo.webp",
+        "sameAs": [
+          "https://twitter.com/Minimaverse",
+          "https://github.com/KuA1bo/minimaverse-site",
+          "https://t.me/Minimaverse"
+        ]
+      })
+    }}
+  />
+);
+
 export default function HomePage() {
   return (
     <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
       
       {/* JSON-LD structured data for search engines */}
       <JsonLd />
+      <OrganizationJsonLd />
       
       {/* Hero Section */}
       <section className="mb-12 py-12 border-b border-gray-700/40 opacity-0 animate-fade-in-up delay-75 relative">
