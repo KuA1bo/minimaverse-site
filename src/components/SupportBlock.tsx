@@ -1,4 +1,5 @@
 // Compact support block for footer. Client Component for clipboard interactivity.
+// Updated: refined contribution text for clarity and professionalism
 "use client";
 
 import { useState } from "react";
@@ -33,8 +34,8 @@ export default function SupportBlock() {
         <p className="flex-1 min-w-0">
           <span className="text-gray-300 font-medium">Support Minimaverse (Optional)</span>
           <span className="mx-1.5 text-gray-600 select-none">—</span>
-          {/* Updated: accurately reflects domain costs & future maintenance */}
-          <span>Voluntary contributions cover domain and project maintenance.</span>
+          {/* Updated: clearer phrasing about project sustainability */}
+          <span>Voluntary contributions help maintain the project and infrastructure.</span>
         </p>
         
         <div className="flex flex-wrap items-center gap-2">
