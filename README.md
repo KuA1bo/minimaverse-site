@@ -1,6 +1,6 @@
 # Minimaverse
 
-> 💡 **Why this exists**: To make Minima's awesome technology more accessible — without hype, without noise. Built by the community, for the community.
+> 💡 **Why this exists**: To make Minima Protocol more accessible — without hype, without noise. Independent community-driven documentation for the Minima ecosystem.
 
 Minimaverse is an unofficial, neutral information hub for the Minima ecosystem, covering protocol architecture, development history, core components, updates, and publicly verifiable community interactions.
 
@@ -38,6 +38,15 @@ Building in the Minima ecosystem? Minimaverse accepts submissions for ecosystem 
 Neutral, verified, no hype — just facts.
 
 📩 Contact: [@Minimaverse](https://t.me/Minimaverse) on Telegram
+
+## 💙 Support Minimaverse (Optional)
+
+Voluntary contributions cover domain and project maintenance. Non-refundable.
+
+- **MINIMA (Native):** `MxG081NYSWDGZMKSYCYBKW9TJRS3PCMFDV5NWKFKEQKQNPWBTYFYJ9CTVFU0BAR`
+- **USDT (TRC20):** `TF5NBncPz9d8BoRqK8EfAHhTzsapLDujv4`
+
+📩 Questions? Contact [@Minimaverse](https://t.me/Minimaverse)
 
 ## 📄 License
 
