@@ -566,11 +566,31 @@ export default function EcosystemPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to April 21, 2026 */}
-        <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-150">
+        {/* Ecosystem Listings CTA - FINAL INFRA-STYLE BLOCK */}
+        <div className="mt-16 mb-6 border-t border-gray-800 pt-8 opacity-0 animate-fade-in-up delay-150">
+          <div className="max-w-2xl mx-auto text-center">
+            <h3 className="text-lg font-medium text-gray-200 mb-2">
+              📨 Ecosystem Listings
+            </h3>
+            <p className="text-sm text-gray-400 mb-3">
+              Community projects may request inclusion in Minimaverse ecosystem pages.
+            </p>
+            <Link 
+              href="/submit-project"
+              className="group inline-flex items-center gap-1 text-purple-400 hover:text-gray-200 transition-all duration-300 hover:scale-[1.02] hover:ring-1 hover:ring-gray-500/30 rounded px-1.5 py-0.5"
+            >
+              Submit project for review
+              <span className="text-xs transition-transform duration-300 group-hover:translate-x-1">→</span>
+            </Link>
+            <p className="text-xs text-gray-500 mt-3">Neutral listing • Verified facts • No hype</p>
+          </div>
+        </div>
+
+        {/* Last Updated - UPDATED DATE to May 7, 2026 */}
+        <section className="border-t border-gray-700/40 pt-4 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 25, 2026
+            Last updated: May 7, 2026
           </p>
         </section>
 
