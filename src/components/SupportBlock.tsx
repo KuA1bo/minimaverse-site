@@ -1,5 +1,5 @@
 // Compact support block for footer. Client Component for clipboard interactivity.
-// Updated: refined contribution text for clarity and professionalism
+// Updated: centered text on mobile, kept optional label muted for visual hierarchy
 "use client";
 
 import { useState } from "react";
@@ -29,16 +29,20 @@ export default function SupportBlock() {
   };
 
   return (
-    <div className="mt-6 pt-4 border-t border-gray-700/50">
-      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-xs text-gray-400">
-        <p className="flex-1 min-w-0">
-          <span className="text-gray-300 font-medium">Support Minimaverse (Optional)</span>
-          <span className="mx-1.5 text-gray-600 select-none">—</span>
-          {/* Updated: clearer phrasing about project sustainability */}
-          <span>Voluntary contributions help maintain the project and infrastructure.</span>
-        </p>
-        
-        <div className="flex flex-wrap items-center gap-2">
+    <div className="mt-6 pt-4 pb-4 sm:pb-0 border-t border-gray-700/50">
+      <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
+        {/* Left: Title & Description */}
+        <div className="flex-1 text-center sm:text-left">
+          <h4 className="text-sm font-medium text-gray-300">
+            Support Minimaverse <span className="text-gray-500">(Optional)</span>
+          </h4>
+          <p className="text-xs text-gray-400 mt-1 leading-relaxed">
+            Voluntary contributions help maintain the project and infrastructure.
+          </p>
+        </div>
+
+        {/* Right: Buttons (centered on mobile, left-aligned on desktop) */}
+        <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-start sm:mt-0">
           {wallets.map((wallet) => (
             <button
               key={wallet.label}
@@ -52,9 +56,6 @@ export default function SupportBlock() {
           ))}
         </div>
       </div>
-      <p className="mt-2 text-[10px] text-gray-500">
-        * Non-refundable.
-      </p>
     </div>
   );
 }
