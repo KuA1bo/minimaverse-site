@@ -308,6 +308,7 @@ export default function HomePage() {
                 icon: '⚙️',
                 links: [
                   { href: '/nodes', text: 'Run a Node' },
+                  { href: '/submit-project', text: 'Submit Project' },
                   { href: '/tools', text: 'Tools & Utilities' },
                   { href: '/developers', text: 'Developer Resources' },
                 ]
