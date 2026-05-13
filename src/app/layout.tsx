@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 // Root layout for Minimaverse - Next.js App Router
-// Updated: Added SupportBlock, refined footer signature & labels, integrated Search component
+// Updated: Optimized search container spacing for tablets (tighter) vs desktop (relaxed)
 
 import './globals.css';
 import Link from 'next/link';
@@ -12,7 +12,7 @@ import HtmlClassSync from '../components/HtmlClassSync';
 import EconomyModeToggle from '../components/EconomyModeToggle';
 import CinematicParticles from '../components/CinematicParticles';
 import SupportBlock from '@/components/SupportBlock';
-import Search from '@/components/Search'; // ← Added Search component import
+import Search from '@/components/Search';
 
 // ExternalLink component for all external links with arrow icon
 const ExternalLink = ({ 
@@ -164,8 +164,12 @@ export default function RootLayout({
               ))}
             </nav>
 
-            {/* Search Button - Right aligned */}
-            <div className="flex items-center">
+            {/* Search Utility:
+                - Mobile: hidden
+                - Tablet (sm): Compact (no padding inside border, small margin)
+                - Desktop (lg): Relaxed (padding inside border, larger margin) 
+            */}
+            <div className="hidden sm:flex items-center ml-2 border-l border-gray-700/50 lg:ml-4 lg:pl-3">
               <Search />
             </div>
           </div>

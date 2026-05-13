@@ -1,6 +1,6 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
-// Updated: Added section anchors for search, updated date to May 13, 2026
+// Updated: Section anchors for search, header nav corrected, tone adjusted for consistency
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -119,13 +119,13 @@ export default function AboutPage() {
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
             
-            {/* Internal navigation links for SEO authority distribution */}
-            <div className="flex flex-wrap gap-2 mb-3">
-              <Link href="/partners" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Partners</Link>
-              <span className="text-gray-700">•</span>
-              <Link href="/nodes" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Nodes</Link>
-              <span className="text-gray-700">•</span>
-              <Link href="/ecosystem" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Ecosystem</Link>
+            {/* Internal navigation links for SEO authority distribution - CORRECTED ORDER */}
+            <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
+              <Link href="/protocol" className="text-gray-400 hover:text-purple-400 transition-colors">Protocol</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/ecosystem" className="text-gray-400 hover:text-purple-400 transition-colors">Ecosystem</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/nodes" className="text-gray-400 hover:text-purple-400 transition-colors">Nodes</Link>
             </div>
             
             {/* Updated H1 title for better SEO intent match */}
@@ -201,7 +201,7 @@ export default function AboutPage() {
       <article className="prose prose-invert max-w-none">
         
         {/* Section 1: About This Project */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section id="about-project" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📄</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Project</span>
@@ -225,7 +225,7 @@ export default function AboutPage() {
         </section>
 
         {/* Section 2: Who We Are */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section id="who-we-are" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👥</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
@@ -239,11 +239,11 @@ export default function AboutPage() {
             
             <p className="text-gray-300 leading-relaxed relative">
               Minimaverse is maintained by <strong className="text-white">community volunteers</strong> who believe 
-              in Minima's vision of true decentralization. We are developers, node operators, and long-term 
-              holders contributing to ecosystem growth through documentation and education.
+              in Minima's vision of true decentralization. We are developers, node operators, and community 
+              contributors supporting ecosystem growth through documentation and education.
             </p>
             <p className="text-gray-300 leading-relaxed mt-4 relative">
-              This project is built with ❤️ for the Minima community — by the community.
+              This project is maintained independently for the Minima community.
             </p>
           </div>
         </section>
@@ -331,7 +331,7 @@ export default function AboutPage() {
         </section>
 
         {/* Section 5: Comparison Table */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section id="comparison" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚖️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Minima vs Traditional Blockchains</span>
@@ -370,7 +370,7 @@ export default function AboutPage() {
         </section>
 
         {/* Section 6: Decentralization Principles */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section id="decentralization" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔐</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Decentralization Principles</span>
@@ -399,7 +399,7 @@ export default function AboutPage() {
         </section>
 
         {/* Section 7: How to Contribute */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section id="contribute" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🤝</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
@@ -444,7 +444,7 @@ export default function AboutPage() {
         </section>
 
         {/* Section 8: Current Status & Considerations */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        <section id="status" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Current Status & Considerations</span>
@@ -483,7 +483,7 @@ export default function AboutPage() {
         </section>
 
         {/* Section 9: Developer Resources */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section id="dev-resources" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🛠️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Developer Resources</span>

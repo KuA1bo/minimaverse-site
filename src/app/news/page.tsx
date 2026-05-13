@@ -1,7 +1,9 @@
 // src/app/news/page.tsx
 // News page - latest updates and announcements about Minima Protocol
+// Updated: Header nav unified with /about style (Ecosystem • Partners • About), section anchors preserved
 
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 // ExternalLink component for all external links with arrow icon
 const ExternalLink = ({ 
@@ -55,10 +57,30 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
+// Schema.org data for CollectionPage
+const newsSchema = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "News & Updates — Minimaverse",
+  "description": "Latest announcements and development progress for Minima Protocol",
+  "url": "https://minimaverse.com/news",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Minimaverse",
+    "url": "https://minimaverse.com"
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Minima Protocol"
+  }
+};
+
 export default function NewsPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
+      {/* JSON-LD structured data */}
+      <JsonLd data={newsSchema} />
 
       {/* Unified Header with gradient accent */}
       <header className="mb-6 sm:mb-8 opacity-0 animate-fade-in-up delay-75 relative">
@@ -73,6 +95,16 @@ export default function NewsPage() {
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
+            
+            {/* Internal navigation links - unified style with /about: Ecosystem • Partners • About */}
+            <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
+              <Link href="/ecosystem" className="text-gray-400 hover:text-purple-400 transition-colors">Ecosystem</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/partners" className="text-gray-400 hover:text-purple-400 transition-colors">Partners</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/about" className="text-gray-400 hover:text-purple-400 transition-colors">About</Link>
+            </div>
+            
             <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 News & Updates
@@ -90,7 +122,7 @@ export default function NewsPage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -154,8 +186,8 @@ export default function NewsPage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Latest Updates */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        {/* Latest Updates - Added id for anchor links */}
+        <section id="latest-updates" className="mb-10 opacity-0 animate-fade-in-up delay-75 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📰</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Latest Updates</span>
@@ -244,7 +276,6 @@ export default function NewsPage() {
                   </p>
                   
                   <div className="space-y-2">
-                    {/* ✅ Arrow "→" in text + component automatically adds SVG at the end */}
                     <ExternalLink 
                       href={item.link.href} 
                       className={`underline-offset-4 transition-all duration-300 text-sm block inline-flex items-center gap-1
@@ -284,8 +315,8 @@ export default function NewsPage() {
           </div>
         </section>
 
-        {/* Communication Channels - mobile layout matches Primary Sources */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        {/* Communication Channels - Added id for anchor links */}
+        <section id="communication-channels" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📢</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Communication Channels</span>
@@ -299,7 +330,6 @@ export default function NewsPage() {
               For the most up-to-date information about Minima Protocol, follow these official channels:
             </p>
             <ul className="space-y-3 text-sm">
-              {/* Sorted by link text length: shortest → longest */}
               <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 relative">
                 <span className="hidden md:inline text-gray-400">•</span>
                 <ExternalLink 
@@ -348,8 +378,8 @@ export default function NewsPage() {
           </div>
         </section>
 
-        {/* Archive Notice */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        {/* Archive Notice - Added id for anchor links */}
+        <section id="archive" className="mb-10 opacity-0 animate-fade-in-up delay-200 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🗄️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Archive Notice</span>
@@ -393,7 +423,7 @@ export default function NewsPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 22, 2026
+            Last updated: May 13, 2026
           </p>
         </section>
 

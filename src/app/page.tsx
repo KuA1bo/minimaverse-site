@@ -1,6 +1,6 @@
 // src/app/page.tsx
 // Home page - Minimaverse independent information hub
-// Updated: Added Organization JSON-LD schema for brand recognition
+// Updated: Added section anchors for search and navigation, updated timestamp
 
 import Link from 'next/link';
 
@@ -109,7 +109,7 @@ export default function HomePage() {
       <OrganizationJsonLd />
       
       {/* Hero Section */}
-      <section className="mb-12 py-12 border-b border-gray-700/40 opacity-0 animate-fade-in-up delay-75 relative">
+      <section id="hero" className="scroll-mt-20 mb-12 py-12 border-b border-gray-700/40 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
@@ -242,7 +242,7 @@ export default function HomePage() {
       <article className="prose prose-invert max-w-none">
         
         {/* About This Site */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section id="about-site" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
             <span className="text-2xl sm:text-3xl">📋</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Site</span>
@@ -278,7 +278,7 @@ export default function HomePage() {
         </section>
 
         {/* Project Principles */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        <section id="principles" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
             <span className="text-2xl sm:text-3xl">✅</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Project Principles</span>
@@ -307,7 +307,7 @@ export default function HomePage() {
         </section>
 
         {/* Quick Links - links sorted by text length: shortest → longest */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section id="quick-links" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
             <span className="text-2xl sm:text-3xl">🔗</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Quick Links</span>
@@ -386,7 +386,7 @@ export default function HomePage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 7, 2026
+            Last updated: May 13, 2026
           </p>
         </section>
 
