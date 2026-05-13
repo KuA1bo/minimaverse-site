@@ -1,6 +1,6 @@
 // src/app/news/page.tsx
 // News page - latest updates and announcements about Minima Protocol
-// Updated: Header nav unified with /about style (Ecosystem • Partners • About), section anchors preserved
+// Updated: H1 specificity, intro paragraph, badge text set to "Active Campaign" (compromise styling)
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -96,7 +96,7 @@ export default function NewsPage() {
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
             
-            {/* Internal navigation links - unified style with /about: Ecosystem • Partners • About */}
+            {/* Internal navigation links - unified style with /about */}
             <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
               <Link href="/ecosystem" className="text-gray-400 hover:text-purple-400 transition-colors">Ecosystem</Link>
               <span className="text-gray-600">•</span>
@@ -105,19 +105,26 @@ export default function NewsPage() {
               <Link href="/about" className="text-gray-400 hover:text-purple-400 transition-colors">About</Link>
             </div>
             
+            {/* Updated H1: more specific for SEO entity matching */}
             <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-                News & Updates
+                Minima Ecosystem News & Updates
               </span>
             </h1>
             <p className="text-gray-400 text-sm sm:text-base">Latest announcements and development progress</p>
+            
+            {/* Added intro paragraph: clarifies page intent */}
+            <p className="text-gray-400 text-sm sm:text-base mt-2 leading-relaxed">
+              Independent archive of major Minima Protocol announcements, ecosystem developments, 
+              infrastructure milestones, and public updates.
+            </p>
+            
             {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
           
-          {/* GitHub icon - Desktop only (hidden on mobile), unified with homepage */}
+          {/* GitHub icon - Desktop only */}
           <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
-            {/* Glow */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
@@ -135,7 +142,7 @@ export default function NewsPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - matches /developers desktop style */}
+      {/* Primary Sources Box */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -186,7 +193,7 @@ export default function NewsPage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Latest Updates - Added id for anchor links */}
+        {/* Latest Updates */}
         <section id="latest-updates" className="mb-10 opacity-0 animate-fade-in-up delay-75 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📰</span>
@@ -201,7 +208,7 @@ export default function NewsPage() {
                 text: "Minima is crowdfunding — giving long-term supporters and the public the opportunity to invest in Minima AG ahead of our planned Series A later this year. Minima exists to power a world where machines and AI don't just think: they transact, cooperate, and prove what is true. As autonomy accelerates, trust must exist at the edge, inside the machines themselves. Minima is building the trust layer for autonomous machines, using a radically compact blockchain protocol that can run directly on devices, at the silicon layer. The round has exceeded its initial target; over-subscription is open for a limited time.",
                 link: { href: 'https://europe.republic.com/minima', text: '→ Register to Gain Access on Republic Europe' },
                 status: 'confirmed' as const,
-                highlight: true
+                featured: true // Visual priority styling
               },
               {
                 date: 'March 24, 2026',
@@ -243,35 +250,36 @@ export default function NewsPage() {
               <div 
                 key={index} 
                 className={`relative rounded-2xl p-6 transition-all duration-300 group overflow-hidden hover:-translate-y-1
-                  ${item.highlight 
-                    ? 'bg-gradient-to-br from-purple-900/30 to-blue-900/30 border-2 border-purple-500/50 shadow-lg shadow-purple-500/10' 
+                  ${item.featured 
+                    ? 'bg-gray-800/50 border border-gray-600/50 hover:border-purple-500/40' 
                     : 'bg-gray-800/40 border border-gray-700/40 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15'
                   }`}
               >
-                {item.highlight && (
-                  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 animate-gradient-x" />
+                {/* Featured: subtle static top border line */}
+                {item.featured && (
+                  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500/30 via-blue-500/30 to-transparent" />
                 )}
-                {!item.highlight && (
+                {/* Standard: animated left border on hover */}
+                {!item.featured && (
                   <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
                 )}
                 
                 <div className="relative">
                   <div className="flex items-center gap-2 mb-2">
-                    <p className={`text-xs ${item.highlight ? 'text-purple-300 font-medium' : 'text-gray-500'}`}>
-                      {item.date}
-                    </p>
-                    {item.highlight && (
-                      <span className="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-medium border border-purple-500/30">
+                    <p className="text-xs text-gray-500">{item.date}</p>
+                    {/* Updated Badge Text: "Active Campaign" */}
+                    {item.featured && (
+                      <span className="px-2 py-0.5 rounded-full bg-purple-500/15 text-purple-300 text-[10px] font-medium border border-purple-500/30">
                         Active Campaign
                       </span>
                     )}
                   </div>
                   
-                  <h3 className={`font-medium mb-2 ${item.highlight ? 'text-white text-lg' : 'text-white'}`}>
+                  <h3 className={`font-medium mb-2 ${item.featured ? 'text-white text-lg' : 'text-white'}`}>
                     {item.title}
                   </h3>
                   
-                  <p className={`text-sm mb-3 ${item.highlight ? 'text-gray-200' : 'text-gray-300'}`}>
+                  <p className={`text-sm mb-3 ${item.featured ? 'text-gray-200' : 'text-gray-300'}`}>
                     {item.text}
                   </p>
                   
@@ -279,7 +287,7 @@ export default function NewsPage() {
                     <ExternalLink 
                       href={item.link.href} 
                       className={`underline-offset-4 transition-all duration-300 text-sm block inline-flex items-center gap-1
-                        ${item.highlight 
+                        ${item.featured 
                           ? 'text-purple-300 hover:text-purple-200 decoration-purple-500/40 hover:decoration-purple-400' 
                           : 'text-blue-400 hover:text-purple-400 decoration-blue-500/30 hover:decoration-purple-500/60'
                         }`}
@@ -300,13 +308,13 @@ export default function NewsPage() {
                     <p className="text-gray-500 text-xs">
                       Status: <StatusBadge status={item.status} reducedGlow={true} />
                     </p>
-                    {item.highlight && (
-                      <span className="text-gray-500 text-xs">•</span>
-                    )}
-                    {item.highlight && (
-                      <p className="text-gray-400 text-xs italic">
-                        Approved by Republic Europe on 30/03/26
-                      </p>
+                    {item.featured && (
+                      <>
+                        <span className="text-gray-500 text-xs">•</span>
+                        <p className="text-gray-400 text-xs italic">
+                          Approved by Republic Europe on 30/03/26
+                        </p>
+                      </>
                     )}
                   </div>
                 </div>
@@ -315,7 +323,7 @@ export default function NewsPage() {
           </div>
         </section>
 
-        {/* Communication Channels - Added id for anchor links */}
+        {/* Communication Channels */}
         <section id="communication-channels" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📢</span>
@@ -378,7 +386,7 @@ export default function NewsPage() {
           </div>
         </section>
 
-        {/* Archive Notice - Added id for anchor links */}
+        {/* Archive Notice */}
         <section id="archive" className="mb-10 opacity-0 animate-fade-in-up delay-200 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🗄️</span>
@@ -419,7 +427,7 @@ export default function NewsPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE */}
+        {/* Last Updated */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
