@@ -1,23 +1,28 @@
 // src/app/links/page.tsx
 // Useful Links page - verified channels and resources for Minima Protocol
+// Updated: Added section anchors for search, email cards use ExternalLink, updated date to May 13, 2026
 
 import Link from 'next/link';
 
 // ExternalLink component for all external links with arrow icon
+// Updated: Added optional id prop for anchor linking
 const ExternalLink = ({ 
   href, 
   children, 
   className = "",
   ariaLabel,
-  hideArrow = false
+  hideArrow = false,
+  id
 }: { 
   href: string; 
   children: React.ReactNode; 
   className?: string;
   ariaLabel?: string;
   hideArrow?: boolean;
+  id?: string;
 }) => (
   <a 
+    id={id}
     href={href.trim()} 
     target="_blank" 
     rel="noopener noreferrer"
@@ -91,7 +96,7 @@ export default function LinksPage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -155,8 +160,8 @@ export default function LinksPage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Section 1: Project Feedback */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        {/* Section 1: Project Feedback - Anchor: #feedback */}
+        <section id="feedback" className="mb-10 opacity-0 animate-fade-in-up delay-75 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">💬</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Project Feedback</span>
@@ -182,8 +187,8 @@ export default function LinksPage() {
           </div>
         </section>
 
-        {/* Section 2: Official Communication Channels */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        {/* Section 2: Official Communication Channels - Anchor: #channels */}
+        <section id="channels" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📡</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Communication Channels</span>
@@ -219,8 +224,8 @@ export default function LinksPage() {
           </div>
         </section>
 
-        {/* Section 3: Market Data & Audits */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        {/* Section 3: Market Data & Audits - Anchor: #market */}
+        <section id="market" className="mb-10 opacity-0 animate-fade-in-up delay-200 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📊</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Market Data & Audits</span>
@@ -252,8 +257,8 @@ export default function LinksPage() {
           </div>
         </section>
 
-        {/* Section 4: Official Email Contacts */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        {/* Section 4: Official Email Contacts - Anchor: #contacts */}
+        <section id="contacts" className="mb-10 opacity-0 animate-fade-in-up delay-300 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📧</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Email Contacts</span>
@@ -269,15 +274,17 @@ export default function LinksPage() {
               { icon: 'ℹ️', title: 'General Info', desc: 'General questions & public inquiries', email: 'info@minima.global' },
               { icon: '🔧', title: 'Technical Support', desc: 'Protocol issues & developer assistance', email: 'querysupport@minima.global' }
             ].map((contact, index) => (
-              <a 
+              <ExternalLink
                 key={index}
                 href={`mailto:${contact.email}`}
                 className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 
                           hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                           transition-all duration-300 block group cursor-pointer overflow-hidden"
+                ariaLabel={`Email ${contact.title}: ${contact.email}`}
+                hideArrow={true}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <div className="flex items-start gap-3 relative">
+                <div className="relative flex items-start gap-3">
                   <span className="text-blue-400 text-xl">{contact.icon}</span>
                   <div>
                     <span className="text-white font-medium text-sm group-hover:text-purple-300 transition-colors">
@@ -287,7 +294,7 @@ export default function LinksPage() {
                     <p className="text-blue-400 text-xs mt-2">{contact.email}</p>
                   </div>
                 </div>
-              </a>
+              </ExternalLink>
             ))}
           </div>
           
@@ -298,8 +305,8 @@ export default function LinksPage() {
           </p>
         </section>
 
-        {/* Section 5: Official Resources - COMPLETELY REDESIGNED */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        {/* Section 5: Official Resources - Anchor: #resources */}
+        <section id="resources" className="mb-10 opacity-0 animate-fade-in-up delay-75 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔗</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Resources</span>
@@ -361,8 +368,8 @@ export default function LinksPage() {
           </div>
         </section>
 
-        {/* Section 6: Regional Community Channels */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        {/* Section 6: Regional Community Channels - Anchor: #regional */}
+        <section id="regional" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🌍</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Regional Community Channels</span>
@@ -436,11 +443,11 @@ export default function LinksPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE */}
+        {/* Last Updated - UPDATED DATE to May 13, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 29, 2026
+            Last updated: May 13, 2026
           </p>
         </section>
 

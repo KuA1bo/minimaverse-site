@@ -1,24 +1,29 @@
 // src/app/nodes/page.tsx
 // Nodes page - verified guides for running Minima nodes
+// Updated: Added granular section anchors for search, updated date to May 13, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
 // ExternalLink component for all external links with arrow icon
+// Updated: Added optional id prop for anchor linking
 const ExternalLink = ({ 
   href, 
   children, 
   className = "",
   ariaLabel,
-  hideArrow = false
+  hideArrow = false,
+  id
 }: { 
   href: string; 
   children: React.ReactNode; 
   className?: string;
   ariaLabel?: string;
   hideArrow?: boolean;
+  id?: string;
 }) => (
   <a 
+    id={id}
     href={href.trim()} 
     target="_blank" 
     rel="noopener noreferrer"
@@ -337,21 +342,22 @@ export default function NodesPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {[
-              { href: 'https://docs.minima.global/docs/run-a-node/windows', icon: '🪟', title: 'Windows', desc: 'Desktop installation for Windows' },
-              { href: 'https://docs.minima.global/docs/run-a-node/android', icon: '📱', title: 'Android', desc: 'Run a full node on your phone' },
-              { href: 'https://docs.minima.global/docs/run-a-node/mac', icon: '🍎', title: 'macOS', desc: 'Desktop installation for Apple computers' },
-              { href: 'https://docs.minima.global/docs/run-a-node/desktop-cli', icon: '🐧', title: 'Linux (CLI)', desc: 'Command-line interface for Linux desktops' },
-              { href: 'https://docs.minima.global/docs/run-a-node/linux-vps-docker', icon: '🐳', title: 'Linux (Docker)', desc: 'Docker deployment for VPS' },
-              { href: 'https://docs.minima.global/docs/run-a-node/linux-vps-service', icon: '⚙️', title: 'Linux (Systemd)', desc: 'Systemd service for VPS' },
-              { href: 'https://docs.minima.global/docs/run-a-node/docker-desktop', icon: '📦', title: 'Docker Desktop', desc: 'Containerized deployment for desktop' },
-              { href: 'https://docs.minima.global/docs/run-a-node/node-types#supported-devices', icon: '🥧', title: 'Raspberry Pi', desc: 'Optimized for Pi 4+ devices' },
+              { id: 'windows', href: 'https://docs.minima.global/docs/run-a-node/windows', icon: '🪟', title: 'Windows', desc: 'Desktop installation for Windows' },
+              { id: 'android', href: 'https://docs.minima.global/docs/run-a-node/android', icon: '📱', title: 'Android', desc: 'Run a full node on your phone' },
+              { id: 'macos', href: 'https://docs.minima.global/docs/run-a-node/mac', icon: '🍎', title: 'macOS', desc: 'Desktop installation for Apple computers' },
+              { id: 'linux-cli', href: 'https://docs.minima.global/docs/run-a-node/desktop-cli', icon: '🐧', title: 'Linux (CLI)', desc: 'Command-line interface for Linux desktops' },
+              { id: 'docker', href: 'https://docs.minima.global/docs/run-a-node/linux-vps-docker', icon: '🐳', title: 'Linux (Docker)', desc: 'Docker deployment for VPS' },
+              { id: 'linux-systemd', href: 'https://docs.minima.global/docs/run-a-node/linux-vps-service', icon: '⚙️', title: 'Linux (Systemd)', desc: 'Systemd service for VPS' },
+              { id: 'docker-desktop', href: 'https://docs.minima.global/docs/run-a-node/docker-desktop', icon: '📦', title: 'Docker Desktop', desc: 'Containerized deployment for desktop' },
+              { id: 'raspberry-pi', href: 'https://docs.minima.global/docs/run-a-node/node-types#supported-devices', icon: '🥧', title: 'Raspberry Pi', desc: 'Optimized for Pi 4+ devices' },
             ].map((guide, index) => (
               <ExternalLink 
                 key={index}
+                id={guide.id}
                 href={guide.href} 
                 className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 
                           hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
-                          transition-all duration-300 block group overflow-hidden"
+                          transition-all duration-300 block group overflow-hidden scroll-mt-20"
                 ariaLabel={`${guide.title} installation guide`}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -431,15 +437,15 @@ export default function NodesPage() {
           
           <div className="space-y-4">
             {[
-              { title: 'Archive Node', text: 'Full historical blockchain data storage for archival purposes and complete transaction history verification.', link: { href: 'https://docs.minima.global/docs/run-a-node/archive-node', text: '→ Setup Guide' } },
-              { title: 'Mega Node', text: 'High-performance node configuration for maximum network contribution and enhanced throughput capabilities.', link: { href: 'https://docs.minima.global/docs/run-a-node/mega-node', text: '→ Setup Guide' } },
-              { title: 'Minima E-Gateway (MEG)', text: 'Enterprise-grade gateway for integrating Minima with external systems and legacy infrastructure.', links: [
+              { id: 'archive-node', title: 'Archive Node', text: 'Full historical blockchain data storage for archival purposes and complete transaction history verification.', link: { href: 'https://docs.minima.global/docs/run-a-node/archive-node', text: '→ Setup Guide' } },
+              { id: 'mega-node', title: 'Mega Node', text: 'High-performance node configuration for maximum network contribution and enhanced throughput capabilities.', link: { href: 'https://docs.minima.global/docs/run-a-node/mega-node', text: '→ Setup Guide' } },
+              { id: 'meg', title: 'Minima E-Gateway (MEG)', text: 'Enterprise-grade gateway for integrating Minima with external systems and legacy infrastructure.', links: [
                 { href: 'https://docs.minima.global/docs/run-a-node/meg-about', text: '→ Documentation' },
                 { href: 'https://docs.minima.global/docs/run-a-node/meg-setup', text: '→ Configuration Guide' }
               ]}
             ].map((item, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div key={index} id={item.id} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1 scroll-mt-20">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
                 <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
@@ -479,12 +485,12 @@ export default function NodesPage() {
           
           <div className="space-y-4">
             {[
-              { title: 'Node Types Overview', text: 'Understanding different node configurations and their roles in the network architecture.', link: { href: 'https://docs.minima.global/docs/run-a-node/node-types', text: '→ Documentation' } },
-              { title: 'Firewall Rules', text: 'Required network configurations and port forwarding for proper node operation and peer connectivity.', link: { href: 'https://docs.minima.global/docs/run-a-node/firewall-rules', text: '→ Configuration Guide' } },
-              { title: 'Startup Parameters', text: 'Advanced configuration options and command-line flags for node initialization and customization.', link: { href: 'https://docs.minima.global/docs/run-a-node/startup-parameters', text: '→ Parameter Reference' } },
+              { id: 'node-types', title: 'Node Types Overview', text: 'Understanding different node configurations and their roles in the network architecture.', link: { href: 'https://docs.minima.global/docs/run-a-node/node-types', text: '→ Documentation' } },
+              { id: 'firewall', title: 'Firewall Rules', text: 'Required network configurations and port forwarding for proper node operation and peer connectivity.', link: { href: 'https://docs.minima.global/docs/run-a-node/firewall-rules', text: '→ Configuration Guide' } },
+              { id: 'startup', title: 'Startup Parameters', text: 'Advanced configuration options and command-line flags for node initialization and customization.', link: { href: 'https://docs.minima.global/docs/run-a-node/startup-parameters', text: '→ Parameter Reference' } },
             ].map((item, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div key={index} id={item.id} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1 scroll-mt-20">
                 <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
                 <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
                 <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
@@ -521,7 +527,7 @@ export default function NodesPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 29, 2026
+            Last updated: May 13, 2026
           </p>
         </section>
 

@@ -1,24 +1,29 @@
 // src/app/partners/page.tsx
 // Partners page - verified confirmed partnerships in the Minima ecosystem
+// Updated: Added section anchors for search, updated date to May 13, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
 // ExternalLink component for all external links with arrow icon
+// Updated: Added optional id prop for anchor linking
 const ExternalLink = ({ 
   href, 
   children, 
   className = "",
   ariaLabel,
-  hideArrow = false
+  hideArrow = false,
+  id
 }: { 
   href: string; 
   children: React.ReactNode; 
   className?: string;
   ariaLabel?: string;
   hideArrow?: boolean;
+  id?: string;
 }) => (
   <a 
+    id={id}
     href={href.trim()} 
     target="_blank" 
     rel="noopener noreferrer"
@@ -218,8 +223,8 @@ export default function PartnersPage() {
           </div>
         </section>
 
-        {/* Confirmed Partnerships Timeline */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        {/* Confirmed Partnerships Timeline - Anchor: #verified */}
+        <section id="verified" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📅</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Confirmed Partnerships (Reverse Chronological)</span>
@@ -266,8 +271,8 @@ export default function PartnersPage() {
           </div>
         </section>
 
-        {/* Inclusion Criteria */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        {/* Inclusion Criteria - Anchor: #integrate */}
+        <section id="integrate" className="mb-10 opacity-0 animate-fade-in-up delay-200 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">✅</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Inclusion Criteria</span>
@@ -316,7 +321,7 @@ export default function PartnersPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 25, 2026
+            Last updated: May 13, 2026
           </p>
         </section>
 

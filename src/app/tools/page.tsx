@@ -1,23 +1,28 @@
 // src/app/tools/page.tsx
 // Tools page - verified tools and utilities for Minima Protocol
+// Updated: Added section anchors for search, updated date to May 13, 2026
 
 import Link from 'next/link';
 
 // ExternalLink component for all external links with arrow icon
+// Updated: Added optional id prop for anchor linking
 const ExternalLink = ({ 
   href, 
   children, 
   className = "",
   ariaLabel,
-  hideArrow = false
+  hideArrow = false,
+  id
 }: { 
   href: string; 
   children: React.ReactNode; 
   className?: string;
   ariaLabel?: string;
   hideArrow?: boolean;
+  id?: string;
 }) => (
   <a 
+    id={id}
     href={href.trim()} 
     target="_blank" 
     rel="noopener noreferrer"
@@ -90,7 +95,7 @@ export default function ToolsPage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -199,8 +204,8 @@ export default function ToolsPage() {
           </div>
         </section>
 
-        {/* NEW: DEX, Bridge & Minimask Launch Guide */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        {/* NEW: DEX, Bridge & Minimask Launch Guide - Anchor: #dex-bridge */}
+        <section id="dex-bridge" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🚀</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">New Launches: DEX, Bridge & Minimask</span>
@@ -344,8 +349,8 @@ export default function ToolsPage() {
           </div>
         </section>
 
-        {/* Official Tools */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        {/* Official Tools - Anchor: #official */}
+        <section id="official" className="mb-10 opacity-0 animate-fade-in-up delay-300 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🛠️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Tools</span>
@@ -455,8 +460,8 @@ export default function ToolsPage() {
           </div>
         </section>
 
-        {/* Development Tools */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        {/* Development Tools - Anchor: #dev */}
+        <section id="dev" className="mb-10 opacity-0 animate-fade-in-up delay-75 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">💻</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Development Tools</span>
@@ -542,11 +547,11 @@ export default function ToolsPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to April 21, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 13, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 21, 2026
+            Last updated: May 13, 2026
           </p>
         </section>
 

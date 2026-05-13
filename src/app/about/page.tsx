@@ -1,24 +1,29 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
+// Updated: Added section anchors for search, updated date to May 13, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
 // Reusable component for external links with icon
+// Updated: Added optional id prop for anchor linking
 const ExternalLink = ({ 
   href, 
   children, 
   className = "",
   ariaLabel,
-  hideArrow = false
+  hideArrow = false,
+  id
 }: { 
   href: string; 
   children: React.ReactNode; 
   className?: string;
   ariaLabel?: string;
   hideArrow?: boolean;
+  id?: string;
 }) => (
   <a 
+    id={id}
     href={href.trim()} 
     target="_blank" 
     rel="noopener noreferrer"
@@ -138,7 +143,7 @@ export default function AboutPage() {
       </header>
 
       {/* Simple explanation paragraph - added for SEO and UX */}
-      <p className="text-gray-300 leading-relaxed mb-6 opacity-0 animate-fade-in-up delay-100">
+      <p id="mobile" className="text-gray-300 leading-relaxed mb-6 opacity-0 animate-fade-in-up delay-100 scroll-mt-20">
         Minima is a decentralized blockchain designed to run a full node on any device — 
         from smartphones to IoT hardware — while maintaining complete network participation 
         for every user.
@@ -244,7 +249,7 @@ export default function AboutPage() {
         </section>
 
         {/* Section 3: Protocol Mechanics (Renamed to avoid conflict with homepage CTA) */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section id="consensus" className="mb-10 opacity-0 animate-fade-in-up delay-200 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⛓️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Protocol Mechanics</span>
@@ -289,7 +294,7 @@ export default function AboutPage() {
         </section>
 
         {/* Section 4: Core Technical Features */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        <section id="architecture" className="mb-10 opacity-0 animate-fade-in-up delay-300 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚙️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Core Technical Features</span>
@@ -538,7 +543,7 @@ export default function AboutPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 26, 2026
+            Last updated: May 13, 2026
           </p>
         </section>
 

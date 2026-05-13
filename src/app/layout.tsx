@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 // Root layout for Minimaverse - Next.js App Router
-// Updated: Added SupportBlock, refined footer signature & labels
+// Updated: Added SupportBlock, refined footer signature & labels, integrated Search component
 
 import './globals.css';
 import Link from 'next/link';
@@ -12,6 +12,7 @@ import HtmlClassSync from '../components/HtmlClassSync';
 import EconomyModeToggle from '../components/EconomyModeToggle';
 import CinematicParticles from '../components/CinematicParticles';
 import SupportBlock from '@/components/SupportBlock';
+import Search from '@/components/Search'; // ← Added Search component import
 
 // ExternalLink component for all external links with arrow icon
 const ExternalLink = ({ 
@@ -162,6 +163,11 @@ export default function RootLayout({
                 </Link>
               ))}
             </nav>
+
+            {/* Search Button - Right aligned */}
+            <div className="flex items-center">
+              <Search />
+            </div>
           </div>
         </header>
 

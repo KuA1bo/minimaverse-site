@@ -1,24 +1,29 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
+// Updated: Added section anchors for search, updated date to May 13, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
 // ExternalLink component for all external links with arrow icon
+// Updated: Added optional id prop for anchor linking
 const ExternalLink = ({ 
   href, 
   children, 
   className = "",
   ariaLabel,
-  hideArrow = false
+  hideArrow = false,
+  id
 }: { 
   href: string; 
   children: React.ReactNode; 
   className?: string;
   ariaLabel?: string;
   hideArrow?: boolean;
+  id?: string;
 }) => (
   <a 
+    id={id}
     href={href.trim()} 
     target="_blank" 
     rel="noopener noreferrer"
@@ -229,8 +234,8 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Core Infrastructure */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        {/* Core Infrastructure - Anchor: #infra */}
+        <section id="infra" className="mb-10 opacity-0 animate-fade-in-up delay-300 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🏗️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Core Infrastructure</span>
@@ -371,8 +376,8 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Wallets - Mobile order: APK → wallet → alt → Play */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        {/* Wallets - Anchor: #wallets */}
+        <section id="wallets" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👛</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Wallets</span>
@@ -486,8 +491,8 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Centralized Exchanges */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        {/* Centralized Exchanges - Anchor: #defi */}
+        <section id="defi" className="mb-10 opacity-0 animate-fade-in-up delay-200 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">💱</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Centralized Exchanges</span>
@@ -586,11 +591,11 @@ export default function EcosystemPage() {
           </div>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 7, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 13, 2026 */}
         <section className="border-t border-gray-700/40 pt-4 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 7, 2026
+            Last updated: May 13, 2026
           </p>
         </section>
 
