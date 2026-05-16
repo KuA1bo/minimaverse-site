@@ -1,6 +1,6 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
-// Updated: Added section anchors for search, updated date to May 13, 2026
+// Updated: Unified nav style per /about, correct PageNavLinks, section anchors, date May 16, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -120,13 +120,13 @@ export default function EcosystemPage() {
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
             
-            {/* Internal navigation links for SEO authority distribution */}
-            <div className="flex flex-wrap gap-2 mb-3">
-              <Link href="/partners" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Partners</Link>
-              <span className="text-gray-700">•</span>
-              <Link href="/nodes" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Nodes</Link>
-              <span className="text-gray-700">•</span>
-              <Link href="/about" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">What is Minima</Link>
+            {/* Internal navigation - unified style per /about: text-sm, gap-1.5, gray-400/600, hover purple */}
+            <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
+              <Link href="/partners" className="text-gray-400 hover:text-purple-400 transition-colors">Partners</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/nodes" className="text-gray-400 hover:text-purple-400 transition-colors">Nodes</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/tools" className="text-gray-400 hover:text-purple-400 transition-colors">Tools</Link>
             </div>
             
             {/* Updated H1 title for better SEO intent match */}
@@ -210,7 +210,7 @@ export default function EcosystemPage() {
       <article className="prose prose-invert max-w-none">
         
         {/* Intro */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
@@ -301,7 +301,7 @@ export default function EcosystemPage() {
         </section>
 
         {/* Developer Tools */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section id="dev-tools" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🛠️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Developer Tools</span>
@@ -529,7 +529,7 @@ export default function EcosystemPage() {
         </section>
 
         {/* Edge Deployments */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        <section id="edge" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📡</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Edge Deployments</span>
@@ -591,11 +591,11 @@ export default function EcosystemPage() {
           </div>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 13, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 16, 2026 */}
         <section className="border-t border-gray-700/40 pt-4 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 13, 2026
+            Last updated: May 16, 2026
           </p>
         </section>
 
