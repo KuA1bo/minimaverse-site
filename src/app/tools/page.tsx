@@ -1,8 +1,9 @@
 // src/app/tools/page.tsx
 // Tools page - verified tools and utilities for Minima Protocol
-// Updated: Added section anchors for search, updated date to May 13, 2026
+// Updated: Enhanced H1 for SEO, denser intro text, unified nav style, section anchors, JsonLd, date May 16, 2026
 
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 // ExternalLink component for all external links with arrow icon
 // Updated: Added optional id prop for anchor linking
@@ -60,10 +61,33 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
+// Structured data for Schema.org ItemList (tools collection)
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Minima Tools & Utilities",
+  "description": "Verified tools, wallets, explorers, and developer utilities for interacting with the Minima Protocol.",
+  "url": "https://minimaverse.com/tools",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "MiniMaxt DEX", "url": "https://minimaxt.org" },
+    { "@type": "ListItem", "position": 2, "name": "MXUSD Bridge", "url": "https://mxusd.global" },
+    { "@type": "ListItem", "position": 3, "name": "MiniMask Wallet", "url": "https://minimask.org" },
+    { "@type": "ListItem", "position": 4, "name": "Minima Terminal", "url": "https://docs.minima.global/docs/development/terminal-commands" },
+    { "@type": "ListItem", "position": 5, "name": "Minima Scan Explorer", "url": "https://explorer.minima.global" }
+  ],
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Minimaverse",
+    "url": "https://minimaverse.com"
+  }
+};
+
 export default function ToolsPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
+      {/* Structured data for SEO - ItemList schema */}
+      <JsonLd data={structuredData} />
 
       {/* Unified Header with gradient accent */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
@@ -78,9 +102,20 @@ export default function ToolsPage() {
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
+            
+            {/* Internal navigation - unified style per /about: text-sm, gap-1.5, gray-400/600, hover purple */}
+            <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
+              <Link href="/developers" className="text-gray-400 hover:text-purple-400 transition-colors">Developers</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/nodes" className="text-gray-400 hover:text-purple-400 transition-colors">Nodes</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/ecosystem" className="text-gray-400 hover:text-purple-400 transition-colors">Ecosystem</Link>
+            </div>
+            
+            {/* Enhanced H1 for stronger SEO relevance */}
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-                Tools & Utilities
+                Minima Tools & Utilities
               </span>
             </h1>
             <p className="text-gray-400">Essential tools for interacting with Minima Protocol</p>
@@ -174,8 +209,8 @@ export default function ToolsPage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Intro */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        {/* Intro - Enhanced for semantic coverage */}
+        <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
@@ -185,9 +220,9 @@ export default function ToolsPage() {
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             
+            {/* Enhanced intro text with stronger semantic coverage */}
             <p className="text-gray-300 leading-relaxed">
-              This page aggregates verified tools and utilities for interacting with the Minima 
-              Protocol. All links point to official or community-verified sources.
+              Verified tools, wallets, explorers, and developer utilities for interacting with the Minima Protocol.
             </p>
             
             {/* Status legend - vertical on mobile with divider */}
@@ -547,11 +582,11 @@ export default function ToolsPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 13, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 16, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 13, 2026
+            Last updated: May 16, 2026
           </p>
         </section>
 
