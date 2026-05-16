@@ -1,7 +1,9 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
+// Updated: Unified nav style per /about, correct links per final map, restored detailed specs, section anchors, JsonLd
 
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 // ExternalLink component for all external links with arrow icon
 const ExternalLink = ({ 
@@ -36,7 +38,7 @@ const ExternalLink = ({
   </a>
 );
 
-// StatusBadge component for feature status indicators
+// StatusBadge component for feature status indicators (used sparingly on protocol page)
 const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'community' }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: 'shadow-green-500/50' },
@@ -58,19 +60,39 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
   );
 };
 
-// Enhanced background orbs - animated style
+// Structured data for Schema.org TechArticle
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Minima Protocol Architecture",
+  "description": "Technical overview of Minima: edge consensus, Tx-PoW, lightweight full-node infrastructure, and protocol layers.",
+  "url": "https://minimaverse.com/protocol",
+  "inLanguage": "en",
+  "about": {
+    "@type": "Thing",
+    "name": "Minima Protocol",
+    "description": "A decentralized blockchain designed to run a full node on any device."
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Minimaverse",
+    "url": "https://minimaverse.com"
+  }
+};
 
 export default function ProtocolPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
+      {/* Structured data for SEO - TechArticle schema */}
+      <JsonLd data={structuredData} />
 
       {/* Unified Header with gradient accent */}
       <header className="mb-6 sm:mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
         <div className="relative flex justify-between items-start gap-4">
-          {/* Header text block */}
+          {/* Header text block - compact nav style unified with /about */}
           <div className="relative inline-block w-full pb-2 sm:pb-3">
             <Link 
               href="/" 
@@ -78,12 +100,24 @@ export default function ProtocolPage() {
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
-            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
+            
+            {/* Internal navigation - unified style per /about: text-sm, gap-1.5, gray-400/600, hover purple */}
+            <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
+              <Link href="/nodes" className="text-gray-400 hover:text-purple-400 transition-colors">Nodes</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/developers" className="text-gray-400 hover:text-purple-400 transition-colors">Developers</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/ecosystem" className="text-gray-400 hover:text-purple-400 transition-colors">Ecosystem</Link>
+            </div>
+            
+            {/* Enhanced H1 for stronger SEO and differentiation */}
+            <h1 className="text-2xl sm:text-3xl font-bold text-white mb-1">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-                Minima Protocol
+                Minima Protocol Architecture
               </span>
             </h1>
-            <p className="text-gray-400 text-sm sm:text-base">Architecture, consensus, and technical specifications</p>
+            {/* SEO-optimized subtitle with long-tail keywords */}
+            <p className="text-gray-400 text-sm sm:text-base">Edge consensus, Tx-PoW, and lightweight full-node infrastructure</p>
             {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
@@ -95,7 +129,7 @@ export default function ProtocolPage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -159,8 +193,8 @@ export default function ProtocolPage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Section 1: Edge Consensus */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        {/* Section 1: Edge Consensus - broken into 2 paragraphs + callout */}
+        <section id="edge-consensus" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🌐</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Edge Consensus Architecture</span>
@@ -176,11 +210,15 @@ export default function ProtocolPage() {
               that rely on specialized miners or validators, Minima enables universal participation: 
               smartphones, Raspberry Pi, and IoT devices all contribute to network security on equal terms.
             </p>
-            <p className="text-gray-300 leading-relaxed mt-4">
-              <strong>Key innovation:</strong> Through collaborative Tx-PoW, the complete blockchain 
-              state remains compact (~300 MB RAM), allowing any device to store and verify the entire 
-              chain history independently.
-            </p>
+            
+            {/* Key innovation callout - separated for better readability */}
+            <div className="mt-4 p-4 bg-blue-900/20 border border-blue-700/40 rounded-xl">
+              <p className="text-blue-200 text-sm">
+                <strong className="text-white">Key innovation:</strong> Through collaborative Tx-PoW, the complete blockchain 
+                state remains compact (~300 MB RAM), allowing any device to store and verify the entire 
+                chain history independently.
+              </p>
+            </div>
           </div>
           <p className="text-sm text-gray-500 mt-4">
             <ExternalLink 
@@ -193,7 +231,7 @@ export default function ProtocolPage() {
         </section>
 
         {/* Section 2: Tx-PoW */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section id="tx-pow" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⛏️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Tx-PoW: Collaborative Proof of Work</span>
@@ -204,12 +242,10 @@ export default function ProtocolPage() {
               {
                 title: 'How Tx-PoW Works',
                 text: 'Each transaction in Minima performs a small amount of Proof of Work (~10 seconds average work per device). When a Tx-PoW value meets the network difficulty threshold (~1 block every 50 seconds), that transaction also mines a block. Blocks store only transaction hashes (~10 KB per block), keeping the chain lightweight.',
-                status: 'confirmed' as const
               },
               {
                 title: 'Security Through Collaboration',
                 text: 'Minima nodes collaborate rather than compete. The total network security equals the sum of all individual Tx-PoW contributions. More transactions = more secure network. This cooperative approach significantly reduces energy consumption compared to competitive mining systems.',
-                status: 'confirmed' as const
               },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
@@ -217,7 +253,6 @@ export default function ProtocolPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
                 <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
-                <StatusBadge status={item.status} />
               </div>
             ))}
           </div>
@@ -232,7 +267,7 @@ export default function ProtocolPage() {
         </section>
 
         {/* Section 3: Data Structures */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section id="data-structures" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🗄️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Efficient Data Structures</span>
@@ -248,9 +283,8 @@ export default function ProtocolPage() {
               <p className="text-gray-300 text-sm mb-3 relative">
                 Minima&apos;s Cascading Chain structure efficiently manages blockchain growth through Superblocks. This approach keeps the chain compact and scalable without sacrificing security, enabling fast synchronization even on resource-constrained devices.
               </p>
-              <StatusBadge status="confirmed" />
             </div>
-            {/* Link below Cascading Chain card - outside container, like MMR UTXO */}
+            {/* Link below Cascading Chain card */}
             <p className="text-sm text-gray-500 mt-2">
               <ExternalLink 
                 href="https://docs.minima.global/docs/learn/the-blockchain#the-cascading-chain" 
@@ -268,7 +302,6 @@ export default function ProtocolPage() {
               <p className="text-gray-300 text-sm mb-3 relative">
                 Minima utilizes a Merkle Mountain Range database to store only the UTXOs relevant to each node&apos;s private keys. This &quot;storage-less&quot; approach allows each node to operate with just ~300 MB RAM, making Minima highly resource-efficient.
               </p>
-              <StatusBadge status="confirmed" />
             </div>
             
           </div>
@@ -283,7 +316,7 @@ export default function ProtocolPage() {
         </section>
 
         {/* Section 4: Protocol Layers */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        <section id="layers" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🧱</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Protocol Layers</span>
@@ -327,8 +360,8 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {/* Section 5: Technical Specifications */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        {/* Section 5: Technical Specifications - restored to detailed descriptions */}
+        <section id="specs" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚙️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Technical Specifications</span>
@@ -366,7 +399,7 @@ export default function ProtocolPage() {
         </section>
 
         {/* Section 6: Network Participation */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section id="participation" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👥</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Network Participation Requirements</span>
@@ -386,7 +419,7 @@ export default function ProtocolPage() {
               <li>Synchronization with the latest chain state</li>
             </ul>
             <p className="text-gray-300 text-sm mt-3 relative">
-              <strong>Note:</strong> There are no miners, no token incentives for validation, 
+              <strong className="text-white">Note:</strong> There are no miners, no token incentives for validation, 
               and no ever-growing database. Every user runs a Complete node. Forever.
             </p>
           </div>
@@ -414,7 +447,7 @@ export default function ProtocolPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 21, 2026
+            Last updated: May 16, 2026
           </p>
         </section>
 
