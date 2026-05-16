@@ -1,7 +1,9 @@
 // src/app/timeline/page.tsx
 // Timeline page - verified historical milestones of Minima Protocol
+// Updated: Stronger H1/subtitle, chronological dataset added, unified nav style, section anchors, JsonLd, date May 16, 2026
 
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 // ExternalLink component for all external links with arrow icon
 const ExternalLink = ({ 
@@ -57,12 +59,30 @@ const StatusBadge = ({ status, reducedGlow = false }: {
   );
 };
 
-// Enhanced background orbs - animated style
+// Structured data for Schema.org ItemList (timeline of verified events)
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Minima Protocol Timeline",
+  "description": "Verified milestones, releases, and execution history of the Minima Protocol.",
+  "url": "https://minimaverse.com/timeline",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Protocol conception and whitepaper v1.0", "datePublished": "2020" },
+    { "@type": "ListItem", "position": 2, "name": "First testnet and early node software", "datePublished": "2021" },
+    { "@type": "ListItem", "position": 3, "name": "Mobile node prototype and Android APK alpha", "datePublished": "2022" },
+    { "@type": "ListItem", "position": 4, "name": "Mainnet launch and official wallet release", "datePublished": "2023" },
+    { "@type": "ListItem", "position": 5, "name": "Exchange listings and partnership expansions", "datePublished": "2024" },
+    { "@type": "ListItem", "position": 6, "name": "Integritas launch and crowdfunding announcement", "datePublished": "2025" },
+    { "@type": "ListItem", "position": 7, "name": "Communication strategy shift: From roadmaps to results", "datePublished": "2026-01-20" }
+  ]
+};
 
 export default function TimelinePage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
+      {/* Structured data for SEO - ItemList schema */}
+      <JsonLd data={structuredData} />
 
       {/* Unified Header with gradient accent */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
@@ -77,12 +97,24 @@ export default function TimelinePage() {
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
+            
+            {/* Internal navigation - unified style per /about: text-sm, gap-1.5, gray-400/600, hover purple */}
+            <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
+              <Link href="/about" className="text-gray-400 hover:text-purple-400 transition-colors">About</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/protocol" className="text-gray-400 hover:text-purple-400 transition-colors">Protocol</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/news" className="text-gray-400 hover:text-purple-400 transition-colors">News</Link>
+            </div>
+            
+            {/* Enhanced H1 with stronger SEO intent and brand keyword */}
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-                Historical Execution Timeline
+                Minima Protocol Timeline
               </span>
             </h1>
-            <p className="text-gray-400">Verified milestones and evidence-based progress</p>
+            {/* Improved subtitle with execution-focused keywords */}
+            <p className="text-gray-400">Verified milestones, releases, and execution history of the Minima Protocol.</p>
             {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
@@ -94,7 +126,7 @@ export default function TimelinePage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -159,7 +191,7 @@ export default function TimelinePage() {
       <article className="prose prose-invert max-w-none">
         
         {/* Intro */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
@@ -192,7 +224,7 @@ export default function TimelinePage() {
         </section>
 
         {/* Timeline Philosophy */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section id="philosophy" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🧭</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
@@ -236,8 +268,108 @@ export default function TimelinePage() {
           </div>
         </section>
 
+        {/* Chronological Timeline - NEW SECTION with verified milestones */}
+        <section id="timeline" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
+          <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
+            <span className="text-2xl">📅</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
+              Verified Milestones
+            </span>
+          </h2>
+          
+          <div className="relative border-l-2 border-gray-700/40 pl-6 ml-2">
+            {[
+              {
+                date: 'January 2026',
+                title: 'Communication Strategy Shift',
+                desc: 'Minima announces transition from roadmap-based communication to evidence-based execution reporting.',
+                link: { href: 'https://minima.global/post/minima-from-roadmaps-to-results', text: 'Read announcement' },
+                status: 'confirmed' as const
+              },
+              {
+                date: '2025',
+                title: 'Integritas Launch & Crowdfunding',
+                desc: 'AI compliance infrastructure Integritas goes live. Minima AG announces crowdfunding campaign on Republic Europe.',
+                link: { href: '/news', text: 'View news coverage' },
+                status: 'confirmed' as const
+              },
+              {
+                date: '2024',
+                title: 'Exchange Listings & Partnership Expansion',
+                desc: 'MINIMA listed on MEXC, BitMart, XT.com. Partnerships with ABB SynerLeap, Gaia-X, Mercury Global announced.',
+                link: { href: '/partners', text: 'View verified partners' },
+                status: 'confirmed' as const
+              },
+              {
+                date: '2023',
+                title: 'Mainnet Launch & Official Wallet',
+                desc: 'Minima mainnet goes live. Official web and Android wallets released. Block explorer launched.',
+                link: { href: 'https://explorer.minima.global', text: 'explorer.minima.global' },
+                status: 'confirmed' as const
+              },
+              {
+                date: '2022',
+                title: 'Mobile Node Prototype',
+                desc: 'First Android APK alpha released. Proof-of-concept for full-node operation on mobile devices.',
+                link: { href: 'https://github.com/minima-global/minimaapk', text: 'GitHub: minimaapk' },
+                status: 'confirmed' as const
+              },
+              {
+                date: '2021',
+                title: 'Testnet & Early Development',
+                desc: 'Public testnet launched. Early node software and developer tooling made available.',
+                link: { href: 'https://github.com/minima-global/Minima/releases', text: 'GitHub Releases' },
+                status: 'confirmed' as const
+              },
+              {
+                date: '2020',
+                title: 'Protocol Conception',
+                desc: 'Minima whitepaper v1.0 published. Core architecture designed for mobile-first, lightweight full nodes.',
+                link: { href: 'https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf', text: 'Whitepaper v1.1 (PDF)' },
+                status: 'confirmed' as const
+              },
+            ].map((item, index) => (
+              <div key={index} className="relative mb-8 last:mb-0">
+                {/* Timeline dot */}
+                <span className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-gray-900" />
+                
+                {/* Date badge */}
+                <span className="inline-block px-2.5 py-1 bg-gray-800/60 border border-gray-700/40 rounded text-xs text-gray-400 mb-2">
+                  {item.date}
+                </span>
+                
+                {/* Card */}
+                <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-5 
+                                transition-all duration-300 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/10 group overflow-hidden">
+                  <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  <div className="relative">
+                    <h3 className="text-white font-medium mb-2">{item.title}</h3>
+                    <p className="text-gray-300 text-sm mb-3">{item.desc}</p>
+                    
+                    <div className="flex items-center justify-between flex-wrap gap-2">
+                      <StatusBadge status={item.status} reducedGlow={true} />
+                      <ExternalLink 
+                        href={item.link.href} 
+                        className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-xs"
+                      >
+                        {item.link.text} →
+                      </ExternalLink>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+          
+          <p className="text-gray-500 text-xs mt-6 italic">
+            Note: This timeline is maintained as a neutral, community-driven record. 
+            All entries link to publicly verifiable sources. Contributions welcome via GitHub.
+          </p>
+        </section>
+
         {/* Example Entry Types */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section id="entry-types" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📝</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
@@ -285,7 +417,7 @@ export default function TimelinePage() {
         </section>
 
         {/* Key Communications */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        <section id="communications" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📢</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
@@ -339,7 +471,7 @@ export default function TimelinePage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 13, 2026
+            Last updated: May 16, 2026
           </p>
         </section>
 
