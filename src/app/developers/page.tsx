@@ -1,8 +1,9 @@
 // src/app/developers/page.tsx
 // Developers page - verified resources for building on Minima Protocol
-// Updated: Added section anchors for search, updated date to May 13, 2026
+// Updated: Unified nav style per /about, correct PageNavLinks, section anchors, JsonLd, date May 16, 2026
 
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 // ExternalLink component for all external links with arrow icon
 // Updated: Added optional id prop for anchor linking
@@ -60,12 +61,32 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Enhanced background orbs - animated style
+// Structured data for Schema.org TechArticle (developer resources page)
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "TechArticle",
+  "headline": "Minima Developer Resources",
+  "description": "Verified tools, SDKs, documentation, and tutorials for building on the Minima Protocol.",
+  "url": "https://minimaverse.com/developers",
+  "inLanguage": "en",
+  "about": {
+    "@type": "Thing",
+    "name": "Minima Protocol",
+    "description": "A decentralized blockchain designed to run a full node on any device."
+  },
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Minimaverse",
+    "url": "https://minimaverse.com"
+  }
+};
 
 export default function DevelopersPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
+      {/* Structured data for SEO - TechArticle schema */}
+      <JsonLd data={structuredData} />
 
       {/* Unified Header with gradient accent */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
@@ -80,6 +101,16 @@ export default function DevelopersPage() {
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
+            
+            {/* Internal navigation - unified style per /about: text-sm, gap-1.5, gray-400/600, hover purple */}
+            <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
+              <Link href="/protocol" className="text-gray-400 hover:text-purple-400 transition-colors">Protocol</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/tools" className="text-gray-400 hover:text-purple-400 transition-colors">Tools</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/nodes" className="text-gray-400 hover:text-purple-400 transition-colors">Nodes</Link>
+            </div>
+            
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Developer Resources
@@ -165,7 +196,7 @@ export default function DevelopersPage() {
       <article className="prose prose-invert max-w-none">
         
         {/* Intro */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
@@ -332,7 +363,7 @@ export default function DevelopersPage() {
         </section>
 
         {/* Tutorials */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section id="tutorials" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📝</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Tutorials</span>
@@ -380,7 +411,7 @@ export default function DevelopersPage() {
         </section>
 
         {/* Video Resources */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        <section id="videos" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🖥️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Video Resources</span>
@@ -423,7 +454,7 @@ export default function DevelopersPage() {
         </section>
 
         {/* Getting Started */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section id="getting-started" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🚀</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Getting Started</span>
@@ -456,7 +487,7 @@ export default function DevelopersPage() {
         </section>
 
         {/* Source Code */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section id="source-code" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🐙</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Source Code</span>
@@ -549,7 +580,7 @@ export default function DevelopersPage() {
         </section>
 
         {/* Community & Support */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section id="community" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">💬</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Community & Support</span>
@@ -602,11 +633,11 @@ export default function DevelopersPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 13, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 16, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-75">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 13, 2026
+            Last updated: May 16, 2026
           </p>
         </section>
 
