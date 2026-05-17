@@ -1,6 +1,6 @@
 // src/app/partners/page.tsx
 // Partners page - verified confirmed partnerships in the Minima ecosystem
-// Updated: Added section anchors for search, updated date to May 13, 2026
+// Updated: Unified nav style per /about, correct PageNavLinks, section anchors, date May 16, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -101,13 +101,13 @@ export default function PartnersPage() {
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
             
-            {/* Internal navigation links for SEO authority distribution */}
-            <div className="flex flex-wrap gap-2 mb-3">
-              <Link href="/ecosystem" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Ecosystem</Link>
-              <span className="text-gray-700">•</span>
-              <Link href="/nodes" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Nodes</Link>
-              <span className="text-gray-700">•</span>
-              <Link href="/about" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">What is Minima</Link>
+            {/* Internal navigation - unified style per /about: text-sm, gap-1.5, gray-400/600, hover purple */}
+            <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
+              <Link href="/ecosystem" className="text-gray-400 hover:text-purple-400 transition-colors">Ecosystem</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/protocol" className="text-gray-400 hover:text-purple-400 transition-colors">Protocol</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/nodes" className="text-gray-400 hover:text-purple-400 transition-colors">Nodes</Link>
             </div>
             
             {/* Updated H1 title for better SEO intent match */}
@@ -194,7 +194,7 @@ export default function PartnersPage() {
       <article className="prose prose-invert max-w-none">
         
         {/* Intro */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
@@ -272,7 +272,7 @@ export default function PartnersPage() {
         </section>
 
         {/* Inclusion Criteria - Anchor: #integrate */}
-        <section id="integrate" className="mb-10 opacity-0 animate-fade-in-up delay-200 scroll-mt-20">
+        <section id="integrate" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">✅</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Inclusion Criteria</span>
@@ -317,11 +317,11 @@ export default function PartnersPage() {
           </p>
         </div>
 
-        {/* Last Updated */}
+        {/* Last Updated - UPDATED DATE to May 16, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 13, 2026
+            Last updated: May 17, 2026
           </p>
         </section>
 
