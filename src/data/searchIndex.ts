@@ -1,6 +1,6 @@
 // src/data/searchIndex.ts
 // Search index for client-side fuzzy search with maximum keyword coverage
-// Updated: Added all projects, partners, terms, headers, and block content for comprehensive search
+// Updated: Added Secrets Vaults (LTA Labs) entry for ecosystem security section
 
 export interface SearchItem {
   title: string;
@@ -85,6 +85,14 @@ export const searchIndex: SearchItem[] = [
 
   // === /ecosystem: Edge & IoT ===
   { title: "IoT Deployments", url: "/ecosystem#infra", description: "Full-node operation on resource-constrained devices", tags: ["iot", "embedded", "edge", "constrained", "devices", "sensors", "hardware"] },
+
+  // === /ecosystem: Security & Privacy ===
+  { 
+    title: "Secrets Vaults (LTA Labs)", 
+    url: "/ecosystem#security", 
+    description: "Wallet backup and sensitive data protection. Official partnership announced Feb 2024.", 
+    tags: ["secrets vaults", "lta labs", "wallet backup", "security", "privacy", "partnership", "minima", "in-development", "data protection"] 
+  },
 
   // === /partners: ALL Partnerships (reverse chronological) ===
   { title: "Zeekr Partnership", url: "/partners#verified", description: "EV charging solution with Zeekr for private station access", tags: ["zeekr", "ev", "charging", "electric vehicle", "mobility", "access", "private stations", "march 2025"] },
