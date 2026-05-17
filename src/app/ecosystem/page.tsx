@@ -1,6 +1,6 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
-// Updated: Fixed Secrets Vaults structure (links moved outside card), partnership emphasis, section anchors, date May 16, 2026
+// Updated: Fixed hover lift effect on Edge Deployments and Wallets cards, partnership emphasis, section anchors, date May 17, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -383,9 +383,9 @@ export default function EcosystemPage() {
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Wallets</span>
           </h2>
           
-          {/* Card */}
+          {/* Card - FIXED: Added hover:-translate-y-1 for lift effect */}
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
             <h3 className="text-white font-medium mb-3 relative">Minima Wallet</h3>
@@ -528,7 +528,7 @@ export default function EcosystemPage() {
           </p>
         </section>
 
-        {/* Edge Deployments */}
+        {/* Edge Deployments - FIXED: Added hover:-translate-y-1 for lift effect */}
         <section id="edge" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📡</span>
@@ -536,7 +536,7 @@ export default function EcosystemPage() {
           </h2>
           
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
             <h3 className="text-white font-medium mb-2 relative">IoT & Embedded Systems</h3>
