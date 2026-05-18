@@ -1,6 +1,6 @@
 // src/app/nodes/page.tsx
 // Nodes page - verified guides for running Minima nodes
-// Updated: Added granular section anchors for search, updated date to May 13, 2026
+// Updated: Unified nav style per /about, correct PageNavLinks, section anchors, date May 18, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -103,13 +103,13 @@ export default function NodesPage() {
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
             
-            {/* Internal navigation links for SEO authority distribution */}
-            <div className="flex flex-wrap gap-2 mb-3">
-              <Link href="/ecosystem" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Ecosystem</Link>
-              <span className="text-gray-700">•</span>
-              <Link href="/partners" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">Partners</Link>
-              <span className="text-gray-700">•</span>
-              <Link href="/about" className="text-xs text-gray-500 hover:text-purple-400 transition-colors">What is Minima</Link>
+            {/* Internal navigation - unified style per /about: text-sm, gap-1.5, gray-400/600, hover purple */}
+            <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
+              <Link href="/protocol" className="text-gray-400 hover:text-purple-400 transition-colors">Protocol</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/tools" className="text-gray-400 hover:text-purple-400 transition-colors">Tools</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/developers" className="text-gray-400 hover:text-purple-400 transition-colors">Developers</Link>
             </div>
             
             {/* Updated H1 title for better SEO intent match */}
@@ -196,7 +196,7 @@ export default function NodesPage() {
       <article className="prose prose-invert max-w-none">
         
         {/* Intro */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
@@ -231,7 +231,7 @@ export default function NodesPage() {
         </section>
 
         {/* System Requirements */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section id="requirements" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚙️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">System Requirements</span>
@@ -294,7 +294,7 @@ export default function NodesPage() {
         </section>
 
         {/* Why Run a Node */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section id="why-run" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🎯</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Why Run a Node?</span>
@@ -334,7 +334,7 @@ export default function NodesPage() {
         </section>
 
         {/* Installation Guides by Platform */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        <section id="installation" className="mb-10 opacity-0 animate-fade-in-up delay-300 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📥</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Installation Guides by Platform</span>
@@ -378,7 +378,7 @@ export default function NodesPage() {
         </section>
 
         {/* Expert Guide by Minima Architect */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section id="expert-guide" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">✨</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Expert Guide</span>
@@ -429,7 +429,7 @@ export default function NodesPage() {
         </section>
 
         {/* Advanced Node Types */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section id="advanced-nodes" className="mb-10 opacity-0 animate-fade-in-up delay-75 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔧</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Advanced Node Types</span>
@@ -477,7 +477,7 @@ export default function NodesPage() {
         </section>
 
         {/* Node Configuration */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section id="configuration" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚙️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Node Configuration</span>
@@ -523,11 +523,11 @@ export default function NodesPage() {
           </p>
         </div>
 
-        {/* Last Updated */}
+        {/* Last Updated - UPDATED DATE to May 18, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 13, 2026
+            Last updated: May 18, 2026
           </p>
         </section>
 

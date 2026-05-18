@@ -1,6 +1,7 @@
 // src/data/searchIndex.ts
 // Search index for client-side fuzzy search with maximum keyword coverage
 // Updated: Added Trackium entry for Logistics & Tracking section in ecosystem
+// Updated: Added /nodes main sections for better anchor search coverage
 
 export interface SearchItem {
   title: string;
@@ -23,6 +24,12 @@ export const searchIndex: SearchItem[] = [
   { title: "Protocol Deep Dive", url: "/protocol", description: "Technical overview of consensus and architecture", tags: ["protocol", "architecture", "consensus", "technical", "deep dive", "specs"] },
   { title: "Open Questions", url: "/open-questions", description: "FAQs and community discussions", tags: ["faq", "questions", "help", "support", "troubleshooting", "answers"] },
   { title: "External Links", url: "/links", description: "Important community resources and socials", tags: ["links", "community", "social", "resources", "external", "channels"] },
+
+  // === /nodes: Main Sections (NEW - for top-level navigation) ===
+  { title: "About Node Setup", url: "/nodes#intro", description: "Overview of running Minima nodes globally", tags: ["intro", "overview", "100000 nodes", "depin", "decentralization", "node setup", "global network"] },
+  { title: "System Requirements", url: "/nodes#requirements", description: "Minimum and recommended specs for Minima nodes", tags: ["requirements", "specs", "ram", "ssd", "java", "hardware", "2gb", "4gb", "system specs"] },
+  { title: "Why Run a Node", url: "/nodes#why-run", description: "Benefits of participating in Minima network", tags: ["why run", "benefits", "decentralization", "p2p", "verification", "contribute", "security"] },
+  { title: "Expert Guide by Paddy Cerri", url: "/nodes#expert-guide", description: "Alternative setup guide with advanced tips from Minima architect", tags: ["expert", "paddy cerri", "spartacusrex", "advanced", "troubleshooting", "peer lists", "mds", "alternative guide"] },
 
   // === /nodes: Installation Platforms ===
   { title: "Android Node Setup", url: "/nodes#android", description: "Run Minima node on Android via Termux", tags: ["android", "mobile", "termux", "phone", "apk", "install android", "smartphone"] },
