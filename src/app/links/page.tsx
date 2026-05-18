@@ -1,6 +1,6 @@
 // src/app/links/page.tsx
 // Useful Links page - verified channels and resources for Minima Protocol
-// Updated: Vietnamese Community moved to last position in regional list, date May 18, 2026
+// Updated: Removed "Active" badge from crowdfunding card for cleaner neutral tone, date May 18, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -347,7 +347,7 @@ export default function LinksPage() {
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
-            {/* Crowdfunding - Full width highlight with neutral tone */}
+            {/* Crowdfunding - Full width highlight, neutral tone, NO "Active" badge */}
             <ExternalLink 
               href="https://europe.republic.com/minima"
               className="md:col-span-2 relative bg-gradient-to-r from-purple-900/20 to-blue-900/20 border-2 border-purple-500/40 rounded-2xl p-4 
@@ -358,7 +358,6 @@ export default function LinksPage() {
               <div className="relative">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-white font-semibold flex items-center gap-2">🚀 Minima AG on Republic Europe</span>
-                  <span className="px-2 py-0.5 rounded-full bg-purple-500/20 text-purple-300 text-[10px] font-medium border border-purple-500/30">Active</span>
                 </div>
                 <p className="text-gray-300 text-sm mb-3">Current crowdfunding page for Minima AG on Republic Europe platform.</p>
                 <div className="flex items-center gap-2 text-xs font-mono text-purple-400">
@@ -397,7 +396,7 @@ export default function LinksPage() {
           </div>
         </section>
 
-        {/* Section 6: Regional Community Channels - VN moved to LAST position */}
+        {/* Section 6: Regional Community Channels - VN last position */}
         <section id="regional" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🌍</span>
@@ -415,7 +414,7 @@ export default function LinksPage() {
               { flag: '🇪🇸', name: 'Spanish Community', link: 'https://t.me/minimablockchainES' },
               { flag: '🇹🇷', name: 'Turkish Community', link: 'https://t.me/minima_Turkey' },
               { flag: '🇨🇳', name: 'Chinese Community', link: 'https://t.me/minimachina' },
-              { flag: '🇻🇳', name: 'Vietnamese Community', link: 'https://t.me/MinimaVietNam' } // ← LAST position
+              { flag: '🇻🇳', name: 'Vietnamese Community', link: 'https://t.me/MinimaVietNam' }
             ].map((channel, index) => (
               <li key={index} className="flex items-center justify-between gap-2">
                 <ExternalLink 
