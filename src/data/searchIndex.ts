@@ -119,6 +119,13 @@ export const searchIndex: SearchItem[] = [
   { title: "Official Tools", url: "/tools#official", description: "Terminal CLI, Scan Explorer, Web/Mobile wallets", tags: ["terminal", "cli", "explorer", "scan", "web wallet", "mobile apk", "official"] },
   { title: "Development Tools", url: "/tools#dev", description: "TypeScript SDK, KISS VM spec, built-in functions, RPC API", tags: ["typescript", "sdk", "kiss", "vm", "specification", "sha2", "multisig", "rpc", "api", "automation"] },
 
+  // === /open-questions: FAQ & Community Support ===
+  { title: "Open Questions Intro", url: "/open-questions#intro", description: "Directory for community questions with official channel references", tags: ["faq", "questions", "community", "official", "directory", "support"] },
+  { title: "Node Monetization FAQ", url: "/open-questions#node-monetization", description: "Answer: Minima has no token incentives for nodes by design", tags: ["node incentives", "monetization", "no rewards", "decentralization", "design choice", "tokenomics"] },
+  { title: "Protocol Immutability FAQ", url: "/open-questions#protocol-immutability", description: "Answer: Core protocol is complete, upgrades happen on app layers", tags: ["protocol upgrades", "immutability", "governance", "paddy cerri", "app layers", "finalized"] },
+  { title: "Ask a Question on Discord", url: "/open-questions#ask", description: "Official #stage-question channel for community AMAs", tags: ["discord", "ask question", "stage-question", "ama", "community support", "official channel"] },
+  { title: "Additional Resources", url: "/open-questions#resources", description: "Links to docs, Telegram, and Minima blog", tags: ["resources", "docs", "telegram", "blog", "official links", "announcements"] },
+
   // === Technical Keywords (fuzzy matching boost) ===
   { title: "PoW Consensus", url: "/about#consensus", description: "Transaction-based Proof of Work security model", tags: ["pow", "proof of work", "consensus", "tx-pow", "mining", "security", "validation"] },
   { title: "Complete Node", url: "/about", description: "Every participant stores, verifies, constructs blockchain", tags: ["complete node", "full node", "equal", "participation", "decentralization", "no light clients"] },

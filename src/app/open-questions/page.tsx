@@ -1,7 +1,9 @@
 // src/app/open-questions/page.tsx
 // Open Questions page - redirect to official Discord for community questions
+// Updated: Unified nav style per /about, correct PageNavLinks, section anchors, FAQPage schema, date May 18, 2026
 
 import Link from 'next/link';
+import JsonLd from '@/components/JsonLd';
 
 // ExternalLink component for all external links with arrow icon
 const ExternalLink = ({ 
@@ -55,10 +57,42 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
+// Structured data for Schema.org FAQPage
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How will node operators be incentivized in a fully decentralized network?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Minima Protocol does not and will not implement token-based incentives for node operation. Incentive mechanisms inherently introduce centralization pressures, which contradict Minima's core principle of unconditional decentralization. This design choice was made consciously by the protocol architects."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How will protocol upgrades be decided in a fully decentralized Minima network?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The core Minima Protocol is complete and immutable. As stated by architect Paddy Cerri, the foundational layer is finalized and will not undergo changes. Future development occurs on application layers built atop the protocol, not within the protocol itself."
+      }
+    }
+  ],
+  "url": "https://minimaverse.com/open-questions",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "Minimaverse",
+    "url": "https://minimaverse.com"
+  }
+};
+
 export default function OpenQuestionsPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
+      {/* Structured data for SEO - FAQPage schema */}
+      <JsonLd data={structuredData} />
 
       {/* Unified Header with gradient accent */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
@@ -73,6 +107,16 @@ export default function OpenQuestionsPage() {
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
+            
+            {/* Internal navigation - unified style per /about: text-sm, gap-1.5, gray-400/600, hover purple */}
+            <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
+              <Link href="/protocol" className="text-gray-400 hover:text-purple-400 transition-colors">Protocol</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/developers" className="text-gray-400 hover:text-purple-400 transition-colors">Developers</Link>
+              <span className="text-gray-600">•</span>
+              <Link href="/about" className="text-gray-400 hover:text-purple-400 transition-colors">About</Link>
+            </div>
+            
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Open Questions
@@ -90,7 +134,7 @@ export default function OpenQuestionsPage() {
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+              href="https://github.com/KuA1bo/minimaverse-site" 
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -104,7 +148,7 @@ export default function OpenQuestionsPage() {
       </header>
 
       {/* Intro notice - enhanced */}
-      <div className="relative bg-blue-900/20 border border-blue-700/50 rounded-2xl p-6 mb-8 
+      <div id="intro" className="scroll-mt-20 relative bg-blue-900/20 border border-blue-700/50 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-blue-600/70 hover:shadow-2xl hover:shadow-blue-500/10 
                       opacity-0 animate-fade-in-up delay-75 group overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-blue-500 to-cyan-500" />
@@ -123,7 +167,7 @@ export default function OpenQuestionsPage() {
       <article className="prose prose-invert max-w-none">
         
         {/* Answered Questions Section */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section id="answered" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">✅</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Previously Asked Questions</span>
@@ -134,7 +178,7 @@ export default function OpenQuestionsPage() {
           </p>
 
           {/* Question 1: Node Monetization */}
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-4 
+          <div id="node-monetization" className="scroll-mt-20 relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-4 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <h3 className="text-lg font-semibold text-white mb-2 relative">Node Monetization Model</h3>
@@ -154,7 +198,7 @@ export default function OpenQuestionsPage() {
           </div>
 
           {/* Question 2: Protocol Immutability */}
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+          <div id="protocol-immutability" className="scroll-mt-20 relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <h3 className="text-lg font-semibold text-white mb-2 relative">Protocol Governance & Updates</h3>
@@ -175,7 +219,7 @@ export default function OpenQuestionsPage() {
         </section>
 
         {/* Discord Redirect Section */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
+        <section id="ask" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">💬</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Ask a New Question</span>
@@ -224,8 +268,8 @@ export default function OpenQuestionsPage() {
           </div>
         </section>
 
-        {/* Additional Resources - FIXED: href matches link text + order swapped */}
-        <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
+        {/* Additional Resources */}
+        <section id="resources" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔗</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Additional Resources</span>
@@ -247,7 +291,6 @@ export default function OpenQuestionsPage() {
                 <span className="text-gray-500 text-xs md:text-sm hidden md:inline">—</span>
                 <span className="text-gray-500 text-xs md:text-sm">Official Documentation</span>
               </li>
-              {/* 2. Telegram - CORRECTED href */}
               <li className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
                 <span className="text-gray-400 hidden sm:inline">•</span>
                 <ExternalLink 
@@ -259,7 +302,6 @@ export default function OpenQuestionsPage() {
                 <span className="text-gray-500 text-xs md:text-sm hidden md:inline">—</span>
                 <span className="text-gray-500 text-xs md:text-sm">Telegram Announcements</span>
               </li>
-              {/* 3. Blog - CORRECTED href */}
               <li className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
                 <span className="text-gray-400 hidden sm:inline">•</span>
                 <ExternalLink 
@@ -293,11 +335,11 @@ export default function OpenQuestionsPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to April 21, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 18, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 29, 2026
+            Last updated: May 18, 2026
           </p>
         </section>
 
