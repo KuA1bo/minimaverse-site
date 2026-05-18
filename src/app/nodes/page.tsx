@@ -1,12 +1,11 @@
 // src/app/nodes/page.tsx
 // Nodes page - verified guides for running Minima nodes
-// Updated: Unified nav style per /about, correct PageNavLinks, section anchors, date May 18, 2026
+// Updated: SEO-optimized H1, quick-start CTA, E-E-A-T safe claims, unified nav style, date May 18, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
 // ExternalLink component for all external links with arrow icon
-// Updated: Added optional id prop for anchor linking
 const ExternalLink = ({ 
   href, 
   children, 
@@ -61,11 +60,11 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Structured data for Schema.org ItemList (list of node guides)
+// Structured data for Schema.org ItemList
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Minima Node Setup Guide",
+  "name": "Minima Node Setup & Installation Guide",
   "description": "Verified guides for running Minima nodes on any platform: Windows, Android, macOS, Linux, Docker, Raspberry Pi.",
   "url": "https://minimaverse.com/nodes",
   "itemListElement": [
@@ -103,7 +102,7 @@ export default function NodesPage() {
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
             
-            {/* Internal navigation - unified style per /about: text-sm, gap-1.5, gray-400/600, hover purple */}
+            {/* Internal navigation - unified style per /about */}
             <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
               <Link href="/protocol" className="text-gray-400 hover:text-purple-400 transition-colors">Protocol</Link>
               <span className="text-gray-600">•</span>
@@ -112,21 +111,18 @@ export default function NodesPage() {
               <Link href="/developers" className="text-gray-400 hover:text-purple-400 transition-colors">Developers</Link>
             </div>
             
-            {/* Updated H1 title for better SEO intent match */}
+            {/* SEO-optimized H1 */}
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-                Minima Node Setup Guide
+                Minima Node Setup & Installation Guide
               </span>
             </h1>
-            {/* Updated subtitle for clarity and keyword coverage */}
             <p className="text-gray-400">Verified guides for running Minima nodes on any platform</p>
-            {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
           
-          {/* GitHub icon - Desktop only (hidden on mobile), unified with homepage */}
+          {/* GitHub icon */}
           <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
-            {/* Glow */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
@@ -144,7 +140,7 @@ export default function NodesPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - matches /developers desktop style */}
+      {/* Primary Sources Box */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -192,6 +188,34 @@ export default function NodesPage() {
         </div>
       </div>
 
+      {/* Quick Start CTA - New block for onboarding conversion */}
+      <div className="relative bg-blue-900/20 border border-blue-700/40 rounded-2xl p-4 sm:p-6 mb-8 
+                      transition-all duration-300 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 
+                      opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
+        
+        <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+          <div>
+            <h3 className="text-white font-medium mb-1">New to Minima?</h3>
+            <p className="text-gray-400 text-sm">Start with the easiest setup options for beginners.</p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            <ExternalLink 
+              href="https://docs.minima.global/docs/run-a-node/android" 
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
+            >
+              📱 Android Setup
+            </ExternalLink>
+            <ExternalLink 
+              href="https://docs.minima.global/docs/run-a-node/linux-vps-docker" 
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium rounded-lg transition-colors"
+            >
+              🐳 Docker Setup
+            </ExternalLink>
+          </div>
+        </div>
+      </div>
+
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
@@ -212,11 +236,11 @@ export default function NodesPage() {
               node, contributing to the network's decentralization and security.
             </p>
             <p className="text-gray-300 leading-relaxed mt-4 relative">
-              As of 2026, the Minima network is secured by over 100,000+ node operators globally, 
+              Public reports from Minima indicate over 100,000 node installations globally, 
               making it one of the largest decentralized networks in the DePIN space.
             </p>
             
-            {/* Status legend - vertical on mobile with divider */}
+            {/* Status legend */}
             <div className="mt-4 pt-3 border-t border-gray-700/40">
               <p className="text-gray-400 text-xs mb-2">Status legend:</p>
               <div className="flex flex-col sm:flex-row sm:items-center gap-2">
@@ -293,7 +317,7 @@ export default function NodesPage() {
           </p>
         </section>
 
-        {/* Why Run a Node */}
+        {/* Why Run a Node - Enhanced with practical intent */}
         <section id="why-run" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🎯</span>
@@ -306,10 +330,10 @@ export default function NodesPage() {
             
             <ul className="space-y-3">
               {[
-                { title: 'Contribute to decentralization', desc: 'Help secure the network and maintain its distributed nature' },
-                { title: 'Enable peer-to-peer transactions', desc: 'Transact directly without intermediaries or trusted third parties' },
-                { title: 'Support DePIN growth', desc: 'Participate in decentralized physical infrastructure networks' },
-                { title: 'Verify independently', desc: 'Validate transactions and data integrity on your own terms' }
+                { title: 'Support decentralized infrastructure', desc: 'Contribute to DePIN growth by hosting resilient, censorship-resistant infrastructure' },
+                { title: 'Enable peer-to-peer applications', desc: 'Power direct transactions and messaging without intermediaries or trusted third parties' },
+                { title: 'Strengthen network resilience', desc: 'Every additional node increases Minima\'s resistance to attacks and single points of failure' },
+                { title: 'Verify independently', desc: 'Validate transactions and data integrity on your own terms, with full control' }
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3 relative">
                   <span className="text-blue-400 mt-1">✓</span>
@@ -321,7 +345,6 @@ export default function NodesPage() {
               ))}
             </ul>
           </div>
-          {/* Use Cases link moved outside container - matches site-wide pattern */}
           <p className="text-gray-500 text-xs mt-2">
             Source:{' '}
             <ExternalLink 
@@ -384,13 +407,11 @@ export default function NodesPage() {
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Expert Guide</span>
           </h2>
           
-          {/* Expert card with subtle pulsing border animation (defined in globals.css) */}
           <div className="relative bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-purple-500/30 rounded-2xl p-6 
                           transition-transform duration-300 hover:border-purple-400/60 hover:shadow-2xl hover:shadow-purple-500/20 
                           group overflow-hidden hover:-translate-y-1 expert-card-glow">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
-            {/* Attribution badge: left on mobile, right on desktop */}
             <div className="absolute top-4 left-4 sm:left-auto sm:right-4">
               <span className="text-xs text-purple-300 font-medium flex items-center gap-1">
                 <span className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" />
@@ -398,7 +419,6 @@ export default function NodesPage() {
               </span>
             </div>
             
-            {/* Content wrapper with balanced padding below absolute badge */}
             <div className="pt-6">
               <h3 className="text-white font-medium mb-2 relative">Alternative Setup Guide</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
@@ -406,7 +426,6 @@ export default function NodesPage() {
                 from Minima Global architect. Includes ready-to-use commands and troubleshooting.
               </p>
               
-              {/* Links section - Downloads first, then Guide */}
               <div className="space-y-2">
                 <ExternalLink 
                   href="https://spartacusrex.com/downloads.html" 
