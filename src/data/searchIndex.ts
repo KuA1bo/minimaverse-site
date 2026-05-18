@@ -22,7 +22,7 @@ export const searchIndex: SearchItem[] = [
   { title: "Timeline", url: "/timeline", description: "Key milestones and protocol roadmap", tags: ["timeline", "roadmap", "history", "milestones", "dates", "events"] },
   { title: "Protocol Deep Dive", url: "/protocol", description: "Technical overview of consensus and architecture", tags: ["protocol", "architecture", "consensus", "technical", "deep dive", "specs"] },
   { title: "Open Questions", url: "/open-questions", description: "FAQs and community discussions", tags: ["faq", "questions", "help", "support", "troubleshooting", "answers"] },
-  { title: "External Links", url: "/links", description: "Important community resources and socials", tags: ["links", "community", "social", "resources", "external", "channels"] },
+  { title: "Useful Links", url: "/links", description: "Verified channels, resources, and community links", tags: ["links", "resources", "channels", "contacts", "social", "documentation", "directory"] },
 
   // === /: Home Sections ===
   { title: "Minimaverse Hero", url: "/#hero", description: "Independent knowledge base entry point", tags: ["hero", "start", "landing", "understand minima", "set up node", "explore ecosystem"] },
@@ -126,6 +126,16 @@ export const searchIndex: SearchItem[] = [
   { title: "Ask a Question on Discord", url: "/open-questions#ask", description: "Official #stage-question channel for community AMAs", tags: ["discord", "ask question", "stage-question", "ama", "community support", "official channel"] },
   { title: "Additional Resources", url: "/open-questions#resources", description: "Links to docs, Telegram, and Minima blog", tags: ["resources", "docs", "telegram", "blog", "official links", "announcements"] },
 
+  // === /links: Resource Directory (Updated) ===
+  { title: "Project Feedback", url: "/links#feedback", description: "GitHub issues for this documentation project", tags: ["feedback", "github", "issues", "bug report", "suggestions", "community", "minimaverse-site"] },
+  { title: "Official Communication Channels", url: "/links#channels", description: "Discord and Telegram for Minima Protocol discussion", tags: ["discord", "telegram", "community", "chat", "support", "official channels", "minimaglobal"] },
+  { title: "Market Data & Audits", url: "/links#market", description: "CoinMarketCap, CoinGecko, CertiK, Hacken audit links", tags: ["market data", "price", "coinmarketcap", "coingecko", "certik", "hacken", "audit", "security", "transparency"] },
+  { title: "Official Email Contacts", url: "/links#contacts", description: "enterprise@, info@, querysupport@ minima.global", tags: ["email", "contact", "enterprise", "info", "support", "minima.global", "business inquiries", "technical support"] },
+  { title: "Official Resources", url: "/links#resources", description: "Website, GitHub, Twitter, LinkedIn, YouTube, Newsletter, Merch", tags: ["resources", "official", "website", "github", "social", "newsletter", "merch", "minima.global"] },
+  { title: "Minima AG on Republic Europe", url: "/links#resources", description: "Current crowdfunding page for Minima AG on Republic Europe platform", tags: ["republic", "crowdfunding", "minima ag", "investment", "series a", "europe", "fundraising"] },
+  { title: "Regional Community Channels", url: "/links#regional", description: "Telegram communities: Russian, Spanish, Turkish, Vietnamese, Chinese", tags: ["regional", "telegram", "russian", "spanish", "turkish", "vietnamese", "chinese", "community", "localization"] },
+  { title: "Response Time", url: "/links#response-time", description: "GitHub issues reviewed within 7 days, urgent matters via Discord/Telegram", tags: ["response time", "support", "github", "discord", "telegram", "urgent", "sla"] },
+
   // === Technical Keywords (fuzzy matching boost) ===
   { title: "PoW Consensus", url: "/about#consensus", description: "Transaction-based Proof of Work security model", tags: ["pow", "proof of work", "consensus", "tx-pow", "mining", "security", "validation"] },
   { title: "Complete Node", url: "/about", description: "Every participant stores, verifies, constructs blockchain", tags: ["complete node", "full node", "equal", "participation", "decentralization", "no light clients"] },
@@ -133,10 +143,4 @@ export const searchIndex: SearchItem[] = [
   { title: "MiniDapp", url: "/developers", description: "Lightweight decentralized application on Minima", tags: ["minidapp", "mini dapp", "dapp", "application", "lightweight", "smart contract"] },
   { title: "Maxima Layer 2", url: "/about#architecture", description: "P2P backbone for Lightning and sidechains", tags: ["maxima", "layer 2", "l2", "lightning", "sidechain", "p2p", "scaling"] },
   { title: "Pulse Protocol", url: "/about#architecture", description: "10-minute node health verification with PoW", tags: ["pulse", "protocol", "health", "verification", "10 minutes", "ping", "mempool"] },
-
-  // === /links: Official Email Contacts ===
-  { title: "Minima Enterprise Email", url: "/links#contacts", description: "Partnerships and business inquiries contact", tags: ["enterprise@minima.global", "partnerships", "business", "email", "contact", "enterprise inquiries"] },
-  { title: "Minima Info Email", url: "/links#contacts", description: "General questions and public inquiries", tags: ["info@minima.global", "general", "info", "email", "contact", "public inquiries", "questions"] },
-  { title: "Minima Technical Support Email", url: "/links#contacts", description: "Protocol issues and developer assistance", tags: ["querysupport@minima.global", "support", "technical", "developer", "help", "email", "contact", "protocol issues"] },
-  { title: "Minima Email Contacts", url: "/links#contacts", description: "All official Minima email addresses for contact", tags: ["email", "contacts", "minima.global", "support", "enterprise", "info", "querysupport", "reach out"] },
 ];
