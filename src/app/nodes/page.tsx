@@ -189,28 +189,29 @@ export default function NodesPage() {
       </div>
 
       {/* Quick Start CTA - New block for onboarding conversion */}
+      {/* Mobile-only visual fix: centered text and full-width buttons with hover scale effect */}
       <div className="relative bg-blue-900/20 border border-blue-700/40 rounded-2xl p-4 sm:p-6 mb-8 
                       transition-all duration-300 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 
                       opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
         
         <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-          <div>
+          <div className="text-center sm:text-left">
             <h3 className="text-white font-medium mb-1">New to Minima?</h3>
             <p className="text-gray-400 text-sm">Start with the easiest setup options for beginners.</p>
           </div>
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-col sm:flex-row gap-2 justify-center sm:justify-start">
             <ExternalLink 
               href="https://docs.minima.global/docs/run-a-node/android" 
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-colors"
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
               📱 Android Setup
             </ExternalLink>
             <ExternalLink 
               href="https://docs.minima.global/docs/run-a-node/linux-vps-docker" 
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium rounded-lg transition-colors"
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
-              🐳 Docker Setup
+              🚢 Docker Setup
             </ExternalLink>
           </div>
         </div>
