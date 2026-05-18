@@ -1,6 +1,6 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
-// Updated: Improved Secrets Vaults description for better parity with Trackium, date May 18, 2026
+// Updated: Fixed link layout (responsive row/column), fixed arrow alignment, date May 18, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -568,24 +568,24 @@ export default function EcosystemPage() {
               
               <h3 className="text-white font-medium mb-2 relative">Secrets Vaults (LTA Labs)</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                Secure storage and recovery application built around Minima infrastructure.
+                Secure storage and recovery application built on Minima infrastructure.
               </p>
               <p className="text-gray-500 text-xs relative">
                 Status: <StatusBadge status="in-development" reducedGlow={true} /> • Partner project (LTA Labs × Minima)
               </p>
             </div>
             
-            {/* Links outside card - main site first */}
-            <div className="space-y-2">
+            {/* Links outside card - Responsive: Column on mobile, Row on desktop */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-2 mt-2">
               <ExternalLink 
                 href="https://secretsvault.xyz" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
               >
                 🌐 secretsvault.xyz
               </ExternalLink>
               <ExternalLink 
                 href="https://minima.global/post/lta-labs-partners-with-minima-to-power-its-financial-product-suite" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
               >
                 📰 Official Announcement
               </ExternalLink>
@@ -617,17 +617,17 @@ export default function EcosystemPage() {
               </p>
             </div>
             
-            {/* Links outside card - main site first */}
-            <div className="space-y-2">
+            {/* Links outside card - Responsive: Column on mobile, Row on desktop */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-2 mt-2">
               <ExternalLink 
                 href="https://trackium.tech/" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
               >
                 🌐 trackium.tech
               </ExternalLink>
               <ExternalLink 
                 href="https://trackium.tech/technology" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
               >
                 📚 Technology & Specs
               </ExternalLink>
