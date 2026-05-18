@@ -188,8 +188,7 @@ export default function NodesPage() {
         </div>
       </div>
 
-      {/* Quick Start CTA - New block for onboarding conversion */}
-      {/* Mobile-only visual fix: centered text and full-width buttons with hover scale effect */}
+      {/* Quick Start CTA - Mobile optimized with official Docker whale mascot */}
       <div className="relative bg-blue-900/20 border border-blue-700/40 rounded-2xl p-4 sm:p-6 mb-8 
                       transition-all duration-300 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 
                       opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
@@ -211,7 +210,7 @@ export default function NodesPage() {
               href="https://docs.minima.global/docs/run-a-node/linux-vps-docker" 
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
-              🚢 Docker Setup
+              🐳 Docker Setup
             </ExternalLink>
           </div>
         </div>
