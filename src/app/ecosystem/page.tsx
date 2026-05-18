@@ -1,6 +1,6 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
-// Updated: Fixed hover lift effect on Edge Deployments and Wallets cards, partnership emphasis, section anchors, date May 17, 2026
+// Updated: Fixed link order (main site first), added Trackium project, date May 18, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -553,7 +553,7 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Security & Privacy - NEW SECTION: Secrets Vaults (LTA Labs) - PARTNERSHIP EMPHASIS & FIXED STRUCTURE */}
+        {/* Security & Privacy */}
         <section id="security" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔐</span>
@@ -575,19 +575,61 @@ export default function EcosystemPage() {
               </p>
             </div>
             
-            {/* Links outside card - fully clickable */}
+            {/* Links outside card - FIXED ORDER: main site first */}
             <div className="space-y-2">
+              <ExternalLink 
+                href="https://secretsvault.xyz" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
+              >
+                🌐 secretsvault.xyz
+              </ExternalLink>
               <ExternalLink 
                 href="https://minima.global/post/lta-labs-partners-with-minima-to-power-its-financial-product-suite" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
               >
                 📰 Official Announcement
               </ExternalLink>
+            </div>
+          </div>
+        </section>
+
+        {/* Logistics & Tracking - NEW SECTION: Trackium project */}
+        <section id="logistics" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">📦</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Logistics & Tracking</span>
+          </h2>
+          
+          <div className="space-y-2">
+            {/* Card - Trackium */}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              
+              <h3 className="text-white font-medium mb-2 relative">Trackium</h3>
+              <p className="text-gray-300 text-sm mb-3 relative">
+                Decentralized tracking & security infrastructure for physical assets. 
+                Combines hardware (LTE/GPS/solar) with Minima node for cryptographically verifiable, 
+                user-owned location data — no central servers.
+              </p>
+              <p className="text-gray-500 text-xs relative">
+                Status: <StatusBadge status="in-development" reducedGlow={true} /> | Community project (Edge Pioneers)
+              </p>
+            </div>
+            
+            {/* Links outside card - main site first */}
+            <div className="space-y-2">
               <ExternalLink 
-                href="https://secretsvault.xyz" 
+                href="https://trackium.tech/" 
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
               >
-                🌐 secretsvault.xyz
+                🌐 trackium.tech
+              </ExternalLink>
+              <ExternalLink 
+                href="https://trackium.tech/technology" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block ml-1"
+              >
+                📚 Technology & Specs
               </ExternalLink>
             </div>
           </div>
@@ -631,11 +673,11 @@ export default function EcosystemPage() {
           </div>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 16, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 18, 2026 */}
         <section className="border-t border-gray-700/40 pt-4 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 17, 2026
+            Last updated: May 18, 2026
           </p>
         </section>
 

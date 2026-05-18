@@ -1,6 +1,6 @@
 // src/data/searchIndex.ts
 // Search index for client-side fuzzy search with maximum keyword coverage
-// Updated: Added Secrets Vaults (LTA Labs) entry for ecosystem security section
+// Updated: Added Trackium entry for Logistics & Tracking section in ecosystem
 
 export interface SearchItem {
   title: string;
@@ -92,6 +92,14 @@ export const searchIndex: SearchItem[] = [
     url: "/ecosystem#security", 
     description: "Wallet backup and sensitive data protection. Official partnership announced Feb 2024.", 
     tags: ["secrets vaults", "lta labs", "wallet backup", "security", "privacy", "partnership", "minima", "in-development", "data protection"] 
+  },
+
+  // === /ecosystem: Logistics & Tracking ===
+  { 
+    title: "Trackium", 
+    url: "/ecosystem#logistics", 
+    description: "Decentralized asset tracking with Minima: hardware + blockchain for verifiable logistics", 
+    tags: ["trackium", "asset tracking", "logistics", "iot", "hardware", "gps", "lte", "anti-theft", "fleet monitoring", "decentralized tracking", "minima node", "edge computing", "supply chain", "cargo security", "physical assets", "raspberry pi", "solar charging", "tamper detection", "minidapp", "edge pioneers"] 
   },
 
   // === /partners: ALL Partnerships (reverse chronological) ===
