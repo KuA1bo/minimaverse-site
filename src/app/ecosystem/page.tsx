@@ -1,6 +1,6 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
-// Updated: Fixed link order (main site first), added Trackium project, date May 18, 2026
+// Updated: Improved Secrets Vaults description for better parity with Trackium, date May 18, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -568,14 +568,14 @@ export default function EcosystemPage() {
               
               <h3 className="text-white font-medium mb-2 relative">Secrets Vaults (LTA Labs)</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                Wallet backup and sensitive data protection. Announced partnership with Minima (Feb 2024).
+                Secure storage and recovery application built around Minima infrastructure.
               </p>
               <p className="text-gray-500 text-xs relative">
                 Status: <StatusBadge status="in-development" reducedGlow={true} /> • Partner project (LTA Labs × Minima)
               </p>
             </div>
             
-            {/* Links outside card - FIXED ORDER: main site first */}
+            {/* Links outside card - main site first */}
             <div className="space-y-2">
               <ExternalLink 
                 href="https://secretsvault.xyz" 
