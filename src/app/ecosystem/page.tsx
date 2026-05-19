@@ -1,6 +1,7 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
 // Updated: Fixed link layout (responsive row/column), fixed arrow alignment, date May 18, 2026
+// Polished: minimal structural cleanup, status legend added to Primary Sources [19.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -143,7 +144,7 @@ export default function EcosystemPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - UPDATED: Links sorted by length (short → long) */}
+      {/* Primary Sources Box - UPDATED: Links sorted by length (short → long) + status legend */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -203,6 +204,16 @@ export default function EcosystemPage() {
               <span className="text-gray-500 text-xs md:text-sm">Official GitHub</span>
             </li>
           </ul>
+          
+          {/* Status legend - stacked on mobile, single line on tablet/desktop */}
+          <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
+            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
+              <span className="block sm:inline">Status indicators:</span>
+              <span className="text-green-300">• confirmed</span>
+              <span className="text-yellow-300">• in-development</span>
+              <span className="text-gray-300">• community-maintained</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -220,17 +231,6 @@ export default function EcosystemPage() {
               with the Minima Protocol. Inclusion does not constitute endorsement — all entries are 
               publicly verifiable and community-contributed.
             </p>
-            {/* Status legend: vertical on mobile, horizontal on desktop */}
-            <div className="mt-4 pt-3 border-t border-gray-700/40">
-              <p className="text-gray-400 text-xs mb-2">Status legend:</p>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <StatusBadge status="confirmed" reducedGlow={true} />
-                <span className="text-gray-500 hidden sm:inline">|</span>
-                <StatusBadge status="in-development" reducedGlow={true} />
-                <span className="text-gray-500 hidden sm:inline">|</span>
-                <StatusBadge status="community" reducedGlow={true} />
-              </div>
-            </div>
           </div>
         </section>
 
@@ -673,11 +673,11 @@ export default function EcosystemPage() {
           </div>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 18, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 19, 2026 */}
         <section className="border-t border-gray-700/40 pt-4 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 18, 2026
+            Last updated: May 19, 2026
           </p>
         </section>
 
