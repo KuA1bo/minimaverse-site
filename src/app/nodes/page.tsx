@@ -2,6 +2,8 @@
 // Nodes page - verified guides for running Minima nodes
 // Updated: SEO-optimized H1, quick-start CTA, E-E-A-T safe claims, unified nav style, date May 18, 2026
 // Polished: minimal structural cleanup, status legend in Primary Sources, remove duplicate, neutralize marketing [19.05.2026]
+// Micro-fixes: removed DePIN marketing framing, simplified throughput language [19.05.2026]
+// Final: Mega Node description tightened for technical precision [19.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -247,8 +249,7 @@ export default function NodesPage() {
               node, contributing to the network's decentralization and security.
             </p>
             <p className="text-gray-300 leading-relaxed mt-4 relative">
-              Public reports from Minima indicate over 100,000 node installations globally, 
-              making it one of the largest decentralized networks in the DePIN space.
+              Public reports from Minima indicate over 100,000 node installations globally.
             </p>
           </div>
         </section>
@@ -329,7 +330,7 @@ export default function NodesPage() {
             
             <ul className="space-y-3">
               {[
-                { title: 'Support decentralized infrastructure', desc: 'Contribute to DePIN growth by hosting reliable, secure infrastructure' },
+                { title: 'Support decentralized infrastructure', desc: 'Contribute to decentralized infrastructure by hosting reliable, secure nodes' },
                 { title: 'Enable peer-to-peer applications', desc: 'Power direct transactions and messaging without intermediaries or trusted third parties' },
                 { title: 'Support network reliability', desc: 'Every additional node increases Minima\'s resistance to attacks and single points of failure' },
                 { title: 'Verify independently', desc: 'Validate transactions and data integrity on your own terms, with independent verification' }
@@ -456,7 +457,7 @@ export default function NodesPage() {
           <div className="space-y-4">
             {[
               { id: 'archive-node', title: 'Archive Node', text: 'Full historical blockchain data storage for archival purposes and complete transaction history verification.', link: { href: 'https://docs.minima.global/docs/run-a-node/archive-node', text: '→ Setup Guide' } },
-              { id: 'mega-node', title: 'Mega Node', text: 'High-performance node configuration for maximum network contribution and enhanced throughput capabilities.', link: { href: 'https://docs.minima.global/docs/run-a-node/mega-node', text: '→ Setup Guide' } },
+              { id: 'mega-node', title: 'Mega Node', text: 'High-performance node configuration designed for increased throughput.', link: { href: 'https://docs.minima.global/docs/run-a-node/mega-node', text: '→ Setup Guide' } },
               { id: 'meg', title: 'Minima E-Gateway (MEG)', text: 'Enterprise-grade gateway for integrating Minima with external systems and legacy infrastructure.', links: [
                 { href: 'https://docs.minima.global/docs/run-a-node/meg-about', text: '→ Documentation' },
                 { href: 'https://docs.minima.global/docs/run-a-node/meg-setup', text: '→ Configuration Guide' }
