@@ -1,7 +1,7 @@
 // src/app/news/page.tsx
 // News page - latest updates and announcements about Minima Protocol
 // Updated: H1 specificity, intro paragraph, badge text set to "Active Campaign" (compromise styling)
-// Polished: minimal structural cleanup, status legend in Primary Sources, neutralize marketing [19.05.2026]
+// Polished: minimal structural cleanup, status legend in Primary Sources, neutralize marketing, added "About This Page" card, neutralized promotional language in news excerpts, micro-fixes: superlative claims, link spacing, archival phrasing, and final result-wording removal [19.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -112,12 +112,13 @@ export default function NewsPage() {
                 Minima Ecosystem News & Updates
               </span>
             </h1>
-            <p className="text-gray-400 text-sm sm:text-base">Latest announcements and development progress</p>
+            {/* Neutralized subtitle - removed vague "development progress" */}
+            <p className="text-gray-400 text-sm sm:text-base">Announcements, infrastructure updates, and ecosystem developments</p>
             
-            {/* Added intro paragraph: clarifies page intent */}
+            {/* Updated intro paragraph: refined to strict archival phrasing */}
             <p className="text-gray-400 text-sm sm:text-base mt-2 leading-relaxed">
-              Independent archive of major Minima Protocol announcements, ecosystem developments, 
-              infrastructure milestones, and public updates.
+              Independent archive of Minima Protocol announcements, infrastructure updates, 
+              ecosystem developments, and public milestones.
             </p>
             
             {/* Gradient accent line under subtitle */}
@@ -204,6 +205,27 @@ export default function NewsPage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
+        {/* 📋 About This Page - NEW CARD */}
+        <section id="about" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">📋</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
+              About This Page
+            </span>
+          </h2>
+          
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            
+            <p className="text-gray-300 leading-relaxed relative">
+              This page serves as an independent, curated archive of Minima Protocol announcements, 
+              ecosystem developments, and infrastructure milestones. All entries link to publicly 
+              verifiable sources and are presented in a neutral format for informational purposes.
+            </p>
+          </div>
+        </section>
+
         {/* Latest Updates */}
         <section id="latest-updates" className="mb-10 opacity-0 animate-fade-in-up delay-75 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
@@ -215,32 +237,38 @@ export default function NewsPage() {
             {[
               {
                 date: 'March 30, 2026',
-                title: 'Crowdfunding on Republic Europe: Invest in Minima AG',
-                text: "Minima is crowdfunding — giving long-term supporters and the public the opportunity to invest in Minima AG ahead of our planned Series A later this year. Minima exists to power a world where machines and AI don't just think: they transact, cooperate, and prove what is true. As autonomy accelerates, verification must exist at the edge, inside connected devices themselves. Minima is building the verification layer for connected devices, using a highly compact blockchain protocol that can run directly on devices, at the silicon layer. The round has exceeded its initial target; additional participation is available for a limited time.",
-                link: { href: 'https://europe.republic.com/minima', text: '→ Register to Gain Access on Republic Europe' },
+                // Neutralized title - removed promotional framing
+                title: 'Minima AG Crowdfunding Campaign on Republic Europe',
+                // Neutralized text - factual summary without marketing language
+                text: "Minima AG launched a crowdfunding campaign on Republic Europe ahead of a planned Series A round later in 2026. The campaign materials describe Minima's focus on embedded blockchain verification for connected devices and autonomous systems. The round exceeded its initial target at the time of announcement.",
+                link: { href: 'https://europe.republic.com/minima', text: '→ View Campaign Details on Republic Europe' },
                 status: 'confirmed' as const,
                 featured: true // Visual priority styling
               },
               {
                 date: 'March 24, 2026',
-                title: "Blockchain Doesn't Belong in the Cloud",
-                text: "Arm's Semiconductor Education Alliance explores running a full Minima node on embedded hardware. A real protocol on real chips—no cloud dependency, just machines proving their actions independently at the edge.",
+                // Neutralized title - removed marketing headline
+                title: 'Arm Semiconductor Education Alliance Explores Embedded Minima Node Deployment',
+                // Neutralized text - removed promotional phrasing
+                text: "Arm's Semiconductor Education Alliance explores running a full Minima node on embedded hardware. The article discusses running Minima nodes directly on embedded hardware environments.",
                 link: { href: 'https://minima.global/post/blockchain-doesnt-belong-in-the-cloud', text: '→ Read Full Article' },
                 status: 'confirmed' as const
               },
               {
                 date: 'March 10, 2026',
                 title: 'Siemens Highlights the Emergence of Blockchain-on-Chip',
-                text: 'Siemens Cre8Ventures highlights Blockchain-on-Chip technology, exploring how embedded verification enables autonomous industrial systems. Features the world\'s first drone flight with a blockchain black box, moving the technology to TRL 6.',
+                // Neutralized: replaced promotional/process wording with archival reference
+                text: 'Siemens Cre8Ventures highlights Blockchain-on-Chip technology, exploring how embedded verification enables autonomous industrial systems. The article references a drone flight demonstration involving TRL 6 testing.',
                 link: { href: 'https://minima.global/post/siemens', text: '→ Read Full Article' },
                 status: 'confirmed' as const
               },
               {
                 date: 'March 5, 2026',
-                title: 'Blockchain Blackbox: How Autonomous Machines Can Prove Their Actions',
-                text: 'Discover how the Blockchain-on-Chip "black box" enables autonomous drones, vehicles, and machines to record verifiable data. Learn how this TRL 6 technology ensures verification, accountability, and safety across land, sea, air, and space.',
+                title: 'Blockchain Blackbox: Verification Systems for Autonomous Devices',
+                // Neutralized text: removed result-wording, replaced with factual testing reference
+                text: 'Article describing Blockchain-on-Chip verification systems for autonomous devices and drones. The technology reached TRL 6 testing for autonomous system verification scenarios.',
                 link: { href: 'https://minima.global/post/blockchain-blackbox', text: '→ Read Full Article' },
-                video: { href: 'https://www.youtube.com/watch?v=QOCPWTWAMXI', text: '▶️ Watch: The Future of Autonomous Verification: Blockchain-on-Chip' },
+                video: { href: 'https://www.youtube.com/watch?v=QOCPWTWAMXI', text: '▶️ Video: Autonomous Verification Technology Overview' },
                 status: 'confirmed' as const
               },
               {
@@ -253,7 +281,8 @@ export default function NewsPage() {
               {
                 date: 'November 2025',
                 title: 'DePIN Integration Progress',
-                text: 'Multiple DePIN projects have successfully integrated Minima Protocol for decentralized device coordination and micropayments.',
+                // Neutralized: removed subjective "successfully" wording
+                text: 'Multiple DePIN projects integrated Minima Protocol for decentralized device coordination and micropayments.',
                 link: { href: 'https://minima.global/blog', text: '→ Learn More' },
                 status: 'confirmed' as const
               },
@@ -294,6 +323,7 @@ export default function NewsPage() {
                     {item.text}
                   </p>
                   
+                  {/* Links container - improved spacing between article and video links */}
                   <div className="space-y-2">
                     <ExternalLink 
                       href={item.link.href} 
@@ -306,12 +336,16 @@ export default function NewsPage() {
                       {item.link.text}
                     </ExternalLink>
                     {item.video && (
-                      <ExternalLink 
-                        href={item.video.href} 
-                        className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
-                      >
-                        {item.video.text}
-                      </ExternalLink>
+                      <>
+                        {/* Visual separator for desktop, hidden on mobile */}
+                        <div className="hidden sm:block h-px bg-gray-700/40 my-1" />
+                        <ExternalLink 
+                          href={item.video.href} 
+                          className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
+                        >
+                          {item.video.text}
+                        </ExternalLink>
+                      </>
                     )}
                   </div>
                   
