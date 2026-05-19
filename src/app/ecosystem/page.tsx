@@ -1,7 +1,7 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
 // Updated: Fixed link layout (responsive row/column), fixed arrow alignment, date May 18, 2026
-// Polished: minimal structural cleanup, status legend added to Primary Sources [19.05.2026]
+// Polished: minimal structural cleanup, status legend added to Primary Sources, added About This Page heading [19.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -220,8 +220,13 @@ export default function EcosystemPage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Intro */}
+        {/* Intro - ADDED "About This Page" heading */}
         <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">📋</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
+          </h2>
+          
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
