@@ -1,6 +1,6 @@
 // src/app/page.tsx
 // Home page - Minimaverse independent information hub
-// Updated: Added section anchors for search and navigation, updated timestamp
+// Updated: Added section anchors for search and navigation, updated timestamp, neutralized About This Site phrasing, micro-fixes: hero tags and quick links labels [19.05.2026]
 
 import Link from 'next/link';
 
@@ -148,9 +148,9 @@ export default function HomePage() {
               Verified documentation, node guides, and ecosystem resources — no hype, no noise.
             </p>
             
-            {/* Micro-subheading: concise action-oriented tags */}
+            {/* Micro-subheading: concise action-oriented tags - neutralized "Understand" → "Learn about" */}
             <p className="text-gray-400/65 text-xs mt-2 flex flex-wrap gap-x-3 gap-y-1">
-              <span>Understand Minima.</span>
+              <span>Learn about Minima.</span>
               <span className="hidden sm:inline">•</span>
               <span>Set up your own node.</span>
               <span className="hidden sm:inline">•</span>
@@ -253,14 +253,13 @@ export default function HomePage() {
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             
             <p className="text-gray-300 text-sm mb-3 leading-relaxed">
-              <strong className="text-white">Minimaverse</strong> is an independent, community-driven information hub 
+              <strong className="text-white">Minimaverse</strong> is an independent, curated information hub 
               dedicated to the Minima Protocol. This site provides verified technical information, 
               documentation links, and ecosystem resources for developers, researchers, and 
               institutional observers.
             </p>
             <p className="text-gray-300 text-sm leading-relaxed">
-              We focus on factual, hype-free content with clear sourcing and transparent status 
-              indicators for all information.
+              We provide factual content with clear sourcing and status indicators.
             </p>
             
             {/* Status badges: vertical on mobile, horizontal on desktop */}
@@ -319,7 +318,8 @@ export default function HomePage() {
                 title: 'Protocol Information',
                 icon: '📖',
                 links: [
-                  { href: '/links', text: 'Links' },
+                  // Updated: "Links" → "Resources" for more accurate archival terminology
+                  { href: '/links', text: 'Resources' },
                   { href: '/ecosystem', text: 'Ecosystem' },
                   { href: '/about', text: 'What is Minima' },
                   { href: '/open-questions', text: 'Open Questions' },
