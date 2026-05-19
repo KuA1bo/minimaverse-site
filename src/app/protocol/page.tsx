@@ -1,6 +1,7 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
 // Updated: Unified nav style per /about, correct links per final map, restored detailed specs, section anchors, JsonLd
+// Polished: minimal structural cleanup, marketing terms neutralized, responsive status legend [19.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -38,7 +39,7 @@ const ExternalLink = ({
   </a>
 );
 
-// StatusBadge component for feature status indicators (used sparingly on protocol page)
+// StatusBadge component for feature status indicators
 const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'community' }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: 'shadow-green-500/50' },
@@ -142,7 +143,7 @@ export default function ProtocolPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - enhanced */}
+      {/* Primary Sources Box - minimal: only status legend */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -187,13 +188,23 @@ export default function ProtocolPage() {
               <span className="text-gray-500 text-xs md:text-sm">full protocol specification</span>
             </li>
           </ul>
+          
+          {/* Status legend - stacked on mobile, single line on tablet/desktop */}
+          <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
+            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
+              <span className="block sm:inline">Status indicators:</span>
+              <span className="text-green-300">• confirmed</span>
+              <span className="text-yellow-300">• in-development</span>
+              <span className="text-gray-300">• community-maintained</span>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Section 1: Edge Consensus - broken into 2 paragraphs + callout */}
+        {/* Section 1: Edge Consensus */}
         <section id="edge-consensus" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🌐</span>
@@ -207,11 +218,11 @@ export default function ProtocolPage() {
             <p className="text-gray-300 leading-relaxed">
               Minima implements <strong>edge consensus</strong>, where block production and validation 
               are carried out by every device connected to the network. Unlike traditional blockchains 
-              that rely on specialized miners or validators, Minima enables universal participation: 
+              that rely on specialized miners or validators, Minima supports universal participation: 
               smartphones, Raspberry Pi, and IoT devices all contribute to network security on equal terms.
             </p>
             
-            {/* Key innovation callout - separated for better readability */}
+            {/* Key innovation callout */}
             <div className="mt-4 p-4 bg-blue-900/20 border border-blue-700/40 rounded-xl">
               <p className="text-blue-200 text-sm">
                 <strong className="text-white">Key innovation:</strong> Through collaborative Tx-PoW, the complete blockchain 
@@ -284,7 +295,6 @@ export default function ProtocolPage() {
                 Minima&apos;s Cascading Chain structure efficiently manages blockchain growth through Superblocks. This approach keeps the chain compact and scalable without sacrificing security, enabling fast synchronization even on resource-constrained devices.
               </p>
             </div>
-            {/* Link below Cascading Chain card */}
             <p className="text-sm text-gray-500 mt-2">
               <ExternalLink 
                 href="https://docs.minima.global/docs/learn/the-blockchain#the-cascading-chain" 
@@ -360,7 +370,7 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {/* Section 5: Technical Specifications - restored to detailed descriptions */}
+        {/* Section 5: Technical Specifications */}
         <section id="specs" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚙️</span>
@@ -447,7 +457,7 @@ export default function ProtocolPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 16, 2026
+            Last updated: May 19, 2026
           </p>
         </section>
 
