@@ -1,6 +1,7 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
 // Updated: Section anchors for search, header nav corrected, tone adjusted for consistency
+// Polished: minimal structural cleanup, status legend added to Primary Sources [19.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -194,6 +195,16 @@ export default function AboutPage() {
               <span className="text-gray-500 text-xs md:text-sm">full protocol specification</span>
             </li>
           </ul>
+          
+          {/* Status legend - stacked on mobile, single line on tablet/desktop */}
+          <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
+            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
+              <span className="block sm:inline">Status indicators:</span>
+              <span className="text-green-300">• confirmed</span>
+              <span className="text-yellow-300">• in-development</span>
+              <span className="text-gray-300">• community-maintained</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -539,11 +550,11 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {/* Last Updated */}
+        {/* Last Updated - UPDATED DATE */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 13, 2026
+            Last updated: May 19, 2026
           </p>
         </section>
 
