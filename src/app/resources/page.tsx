@@ -1,7 +1,7 @@
-// src/app/links/page.tsx
-// Useful Links page - verified channels and resources for Minima Protocol
+// src/app/resources/page.tsx
+// Resources & Channels page - verified channels and resources for Minima Protocol
 // Updated: Removed "Active" badge from crowdfunding card for cleaner neutral tone, date May 18, 2026
-// Polished: minimal structural cleanup, status legend in Primary Sources [19.05.2026]
+// Polished: minimal structural cleanup, status legend in Primary Sources, renamed page title to "Resources & Channels" [19.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -65,7 +65,7 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
-  "name": "Minima Protocol Useful Links & Resources",
+  "name": "Minima Protocol Resources & Channels",
   "description": "Verified channels, documentation, market data, and community resources for Minima Protocol.",
   "url": "https://minimaverse.com/links",
   "isPartOf": {
@@ -112,7 +112,7 @@ export default function LinksPage() {
             
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-                Useful Links
+                Resources & Channels
               </span>
             </h1>
             <p className="text-gray-400">Verified channels, resources, and community links</p>
