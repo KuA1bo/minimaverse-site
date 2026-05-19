@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 // Root layout for Minimaverse - Next.js App Router
-// Updated: Optimized search container spacing for tablets (tighter) vs desktop (relaxed)
+// Updated: Optimized search container spacing for tablets (tighter) vs desktop (relaxed), footer label consistency [19.05.2026]
 
 import './globals.css';
 import Link from 'next/link';
@@ -192,7 +192,7 @@ export default function RootLayout({
                 </h4>
                 <div className="flex flex-wrap justify-center md:justify-start gap-1.5 sm:gap-2">
                   <Link href="/links" className="group text-[11px] sm:text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
-                    <span className="transform group-hover:translate-x-1 transition-transform">→</span> Links
+                    <span className="transform group-hover:translate-x-1 transition-transform">→</span> Resources
                   </Link>
                   <Link href="/open-questions" className="group text-[11px] sm:text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
                     <span className="transform group-hover:translate-x-1 transition-transform">→</span> Open Questions
