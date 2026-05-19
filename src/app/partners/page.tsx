@@ -1,6 +1,7 @@
 // src/app/partners/page.tsx
 // Partners page - verified confirmed partnerships in the Minima ecosystem
 // Updated: Unified nav style per /about, correct PageNavLinks, section anchors, date May 16, 2026
+// Polished: minimal structural cleanup, status legend in Primary Sources, remove duplicate, neutralize marketing [19.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -142,7 +143,7 @@ export default function PartnersPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - matches /developers desktop style */}
+      {/* Primary Sources Box - UPDATED: added status legend */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -187,13 +188,23 @@ export default function PartnersPage() {
               <span className="text-gray-500 text-xs md:text-sm">Official GitHub</span>
             </li>
           </ul>
+          
+          {/* Status legend - stacked on mobile, single line on tablet/desktop */}
+          <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
+            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
+              <span className="block sm:inline">Status indicators:</span>
+              <span className="text-green-300">• confirmed</span>
+              <span className="text-yellow-300">• in-development</span>
+              <span className="text-gray-300">• community-maintained</span>
+            </div>
+          </div>
         </div>
       </div>
 
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Intro */}
+        {/* Intro - REMOVED duplicate status legend block */}
         <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
@@ -204,22 +215,10 @@ export default function PartnersPage() {
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             
-            {/* SEO-optimized intro text with target keywords */}
+            {/* SEO-optimized intro text with target keywords - marketing neutralized */}
             <p className="text-gray-300 leading-relaxed relative">
               Minima partnerships include collaborations across mobility, IoT, payments, and decentralized infrastructure. This page provides a verified list of Minima ecosystem partners with official sources and timelines.
             </p>
-            
-            {/* Status legend - vertical on mobile with divider */}
-            <div className="mt-4 pt-3 border-t border-gray-700/40">
-              <p className="text-gray-400 text-xs mb-2">Status legend:</p>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <StatusBadge status="confirmed" reducedGlow={true} />
-                <span className="text-gray-500 hidden sm:inline">|</span>
-                <StatusBadge status="in-development" reducedGlow={true} />
-                <span className="text-gray-500 hidden sm:inline">|</span>
-                <StatusBadge status="community" reducedGlow={true} />
-              </div>
-            </div>
           </div>
         </section>
 
@@ -232,19 +231,19 @@ export default function PartnersPage() {
           
           <div className="space-y-4">
             {[
-              { date: 'March 25, 2025', title: 'Minima and Zeekr', text: 'Developing an on-demand EV charging solution enabling secure access to private charging stations to solve accessibility challenges.', source: 'https://minima.global/post/minima-x-zeekr' },
+              { date: 'March 25, 2025', title: 'Minima and Zeekr', text: 'Developing an on-demand EV charging solution enabling secure access to private charging stations to address accessibility challenges.', source: 'https://minima.global/post/minima-x-zeekr' },
               { date: 'March 3, 2025', title: 'SchoolTry', text: 'Launching Minima blockchain curriculum in April 2025 to reach 2 million Nigerian students.', source: 'https://minima.global/post/schooltry_partners_with_minima' },
               { date: 'December 3, 2024', title: 'Arm Flexible Access Program', text: 'Minima applied to participate in Arm\'s program to advance development of the Minima chip.', source: 'https://minima.global/post/arm-and-minima' },
-              { date: 'November 27, 2024', title: 'Trust Exchange', text: 'Partnership to pioneer decentralized real-world asset (RWA) verification with blockchain-based data attestation.', source: 'https://minima.global/post/trust-exchange-and-minima' },
-              { date: 'October 17, 2024', title: 'CPIN', text: 'Strategic partnership to secure renewable energy data using Minima\'s infrastructure.', source: 'https://minima.global/post/minima-global-announces-strategic-partnership-with-cpin-to-secure-renewable-energy-data' },
-              { date: 'July 24, 2024', title: 'Mercury Global', text: 'Pilot project to create a decentralized alternative to SWIFT for global payment networks using Minima protocol.', source: 'https://minima.global/post/minima-partners-with-mercury-global-to-pilot-decentralised-swift-alternative-to-reshape-global-payment-networks' },
-              { date: 'July 9, 2024', title: 'Sfero', text: 'Partnership to revolutionize retail payment systems using Minima infrastructure.', source: 'https://minima.global/post/minima-partners-with-sfero-to-revolutionize-retail-payments' },
+              { date: 'November 27, 2024', title: 'Trust Exchange', text: 'Partnership to develop decentralized real-world asset (RWA) verification with blockchain-based data attestation.', source: 'https://minima.global/post/trust-exchange-and-minima' },
+              { date: 'October 17, 2024', title: 'CPIN', text: 'Strategic partnership to support secure renewable energy data using Minima\'s infrastructure.', source: 'https://minima.global/post/minima-global-announces-strategic-partnership-with-cpin-to-secure-renewable-energy-data' },
+              { date: 'July 24, 2024', title: 'Mercury Global', text: 'Pilot project to develop a decentralized alternative to SWIFT for global payment networks using Minima protocol.', source: 'https://minima.global/post/minima-partners-with-mercury-global-to-pilot-decentralised-swift-alternative-to-reshape-global-payment-networks' },
+              { date: 'July 9, 2024', title: 'Sfero', text: 'Partnership to develop retail payment systems using Minima infrastructure.', source: 'https://minima.global/post/minima-partners-with-sfero-to-revolutionize-retail-payments' },
               { date: 'June 12, 2024', title: 'McLaren GT4', text: 'Minima powers world\'s first blockchain-based race data recorder for McLaren GT4 supercar at Spa.', source: 'https://minima.global/post/minima-l1-blockchain-powers-the-worlds-first-on-chain-race-data-logger-for-mclaren-gt4-supercar-at-spa' },
               { date: 'April 30, 2024', title: 'OPP (Online Payment Platform)', text: 'Bringing private EV charging stations worldwide to the $7.3B electric vehicle market through tokenized access.', source: 'https://minima.global/post/minima-partners-with-opp-online-payment-platform-to-commodify-private-charging-points-worldwide-in-7-3b-ev-market' },
-              { date: 'March 27, 2024', title: 'ABB SynerLeap', text: 'Collaboration with ABB\'s innovation hub to drive advancements in energy and industrial IoT.', source: 'https://minima.global/post/minima-partners-with-abb-innovation-hub-synerleap-to-drive-innovation-in-energy-industrial-iot' },
+              { date: 'March 27, 2024', title: 'ABB SynerLeap', text: 'Collaboration with ABB\'s innovation hub to support advancements in energy and industrial IoT.', source: 'https://minima.global/post/minima-partners-with-abb-innovation-hub-synerleap-to-drive-innovation-in-energy-industrial-iot' },
               { date: 'March 19, 2024', title: 'Gaia-X', text: 'Minima joins Gaia-X initiative for European data infrastructure sovereignty.', source: 'https://minima.global/post/minima-thrilled-to-announce-it-is-a-member-of-gaia-x' },
-              { date: 'March 11, 2024', title: 'Streamr', text: 'Partnership to pioneer secure real-time data streaming solutions on Minima infrastructure.', source: 'https://minima.global/post/minima-partners-with-streamr-to-pioneer-secure-live-data-streaming' },
-              { date: 'February 19, 2024', title: 'Wicrypt', text: 'DePIN-focused partnership with Wicrypt Wi-Fi network to democratize internet access globally.', source: 'https://minima.global/post/minima-a-depin-focused-layer1-blockchain-is-joining-forces-with-wi-fi-network-wicrypt-to-democratise-internet-access' },
+              { date: 'March 11, 2024', title: 'Streamr', text: 'Partnership to support secure real-time data streaming solutions on Minima infrastructure.', source: 'https://minima.global/post/minima-partners-with-streamr-to-pioneer-secure-live-data-streaming' },
+              { date: 'February 19, 2024', title: 'Wicrypt', text: 'DePIN-focused partnership with Wicrypt Wi-Fi network to expand internet access globally.', source: 'https://minima.global/post/minima-a-depin-focused-layer1-blockchain-is-joining-forces-with-wi-fi-network-wicrypt-to-democratise-internet-access' },
               { date: 'February 14, 2024', title: 'LTA Labs', text: 'Collaboration to develop a range of financial products leveraging Minima infrastructure.', source: 'https://minima.global/post/lta-labs-partners-with-minima-to-power-its-financial-product-suite' },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 border-l-4 border-l-blue-500
@@ -317,11 +316,11 @@ export default function PartnersPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 16, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 19, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 17, 2026
+            Last updated: May 19, 2026
           </p>
         </section>
 
