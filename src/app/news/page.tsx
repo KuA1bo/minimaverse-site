@@ -1,6 +1,7 @@
 // src/app/news/page.tsx
 // News page - latest updates and announcements about Minima Protocol
 // Updated: H1 specificity, intro paragraph, badge text set to "Active Campaign" (compromise styling)
+// Polished: minimal structural cleanup, status legend in Primary Sources, neutralize marketing [19.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -142,7 +143,7 @@ export default function NewsPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box */}
+      {/* Primary Sources Box - UPDATED: added status legend */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -187,6 +188,16 @@ export default function NewsPage() {
               <span className="text-gray-500 text-xs md:text-sm">Official Discord</span>
             </li>
           </ul>
+          
+          {/* Status legend - stacked on mobile, single line on tablet/desktop */}
+          <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
+            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
+              <span className="block sm:inline">Status indicators:</span>
+              <span className="text-green-300">• confirmed</span>
+              <span className="text-yellow-300">• in-development</span>
+              <span className="text-gray-300">• community-maintained</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -205,7 +216,7 @@ export default function NewsPage() {
               {
                 date: 'March 30, 2026',
                 title: 'Crowdfunding on Republic Europe: Invest in Minima AG',
-                text: "Minima is crowdfunding — giving long-term supporters and the public the opportunity to invest in Minima AG ahead of our planned Series A later this year. Minima exists to power a world where machines and AI don't just think: they transact, cooperate, and prove what is true. As autonomy accelerates, trust must exist at the edge, inside the machines themselves. Minima is building the trust layer for autonomous machines, using a radically compact blockchain protocol that can run directly on devices, at the silicon layer. The round has exceeded its initial target; over-subscription is open for a limited time.",
+                text: "Minima is crowdfunding — giving long-term supporters and the public the opportunity to invest in Minima AG ahead of our planned Series A later this year. Minima exists to power a world where machines and AI don't just think: they transact, cooperate, and prove what is true. As autonomy accelerates, verification must exist at the edge, inside connected devices themselves. Minima is building the verification layer for connected devices, using a highly compact blockchain protocol that can run directly on devices, at the silicon layer. The round has exceeded its initial target; additional participation is available for a limited time.",
                 link: { href: 'https://europe.republic.com/minima', text: '→ Register to Gain Access on Republic Europe' },
                 status: 'confirmed' as const,
                 featured: true // Visual priority styling
@@ -220,16 +231,16 @@ export default function NewsPage() {
               {
                 date: 'March 10, 2026',
                 title: 'Siemens Highlights the Emergence of Blockchain-on-Chip',
-                text: 'Siemens Cre8Ventures highlights Blockchain-on-Chip technology, exploring how embedded trust enables autonomous industrial systems. Features the world\'s first drone flight with a blockchain black box, moving the technology to TRL 6.',
+                text: 'Siemens Cre8Ventures highlights Blockchain-on-Chip technology, exploring how embedded verification enables autonomous industrial systems. Features the world\'s first drone flight with a blockchain black box, moving the technology to TRL 6.',
                 link: { href: 'https://minima.global/post/siemens', text: '→ Read Full Article' },
                 status: 'confirmed' as const
               },
               {
                 date: 'March 5, 2026',
                 title: 'Blockchain Blackbox: How Autonomous Machines Can Prove Their Actions',
-                text: 'Discover how the Blockchain-on-Chip "black box" enables autonomous drones, vehicles, and machines to record verifiable data. Learn how this TRL 6 technology ensures trust, accountability, and safety across land, sea, air, and space.',
+                text: 'Discover how the Blockchain-on-Chip "black box" enables autonomous drones, vehicles, and machines to record verifiable data. Learn how this TRL 6 technology ensures verification, accountability, and safety across land, sea, air, and space.',
                 link: { href: 'https://minima.global/post/blockchain-blackbox', text: '→ Read Full Article' },
-                video: { href: 'https://www.youtube.com/watch?v=QOCPWTWAMXI', text: '▶️ Watch: The Future of Autonomous Trust: Blockchain-on-Chip' },
+                video: { href: 'https://www.youtube.com/watch?v=QOCPWTWAMXI', text: '▶️ Watch: The Future of Autonomous Verification: Blockchain-on-Chip' },
                 status: 'confirmed' as const
               },
               {
@@ -427,11 +438,11 @@ export default function NewsPage() {
           </p>
         </div>
 
-        {/* Last Updated */}
+        {/* Last Updated - UPDATED DATE to May 19, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 13, 2026
+            Last updated: May 19, 2026
           </p>
         </section>
 
