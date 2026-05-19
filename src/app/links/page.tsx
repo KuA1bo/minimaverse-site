@@ -1,6 +1,7 @@
 // src/app/links/page.tsx
 // Useful Links page - verified channels and resources for Minima Protocol
 // Updated: Removed "Active" badge from crowdfunding card for cleaner neutral tone, date May 18, 2026
+// Polished: minimal structural cleanup, status legend in Primary Sources [19.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -139,7 +140,7 @@ export default function LinksPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box */}
+      {/* Primary Sources Box - UPDATED: added status legend */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -184,6 +185,16 @@ export default function LinksPage() {
               <span className="text-gray-500 text-xs md:text-sm">Official GitHub</span>
             </li>
           </ul>
+          
+          {/* Status legend - stacked on mobile, single line on tablet/desktop */}
+          <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
+            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
+              <span className="block sm:inline">Status indicators:</span>
+              <span className="text-green-300">• confirmed</span>
+              <span className="text-yellow-300">• in-development</span>
+              <span className="text-gray-300">• community-maintained</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -471,11 +482,11 @@ export default function LinksPage() {
           </p>
         </div>
 
-        {/* Last Updated */}
+        {/* Last Updated - UPDATED DATE */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 18, 2026
+            Last updated: May 19, 2026
           </p>
         </section>
 
