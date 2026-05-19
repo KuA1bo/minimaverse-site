@@ -7,7 +7,6 @@ import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
 // ExternalLink component for all external links with arrow icon
-// Updated: Added optional id prop for anchor linking
 const ExternalLink = ({ 
   href, 
   children, 
@@ -85,24 +84,17 @@ export default function PartnersPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       
-      {/* Structured data for SEO - CollectionPage schema */}
       <JsonLd data={structuredData} />
 
-      {/* Unified Header with gradient accent */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         
         <div className="relative flex justify-between items-start">
-          {/* Header text block */}
           <div className="relative inline-block w-full pb-3">
-            <Link 
-              href="/" 
-              className="text-gray-400 hover:text-white transition-colors inline-block mb-4 group"
-            >
+            <Link href="/" className="text-gray-400 hover:text-white transition-colors inline-block mb-4 group">
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
             
-            {/* Internal navigation - unified style per /about: text-sm, gap-1.5, gray-400/600, hover purple */}
             <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
               <Link href="/ecosystem" className="text-gray-400 hover:text-purple-400 transition-colors">Ecosystem</Link>
               <span className="text-gray-600">•</span>
@@ -111,30 +103,20 @@ export default function PartnersPage() {
               <Link href="/nodes" className="text-gray-400 hover:text-purple-400 transition-colors">Nodes</Link>
             </div>
             
-            {/* Updated H1 title for better SEO intent match */}
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Minima Ecosystem Partnerships
               </span>
             </h1>
-            {/* Updated subtitle for clarity and keyword coverage */}
             <p className="text-gray-400">Verified list of collaborations and integrations</p>
-            {/* Gradient accent line under subtitle */}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
           
-          {/* GitHub icon - Desktop only (hidden on mobile), unified with homepage */}
           <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
-            {/* Glow */}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
-            <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site" 
-              className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
-              ariaLabel="View source on GitHub"
-              hideArrow={true}
-            >
+            <ExternalLink href="https://github.com/KuA1bo/minimaverse-site" className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10" ariaLabel="View source on GitHub" hideArrow={true}>
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
               </svg>
@@ -143,10 +125,7 @@ export default function PartnersPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - UPDATED: added status legend */}
-      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
-                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
-                      opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
+      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
         
         <div className="relative">
@@ -156,40 +135,24 @@ export default function PartnersPage() {
           <ul className="space-y-3 text-sm">
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://minima.global/blog" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
-              >
-                minima.global/blog
-              </ExternalLink>
+              <ExternalLink href="https://minima.global/blog" className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm">minima.global/blog</ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Official Blog</span>
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://docs.minima.global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
-              >
-                docs.minima.global
-              </ExternalLink>
+              <ExternalLink href="https://docs.minima.global" className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm">docs.minima.global</ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Documentation</span>
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://github.com/minima-global" 
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
-              >
-                github.com/minima-global
-              </ExternalLink>
+              <ExternalLink href="https://github.com/minima-global" className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm">github.com/minima-global</ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Official GitHub</span>
             </li>
           </ul>
           
-          {/* Status legend - stacked on mobile, single line on tablet/desktop */}
           <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
               <span className="block sm:inline">Status indicators:</span>
@@ -201,28 +164,23 @@ export default function PartnersPage() {
         </div>
       </div>
 
-      {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Intro - REMOVED duplicate status legend block */}
         <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
           </h2>
           
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             
-            {/* SEO-optimized intro text with target keywords - marketing neutralized */}
             <p className="text-gray-300 leading-relaxed relative">
               Minima partnerships include collaborations across mobility, IoT, payments, and decentralized infrastructure. This page provides a verified list of Minima ecosystem partners with official sources and timelines.
             </p>
           </div>
         </section>
 
-        {/* Confirmed Partnerships Timeline - Anchor: #verified */}
         <section id="verified" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📅</span>
@@ -235,10 +193,10 @@ export default function PartnersPage() {
               { date: 'March 3, 2025', title: 'SchoolTry', text: 'Launching Minima blockchain curriculum in April 2025 to reach 2 million Nigerian students.', source: 'https://minima.global/post/schooltry_partners_with_minima' },
               { date: 'December 3, 2024', title: 'Arm Flexible Access Program', text: 'Minima applied to participate in Arm\'s program to advance development of the Minima chip.', source: 'https://minima.global/post/arm-and-minima' },
               { date: 'November 27, 2024', title: 'Trust Exchange', text: 'Partnership to develop decentralized real-world asset (RWA) verification with blockchain-based data attestation.', source: 'https://minima.global/post/trust-exchange-and-minima' },
-              { date: 'October 17, 2024', title: 'CPIN', text: 'Strategic partnership to support secure renewable energy data using Minima\'s infrastructure.', source: 'https://minima.global/post/minima-global-announces-strategic-partnership-with-cpin-to-secure-renewable-energy-data' },
+              { date: 'October 17, 2024', title: 'CPIN', text: 'Partnership to support secure renewable energy data using Minima\'s infrastructure.', source: 'https://minima.global/post/minima-global-announces-strategic-partnership-with-cpin-to-secure-renewable-energy-data' },
               { date: 'July 24, 2024', title: 'Mercury Global', text: 'Pilot project to develop a decentralized alternative to SWIFT for global payment networks using Minima protocol.', source: 'https://minima.global/post/minima-partners-with-mercury-global-to-pilot-decentralised-swift-alternative-to-reshape-global-payment-networks' },
               { date: 'July 9, 2024', title: 'Sfero', text: 'Partnership to develop retail payment systems using Minima infrastructure.', source: 'https://minima.global/post/minima-partners-with-sfero-to-revolutionize-retail-payments' },
-              { date: 'June 12, 2024', title: 'McLaren GT4', text: 'Minima powers world\'s first blockchain-based race data recorder for McLaren GT4 supercar at Spa.', source: 'https://minima.global/post/minima-l1-blockchain-powers-the-worlds-first-on-chain-race-data-logger-for-mclaren-gt4-supercar-at-spa' },
+              { date: 'June 12, 2024', title: 'McLaren GT4', text: 'Minima supports blockchain-based race data recorder for McLaren GT4 supercar at Spa.', source: 'https://minima.global/post/minima-l1-blockchain-powers-the-worlds-first-on-chain-race-data-logger-for-mclaren-gt4-supercar-at-spa' },
               { date: 'April 30, 2024', title: 'OPP (Online Payment Platform)', text: 'Bringing private EV charging stations worldwide to the $7.3B electric vehicle market through tokenized access.', source: 'https://minima.global/post/minima-partners-with-opp-online-payment-platform-to-commodify-private-charging-points-worldwide-in-7-3b-ev-market' },
               { date: 'March 27, 2024', title: 'ABB SynerLeap', text: 'Collaboration with ABB\'s innovation hub to support advancements in energy and industrial IoT.', source: 'https://minima.global/post/minima-partners-with-abb-innovation-hub-synerleap-to-drive-innovation-in-energy-industrial-iot' },
               { date: 'March 19, 2024', title: 'Gaia-X', text: 'Minima joins Gaia-X initiative for European data infrastructure sovereignty.', source: 'https://minima.global/post/minima-thrilled-to-announce-it-is-a-member-of-gaia-x' },
@@ -246,8 +204,7 @@ export default function PartnersPage() {
               { date: 'February 19, 2024', title: 'Wicrypt', text: 'DePIN-focused partnership with Wicrypt Wi-Fi network to expand internet access globally.', source: 'https://minima.global/post/minima-a-depin-focused-layer1-blockchain-is-joining-forces-with-wi-fi-network-wicrypt-to-democratise-internet-access' },
               { date: 'February 14, 2024', title: 'LTA Labs', text: 'Collaboration to develop a range of financial products leveraging Minima infrastructure.', source: 'https://minima.global/post/lta-labs-partners-with-minima-to-power-its-financial-product-suite' },
             ].map((item, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 border-l-4 border-l-blue-500
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 border-l-4 border-l-blue-500 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
                 <div className="flex justify-between items-start mb-2 relative">
@@ -258,27 +215,20 @@ export default function PartnersPage() {
                 <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
                 <p className="text-gray-500 text-xs relative">
                   Source:{' '}
-                  <ExternalLink 
-                    href={item.source} 
-                    className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-                  >
-                    Official Announcement
-                  </ExternalLink>
+                  <ExternalLink href={item.source} className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300">Official Announcement</ExternalLink>
                 </p>
               </div>
             ))}
           </div>
         </section>
 
-        {/* Inclusion Criteria - Anchor: #integrate */}
         <section id="integrate" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">✅</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Inclusion Criteria</span>
           </h2>
           
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
             <ul className="space-y-2">
@@ -298,10 +248,7 @@ export default function PartnersPage() {
           </div>
         </section>
 
-        {/* Universal Disclaimer Block */}
-        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 
-                        transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
-                        opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
+        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
             <strong className="flex items-center gap-2 mb-2">
@@ -310,13 +257,10 @@ export default function PartnersPage() {
             </strong>
             This site does not represent the official Minima team. 
             All information is compiled from publicly available sources.{' '}
-            <Link href="/disclaimer" className="underline hover:text-amber-100 decoration-amber-500/50 hover:decoration-amber-400 underline-offset-4 transition-all duration-300">
-              Learn more
-            </Link>
+            <Link href="/disclaimer" className="underline hover:text-amber-100 decoration-amber-500/50 hover:decoration-amber-400 underline-offset-4 transition-all duration-300">Learn more</Link>
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 19, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
