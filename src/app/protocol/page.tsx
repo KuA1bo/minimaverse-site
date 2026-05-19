@@ -1,7 +1,7 @@
 // src/app/protocol/page.tsx
 // Protocol page - technical overview of Minima Protocol architecture
 // Updated: Unified nav style per /about, correct links per final map, restored detailed specs, section anchors, JsonLd
-// Polished: minimal structural cleanup, marketing terms neutralized, responsive status legend [19.05.2026]
+// Polished: minimal structural cleanup, marketing terms neutralized, responsive status legend, added "About This Page" card, neutralized subjective wording, micro-fix: Tx-PoW security phrasing & storage terminology [19.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -204,6 +204,28 @@ export default function ProtocolPage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
+        {/* 📋 About This Page - NEW CARD */}
+        <section id="about" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">📋</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
+              About This Page
+            </span>
+          </h2>
+          
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+            
+            <p className="text-gray-300 leading-relaxed relative">
+              This page provides a technical overview of the Minima Protocol architecture, 
+              including edge consensus, Tx-PoW mechanics, data structures, and protocol layers. 
+              All information is compiled from publicly available documentation and whitepapers, 
+              presented in a neutral, developer-focused format for educational purposes.
+            </p>
+          </div>
+        </section>
+
         {/* Section 1: Edge Consensus */}
         <section id="edge-consensus" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
@@ -219,13 +241,13 @@ export default function ProtocolPage() {
               Minima implements <strong>edge consensus</strong>, where block production and validation 
               are carried out by every device connected to the network. Unlike traditional blockchains 
               that rely on specialized miners or validators, Minima supports universal participation: 
-              smartphones, Raspberry Pi, and IoT devices all contribute to network security on equal terms.
+              smartphones, Raspberry Pi, and IoT devices are intended to participate in network validation without specialized hardware requirements.
             </p>
             
-            {/* Key innovation callout */}
+            {/* Design characteristic callout - neutralized from "Key innovation" */}
             <div className="mt-4 p-4 bg-blue-900/20 border border-blue-700/40 rounded-xl">
               <p className="text-blue-200 text-sm">
-                <strong className="text-white">Key innovation:</strong> Through collaborative Tx-PoW, the complete blockchain 
+                <strong className="text-white">Architectural characteristic:</strong> Through collaborative Tx-PoW, the complete blockchain 
                 state remains compact (~300 MB RAM), allowing any device to store and verify the entire 
                 chain history independently.
               </p>
@@ -252,11 +274,11 @@ export default function ProtocolPage() {
             {[
               {
                 title: 'How Tx-PoW Works',
-                text: 'Each transaction in Minima performs a small amount of Proof of Work (~10 seconds average work per device). When a Tx-PoW value meets the network difficulty threshold (~1 block every 50 seconds), that transaction also mines a block. Blocks store only transaction hashes (~10 KB per block), keeping the chain lightweight.',
+                text: 'Each transaction in Minima performs a small amount of Proof of Work (~10 seconds average work per device). When a Tx-PoW value meets the network difficulty threshold (~1 block every 50 seconds), that transaction also mines a block. Blocks store only transaction hashes (~10 KB per block), reducing on-chain storage requirements.',
               },
               {
                 title: 'Security Through Collaboration',
-                text: 'Minima nodes collaborate rather than compete. The total network security equals the sum of all individual Tx-PoW contributions. More transactions = more secure network. This cooperative approach significantly reduces energy consumption compared to competitive mining systems.',
+                text: 'Minima nodes collaborate rather than compete. The total network security equals the sum of all individual Tx-PoW contributions. Increased Tx-PoW participation contributes to aggregate network security. This cooperative approach reduces competitive mining overhead associated with proof-of-work race conditions.',
               },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
@@ -304,13 +326,13 @@ export default function ProtocolPage() {
               </ExternalLink>
             </p>
 
-            {/* Card 2: MMR UTXO */}
+            {/* Card 2: MMR UTXO - neutralized subjective wording */}
             <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">Merkle Mountain Range (MMR) UTXO</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                Minima utilizes a Merkle Mountain Range database to store only the UTXOs relevant to each node&apos;s private keys. This &quot;storage-less&quot; approach allows each node to operate with just ~300 MB RAM, making Minima highly resource-efficient.
+                Minima utilizes a Merkle Mountain Range database to store only the UTXOs relevant to each node&apos;s private keys. This &quot;storage-less&quot; approach allows each node to operate with just ~300 MB RAM, reducing hardware requirements for node operation.
               </p>
             </div>
             
@@ -408,7 +430,7 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {/* Section 6: Network Participation */}
+        {/* Section 6: Network Participation - neutralized slogan */}
         <section id="participation" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👥</span>
@@ -429,8 +451,7 @@ export default function ProtocolPage() {
               <li>Synchronization with the latest chain state</li>
             </ul>
             <p className="text-gray-300 text-sm mt-3 relative">
-              <strong className="text-white">Note:</strong> There are no miners, no token incentives for validation, 
-              and no ever-growing database. Every user runs a Complete node. Forever.
+              <strong className="text-white">Note:</strong> The protocol design aims to allow all users to operate complete validating nodes without reliance on specialized validator classes.
             </p>
           </div>
         </section>
