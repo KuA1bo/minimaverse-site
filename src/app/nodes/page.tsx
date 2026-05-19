@@ -1,6 +1,7 @@
 // src/app/nodes/page.tsx
 // Nodes page - verified guides for running Minima nodes
 // Updated: SEO-optimized H1, quick-start CTA, E-E-A-T safe claims, unified nav style, date May 18, 2026
+// Polished: minimal structural cleanup, status legend in Primary Sources, remove duplicate, neutralize marketing [19.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -140,7 +141,7 @@ export default function NodesPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box */}
+      {/* Primary Sources Box - UPDATED: added status legend */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -185,6 +186,16 @@ export default function NodesPage() {
               <span className="text-gray-500 text-xs md:text-sm">Latest Builds</span>
             </li>
           </ul>
+          
+          {/* Status legend - stacked on mobile, single line on tablet/desktop */}
+          <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
+            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
+              <span className="block sm:inline">Status indicators:</span>
+              <span className="text-green-300">• confirmed</span>
+              <span className="text-yellow-300">• in-development</span>
+              <span className="text-gray-300">• community-maintained</span>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -219,7 +230,7 @@ export default function NodesPage() {
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Intro */}
+        {/* Intro - REMOVED duplicate status legend block */}
         <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
@@ -231,7 +242,7 @@ export default function NodesPage() {
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             
             <p className="text-gray-300 leading-relaxed relative">
-              Running a Minima node is straightforward and can be done on various platforms including 
+              Running a Minima node is a standard process and can be done on various platforms including 
               desktop computers, mobile devices, Raspberry Pi, and cloud servers. Each node is a full 
               node, contributing to the network's decentralization and security.
             </p>
@@ -239,18 +250,6 @@ export default function NodesPage() {
               Public reports from Minima indicate over 100,000 node installations globally, 
               making it one of the largest decentralized networks in the DePIN space.
             </p>
-            
-            {/* Status legend */}
-            <div className="mt-4 pt-3 border-t border-gray-700/40">
-              <p className="text-gray-400 text-xs mb-2">Status legend:</p>
-              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
-                <StatusBadge status="confirmed" reducedGlow={true} />
-                <span className="text-gray-500 hidden sm:inline">|</span>
-                <StatusBadge status="in-development" reducedGlow={true} />
-                <span className="text-gray-500 hidden sm:inline">|</span>
-                <StatusBadge status="community" reducedGlow={true} />
-              </div>
-            </div>
           </div>
         </section>
 
@@ -317,7 +316,7 @@ export default function NodesPage() {
           </p>
         </section>
 
-        {/* Why Run a Node - Enhanced with practical intent */}
+        {/* Why Run a Node - Enhanced with practical intent, marketing neutralized */}
         <section id="why-run" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🎯</span>
@@ -330,10 +329,10 @@ export default function NodesPage() {
             
             <ul className="space-y-3">
               {[
-                { title: 'Support decentralized infrastructure', desc: 'Contribute to DePIN growth by hosting resilient, censorship-resistant infrastructure' },
+                { title: 'Support decentralized infrastructure', desc: 'Contribute to DePIN growth by hosting reliable, secure infrastructure' },
                 { title: 'Enable peer-to-peer applications', desc: 'Power direct transactions and messaging without intermediaries or trusted third parties' },
-                { title: 'Strengthen network resilience', desc: 'Every additional node increases Minima\'s resistance to attacks and single points of failure' },
-                { title: 'Verify independently', desc: 'Validate transactions and data integrity on your own terms, with full control' }
+                { title: 'Support network reliability', desc: 'Every additional node increases Minima\'s resistance to attacks and single points of failure' },
+                { title: 'Verify independently', desc: 'Validate transactions and data integrity on your own terms, with independent verification' }
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3 relative">
                   <span className="text-blue-400 mt-1">✓</span>
@@ -542,11 +541,11 @@ export default function NodesPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 18, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 19, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 18, 2026
+            Last updated: May 19, 2026
           </p>
         </section>
 
