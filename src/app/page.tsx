@@ -1,6 +1,6 @@
 // src/app/page.tsx
 // Home page - Minimaverse independent information hub
-// Updated: Added section anchors for search and navigation, updated timestamp, neutralized About This Site phrasing, micro-fixes: hero tags and quick links labels [19.05.2026]
+// Updated: Added section anchors for search and navigation, updated timestamp, neutralized About This Site phrasing, micro-fixes: hero tags and quick links labels [20.05.2026]
 
 import Link from 'next/link';
 
@@ -318,7 +318,6 @@ export default function HomePage() {
                 title: 'Protocol Information',
                 icon: '📖',
                 links: [
-                  // Updated: "Links" → "Resources" for more accurate archival terminology
                   { href: '/links', text: 'Resources' },
                   { href: '/ecosystem', text: 'Ecosystem' },
                   { href: '/about', text: 'What is Minima' },
@@ -331,8 +330,8 @@ export default function HomePage() {
                 icon: '⚙️',
                 links: [
                   { href: '/nodes', text: 'Run a Node' },
-                  { href: '/submit-project', text: 'Submit Project' },
                   { href: '/tools', text: 'Tools & Utilities' },
+                  { href: '/submit-project', text: 'Project Submission' },
                   { href: '/developers', text: 'Developer Resources' },
                 ]
               },
@@ -386,7 +385,7 @@ export default function HomePage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 19, 2026
+            Last updated: May 20, 2026
           </p>
         </section>
 
