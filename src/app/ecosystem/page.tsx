@@ -1,7 +1,7 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
 // Updated: Fixed link layout (responsive row/column), fixed arrow alignment, date May 18, 2026
-// Polished: minimal structural cleanup, status legend added to Primary Sources, added About This Page heading [19.05.2026]
+// Polished: minimal structural cleanup, status legend added to Primary Sources, added About This Page heading [20.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -614,7 +614,7 @@ export default function EcosystemPage() {
               <h3 className="text-white font-medium mb-2 relative">Trackium</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
                 Decentralized tracking & security infrastructure for physical assets. 
-                Combines hardware (LTE/GPS/solar) with Minima node for cryptographically verifiable, 
+                Combines LTE/GPS hardware with Minima node for cryptographically verifiable, 
                 user-owned location data — no central servers.
               </p>
               <p className="text-gray-500 text-xs relative">
@@ -678,11 +678,11 @@ export default function EcosystemPage() {
           </div>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 19, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 20, 2026 */}
         <section className="border-t border-gray-700/40 pt-4 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 19, 2026
+            Last updated: May 20, 2026
           </p>
         </section>
 
