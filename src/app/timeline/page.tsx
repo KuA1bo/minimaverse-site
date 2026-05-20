@@ -353,7 +353,7 @@ export default function TimelinePage() {
                         href={item.link.href} 
                         className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-xs"
                       >
-                        {item.link.text} →
+                        {item.link.text}
                       </ExternalLink>
                     </div>
                   </div>
