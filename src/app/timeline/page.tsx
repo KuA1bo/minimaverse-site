@@ -1,7 +1,7 @@
 // src/app/timeline/page.tsx
 // Timeline page - verified historical milestones of Minima Protocol
 // Updated: Stronger H1/subtitle, chronological dataset added, unified nav style, section anchors, JsonLd, date May 16, 2026
-// Polished: minimal structural cleanup, status legend in Primary Sources, remove duplicate [19.05.2026]
+// Polished: minimal structural cleanup, status legend in Primary Sources, mobile layout fix for timeline cards [20.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -346,7 +346,8 @@ export default function TimelinePage() {
                     <h3 className="text-white font-medium mb-2">{item.title}</h3>
                     <p className="text-gray-300 text-sm mb-3">{item.desc}</p>
                     
-                    <div className="flex items-center justify-between flex-wrap gap-2">
+                    {/* FIXED: Stack badge and link vertically on mobile, row on tablet+ */}
+                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                       <StatusBadge status={item.status} reducedGlow={true} />
                       <ExternalLink 
                         href={item.link.href} 
@@ -470,7 +471,7 @@ export default function TimelinePage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 19, 2026
+            Last updated: May 20, 2026
           </p>
         </section>
 
