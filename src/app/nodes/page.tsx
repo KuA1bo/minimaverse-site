@@ -4,6 +4,7 @@
 // Polished: minimal structural cleanup, status legend in Primary Sources, remove duplicate, neutralize marketing [19.05.2026]
 // Micro-fixes: removed DePIN marketing framing, simplified throughput language [19.05.2026]
 // Final: Mega Node description tightened for technical precision [19.05.2026]
+// Micro-fix: added MiniDapps button to Quick Start CTA [20.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -224,6 +225,12 @@ export default function NodesPage() {
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
               🐳 Docker Setup
+            </ExternalLink>
+            <ExternalLink 
+              href="https://minidapps.minima.global/" 
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto"
+            >
+              🧩 MiniDapps
             </ExternalLink>
           </div>
         </div>
@@ -542,11 +549,11 @@ export default function NodesPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 19, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 20, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 19, 2026
+            Last updated: May 20, 2026
           </p>
         </section>
 
