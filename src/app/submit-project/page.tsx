@@ -1,5 +1,6 @@
 // src/app/submit-project/page.tsx
 // Submission gateway page - neutral verification process for ecosystem projects
+// Updated: Changed CTA from Telegram to email, updated timestamp [21.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -149,13 +150,13 @@ export default function SubmitProjectPage() {
         {/* CTA */}
         <section className="mb-12 opacity-0 animate-fade-in-up delay-150">
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 text-center">
-            <h3 className="text-xl font-medium text-white mb-2">Ready to Submit?</h3>
-            <p className="text-gray-400 text-sm mb-4">Contact us via Telegram with your project details for review.</p>
+            <h3 className="text-xl font-medium text-white mb-2">Submit a Project or Update</h3>
+            <p className="text-gray-400 text-sm mb-4">We accept verified ecosystem submissions, corrections, and project updates via email.</p>
             <ExternalLink 
-              href="https://t.me/Minimaverse"
+              href="mailto:contact@minimaverse.com"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-purple-600/20 border border-purple-500/40 text-purple-300 hover:bg-purple-600/30 hover:border-purple-400/60 transition-all duration-300 hover:scale-[1.02]"
             >
-              Contact @Minimaverse on Telegram
+              contact@minimaverse.com
             </ExternalLink>
           </div>
         </section>
