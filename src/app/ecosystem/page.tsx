@@ -1,7 +1,6 @@
 // src/app/ecosystem/page.tsx
 // Ecosystem page - verified projects and integrations in the Minima ecosystem
-// Updated: Fixed link layout (responsive row/column), fixed arrow alignment, date May 18, 2026
-// Polished: minimal structural cleanup, status legend added to Primary Sources, added About This Page heading [20.05.2026]
+// Polished: minimal structural cleanup, status legend added to Primary Sources, added About This Page heading [21.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -107,7 +106,7 @@ export default function EcosystemPage() {
               hideArrow={true}
             >
               <svg className="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
+                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
               </svg>
             </ExternalLink>
           </div>
@@ -658,31 +657,40 @@ export default function EcosystemPage() {
           </p>
         </div>
 
-        {/* Ecosystem Listings CTA - FINAL INFRA-STYLE BLOCK */}
+        {/* Ecosystem Listings CTA - UPDATED: Stacked layout (2 lines), fixed hover overlap [21.05.2026] */}
         <div className="mt-16 mb-6 border-t border-gray-800 pt-8 opacity-0 animate-fade-in-up delay-150">
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-lg font-medium text-gray-200 mb-2">
               📨 Ecosystem Listings
             </h3>
             <p className="text-sm text-gray-400 mb-3">
-              Community projects may request inclusion in Minimaverse ecosystem pages.
+              Verified ecosystem projects, tools, and integrations may request inclusion in Minimaverse listings.
             </p>
-            <Link 
-              href="/submit-project"
-              className="group inline-flex items-center gap-1 text-purple-400 hover:text-gray-200 transition-all duration-300 hover:scale-[1.02] hover:ring-1 hover:ring-gray-500/30 rounded px-1.5 py-0.5"
-            >
-              Submit project for review
-              <span className="text-xs transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </Link>
-            <p className="text-xs text-gray-500 mt-3">Neutral listing • Verified facts • No hype</p>
+            <div className="flex flex-col items-center gap-1">
+              <Link 
+                href="/submit-project"
+                className="group inline-flex items-center gap-1 text-purple-400 hover:text-gray-200 transition-all duration-300 hover:scale-[1.01] hover:ring-1 hover:ring-gray-500/30 rounded px-1.5 py-0.5"
+              >
+                Submit project for review
+                <span className="text-xs transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </Link>
+              <ExternalLink 
+                href="mailto:contact@minimaverse.com"
+                className="text-xs text-gray-500 hover:text-purple-400 transition-colors"
+                hideArrow={true}
+              >
+                Primary contact: contact@minimaverse.com
+              </ExternalLink>
+            </div>
+            <p className="text-xs text-gray-500 mt-3">Neutral listings • Public sources • Manual review</p>
           </div>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 20, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 21, 2026 */}
         <section className="border-t border-gray-700/40 pt-4 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 20, 2026
+            Last updated: May 21, 2026
           </p>
         </section>
 
