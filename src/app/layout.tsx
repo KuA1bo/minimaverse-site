@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 // Root layout for Minimaverse - Next.js App Router
-// Updated: Optimized search container spacing for tablets (tighter) vs desktop (relaxed), footer label consistency [19.05.2026]
+// Updated: Increased RSS link contrast for accessibility, updated timestamp [22.05.2026]
 
 import './globals.css';
 import Link from 'next/link';
@@ -56,9 +56,12 @@ export const metadata: Metadata = {
   title: 'Minimaverse — Minima Ecosystem Hub',
   description: 'Unofficial, neutral information hub covering the Minima protocol, core components, development history, and publicly verifiable updates.',
   
-  // Canonical URL: tells search engines which version is the primary one
+  // Canonical URL + RSS feed for aggregators
   alternates: {
     canonical: 'https://minimaverse.com/',
+    types: {
+      'application/rss+xml': [{ url: '/rss.xml', title: 'Minimaverse Feed' }],
+    },
   },
   
   icons: {
@@ -237,7 +240,7 @@ export default function RootLayout({
             {/* Divider */}
             <div className="relative h-px bg-gray-700 mb-4 sm:mb-6" />
             
-            {/* Bottom Bar: Copyright, Toggle, GitHub */}
+            {/* Bottom Bar: Copyright, Toggle, GitHub, RSS */}
             <div className="flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 text-[11px] sm:text-sm text-gray-500">
               <p className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -256,6 +259,13 @@ export default function RootLayout({
                     <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-6.26 0-1.38.48-2.37 1.26-3.225-.255-.315-.54-1.02-.12-2.13 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.42 1.11.135 1.815-.12 2.13.78.855 1.26 1.845 1.26 3.225 0 4.935-2.805 5.955-5.475 6.255.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/>
                   </svg>
                 </ExternalLink>
+                <span className="text-gray-600 hidden sm:inline">•</span>
+                <Link href="/rss.xml" className="text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1" aria-label="RSS Feed">
+                  RSS
+                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 5c7.18 0 13 5.82 13 13M6 11a7 7 0 017 7m-6-3a2 2 0 110 4 2 2 0 010-4z" />
+                  </svg>
+                </Link>
               </p>
             </div>
             
