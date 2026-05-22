@@ -11,22 +11,23 @@ export async function GET() {
   });
 
   const pages = [
-    { title: 'Home', url: 'https://minimaverse.com', date: new Date() },
-    { title: 'Protocol', url: 'https://minimaverse.com/protocol', date: new Date() },
-    { title: 'Ecosystem', url: 'https://minimaverse.com/ecosystem', date: new Date() },
-    { title: 'Developers', url: 'https://minimaverse.com/developers', date: new Date() },
-    { title: 'Nodes', url: 'https://minimaverse.com/nodes', date: new Date() },
-    { title: 'Tools', url: 'https://minimaverse.com/tools', date: new Date() },
-    { title: 'Timeline', url: 'https://minimaverse.com/timeline', date: new Date() },
-    { title: 'News', url: 'https://minimaverse.com/news', date: new Date() },
-    { title: 'Submit Project', url: 'https://minimaverse.com/submit-project', date: new Date() },
+    { title: 'Home', url: 'https://minimaverse.com', desc: 'Minimaverse independent information hub' },
+    { title: 'Protocol', url: 'https://minimaverse.com/protocol', desc: 'How Minima Protocol works' },
+    { title: 'Ecosystem', url: 'https://minimaverse.com/ecosystem', desc: 'Verified projects in Minima ecosystem' },
+    { title: 'Developers', url: 'https://minimaverse.com/developers', desc: 'Resources for Minima developers' },
+    { title: 'Nodes', url: 'https://minimaverse.com/nodes', desc: 'Guides to run Minima nodes' },
+    { title: 'Tools', url: 'https://minimaverse.com/tools', desc: 'Utilities for Minima ecosystem' },
+    { title: 'Timeline', url: 'https://minimaverse.com/timeline', desc: 'Verified milestones of Minima' },
+    { title: 'News', url: 'https://minimaverse.com/news', desc: 'Latest updates about Minima' },
+    { title: 'Submit Project', url: 'https://minimaverse.com/submit-project', desc: 'Request listing for your project' },
   ];
 
   pages.forEach(page => {
     feed.item({
       title: page.title,
+      description: page.desc,
       url: page.url,
-      date: page.date,
+      date: new Date(),
     });
   });
 
