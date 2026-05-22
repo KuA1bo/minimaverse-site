@@ -1,3 +1,4 @@
+// NOTE: When adding a new page to the site, add it to the `pages` array below to include it in the RSS feed.
 import RSS from 'rss';
 import { NextResponse } from 'next/server';
 
