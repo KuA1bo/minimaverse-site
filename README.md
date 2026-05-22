@@ -37,7 +37,7 @@ We welcome contributions that align with our content principles. Please review o
 Building in the Minima ecosystem? Minimaverse accepts submissions for ecosystem listings.  
 Neutral, verified, no hype — just facts.
 
-📩 Contact: [@Minimaverse](https://t.me/Minimaverse) on Telegram
+📩 Contact: [contact@minimaverse.com](mailto:contact@minimaverse.com)
 
 ## 💙 Support Minimaverse (Optional)
 
@@ -46,7 +46,7 @@ Voluntary contributions cover domain and project maintenance. Non-refundable.
 - **MINIMA (Native):** `MxG081NYSWDGZMKSYCYBKW9TJRS3PCMFDV5NWKFKEQKQNPWBTYFYJ9CTVFU0BAR`
 - **USDT (TRC20):** `TF5NBncPz9d8BoRqK8EfAHhTzsapLDujv4`
 
-📩 Support & project inquiries: [@Minimaverse](https://t.me/Minimaverse) on Telegram
+📩 Support & project inquiries: [contact@minimaverse.com](mailto:contact@minimaverse.com)
 
 ## 📄 License
 
@@ -61,3 +61,5 @@ Live site: [https://minimaverse.com](https://minimaverse.com)
 - Next.js 14 (App Router)
 - Tailwind CSS
 - Deployed on Vercel
+
+<!-- Last updated: 21.05.2026 -->
