@@ -1,6 +1,6 @@
 // src/app/news/page.tsx
 // News page - latest updates and announcements about Minima Protocol
-// Updated: Added engineering update news item (DEX, Stablecoin Bridge), updated timestamp [24.05.2026]
+// Updated: Unified link text, structured status/note layout, updated timestamp [24.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -238,14 +238,14 @@ export default function NewsPage() {
                 date: 'May 24, 2026',
                 title: 'Engineering Update: DEX, Stablecoin Bridge, and Ecosystem Progress',
                 text: "The Minima ecosystem team published an engineering update covering progress across core products and infrastructure. Testing across the DEX, MiniMask, and Stablecoin Bridge has been completed, with all components moving into release preparation. The DEX (v1.0.1) introduces UI improvements, SIM bin restrictions for new users, a 5-minute timeout on trades and messages, and several bug fixes. The Stablecoin Bridge (v1.0) adds redesigned front-end support and enables USDT (ERC-20) bridging into Minima-native USDT, along with performance optimizations. Ongoing work continues across Integritas tooling and Minima Core development.\n\nSource: Official Minima Global Announcements (Telegram)\nhttps://t.me/MinimaGlobal/593",
-                link: { href: 'https://t.me/MinimaGlobal/593', text: '→ View on Telegram' },
+                link: { href: 'https://t.me/MinimaGlobal/593', text: '→ View Source' },
                 status: 'confirmed' as const
               },
               {
                 date: 'March 30, 2026',
                 title: 'Minima AG Crowdfunding Campaign on Republic Europe',
                 text: "Minima AG launched a crowdfunding campaign on Republic Europe ahead of a planned Series A round later in 2026. The campaign materials describe Minima's focus on embedded blockchain verification for connected devices and autonomous systems. The round exceeded its initial target at the time of announcement.",
-                link: { href: 'https://europe.republic.com/minima', text: '→ View Campaign Details on Republic Europe' },
+                link: { href: 'https://europe.republic.com/minima', text: '→ View Source' },
                 status: 'confirmed' as const,
                 featured: true
               },
@@ -253,21 +253,21 @@ export default function NewsPage() {
                 date: 'March 24, 2026',
                 title: 'Arm Semiconductor Education Alliance Explores Embedded Minima Node Deployment',
                 text: "Arm's Semiconductor Education Alliance explores running a full Minima node on embedded hardware. The article discusses running Minima nodes directly on embedded hardware environments.",
-                link: { href: 'https://minima.global/post/blockchain-doesnt-belong-in-the-cloud', text: '→ Read Full Article' },
+                link: { href: 'https://minima.global/post/blockchain-doesnt-belong-in-the-cloud', text: '→ View Source' },
                 status: 'confirmed' as const
               },
               {
                 date: 'March 10, 2026',
                 title: 'Siemens Highlights the Emergence of Blockchain-on-Chip',
                 text: 'Siemens Cre8Ventures highlights Blockchain-on-Chip technology, exploring how embedded verification enables autonomous industrial systems. The article references a drone flight demonstration involving TRL 6 testing.',
-                link: { href: 'https://minima.global/post/siemens', text: '→ Read Full Article' },
+                link: { href: 'https://minima.global/post/siemens', text: '→ View Source' },
                 status: 'confirmed' as const
               },
               {
                 date: 'March 5, 2026',
                 title: 'Blockchain Blackbox: Verification Systems for Autonomous Devices',
                 text: 'Article describing Blockchain-on-Chip verification systems for autonomous devices and drones. The technology reached TRL 6 testing for autonomous system verification scenarios.',
-                link: { href: 'https://minima.global/post/blockchain-blackbox', text: '→ Read Full Article' },
+                link: { href: 'https://minima.global/post/blockchain-blackbox', text: '→ View Source' },
                 video: { href: 'https://www.youtube.com/watch?v=QOCPWTWAMXI', text: '▶️ Video: Autonomous Verification Technology Overview' },
                 status: 'confirmed' as const
               },
@@ -275,14 +275,14 @@ export default function NewsPage() {
                 date: 'January 20, 2026',
                 title: 'Minima: From Roadmaps to Results',
                 text: 'Minima announced a fundamental shift in communication strategy, moving away from traditional roadmaps with fixed dates toward evidence-based progress reporting.',
-                link: { href: 'https://minima.global/post/minima-from-roadmaps-to-results', text: '→ Read Full Post' },
+                link: { href: 'https://minima.global/post/minima-from-roadmaps-to-results', text: '→ View Source' },
                 status: 'confirmed' as const
               },
               {
                 date: 'November 2025',
                 title: 'DePIN Integration Progress',
                 text: 'Multiple DePIN projects integrated Minima Protocol for decentralized device coordination and micropayments.',
-                link: { href: 'https://minima.global/blog', text: '→ Learn More' },
+                link: { href: 'https://minima.global/blog', text: '→ View Source' },
                 status: 'confirmed' as const
               },
             ].map((item, index) => (
@@ -348,17 +348,15 @@ export default function NewsPage() {
                     )}
                   </div>
                   
-                  <div className="flex items-center gap-2 mt-3">
+                  {/* Structured Status & Note block */}
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 mt-3">
                     <p className="text-gray-500 text-xs">
                       Status: <StatusBadge status={item.status} reducedGlow={true} />
                     </p>
                     {item.featured && (
-                      <>
-                        <span className="text-gray-500 text-xs">•</span>
-                        <p className="text-gray-400 text-xs italic">
-                          Approved by Republic Europe on 30/03/26
-                        </p>
-                      </>
+                      <p className="text-gray-400 text-xs">
+                        <span className="text-gray-500">Note:</span> Approved by Republic Europe on 30/03/26
+                      </p>
                     )}
                   </div>
                 </div>
