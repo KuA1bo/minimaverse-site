@@ -224,7 +224,7 @@ export default function RootLayout({
                   <span className="text-lg">📢</span> Legal
                 </h4>
                 <div className="flex flex-wrap justify-center md:justify-start gap-1.5 sm:gap-2">
-                  <Link href="/disclaimer" className="group text-[11px] sm:text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
+                  <Link href="/disclaimer" aria-label="Read full disclaimer" className="group text-[11px] sm:text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
                     <span className="transform group-hover:translate-x-1 transition-transform">→</span> Disclaimer
                   </Link>
                   <ExternalLink href="https://github.com/KuA1bo/minimaverse-site/raw/main/LICENSE" className="group text-[11px] sm:text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">

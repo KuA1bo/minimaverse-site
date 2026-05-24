@@ -575,7 +575,7 @@ export default function ToolsPage() {
             </strong>
             This site does not represent the official Minima team. 
             All information is compiled from publicly available sources.{' '}
-            <Link href="/disclaimer" className="underline hover:text-amber-100 decoration-amber-500/50 hover:decoration-amber-400 underline-offset-4 transition-all duration-300">
+            <Link href="/disclaimer" aria-label="Read full disclaimer" className="underline hover:text-amber-100 decoration-amber-500/50 hover:decoration-amber-400 underline-offset-4 transition-all duration-300">
               Learn more
             </Link>
           </p>
