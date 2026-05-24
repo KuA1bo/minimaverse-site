@@ -1,6 +1,6 @@
 // src/app/submit-project/page.tsx
 // Submission gateway page - neutral verification process for ecosystem projects
-// Updated: Changed CTA from Telegram to email, updated timestamp [21.05.2026]
+// Updated: Polished Initial Contact phrasing, updated timestamp [22.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -111,7 +111,7 @@ export default function SubmitProjectPage() {
           </h2>
           <div className="space-y-4">
             {[
-              { step: '1', title: 'Initial Contact', desc: 'Send a concise message to @Minimaverse on Telegram with project name, URL, and brief description.' },
+              { step: '1', title: 'Initial Contact', desc: 'Send a concise email to contact@minimaverse.com including the project name, URL, and a brief description.' },
               { step: '2', title: 'Documentation Review', desc: 'We verify technical claims, official sources, and community reputation. (3–5 business days)' },
               { step: '3', title: 'Editorial Decision', desc: 'Approved projects are added to /ecosystem or /partners with a neutral, fact-based description.' },
               { step: '4', title: 'Ongoing Maintenance', desc: 'Listings are updated or removed if projects become inactive or violate core principles.' }
