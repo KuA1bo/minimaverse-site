@@ -1,4 +1,6 @@
-// NOTE: When adding a new page to the site, add it to the `pages` array below to include it in the RSS feed.
+// src/app/rss.xml/route.ts
+// RSS feed generator for Minimaverse - static pages + verified news items
+// NOTE: When adding a new page or news item, add it to the respective array below.
 import RSS from 'rss';
 import { NextResponse } from 'next/server';
 
@@ -23,12 +25,33 @@ export async function GET() {
     { title: 'Submit Project', url: 'https://minimaverse.com/submit-project', desc: 'Request listing for your project' },
   ];
 
+  // Verified news items - add new entries here with confirmed status only
+  const newsItems = [
+    {
+      title: 'Engineering Update: DEX, Stablecoin Bridge, and Ecosystem Progress',
+      url: 'https://t.me/MinimaGlobal/593',
+      desc: 'The Minima ecosystem team published an engineering update covering progress across core products and infrastructure. Testing across the DEX, MiniMask, and Stablecoin Bridge has been completed, with all components moving into release preparation. The DEX (v1.0.1) introduces UI improvements, SIM bin restrictions for new users, a 5-minute timeout on trades and messages, and several bug fixes. The Stablecoin Bridge (v1.0) adds redesigned front-end support and enables USDT (ERC-20) bridging into Minima-native USDT, along with performance optimizations. Ongoing work continues across Integritas tooling and Minima Core development. Source: Official Minima Global Announcements (Telegram). Status: confirmed.',
+      date: new Date('2026-05-24'),
+    },
+  ];
+
+  // Add static pages
   pages.forEach(page => {
     feed.item({
       title: page.title,
       description: page.desc,
       url: page.url,
       date: new Date(),
+    });
+  });
+
+  // Add verified news items
+  newsItems.forEach(item => {
+    feed.item({
+      title: item.title,
+      description: item.desc,
+      url: item.url,
+      date: item.date,
     });
   });
 
