@@ -1,7 +1,6 @@
 // src/app/news/page.tsx
 // News page - latest updates and announcements about Minima Protocol
-// Updated: H1 specificity, intro paragraph, badge text set to "Active Campaign" (compromise styling)
-// Polished: minimal structural cleanup, status legend in Primary Sources, neutralize marketing, added "About This Page" card, neutralized promotional language in news excerpts, micro-fixes: superlative claims, link spacing, archival phrasing, and final result-wording removal [19.05.2026]
+// Updated: Added engineering update news item (DEX, Stablecoin Bridge), updated timestamp [24.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -236,20 +235,23 @@ export default function NewsPage() {
           <div className="space-y-4">
             {[
               {
+                date: 'May 24, 2026',
+                title: 'Engineering Update: DEX, Stablecoin Bridge, and Ecosystem Progress',
+                text: "The Minima ecosystem team published an engineering update covering progress across core products and infrastructure. Testing across the DEX, MiniMask, and Stablecoin Bridge has been completed, with all components moving into release preparation. The DEX (v1.0.1) introduces UI improvements, SIM bin restrictions for new users, a 5-minute timeout on trades and messages, and several bug fixes. The Stablecoin Bridge (v1.0) adds redesigned front-end support and enables USDT (ERC-20) bridging into Minima-native USDT, along with performance optimizations. Ongoing work continues across Integritas tooling and Minima Core development.\n\nSource: Official Minima Global Announcements (Telegram)\nhttps://t.me/MinimaGlobal/593",
+                link: { href: 'https://t.me/MinimaGlobal/593', text: '→ View on Telegram' },
+                status: 'confirmed' as const
+              },
+              {
                 date: 'March 30, 2026',
-                // Neutralized title - removed promotional framing
                 title: 'Minima AG Crowdfunding Campaign on Republic Europe',
-                // Neutralized text - factual summary without marketing language
                 text: "Minima AG launched a crowdfunding campaign on Republic Europe ahead of a planned Series A round later in 2026. The campaign materials describe Minima's focus on embedded blockchain verification for connected devices and autonomous systems. The round exceeded its initial target at the time of announcement.",
                 link: { href: 'https://europe.republic.com/minima', text: '→ View Campaign Details on Republic Europe' },
                 status: 'confirmed' as const,
-                featured: true // Visual priority styling
+                featured: true
               },
               {
                 date: 'March 24, 2026',
-                // Neutralized title - removed marketing headline
                 title: 'Arm Semiconductor Education Alliance Explores Embedded Minima Node Deployment',
-                // Neutralized text - removed promotional phrasing
                 text: "Arm's Semiconductor Education Alliance explores running a full Minima node on embedded hardware. The article discusses running Minima nodes directly on embedded hardware environments.",
                 link: { href: 'https://minima.global/post/blockchain-doesnt-belong-in-the-cloud', text: '→ Read Full Article' },
                 status: 'confirmed' as const
@@ -257,7 +259,6 @@ export default function NewsPage() {
               {
                 date: 'March 10, 2026',
                 title: 'Siemens Highlights the Emergence of Blockchain-on-Chip',
-                // Neutralized: replaced promotional/process wording with archival reference
                 text: 'Siemens Cre8Ventures highlights Blockchain-on-Chip technology, exploring how embedded verification enables autonomous industrial systems. The article references a drone flight demonstration involving TRL 6 testing.',
                 link: { href: 'https://minima.global/post/siemens', text: '→ Read Full Article' },
                 status: 'confirmed' as const
@@ -265,7 +266,6 @@ export default function NewsPage() {
               {
                 date: 'March 5, 2026',
                 title: 'Blockchain Blackbox: Verification Systems for Autonomous Devices',
-                // Neutralized text: removed result-wording, replaced with factual testing reference
                 text: 'Article describing Blockchain-on-Chip verification systems for autonomous devices and drones. The technology reached TRL 6 testing for autonomous system verification scenarios.',
                 link: { href: 'https://minima.global/post/blockchain-blackbox', text: '→ Read Full Article' },
                 video: { href: 'https://www.youtube.com/watch?v=QOCPWTWAMXI', text: '▶️ Video: Autonomous Verification Technology Overview' },
@@ -281,7 +281,6 @@ export default function NewsPage() {
               {
                 date: 'November 2025',
                 title: 'DePIN Integration Progress',
-                // Neutralized: removed subjective "successfully" wording
                 text: 'Multiple DePIN projects integrated Minima Protocol for decentralized device coordination and micropayments.',
                 link: { href: 'https://minima.global/blog', text: '→ Learn More' },
                 status: 'confirmed' as const
@@ -319,7 +318,7 @@ export default function NewsPage() {
                     {item.title}
                   </h3>
                   
-                  <p className={`text-sm mb-3 ${item.featured ? 'text-gray-200' : 'text-gray-300'}`}>
+                  <p className={`text-sm mb-3 whitespace-pre-line ${item.featured ? 'text-gray-200' : 'text-gray-300'}`}>
                     {item.text}
                   </p>
                   
@@ -472,11 +471,11 @@ export default function NewsPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 19, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 24, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 19, 2026
+            Last updated: May 24, 2026
           </p>
         </section>
 
