@@ -158,8 +158,9 @@ const LatestUpdatesStrip = () => {
 
   return (
     // FIX: Added overflow-hidden to prevent horizontal scroll from w-max track
+    // FIX: Responsive margin mb-4 sm:mb-8 for tighter mobile spacing
     <div 
-      className="w-full overflow-hidden bg-gray-900/20 border border-gray-700/30 rounded-lg mb-8"
+      className="w-full overflow-hidden bg-gray-900/20 border border-gray-700/30 rounded-lg mb-4 sm:mb-8"
       onMouseEnter={() => { pausedRef.current = true; setIsHovered(true); }}
       onMouseLeave={() => { pausedRef.current = false; setIsHovered(false); }}
     >
@@ -194,8 +195,8 @@ export default function HomePage() {
       
       <LatestUpdatesStrip />
 
-      {/* Hero Section */}
-      <section id="hero" className="scroll-mt-20 mb-12 py-12 border-b border-gray-700/40 opacity-0 animate-fade-in-up delay-75 relative">
+      {/* Hero Section - Responsive padding/margin for mobile */}
+      <section id="hero" className="scroll-mt-20 mb-6 sm:mb-12 py-6 sm:py-12 border-b border-gray-700/40 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
           <div className="hidden sm:flex items-start justify-end relative -translate-x-10 mt-12 flex-shrink-0 order-last">
