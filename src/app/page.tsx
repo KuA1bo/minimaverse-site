@@ -157,8 +157,9 @@ const LatestUpdatesStrip = () => {
   );
 
   return (
+    // FIX: Added overflow-hidden to prevent horizontal scroll from w-max track
     <div 
-      className="w-full bg-gray-900/20 border border-gray-700/30 rounded-lg mb-8"
+      className="w-full overflow-hidden bg-gray-900/20 border border-gray-700/30 rounded-lg mb-8"
       onMouseEnter={() => { pausedRef.current = true; setIsHovered(true); }}
       onMouseLeave={() => { pausedRef.current = false; setIsHovered(false); }}
     >
