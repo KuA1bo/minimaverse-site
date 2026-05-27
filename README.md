@@ -1,71 +1,80 @@
 # Minimaverse
 
-> Independent documentation and research hub for the Minima ecosystem.
-> 
-> Focused on verified protocol information, ecosystem resources, and public documentation — without hype, without noise.
+Independent documentation and research hub for the Minima ecosystem.
 
-Minimaverse is an unofficial, neutral information hub for the Minima ecosystem, covering protocol architecture, core components, development history, ecosystem updates, and publicly verifiable community interactions.
+## Purpose
+Minimaverse aggregates verified protocol information, ecosystem resources, and public documentation. Content is sourced exclusively from official Minima primary sources and publicly verifiable announcements.
 
-- Learn about Minima
-- Set up your own node
-- Explore the ecosystem
+## Scope
+- Protocol architecture and core components
+- Development history and timeline
+- Ecosystem projects (verified entries only)
+- Node operation guides and technical resources
+- Community interactions (publicly documented)
 
-⚠️ **Disclaimer**: This site does not represent the official Minima team. All information is compiled from publicly available sources.
+## Content Policy
+| Principle | Implementation |
+|-----------|---------------|
+| Verified Facts Only | Sourced from official docs, whitepapers, or public announcements |
+| Transparent Sourcing | Each fact includes a link to its primary source |
+| Neutral Tone | No marketing language, hype, or subjective evaluations |
+| Clear Status Indicators | Features labeled: `confirmed`, `in-development`, `experimental`, `speculative` |
 
-## 📚 Content Principles
+## Project Status
+| Component | Status | Last Updated |
+|-----------|--------|--------------|
+| Core Documentation | `confirmed` | May 2026 |
+| Ecosystem Directory | `confirmed` | May 2026 |
+| RSS Feed Endpoint | `confirmed` | May 2026 |
+| Project Submission Gateway | `in-development` | May 2026 |
 
-- **Verified Facts Only** — All information is sourced from official documentation, whitepapers, or publicly verified announcements.
-- **Transparent Sourcing** — Every fact includes a link to its primary source.
-- **Neutral Tone** — No marketing language, hype, or subjective evaluations.
-- **Clear Status Indicators** — All features are marked with status labels: confirmed, in development, experimental, speculative.
+## Repository Structure
+```
+/
+├── app/                 # Next.js 14 App Router pages
+├── components/          # Reusable UI components
+├── lib/                 # Utilities, RSS generator, SEO helpers
+├── public/              # Static assets, sitemap, robots.txt
+├── docs/                # Internal documentation (style guides, policies)
+├── CONTRIBUTING.md      # Contribution guidelines
+├── LICENSE              # MIT License
+└── README.md            # This file
+```
 
-## 🐛 Found an Error?
-
-If you found a typo, broken link, or incorrect information, please report it:
-
-**Option 1: GitHub Issues (Recommended)**  
-Open an issue with our bug report template:  
-→ https://github.com/KuA1bo/minimaverse-site/issues/new?template=bug-report.md
-
-**Option 2: Pull Request**  
-If you know how to fix it, submit a pull request:  
-→ https://github.com/KuA1bo/minimaverse-site/pulls
-
-## 🚀 Contributing
-
-We welcome contributions that align with our content principles. Please review our guidelines before contributing:
-
-- [CONTRIBUTING.md](CONTRIBUTING.md) — Contribution guidelines and content policies
-- [LICENSE](LICENSE) — MIT License for code usage
-
-## 💼 For Projects
-
-Building in the Minima ecosystem? Minimaverse accepts submissions for ecosystem listings.  
-Neutral, verified, no hype — just facts.
-
-📩 Email: [contact@minimaverse.com](mailto:contact@minimaverse.com)
-
-## 💙 Support Infrastructure & Maintenance (Optional)
-
-Voluntary contributions cover domain and project maintenance. Non-refundable.
-
-- **MINIMA (Native):** `MxG081NYSWDGZMKSYCYBKW9TJRS3PCMFDV5NWKFKEQKQNPWBTYFYJ9CTVFU0BAR`
-- **USDT (TRC20):** `TF5NBncPz9d8BoRqK8EfAHhTzsapLDujv4`
-
-📩 Email: [contact@minimaverse.com](mailto:contact@minimaverse.com)
-
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
-
-## 🌐 Website
-
-Live site: [https://minimaverse.com](https://minimaverse.com)
-
-### Built with:
-
+## Tech Stack
 - Next.js 14 (App Router)
-- Tailwind CSS
-- Deployed on Vercel
+- TypeScript + Tailwind CSS
+- Vercel hosting
+- Zero-dependency Canvas API (particle animation)
 
-<!-- Last updated: 27.05.2026 -->
+## Links
+- Live Site: https://minimaverse.com
+- Source: https://github.com/KuA1bo/minimaverse-site
+- Releases: https://github.com/KuA1bo/minimaverse-site/releases
+- Issues: https://github.com/KuA1bo/minimaverse-site/issues
+
+## Reporting Issues
+| Method | Use Case | Link |
+|--------|----------|------|
+| GitHub Issues | Typos, broken links, incorrect facts | [New Issue](https://github.com/KuA1bo/minimaverse-site/issues/new?template=bug-report.md) |
+| Pull Request | Direct fixes, content updates | [New PR](https://github.com/KuA1bo/minimaverse-site/pulls) |
+
+## Ecosystem Submissions
+Projects building on Minima may submit entries for inclusion. Submissions are reviewed against verification criteria: primary source availability, technical documentation, and neutral description.
+
+- Submission endpoint: `/submit-project` on live site
+- Contact: `contact@minimaverse.com`
+
+## Infrastructure Support
+Voluntary contributions cover domain registration and maintenance costs. Non-refundable, no rewards.
+
+| Asset | Network | Address |
+|-------|---------|---------|
+| MINIMA | Native | `MxG081NYSWDGZMKSYCYBKW9TJRS3PCMFDV5NWKFKEQKQNPWBTYFYJ9CTVFU0BAR` |
+| USDT | TRC20 | `TF5NBncPz9d8BoRqK8EfAHhTzsapLDujv4` |
+
+## Disclaimer
+Minimaverse is a community-driven independent project. Not officially affiliated with Minima Foundation. All content is compiled from publicly available sources and presented in neutral, source-based format.
+
+## License
+MIT License — see `LICENSE` file for details.
