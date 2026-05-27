@@ -1,6 +1,6 @@
 // src/app/layout.tsx
 // Root layout for Minimaverse - Next.js App Router
-// Updated: Increased RSS link contrast for accessibility, updated timestamp [22.05.2026]
+// Updated: Increased RSS link contrast for accessibility, updated timestamp [27.05.2026]
 
 import './globals.css';
 import Link from 'next/link';

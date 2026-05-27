@@ -68,4 +68,4 @@ Live site: [https://minimaverse.com](https://minimaverse.com)
 - Tailwind CSS
 - Deployed on Vercel
 
-<!-- Last updated: 21.05.2026 -->
+<!-- Last updated: 27.05.2026 -->
