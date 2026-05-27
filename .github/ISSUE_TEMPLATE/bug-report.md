@@ -7,15 +7,15 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you for reporting an issue! Please fill out the form below.
+        Thank you for reporting an issue. Please provide verified facts only.
         
-        ⚠️ This site does not represent the official Minima team. For protocol-related issues, please contact official Minima channels.
+        Note: This site is an independent hub. For protocol issues, contact official Minima channels.
   
   - type: input
     id: page-url
     attributes:
       label: "Page URL"
-      description: "Where did you find the issue? (e.g., /nodes or https://minimaverse.com/nodes)"
+      description: "Location of the issue (e.g., /nodes or https://minimaverse.com/nodes)"
       placeholder: "/timeline"
     validations:
       required: true
@@ -24,7 +24,7 @@ body:
     id: issue-type
     attributes:
       label: "Issue Type"
-      description: "What kind of issue are you reporting?"
+      description: "Category of the reported issue"
       options:
         - "Typo or grammar error"
         - "Broken link"
@@ -39,37 +39,33 @@ body:
     id: description
     attributes:
       label: "Description"
-      description: "What is wrong and what should it be?"
+      description: "Current behavior vs. expected behavior (with source reference if applicable)"
       placeholder: |
         Example:
-        - Current text: "Minima uses Proof-of-Stake consensus"
-        - Expected text: "Minima uses Cascada consensus (hybrid PoW)"
-        
-        OR
-        
-        - Link: "Docker Repository" returns 404
-        - Expected URL: https://github.com/minima-global/Minima/tree/master/docker
+        - Current: "Minima uses Proof-of-Stake consensus"
+        - Expected: "Minima uses Cascada consensus (hybrid PoW)"
+        - Source: https://docs.minima.global/consensus
     validations:
       required: true
   
   - type: textarea
     id: steps-to-reproduce
     attributes:
-      label: "Steps to Reproduce (if applicable)"
-      description: "How can we see the issue?"
+      label: "Steps to Reproduce"
+      description: "Reproduction steps (if applicable)"
       placeholder: |
-        1. Go to /nodes
-        2. Click on "Docker Repository" link
-        3. See 404 error
+        1. Navigate to /nodes
+        2. Click "Docker Repository" link
+        3. Observe 404 error
     validations:
       required: false
   
   - type: textarea
-    id: screenshot
+    id: source-reference
     attributes:
-      label: "Screenshot (optional)"
-      description: "URL to screenshot or drag-and-drop image below"
-      placeholder: "https://i.imgur.com/abc123.png"
+      label: "Primary Source Reference"
+      description: "Link to official documentation confirming expected behavior"
+      placeholder: "https://docs.minima.global/..."
     validations:
       required: false
   
@@ -77,10 +73,8 @@ body:
     id: terms
     attributes:
       label: "Confirmation"
-      description: "Please confirm the following:"
       options:
         - label: "I have searched existing issues to avoid duplicates"
           required: false
-        - label: "This issue is about the Minimaverse website, not the Minima protocol itself"
+        - label: "This issue concerns the Minimaverse website, not the Minima protocol"
           required: true
-
