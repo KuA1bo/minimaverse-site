@@ -1,6 +1,6 @@
 // src/app/news/page.tsx
 // News page - latest updates and announcements about Minima Protocol
-// Updated: Unified link text, structured status/note layout, updated timestamp [24.05.2026]
+// Updated: Removed "Active Campaign" label, neutral tone enforced [27.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -306,12 +306,7 @@ export default function NewsPage() {
                 <div className="relative">
                   <div className="flex items-center gap-2 mb-2">
                     <p className="text-xs text-gray-500">{item.date}</p>
-                    {/* Updated Badge Text: "Active Campaign" */}
-                    {item.featured && (
-                      <span className="px-2 py-0.5 rounded-full bg-purple-500/15 text-purple-300 text-[10px] font-medium border border-purple-500/30">
-                        Active Campaign
-                      </span>
-                    )}
+                    {/* "Active Campaign" badge REMOVED */}
                   </div>
                   
                   <h3 className={`font-medium mb-2 ${item.featured ? 'text-white text-lg' : 'text-white'}`}>
@@ -473,7 +468,7 @@ export default function NewsPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 24, 2026
+            Last updated: May 27, 2026
           </p>
         </section>
 
