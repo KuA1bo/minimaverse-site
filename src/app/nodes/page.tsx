@@ -1,12 +1,6 @@
 // src/app/nodes/page.tsx
-// Nodes page - verified guides for running Minima nodes
-// Updated: SEO-optimized H1, quick-start CTA, E-E-A-T safe claims, unified nav style, date June 2, 2026
-// Polished: minimal structural cleanup, status legend in Primary Sources, remove duplicate, neutralize marketing [19.05.2026]
-// Micro-fixes: removed DePIN marketing framing, simplified throughput language [19.05.2026]
-// Final: Mega Node description tightened for technical precision [19.05.2026]
-// Micro-fix: added MiniDapps button to Quick Start CTA [20.05.2026]
-// Update: added Initial Peer Configuration section with community-maintained source attribution [02.06.2026]
-// Micro-polish: tightened peer configuration description for documentation-style conciseness [02.06.2026]
+// Minima Node Setup & Installation Guide
+// Last updated: June 2, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -238,7 +232,7 @@ export default function NodesPage() {
         </div>
       </div>
 
-      {/* NEW: Initial Peer Configuration - community-maintained resource */}
+      {/* Initial Peer Configuration - community-maintained resource */}
       <section id="peer-configuration" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-250">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
           <span className="text-2xl">🔗</span>
@@ -254,7 +248,7 @@ export default function NodesPage() {
           <div className="mb-4 pb-4 border-b border-gray-700/40">
             <div className="flex flex-wrap items-center gap-3 text-xs">
               <StatusBadge status="community" reducedGlow={true} />
-              <span className="text-gray-500">Note: Resource maintained by Paddy Cerri (Minima Global architect)</span>
+              <span className="text-gray-500">Note: Resource maintained by Paddy Cerri (Co-Founder & Chief Architect, Minima Global)</span>
             </div>
           </div>
           
@@ -493,7 +487,7 @@ export default function NodesPage() {
               <h3 className="text-white font-medium mb-2 relative">Alternative Setup Guide</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
                 Comprehensive walkthrough with peer lists, MDS configuration, and Docker deployment tips 
-                from Minima Global architect. Includes ready-to-use commands and troubleshooting.
+                from Minima's Co-Founder & Chief Architect. Includes ready-to-use commands and troubleshooting.
               </p>
               
               <div className="space-y-2">
@@ -612,7 +606,7 @@ export default function NodesPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED to June 2, 2026 */}
+        {/* Last Updated */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
