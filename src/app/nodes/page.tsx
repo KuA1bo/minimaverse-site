@@ -1,10 +1,12 @@
 // src/app/nodes/page.tsx
 // Nodes page - verified guides for running Minima nodes
-// Updated: SEO-optimized H1, quick-start CTA, E-E-A-T safe claims, unified nav style, date May 18, 2026
+// Updated: SEO-optimized H1, quick-start CTA, E-E-A-T safe claims, unified nav style, date June 2, 2026
 // Polished: minimal structural cleanup, status legend in Primary Sources, remove duplicate, neutralize marketing [19.05.2026]
 // Micro-fixes: removed DePIN marketing framing, simplified throughput language [19.05.2026]
 // Final: Mega Node description tightened for technical precision [19.05.2026]
 // Micro-fix: added MiniDapps button to Quick Start CTA [20.05.2026]
+// Update: added Initial Peer Configuration section with community-maintained source attribution [02.06.2026]
+// Micro-polish: tightened peer configuration description for documentation-style conciseness [02.06.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -144,7 +146,7 @@ export default function NodesPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - UPDATED: added status legend */}
+      {/* Primary Sources Box */}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -190,7 +192,7 @@ export default function NodesPage() {
             </li>
           </ul>
           
-          {/* Status legend - stacked on mobile, single line on tablet/desktop */}
+          {/* Status legend */}
           <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
               <span className="block sm:inline">Status indicators:</span>
@@ -202,7 +204,7 @@ export default function NodesPage() {
         </div>
       </div>
 
-      {/* Quick Start CTA - Mobile optimized with official Docker whale mascot */}
+      {/* Quick Start CTA - Neutralized tone per style guide */}
       <div className="relative bg-blue-900/20 border border-blue-700/40 rounded-2xl p-4 sm:p-6 mb-8 
                       transition-all duration-300 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 
                       opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
@@ -210,21 +212,21 @@ export default function NodesPage() {
         
         <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="text-center sm:text-left">
-            <h3 className="text-white font-medium mb-1">New to Minima?</h3>
-            <p className="text-gray-400 text-sm">Start with the easiest setup options for beginners.</p>
+            <h3 className="text-white font-medium mb-1">Setup Entry Points</h3>
+            <p className="text-gray-400 text-sm">Initial node configuration paths for common environments.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-2 justify-center sm:justify-start">
             <ExternalLink 
               href="https://docs.minima.global/docs/run-a-node/android" 
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
-              📱 Android Setup
+              📱 Android
             </ExternalLink>
             <ExternalLink 
               href="https://docs.minima.global/docs/run-a-node/linux-vps-docker" 
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
-              🐳 Docker Setup
+              🐳 Docker
             </ExternalLink>
             <ExternalLink 
               href="https://minidapps.minima.global/" 
@@ -236,10 +238,71 @@ export default function NodesPage() {
         </div>
       </div>
 
+      {/* NEW: Initial Peer Configuration - community-maintained resource */}
+      <section id="peer-configuration" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-250">
+        <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+          <span className="text-2xl">🔗</span>
+          <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Initial Peer Configuration</span>
+        </h2>
+        
+        <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                        transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+                        group overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          
+          {/* Metadata Block per style guide */}
+          <div className="mb-4 pb-4 border-b border-gray-700/40">
+            <div className="flex flex-wrap items-center gap-3 text-xs">
+              <StatusBadge status="community" reducedGlow={true} />
+              <span className="text-gray-500">Note: Resource maintained by Paddy Cerri (Minima Global architect)</span>
+            </div>
+          </div>
+          
+          <div className="relative">
+            <p className="text-gray-300 text-sm leading-relaxed mb-4">
+              Initial network discovery requires valid peer endpoints. 
+              A public list of active nodes is available for initial synchronization.
+            </p>
+            
+            <ul className="space-y-2 text-gray-400 text-sm mb-4">
+              <li className="flex items-start gap-2">
+                <span className="text-blue-400 mt-0.5">•</span>
+                <span>Format: Plain text (one peer per line)</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-400 mt-0.5">•</span>
+                <span>Usage: Import contents via Minima app → Add Peers</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="text-blue-400 mt-0.5">•</span>
+                <span>Verification: Recommended before production use</span>
+              </li>
+            </ul>
+            
+            <ExternalLink 
+              href="https://spartacusrex.com/minimapeers.txt" 
+              className="inline-flex items-center gap-1.5 px-4 py-2 bg-gray-700/60 hover:bg-gray-600/60 text-gray-200 text-sm font-medium rounded-lg transition-all duration-300 hover:scale-[1.02] border border-gray-600/50"
+            >
+              → View Source: minimapeers.txt
+            </ExternalLink>
+          </div>
+        </div>
+        <p className="text-gray-500 text-xs mt-3">
+          Source attribution:{' '}
+          <ExternalLink 
+            href="https://spartacusrex.com" 
+            className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+          >
+            spartacusrex.com
+          </ExternalLink>
+          {' '}— personal resource, not an official Minima domain
+        </p>
+      </section>
+
       {/* Content */}
       <article className="prose prose-invert max-w-none">
         
-        {/* Intro - REMOVED duplicate status legend block */}
+        {/* Intro */}
         <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
@@ -324,7 +387,7 @@ export default function NodesPage() {
           </p>
         </section>
 
-        {/* Why Run a Node - Enhanced with practical intent, marketing neutralized */}
+        {/* Why Run a Node */}
         <section id="why-run" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🎯</span>
@@ -549,11 +612,11 @@ export default function NodesPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 20, 2026 */}
+        {/* Last Updated - UPDATED to June 2, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 20, 2026
+            Last updated: June 2, 2026
           </p>
         </section>
 
