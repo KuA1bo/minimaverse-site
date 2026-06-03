@@ -1,6 +1,6 @@
 // src/data/searchIndex.ts
 // Search index for client-side fuzzy search with maximum keyword coverage
-// Updated: June 2, 2026 - Synced with optimized page anchors, SEO tags, and E-E-A-T safe descriptions
+// Updated: June 3, 2026 - Synced with optimized page anchors, SEO tags, and E-E-A-T safe descriptions
 
 export interface SearchItem {
   title: string;
@@ -56,6 +56,7 @@ export const searchIndex: SearchItem[] = [
   { title: "Why Run a Node?", url: "/nodes#why-run", description: "Practical benefits: DePIN infrastructure, P2P apps, network resilience, independent verification", tags: ["why run", "benefits", "depin", "p2p", "resilience", "verification", "infrastructure", "censorship resistance"] },
   { title: "Expert Guide by Paddy Cerri", url: "/nodes#expert-guide", description: "Alternative setup with peer lists, MDS config, Docker tips from Minima architect", tags: ["expert", "paddy cerri", "spartacusrex", "advanced", "troubleshooting", "peer lists", "mds", "alternative guide"] },
   { title: "Initial Peer Configuration", url: "/nodes#peer-configuration", description: "Network discovery requires valid peer endpoints. Public list of active nodes for initial synchronization", tags: ["peer configuration", "peers", "peer list", "network discovery", "bootstrap", "initial sync", "synchronization", "minimapeers", "spartacusrex", "paddy cerri", "chief architect", "community-maintained", "add peers", "import peers", "node connectivity", "network bootstrap", "peer endpoints", "active nodes", "plain text", "txt file"] },
+  { title: "Node Recovery", url: "/nodes#node-recovery", description: "Recovery methods for restoring node access, wallet state, and chain synchronization via Security MiniDapp", tags: ["node recovery", "backup", "restore", "seed phrase", "wallet recovery", "chain resync", "quicksync", "megammr", "security minidapp", "restore backup", "import seed", "synchronization", "wallet state", "24 words", "recovery phrase", "backup file", "wallet mdb", "node data", "resync", "mega node mmr", "eurobuddha", "spartacusrex 9001", "confirmed", "official documentation"] },
 
   // === /nodes: Quick Start & Installation Platforms ===
   { title: "Quick Start: Android or Docker", url: "/nodes", description: "Beginner-friendly setup options for new Minima users", tags: ["quick start", "beginner", "android", "docker", "easy setup", "onboarding", "first time"] },
