@@ -1,6 +1,6 @@
 // src/app/nodes/page.tsx
 // Minima Node Setup & Installation Guide
-// Last updated: June 2, 2026
+// Last updated: June 3, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -39,11 +39,12 @@ const ExternalLink = ({
 );
 
 // StatusBadge component for feature status indicators
-const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'in-development' | 'community', reducedGlow?: boolean }) => {
+const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'in-development' | 'community' | 'expert-verified', reducedGlow?: boolean }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: reducedGlow ? 'shadow-green-500/25' : 'shadow-green-500/50' },
     'in-development': { bg: 'bg-yellow-900/40', text: 'text-yellow-300', border: 'border-yellow-700/50', dot: 'bg-yellow-500', glow: reducedGlow ? 'shadow-yellow-500/25' : 'shadow-yellow-500/50' },
     'community': { bg: 'bg-gray-700/40', text: 'text-gray-300', border: 'border-gray-600/50', dot: 'bg-gray-400', glow: reducedGlow ? 'shadow-gray-400/25' : 'shadow-gray-400/50' },
+    'expert-verified': { bg: 'bg-purple-900/40', text: 'text-purple-300', border: 'border-purple-700/50', dot: 'bg-purple-500', glow: reducedGlow ? 'shadow-purple-500/25' : 'shadow-purple-500/50' },
   };
   const style = config[status];
   
@@ -55,7 +56,7 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
         )}
         <span className={`relative inline-flex rounded-full h-2 w-2 ${style.dot} animate-pulse`} />
       </span>
-      {status === 'confirmed' ? 'confirmed' : status === 'in-development' ? 'in-development' : 'community-maintained'}
+      {status === 'confirmed' ? 'confirmed' : status === 'in-development' ? 'in-development' : status === 'expert-verified' ? 'expert-verified' : 'community-maintained'}
     </span>
   );
 };
@@ -188,10 +189,11 @@ export default function NodesPage() {
           
           {/* Status legend */}
           <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
-            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
+            <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3 flex-wrap">
               <span className="block sm:inline">Status indicators:</span>
               <span className="text-green-300">• confirmed</span>
               <span className="text-yellow-300">• in-development</span>
+              <span className="text-purple-300">• expert-verified</span>
               <span className="text-gray-300">• community-maintained</span>
             </div>
           </div>
@@ -277,7 +279,7 @@ export default function NodesPage() {
               href="https://spartacusrex.com/minimapeers.txt" 
               className="inline-flex items-center gap-1.5 px-4 py-2 bg-gray-700/60 hover:bg-gray-600/60 text-gray-200 text-sm font-medium rounded-lg transition-all duration-300 hover:scale-[1.02] border border-gray-600/50"
             >
-              → View Source: minimapeers.txt
+              → View Source
             </ExternalLink>
           </div>
         </div>
@@ -290,6 +292,127 @@ export default function NodesPage() {
             spartacusrex.com
           </ExternalLink>
           {' '}— personal resource, not an official Minima domain
+        </p>
+      </section>
+
+      {/* Node Recovery - official documentation hub */}
+      <section id="node-recovery" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-275">
+        <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+          <span className="text-2xl">🔒</span>
+          <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Node Recovery</span>
+        </h2>
+        
+        <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                        transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+                        group overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          
+          {/* Metadata Block per style guide */}
+          <div className="mb-4 pb-4 border-b border-gray-700/40">
+            <div className="flex flex-wrap items-center gap-3 text-xs">
+              <StatusBadge status="confirmed" reducedGlow={true} />
+              <span className="text-gray-500">Note: Based on official Minima documentation</span>
+            </div>
+          </div>
+          
+          <div className="relative space-y-4">
+            <p className="text-gray-300 text-sm leading-relaxed">
+              Recovery methods for restoring node access, wallet state, and chain synchronization.
+            </p>
+            
+            {/* Recovery methods list */}
+            <ul className="space-y-3 text-sm">
+              <li className="flex flex-col gap-1.5 p-3 bg-gray-900/30 rounded-lg border border-gray-700/30">
+                <div className="flex items-center gap-2">
+                  <span className="text-blue-400">•</span>
+                  <span className="text-white font-medium">Chain Resync</span>
+                </div>
+                <p className="text-gray-400 text-xs pl-5">
+                  Restore chain synchronization and update wallet state.
+                </p>
+                <div className="pl-5">
+                  <ExternalLink 
+                    href="https://docs.minima.global/docs/user-guides/node-recovery/chain-resync" 
+                    className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-xs"
+                  >
+                    → View Source
+                  </ExternalLink>
+                </div>
+              </li>
+              
+              <li className="flex flex-col gap-1.5 p-3 bg-gray-900/30 rounded-lg border border-gray-700/30">
+                <div className="flex items-center gap-2">
+                  <span className="text-blue-400">•</span>
+                  <span className="text-white font-medium">Import Seed Phrase</span>
+                </div>
+                <p className="text-gray-400 text-xs pl-5">
+                  Restore wallet access from a 24-word recovery phrase.
+                </p>
+                <div className="pl-5">
+                  <ExternalLink 
+                    href="https://docs.minima.global/docs/user-guides/node-recovery/import-seed-phrase" 
+                    className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-xs"
+                  >
+                    → View Source
+                  </ExternalLink>
+                </div>
+              </li>
+              
+              <li className="flex flex-col gap-1.5 p-3 bg-gray-900/30 rounded-lg border border-gray-700/30">
+                <div className="flex items-center gap-2">
+                  <span className="text-blue-400">•</span>
+                  <span className="text-white font-medium">Restore Backup</span>
+                </div>
+                <p className="text-gray-400 text-xs pl-5">
+                  Recover a node from a previously created backup.
+                </p>
+                <div className="pl-5">
+                  <ExternalLink 
+                    href="https://docs.minima.global/docs/user-guides/node-recovery/restore-backup" 
+                    className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-xs"
+                  >
+                    → View Source
+                  </ExternalLink>
+                </div>
+              </li>
+            </ul>
+            
+            {/* Critical Notes block */}
+            <div className="mt-4 pt-4 border-t border-gray-700/40">
+              <h4 className="text-white text-xs font-medium mb-2 flex items-center gap-2">
+                <span>⚠️</span> Critical Notes
+              </h4>
+              <ul className="space-y-1.5 text-xs text-gray-400">
+                <li className="flex items-start gap-2">
+                  <span className="text-gray-500 mt-0.5">•</span>
+                  <span>QuickSync is generally faster than archive synchronization.</span>
+                </li>
+                <li className="flex flex-col gap-1">
+                  <span className="flex items-start gap-2">
+                    <span className="text-gray-500 mt-0.5">•</span>
+                    <span>MegaMMR endpoints available for QuickSync:</span>
+                  </span>
+                  <div className="flex flex-col gap-1 pl-5">
+                    <code className="text-purple-300 bg-purple-500/10 px-1.5 py-0.5 rounded text-xs w-fit">megammr.minima.global:9001</code>
+                    <code className="text-purple-300 bg-purple-500/10 px-1.5 py-0.5 rounded text-xs w-fit">eurobuddha.com:9001</code>
+                    <code className="text-purple-300 bg-purple-500/10 px-1.5 py-0.5 rounded text-xs w-fit">spartacusrex.com:9001</code>
+                  </div>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-gray-500 mt-0.5">•</span>
+                  <span>Do not use other MiniDapps during synchronization.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p className="text-gray-500 text-xs mt-3">
+          <ExternalLink 
+            href="https://docs.minima.global/docs/user-guides/node-recovery/recovery-options" 
+            className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+          >
+            → View Source
+          </ExternalLink>
         </p>
       </section>
 
@@ -476,18 +599,18 @@ export default function NodesPage() {
                           group overflow-hidden hover:-translate-y-1 expert-card-glow">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             
-            <div className="absolute top-4 left-4 sm:left-auto sm:right-4">
-              <span className="text-xs text-purple-300 font-medium flex items-center gap-1">
-                <span className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse" />
-                by Paddy Cerri
-              </span>
+            {/* Metadata Block per style guide */}
+            <div className="mb-4 pb-4 border-b border-purple-500/20">
+              <div className="flex flex-wrap items-center gap-3 text-xs">
+                <StatusBadge status="expert-verified" reducedGlow={true} />
+                <span className="text-purple-300/70">Note: by Paddy Cerri (Co-Founder & Chief Architect, Minima Global)</span>
+              </div>
             </div>
             
-            <div className="pt-6">
-              <h3 className="text-white font-medium mb-2 relative">Alternative Setup Guide</h3>
-              <p className="text-gray-300 text-sm mb-3 relative">
-                Comprehensive walkthrough with peer lists, MDS configuration, and Docker deployment tips 
-                from Minima's Co-Founder & Chief Architect. Includes ready-to-use commands and troubleshooting.
+            <div className="relative">
+              <h3 className="text-white font-medium mb-2">Alternative Setup Guide</h3>
+              <p className="text-gray-300 text-sm mb-3">
+                Alternative setup guide with peer configuration, Docker deployment, and operational notes.
               </p>
               
               <div className="space-y-2">
@@ -610,7 +733,7 @@ export default function NodesPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: June 2, 2026
+            Last updated: June 3, 2026
           </p>
         </section>
 
