@@ -393,9 +393,9 @@ export default function NodesPage() {
                     <span>MegaMMR endpoints available for QuickSync:</span>
                   </span>
                   <div className="flex flex-col gap-1 pl-5">
-                    <code className="text-purple-300 bg-purple-500/10 px-1.5 py-0.5 rounded text-xs w-fit">megammr.minima.global:9001</code>
                     <code className="text-purple-300 bg-purple-500/10 px-1.5 py-0.5 rounded text-xs w-fit">eurobuddha.com:9001</code>
                     <code className="text-purple-300 bg-purple-500/10 px-1.5 py-0.5 rounded text-xs w-fit">spartacusrex.com:9001</code>
+                    <code className="text-purple-300 bg-purple-500/10 px-1.5 py-0.5 rounded text-xs w-fit">megammr.minima.global:9001</code>
                   </div>
                 </li>
                 <li className="flex items-start gap-2">
