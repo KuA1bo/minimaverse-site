@@ -74,7 +74,7 @@ Voluntary contributions cover domain registration and maintenance costs. Non-ref
 | USDT | TRC20 | `TF5NBncPz9d8BoRqK8EfAHhTzsapLDujv4` |
 
 ## Disclaimer
-Minimaverse is a community-driven independent project. Not officially affiliated with Minima Foundation. All content is compiled from publicly available sources and presented in neutral, source-based format.
+Minimaverse is a community-driven independent project. Not officially affiliated with Minima Global. All content is compiled from publicly available sources and presented in neutral, source-based format.
 
 ## License
 MIT License — see `LICENSE` file for details.

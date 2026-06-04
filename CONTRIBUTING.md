@@ -79,4 +79,4 @@ Use this method for direct fixes or content updates:
 - Ecosystem submissions: `/submit-project` on live site
 
 ## Disclaimer
-Minimaverse is a community-driven independent project. Not officially affiliated with Minima Foundation. All contributions must adhere to neutral, source-based content policy.
+Minimaverse is a community-driven independent project. Not officially affiliated with Minima Global. All contributions must adhere to neutral, source-based content policy.
