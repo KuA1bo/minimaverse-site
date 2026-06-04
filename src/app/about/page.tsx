@@ -1,7 +1,7 @@
 // src/app/about/page.tsx
 // About page - factual overview of Minima Protocol and Minimaverse project
 // Updated: Section anchors for search, header nav corrected, tone adjusted for consistency
-// Polished: minimal structural cleanup, status legend added to Primary Sources [19.05.2026]
+// Polished: minimal structural cleanup, status legend added to Primary Sources [04.06.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -225,7 +225,7 @@ export default function AboutPage() {
             <p className="text-gray-300 leading-relaxed">
               <strong className="text-white">Minimaverse</strong> is an independent documentation project focused on the 
               Minima Protocol ecosystem. This website is not affiliated with, endorsed by, or 
-              connected to Minima Foundation. All content is compiled from publicly available 
+              connected to Minima, Minima Global, or any associated entities. All content is compiled from publicly available 
               official sources and maintained by the community.
             </p>
             <p className="text-gray-300 leading-relaxed mt-4">
@@ -554,7 +554,7 @@ export default function AboutPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 19, 2026
+            Last updated: June 4, 2026
           </p>
         </section>
 
