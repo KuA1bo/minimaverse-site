@@ -251,7 +251,7 @@ export default function RootLayout({
               </div>
               <p className="flex items-center gap-2 text-center md:text-right">
                 <span className="text-gray-600 hidden sm:inline">•</span>
-                Not affiliated with Minima Foundation
+                Not affiliated with Minima Global
                 <span className="text-gray-600 hidden sm:inline">•</span>
                 <ExternalLink href="https://github.com/KuA1bo/minimaverse-site" className="hover:text-purple-400 transition-colors flex items-center gap-1">
                   GitHub

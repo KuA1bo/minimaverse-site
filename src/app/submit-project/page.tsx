@@ -164,7 +164,7 @@ export default function SubmitProjectPage() {
         {/* Footer Note */}
         <div className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-200">
           <p className="text-gray-500 text-sm">
-            This submission process is independent from the Minima Foundation.{' '}
+            This submission process is independent from Minima Global.{' '}
             <Link href="/disclaimer" aria-label="Read full disclaimer" className="text-gray-400 hover:text-white underline transition-colors">Read full disclaimer</Link>
           </p>
         </div>

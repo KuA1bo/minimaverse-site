@@ -255,7 +255,7 @@ export default function DevelopersPage() {
                   <li>• Developer community channels</li>
                 </ul>
                 <p className="text-gray-500 text-xs mt-2">
-                  Status: <StatusBadge status="confirmed" /> | Official Minima Foundation resource
+                  Status: <StatusBadge status="confirmed" /> | Official Minima Global resource
                 </p>
               </div>
             </div>
@@ -641,7 +641,7 @@ export default function DevelopersPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-75">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 19, 2026
+            Last updated: June 4, 2026
           </p>
         </section>
 

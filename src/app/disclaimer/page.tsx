@@ -118,7 +118,7 @@ export default function DisclaimerPage() {
             <p className="text-gray-300 leading-relaxed relative">
               Minimaverse is an <strong className="text-white">independent documentation project</strong> focused on 
               the Minima Protocol ecosystem. This website is not affiliated with, endorsed by, 
-              or connected to Minima Foundation in any official capacity.
+              or connected to Minima, Minima Global, or any associated entities in any official capacity.
             </p>
           </div>
         </section>
@@ -189,7 +189,7 @@ export default function DisclaimerPage() {
             
             <p className="text-gray-300 leading-relaxed relative">
               All information presented on this website is sourced from publicly available 
-              official Minima Foundation communications. Every factual claim is accompanied 
+              official Minima Global communications. Every factual claim is accompanied 
               by a direct link to its primary source. Content is maintained in a neutral, 
               factual tone without marketing language or speculation.
             </p>
@@ -258,8 +258,8 @@ export default function DisclaimerPage() {
             
             <p className="text-gray-300 leading-relaxed relative">
               <strong className="text-white">Minima</strong>, <strong className="text-white">Minima Global</strong>, 
-              and related marks are trademarks or registered trademarks of Minima Foundation. 
-              This project is not affiliated with or endorsed by Minima Foundation. 
+              and related marks are trademarks or registered trademarks of Minima Global. 
+              This project is not affiliated with or endorsed by Minima, Minima Global, or any associated entities. 
               We use these terms solely for informational and educational purposes to describe 
               the Minima Protocol ecosystem.
             </p>
@@ -340,7 +340,7 @@ export default function DisclaimerPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: April 13, 2026
+            Last updated: June 4, 2026
           </p>
         </section>
 

@@ -354,7 +354,7 @@ export default function LinksPage() {
           </h2>
           
           <p className="text-gray-300 leading-relaxed mb-4">
-            Verified links to official Minima Foundation platforms:
+            Verified links to official Minima Global platforms:
           </p>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -416,7 +416,7 @@ export default function LinksPage() {
           
           <p className="text-gray-300 leading-relaxed mb-4">
             Telegram communities for non-English speakers. 
-            These channels are community-maintained and not officially moderated by Minima Foundation:
+            These channels are community-maintained and not officially moderated by Minima Global:
           </p>
           
           <ul className="space-y-2">
@@ -486,7 +486,7 @@ export default function LinksPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 19, 2026
+            Last updated: June 4, 2026
           </p>
         </section>
 
