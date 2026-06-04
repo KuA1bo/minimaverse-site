@@ -1,6 +1,7 @@
 // src/app/rss.xml/route.ts
 // RSS feed generator for Minimaverse - static pages + verified news items
 // NOTE: When adding a new page or news item, add it to the respective array below.
+// Updated: Added Maximize Rewards Update [04.06.2026]
 import RSS from 'rss';
 import { NextResponse } from 'next/server';
 
@@ -27,6 +28,12 @@ export async function GET() {
 
   // Verified news items - add new entries here with confirmed status only
   const newsItems = [
+    {
+      title: 'Maximize Rewards Programme Update',
+      url: 'https://minimaverse.com/news/maximize-rewards-update',
+      desc: 'Update on Maximize rewards programme nearing completion, with active contracts continuing normally and focus remaining on infrastructure, partnerships, utility, and protocol development. Source: Official Minima Global Announcements (Telegram). Status: confirmed.',
+      date: new Date('2026-06-04'),
+    },
     {
       title: 'Engineering Update: DEX, Stablecoin Bridge, and Ecosystem Progress',
       url: 'https://t.me/MinimaGlobal/593',

@@ -2,7 +2,7 @@
 
 // src/app/page.tsx
 // Home page - Minimaverse independent information hub
-// Updated: Documentation-style live ticker, pause-on-hover, clickable, precise text layout [25.05.2026]
+// Updated: Ticker links to internal news page [04.06.2026]
 
 import { useRef, useState, useLayoutEffect } from 'react';
 import Link from 'next/link';
@@ -143,17 +143,15 @@ const LatestUpdatesStrip = () => {
 
   // Added mr-2 to the last span so the next copy's leading dot has a proper space
   const content = (
-    <a
-      href="https://t.me/MinimaGlobal/593"
-      target="_blank"
-      rel="noopener noreferrer"
+    <Link
+      href="/news/maximize-rewards-update"
       className="flex items-center whitespace-nowrap text-gray-400 hover:text-purple-400 transition-colors duration-200"
     >
       <span>•</span>
       <span className="ml-2 font-mono uppercase tracking-wider">Latest Verified Updates</span>
       <span className="mx-2">•</span>
-      <span className="mr-2">Engineering update covering DEX infrastructure, stablecoin bridge integration, ecosystem tooling, node architecture progress, and ongoing protocol development</span>
-    </a>
+      <span className="mr-2">Update on Maximize rewards programme nearing completion, with active contracts continuing normally and focus remaining on infrastructure, partnerships, utility, and protocol development</span>
+    </Link>
   );
 
   return (
@@ -312,7 +310,7 @@ export default function HomePage() {
         </div>
 
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
-          <p className="text-gray-500 text-sm flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />Last updated: 25 мая 26</p>
+          <p className="text-gray-500 text-sm flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />Last updated: 4 июня 26</p>
         </section>
       </article>
     </div>

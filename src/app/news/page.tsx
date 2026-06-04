@@ -1,6 +1,6 @@
 // src/app/news/page.tsx
 // News page - latest updates and announcements about Minima Protocol
-// Updated: Removed "Active Campaign" label, neutral tone enforced [27.05.2026]
+// Updated: Added Maximize Rewards Update, internal navigation support [04.06.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -235,6 +235,13 @@ export default function NewsPage() {
           <div className="space-y-4">
             {[
               {
+                date: 'June 4, 2026',
+                title: 'Maximize Rewards Programme Update',
+                text: "Update on Maximize rewards programme nearing completion, with active contracts continuing normally and focus remaining on infrastructure, partnerships, utility, and protocol development.",
+                link: { href: '/news/maximize-rewards-update', text: '→ Read More' },
+                status: 'confirmed' as const
+              },
+              {
                 date: 'May 24, 2026',
                 title: 'Engineering Update: DEX, Stablecoin Bridge, and Ecosystem Progress',
                 text: "The Minima ecosystem team published an engineering update covering progress across core products and infrastructure. Testing across the DEX, MiniMask, and Stablecoin Bridge has been completed, with all components moving into release preparation. The DEX (v1.0.1) introduces UI improvements, SIM bin restrictions for new users, a 5-minute timeout on trades and messages, and several bug fixes. The Stablecoin Bridge (v1.0) adds redesigned front-end support and enables USDT (ERC-20) bridging into Minima-native USDT, along with performance optimizations. Ongoing work continues across Integritas tooling and Minima Core development.\n\nSource: Official Minima Global Announcements (Telegram)\nhttps://t.me/MinimaGlobal/593",
@@ -319,16 +326,29 @@ export default function NewsPage() {
                   
                   {/* Links container - improved spacing between article and video links */}
                   <div className="space-y-2">
-                    <ExternalLink 
-                      href={item.link.href} 
-                      className={`underline-offset-4 transition-all duration-300 text-sm block inline-flex items-center gap-1
-                        ${item.featured 
-                          ? 'text-purple-300 hover:text-purple-200 decoration-purple-500/40 hover:decoration-purple-400' 
-                          : 'text-blue-400 hover:text-purple-400 decoration-blue-500/30 hover:decoration-purple-500/60'
-                        }`}
-                    >
-                      {item.link.text}
-                    </ExternalLink>
+                    {item.link.href.startsWith('/') ? (
+                      <Link 
+                        href={item.link.href}
+                        className={`underline-offset-4 transition-all duration-300 text-sm block inline-flex items-center gap-1
+                          ${item.featured 
+                            ? 'text-purple-300 hover:text-purple-200 decoration-purple-500/40 hover:decoration-purple-400' 
+                            : 'text-blue-400 hover:text-purple-400 decoration-blue-500/30 hover:decoration-purple-500/60'
+                          }`}
+                      >
+                        {item.link.text}
+                      </Link>
+                    ) : (
+                      <ExternalLink 
+                        href={item.link.href} 
+                        className={`underline-offset-4 transition-all duration-300 text-sm block inline-flex items-center gap-1
+                          ${item.featured 
+                            ? 'text-purple-300 hover:text-purple-200 decoration-purple-500/40 hover:decoration-purple-400' 
+                            : 'text-blue-400 hover:text-purple-400 decoration-blue-500/30 hover:decoration-purple-500/60'
+                          }`}
+                      >
+                        {item.link.text}
+                      </ExternalLink>
+                    )}
                     {item.video && (
                       <>
                         {/* Visual separator for desktop, hidden on mobile */}
@@ -464,7 +484,7 @@ export default function NewsPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 24, 2026 */}
+        {/* Last Updated - UPDATED DATE to June 4, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
