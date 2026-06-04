@@ -1,6 +1,6 @@
 // src/app/nodes/page.tsx
 // Minima Node Setup & Installation Guide
-// Last updated: June 3, 2026
+// Last updated: June 4, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -193,8 +193,8 @@ export default function NodesPage() {
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3 flex-wrap">
               <span className="block sm:inline">Status indicators:</span>
               <span className="text-green-300">• confirmed</span>
-              <span className="text-yellow-300">• in-development</span>
               <span className="text-purple-300">• expert-verified</span>
+              <span className="text-yellow-300">• in-development</span>
               <span className="text-gray-300">• community-maintained</span>
             </div>
           </div>
@@ -319,6 +319,9 @@ export default function NodesPage() {
           <div className="relative space-y-4">
             <p className="text-gray-300 text-sm leading-relaxed">
               Recovery methods for restoring node access, wallet state, and chain synchronization.
+            </p>
+            <p className="text-gray-400 text-xs">
+              All recovery operations are performed via the Security MiniDapp interface.
             </p>
             
             {/* Recovery methods list */}
@@ -734,7 +737,7 @@ export default function NodesPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: June 3, 2026
+            Last updated: June 4, 2026
           </p>
         </section>
 
