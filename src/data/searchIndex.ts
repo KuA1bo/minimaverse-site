@@ -1,6 +1,8 @@
 // src/data/searchIndex.ts
 // Search index for client-side fuzzy search with maximum keyword coverage
-// Updated: June 3, 2026 - Synced with optimized page anchors, SEO tags, and E-E-A-T safe descriptions
+// Updated: June 5, 2026 - Integrated dynamic news articles from news.ts
+
+import { newsArticles } from './news';
 
 export interface SearchItem {
   title: string;
@@ -9,7 +11,24 @@ export interface SearchItem {
   tags: string[];
 }
 
+// Generate search items from news articles
+const newsSearchItems: SearchItem[] = newsArticles.map((article) => ({
+  title: article.title,
+  url: `/news/${article.slug}`,
+  description: article.summary,
+  tags: [
+    'news',
+    'update',
+    'announcement',
+    ...article.title.toLowerCase().split(' ').slice(0, 3),
+    article.slug.replace(/-/g, ' ')
+  ],
+}));
+
 export const searchIndex: SearchItem[] = [
+  // === NEWS ARTICLES (auto-generated from news.ts) ===
+  ...newsSearchItems,
+
   // === PAGES ===
   { title: "Home", url: "/", description: "Neutral Minima Protocol Info Hub", tags: ["home", "minima", "hub", "start", "main", "landing"] },
   { title: "What is Minima", url: "/about", description: "Core features and architecture of the protocol", tags: ["about", "what is minima", "protocol", "intro", "overview", "basics"] },
