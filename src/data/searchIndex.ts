@@ -32,7 +32,7 @@ export const searchIndex: SearchItem[] = [
 
   // === /about: Protocol Sections ===
   { title: "Mobile-First Design", url: "/about#mobile", description: "Minima is designed to run full nodes on smartphones and IoT", tags: ["mobile", "phone", "lightweight", "efficiency", "mobile first", "battery", "iot", "any device"] },
-  { title: "About This Project", url: "/about#about-project", description: "Independent documentation project focused on Minima Protocol", tags: ["about project", "independent", "documentation", "community", "minima foundation"] },
+  { title: "About This Project", url: "/about#about-project", description: "Independent documentation project focused on Minima Protocol", tags: ["about project", "independent", "documentation", "community", "minima global"] },
   { title: "Who We Are", url: "/about#who-we-are", description: "Community volunteers maintaining neutral documentation", tags: ["who we are", "community", "volunteers", "maintainers", "contributors"] },
   { title: "Consensus Mechanism", url: "/about#consensus", description: "How Minima achieves PoW consensus without miners", tags: ["consensus", "pow", "mining", "proof-of-work", "validation", "security", "tx-pow"] },
   { title: "Protocol Architecture", url: "/about#architecture", description: "Technical overview of Minima architecture and data structures", tags: ["architecture", "technical", "design", "structure", "layers", "components", "cascading proof chain"] },
