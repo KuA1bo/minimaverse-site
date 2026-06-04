@@ -1,24 +1,35 @@
 import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { newsArticles, NewsArticle } from '@/data/news';
 
-// src/app/news/maximize-rewards-update/page.tsx
-// News article: Maximize Rewards Programme Update [04.06.2026]
-// FINAL VERSION: Locked for production
+// Generates static parameters for all news articles at build time
+export async function generateStaticParams() {
+  return newsArticles.map((article) => ({
+    slug: article.slug,
+  }));
+}
 
-export const metadata = {
-  title: 'Maximize Rewards Programme Update | Minimaverse',
-  description: 'Update on Maximize rewards programme nearing completion. Active contracts continue normally; new contracts will cease upon pool depletion.',
-  openGraph: {
-    title: 'Maximize Rewards Programme Update | Minimaverse',
-    description: 'Update on Maximize rewards programme nearing completion. Active contracts continue normally; new contracts will cease upon pool depletion.',
-    url: 'https://minimaverse.com/news/maximize-rewards-update',
-    siteName: 'Minimaverse',
-    type: 'article',
-    publishedTime: '2026-06-04T00:00:00.000Z',
-    modifiedTime: '2026-06-04T00:00:00.000Z',
-  },
-};
+// Generates metadata for SEO
+export async function generateMetadata({ params }: { params: { slug: string } }) {
+  const article = newsArticles.find((a) => a.slug === params.slug);
+  if (!article) return {};
 
-// Local ExternalLink — matches the pattern used across Minimaverse
+  return {
+    title: `${article.title} | Minimaverse`,
+    description: article.summary,
+    openGraph: {
+      title: `${article.title} | Minimaverse`,
+      description: article.summary,
+      url: `https://minimaverse.com/news/${article.slug}`,
+      siteName: 'Minimaverse',
+      type: 'article',
+      publishedTime: article.date,
+      modifiedTime: article.date,
+    },
+  };
+}
+
+// Local component for external links (matches project style)
 const ExternalLink = ({ 
   href, 
   children, 
@@ -41,7 +52,13 @@ const ExternalLink = ({
   </a>
 );
 
-export default function MaximizeRewardsUpdate() {
+export default function NewsArticlePage({ params }: { params: { slug: string } }) {
+  const article = newsArticles.find((a) => a.slug === params.slug);
+
+  if (!article) {
+    notFound();
+  }
+
   return (
     <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
       {/* Breadcrumb */}
@@ -56,7 +73,7 @@ export default function MaximizeRewardsUpdate() {
           </li>
           <li className="flex items-center gap-2">
             <span>/</span>
-            <span className="text-gray-400">Maximize Rewards Update</span>
+            <span className="text-gray-400">{article.title}</span>
           </li>
         </ol>
       </nav>
@@ -71,17 +88,17 @@ export default function MaximizeRewardsUpdate() {
               </span>
               Verified Update
             </span>
-            <time className="text-gray-500 text-sm" dateTime="2026-06-04">
-              June 4, 2026
+            <time className="text-gray-500 text-sm" dateTime={article.date}>
+              {article.displayDate}
             </time>
           </div>
           <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-              Maximize Rewards Programme Update
+              {article.title}
             </span>
           </h1>
           <p className="text-gray-400 text-lg leading-relaxed">
-            The Maximize rewards programme is a limited-term initiative with a finite rewards pool. This pool is now nearing depletion, and the programme is expected to conclude in the near future.
+            {article.summary}
           </p>
         </header>
 
@@ -91,18 +108,14 @@ export default function MaximizeRewardsUpdate() {
           <div className="space-y-4 text-gray-300 text-sm leading-relaxed">
             <p className="text-white font-medium">Key operational details:</p>
             <ul className="list-none space-y-3 pl-0">
-              <li className="flex items-start gap-3">
-                <span className="text-purple-400 mt-1 flex-shrink-0">•</span>
-                <span><strong className="text-gray-200">Active contracts:</strong> Will continue to operate according to their existing terms. Users can claim rewards normally upon maturity.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-purple-400 mt-1 flex-shrink-0">•</span>
-                <span><strong className="text-gray-200">New contracts:</strong> Creation of new Maximize contracts will cease once the remaining rewards allocation is fully committed.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="text-purple-400 mt-1 flex-shrink-0">•</span>
-                <span><strong className="text-gray-200">Strategic focus:</strong> Infrastructure, partnerships, use cases, and real-world utility remain core areas of ecosystem development.</span>
-              </li>
+              {article.details.map((detail, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <span className="text-purple-400 mt-1 flex-shrink-0">•</span>
+                  <span>
+                    <strong className="text-gray-200">{detail.label}:</strong> {detail.text}
+                  </span>
+                </li>
+              ))}
             </ul>
           </div>
         </div>
@@ -115,10 +128,10 @@ export default function MaximizeRewardsUpdate() {
             Primary Source
           </h3>
           <ExternalLink 
-            href="https://t.me/MinimaGlobal/594" 
+            href={article.source} 
             className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium break-all"
           >
-            Official Telegram Announcement — MinimaGlobal/594
+            {article.sourceLabel}
           </ExternalLink>
         </div>
 
