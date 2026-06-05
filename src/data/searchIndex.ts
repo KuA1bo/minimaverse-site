@@ -1,6 +1,7 @@
 // src/data/searchIndex.ts
 // Search index for client-side fuzzy search with maximum keyword coverage
 // Updated: June 5, 2026 - Integrated dynamic news articles from news.ts
+// Updated: June 5, 2026 - Synced /tools anchors after Emerging Utilities refactor
 
 import { newsArticles } from './news';
 
@@ -131,10 +132,11 @@ export const searchIndex: SearchItem[] = [
   { title: "Wicrypt Partnership", url: "/partners#verified", description: "DePIN Wi-Fi network for global internet access", tags: ["wicrypt", "wifi", "depin", "internet access", "global", "democratize", "february 2024"] },
   { title: "LTA Labs Partnership", url: "/partners#verified", description: "Financial products suite leveraging Minima infrastructure", tags: ["lta labs", "financial products", "defi", "suite", "infrastructure", "february 2024"] },
 
-  // === /tools: DEX & Bridge ===
-  { title: "MiniMaxt DEX", url: "/tools#dex-bridge", description: "Decentralized exchange for Minima ↔ USDT trading", tags: ["minimaxt", "dex", "exchange", "trading", "minima", "usdt", "swap", "defi"] },
-  { title: "MXUSD Bridge", url: "/tools#dex-bridge", description: "Cross-chain bridge for USDT swaps in/out of Minima", tags: ["mxusd", "bridge", "cross-chain", "usdt", "swap", "interoperability"] },
-  { title: "MiniMask Wallet Extension", url: "/tools#dex-bridge", description: "Browser wallet extension for Minima interaction", tags: ["minimask", "wallet", "extension", "browser", "chrome", "brave", "web3", "injection"] },
+  // === /tools: Emerging Ecosystem Utilities (soft launch) ===
+  { title: "Emerging Ecosystem Utilities", url: "/tools#emerging", description: "Soft-launch utilities extending core protocol functionality", tags: ["emerging", "utilities", "soft launch", "test run", "new tools", "ecosystem", "minima global"] },
+  { title: "MiniMaxt DEX", url: "/tools#emerging", description: "Decentralized exchange for Minima ↔ USDT trading (only pair available)", tags: ["minimaxt", "dex", "exchange", "trading", "minima", "usdt", "swap", "defi", "soft launch", "only pair", "test run"] },
+  { title: "MXUSD Bridge", url: "/tools#emerging", description: "Cross-chain bridge for USDT swaps in/out of Minima", tags: ["mxusd", "bridge", "cross-chain", "usdt", "swap", "interoperability", "soft launch", "test run"] },
+  { title: "MiniMask Wallet Extension", url: "/tools#emerging", description: "Browser wallet extension for Minima interaction (requires Developer Mode)", tags: ["minimask", "wallet", "extension", "browser", "chrome", "brave", "web3", "injection", "developer mode", "soft launch", "test run"] },
 
   // === /tools: Official & Dev Tools ===
   { title: "Official Tools", url: "/tools#official", description: "Terminal CLI, Scan Explorer, Web/Mobile wallets", tags: ["terminal", "cli", "explorer", "scan", "web wallet", "mobile apk", "official"] },
