@@ -37,7 +37,7 @@ export default function SupportBlock() {
             Support Minimaverse <span className="text-gray-500">(Optional)</span>
           </h4>
           <p className="text-xs text-gray-400 mt-1 leading-relaxed">
-            Voluntary contributions help maintain the project and infrastructure.
+            Contributions help maintain the project and infrastructure.
           </p>
         </div>
 
