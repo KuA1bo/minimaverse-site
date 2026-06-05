@@ -1,7 +1,5 @@
 // src/app/tools/page.tsx
 // Tools page - verified tools and utilities for Minima Protocol
-// Updated: Enhanced H1 for SEO, denser intro text, unified nav style, section anchors, JsonLd, date May 16, 2026
-// Polished: minimal structural cleanup, status legend in Primary Sources, remove duplicate [19.05.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -155,7 +153,7 @@ export default function ToolsPage() {
             <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
-            {/* 1. Shortest: minimammr.com (13 chars) */}
+            {/* 1. Shortest: minimammr.com (14 chars) */}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink 
@@ -581,11 +579,11 @@ export default function ToolsPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 19, 2026 */}
+        {/* Last Updated - UPDATED DATE to May 5, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 19, 2026
+            Last updated: June 5, 2026
           </p>
         </section>
 
