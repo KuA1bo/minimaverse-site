@@ -1,7 +1,7 @@
 // src/data/news.ts
 // Centralized news data source for Minimaverse
 // All verified news articles are stored here and rendered via dynamic route /news/[slug]
-// Updated: Maximize Rewards Programme Update [04.06.2026]
+// Updated: Engineering Update: Minima Core, MegaMMR, Integritas [05.06.2026]
 
 export interface NewsArticle {
   slug: string;
@@ -18,6 +18,34 @@ export interface NewsArticle {
 }
 
 export const newsArticles: NewsArticle[] = [
+  {
+    slug: 'engineering-update-june-2026',
+    date: '2026-06-05',
+    displayDate: 'June 5, 2026',
+    title: 'Engineering Update: Minima Core, MegaMMR, Integritas',
+    summary:
+      'Minima Global announced that Minima Core completed beta and moved to closed testing, alongside infrastructure updates and ongoing Integritas-related development.',
+    details: [
+      {
+        label: 'Minima Core',
+        text: 'Beta completed, moved to closed testing.',
+      },
+      {
+        label: 'MegaMMR & Explorer',
+        text: 'Optimization work completed.',
+      },
+      {
+        label: 'AI Logger',
+        text: 'Developed for AI transparency and auditability requirements.',
+      },
+      {
+        label: 'Local Integritas Platform',
+        text: 'Under development for low-powered deployments.',
+      },
+    ],
+    source: 'https://t.me/MinimaGlobal/596',
+    sourceLabel: 'Official Telegram Announcement — MinimaGlobal/596',
+  },
   {
     slug: 'maximize-rewards-update',
     date: '2026-06-04',
