@@ -94,7 +94,7 @@ export default function ToolsPage() {
 
       {/* Unified Header with gradient accent */}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
         
         <div className="relative flex justify-between items-start">
           <div className="relative inline-block w-full pb-3">
@@ -144,7 +144,7 @@ export default function ToolsPage() {
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl pointer-events-none" />
         
         <div className="relative">
           <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
@@ -303,7 +303,7 @@ export default function ToolsPage() {
 
             <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               <h3 className="text-white font-medium mb-2 relative">Mobile Wallet</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
                 Official mobile wallet available on Google Play and as direct APK download.
@@ -408,7 +408,7 @@ export default function ToolsPage() {
           
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
             
             <p className="text-gray-300 leading-relaxed mb-2 relative">
               Utilities extending core protocol functionality within the Minima ecosystem. Currently in soft launch / test run phase.
@@ -498,7 +498,13 @@ export default function ToolsPage() {
             <div className="mt-6 pt-4 border-t border-gray-700/40">
               <p className="text-amber-200 text-xs leading-relaxed">
                 <span className="text-base mr-1">⚠️</span>
-                <strong>Operational Notes:</strong> In-app chat on MinimaXT is unmoderated with a 5-minute delivery delay. Token visibility issues should be verified via <ExternalLink href="https://explorer.minima.global" className="underline hover:text-amber-100">Block Explorer</ExternalLink>.
+                <strong>Operational Notes:</strong> In-app chat on MinimaXT is unmoderated with a 5-minute delivery delay. Token visibility issues should be verified via{' '}
+                <ExternalLink 
+                  href="https://explorer.minima.global" 
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                >
+                  Block Explorer
+                </ExternalLink>.
               </p>
             </div>
 
@@ -530,7 +536,7 @@ export default function ToolsPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: June 5, 2026
+            Last updated: June 6, 2026
           </p>
         </section>
 
