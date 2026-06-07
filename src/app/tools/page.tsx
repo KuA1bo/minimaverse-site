@@ -195,6 +195,17 @@ export default function ToolsPage() {
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Block Explorer</span>
             </li>
+            <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
+              <span className="hidden md:inline text-gray-400">•</span>
+              <ExternalLink 
+                href="https://minidapps.minima.global/" 
+                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+              >
+                minidapps.minima.global
+              </ExternalLink>
+              <span className="hidden md:inline text-gray-500">—</span>
+              <span className="text-gray-500 text-xs md:text-sm">Minima MiniDapp Directory</span>
+            </li>
           </ul>
           
           <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
@@ -536,7 +547,7 @@ export default function ToolsPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: June 6, 2026
+            Last updated: June 7, 2026
           </p>
         </section>
 
