@@ -1,6 +1,6 @@
 // src/app/nodes/page.tsx
 // Minima Node Setup & Installation Guide
-// Last updated: June 4, 2026
+// Last updated: June 10, 2026
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -410,12 +410,57 @@ export default function NodesPage() {
             </div>
           </div>
         </div>
+        
+        {/* Source link matching the exact "Source: [Descriptive Text]" pattern */}
         <p className="text-gray-500 text-xs mt-3">
+          Source:{' '}
           <ExternalLink 
             href="https://docs.minima.global/docs/user-guides/node-recovery/recovery-options" 
             className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
           >
-            → View Source
+            Node Recovery Options
+          </ExternalLink>
+        </p>
+      </section>
+
+      {/* Cold Storage Setup */}
+      <section id="cold-storage" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
+        <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+          <span className="text-2xl">🧊</span>
+          <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Cold Storage Setup</span>
+        </h2>
+        
+        <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+                        transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+                        group overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          
+          {/* Metadata Block per style guide */}
+          <div className="mb-4 pb-4 border-b border-gray-700/40">
+            <div className="flex flex-wrap items-center gap-3 text-xs">
+              <StatusBadge status="confirmed" reducedGlow={true} />
+              <span className="text-gray-500">Note: Based on official Minima documentation</span>
+            </div>
+          </div>
+          
+          <div className="relative">
+            <p className="text-gray-300 text-sm leading-relaxed mb-2">
+              Offline signing workflow for securing private keys and reducing online exposure.
+            </p>
+            <p className="text-gray-400 text-xs">
+              Recommended for advanced users requiring offline transaction signing.
+            </p>
+          </div>
+        </div>
+        
+        {/* Source link matching the exact "Source: [Descriptive Text]" pattern */}
+        <p className="text-gray-500 text-xs mt-3">
+          Source:{' '}
+          <ExternalLink 
+            href="https://docs.minima.global/docs/user-guides/advanced/cold-storage" 
+            className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+          >
+            Advanced Cold Storage Guide
           </ExternalLink>
         </p>
       </section>
@@ -737,7 +782,7 @@ export default function NodesPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: June 4, 2026
+            Last updated: June 10, 2026
           </p>
         </section>
 
