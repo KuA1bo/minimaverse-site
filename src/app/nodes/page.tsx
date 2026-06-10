@@ -272,7 +272,7 @@ export default function NodesPage() {
               </li>
               <li className="flex items-start gap-2">
                 <span className="text-blue-400 mt-0.5">•</span>
-                <span>Verification: Recommended before production use</span>
+                <span>Verification: Verify peer endpoints before connecting</span>
               </li>
             </ul>
           </div>
