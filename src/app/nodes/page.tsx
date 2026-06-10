@@ -275,25 +275,30 @@ export default function NodesPage() {
                 <span>Verification: Recommended before production use</span>
               </li>
             </ul>
-            
-            <ExternalLink 
-              href="https://spartacusrex.com/minimapeers.txt" 
-              className="inline-flex items-center gap-1.5 px-4 py-2 bg-gray-700/60 hover:bg-gray-600/60 text-gray-200 text-sm font-medium rounded-lg transition-all duration-300 hover:scale-[1.02] border border-gray-600/50"
-            >
-              → View Source
-            </ExternalLink>
           </div>
         </div>
-        <p className="text-gray-500 text-xs mt-3">
-          Source attribution:{' '}
-          <ExternalLink 
-            href="https://spartacusrex.com" 
-            className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-          >
-            spartacusrex.com
-          </ExternalLink>
-          {' '}— personal resource, not an official Minima domain
-        </p>
+        
+        {/* Clean stacked links for mobile/desktop readability */}
+        <div className="text-gray-500 text-xs mt-3 flex flex-col gap-1.5">
+          <p>
+            Attribution:{' '}
+            <ExternalLink 
+              href="https://spartacusrex.com" 
+              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+            >
+              spartacusrex.com
+            </ExternalLink>
+          </p>
+          <p>
+            Source:{' '}
+            <ExternalLink 
+              href="https://spartacusrex.com/minimapeers.txt" 
+              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+            >
+              Public Peer List (minimapeers.txt)
+            </ExternalLink>
+          </p>
+        </div>
       </section>
 
       {/* Node Recovery - official documentation hub */}
