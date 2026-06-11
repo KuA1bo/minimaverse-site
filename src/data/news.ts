@@ -1,7 +1,7 @@
 // src/data/news.ts
 // Centralized news data source for Minimaverse
 // All verified news articles are stored here and rendered via dynamic route /news/[slug]
-// Updated: Engineering Update: Minima Core, MegaMMR, Integritas [05.06.2026]
+// Updated: Engineering Update [13.06.2026]
 
 export interface NewsArticle {
   slug: string;
@@ -18,6 +18,62 @@ export interface NewsArticle {
 }
 
 export const newsArticles: NewsArticle[] = [
+  {
+    slug: 'engineering-update-2026-06-13',
+    date: '2026-06-13',
+    displayDate: 'June 13, 2026',
+    title: 'Engineering Update',
+    summary:
+      'This update reports continued engineering progress across the Minima protocol and Integritas ecosystem, including Minima Core entering closed testing, exploration of native application integration beyond MiniDapps, design-level validation of a potential Key Uses solution, and ongoing development of local execution capabilities for decentralized AI workloads.',
+    details: [
+      {
+        label: 'Minima Core',
+        text: 'Lightweight version for hardware/embedded systems; beta completed, now in closed testing.',
+      },
+      {
+        label: 'Application Architecture Expansion',
+        text: 'Native applications (Android APKs, Windows services) via OS-level IPC, beyond browser-based MiniDapps.',
+      },
+      {
+        label: 'Key Uses',
+        text: 'Potential solution validated at design level; implementation phase planned next.',
+      },
+      {
+        label: 'Integritas Edge Deployment',
+        text: 'Local execution platform for low-powered devices, decentralized AI workloads.',
+      },
+    ],
+    source: 'https://t.me/MinimaGlobal/598',
+    sourceLabel: 'Official Telegram Announcement — MinimaGlobal/598',
+  },
+  {
+    slug: 'maximize-conclusion',
+    date: '2026-06-11',
+    displayDate: 'June 11, 2026',
+    title: 'Maximize Rewards Programme Concludes',
+    summary:
+      'The Maximize rewards programme has concluded after distributing more than 50 million $MINIMA across participants. New contracts can no longer be created, while existing contracts remain active until maturity and continue normal reward claims.',
+    details: [
+      {
+        label: 'Programme Status',
+        text: 'Concluded, rewards pool exhausted.',
+      },
+      {
+        label: 'New Contracts',
+        text: 'Creation disabled, no new contracts can be created.',
+      },
+      {
+        label: 'Existing Contracts',
+        text: 'Continue operating until maturity under original terms.',
+      },
+      {
+        label: 'Total Distributed',
+        text: 'More than 50 million $MINIMA distributed across network participants.',
+      },
+    ],
+    source: 'https://t.me/MinimaGlobal/597',
+    sourceLabel: 'Official Telegram Announcement — MinimaGlobal/597',
+  },
   {
     slug: 'engineering-update-june-2026',
     date: '2026-06-05',
