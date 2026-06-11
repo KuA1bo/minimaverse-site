@@ -1,7 +1,7 @@
 // src/app/rss.xml/route.ts
 // RSS feed generator for Minimaverse - static pages + verified news items
 // NOTE: When adding a new page or news item, add it to the respective array below.
-// Updated: Added Engineering Update June 2026 [05.06.2026]
+// Updated: Added Maximize Rewards Programme Concludes [11.06.2026]
 import RSS from 'rss';
 import { NextResponse } from 'next/server';
 
@@ -28,6 +28,12 @@ export async function GET() {
 
   // Verified news items - add new entries here with confirmed status only
   const newsItems = [
+    {
+      title: 'Maximize Rewards Programme Concludes',
+      url: 'https://minimaverse.com/news/maximize-conclusion',
+      desc: 'The Maximize rewards programme has concluded after distributing more than 50 million $MINIMA across participants. New contracts can no longer be created, while existing contracts remain active until maturity. Source: MinimaGlobal/597. Status: confirmed.',
+      date: new Date('2026-06-11'),
+    },
     {
       title: 'Engineering Update: Minima Core, MegaMMR, Integritas',
       url: 'https://minimaverse.com/news/engineering-update-june-2026',

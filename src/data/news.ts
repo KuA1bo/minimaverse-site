@@ -1,7 +1,7 @@
 // src/data/news.ts
 // Centralized news data source for Minimaverse
 // All verified news articles are stored here and rendered via dynamic route /news/[slug]
-// Updated: Engineering Update: Minima Core, MegaMMR, Integritas [05.06.2026]
+// Updated: Maximize Rewards Programme Concludes [11.06.2026]
 
 export interface NewsArticle {
   slug: string;
@@ -18,6 +18,34 @@ export interface NewsArticle {
 }
 
 export const newsArticles: NewsArticle[] = [
+  {
+    slug: 'maximize-conclusion',
+    date: '2026-06-11',
+    displayDate: 'June 11, 2026',
+    title: 'Maximize Rewards Programme Concludes',
+    summary:
+      'The Maximize rewards programme has concluded after distributing more than 50 million $MINIMA across participants. New contracts can no longer be created, while existing contracts remain active until maturity and continue normal reward claims.',
+    details: [
+      {
+        label: 'Programme Status',
+        text: 'Concluded, rewards pool exhausted.',
+      },
+      {
+        label: 'New Contracts',
+        text: 'Creation disabled, no new contracts can be created.',
+      },
+      {
+        label: 'Existing Contracts',
+        text: 'Continue operating until maturity under original terms.',
+      },
+      {
+        label: 'Total Distributed',
+        text: 'More than 50 million $MINIMA distributed across network participants.',
+      },
+    ],
+    source: 'https://t.me/MinimaGlobal/597',
+    sourceLabel: 'Official Telegram Announcement — MinimaGlobal/597',
+  },
   {
     slug: 'engineering-update-june-2026',
     date: '2026-06-05',

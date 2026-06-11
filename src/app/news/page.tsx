@@ -1,6 +1,6 @@
 // src/app/news/page.tsx
 // News page - latest updates and announcements about Minima Protocol
-// Updated: Added Engineering Update June 2026, internal navigation support [05.06.2026]
+// Updated: Added Maximize Rewards Programme Concludes, internal navigation support [11.06.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -234,6 +234,13 @@ export default function NewsPage() {
           
           <div className="space-y-4">
             {[
+              {
+                date: 'June 11, 2026',
+                title: 'Maximize Rewards Programme Concludes',
+                text: "The Maximize rewards programme has concluded after distributing more than 50 million $MINIMA across participants. New contracts can no longer be created, while existing contracts remain active until maturity and continue normal reward claims.",
+                link: { href: '/news/maximize-conclusion', text: '→ Read More' },
+                status: 'confirmed' as const
+              },
               {
                 date: 'June 5, 2026',
                 title: 'Engineering Update: Minima Core, MegaMMR, Integritas',
@@ -491,11 +498,11 @@ export default function NewsPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to June 5, 2026 */}
+        {/* Last Updated - UPDATED DATE to June 11, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: June 5, 2026
+            Last updated: June 11, 2026
           </p>
         </section>
 
