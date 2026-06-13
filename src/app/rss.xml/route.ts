@@ -1,7 +1,7 @@
 // src/app/rss.xml/route.ts
 // RSS feed generator for Minimaverse - static pages + verified news items
 // NOTE: When adding a new page or news item, add it to the respective array below.
-// Updated: Added Maximize Rewards Programme Concludes [11.06.2026]
+// Updated: Added Engineering Update [13.06.2026]
 import RSS from 'rss';
 import { NextResponse } from 'next/server';
 
@@ -28,6 +28,12 @@ export async function GET() {
 
   // Verified news items - add new entries here with confirmed status only
   const newsItems = [
+    {
+      title: 'Engineering Update',
+      url: 'https://minimaverse.com/news/engineering-update-2026-06-13',
+      desc: 'This update reports continued engineering progress across the Minima protocol and Integritas ecosystem, including Minima Core entering closed testing, exploration of native application integration beyond MiniDapps, design-level validation of a potential Key Uses solution, and ongoing development of local execution capabilities for decentralized AI workloads. Source: MinimaGlobal/598. Status: confirmed.',
+      date: new Date('2026-06-13'),
+    },
     {
       title: 'Maximize Rewards Programme Concludes',
       url: 'https://minimaverse.com/news/maximize-conclusion',

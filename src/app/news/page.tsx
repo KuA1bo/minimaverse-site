@@ -1,6 +1,6 @@
 // src/app/news/page.tsx
 // News page - latest updates and announcements about Minima Protocol
-// Updated: Added Maximize Rewards Programme Concludes, internal navigation support [11.06.2026]
+// Updated: Added Engineering Update, internal navigation support [13.06.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -234,6 +234,13 @@ export default function NewsPage() {
           
           <div className="space-y-4">
             {[
+              {
+                date: 'June 13, 2026',
+                title: 'Engineering Update',
+                text: "This update reports continued engineering progress across the Minima protocol and Integritas ecosystem, including Minima Core entering closed testing, exploration of native application integration beyond MiniDapps, design-level validation of a potential Key Uses solution, and ongoing development of local execution capabilities for decentralized AI workloads.",
+                link: { href: '/news/engineering-update-2026-06-13', text: '→ Read More' },
+                status: 'confirmed' as const
+              },
               {
                 date: 'June 11, 2026',
                 title: 'Maximize Rewards Programme Concludes',
@@ -498,11 +505,11 @@ export default function NewsPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to June 11, 2026 */}
+        {/* Last Updated - UPDATED DATE to June 13, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: June 11, 2026
+            Last updated: June 13, 2026
           </p>
         </section>
 
