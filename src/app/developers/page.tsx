@@ -611,10 +611,10 @@ export default function DevelopersPage() {
             </div>
             {/* Link outside card */}
             <ExternalLink 
-              href="https://discord.gg/minimaglobal" 
+              href="https://discord.gg/minima" 
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm ml-1"
             >
-              💬 discord.gg/minimaglobal
+              💬 discord.gg/minima
             </ExternalLink>
           </div>
         </section>
