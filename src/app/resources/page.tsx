@@ -244,7 +244,7 @@ export default function LinksPage() {
             </p>
             <ul className="space-y-3 relative">
               {[
-                { icon: '💬', title: 'Discord Community', desc: 'Primary channel for real-time discussion', link: 'https://discord.gg/minimaglobal' },
+                { icon: '💬', title: 'Discord Community', desc: 'Primary channel for real-time discussion', link: 'https://discord.gg/minima' },
                 { icon: '✈️', title: 'Telegram (English)', desc: 'Official English-language community chat', link: 'https://t.me/Minima_Global' }
               ].map((channel, index) => (
                 <li key={index} className="flex items-start gap-3 relative">
@@ -486,7 +486,7 @@ export default function LinksPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: June 4, 2026
+            Last updated: June 23, 2026
           </p>
         </section>
 
