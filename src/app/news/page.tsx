@@ -1,6 +1,6 @@
 // src/app/news/page.tsx
 // News page - latest updates and announcements about Minima Protocol
-// Updated: Added Engineering Update, internal navigation support [13.06.2026]
+// Updated: Added XXIM Podcast Features Hugo and Adam, internal navigation support [29.06.2026]
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
@@ -234,6 +234,13 @@ export default function NewsPage() {
           
           <div className="space-y-4">
             {[
+              {
+                date: 'June 29, 2026',
+                title: 'XXIM Podcast Features Hugo and Adam',
+                text: "Minima team announced a new XXIM Podcast episode featuring Hugo and Adam discussing enterprise partnerships, ecosystem developments, and project direction.",
+                link: { href: '/news/xxim-podcast-hugo-adam-interview', text: '→ Read More' },
+                status: 'confirmed' as const
+              },
               {
                 date: 'June 13, 2026',
                 title: 'Engineering Update',
@@ -505,11 +512,11 @@ export default function NewsPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE to June 13, 2026 */}
+        {/* Last Updated - UPDATED DATE to June 29, 2026 */}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: June 13, 2026
+            Last updated: June 29, 2026
           </p>
         </section>
 
