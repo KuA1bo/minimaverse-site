@@ -2,7 +2,7 @@
 
 // src/app/page.tsx
 // Home page - Minimaverse independent information hub
-// Updated: Ticker links to internal news page [13.06.2026]
+// Updated: Ticker links to internal news page [29.06.2026]
 
 import { useRef, useState, useLayoutEffect } from 'react';
 import Link from 'next/link';
@@ -144,13 +144,13 @@ const LatestUpdatesStrip = () => {
   // Added mr-2 to the last span so the next copy's leading dot has a proper space
   const content = (
     <Link
-      href="/news/engineering-update-2026-06-13"
+      href="/news/xxim-podcast-hugo-adam-interview"
       className="flex items-center whitespace-nowrap text-gray-400 hover:text-purple-400 transition-colors duration-200"
     >
       <span>•</span>
       <span className="ml-2 font-mono uppercase tracking-wider">Latest Verified Updates</span>
       <span className="mx-2">•</span>
-      <span className="mr-2">Minima Core in closed testing, native application architecture expansion, Key Uses solution validated, Integritas edge deployment progress</span>
+      <span className="mr-2">XXIM Podcast episode featuring Hugo and Adam discussing enterprise partnerships and ecosystem developments</span>
     </Link>
   );
 
@@ -310,7 +310,7 @@ export default function HomePage() {
         </div>
 
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
-          <p className="text-gray-500 text-sm flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />Last updated: 13 июня 26</p>
+          <p className="text-gray-500 text-sm flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />Last updated: June 29, 2026</p>
         </section>
       </article>
     </div>

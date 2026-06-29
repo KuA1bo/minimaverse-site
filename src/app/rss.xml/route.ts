@@ -1,7 +1,7 @@
 // src/app/rss.xml/route.ts
 // RSS feed generator for Minimaverse - static pages + verified news items
 // NOTE: When adding a new page or news item, add it to the respective array below.
-// Updated: Added Engineering Update [13.06.2026]
+// Updated: Added XXIM Podcast Features Hugo and Adam [29.06.2026]
 import RSS from 'rss';
 import { NextResponse } from 'next/server';
 
@@ -28,6 +28,12 @@ export async function GET() {
 
   // Verified news items - add new entries here with confirmed status only
   const newsItems = [
+    {
+      title: 'XXIM Podcast Features Hugo and Adam',
+      url: 'https://minimaverse.com/news/xxim-podcast-hugo-adam-interview',
+      desc: 'Minima team announced a new XXIM Podcast episode featuring Hugo and Adam discussing enterprise partnerships, ecosystem developments, and project direction. Source: MinimaGlobal/602. Status: confirmed.',
+      date: new Date('2026-06-29'),
+    },
     {
       title: 'Engineering Update',
       url: 'https://minimaverse.com/news/engineering-update-2026-06-13',

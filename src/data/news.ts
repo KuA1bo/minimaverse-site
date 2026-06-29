@@ -1,7 +1,7 @@
 // src/data/news.ts
 // Centralized news data source for Minimaverse
 // All verified news articles are stored here and rendered via dynamic route /news/[slug]
-// Updated: Engineering Update [13.06.2026]
+// Updated: XXIM Podcast Features Hugo and Adam [29.06.2026]
 
 export interface NewsArticle {
   slug: string;
@@ -18,6 +18,34 @@ export interface NewsArticle {
 }
 
 export const newsArticles: NewsArticle[] = [
+  {
+    slug: 'xxim-podcast-hugo-adam-interview',
+    date: '2026-06-29',
+    displayDate: 'June 29, 2026',
+    title: 'XXIM Podcast Features Hugo and Adam',
+    summary:
+      'Minima team announced a new XXIM Podcast episode featuring Hugo and Adam discussing enterprise partnerships, ecosystem developments, and project direction.',
+    details: [
+      {
+        label: 'Participants',
+        text: 'Hugo and Adam.',
+      },
+      {
+        label: 'Topics Covered',
+        text: 'Enterprise partnerships, ecosystem developments, ongoing initiatives.',
+      },
+      {
+        label: 'Format',
+        text: 'Video interview published on YouTube.',
+      },
+      {
+        label: 'Note',
+        text: 'Third-party media appearance, no new protocol features or roadmap changes.',
+      },
+    ],
+    source: 'https://t.me/MinimaGlobal/602',
+    sourceLabel: 'Official Telegram Announcement — MinimaGlobal/602',
+  },
   {
     slug: 'engineering-update-2026-06-13',
     date: '2026-06-13',
