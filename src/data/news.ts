@@ -1,20 +1,18 @@
-// src/data/news.ts
-// Centralized news data source for Minimaverse
-// All verified news articles are stored here and rendered via dynamic route /news/[slug]
-// Updated: XXIM Podcast Features Hugo and Adam [29.06.2026]
+
+
 
 export interface NewsArticle {
   slug: string;
-  date: string;           // ISO format: YYYY-MM-DD
-  displayDate: string;    // Human-readable: June 4, 2026
+  date: string;
+  displayDate: string;
   title: string;
-  summary: string;        // 1-2 sentence overview
+  summary: string;
   details: {
     label: string;
     text: string;
   }[];
-  source: string;         // Primary source URL
-  sourceLabel: string;    // Human-readable source description
+  source: string;
+  sourceLabel: string;
 }
 
 export const newsArticles: NewsArticle[] = [

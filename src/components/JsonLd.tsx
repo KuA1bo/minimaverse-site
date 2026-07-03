@@ -1,5 +1,5 @@
-// src/components/JsonLd.tsx
-// Reusable component for injecting JSON-LD structured data into the page head
+
+
 
 interface JsonLdProps {
   data: Record<string, unknown>;

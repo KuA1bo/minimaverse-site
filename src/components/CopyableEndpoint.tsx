@@ -1,4 +1,4 @@
-// Reusable copy-to-clipboard component for technical endpoints (Full Width Variant)
+
 "use client";
 
 import { useState } from "react";
@@ -8,9 +8,9 @@ interface CopyableEndpointProps {
   className?: string;
 }
 
-export default function CopyableEndpoint({ 
-  endpoint, 
-  className = "" 
+export default function CopyableEndpoint({
+  endpoint,
+  className = ""
 }: CopyableEndpointProps) {
   const [copied, setCopied] = useState(false);
 

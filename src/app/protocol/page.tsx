@@ -1,28 +1,26 @@
-// src/app/protocol/page.tsx
-// Protocol page - technical overview of Minima Protocol architecture
-// Updated: Unified nav style per /about, correct links per final map, restored detailed specs, section anchors, JsonLd
-// Polished: minimal structural cleanup, marketing terms neutralized, responsive status legend, added "About This Page" card, neutralized subjective wording, micro-fix: Tx-PoW security phrasing & storage terminology [19.05.2026]
+
+
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
-// ExternalLink component for all external links with arrow icon
-const ExternalLink = ({ 
-  href, 
-  children, 
-  className = '', 
+
+const ExternalLink = ({
+  href,
+  children,
+  className = '',
   ariaLabel,
   hideArrow = false
-}: { 
-  href: string; 
-  children: React.ReactNode; 
+}: {
+  href: string;
+  children: React.ReactNode;
   className?: string;
   ariaLabel?: string;
   hideArrow?: boolean;
 }) => (
-  <a 
-    href={href.trim()} 
-    target="_blank" 
+  <a
+    href={href.trim()}
+    target="_blank"
     rel="noopener noreferrer"
     className={`inline-flex items-center gap-1 ${className}`}
     aria-label={ariaLabel}
@@ -39,7 +37,7 @@ const ExternalLink = ({
   </a>
 );
 
-// StatusBadge component for feature status indicators
+
 const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'community' }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: 'shadow-green-500/50' },
@@ -47,7 +45,7 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
     'community': { bg: 'bg-gray-700/40', text: 'text-gray-300', border: 'border-gray-600/50', dot: 'bg-gray-400', glow: 'shadow-gray-400/50' },
   };
   const style = config[status];
-  
+
   return (
     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ${style.bg} ${style.text} text-xs font-medium border ${style.border} shadow-lg ${style.glow} transition-all duration-300 hover:scale-105`}>
       <span className="relative flex h-2 w-2">
@@ -61,7 +59,7 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
   );
 };
 
-// Structured data for Schema.org TechArticle
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "TechArticle",
@@ -84,25 +82,25 @@ const structuredData = {
 export default function ProtocolPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
-      
-      {/* Structured data for SEO - TechArticle schema */}
+
+      {}
       <JsonLd data={structuredData} />
 
-      {/* Unified Header with gradient accent */}
+      {}
       <header className="mb-6 sm:mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
-        
+
         <div className="relative flex justify-between items-start gap-4">
-          {/* Header text block - compact nav style unified with /about */}
+          {}
           <div className="relative inline-block w-full pb-2 sm:pb-3">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="text-gray-400 hover:text-white transition-colors inline-block mb-3 sm:mb-4 group text-sm sm:text-base"
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
-            
-            {/* Internal navigation - unified style per /about: text-sm, gap-1.5, gray-400/600, hover purple */}
+
+            {}
             <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
               <Link href="/nodes" className="text-gray-400 hover:text-purple-400 transition-colors">Nodes</Link>
               <span className="text-gray-600">•</span>
@@ -110,27 +108,27 @@ export default function ProtocolPage() {
               <span className="text-gray-600">•</span>
               <Link href="/ecosystem" className="text-gray-400 hover:text-purple-400 transition-colors">Ecosystem</Link>
             </div>
-            
-            {/* Enhanced H1 for stronger SEO and differentiation */}
+
+            {}
             <h1 className="text-2xl sm:text-3xl font-bold text-white mb-1">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Minima Protocol Architecture
               </span>
             </h1>
-            {/* SEO-optimized subtitle with long-tail keywords */}
+            {}
             <p className="text-gray-400 text-sm sm:text-base">Edge consensus, Tx-PoW, and lightweight full-node infrastructure</p>
-            {/* Gradient accent line under subtitle */}
+            {}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
-          
-          {/* GitHub icon - Desktop only (hidden on mobile), unified with homepage */}
+
+          {}
           <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
-            {/* Glow */}
+            {}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
-            <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site" 
+            <ExternalLink
+              href="https://github.com/KuA1bo/minimaverse-site"
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -143,12 +141,12 @@ export default function ProtocolPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - minimal: only status legend */}
-      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
-                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+      {}
+      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8
+                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
-        
+
         <div className="relative">
           <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
             <span className="text-2xl">📚</span> Primary Sources
@@ -156,8 +154,8 @@ export default function ProtocolPage() {
           <ul className="space-y-3 text-sm">
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://docs.minima.global/docs/learn/network-overview" 
+              <ExternalLink
+                href="https://docs.minima.global/docs/learn/network-overview"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 Network Overview
@@ -167,8 +165,8 @@ export default function ProtocolPage() {
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://docs.minima.global/docs/core/minimawhitepaper/txpow" 
+              <ExternalLink
+                href="https://docs.minima.global/docs/core/minimawhitepaper/txpow"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 Tx-PoW Documentation
@@ -178,8 +176,8 @@ export default function ProtocolPage() {
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf" 
+              <ExternalLink
+                href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 Whitepaper v1.1 (PDF)
@@ -188,8 +186,8 @@ export default function ProtocolPage() {
               <span className="text-gray-500 text-xs md:text-sm">full protocol specification</span>
             </li>
           </ul>
-          
-          {/* Status legend - stacked on mobile, single line on tablet/desktop */}
+
+          {}
           <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
               <span className="block sm:inline">Status indicators:</span>
@@ -201,10 +199,10 @@ export default function ProtocolPage() {
         </div>
       </div>
 
-      {/* Content */}
+      {}
       <article className="prose prose-invert max-w-none">
-        
-        {/* 📋 About This Page - NEW CARD */}
+
+        {}
         <section id="about" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
@@ -212,50 +210,50 @@ export default function ProtocolPage() {
               About This Page
             </span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            
+
             <p className="text-gray-300 leading-relaxed relative">
-              This page provides a technical overview of the Minima Protocol architecture, 
-              including edge consensus, Tx-PoW mechanics, data structures, and protocol layers. 
-              All information is compiled from publicly available documentation and whitepapers, 
+              This page provides a technical overview of the Minima Protocol architecture,
+              including edge consensus, Tx-PoW mechanics, data structures, and protocol layers.
+              All information is compiled from publicly available documentation and whitepapers,
               presented in a neutral, developer-focused format for educational purposes.
             </p>
           </div>
         </section>
 
-        {/* Section 1: Edge Consensus */}
+        {}
         <section id="edge-consensus" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🌐</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Edge Consensus Architecture</span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            
+
             <p className="text-gray-300 leading-relaxed">
-              Minima implements <strong>edge consensus</strong>, where block production and validation 
-              are carried out by every device connected to the network. Unlike traditional blockchains 
-              that rely on specialized miners or validators, Minima supports universal participation: 
+              Minima implements <strong>edge consensus</strong>, where block production and validation
+              are carried out by every device connected to the network. Unlike traditional blockchains
+              that rely on specialized miners or validators, Minima supports universal participation:
               smartphones, Raspberry Pi, and IoT devices are intended to participate in network validation without specialized hardware requirements.
             </p>
-            
-            {/* Design characteristic callout - neutralized from "Key innovation" */}
+
+            {}
             <div className="mt-4 p-4 bg-blue-900/20 border border-blue-700/40 rounded-xl">
               <p className="text-blue-200 text-sm">
-                <strong className="text-white">Architectural characteristic:</strong> Through collaborative Tx-PoW, the complete blockchain 
-                state remains compact (~300 MB RAM), allowing any device to store and verify the entire 
+                <strong className="text-white">Architectural characteristic:</strong> Through collaborative Tx-PoW, the complete blockchain
+                state remains compact (~300 MB RAM), allowing any device to store and verify the entire
                 chain history independently.
               </p>
             </div>
           </div>
           <p className="text-sm text-gray-500 mt-4">
-            <ExternalLink 
-              href="https://docs.minima.global/docs/core/minimawhitepaper/consensusforksandimmutableprotocols" 
+            <ExternalLink
+              href="https://docs.minima.global/docs/core/minimawhitepaper/consensusforksandimmutableprotocols"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               Source: Consensus, Forks and Immutable Protocols
@@ -263,13 +261,13 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {/* Section 2: Tx-PoW */}
+        {}
         <section id="tx-pow" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⛏️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Tx-PoW: Collaborative Proof of Work</span>
           </h2>
-          
+
           <div className="space-y-4">
             {[
               {
@@ -281,7 +279,7 @@ export default function ProtocolPage() {
                 text: 'Minima nodes collaborate rather than compete. The total network security equals the sum of all individual Tx-PoW contributions. Increased Tx-PoW participation contributes to aggregate network security. This cooperative approach reduces competitive mining overhead associated with proof-of-work race conditions.',
               },
             ].map((item, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
@@ -290,8 +288,8 @@ export default function ProtocolPage() {
             ))}
           </div>
           <p className="text-sm text-gray-500 mt-4">
-            <ExternalLink 
-              href="https://docs.minima.global/docs/core/minimawhitepaper/txpow" 
+            <ExternalLink
+              href="https://docs.minima.global/docs/core/minimawhitepaper/txpow"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               Source: Tx-PoW Documentation
@@ -299,17 +297,17 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {/* Section 3: Data Structures */}
+        {}
         <section id="data-structures" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🗄️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Efficient Data Structures</span>
           </h2>
-          
+
           <div className="space-y-4">
-            
-            {/* Card 1: Cascading Chain with Superblocks */}
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+            {}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">Cascading Chain with Superblocks</h3>
@@ -318,16 +316,16 @@ export default function ProtocolPage() {
               </p>
             </div>
             <p className="text-sm text-gray-500 mt-2">
-              <ExternalLink 
-                href="https://docs.minima.global/docs/learn/the-blockchain#the-cascading-chain" 
+              <ExternalLink
+                href="https://docs.minima.global/docs/learn/the-blockchain#the-cascading-chain"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 Learn more: The Cascading Chain
               </ExternalLink>
             </p>
 
-            {/* Card 2: MMR UTXO - neutralized subjective wording */}
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+            {}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">Merkle Mountain Range (MMR) UTXO</h3>
@@ -335,11 +333,11 @@ export default function ProtocolPage() {
                 Minima utilizes a Merkle Mountain Range database to store only the UTXOs relevant to each node&apos;s private keys. This &quot;storage-less&quot; approach allows each node to operate with just ~300 MB RAM, reducing hardware requirements for node operation.
               </p>
             </div>
-            
+
           </div>
           <p className="text-sm text-gray-500 mt-4">
-            <ExternalLink 
-              href="https://docs.minima.global/docs/learn/mmr-database" 
+            <ExternalLink
+              href="https://docs.minima.global/docs/learn/mmr-database"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               Source: MMR Database Documentation
@@ -347,14 +345,14 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {/* Section 4: Protocol Layers */}
+        {}
         <section id="layers" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🧱</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Protocol Layers</span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl overflow-hidden 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl overflow-hidden
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15">
             <div className="overflow-x-auto">
               <table className="w-full">
@@ -383,8 +381,8 @@ export default function ProtocolPage() {
             </div>
           </div>
           <p className="text-sm text-gray-500 mt-3">
-            <ExternalLink 
-              href="https://docs.minima.global/docs/learn/network-overview" 
+            <ExternalLink
+              href="https://docs.minima.global/docs/learn/network-overview"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               Source: Network Overview
@@ -392,13 +390,13 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {/* Section 5: Technical Specifications */}
+        {}
         <section id="specs" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚙️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Technical Specifications</span>
           </h2>
-          
+
           <div className="space-y-4">
             {[
               { title: 'Tx-PoW Difficulty', text: '~10 seconds average work per transaction; ~1 block every 50 seconds network-wide' },
@@ -407,7 +405,7 @@ export default function ProtocolPage() {
               { title: 'Consensus', text: 'GHOST protocol for fast block times with secure finality' },
               { title: 'Quantum Resistance', text: 'KECCAK hashing + WOTS signatures for post-quantum security' },
             ].map((spec, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                 <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
                 <div className="flex items-start gap-3 relative">
@@ -421,8 +419,8 @@ export default function ProtocolPage() {
             ))}
           </div>
           <p className="text-sm text-gray-500 mt-4">
-            <ExternalLink 
-              href="https://docs.minima.global/docs/core/at-a-glance" 
+            <ExternalLink
+              href="https://docs.minima.global/docs/core/at-a-glance"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               Source: Core Features Overview
@@ -430,19 +428,19 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {/* Section 6: Network Participation - neutralized slogan */}
+        {}
         <section id="participation" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👥</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Network Participation Requirements</span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
+
             <p className="text-gray-300 text-sm mb-3 relative">
-              To maintain network health and personal security, Minima users should connect their 
+              To maintain network health and personal security, Minima users should connect their
               node at least once per week. This ensures:
             </p>
             <ul className="list-disc list-inside text-gray-300 text-sm space-y-1 ml-2 relative">
@@ -456,9 +454,9 @@ export default function ProtocolPage() {
           </div>
         </section>
 
-        {/* Universal Disclaimer Block */}
-        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 
-                        transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
+        {}
+        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8
+                        transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10
                         opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
@@ -466,7 +464,7 @@ export default function ProtocolPage() {
               <span className="text-lg">⚠️</span>
               Disclaimer:
             </strong>
-            This site does not represent the official Minima team. 
+            This site does not represent the official Minima team.
             All information is compiled from publicly available sources.{' '}
             <Link href="/disclaimer" aria-label="Read full disclaimer" className="underline hover:text-amber-100 decoration-amber-500/50 hover:decoration-amber-400 underline-offset-4 transition-all duration-300">
               Learn more
@@ -474,7 +472,7 @@ export default function ProtocolPage() {
           </p>
         </div>
 
-        {/* Last Updated - UPDATED DATE */}
+        {}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />

@@ -2,10 +2,7 @@
 
 import { useState, useEffect } from 'react';
 
-/**
- * Toggle button for "Low Graphics Mode" - reduces animations/blurs for better performance
- * Saves preference to localStorage and syncs with html.reduced-motion class
- */
+
 export default function EconomyModeToggle() {
   const [enabled, setEnabled] = useState(false);
   const [mounted, setMounted] = useState(false);
@@ -27,7 +24,7 @@ export default function EconomyModeToggle() {
     const newValue = !enabled;
     setEnabled(newValue);
     localStorage.setItem(storageKey, String(newValue));
-    
+
     if (newValue) {
       document.documentElement.classList.add('reduced-motion');
     } else {
@@ -41,8 +38,8 @@ export default function EconomyModeToggle() {
     <button
       onClick={toggle}
       className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 border ${
-        enabled 
-          ? 'bg-purple-500/20 text-purple-300 hover:bg-purple-500/30 border-purple-500/30' 
+        enabled
+          ? 'bg-purple-500/20 text-purple-300 hover:bg-purple-500/30 border-purple-500/30'
           : 'bg-gray-700/30 text-gray-400 hover:bg-gray-700/50 border-gray-600/30'
       }`}
       aria-pressed={enabled}

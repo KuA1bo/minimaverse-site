@@ -1,5 +1,5 @@
-// Compact support block for footer. Client Component for clipboard interactivity.
-// Updated: centered text on mobile, kept optional label muted for visual hierarchy
+
+
 "use client";
 
 import { useState } from "react";
@@ -17,7 +17,7 @@ export default function SupportBlock() {
     { label: 'USDT (TRC20)', address: 'TF5NBncPz9d8BoRqK8EfAHhTzsapLDujv4' },
   ];
 
-  // Safe copy with visual feedback
+
   const handleCopy = async (wallet: Wallet) => {
     try {
       await navigator.clipboard.writeText(wallet.address);
@@ -31,7 +31,7 @@ export default function SupportBlock() {
   return (
     <div className="mt-6 pt-4 pb-4 sm:pb-0 border-t border-gray-700/50">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-        {/* Left: Title & Description */}
+        {}
         <div className="flex-1 text-center sm:text-left">
           <h4 className="text-sm font-medium text-gray-300">
             Support Minimaverse <span className="text-gray-500">(Optional)</span>
@@ -41,7 +41,7 @@ export default function SupportBlock() {
           </p>
         </div>
 
-        {/* Right: Buttons (centered on mobile, left-aligned on desktop) */}
+        {}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-start sm:mt-0">
           {wallets.map((wallet) => (
             <button

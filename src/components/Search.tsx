@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import Fuse from "fuse.js";
 import { searchIndex } from "@/data/searchIndex";
 
-// Fuzzy search configuration
+
 const fuse = new Fuse(searchIndex, {
   keys: ["title", "description", "tags"],
   threshold: 0.3,
@@ -21,7 +21,7 @@ export default function Search() {
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // Global shortcut: Cmd/Ctrl + K to toggle
+
   useEffect(() => {
     const handleGlobal = (e: KeyboardEvent) => {
       if ((e.metaKey || e.ctrlKey) && e.key === "k") {
@@ -33,12 +33,12 @@ export default function Search() {
     return () => window.removeEventListener("keydown", handleGlobal);
   }, []);
 
-  // Focus input when dropdown opens
+
   useEffect(() => {
     if (isOpen) setTimeout(() => inputRef.current?.focus(), 50);
   }, [isOpen]);
 
-  // Handle input changes
+
   const handleSearch = useCallback((value: string) => {
     setQuery(value);
     setActiveIndex(-1);
@@ -50,7 +50,7 @@ export default function Search() {
     setResults(matches);
   }, []);
 
-  // Keyboard navigation inside dropdown
+
   const handleInputKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
       if (e.key === "ArrowDown") {
@@ -72,7 +72,7 @@ export default function Search() {
     [results, activeIndex, router]
   );
 
-  // Close on outside click
+
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
@@ -86,7 +86,7 @@ export default function Search() {
 
   return (
     <div ref={containerRef} className="relative">
-      {/* Trigger button */}
+      {}
       <button
         onClick={() => setIsOpen(true)}
         className="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 bg-gray-800/50 border border-gray-700 rounded-lg hover:border-purple-500 hover:text-white transition-colors"
@@ -99,7 +99,7 @@ export default function Search() {
         <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 text-xs bg-gray-700 rounded border border-gray-600">⌘K</span>
       </button>
 
-      {/* Dropdown */}
+      {}
       {isOpen && (
         <div className="absolute top-full right-0 mt-2 w-80 bg-gray-900 border border-gray-700 rounded-xl shadow-2xl overflow-hidden z-50">
           <div className="p-2">

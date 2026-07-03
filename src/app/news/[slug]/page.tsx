@@ -2,14 +2,14 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { newsArticles, NewsArticle } from '@/data/news';
 
-// Generates static parameters for all news articles at build time
+
 export async function generateStaticParams() {
   return newsArticles.map((article) => ({
     slug: article.slug,
   }));
 }
 
-// Generates metadata for SEO
+
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const article = newsArticles.find((a) => a.slug === params.slug);
   if (!article) return {};
@@ -29,19 +29,19 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   };
 }
 
-// Local component for external links (matches project style)
-const ExternalLink = ({ 
-  href, 
-  children, 
+
+const ExternalLink = ({
+  href,
+  children,
   className = "",
-}: { 
-  href: string; 
-  children: React.ReactNode; 
+}: {
+  href: string;
+  children: React.ReactNode;
   className?: string;
 }) => (
-  <a 
-    href={href.trim()} 
-    target="_blank" 
+  <a
+    href={href.trim()}
+    target="_blank"
     rel="noopener noreferrer"
     className={`inline-flex items-center gap-1 ${className}`}
   >
@@ -61,7 +61,7 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
 
   return (
     <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
-      {/* Breadcrumb */}
+      {}
       <nav className="mb-6 opacity-0 animate-fade-in-up delay-75">
         <ol className="flex items-center gap-2 text-sm text-gray-500">
           <li>
@@ -78,7 +78,7 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
         </ol>
       </nav>
 
-      {/* Article */}
+      {}
       <article className="prose prose-invert max-w-none opacity-0 animate-fade-in-up delay-150">
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-4">
@@ -102,7 +102,7 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
           </p>
         </header>
 
-        {/* Content - Structured, factual summary */}
+        {}
         <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
           <div className="space-y-4 text-gray-300 text-sm leading-relaxed">
@@ -120,25 +120,25 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
           </div>
         </div>
 
-        {/* Source Block */}
+        {}
         <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
           <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
           <h3 className="text-white font-semibold mb-3 flex items-center gap-2">
             <span className="text-lg">📎</span>
             Primary Source
           </h3>
-          <ExternalLink 
-            href={article.source} 
+          <ExternalLink
+            href={article.source}
             className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium break-all"
           >
             {article.sourceLabel}
           </ExternalLink>
         </div>
 
-        {/* Navigation Footer */}
+        {}
         <div className="flex items-center justify-between pt-6 border-t border-gray-700/40">
-          <Link 
-            href="/news" 
+          <Link
+            href="/news"
             className="group inline-flex items-center gap-2 text-gray-400 hover:text-purple-400 text-sm transition-colors duration-200"
           >
             <svg className="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -146,8 +146,8 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
             </svg>
             Back to News
           </Link>
-          <Link 
-            href="/" 
+          <Link
+            href="/"
             className="group inline-flex items-center gap-2 text-gray-400 hover:text-purple-400 text-sm transition-colors duration-200"
           >
             Home

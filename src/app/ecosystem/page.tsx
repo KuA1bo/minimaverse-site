@@ -1,31 +1,29 @@
-// src/app/ecosystem/page.tsx
-// Ecosystem page - verified projects and integrations in the Minima ecosystem
-// Polished: minimal structural cleanup, status legend added to Primary Sources, added About This Page heading [21.05.2026]
+
+
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
-// ExternalLink component for all external links with arrow icon
-// Updated: Added optional id prop for anchor linking
-const ExternalLink = ({ 
-  href, 
-  children, 
+
+const ExternalLink = ({
+  href,
+  children,
   className = "",
   ariaLabel,
   hideArrow = false,
   id
-}: { 
-  href: string; 
-  children: React.ReactNode; 
+}: {
+  href: string;
+  children: React.ReactNode;
   className?: string;
   ariaLabel?: string;
   hideArrow?: boolean;
   id?: string;
 }) => (
-  <a 
+  <a
     id={id}
-    href={href.trim()} 
-    target="_blank" 
+    href={href.trim()}
+    target="_blank"
     rel="noopener noreferrer"
     className={`inline-flex items-center gap-1 ${className}`}
     aria-label={ariaLabel}
@@ -39,7 +37,7 @@ const ExternalLink = ({
   </a>
 );
 
-// StatusBadge component for feature status indicators
+
 const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'in-development' | 'community', reducedGlow?: boolean }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: reducedGlow ? 'shadow-green-500/25' : 'shadow-green-500/50' },
@@ -47,7 +45,7 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
     'community': { bg: 'bg-gray-700/40', text: 'text-gray-300', border: 'border-gray-600/50', dot: 'bg-gray-400', glow: reducedGlow ? 'shadow-gray-400/25' : 'shadow-gray-400/50' },
   };
   const style = config[status];
-  
+
   return (
     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ${style.bg} ${style.text} text-xs font-medium border ${style.border} shadow-lg ${style.glow} transition-all duration-300 hover:scale-105`}>
       <span className="relative flex h-2 w-2">
@@ -61,7 +59,7 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Structured data for Schema.org CollectionPage (ecosystem projects list)
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
@@ -83,24 +81,24 @@ const structuredData = {
 export default function EcosystemPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
-      
-      {/* Structured data for SEO - CollectionPage schema */}
+
+      {}
       <JsonLd data={structuredData} />
 
-      {/* Unified Header with gradient accent */}
+      {}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative pt-4">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
-        
+
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
-          
-          {/* GitHub icon - Desktop only (hidden on mobile), unified with homepage */}
+
+          {}
           <div className="hidden sm:flex items-start justify-end relative -translate-x-10 mt-12 flex-shrink-0 order-last">
-            {/* Centered glow */}
+            {}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
-            <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site" 
+            <ExternalLink
+              href="https://github.com/KuA1bo/minimaverse-site"
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -110,17 +108,17 @@ export default function EcosystemPage() {
               </svg>
             </ExternalLink>
           </div>
-          
-          {/* Header text block */}
+
+          {}
           <div className="relative inline-block w-full pb-3 pr-2">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="text-gray-400 hover:text-white transition-colors inline-block mb-4 group"
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
-            
-            {/* Internal navigation - unified style per /about: text-sm, gap-1.5, gray-400/600, hover purple */}
+
+            {}
             <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
               <Link href="/partners" className="text-gray-400 hover:text-purple-400 transition-colors">Partners</Link>
               <span className="text-gray-600">•</span>
@@ -128,37 +126,37 @@ export default function EcosystemPage() {
               <span className="text-gray-600">•</span>
               <Link href="/tools" className="text-gray-400 hover:text-purple-400 transition-colors">Tools</Link>
             </div>
-            
-            {/* Updated H1 title for better SEO intent match */}
+
+            {}
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Minima Ecosystem Projects
               </span>
             </h1>
-            {/* Updated subtitle for clarity and keyword coverage */}
+            {}
             <p className="text-gray-400">Verified list of projects, tools, and integrations</p>
-            {/* Gradient accent line under subtitle */}
+            {}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
         </div>
       </header>
 
-      {/* Primary Sources Box - UPDATED: Links sorted by length (short → long) + status legend */}
-      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 
-                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+      {}
+      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8
+                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
-        
+
         <div className="relative">
           <h3 className="text-white font-semibold mb-3 sm:mb-4 text-lg flex items-center gap-2">
             <span className="text-2xl">📚</span> Primary Sources
           </h3>
           <ul className="space-y-2 sm:space-y-3 text-sm">
-            {/* 1. Shortest: minimammr.com (13 chars) */}
+            {}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://minimammr.com/" 
+              <ExternalLink
+                href="https://minimammr.com/"
                 className="text-green-400 hover:text-green-300 underline decoration-green-500/30 hover:decoration-green-400/60 underline-offset-4 transition-all duration-300 text-nowrap"
               >
                 minimammr.com
@@ -166,11 +164,11 @@ export default function EcosystemPage() {
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Community Node</span>
             </li>
-            {/* 2. docs.minima.global (18 chars) */}
+            {}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://docs.minima.global" 
+              <ExternalLink
+                href="https://docs.minima.global"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap"
               >
                 docs.minima.global
@@ -178,11 +176,11 @@ export default function EcosystemPage() {
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Documentation</span>
             </li>
-            {/* 3. explorer.minima.global (22 chars) */}
+            {}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://explorer.minima.global" 
+              <ExternalLink
+                href="https://explorer.minima.global"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap"
               >
                 explorer.minima.global
@@ -190,11 +188,11 @@ export default function EcosystemPage() {
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Block Explorer</span>
             </li>
-            {/* 4. Longest: github.com/minima-global (24 chars) */}
+            {}
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://github.com/minima-global" 
+              <ExternalLink
+                href="https://github.com/minima-global"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap"
               >
                 github.com/minima-global
@@ -203,8 +201,8 @@ export default function EcosystemPage() {
               <span className="text-gray-500 text-xs md:text-sm">Official GitHub</span>
             </li>
           </ul>
-          
-          {/* Status legend - stacked on mobile, single line on tablet/desktop */}
+
+          {}
           <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
               <span className="block sm:inline">Status indicators:</span>
@@ -216,53 +214,53 @@ export default function EcosystemPage() {
         </div>
       </div>
 
-      {/* Content */}
+      {}
       <article className="prose prose-invert max-w-none">
-        
-        {/* Intro - ADDED "About This Page" heading */}
+
+        {}
         <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            
+
             <p className="text-gray-300 leading-relaxed">
-              This page documents verified projects, tools, and services that operate on or integrate 
-              with the Minima Protocol. Inclusion does not constitute endorsement — all entries are 
+              This page documents verified projects, tools, and services that operate on or integrate
+              with the Minima Protocol. Inclusion does not constitute endorsement — all entries are
               publicly verifiable and community-contributed.
             </p>
           </div>
         </section>
 
-        {/* Core Infrastructure - Anchor: #infra */}
+        {}
         <section id="infra" className="mb-10 opacity-0 animate-fade-in-up delay-300 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🏗️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Core Infrastructure</span>
           </h2>
-          
+
           <div className="space-y-6">
-            {/* Minima Protocol - Card */}
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+            {}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <h3 className="text-white font-medium mb-2 relative">Minima Protocol</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                The base layer blockchain protocol enabling full-node participation on everyday 
-                devices. Designed for decentralization by default without reliance on centralized 
+                The base layer blockchain protocol enabling full-node participation on everyday
+                devices. Designed for decentralization by default without reliance on centralized
                 validators.
               </p>
               <p className="text-gray-500 text-xs relative">
                 Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Official source
               </p>
             </div>
-            {/* Link outside card */}
-            <ExternalLink 
-              href="https://github.com/minima-global/Minima" 
+            {}
+            <ExternalLink
+              href="https://github.com/minima-global/Minima"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2"
             >
               <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -271,31 +269,31 @@ export default function EcosystemPage() {
               github.com/minima-global/Minima
             </ExternalLink>
 
-            {/* Integritas - Card */}
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+            {}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <h3 className="text-white font-medium mb-2 relative">Integritas</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                AI compliance infrastructure that cryptographically audits, traces, and verifies every 
-                prompt, input, and output across AI systems. Creates immutable, tamper-evident audit 
-                trails for regulatory readiness (EU AI Act, ISO 42001, SOC2) with model-agnostic, 
+                AI compliance infrastructure that cryptographically audits, traces, and verifies every
+                prompt, input, and output across AI systems. Creates immutable, tamper-evident audit
+                trails for regulatory readiness (EU AI Act, ISO 42001, SOC2) with model-agnostic,
                 quantum-resistant verification.
               </p>
               <p className="text-gray-500 text-xs relative">
                 Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Official source
               </p>
             </div>
-            {/* Links outside card */}
+            {}
             <div className="space-y-2">
-              <ExternalLink 
-                href="https://integritas.technology/" 
+              <ExternalLink
+                href="https://integritas.technology/"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
               >
                 🌐 integritas.technology
               </ExternalLink>
-              <ExternalLink 
-                href="https://docs.integritas.technology" 
+              <ExternalLink
+                href="https://docs.integritas.technology"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
               >
                 📚 docs.integritas.technology
@@ -304,13 +302,13 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Developer Tools */}
+        {}
         <section id="dev-tools" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🛠️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Developer Tools</span>
           </h2>
-          
+
           <div className="space-y-6">
             {[
               {
@@ -330,8 +328,8 @@ export default function EcosystemPage() {
               },
             ].map((item, index) => (
               <div key={index} className="space-y-2">
-                {/* Card */}
-                <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+                {}
+                <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
                                 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                   <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
                   <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
@@ -340,9 +338,9 @@ export default function EcosystemPage() {
                     Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Official source
                   </p>
                 </div>
-                {/* Link outside card */}
-                <ExternalLink 
-                  href={item.link.href} 
+                {}
+                <ExternalLink
+                  href={item.link.href}
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
                 >
                   {item.link.text}
@@ -350,22 +348,22 @@ export default function EcosystemPage() {
               </div>
             ))}
 
-            {/* Minima Faucet */}
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+            {}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">Minima Faucet</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                Free distribution of test tokens for experimenting with the Minima blockchain. 
+                Free distribution of test tokens for experimenting with the Minima blockchain.
                 Distributes 0.0001 MINIMA per request, resets every few minutes.
               </p>
               <p className="text-gray-500 text-xs relative">
                 Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Community resource (team member)
               </p>
             </div>
-            {/* Faucet Link */}
-            <ExternalLink 
-              href="https://eurobuddha.com/faucet/" 
+            {}
+            <ExternalLink
+              href="https://eurobuddha.com/faucet/"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2"
             >
               <svg className="w-4 h-4 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -380,37 +378,37 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Wallets - Anchor: #wallets */}
+        {}
         <section id="wallets" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👛</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Wallets</span>
           </h2>
-          
-          {/* Card - FIXED: Added hover:-translate-y-1 for lift effect */}
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+
+          {}
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
+
             <h3 className="text-white font-medium mb-3 relative">Minima Wallet</h3>
             <p className="text-gray-300 text-sm mb-4 relative">
-              Official wallet for managing Minima assets and interacting with the protocol. 
+              Official wallet for managing Minima assets and interacting with the protocol.
               Available as web interface and mobile application for Android devices.
             </p>
             <p className="text-gray-500 text-xs relative">
               Status: <StatusBadge status="confirmed" reducedGlow={true} /> | Official source
             </p>
           </div>
-          
-          {/* Links Container */}
+
+          {}
           <div className="mt-3 space-y-3">
-            
-            {/* === MOBILE ORDER (hidden on desktop) === */}
+
+            {}
             <div className="sm:hidden space-y-3">
-              {/* 1. Android APK (GitHub) */}
+              {}
               <div>
-                <ExternalLink 
-                  href="https://github.com/minima-global/Minima/tree/master/jar" 
+                <ExternalLink
+                  href="https://github.com/minima-global/Minima/tree/master/jar"
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -419,43 +417,43 @@ export default function EcosystemPage() {
                   Android APK (GitHub)
                 </ExternalLink>
               </div>
-              
-              {/* 2. Web Wallet */}
+
+              {}
               <div>
-                <ExternalLink 
-                  href="https://wallet.minima.global" 
+                <ExternalLink
+                  href="https://wallet.minima.global"
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
                 >
                   🌐 wallet.minima.global
                 </ExternalLink>
               </div>
-              
-              {/* 3. Alternative hint */}
+
+              {}
               <div>
                 <p className="text-gray-400 text-xs flex items-start gap-1.5">
                   <span className="text-green-400 mt-0.5">💡</span>
                   Alternative: <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink>
                 </p>
               </div>
-              
-              {/* 4. Google Play - ✅ UPDATED LINK */}
+
+              {}
               <div>
-                <ExternalLink 
-                  href="https://play.google.com/store/apps/details?id=com.minima.android" 
+                <ExternalLink
+                  href="https://play.google.com/store/apps/details?id=com.minima.android"
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
                 >
                   📱 Google Play Store (Android app)
                 </ExternalLink>
               </div>
             </div>
-            
-            {/* === DESKTOP ORDER (hidden on mobile) - FIXED: APK before Play Store === */}
+
+            {}
             <div className="hidden sm:block space-y-3">
-              {/* Web Wallet + Alternative on same line */}
+              {}
               <div className="flex items-center gap-2">
                 <span className="text-gray-400">•</span>
-                <ExternalLink 
-                  href="https://wallet.minima.global" 
+                <ExternalLink
+                  href="https://wallet.minima.global"
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
                 >
                   🌐 wallet.minima.global
@@ -465,12 +463,12 @@ export default function EcosystemPage() {
                   Alternative: <ExternalLink href="https://minimammr.com/" className="text-green-400 hover:text-green-300 underline">minimammr.com</ExternalLink>
                 </span>
               </div>
-              
-              {/* GitHub APK - NOW FIRST */}
+
+              {}
               <div className="flex items-center gap-2">
                 <span className="text-gray-400">•</span>
-                <ExternalLink 
-                  href="https://github.com/minima-global/Minima/tree/master/jar" 
+                <ExternalLink
+                  href="https://github.com/minima-global/Minima/tree/master/jar"
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2"
                 >
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -479,29 +477,29 @@ export default function EcosystemPage() {
                   Android APK (GitHub)
                 </ExternalLink>
               </div>
-              
-              {/* Google Play - ✅ UPDATED LINK */}
+
+              {}
               <div className="flex items-center gap-2">
                 <span className="text-gray-400">•</span>
-                <ExternalLink 
-                  href="https://play.google.com/store/apps/details?id=com.minima.android" 
+                <ExternalLink
+                  href="https://play.google.com/store/apps/details?id=com.minima.android"
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
                 >
                   📱 Google Play Store (Android app)
                 </ExternalLink>
               </div>
             </div>
-            
+
           </div>
         </section>
 
-        {/* Centralized Exchanges - Anchor: #defi */}
+        {}
         <section id="defi" className="mb-10 opacity-0 animate-fade-in-up delay-200 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">💱</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Centralized Exchanges</span>
           </h2>
-          
+
           <div className="space-y-6">
             {[
               { title: 'MEXC', pair: 'Trading pair: MINIMA/USDT', link: { href: 'https://www.mexc.com/exchange/MINIMA_USDT', text: '💱 Trade on MEXC' } },
@@ -509,16 +507,16 @@ export default function EcosystemPage() {
               { title: 'XT.com', pair: 'Trading pair: MINIMA/USDT', link: { href: 'https://www.xt.com/en/trade/minima_usdt', text: '💱 Trade on XT.com' } },
             ].map((exchange, index) => (
               <div key={index} className="space-y-2">
-                {/* Card */}
-                <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+                {}
+                <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
                                 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                   <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
                   <h3 className="text-white font-medium mb-2 relative">{exchange.title}</h3>
                   <p className="text-gray-300 text-sm mb-2 relative">{exchange.pair}</p>
                 </div>
-                {/* Link outside card */}
-                <ExternalLink 
-                  href={exchange.link.href} 
+                {}
+                <ExternalLink
+                  href={exchange.link.href}
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
                 >
                   {exchange.link.text}
@@ -527,49 +525,49 @@ export default function EcosystemPage() {
             ))}
           </div>
           <p className="text-gray-500 text-xs mt-4 italic">
-            Note: Exchange listings are subject to change. Always verify trading pairs and availability 
+            Note: Exchange listings are subject to change. Always verify trading pairs and availability
             directly on exchange platforms. This page does not provide financial advice.
           </p>
         </section>
 
-        {/* Edge Deployments - FIXED: Added hover:-translate-y-1 for lift effect */}
+        {}
         <section id="edge" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📡</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Edge Deployments</span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
+
             <h3 className="text-white font-medium mb-2 relative">IoT & Embedded Systems</h3>
             <p className="text-gray-300 text-sm mb-3 relative">
-              The Minima protocol architecture is designed to support full-node operation on 
-              resource-constrained devices. Direct participation in consensus without cloud 
+              The Minima protocol architecture is designed to support full-node operation on
+              resource-constrained devices. Direct participation in consensus without cloud
               dependency is a core protocol capability.
             </p>
             <p className="text-gray-500 text-xs relative">
-              Status: <StatusBadge status="in-development" reducedGlow={true} /> — Verified production 
-              deployments on IoT/embedded platforms by corporate partners are not yet publicly 
+              Status: <StatusBadge status="in-development" reducedGlow={true} /> — Verified production
+              deployments on IoT/embedded platforms by corporate partners are not yet publicly
               available. Check official channels for updates.
             </p>
           </div>
         </section>
 
-        {/* Security & Privacy */}
+        {}
         <section id="security" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔐</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Security & Privacy</span>
           </h2>
-          
+
           <div className="space-y-2">
-            {/* Card */}
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+            {}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
+
               <h3 className="text-white font-medium mb-2 relative">Secrets Vaults (LTA Labs)</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
                 Secure storage and recovery application built on Minima infrastructure.
@@ -578,17 +576,17 @@ export default function EcosystemPage() {
                 Status: <StatusBadge status="in-development" reducedGlow={true} /> • Partner project (LTA Labs × Minima)
               </p>
             </div>
-            
-            {/* Links outside card - Responsive: Column on mobile, Row on desktop */}
+
+            {}
             <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-2 mt-2">
-              <ExternalLink 
-                href="https://secretsvault.xyz" 
+              <ExternalLink
+                href="https://secretsvault.xyz"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
               >
                 🌐 secretsvault.xyz
               </ExternalLink>
-              <ExternalLink 
-                href="https://minima.global/post/lta-labs-partners-with-minima-to-power-its-financial-product-suite" 
+              <ExternalLink
+                href="https://minima.global/post/lta-labs-partners-with-minima-to-power-its-financial-product-suite"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
               >
                 📰 Official Announcement
@@ -597,40 +595,40 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Logistics & Tracking - NEW SECTION: Trackium project */}
+        {}
         <section id="logistics" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📦</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Logistics & Tracking</span>
           </h2>
-          
+
           <div className="space-y-2">
-            {/* Card - Trackium */}
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 
+            {}
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              
+
               <h3 className="text-white font-medium mb-2 relative">Trackium</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                Decentralized tracking & security infrastructure for physical assets. 
-                Combines LTE/GPS hardware with Minima node for cryptographically verifiable, 
+                Decentralized tracking & security infrastructure for physical assets.
+                Combines LTE/GPS hardware with Minima node for cryptographically verifiable,
                 user-owned location data — no central servers.
               </p>
               <p className="text-gray-500 text-xs relative">
                 Status: <StatusBadge status="in-development" reducedGlow={true} /> | Community project (Edge Pioneers)
               </p>
             </div>
-            
-            {/* Links outside card - Responsive: Column on mobile, Row on desktop */}
+
+            {}
             <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-2 mt-2">
-              <ExternalLink 
-                href="https://trackium.tech/" 
+              <ExternalLink
+                href="https://trackium.tech/"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
               >
                 🌐 trackium.tech
               </ExternalLink>
-              <ExternalLink 
-                href="https://trackium.tech/technology" 
+              <ExternalLink
+                href="https://trackium.tech/technology"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
               >
                 📚 Technology & Specs
@@ -639,9 +637,9 @@ export default function EcosystemPage() {
           </div>
         </section>
 
-        {/* Universal Disclaimer Block */}
-        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-4 sm:p-6 mb-8 
-                        transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
+        {}
+        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-4 sm:p-6 mb-8
+                        transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10
                         opacity-0 animate-fade-in-up delay-75 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
@@ -649,7 +647,7 @@ export default function EcosystemPage() {
               <span className="text-lg">⚠️</span>
               Disclaimer:
             </strong>
-            This site does not represent the official Minima team. 
+            This site does not represent the official Minima team.
             All information is compiled from publicly available sources.{' '}
             <Link href="/disclaimer" aria-label="Read full disclaimer" className="underline hover:text-amber-100 decoration-amber-500/50 hover:decoration-amber-400 underline-offset-4 transition-all duration-300">
               Learn more
@@ -657,7 +655,7 @@ export default function EcosystemPage() {
           </p>
         </div>
 
-        {/* Ecosystem Listings CTA - UPDATED: Stacked layout (2 lines), fixed hover overlap [21.05.2026] */}
+        {}
         <div className="mt-16 mb-6 border-t border-gray-800 pt-8 opacity-0 animate-fade-in-up delay-150">
           <div className="max-w-2xl mx-auto text-center">
             <h3 className="text-lg font-medium text-gray-200 mb-2">
@@ -667,14 +665,14 @@ export default function EcosystemPage() {
               Verified ecosystem projects, tools, and integrations may request inclusion in Minimaverse listings.
             </p>
             <div className="flex flex-col items-center gap-1">
-              <Link 
+              <Link
                 href="/submit-project"
                 className="group inline-flex items-center gap-1 text-purple-400 hover:text-gray-200 transition-all duration-300 hover:scale-[1.01] hover:ring-1 hover:ring-gray-500/30 rounded px-1.5 py-0.5"
               >
                 Submit project for review
                 <span className="text-xs transition-transform duration-300 group-hover:translate-x-1">→</span>
               </Link>
-              <ExternalLink 
+              <ExternalLink
                 href="mailto:contact@minimaverse.com"
                 className="text-xs text-gray-500 hover:text-purple-400 transition-colors"
                 hideArrow={true}
@@ -686,7 +684,7 @@ export default function EcosystemPage() {
           </div>
         </div>
 
-        {/* Last Updated - UPDATED DATE to May 21, 2026 */}
+        {}
         <section className="border-t border-gray-700/40 pt-4 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />

@@ -1,29 +1,29 @@
-// src/app/tools/page.tsx
-// Tools page - verified tools and utilities for Minima Protocol
+
+
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 
-// ExternalLink component for all external links with arrow icon
-const ExternalLink = ({ 
-  href, 
-  children, 
+
+const ExternalLink = ({
+  href,
+  children,
   className = "",
   ariaLabel,
   hideArrow = false,
   id
-}: { 
-  href: string; 
-  children: React.ReactNode; 
+}: {
+  href: string;
+  children: React.ReactNode;
   className?: string;
   ariaLabel?: string;
   hideArrow?: boolean;
   id?: string;
 }) => (
-  <a 
+  <a
     id={id}
-    href={href.trim()} 
-    target="_blank" 
+    href={href.trim()}
+    target="_blank"
     rel="noopener noreferrer"
     className={`inline-flex items-center gap-1 ${className}`}
     aria-label={ariaLabel}
@@ -37,7 +37,7 @@ const ExternalLink = ({
   </a>
 );
 
-// StatusBadge component for feature status indicators
+
 const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'in-development' | 'community', reducedGlow?: boolean }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: reducedGlow ? 'shadow-green-500/25' : 'shadow-green-500/50' },
@@ -45,7 +45,7 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
     'community': { bg: 'bg-gray-700/40', text: 'text-gray-300', border: 'border-gray-600/50', dot: 'bg-gray-400', glow: reducedGlow ? 'shadow-gray-400/25' : 'shadow-gray-400/50' },
   };
   const style = config[status];
-  
+
   return (
     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ${style.bg} ${style.text} text-xs font-medium border ${style.border} shadow-lg ${style.glow} transition-all duration-300 hover:scale-105`}>
       <span className="relative flex h-2 w-2">
@@ -59,8 +59,7 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Structured data for Schema.org ItemList (tools collection)
-// Synchronized with actual page content (9 items)
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -88,23 +87,23 @@ const structuredData = {
 export default function ToolsPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
-      
-      {/* Structured data for SEO - ItemList schema */}
+
+      {}
       <JsonLd data={structuredData} />
 
-      {/* Unified Header with gradient accent */}
+      {}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-        
+
         <div className="relative flex justify-between items-start">
           <div className="relative inline-block w-full pb-3">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="text-gray-400 hover:text-white transition-colors inline-block mb-4 group"
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
-            
+
             <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
               <Link href="/developers" className="text-gray-400 hover:text-purple-400 transition-colors">Developers</Link>
               <span className="text-gray-600">•</span>
@@ -112,7 +111,7 @@ export default function ToolsPage() {
               <span className="text-gray-600">•</span>
               <Link href="/ecosystem" className="text-gray-400 hover:text-purple-400 transition-colors">Ecosystem</Link>
             </div>
-            
+
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Minima Tools & Utilities
@@ -121,13 +120,13 @@ export default function ToolsPage() {
             <p className="text-gray-400">Essential tools for interacting with Minima Protocol</p>
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
-          
+
           <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
-            <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site" 
+            <ExternalLink
+              href="https://github.com/KuA1bo/minimaverse-site"
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -140,12 +139,12 @@ export default function ToolsPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box - sort by domain length preserved */}
-      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
-                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+      {}
+      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8
+                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl pointer-events-none" />
-        
+
         <div className="relative">
           <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
             <span className="text-2xl">📚</span> Primary Sources
@@ -153,8 +152,8 @@ export default function ToolsPage() {
           <ul className="space-y-3 text-sm">
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://minimammr.com/" 
+              <ExternalLink
+                href="https://minimammr.com/"
                 className="text-green-400 hover:text-green-300 underline decoration-green-500/30 hover:decoration-green-400/60 underline-offset-4 transition-all duration-300"
               >
                 minimammr.com
@@ -164,8 +163,8 @@ export default function ToolsPage() {
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://docs.minima.global" 
+              <ExternalLink
+                href="https://docs.minima.global"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 docs.minima.global
@@ -175,8 +174,8 @@ export default function ToolsPage() {
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://wallet.minima.global" 
+              <ExternalLink
+                href="https://wallet.minima.global"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 wallet.minima.global
@@ -186,8 +185,8 @@ export default function ToolsPage() {
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://explorer.minima.global" 
+              <ExternalLink
+                href="https://explorer.minima.global"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 explorer.minima.global
@@ -197,8 +196,8 @@ export default function ToolsPage() {
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://minidapps.minima.global/" 
+              <ExternalLink
+                href="https://minidapps.minima.global/"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 minidapps.minima.global
@@ -207,7 +206,7 @@ export default function ToolsPage() {
               <span className="text-gray-500 text-xs md:text-sm">Minima MiniDapp Directory</span>
             </li>
           </ul>
-          
+
           <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
               <span className="block sm:inline">Status indicators:</span>
@@ -219,36 +218,36 @@ export default function ToolsPage() {
         </div>
       </div>
 
-      {/* Content */}
+      {}
       <article className="prose prose-invert max-w-none">
-        
-        {/* About This Page */}
+
+        {}
         <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            
+
             <p className="text-gray-300 leading-relaxed">
               Verified tools, wallets, explorers, and developer utilities for interacting with the Minima Protocol.
             </p>
           </div>
         </section>
 
-        {/* Official Tools */}
+        {}
         <section id="official" className="mb-10 opacity-0 animate-fade-in-up delay-300 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🛠️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Tools</span>
           </h2>
-          
+
           <div className="space-y-4">
-            
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">Minima Terminal</h3>
@@ -258,15 +257,15 @@ export default function ToolsPage() {
               <StatusBadge status="confirmed" />
             </div>
             <p className="text-sm text-gray-500 mt-2">
-              <ExternalLink 
-                href="https://docs.minima.global/docs/development/terminal-commands" 
+              <ExternalLink
+                href="https://docs.minima.global/docs/development/terminal-commands"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 📚 Terminal Commands Documentation
               </ExternalLink>
             </p>
 
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">Minima Scan (Explorer)</h3>
@@ -276,15 +275,15 @@ export default function ToolsPage() {
               <StatusBadge status="confirmed" />
             </div>
             <p className="text-sm text-gray-500 mt-2">
-              <ExternalLink 
-                href="https://explorer.minima.global" 
+              <ExternalLink
+                href="https://explorer.minima.global"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 🌐 explorer.minima.global
               </ExternalLink>
             </p>
 
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">Web Wallet</h3>
@@ -294,8 +293,8 @@ export default function ToolsPage() {
               <StatusBadge status="confirmed" />
             </div>
             <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 ml-1">
-              <ExternalLink 
-                href="https://wallet.minima.global" 
+              <ExternalLink
+                href="https://wallet.minima.global"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm"
               >
                 🌐 wallet.minima.global
@@ -312,7 +311,7 @@ export default function ToolsPage() {
               </p>
             </div>
 
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               <h3 className="text-white font-medium mb-2 relative">Mobile Wallet</h3>
@@ -322,14 +321,14 @@ export default function ToolsPage() {
               <StatusBadge status="confirmed" />
             </div>
             <div className="space-y-2 relative">
-              <ExternalLink 
-                href="https://play.google.com/store/apps/details?id=com.minima.android" 
+              <ExternalLink
+                href="https://play.google.com/store/apps/details?id=com.minima.android"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
               >
                 📱 Google Play Store
               </ExternalLink>
-              <ExternalLink 
-                href="https://github.com/minima-global/minimaapk" 
+              <ExternalLink
+                href="https://github.com/minima-global/minimaapk"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-2 block relative sm:ml-4"
               >
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
@@ -342,16 +341,16 @@ export default function ToolsPage() {
           </div>
         </section>
 
-        {/* Development Tools */}
+        {}
         <section id="dev" className="mb-10 opacity-0 animate-fade-in-up delay-75 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">💻</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Development Tools</span>
           </h2>
-          
+
           <div className="space-y-4">
-            
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">TypeScript SDK</h3>
@@ -361,15 +360,15 @@ export default function ToolsPage() {
               <StatusBadge status="confirmed" />
             </div>
             <p className="text-sm text-gray-500 mt-2">
-              <ExternalLink 
-                href="https://docs.minima.global/docs/development/using-typescript" 
+              <ExternalLink
+                href="https://docs.minima.global/docs/development/using-typescript"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 📚 TypeScript Development Guide
               </ExternalLink>
             </p>
 
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">📜 KISS VM (Smart Contract Scripting)</h3>
@@ -379,15 +378,15 @@ export default function ToolsPage() {
               <StatusBadge status="confirmed" />
             </div>
             <p className="text-sm text-gray-500 mt-2">
-              <ExternalLink 
-                href="https://docs.minima.global/docs/development/contracts-kissvm" 
+              <ExternalLink
+                href="https://docs.minima.global/docs/development/contracts-kissvm"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 📚 KISS VM Documentation
               </ExternalLink>
             </p>
 
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">🔌 Terminal Commands & RPC</h3>
@@ -397,8 +396,8 @@ export default function ToolsPage() {
               <StatusBadge status="confirmed" />
             </div>
             <p className="text-sm text-gray-500 mt-2">
-              <ExternalLink 
-                href="https://docs.minima.global/docs/run-a-node/startup-parameters#rpc" 
+              <ExternalLink
+                href="https://docs.minima.global/docs/run-a-node/startup-parameters#rpc"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 📚 RPC Startup Parameters
@@ -408,7 +407,7 @@ export default function ToolsPage() {
           </div>
         </section>
 
-        {/* Emerging Ecosystem Utilities - Compact unified version with workflow context */}
+        {}
         <section id="emerging" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔧</span>
@@ -416,21 +415,21 @@ export default function ToolsPage() {
               Emerging Ecosystem Utilities
             </span>
           </h2>
-          
+
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
-            
+
             <p className="text-gray-300 leading-relaxed mb-2 relative">
               Utilities extending core protocol functionality within the Minima ecosystem. Currently in soft launch / test run phase.
             </p>
             <p className="text-gray-400 text-sm leading-relaxed relative">
               Typical usage flow: install MiniMask → authenticate on MinimaXT → swap assets via MXUSD Bridge.
             </p>
-            
+
             <div className="space-y-4 relative mt-6">
-              
-              {/* MiniMask */}
+
+              {}
               <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
@@ -439,8 +438,8 @@ export default function ToolsPage() {
                   </div>
                   <p className="text-gray-400 text-sm">
                     Browser wallet extension for authentication with selected ecosystem services (requires{' '}
-                    <ExternalLink 
-                      href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked" 
+                    <ExternalLink
+                      href="https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked"
                       className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                     >
                       Developer Mode
@@ -460,7 +459,7 @@ export default function ToolsPage() {
 
               <div className="border-t border-gray-700/30" />
 
-              {/* MinimaXT */}
+              {}
               <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
@@ -483,7 +482,7 @@ export default function ToolsPage() {
 
               <div className="border-t border-gray-700/30" />
 
-              {/* MXUSD Bridge */}
+              {}
               <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
@@ -504,14 +503,14 @@ export default function ToolsPage() {
                 </div>
               </div>
             </div>
-            
-            {/* Operational Notes - with 5-minute delay specificity */}
+
+            {}
             <div className="mt-6 pt-4 border-t border-gray-700/40">
               <p className="text-amber-200 text-xs leading-relaxed">
                 <span className="text-base mr-1">⚠️</span>
                 <strong>Operational Notes:</strong> In-app chat on MinimaXT is unmoderated with a 5-minute delivery delay. Token visibility issues should be verified via{' '}
-                <ExternalLink 
-                  href="https://explorer.minima.global" 
+                <ExternalLink
+                  href="https://explorer.minima.global"
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   Block Explorer
@@ -525,9 +524,9 @@ export default function ToolsPage() {
           </div>
         </section>
 
-        {/* Disclaimer */}
-        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 
-                        transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
+        {}
+        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8
+                        transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10
                         opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
@@ -535,7 +534,7 @@ export default function ToolsPage() {
               <span className="text-lg">⚠️</span>
               Disclaimer:
             </strong>
-            This site does not represent the official Minima Global team. 
+            This site does not represent the official Minima Global team.
             All information is compiled from publicly available sources.{' '}
             <Link href="/disclaimer" aria-label="Read full disclaimer" className="underline hover:text-amber-100 decoration-amber-500/50 hover:decoration-amber-400 underline-offset-4 transition-all duration-300">
               Learn more
@@ -543,7 +542,7 @@ export default function ToolsPage() {
           </p>
         </div>
 
-        {/* Last Updated */}
+        {}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />

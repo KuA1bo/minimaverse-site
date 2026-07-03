@@ -1,6 +1,5 @@
-// src/app/layout.tsx
-// Root layout for Minimaverse - Next.js App Router
-// Updated: Increased RSS link contrast for accessibility, updated timestamp [27.05.2026]
+
+
 
 import './globals.css';
 import Link from 'next/link';
@@ -14,151 +13,150 @@ import CinematicParticles from '../components/CinematicParticles';
 import SupportBlock from '@/components/SupportBlock';
 import Search from '@/components/Search';
 
-// ExternalLink component for all external links with arrow icon
-const ExternalLink = ({ 
-  href, 
-  children, 
-  className = "", 
-  ariaLabel 
-}: { 
-  href: string; 
-  children: React.ReactNode; 
-  className?: string; 
+
+const ExternalLink = ({
+  href,
+  children,
+  className = "",
+  ariaLabel
+}: {
+  href: string;
+  children: React.ReactNode;
+  className?: string;
   ariaLabel?: string;
 }) => (
-  <a 
-    href={href.trim()} 
-    target="_blank" 
+  <a
+    href={href.trim()}
+    target="_blank"
     rel="noopener noreferrer"
     className={`inline-flex items-center gap-1 ${className}`}
     aria-label={ariaLabel}
   >
     {children}
-    <svg 
-      className="w-3 h-3 text-gray-500 flex-shrink-0" 
-      fill="none" 
-      stroke="currentColor" 
-      viewBox="0 0 24 24" 
+    <svg
+      className="w-3 h-3 text-gray-500 flex-shrink-0"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
       aria-hidden="true"
     >
-      <path 
-        strokeLinecap="round" 
-        strokeLinejoin="round" 
-        strokeWidth={2} 
-        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" 
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
       />
     </svg>
   </a>
 );
 
-// Metadata configuration for SEO and social sharing
+
 export const metadata: Metadata = {
   title: 'Minimaverse — Minima Ecosystem Hub',
   description: 'Unofficial, neutral information hub covering the Minima protocol, core components, development history, and publicly verifiable updates.',
-  
-  // Canonical URL + RSS feed for aggregators
+
+
   alternates: {
     canonical: 'https://minimaverse.com/',
     types: {
       'application/rss+xml': [{ url: '/rss.xml', title: 'Minimaverse Feed' }],
     },
   },
-  
+
   icons: {
     icon: [{ url: '/icon.png', sizes: '192x192', type: 'image/png' }],
     apple: [{ url: '/apple-icon.png', sizes: '180x180', type: 'image/png' }],
   },
 };
 
-// Viewport configuration for dark mode preference
-export const viewport: Viewport = { 
-  colorScheme: 'dark' 
+
+export const viewport: Viewport = {
+  colorScheme: 'dark'
 };
 
-// Background Orbs Component - decorative animated color blobs
-// Hidden on mobile to avoid text glare, visible on desktop (lg+)
+
 const BackgroundOrbs = () => (
   <div className="fixed inset-0 overflow-hidden pointer-events-none z-0 hidden lg:block">
-    {/* Orb 1 - Purple (top-left) */}
-    <div 
+    {}
+    <div
       className="orb-breathing absolute top-1/4 -left-48 lg:-left-32
-                 w-48 h-48 lg:w-80 lg:h-80 
-                 bg-purple-500/10 lg:bg-purple-500/45 
-                 blur-xl lg:blur-2xl rounded-full" 
+                 w-48 h-48 lg:w-80 lg:h-80
+                 bg-purple-500/10 lg:bg-purple-500/45
+                 blur-xl lg:blur-2xl rounded-full"
       aria-hidden="true"
     />
-    {/* Orb 2 - Blue (bottom-right) */}
-    <div 
-      className="orb-breathing absolute top-3/4 -right-32 
+    {}
+    <div
+      className="orb-breathing absolute top-3/4 -right-32
                  lg:w-80 lg:h-80 lg:bg-blue-500/25 lg:blur-xl
-                 w-56 h-56 bg-blue-500/10 blur-xl rounded-full" 
+                 w-56 h-56 bg-blue-500/10 blur-xl rounded-full"
       aria-hidden="true"
     />
   </div>
 );
 
-// Root layout component
-export default function RootLayout({ 
-  children 
-}: { 
-  children: React.ReactNode; 
+
+export default function RootLayout({
+  children
+}: {
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
       <body className="flex flex-col min-h-screen text-gray-200 overflow-y-auto relative">
-        {/* Sync HTML class for economy/reduced-motion modes */}
+        {}
         <HtmlClassSync />
-        
-        {/* Background Layer 1: Animated Orbs (desktop only) */}
+
+        {}
         <BackgroundOrbs />
-        
-        {/* Background Layer 2: Floating Particles (all devices) */}
+
+        {}
         <CinematicParticles />
-        
-        {/* Vercel Analytics & Performance Monitoring */}
+
+        {}
         <Analytics />
         <SpeedInsights />
 
-        {/* Header with navigation */}
+        {}
         <header className="relative sm:sticky sm:top-0 z-50 mb-6 sm:mb-8 backdrop-blur-xl bg-black/30 border-b border-gray-700/40 transition-all duration-300 hover:border-purple-500/40">
           <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
           <div className="flex items-center gap-3 sm:gap-4 max-w-6xl mx-auto px-3 sm:px-4 py-2 sm:py-3">
-            {/* Logo + Brand */}
+            {}
             <div className="flex items-center gap-2 sm:gap-3 flex-shrink-0">
-              <Link 
-                href="/" 
+              <Link
+                href="/"
                 className="group flex items-center gap-2 hover:scale-105 transition-transform duration-300"
               >
-                <Image 
-                  src="/logo.webp" 
-                  alt="Minimaverse Logo" 
-                  width={40} 
-                  height={40} 
+                <Image
+                  src="/logo.webp"
+                  alt="Minimaverse Logo"
+                  width={40}
+                  height={40}
                   className="w-8 h-8 sm:w-10 sm:h-10 object-contain bg-transparent mix-blend-screen"
-                  priority 
+                  priority
                 />
                 <span className="text-base sm:text-xl font-bold bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                   Minimaverse
                 </span>
               </Link>
             </div>
-            
-            {/* Navigation Links */}
+
+            {}
             <nav className="flex-1 flex justify-end flex-wrap gap-x-1.5 gap-y-1 sm:gap-2">
               {[
-                { href: '/about', label: 'About' }, 
+                { href: '/about', label: 'About' },
                 { href: '/protocol', label: 'Protocol' },
-                { href: '/ecosystem', label: 'Ecosystem' }, 
+                { href: '/ecosystem', label: 'Ecosystem' },
                 { href: '/developers', label: 'Developers' },
-                { href: '/tools', label: 'Tools' }, 
+                { href: '/tools', label: 'Tools' },
                 { href: '/timeline', label: 'Timeline' },
-                { href: '/partners', label: 'Partners' }, 
+                { href: '/partners', label: 'Partners' },
                 { href: '/nodes', label: 'Nodes' },
                 { href: '/news', label: 'News' },
               ].map((item) => (
-                <Link 
-                  key={item.href} 
-                  href={item.href} 
+                <Link
+                  key={item.href}
+                  href={item.href}
                   className="group relative px-2 py-1.5 sm:px-3 sm:py-2 text-[11px] sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 whitespace-nowrap"
                 >
                   {item.label}
@@ -167,28 +165,24 @@ export default function RootLayout({
               ))}
             </nav>
 
-            {/* Search Utility:
-                - Mobile: hidden
-                - Tablet (sm): Compact (no padding inside border, small margin)
-                - Desktop (lg): Relaxed (padding inside border, larger margin) 
-            */}
+            {}
             <div className="hidden sm:flex items-center ml-2 border-l border-gray-700/50 lg:ml-4 lg:pl-3">
               <Search />
             </div>
           </div>
         </header>
 
-        {/* Main Content Area */}
+        {}
         <main className="flex-1 max-w-6xl mx-auto w-full px-4 relative z-10">
           {children}
         </main>
 
-        {/* Footer with links, toggle, and credits */}
+        {}
         <footer className="relative z-10 mt-12 sm:mt-16 backdrop-blur-xl bg-black/30 border-t border-gray-700/40 transition-all duration-300 hover:border-purple-500/40">
           <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
-            {/* Footer Columns */}
+            {}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 text-center md:text-left">
-              {/* Quick Links */}
+              {}
               <div className="space-y-2 sm:space-y-3">
                 <h4 className="text-white font-semibold flex items-center justify-center md:justify-start gap-2">
                   <span className="text-lg">📚</span> Quick Links
@@ -202,8 +196,8 @@ export default function RootLayout({
                   </Link>
                 </div>
               </div>
-              
-              {/* Dev Resources */}
+
+              {}
               <div className="space-y-2 sm:space-y-3">
                 <h4 className="text-white font-semibold flex items-center justify-center md:justify-start gap-2">
                   <span className="text-lg">⚙️</span> Dev Resources
@@ -217,8 +211,8 @@ export default function RootLayout({
                   </ExternalLink>
                 </div>
               </div>
-              
-              {/* Legal */}
+
+              {}
               <div className="space-y-2 sm:space-y-3">
                 <h4 className="text-white font-semibold flex items-center justify-center md:justify-start gap-2">
                   <span className="text-lg">📢</span> Legal
@@ -234,13 +228,13 @@ export default function RootLayout({
               </div>
             </div>
 
-            {/* Support Block - Donation section */}
+            {}
             <SupportBlock />
-            
-            {/* Divider */}
+
+            {}
             <div className="relative h-px bg-gray-700 mb-4 sm:mb-6" />
-            
-            {/* Bottom Bar: Copyright, Toggle, GitHub, RSS */}
+
+            {}
             <div className="flex flex-col md:flex-row items-center justify-between gap-3 sm:gap-4 text-[11px] sm:text-sm text-gray-500">
               <p className="flex items-center gap-2">
                 <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
@@ -268,8 +262,8 @@ export default function RootLayout({
                 </Link>
               </p>
             </div>
-            
-            {/* Signature Line */}
+
+            {}
             <p className="text-gray-600 text-[11px] mt-3 text-center sm:text-right opacity-80 hover:opacity-100 transition-opacity duration-300">
               Built for transparency &amp; community 🌐
             </p>

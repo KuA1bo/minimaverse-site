@@ -1,31 +1,30 @@
-// src/app/nodes/page.tsx
-// Minima Node Setup & Installation Guide
-// Last updated: June 10, 2026
+
+
 
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 import CopyableEndpoint from '@/components/CopyableEndpoint';
 
-// ExternalLink component for all external links with arrow icon
-const ExternalLink = ({ 
-  href, 
-  children, 
+
+const ExternalLink = ({
+  href,
+  children,
   className = "",
   ariaLabel,
   hideArrow = false,
   id
-}: { 
-  href: string; 
-  children: React.ReactNode; 
+}: {
+  href: string;
+  children: React.ReactNode;
   className?: string;
   ariaLabel?: string;
   hideArrow?: boolean;
   id?: string;
 }) => (
-  <a 
+  <a
     id={id}
-    href={href.trim()} 
-    target="_blank" 
+    href={href.trim()}
+    target="_blank"
     rel="noopener noreferrer"
     className={`inline-flex items-center gap-1 ${className}`}
     aria-label={ariaLabel}
@@ -39,7 +38,7 @@ const ExternalLink = ({
   </a>
 );
 
-// StatusBadge component for feature status indicators
+
 const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'in-development' | 'community' | 'expert-verified', reducedGlow?: boolean }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: reducedGlow ? 'shadow-green-500/25' : 'shadow-green-500/50' },
@@ -48,7 +47,7 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
     'expert-verified': { bg: 'bg-purple-900/40', text: 'text-purple-300', border: 'border-purple-700/50', dot: 'bg-purple-500', glow: reducedGlow ? 'shadow-purple-500/25' : 'shadow-purple-500/50' },
   };
   const style = config[status];
-  
+
   return (
     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ${style.bg} ${style.text} text-xs font-medium border ${style.border} shadow-lg ${style.glow} transition-all duration-300 hover:scale-105`}>
       <span className="relative flex h-2 w-2">
@@ -62,7 +61,7 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-// Structured data for Schema.org ItemList
+
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -86,25 +85,25 @@ const structuredData = {
 export default function NodesPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
-      
-      {/* Structured data for SEO - ItemList schema */}
+
+      {}
       <JsonLd data={structuredData} />
 
-      {/* Unified Header with gradient accent */}
+      {}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
-        
+
         <div className="relative flex justify-between items-start">
-          {/* Header text block */}
+          {}
           <div className="relative inline-block w-full pb-3">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="text-gray-400 hover:text-white transition-colors inline-block mb-4 group"
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
-            
-            {/* Internal navigation - unified style per /about */}
+
+            {}
             <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
               <Link href="/protocol" className="text-gray-400 hover:text-purple-400 transition-colors">Protocol</Link>
               <span className="text-gray-600">•</span>
@@ -112,8 +111,8 @@ export default function NodesPage() {
               <span className="text-gray-600">•</span>
               <Link href="/developers" className="text-gray-400 hover:text-purple-400 transition-colors">Developers</Link>
             </div>
-            
-            {/* SEO-optimized H1 */}
+
+            {}
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Minima Node Setup & Installation Guide
@@ -122,14 +121,14 @@ export default function NodesPage() {
             <p className="text-gray-400">Verified guides for running Minima nodes on any platform</p>
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
-          
-          {/* GitHub icon */}
+
+          {}
           <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
-            <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site" 
+            <ExternalLink
+              href="https://github.com/KuA1bo/minimaverse-site"
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -142,12 +141,12 @@ export default function NodesPage() {
         </div>
       </header>
 
-      {/* Primary Sources Box */}
-      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8 
-                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+      {}
+      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8
+                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
-        
+
         <div className="relative">
           <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
             <span className="text-2xl">📚</span> Primary Sources
@@ -155,8 +154,8 @@ export default function NodesPage() {
           <ul className="space-y-3 text-sm">
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://docs.minima.global" 
+              <ExternalLink
+                href="https://docs.minima.global"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
               >
                 docs.minima.global
@@ -166,8 +165,8 @@ export default function NodesPage() {
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://docs.minima.global/docs/run-a-node" 
+              <ExternalLink
+                href="https://docs.minima.global/docs/run-a-node"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
               >
                 docs.minima.global/docs/run-a-node
@@ -177,8 +176,8 @@ export default function NodesPage() {
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink 
-                href="https://github.com/minima-global/Minima/tree/master/jar" 
+              <ExternalLink
+                href="https://github.com/minima-global/Minima/tree/master/jar"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
               >
                 github.com/minima-global/Minima/tree/master/jar
@@ -187,8 +186,8 @@ export default function NodesPage() {
               <span className="text-gray-500 text-xs md:text-sm">Latest Builds</span>
             </li>
           </ul>
-          
-          {/* Status legend */}
+
+          {}
           <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3 flex-wrap">
               <span className="block sm:inline">Status indicators:</span>
@@ -201,32 +200,32 @@ export default function NodesPage() {
         </div>
       </div>
 
-      {/* Quick Start CTA - Neutralized tone per style guide */}
-      <div className="relative bg-blue-900/20 border border-blue-700/40 rounded-2xl p-4 sm:p-6 mb-8 
-                      transition-all duration-300 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10 
+      {}
+      <div className="relative bg-blue-900/20 border border-blue-700/40 rounded-2xl p-4 sm:p-6 mb-8
+                      transition-all duration-300 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10
                       opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/0 to-cyan-500/0 group-hover:from-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
-        
+
         <div className="relative flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
           <div className="text-center sm:text-left">
             <h3 className="text-white font-medium mb-1">Setup Entry Points</h3>
             <p className="text-gray-400 text-sm">Initial node configuration paths for common environments.</p>
           </div>
           <div className="flex flex-col sm:flex-row gap-2 justify-center sm:justify-start">
-            <ExternalLink 
-              href="https://docs.minima.global/docs/run-a-node/android" 
+            <ExternalLink
+              href="https://docs.minima.global/docs/run-a-node/android"
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
               📱 Android
             </ExternalLink>
-            <ExternalLink 
-              href="https://docs.minima.global/docs/run-a-node/linux-vps-docker" 
+            <ExternalLink
+              href="https://docs.minima.global/docs/run-a-node/linux-vps-docker"
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
               🐳 Docker
             </ExternalLink>
-            <ExternalLink 
-              href="https://minidapps.minima.global/" 
+            <ExternalLink
+              href="https://minidapps.minima.global/"
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
               🧩 MiniDapps
@@ -235,32 +234,32 @@ export default function NodesPage() {
         </div>
       </div>
 
-      {/* Initial Peer Configuration - community-maintained resource */}
+      {}
       <section id="peer-configuration" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-250">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
           <span className="text-2xl">🔗</span>
           <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Initial Peer Configuration</span>
         </h2>
-        
-        <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                        transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+
+        <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
+                        transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15
                         group overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
-          {/* Metadata Block per style guide */}
+
+          {}
           <div className="mb-4 pb-4 border-b border-gray-700/40">
             <div className="flex flex-wrap items-center gap-3 text-xs">
               <StatusBadge status="community" reducedGlow={true} />
               <span className="text-gray-500">Note: Resource maintained by Paddy Cerri (Co-Founder & Chief Architect, Minima Global)</span>
             </div>
           </div>
-          
+
           <div className="relative">
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
-              Initial network discovery requires valid peer endpoints. 
+              Initial network discovery requires valid peer endpoints.
               A public list of active nodes is available for initial synchronization.
             </p>
-            
+
             <ul className="space-y-2 text-gray-400 text-sm mb-4">
               <li className="flex items-start gap-2">
                 <span className="text-blue-400 mt-0.5">•</span>
@@ -277,13 +276,13 @@ export default function NodesPage() {
             </ul>
           </div>
         </div>
-        
-        {/* Clean stacked links for mobile/desktop readability */}
+
+        {}
         <div className="text-gray-500 text-xs mt-3 flex flex-col gap-1.5">
           <p>
             Attribution:{' '}
-            <ExternalLink 
-              href="https://spartacusrex.com" 
+            <ExternalLink
+              href="https://spartacusrex.com"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               spartacusrex.com
@@ -291,8 +290,8 @@ export default function NodesPage() {
           </p>
           <p>
             Source:{' '}
-            <ExternalLink 
-              href="https://spartacusrex.com/minimapeers.txt" 
+            <ExternalLink
+              href="https://spartacusrex.com/minimapeers.txt"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               Public Peer List (minimapeers.txt)
@@ -301,26 +300,26 @@ export default function NodesPage() {
         </div>
       </section>
 
-      {/* Node Recovery - official documentation hub */}
+      {}
       <section id="node-recovery" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-275">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
           <span className="text-2xl">🔒</span>
           <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Node Recovery</span>
         </h2>
-        
-        <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                        transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+
+        <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
+                        transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15
                         group overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
-          {/* Metadata Block per style guide */}
+
+          {}
           <div className="mb-4 pb-4 border-b border-gray-700/40">
             <div className="flex flex-wrap items-center gap-3 text-xs">
               <StatusBadge status="confirmed" reducedGlow={true} />
               <span className="text-gray-500">Note: Based on official Minima documentation</span>
             </div>
           </div>
-          
+
           <div className="relative space-y-4">
             <p className="text-gray-300 text-sm leading-relaxed">
               Recovery methods for restoring node access, wallet state, and chain synchronization.
@@ -328,8 +327,8 @@ export default function NodesPage() {
             <p className="text-gray-400 text-xs">
               All recovery operations are performed via the Security MiniDapp interface.
             </p>
-            
-            {/* Recovery methods list */}
+
+            {}
             <ul className="space-y-3 text-sm">
               <li className="flex flex-col gap-1.5 p-3 bg-gray-900/30 rounded-lg border border-gray-700/30">
                 <div className="flex items-center gap-2">
@@ -340,15 +339,15 @@ export default function NodesPage() {
                   Restore chain synchronization and update wallet state.
                 </p>
                 <div className="pl-5">
-                  <ExternalLink 
-                    href="https://docs.minima.global/docs/user-guides/node-recovery/chain-resync" 
+                  <ExternalLink
+                    href="https://docs.minima.global/docs/user-guides/node-recovery/chain-resync"
                     className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-xs"
                   >
                     → View Source
                   </ExternalLink>
                 </div>
               </li>
-              
+
               <li className="flex flex-col gap-1.5 p-3 bg-gray-900/30 rounded-lg border border-gray-700/30">
                 <div className="flex items-center gap-2">
                   <span className="text-blue-400">•</span>
@@ -358,15 +357,15 @@ export default function NodesPage() {
                   Restore wallet access from a 24-word recovery phrase.
                 </p>
                 <div className="pl-5">
-                  <ExternalLink 
-                    href="https://docs.minima.global/docs/user-guides/node-recovery/import-seed-phrase" 
+                  <ExternalLink
+                    href="https://docs.minima.global/docs/user-guides/node-recovery/import-seed-phrase"
                     className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-xs"
                   >
                     → View Source
                   </ExternalLink>
                 </div>
               </li>
-              
+
               <li className="flex flex-col gap-1.5 p-3 bg-gray-900/30 rounded-lg border border-gray-700/30">
                 <div className="flex items-center gap-2">
                   <span className="text-blue-400">•</span>
@@ -376,8 +375,8 @@ export default function NodesPage() {
                   Recover a node from a previously created backup.
                 </p>
                 <div className="pl-5">
-                  <ExternalLink 
-                    href="https://docs.minima.global/docs/user-guides/node-recovery/restore-backup" 
+                  <ExternalLink
+                    href="https://docs.minima.global/docs/user-guides/node-recovery/restore-backup"
                     className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-xs"
                   >
                     → View Source
@@ -385,8 +384,8 @@ export default function NodesPage() {
                 </div>
               </li>
             </ul>
-            
-            {/* Critical Notes block */}
+
+            {}
             <div className="mt-4 pt-4 border-t border-gray-700/40">
               <h4 className="text-white text-xs font-medium mb-2 flex items-center gap-2">
                 <span>⚠️</span> Critical Notes
@@ -415,12 +414,12 @@ export default function NodesPage() {
             </div>
           </div>
         </div>
-        
-        {/* Source link matching the exact "Source: [Descriptive Text]" pattern */}
+
+        {}
         <p className="text-gray-500 text-xs mt-3">
           Source:{' '}
-          <ExternalLink 
-            href="https://docs.minima.global/docs/user-guides/node-recovery/recovery-options" 
+          <ExternalLink
+            href="https://docs.minima.global/docs/user-guides/node-recovery/recovery-options"
             className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
           >
             Node Recovery Options
@@ -428,26 +427,26 @@ export default function NodesPage() {
         </p>
       </section>
 
-      {/* Cold Storage Setup */}
+      {}
       <section id="cold-storage" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
           <span className="text-2xl">🧊</span>
           <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Cold Storage Setup</span>
         </h2>
-        
-        <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
-                        transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+
+        <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
+                        transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15
                         group overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-          
-          {/* Metadata Block per style guide */}
+
+          {}
           <div className="mb-4 pb-4 border-b border-gray-700/40">
             <div className="flex flex-wrap items-center gap-3 text-xs">
               <StatusBadge status="confirmed" reducedGlow={true} />
               <span className="text-gray-500">Note: Based on official Minima documentation</span>
             </div>
           </div>
-          
+
           <div className="relative">
             <p className="text-gray-300 text-sm leading-relaxed mb-2">
               Offline signing workflow for securing private keys and reducing online exposure.
@@ -457,12 +456,12 @@ export default function NodesPage() {
             </p>
           </div>
         </div>
-        
-        {/* Source link matching the exact "Source: [Descriptive Text]" pattern */}
+
+        {}
         <p className="text-gray-500 text-xs mt-3">
           Source:{' '}
-          <ExternalLink 
-            href="https://docs.minima.global/docs/user-guides/advanced/cold-storage" 
+          <ExternalLink
+            href="https://docs.minima.global/docs/user-guides/advanced/cold-storage"
             className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
           >
             Advanced Cold Storage Guide
@@ -470,23 +469,23 @@ export default function NodesPage() {
         </p>
       </section>
 
-      {/* Content */}
+      {}
       <article className="prose prose-invert max-w-none">
-        
-        {/* Intro */}
+
+        {}
         <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            
+
             <p className="text-gray-300 leading-relaxed relative">
-              Running a Minima node is a standard process and can be done on various platforms including 
-              desktop computers, mobile devices, Raspberry Pi, and cloud servers. Each node is a full 
+              Running a Minima node is a standard process and can be done on various platforms including
+              desktop computers, mobile devices, Raspberry Pi, and cloud servers. Each node is a full
               node, contributing to the network's decentralization and security.
             </p>
             <p className="text-gray-300 leading-relaxed mt-4 relative">
@@ -495,15 +494,15 @@ export default function NodesPage() {
           </div>
         </section>
 
-        {/* System Requirements */}
+        {}
         <section id="requirements" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚙️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">System Requirements</span>
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <h3 className="text-white font-medium mb-3 relative">Minimum Requirements</h3>
@@ -527,7 +526,7 @@ export default function NodesPage() {
               </ul>
             </div>
 
-            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+            <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <h3 className="text-white font-medium mb-3 relative">Recommended</h3>
@@ -549,8 +548,8 @@ export default function NodesPage() {
           </div>
           <p className="text-gray-500 text-xs mt-3">
             Source:{' '}
-            <ExternalLink 
-              href="https://docs.minima.global/docs/run-a-node/node-types#supported-devices" 
+            <ExternalLink
+              href="https://docs.minima.global/docs/run-a-node/node-types#supported-devices"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               Node Types: Supported devices & Minimum specs
@@ -558,17 +557,17 @@ export default function NodesPage() {
           </p>
         </section>
 
-        {/* Why Run a Node */}
+        {}
         <section id="why-run" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🎯</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Why Run a Node?</span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
+
             <ul className="space-y-3">
               {[
                 { title: 'Support decentralized infrastructure', desc: 'Contribute to decentralized infrastructure by hosting reliable, secure nodes' },
@@ -588,7 +587,7 @@ export default function NodesPage() {
           </div>
           <p className="text-gray-500 text-xs mt-2">
             Source:{' '}
-            <ExternalLink 
+            <ExternalLink
               href="https://docs.minima.global/docs/core/use-cases"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
@@ -597,13 +596,13 @@ export default function NodesPage() {
           </p>
         </section>
 
-        {/* Installation Guides by Platform */}
+        {}
         <section id="installation" className="mb-10 opacity-0 animate-fade-in-up delay-300 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📥</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Installation Guides by Platform</span>
           </h2>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {[
               { id: 'windows', href: 'https://docs.minima.global/docs/run-a-node/windows', icon: '🪟', title: 'Windows', desc: 'Desktop installation for Windows' },
@@ -615,12 +614,12 @@ export default function NodesPage() {
               { id: 'docker-desktop', href: 'https://docs.minima.global/docs/run-a-node/docker-desktop', icon: '📦', title: 'Docker Desktop', desc: 'Containerized deployment for desktop' },
               { id: 'raspberry-pi', href: 'https://docs.minima.global/docs/run-a-node/node-types#supported-devices', icon: '🥧', title: 'Raspberry Pi', desc: 'Optimized for Pi 4+ devices' },
             ].map((guide, index) => (
-              <ExternalLink 
+              <ExternalLink
                 key={index}
                 id={guide.id}
-                href={guide.href} 
-                className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 
-                          hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 
+                href={guide.href}
+                className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4
+                          hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15
                           transition-all duration-300 block group overflow-hidden scroll-mt-20"
                 ariaLabel={`${guide.title} installation guide`}
               >
@@ -632,8 +631,8 @@ export default function NodesPage() {
           </div>
           <p className="text-gray-500 text-xs mt-3">
             All guides:{' '}
-            <ExternalLink 
-              href="https://docs.minima.global/docs/run-a-node" 
+            <ExternalLink
+              href="https://docs.minima.global/docs/run-a-node"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
               docs.minima.global/docs/run-a-node
@@ -641,43 +640,43 @@ export default function NodesPage() {
           </p>
         </section>
 
-        {/* Expert Guide by Minima Architect */}
+        {}
         <section id="expert-guide" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">✨</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Expert Guide</span>
           </h2>
-          
-          <div className="relative bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-purple-500/30 rounded-2xl p-6 
-                          transition-transform duration-300 hover:border-purple-400/60 hover:shadow-2xl hover:shadow-purple-500/20 
+
+          <div className="relative bg-gradient-to-br from-purple-900/20 to-blue-900/20 border border-purple-500/30 rounded-2xl p-6
+                          transition-transform duration-300 hover:border-purple-400/60 hover:shadow-2xl hover:shadow-purple-500/20
                           group overflow-hidden hover:-translate-y-1 expert-card-glow">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            {/* Metadata Block per style guide */}
+
+            {}
             <div className="mb-4 pb-4 border-b border-purple-500/20">
               <div className="flex flex-wrap items-center gap-3 text-xs">
                 <StatusBadge status="expert-verified" reducedGlow={true} />
                 <span className="text-purple-300/70">Note: by Paddy Cerri (Co-Founder & Chief Architect, Minima Global)</span>
               </div>
             </div>
-            
+
             <div className="relative">
               <h3 className="text-white font-medium mb-2">Alternative Setup Guide</h3>
               <p className="text-gray-300 text-sm mb-3">
                 Alternative setup guide with peer configuration, Docker deployment, and operational notes.
               </p>
-              
+
               <div className="space-y-2">
-                <ExternalLink 
-                  href="https://spartacusrex.com/downloads.html" 
+                <ExternalLink
+                  href="https://spartacusrex.com/downloads.html"
                   className="text-purple-400 hover:text-purple-300 underline decoration-purple-500/30 hover:decoration-purple-400/60 underline-offset-4 transition-all duration-300 text-sm relative inline-flex items-center gap-1"
                 >
                   <span className="text-base">⬇️</span>
                   spartacusrex.com/downloads
                 </ExternalLink>
                 <br />
-                <ExternalLink 
-                  href="https://spartacusrex.com/run-a-node.html" 
+                <ExternalLink
+                  href="https://spartacusrex.com/run-a-node.html"
                   className="text-purple-400 hover:text-purple-300 underline decoration-purple-500/30 hover:decoration-purple-400/60 underline-offset-4 transition-all duration-300 text-sm relative inline-flex items-center gap-1"
                 >
                   <span className="text-base">📖</span>
@@ -688,13 +687,13 @@ export default function NodesPage() {
           </div>
         </section>
 
-        {/* Advanced Node Types */}
+        {}
         <section id="advanced-nodes" className="mb-10 opacity-0 animate-fade-in-up delay-75 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔧</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Advanced Node Types</span>
           </h2>
-          
+
           <div className="space-y-4">
             {[
               { id: 'archive-node', title: 'Archive Node', text: 'Full historical blockchain data storage for archival purposes and complete transaction history verification.', link: { href: 'https://docs.minima.global/docs/run-a-node/archive-node', text: '→ Setup Guide' } },
@@ -704,14 +703,14 @@ export default function NodesPage() {
                 { href: 'https://docs.minima.global/docs/run-a-node/meg-setup', text: '→ Configuration Guide' }
               ]}
             ].map((item, index) => (
-              <div key={index} id={item.id} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+              <div key={index} id={item.id} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1 scroll-mt-20">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
                 <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
                 {item.link && (
-                  <ExternalLink 
-                    href={item.link.href} 
+                  <ExternalLink
+                    href={item.link.href}
                     className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm relative"
                   >
                     {item.link.text}
@@ -721,8 +720,8 @@ export default function NodesPage() {
                   <div className="space-y-2 text-sm relative">
                     {item.links.map((link, linkIndex) => (
                       <p key={linkIndex}>
-                        <ExternalLink 
-                          href={link.href} 
+                        <ExternalLink
+                          href={link.href}
                           className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                         >
                           {link.text}
@@ -736,26 +735,26 @@ export default function NodesPage() {
           </div>
         </section>
 
-        {/* Node Configuration */}
+        {}
         <section id="configuration" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚙️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Node Configuration</span>
           </h2>
-          
+
           <div className="space-y-4">
             {[
               { id: 'node-types', title: 'Node Types Overview', text: 'Understanding different node configurations and their roles in the network architecture.', link: { href: 'https://docs.minima.global/docs/run-a-node/node-types', text: '→ Documentation' } },
               { id: 'firewall', title: 'Firewall Rules', text: 'Required network configurations and port forwarding for proper node operation and peer connectivity.', link: { href: 'https://docs.minima.global/docs/run-a-node/firewall-rules', text: '→ Configuration Guide' } },
               { id: 'startup', title: 'Startup Parameters', text: 'Advanced configuration options and command-line flags for node initialization and customization.', link: { href: 'https://docs.minima.global/docs/run-a-node/startup-parameters', text: '→ Parameter Reference' } },
             ].map((item, index) => (
-              <div key={index} id={item.id} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+              <div key={index} id={item.id} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1 scroll-mt-20">
                 <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
                 <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
                 <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
-                <ExternalLink 
-                  href={item.link.href} 
+                <ExternalLink
+                  href={item.link.href}
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm relative"
                 >
                   {item.link.text}
@@ -765,9 +764,9 @@ export default function NodesPage() {
           </div>
         </section>
 
-        {/* Universal Disclaimer Block */}
-        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 
-                        transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
+        {}
+        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8
+                        transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10
                         opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
@@ -775,7 +774,7 @@ export default function NodesPage() {
               <span className="text-lg">⚠️</span>
               Disclaimer:
             </strong>
-            This site does not represent the official Minima team. 
+            This site does not represent the official Minima team.
             All information is compiled from publicly available sources.{' '}
             <Link href="/disclaimer" aria-label="Read full disclaimer" className="underline hover:text-amber-100 decoration-amber-500/50 hover:decoration-amber-400 underline-offset-4 transition-all duration-300">
               Learn more
@@ -783,7 +782,7 @@ export default function NodesPage() {
           </p>
         </div>
 
-        {/* Last Updated */}
+        {}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />

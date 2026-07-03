@@ -1,7 +1,6 @@
-// src/app/rss.xml/route.ts
-// RSS feed generator for Minimaverse - static pages + verified news items
-// NOTE: When adding a new page or news item, add it to the respective array below.
-// Updated: Added XXIM Podcast Features Hugo and Adam [29.06.2026]
+
+
+
 import RSS from 'rss';
 import { NextResponse } from 'next/server';
 
@@ -26,7 +25,7 @@ export async function GET() {
     { title: 'Submit Project', url: 'https://minimaverse.com/submit-project', desc: 'Request listing for your project' },
   ];
 
-  // Verified news items - add new entries here with confirmed status only
+
   const newsItems = [
     {
       title: 'XXIM Podcast Features Hugo and Adam',
@@ -66,7 +65,7 @@ export async function GET() {
     },
   ];
 
-  // Add static pages
+
   pages.forEach(page => {
     feed.item({
       title: page.title,
@@ -76,7 +75,7 @@ export async function GET() {
     });
   });
 
-  // Add verified news items
+
   newsItems.forEach(item => {
     feed.item({
       title: item.title,

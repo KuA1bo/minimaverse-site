@@ -1,25 +1,25 @@
-// src/app/disclaimer/page.tsx
-// Disclaimer page - Legal notice and project information
+
+
 
 import Link from 'next/link';
 
-// ExternalLink component for all external links with arrow icon
-const ExternalLink = ({ 
-  href, 
-  children, 
+
+const ExternalLink = ({
+  href,
+  children,
   className = "",
   ariaLabel,
   hideArrow = false
-}: { 
-  href: string; 
-  children: React.ReactNode; 
+}: {
+  href: string;
+  children: React.ReactNode;
   className?: string;
   ariaLabel?: string;
   hideArrow?: boolean;
 }) => (
-  <a 
-    href={href.trim()} 
-    target="_blank" 
+  <a
+    href={href.trim()}
+    target="_blank"
     rel="noopener noreferrer"
     className={`inline-flex items-center gap-1 ${className}`}
     aria-label={ariaLabel}
@@ -33,7 +33,7 @@ const ExternalLink = ({
   </a>
 );
 
-// StatusBadge component for feature status indicators
+
 const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'in-development' | 'community', reducedGlow?: boolean }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: reducedGlow ? 'shadow-green-500/25' : 'shadow-green-500/50' },
@@ -41,7 +41,7 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
     'community': { bg: 'bg-gray-700/40', text: 'text-gray-300', border: 'border-gray-600/50', dot: 'bg-gray-400', glow: reducedGlow ? 'shadow-gray-400/25' : 'shadow-gray-400/50' },
   };
   const style = config[status];
-  
+
   return (
     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ${style.bg} ${style.text} text-xs font-medium border ${style.border} shadow-lg ${style.glow} transition-all duration-300 hover:scale-105`}>
       <span className="relative flex h-2 w-2">
@@ -58,17 +58,17 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
 export default function DisclaimerPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
-      
 
-      {/* Unified Header with gradient accent */}
+
+      {}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
-        
+
         <div className="relative flex justify-between items-start">
-          {/* Header text block */}
+          {}
           <div className="relative inline-block w-full pb-3">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="text-gray-400 hover:text-white transition-colors inline-block mb-4 group"
             >
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
@@ -81,14 +81,14 @@ export default function DisclaimerPage() {
             <p className="text-gray-400">Legal notice and project information</p>
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
-          
-          {/* GitHub icon - Desktop only */}
+
+          {}
           <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
-            <ExternalLink 
-              href="https://github.com/KuA1bo/minimaverse-site  " 
+            <ExternalLink
+              href="https://github.com/KuA1bo/minimaverse-site  "
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -101,48 +101,48 @@ export default function DisclaimerPage() {
         </div>
       </header>
 
-      {/* Content */}
+      {}
       <article className="prose prose-invert max-w-none">
-        
-        {/* Project Status */}
+
+        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📄</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Project Status</span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            
+
             <p className="text-gray-300 leading-relaxed relative">
-              Minimaverse is an <strong className="text-white">independent documentation project</strong> focused on 
-              the Minima Protocol ecosystem. This website is not affiliated with, endorsed by, 
+              Minimaverse is an <strong className="text-white">independent documentation project</strong> focused on
+              the Minima Protocol ecosystem. This website is not affiliated with, endorsed by,
               or connected to Minima, Minima Global, or any associated entities in any official capacity.
             </p>
           </div>
         </section>
 
-        {/* Official Resources */}
+        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔗</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Resources</span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
+
             <p className="text-gray-300 leading-relaxed mb-4 relative">
-              For official information about Minima Protocol, please refer to the following 
+              For official information about Minima Protocol, please refer to the following
               verified sources:
             </p>
             <ul className="space-y-3 text-sm">
               <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 relative">
                 <span className="hidden md:inline text-gray-400">•</span>
-                <ExternalLink 
-                  href="https://minima.global" 
+                <ExternalLink
+                  href="https://minima.global"
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   minima.global
@@ -152,8 +152,8 @@ export default function DisclaimerPage() {
               </li>
               <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 relative">
                 <span className="hidden md:inline text-gray-400">•</span>
-                <ExternalLink 
-                  href="https://minima.global/blog" 
+                <ExternalLink
+                  href="https://minima.global/blog"
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   minima.global/blog
@@ -163,8 +163,8 @@ export default function DisclaimerPage() {
               </li>
               <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 relative">
                 <span className="hidden md:inline text-gray-400">•</span>
-                <ExternalLink 
-                  href="https://docs.minima.global" 
+                <ExternalLink
+                  href="https://docs.minima.global"
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   docs.minima.global
@@ -176,47 +176,47 @@ export default function DisclaimerPage() {
           </div>
         </section>
 
-        {/* Information Accuracy */}
+        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">✅</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Information Accuracy</span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            
+
             <p className="text-gray-300 leading-relaxed relative">
-              All information presented on this website is sourced from publicly available 
-              official Minima Global communications. Every factual claim is accompanied 
-              by a direct link to its primary source. Content is maintained in a neutral, 
+              All information presented on this website is sourced from publicly available
+              official Minima Global communications. Every factual claim is accompanied
+              by a direct link to its primary source. Content is maintained in a neutral,
               factual tone without marketing language or speculation.
             </p>
           </div>
         </section>
 
-        {/* No Financial Advice */}
+        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚠️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">No Financial Advice</span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
+
             <p className="text-gray-300 leading-relaxed relative">
-              This website does not provide financial, investment, or legal advice. All 
-              content is for informational and educational purposes only. Users should 
-              conduct their own research and consult qualified professionals before making 
+              This website does not provide financial, investment, or legal advice. All
+              content is for informational and educational purposes only. Users should
+              conduct their own research and consult qualified professionals before making
               any decisions related to Minima Protocol or associated projects.
             </p>
           </div>
         </section>
 
-        {/* License (NEW) */}
+        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📜</span>
@@ -224,26 +224,26 @@ export default function DisclaimerPage() {
               License
             </span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            
+
             <p className="text-gray-300 leading-relaxed relative">
               All content on this website is licensed under the{' '}
-              <ExternalLink 
+              <ExternalLink
                 href="https://github.com/KuA1bo/minimaverse-site/raw/main/LICENSE"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
                 MIT License
-              </ExternalLink>. 
-              You are free to use, modify, and distribute this content for non-commercial purposes, 
+              </ExternalLink>.
+              You are free to use, modify, and distribute this content for non-commercial purposes,
               provided you give appropriate credit and include this license notice.
             </p>
           </div>
         </section>
 
-        {/* Trademarks (NEW) */}
+        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">™️</span>
@@ -251,22 +251,22 @@ export default function DisclaimerPage() {
               Trademarks
             </span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
+
             <p className="text-gray-300 leading-relaxed relative">
-              <strong className="text-white">Minima</strong>, <strong className="text-white">Minima Global</strong>, 
-              and related marks are trademarks or registered trademarks of Minima Global. 
-              This project is not affiliated with or endorsed by Minima, Minima Global, or any associated entities. 
-              We use these terms solely for informational and educational purposes to describe 
+              <strong className="text-white">Minima</strong>, <strong className="text-white">Minima Global</strong>,
+              and related marks are trademarks or registered trademarks of Minima Global.
+              This project is not affiliated with or endorsed by Minima, Minima Global, or any associated entities.
+              We use these terms solely for informational and educational purposes to describe
               the Minima Protocol ecosystem.
             </p>
           </div>
         </section>
 
-        {/* Privacy & Data (NEW) */}
+        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔒</span>
@@ -274,41 +274,41 @@ export default function DisclaimerPage() {
               Privacy & Data
             </span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-            
+
             <p className="text-gray-300 leading-relaxed relative">
-              This website does not collect, store, or process any personal data. 
-              We do not use cookies, analytics, or tracking scripts. 
+              This website does not collect, store, or process any personal data.
+              We do not use cookies, analytics, or tracking scripts.
               Your visit to this site is completely private and anonymous.
             </p>
             <p className="text-gray-300 leading-relaxed mt-4 relative">
-              The site is hosted on Vercel, which may collect standard server logs 
+              The site is hosted on Vercel, which may collect standard server logs
               (IP address, browser type, access times) for operational purposes only.
             </p>
           </div>
         </section>
 
-        {/* Project Maintenance */}
+        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🛠️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Project Maintenance</span>
           </h2>
-          
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                           transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-            
+
             <p className="text-gray-300 leading-relaxed mb-4 relative">
-              This documentation project is maintained independently. For questions, issues, 
+              This documentation project is maintained independently. For questions, issues,
               or contributions, please use the official GitHub repository:
             </p>
             <p className="relative">
-              <ExternalLink 
-                href="https://github.com/KuA1bo/minimaverse-site/issues" 
+              <ExternalLink
+                href="https://github.com/KuA1bo/minimaverse-site/issues"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 flex items-center gap-2 relative"
               >
                 <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -320,9 +320,9 @@ export default function DisclaimerPage() {
           </div>
         </section>
 
-        {/* Universal Disclaimer Block */}
-        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8 
-                        transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 
+        {}
+        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8
+                        transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10
                         opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
@@ -330,13 +330,13 @@ export default function DisclaimerPage() {
               <span className="text-lg">⚠️</span>
               Disclaimer:
             </strong>
-            This site does not represent the official Minima team. 
+            This site does not represent the official Minima team.
             All information is compiled from publicly available sources.{' '}
             <span className="text-amber-300">You are currently viewing the full disclaimer page.</span>
           </p>
         </div>
 
-        {/* Last Updated */}
+        {}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
