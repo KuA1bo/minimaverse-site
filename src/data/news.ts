@@ -173,4 +173,172 @@ export const newsArticles: NewsArticle[] = [
     source: 'https://t.me/MinimaGlobal/594',
     sourceLabel: 'Official Telegram Announcement — MinimaGlobal/594',
   },
+  {
+    slug: 'engineering-update-2026-05-24',
+    date: '2026-05-24',
+    displayDate: 'May 24, 2026',
+    title: 'Engineering Update: DEX, Stablecoin Bridge, and Ecosystem Progress',
+    summary:
+      'The Minima ecosystem team published an engineering update covering progress across core products and infrastructure. Testing across the DEX, MiniMask, and Stablecoin Bridge has been completed, with all components moving into release preparation.',
+    details: [
+      {
+        label: 'DEX Update',
+        text: 'Version 1.0.1 introduces UI improvements, SIM bin restrictions for new users, a 5-minute timeout on trades and messages, and several bug fixes.',
+      },
+      {
+        label: 'Stablecoin Bridge',
+        text: 'Version 1.0 adds redesigned front-end support and enables USDT (ERC-20) bridging into Minima-native USDT, along with performance optimizations.',
+      },
+      {
+        label: 'Ongoing Work',
+        text: 'Continued development across Integritas tooling and Minima Core.',
+      },
+    ],
+    source: 'https://t.me/MinimaGlobal/593',
+    sourceLabel: 'Official Telegram Announcement — MinimaGlobal/593',
+  },
+  {
+    slug: 'republic-campaign-march-2026',
+    date: '2026-03-30',
+    displayDate: 'March 30, 2026',
+    title: 'Minima AG Crowdfunding Campaign on Republic Europe',
+    summary:
+      'Minima AG launched a crowdfunding campaign on Republic Europe ahead of a planned Series A round later in 2026. The campaign materials describe Minima\'s focus on embedded blockchain verification for connected devices and autonomous systems.',
+    details: [
+      {
+        label: 'Campaign Platform',
+        text: 'Republic Europe crowdfunding platform.',
+      },
+      {
+        label: 'Strategic Focus',
+        text: 'Embedded blockchain verification for connected devices and autonomous systems.',
+      },
+      {
+        label: 'Funding Stage',
+        text: 'Campaign launched ahead of planned Series A round in 2026.',
+      },
+    ],
+    source: 'https://europe.republic.com/minima',
+    sourceLabel: 'Republic Europe Campaign Page',
+  },
+  {
+    slug: 'arm-education-alliance-2026',
+    date: '2026-03-24',
+    displayDate: 'March 24, 2026',
+    title: 'Arm Semiconductor Education Alliance Explores Embedded Minima Node Deployment',
+    summary:
+      'Arm\'s Semiconductor Education Alliance explores running a full Minima node on embedded hardware. The article discusses running Minima nodes directly on embedded hardware environments.',
+    details: [
+      {
+        label: 'Partnership',
+        text: 'Arm Semiconductor Education Alliance.',
+      },
+      {
+        label: 'Focus Area',
+        text: 'Running full Minima nodes on embedded hardware environments.',
+      },
+      {
+        label: 'Technical Exploration',
+        text: 'Investigation of edge deployment capabilities for blockchain verification.',
+      },
+    ],
+    source: 'https://minima.global/post/blockchain-doesnt-belong-in-the-cloud',
+    sourceLabel: 'Minima Global Blog Post',
+  },
+  {
+    slug: 'siemens-blockchain-on-chip-2026',
+    date: '2026-03-10',
+    displayDate: 'March 10, 2026',
+    title: 'Siemens Highlights the Emergence of Blockchain-on-Chip',
+    summary:
+      'Siemens Cre8Ventures highlights Blockchain-on-Chip technology, exploring how embedded verification enables autonomous industrial systems. The article references a drone flight demonstration involving TRL 6 testing.',
+    details: [
+      {
+        label: 'Technology',
+        text: 'Blockchain-on-Chip embedded verification technology.',
+      },
+      {
+        label: 'Application',
+        text: 'Autonomous industrial systems requiring embedded verification.',
+      },
+      {
+        label: 'Testing',
+        text: 'Drone flight demonstration involving TRL 6 testing.',
+      },
+    ],
+    source: 'https://minima.global/post/siemens',
+    sourceLabel: 'Minima Global Blog Post',
+  },
+  {
+    slug: 'blockchain-blackbox-verification-2026',
+    date: '2026-03-05',
+    displayDate: 'March 5, 2026',
+    title: 'Blockchain Blackbox: Verification Systems for Autonomous Devices',
+    summary:
+      'Article describing Blockchain-on-Chip verification systems for autonomous devices and drones. The technology reached TRL 6 testing for autonomous system verification scenarios.',
+    details: [
+      {
+        label: 'Technology',
+        text: 'Blockchain-on-Chip verification systems for autonomous devices.',
+      },
+      {
+        label: 'Testing Status',
+        text: 'Technology reached TRL 6 testing for autonomous system verification scenarios.',
+      },
+      {
+        label: 'Applications',
+        text: 'Drones and other autonomous systems requiring tamper-proof verification.',
+      },
+    ],
+    source: 'https://minima.global/post/blockchain-blackbox',
+    sourceLabel: 'Minima Global Blog Post',
+  },
+  {
+    slug: 'minima-roadmaps-to-results-2026',
+    date: '2026-01-20',
+    displayDate: 'January 20, 2026',
+    title: 'Minima: From Roadmaps to Results',
+    summary:
+      'Minima announced a fundamental shift in communication strategy, moving away from traditional roadmaps with fixed dates toward evidence-based progress reporting.',
+    details: [
+      {
+        label: 'Communication Shift',
+        text: 'Moving away from traditional roadmaps with fixed dates.',
+      },
+      {
+        label: 'New Approach',
+        text: 'Evidence-based progress reporting focusing on completed milestones.',
+      },
+      {
+        label: 'Rationale',
+        text: 'Emphasis on verifiable results rather than speculative timelines.',
+      },
+    ],
+    source: 'https://minima.global/post/minima-from-roadmaps-to-results',
+    sourceLabel: 'Minima Global Blog Post',
+  },
+  {
+    slug: 'depin-integration-progress-2025',
+    date: '2025-11-01',
+    displayDate: 'November 2025',
+    title: 'DePIN Integration Progress',
+    summary:
+      'Multiple DePIN projects integrated Minima Protocol for decentralized device coordination and micropayments.',
+    details: [
+      {
+        label: 'Integration Type',
+        text: 'Decentralized device coordination and micropayments.',
+      },
+      {
+        label: 'Protocol',
+        text: 'Minima Protocol integration across multiple DePIN projects.',
+      },
+      {
+        label: 'Use Cases',
+        text: 'IoT device networks, distributed infrastructure, peer-to-peer services.',
+      },
+    ],
+    source: 'https://minima.global/blog',
+    sourceLabel: 'Minima Global Blog',
+  },
 ];

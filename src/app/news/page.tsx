@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
+import { newsArticles } from '@/data/news';
 
 const ExternalLink = ({
   href,
@@ -65,6 +66,13 @@ const newsSchema = {
   "about": {
     "@type": "Thing",
     "name": "Minima Protocol"
+  }
+};
+
+const newsMetadata: Record<string, { featured?: boolean; video?: { href: string; text: string } }> = {
+  'republic-campaign-march-2026': { featured: true },
+  'blockchain-blackbox-verification-2026': {
+    video: { href: 'https://www.youtube.com/watch?v=QOCPWTWAMXI', text: '▶️ Video: Autonomous Verification Technology Overview' }
   }
 };
 
@@ -210,179 +218,78 @@ export default function NewsPage() {
           </h2>
 
           <div className="space-y-4">
-            {[
-              {
-                date: 'July 8, 2026',
-                title: 'Republic Campaign Surpasses $1 Million',
-                text: "Minima announced that its Republic fundraising campaign has raised more than $1 million. The announcement includes campaign statistics covering fundraising performance, investor participation, and platform rankings reported by the project.",
-                link: { href: '/news/republic-campaign-1-million-raised', text: '→ Read More' },
-                status: 'confirmed' as const
-              },
-              {
-                date: 'June 29, 2026',
-                title: 'XXIM Podcast Features Hugo and Adam',
-                text: "Minima team announced a new XXIM Podcast episode featuring Hugo and Adam discussing enterprise partnerships, ecosystem developments, and project direction.",
-                link: { href: '/news/xxim-podcast-hugo-adam-interview', text: '→ Read More' },
-                status: 'confirmed' as const
-              },
-              {
-                date: 'June 13, 2026',
-                title: 'Engineering Update',
-                text: "This update reports continued engineering progress across the Minima protocol and Integritas ecosystem, including Minima Core entering closed testing, exploration of native application integration beyond MiniDapps, design-level validation of a potential Key Uses solution, and ongoing development of local execution capabilities for decentralized AI workloads.",
-                link: { href: '/news/engineering-update-2026-06-13', text: '→ Read More' },
-                status: 'confirmed' as const
-              },
-              {
-                date: 'June 11, 2026',
-                title: 'Maximize Rewards Programme Concludes',
-                text: "The Maximize rewards programme has concluded after distributing more than 50 million $MINIMA across participants. New contracts can no longer be created, while existing contracts remain active until maturity and continue normal reward claims.",
-                link: { href: '/news/maximize-conclusion', text: '→ Read More' },
-                status: 'confirmed' as const
-              },
-              {
-                date: 'June 5, 2026',
-                title: 'Engineering Update: Minima Core, MegaMMR, Integritas',
-                text: "Minima Global announced that Minima Core completed beta and moved to closed testing, alongside infrastructure updates and ongoing Integritas-related development.",
-                link: { href: '/news/engineering-update-june-2026', text: '→ Read More' },
-                status: 'confirmed' as const
-              },
-              {
-                date: 'June 4, 2026',
-                title: 'Maximize Rewards Programme Update',
-                text: "Update on Maximize rewards programme nearing completion, with active contracts continuing normally and focus remaining on infrastructure, partnerships, utility, and protocol development.",
-                link: { href: '/news/maximize-rewards-update', text: '→ Read More' },
-                status: 'confirmed' as const
-              },
-              {
-                date: 'May 24, 2026',
-                title: 'Engineering Update: DEX, Stablecoin Bridge, and Ecosystem Progress',
-                text: "The Minima ecosystem team published an engineering update covering progress across core products and infrastructure. Testing across the DEX, MiniMask, and Stablecoin Bridge has been completed, with all components moving into release preparation. The DEX (v1.0.1) introduces UI improvements, SIM bin restrictions for new users, a 5-minute timeout on trades and messages, and several bug fixes. The Stablecoin Bridge (v1.0) adds redesigned front-end support and enables USDT (ERC-20) bridging into Minima-native USDT, along with performance optimizations. Ongoing work continues across Integritas tooling and Minima Core development.\n\nSource: Official Minima Global Announcements (Telegram)\nhttps://t.me/MinimaGlobal/593",
-                link: { href: 'https://t.me/MinimaGlobal/593', text: '→ View Source' },
-                status: 'confirmed' as const
-              },
-              {
-                date: 'March 30, 2026',
-                title: 'Minima AG Crowdfunding Campaign on Republic Europe',
-                text: "Minima AG launched a crowdfunding campaign on Republic Europe ahead of a planned Series A round later in 2026. The campaign materials describe Minima's focus on embedded blockchain verification for connected devices and autonomous systems. The round exceeded its initial target at the time of announcement.",
-                link: { href: 'https://europe.republic.com/minima', text: '→ View Source' },
-                status: 'confirmed' as const,
-                featured: true
-              },
-              {
-                date: 'March 24, 2026',
-                title: 'Arm Semiconductor Education Alliance Explores Embedded Minima Node Deployment',
-                text: "Arm's Semiconductor Education Alliance explores running a full Minima node on embedded hardware. The article discusses running Minima nodes directly on embedded hardware environments.",
-                link: { href: 'https://minima.global/post/blockchain-doesnt-belong-in-the-cloud', text: '→ View Source' },
-                status: 'confirmed' as const
-              },
-              {
-                date: 'March 10, 2026',
-                title: 'Siemens Highlights the Emergence of Blockchain-on-Chip',
-                text: 'Siemens Cre8Ventures highlights Blockchain-on-Chip technology, exploring how embedded verification enables autonomous industrial systems. The article references a drone flight demonstration involving TRL 6 testing.',
-                link: { href: 'https://minima.global/post/siemens', text: '→ View Source' },
-                status: 'confirmed' as const
-              },
-              {
-                date: 'March 5, 2026',
-                title: 'Blockchain Blackbox: Verification Systems for Autonomous Devices',
-                text: 'Article describing Blockchain-on-Chip verification systems for autonomous devices and drones. The technology reached TRL 6 testing for autonomous system verification scenarios.',
-                link: { href: 'https://minima.global/post/blockchain-blackbox', text: '→ View Source' },
-                video: { href: 'https://www.youtube.com/watch?v=QOCPWTWAMXI', text: '▶️ Video: Autonomous Verification Technology Overview' },
-                status: 'confirmed' as const
-              },
-              {
-                date: 'January 20, 2026',
-                title: 'Minima: From Roadmaps to Results',
-                text: 'Minima announced a fundamental shift in communication strategy, moving away from traditional roadmaps with fixed dates toward evidence-based progress reporting.',
-                link: { href: 'https://minima.global/post/minima-from-roadmaps-to-results', text: '→ View Source' },
-                status: 'confirmed' as const
-              },
-              {
-                date: 'November 2025',
-                title: 'DePIN Integration Progress',
-                text: 'Multiple DePIN projects integrated Minima Protocol for decentralized device coordination and micropayments.',
-                link: { href: 'https://minima.global/blog', text: '→ View Source' },
-                status: 'confirmed' as const
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className={`relative rounded-2xl p-6 transition-all duration-300 group overflow-hidden hover:-translate-y-1
-                  ${item.featured
-                    ? 'bg-gray-800/50 border border-gray-600/50 hover:border-purple-500/40'
-                    : 'bg-gray-800/40 border border-gray-700/40 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15'
-                  }`}
-              >
-                {item.featured && (
-                  <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500/30 via-blue-500/30 to-transparent" />
-                )}
-                {!item.featured && (
-                  <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-                )}
+            {newsArticles.map((article, index) => {
+              const metadata = newsMetadata[article.slug] || {};
+              const isFeatured = metadata.featured || false;
+              const video = metadata.video;
 
-                <div className="relative">
-                  <div className="flex items-center gap-2 mb-2">
-                    <p className="text-xs text-gray-500">{item.date}</p>
-                  </div>
+              return (
+                <div
+                  key={index}
+                  className={`relative rounded-2xl p-6 transition-all duration-300 group overflow-hidden hover:-translate-y-1
+                    ${isFeatured
+                      ? 'bg-gray-800/50 border border-gray-600/50 hover:border-purple-500/40'
+                      : 'bg-gray-800/40 border border-gray-700/40 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15'
+                    }`}
+                >
+                  {isFeatured && (
+                    <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500/30 via-blue-500/30 to-transparent" />
+                  )}
+                  {!isFeatured && (
+                    <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
+                  )}
 
-                  <h3 className={`font-medium mb-2 ${item.featured ? 'text-white text-lg' : 'text-white'}`}>
-                    {item.title}
-                  </h3>
+                  <div className="relative">
+                    <div className="flex items-center gap-2 mb-2">
+                      <p className="text-xs text-gray-500">{article.displayDate}</p>
+                    </div>
 
-                  <p className={`text-sm mb-3 whitespace-pre-line ${item.featured ? 'text-gray-200' : 'text-gray-300'}`}>
-                    {item.text}
-                  </p>
+                    <h3 className={`font-medium mb-2 ${isFeatured ? 'text-white text-lg' : 'text-white'}`}>
+                      {article.title}
+                    </h3>
 
-                  <div className="space-y-2">
-                    {item.link.href.startsWith('/') ? (
-                      <Link
-                        href={item.link.href}
-                        className={`underline-offset-4 transition-all duration-300 text-sm block inline-flex items-center gap-1
-                          ${item.featured
-                            ? 'text-purple-300 hover:text-purple-200 decoration-purple-500/40 hover:decoration-purple-400'
-                            : 'text-blue-400 hover:text-purple-400 decoration-blue-500/30 hover:decoration-purple-500/60'
-                          }`}
-                      >
-                        {item.link.text}
-                      </Link>
-                    ) : (
-                      <ExternalLink
-                        href={item.link.href}
-                        className={`underline-offset-4 transition-all duration-300 text-sm block inline-flex items-center gap-1
-                          ${item.featured
-                            ? 'text-purple-300 hover:text-purple-200 decoration-purple-500/40 hover:decoration-purple-400'
-                            : 'text-blue-400 hover:text-purple-400 decoration-blue-500/30 hover:decoration-purple-500/60'
-                          }`}
-                      >
-                        {item.link.text}
-                      </ExternalLink>
-                    )}
-                    {item.video && (
-                      <>
-                        <div className="hidden sm:block h-px bg-gray-700/40 my-1" />
-                        <ExternalLink
-                          href={item.video.href}
-                          className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
-                        >
-                          {item.video.text}
-                        </ExternalLink>
-                      </>
-                    )}
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row sm:items-center gap-1 mt-3">
-                    <p className="text-gray-500 text-xs">
-                      Status: <StatusBadge status={item.status} reducedGlow={true} />
+                    <p className={`text-sm mb-3 whitespace-pre-line ${isFeatured ? 'text-gray-200' : 'text-gray-300'}`}>
+                      {article.summary}
                     </p>
-                    {item.featured && (
-                      <p className="text-gray-400 text-xs">
-                        <span className="text-gray-500">Note:</span> Approved by Republic Europe on 30/03/26
+
+                    <div className="space-y-2">
+                      <Link
+                        href={`/news/${article.slug}`}
+                        className={`underline-offset-4 transition-all duration-300 text-sm block inline-flex items-center gap-1
+                          ${isFeatured
+                            ? 'text-purple-300 hover:text-purple-200 decoration-purple-500/40 hover:decoration-purple-400'
+                            : 'text-blue-400 hover:text-purple-400 decoration-blue-500/30 hover:decoration-purple-500/60'
+                          }`}
+                      >
+                        → Read More
+                      </Link>
+                      {video && (
+                        <>
+                          <div className="hidden sm:block h-px bg-gray-700/40 my-1" />
+                          <ExternalLink
+                            href={video.href}
+                            className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm block"
+                          >
+                            {video.text}
+                          </ExternalLink>
+                        </>
+                      )}
+                    </div>
+
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 mt-3">
+                      <p className="text-gray-500 text-xs">
+                        Status: <StatusBadge status="confirmed" reducedGlow={true} />
                       </p>
-                    )}
+                      {isFeatured && (
+                        <p className="text-gray-400 text-xs">
+                          <span className="text-gray-500">Note:</span> Approved by Republic Europe on 30/03/26
+                        </p>
+                      )}
+                    </div>
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </section>
 
