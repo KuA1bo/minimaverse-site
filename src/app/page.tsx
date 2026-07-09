@@ -1,9 +1,7 @@
 'use client';
 
-
 import { useRef, useState, useLayoutEffect } from 'react';
 import Link from 'next/link';
-
 
 const ExternalLink = ({
   href,
@@ -34,7 +32,6 @@ const ExternalLink = ({
   </a>
 );
 
-
 const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'community' }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: 'shadow-green-500/50' },
@@ -52,7 +49,6 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
     </span>
   );
 };
-
 
 const JsonLd = () => (
   <script
@@ -97,7 +93,6 @@ const JsonLd = () => (
   />
 );
 
-
 const LatestUpdatesStrip = () => {
   const trackRef = useRef<HTMLDivElement>(null);
   const pausedRef = useRef(false);
@@ -138,22 +133,19 @@ const LatestUpdatesStrip = () => {
     return () => cancelAnimationFrame(animationId);
   }, []);
 
-
   const content = (
     <Link
-      href="/news/xxim-podcast-hugo-adam-interview"
+      href="/news/republic-campaign-1-million-raised"
       className="flex items-center whitespace-nowrap text-gray-400 hover:text-purple-400 transition-colors duration-200"
     >
       <span>•</span>
       <span className="ml-2 font-mono uppercase tracking-wider">Latest Verified Updates</span>
       <span className="mx-2">•</span>
-      <span className="mr-2">XXIM Podcast episode featuring Hugo and Adam discussing enterprise partnerships and ecosystem developments</span>
+      <span className="mr-2">Republic fundraising campaign surpassed $1 million, ranking as largest Swiss-based company campaign on Republic/Seedrs platform with investors from 30 countries</span>
     </Link>
   );
 
   return (
-
-
     <div
       className="w-full overflow-hidden bg-gray-900/20 border border-gray-700/30 rounded-lg mb-4 sm:mb-8"
       onMouseEnter={() => { pausedRef.current = true; setIsHovered(true); }}
@@ -173,9 +165,7 @@ const LatestUpdatesStrip = () => {
           }}
           aria-label="Latest verified updates ticker"
         >
-          {}
           <div className="flex items-center shrink-0">{content}</div>
-          {}
           <div className="flex items-center shrink-0" aria-hidden="true">{content}</div>
         </div>
       </div>
@@ -190,7 +180,6 @@ export default function HomePage() {
 
       <LatestUpdatesStrip />
 
-      {}
       <section id="hero" className="scroll-mt-20 mb-6 sm:mb-12 py-6 sm:py-12 border-b border-gray-700/40 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
@@ -229,7 +218,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
         <div className="relative">
@@ -242,7 +230,6 @@ export default function HomePage() {
         </div>
       </div>
 
-      {}
       <article className="prose prose-invert max-w-none">
         <section id="about-site" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3"><span className="text-2xl sm:text-3xl">📋</span><span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Site</span></h2>
@@ -307,7 +294,7 @@ export default function HomePage() {
         </div>
 
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
-          <p className="text-gray-500 text-sm flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />Last updated: June 29, 2026</p>
+          <p className="text-gray-500 text-sm flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />Last updated: July 8, 2026</p>
         </section>
       </article>
     </div>

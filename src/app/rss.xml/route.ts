@@ -1,6 +1,3 @@
-
-
-
 import RSS from 'rss';
 import { NextResponse } from 'next/server';
 
@@ -25,8 +22,13 @@ export async function GET() {
     { title: 'Submit Project', url: 'https://minimaverse.com/submit-project', desc: 'Request listing for your project' },
   ];
 
-
   const newsItems = [
+    {
+      title: 'Republic Campaign Surpasses $1 Million',
+      url: 'https://minimaverse.com/news/republic-campaign-1-million-raised',
+      desc: 'Minima announced that its Republic fundraising campaign has raised more than $1 million. Campaign statistics include largest Swiss-based company campaign on Republic/Seedrs platform, investors from 30 countries. Source: MinimaGlobal/604. Status: confirmed.',
+      date: new Date('2026-07-08'),
+    },
     {
       title: 'XXIM Podcast Features Hugo and Adam',
       url: 'https://minimaverse.com/news/xxim-podcast-hugo-adam-interview',
@@ -65,7 +67,6 @@ export async function GET() {
     },
   ];
 
-
   pages.forEach(page => {
     feed.item({
       title: page.title,
@@ -74,7 +75,6 @@ export async function GET() {
       date: new Date(),
     });
   });
-
 
   newsItems.forEach(item => {
     feed.item({

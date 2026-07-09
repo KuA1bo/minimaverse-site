@@ -1,6 +1,3 @@
-
-
-
 export interface NewsArticle {
   slug: string;
   date: string;
@@ -16,6 +13,30 @@ export interface NewsArticle {
 }
 
 export const newsArticles: NewsArticle[] = [
+  {
+    slug: 'republic-campaign-1-million-raised',
+    date: '2026-07-08',
+    displayDate: 'July 8, 2026',
+    title: 'Republic Campaign Surpasses $1 Million',
+    summary:
+      'Minima announced that its Republic fundraising campaign has raised more than $1 million. The announcement includes campaign statistics covering fundraising performance, investor participation, and platform rankings reported by the project.',
+    details: [
+      {
+        label: 'Funding Raised',
+        text: 'Reported funding exceeded $1 million.',
+      },
+      {
+        label: 'Campaign Statistics',
+        text: 'Largest Swiss-based company campaign on the Republic/Seedrs platform. Ranked sixth by total funds raised among campaigns on the platform over the previous two years. Largest convertible funding round during the same period. Largest campaign within the Programming & Security category. Investors participated from 30 countries. Included among the platform\'s Top 10 campaigns by average investment size.',
+      },
+      {
+        label: 'Project Statement',
+        text: 'The announcement states that the campaign reflects investor interest in decentralized infrastructure designed for edge computing, connected devices, and AI-related applications.',
+      },
+    ],
+    source: 'https://t.me/MinimaGlobal/604',
+    sourceLabel: 'Official Telegram Announcement — MinimaGlobal/604',
+  },
   {
     slug: 'xxim-podcast-hugo-adam-interview',
     date: '2026-06-29',
