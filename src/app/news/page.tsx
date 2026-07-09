@@ -169,10 +169,10 @@ export default function NewsPage() {
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink
-                href="https://discord.com/invite/minimaglobal"
+                href="https://discord.com/invite/minima"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
-                discord.com/invite/minimaglobal
+                discord.com/invite/minima
               </ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
               <span className="text-gray-500 text-xs md:text-sm">Official Discord</span>
@@ -321,7 +321,7 @@ export default function NewsPage() {
               <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2 relative">
                 <span className="hidden md:inline text-gray-400">•</span>
                 <ExternalLink
-                  href="https://discord.com/invite/minimaglobal"
+                  href="https://discord.com/invite/minima"
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
                   Official Discord
