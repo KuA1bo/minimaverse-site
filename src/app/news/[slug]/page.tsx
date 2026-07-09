@@ -2,13 +2,11 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { newsArticles, NewsArticle } from '@/data/news';
 
-
 export async function generateStaticParams() {
   return newsArticles.map((article) => ({
     slug: article.slug,
   }));
 }
-
 
 export async function generateMetadata({ params }: { params: { slug: string } }) {
   const article = newsArticles.find((a) => a.slug === params.slug);
@@ -28,7 +26,6 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     },
   };
 }
-
 
 const ExternalLink = ({
   href,
@@ -61,7 +58,6 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
 
   return (
     <div className="relative max-w-4xl mx-auto px-4 sm:px-0">
-      {}
       <nav className="mb-6 opacity-0 animate-fade-in-up delay-75">
         <ol className="flex items-center gap-2 text-sm text-gray-500">
           <li>
@@ -78,7 +74,6 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
         </ol>
       </nav>
 
-      {}
       <article className="prose prose-invert max-w-none opacity-0 animate-fade-in-up delay-150">
         <header className="mb-8">
           <div className="flex items-center gap-3 mb-4">
@@ -102,7 +97,6 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
           </p>
         </header>
 
-        {}
         <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
           <div className="space-y-4 text-gray-300 text-sm leading-relaxed">
@@ -120,7 +114,6 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
           </div>
         </div>
 
-        {}
         <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
           <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
           <h3 className="text-white font-semibold mb-3 flex items-center gap-2">
@@ -135,7 +128,6 @@ export default function NewsArticlePage({ params }: { params: { slug: string } }
           </ExternalLink>
         </div>
 
-        {}
         <div className="flex items-center justify-between pt-6 border-t border-gray-700/40">
           <Link
             href="/news"
