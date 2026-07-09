@@ -1,6 +1,3 @@
-
-
-
 import './globals.css';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -134,6 +131,7 @@ export default function RootLayout({
                   height={40}
                   className="w-8 h-8 sm:w-10 sm:h-10 object-contain bg-transparent mix-blend-screen"
                   priority
+                  unoptimized
                 />
                 <span className="text-base sm:text-xl font-bold bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                   Minimaverse
