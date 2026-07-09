@@ -112,7 +112,7 @@ export const searchIndex: SearchItem[] = [
   { title: "Video Resources", url: "/developers#videos", description: "YouTube series by Paddy Cherry: Intro, Timelock, IDE", tags: ["youtube", "video", "introduction", "paddy cherry", "timelock", "ide", "tutorial", "visual"] },
   { title: "Getting Started", url: "/developers#getting-started", description: "Run a full node locally for development", tags: ["getting started", "run a node", "setup", "local development", "testing", "guide"] },
   { title: "Source Code", url: "/developers#source-code", description: "Core protocol, APK, minimak Kotlin library", tags: ["source code", "core", "protocol", "apk", "android", "kotlin", "library", "github", "open source"] },
-  { title: "Community & Support", url: "/developers#community", description: "Discord dev-chat, role assignment, Q&A", tags: ["discord", "community", "dev-chat", "support", "q&a", "collaboration", "minimaglobal", "role picker"] },
+  { title: "Community & Support", url: "/developers#community", description: "Discord dev-chat, role assignment, Q&A", tags: ["discord", "community", "dev-chat", "support", "q&a", "collaboration", "minima", "role picker"] },
 
 
   { title: "Zeekr Partnership", url: "/partners#verified", description: "EV charging solution with Zeekr for private station access", tags: ["zeekr", "ev", "charging", "electric vehicle", "mobility", "access", "private stations", "march 2025"] },
@@ -149,7 +149,7 @@ export const searchIndex: SearchItem[] = [
 
 
   { title: "Project Feedback", url: "/links#feedback", description: "GitHub issues for this documentation project", tags: ["feedback", "github", "issues", "bug report", "suggestions", "community", "minimaverse-site"] },
-  { title: "Official Communication Channels", url: "/links#channels", description: "Discord and Telegram for Minima Protocol discussion", tags: ["discord", "telegram", "community", "chat", "support", "official channels", "minimaglobal"] },
+  { title: "Official Communication Channels", url: "/links#channels", description: "Discord and Telegram for Minima Protocol discussion", tags: ["discord", "telegram", "community", "chat", "support", "official channels", "minima"] },
   { title: "Market Data & Audits", url: "/links#market", description: "CoinMarketCap, CoinGecko, CertiK, Hacken audit links", tags: ["market data", "price", "coinmarketcap", "coingecko", "certik", "hacken", "audit", "security", "transparency"] },
   { title: "Official Email Contacts", url: "/links#contacts", description: "enterprise@, info@, querysupport@ minima.global", tags: ["email", "contact", "enterprise", "info", "support", "minima.global", "business inquiries", "technical support"] },
   { title: "Official Resources", url: "/links#resources", description: "Website, GitHub, Twitter, LinkedIn, YouTube, Newsletter, Merch", tags: ["resources", "official", "website", "github", "social", "newsletter", "merch", "minima.global"] },
