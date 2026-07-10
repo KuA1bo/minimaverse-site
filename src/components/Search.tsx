@@ -5,14 +5,13 @@ import { useRouter } from "next/navigation";
 import Fuse from "fuse.js";
 import { searchIndex } from "@/data/searchIndex";
 
-
 const fuse = new Fuse(searchIndex, {
   keys: ["title", "description", "tags"],
   threshold: 0.3,
   includeScore: true,
 });
 
-export default function Search() {
+export default function Search({ mobile = false }: { mobile?: boolean }) {
   const [isOpen, setIsOpen] = useState(false);
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<typeof searchIndex>([]);
@@ -20,7 +19,6 @@ export default function Search() {
   const router = useRouter();
   const inputRef = useRef<HTMLInputElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-
 
   useEffect(() => {
     const handleGlobal = (e: KeyboardEvent) => {
@@ -33,11 +31,9 @@ export default function Search() {
     return () => window.removeEventListener("keydown", handleGlobal);
   }, []);
 
-
   useEffect(() => {
     if (isOpen) setTimeout(() => inputRef.current?.focus(), 50);
   }, [isOpen]);
-
 
   const handleSearch = useCallback((value: string) => {
     setQuery(value);
@@ -49,7 +45,6 @@ export default function Search() {
     const matches = fuse.search(value).map((r) => r.item).slice(0, 5);
     setResults(matches);
   }, []);
-
 
   const handleInputKeyDown = useCallback(
     (e: React.KeyboardEvent<HTMLInputElement>) => {
@@ -72,7 +67,6 @@ export default function Search() {
     [results, activeIndex, router]
   );
 
-
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (containerRef.current && !containerRef.current.contains(e.target as Node)) {
@@ -86,7 +80,6 @@ export default function Search() {
 
   return (
     <div ref={containerRef} className="relative">
-      {}
       <button
         onClick={() => setIsOpen(true)}
         className="flex items-center gap-2 px-3 py-1.5 text-sm text-gray-400 bg-gray-800/50 border border-gray-700 rounded-lg hover:border-purple-500 hover:text-white transition-colors"
@@ -99,9 +92,14 @@ export default function Search() {
         <span className="hidden sm:inline-flex items-center px-1.5 py-0.5 text-xs bg-gray-700 rounded border border-gray-600">⌘K</span>
       </button>
 
-      {}
       {isOpen && (
-        <div className="absolute top-full right-0 mt-2 w-80 bg-gray-900 border border-gray-700 rounded-xl shadow-2xl overflow-hidden z-50">
+        <div
+          className={`absolute ${
+            mobile
+              ? "bottom-full left-1/2 -translate-x-1/2 mb-2 w-[calc(100vw-2rem)] max-w-72"
+              : "top-full right-0 mt-2 w-80"
+          } bg-gray-900 border border-gray-700 rounded-xl shadow-2xl overflow-hidden z-50`}
+        >
           <div className="p-2">
             <input
               ref={inputRef}
