@@ -9,6 +9,7 @@ import EconomyModeToggle from '../components/EconomyModeToggle';
 import CinematicParticles from '../components/CinematicParticles';
 import SupportBlock from '@/components/SupportBlock';
 import Header from '@/components/Header';
+import MainWrapper from '@/components/MainWrapper';
 
 const ExternalLink = ({
   href,
@@ -104,9 +105,7 @@ export default function RootLayout({
 
         <Header />
 
-        <main className="flex-1 max-w-6xl mx-auto w-full px-4 pt-2 sm:pt-4 relative z-10">
-          {children}
-        </main>
+        <MainWrapper>{children}</MainWrapper>
 
         <footer className="relative z-10 mt-12 sm:mt-16 backdrop-blur-xl bg-black/30 border-t border-gray-700/40 transition-all duration-300 hover:border-purple-500/40">
           <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
