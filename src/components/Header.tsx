@@ -47,7 +47,7 @@ export default function Header() {
         />
       )}
 
-      <header className="relative sm:sticky sm:top-0 z-50 mb-6 sm:mb-8 backdrop-blur-xl bg-black/30 border-b border-gray-700/40 transition-all duration-300 hover:border-purple-500/40">
+      <header className="relative sm:sticky sm:top-0 z-50 mb-8 sm:mb-12 backdrop-blur-xl bg-black/30 border-b border-gray-700/40 transition-all duration-300 hover:border-purple-500/40">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
 
         <div className="flex items-center justify-between gap-3 sm:gap-4 max-w-6xl mx-auto px-3 sm:px-4 py-2 sm:py-3">

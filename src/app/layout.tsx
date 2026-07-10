@@ -104,7 +104,7 @@ export default function RootLayout({
 
         <Header />
 
-        <main className="flex-1 max-w-6xl mx-auto w-full px-4 relative z-10">
+        <main className="flex-1 max-w-6xl mx-auto w-full px-4 pt-2 sm:pt-4 relative z-10">
           {children}
         </main>
 
