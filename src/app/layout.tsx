@@ -48,11 +48,11 @@ const ExternalLink = ({
 );
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://minimaverse.com'),
   title: 'Minimaverse — Minima Ecosystem Hub',
   description: 'Unofficial, neutral information hub covering the Minima protocol, core components, development history, and publicly verifiable updates.',
 
   alternates: {
-    canonical: 'https://minimaverse.com/',
     types: {
       'application/rss+xml': [{ url: '/rss.xml', title: 'Minimaverse Feed' }],
     },
