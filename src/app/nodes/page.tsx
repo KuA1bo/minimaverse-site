@@ -186,6 +186,27 @@ export default function NodesPage() {
         </div>
       </div>
 
+      <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
+        <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+          <span className="text-2xl">📋</span>
+          <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
+        </h2>
+
+        <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
+                        transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+
+          <p className="text-gray-300 leading-relaxed relative">
+            Running a Minima node is a standard process and can be done on various platforms including
+            desktop computers, mobile devices, Raspberry Pi, and cloud servers. Each node is a full
+            node, contributing to the network's decentralization and security.
+          </p>
+          <p className="text-gray-300 leading-relaxed mt-4 relative">
+            Public reports from Minima indicate over 100,000 node installations globally.
+          </p>
+        </div>
+      </section>
+
       <div className="relative bg-blue-900/20 border border-blue-700/40 rounded-2xl p-4 sm:p-6 mb-8
                       transition-all duration-300 hover:border-blue-500/50 hover:shadow-lg hover:shadow-blue-500/10
                       opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
@@ -510,27 +531,6 @@ export default function NodesPage() {
       </section>
 
       <article className="prose prose-invert max-w-none">
-
-        <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📋</span>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
-          </h2>
-
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-
-            <p className="text-gray-300 leading-relaxed relative">
-              Running a Minima node is a standard process and can be done on various platforms including
-              desktop computers, mobile devices, Raspberry Pi, and cloud servers. Each node is a full
-              node, contributing to the network's decentralization and security.
-            </p>
-            <p className="text-gray-300 leading-relaxed mt-4 relative">
-              Public reports from Minima indicate over 100,000 node installations globally.
-            </p>
-          </div>
-        </section>
 
         <section id="requirements" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
