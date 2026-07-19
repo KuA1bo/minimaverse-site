@@ -21,7 +21,7 @@ const ExternalLink = ({
     target="_blank"
     rel="noopener noreferrer"
     className={`inline-flex items-center gap-1 ${className}`}
-    aria-label={ariaLabel}
+    {...(ariaLabel ? { "aria-label": ariaLabel } : {})}
   >
     {children}
     {!hideArrow && (
@@ -166,7 +166,7 @@ const LatestUpdatesStrip = () => {
           aria-label="Latest verified updates ticker"
         >
           <div className="flex items-center shrink-0">{content}</div>
-          <div className="flex items-center shrink-0" aria-hidden="true">{content}</div>
+          <div className="flex items-center shrink-0">{content}</div>
         </div>
       </div>
     </div>

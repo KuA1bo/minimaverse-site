@@ -26,7 +26,7 @@ const ExternalLink = ({
     target="_blank"
     rel="noopener noreferrer"
     className={`inline-flex items-center gap-1 ${className}`}
-    aria-label={ariaLabel}
+    {...(ariaLabel ? { "aria-label": ariaLabel } : {})}
   >
     {children}
     {!hideArrow && (
