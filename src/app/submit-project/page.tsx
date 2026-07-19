@@ -172,3 +172,6 @@ export default function SubmitProjectPage() {
     </div>
   );
 }
+
+import { getCanonicalMetadata } from '@/lib/seo';
+export const metadata = getCanonicalMetadata('/submit-project');

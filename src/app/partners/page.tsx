@@ -325,3 +325,6 @@ export default function PartnersPage() {
     </div>
   );
 }
+
+import { getCanonicalMetadata } from '@/lib/seo';
+export const metadata = getCanonicalMetadata('/partners');

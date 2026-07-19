@@ -696,3 +696,6 @@ export default function EcosystemPage() {
     </div>
   );
 }
+
+import { getCanonicalMetadata } from '@/lib/seo';
+export const metadata = getCanonicalMetadata('/ecosystem');

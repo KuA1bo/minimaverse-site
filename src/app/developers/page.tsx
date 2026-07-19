@@ -598,3 +598,6 @@ export default function DevelopersPage() {
     </div>
   );
 }
+
+import { getCanonicalMetadata } from '@/lib/seo';
+export const metadata = getCanonicalMetadata('/developers');

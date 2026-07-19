@@ -477,3 +477,6 @@ export default function TimelinePage() {
     </div>
   );
 }
+
+import { getCanonicalMetadata } from '@/lib/seo';
+export const metadata = getCanonicalMetadata('/timeline');

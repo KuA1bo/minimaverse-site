@@ -559,3 +559,6 @@ export default function AboutPage() {
     </div>
   );
 }
+
+import { getCanonicalMetadata } from '@/lib/seo';
+export const metadata = getCanonicalMetadata('/about');

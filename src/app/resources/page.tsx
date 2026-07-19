@@ -487,3 +487,6 @@ export default function LinksPage() {
     </div>
   );
 }
+
+import { getCanonicalMetadata } from '@/lib/seo';
+export const metadata = getCanonicalMetadata('/resources');

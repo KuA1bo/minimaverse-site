@@ -15,6 +15,9 @@ export async function generateMetadata({ params }: { params: { slug: string } })
   return {
     title: `${article.title} | Minimaverse`,
     description: article.summary,
+    alternates: {
+      canonical: `https://minimaverse.com/news/${article.slug}`,
+    },
     openGraph: {
       title: `${article.title} | Minimaverse`,
       description: article.summary,

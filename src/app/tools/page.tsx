@@ -554,3 +554,6 @@ export default function ToolsPage() {
     </div>
   );
 }
+
+import { getCanonicalMetadata } from '@/lib/seo';
+export const metadata = getCanonicalMetadata('/tools');

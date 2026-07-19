@@ -2,6 +2,10 @@ import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 import CopyableEndpoint from '@/components/CopyableEndpoint';
 
+import { getCanonicalMetadata } from '@/lib/seo';
+
+export const metadata = getCanonicalMetadata('/nodes');
+
 const ExternalLink = ({
   href,
   children,

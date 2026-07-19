@@ -484,3 +484,6 @@ export default function ProtocolPage() {
     </div>
   );
 }
+
+import { getCanonicalMetadata } from '@/lib/seo';
+export const metadata = getCanonicalMetadata('/protocol');

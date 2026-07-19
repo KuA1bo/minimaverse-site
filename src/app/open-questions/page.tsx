@@ -346,3 +346,6 @@ export default function OpenQuestionsPage() {
     </div>
   );
 }
+
+import { getCanonicalMetadata } from '@/lib/seo';
+export const metadata = getCanonicalMetadata('/open-questions');

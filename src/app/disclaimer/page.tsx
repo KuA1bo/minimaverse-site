@@ -348,3 +348,6 @@ export default function DisclaimerPage() {
     </div>
   );
 }
+
+import { getCanonicalMetadata } from '@/lib/seo';
+export const metadata = getCanonicalMetadata('/disclaimer');
