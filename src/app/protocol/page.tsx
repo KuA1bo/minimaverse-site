@@ -255,7 +255,7 @@ export default function ProtocolPage() {
               },
               {
                 title: 'Security Through Collaboration',
-                text: 'Minima nodes collaborate rather than compete. The total network security equals the sum of all individual Tx-PoW contributions. Increased Tx-PoW participation contributes to aggregate network security. This cooperative approach reduces competitive mining overhead associated with proof-of-work race conditions.',
+                text: 'Minima nodes collaborate rather than compete. The total network security emerges from the combined Tx-PoW contributions of participating nodes, reducing competitive mining overhead associated with traditional proof-of-work systems.',
               },
             ].map((item, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
