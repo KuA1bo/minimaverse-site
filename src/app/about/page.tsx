@@ -1,9 +1,6 @@
-
-
-
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
-
+import { getCanonicalMetadata } from '@/lib/seo';
 
 const ExternalLink = ({
   href,
@@ -37,7 +34,6 @@ const ExternalLink = ({
   </a>
 );
 
-
 const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'in-development' | 'community', reducedGlow?: boolean }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: reducedGlow ? 'shadow-green-500/25' : 'shadow-green-500/50' },
@@ -59,7 +55,6 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
   );
 };
 
-
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "AboutPage",
@@ -78,20 +73,17 @@ const structuredData = {
   }
 };
 
+export const metadata = getCanonicalMetadata('/about');
+
 export default function AboutPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
-
-      {}
       <JsonLd data={structuredData} />
 
-      {}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative pt-4">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
 
         <div className="relative flex flex-col sm:flex-row sm:justify-between sm:items-start gap-6">
-
-          {}
           <div className="hidden sm:flex items-start justify-end relative -translate-x-10 mt-12 flex-shrink-0 order-last">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
@@ -108,16 +100,11 @@ export default function AboutPage() {
             </ExternalLink>
           </div>
 
-          {}
           <div className="relative inline-block w-full pb-3 pr-2">
-            <Link
-              href="/"
-              className="text-gray-400 hover:text-white transition-colors inline-block mb-4 group"
-            >
+            <Link href="/" className="text-gray-400 hover:text-white transition-colors inline-block mb-4 group">
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
 
-            {}
             <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
               <Link href="/protocol" className="text-gray-400 hover:text-purple-400 transition-colors">Protocol</Link>
               <span className="text-gray-600">•</span>
@@ -126,31 +113,24 @@ export default function AboutPage() {
               <Link href="/nodes" className="text-gray-400 hover:text-purple-400 transition-colors">Nodes</Link>
             </div>
 
-            {}
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 What is Minima Protocol
               </span>
             </h1>
-            {}
             <p className="text-gray-400">Decentralized blockchain for any device</p>
-            {}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
         </div>
       </header>
 
-      {}
       <p id="mobile" className="text-gray-300 leading-relaxed mb-6 opacity-0 animate-fade-in-up delay-100 scroll-mt-20">
         Minima is a decentralized blockchain designed to run a full node on any device —
         from smartphones to IoT hardware — while maintaining complete network participation
         for every user.
       </p>
 
-      {}
-      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8
-                      transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15
-                      opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
+      <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
 
         <div className="relative">
@@ -160,10 +140,7 @@ export default function AboutPage() {
           <ul className="space-y-2 sm:space-y-3 text-sm">
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink
-                href="https://docs.minima.global"
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap"
-              >
+              <ExternalLink href="https://docs.minima.global" className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap">
                 docs.minima.global
               </ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
@@ -171,10 +148,7 @@ export default function AboutPage() {
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink
-                href="https://docs.minima.global/docs/core"
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap"
-              >
+              <ExternalLink href="https://docs.minima.global/docs/core" className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap">
                 docs.minima.global/docs/core
               </ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
@@ -182,10 +156,7 @@ export default function AboutPage() {
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
-              <ExternalLink
-                href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf"
-                className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap"
-              >
+              <ExternalLink href="https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf" className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-nowrap">
                 Minima Whitepaper v1.1 (PDF)
               </ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
@@ -193,7 +164,6 @@ export default function AboutPage() {
             </li>
           </ul>
 
-          {}
           <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
               <span className="block sm:inline">Status indicators:</span>
@@ -205,20 +175,15 @@ export default function AboutPage() {
         </div>
       </div>
 
-      {}
       <article className="prose prose-invert max-w-none">
-
-        {}
         <section id="about-project" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📄</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Project</span>
           </h2>
 
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-
             <p className="text-gray-300 leading-relaxed">
               <strong className="text-white">Minimaverse</strong> is an independent documentation project focused on the
               Minima Protocol ecosystem. This website is not affiliated with, endorsed by, or
@@ -232,46 +197,38 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {}
         <section id="who-we-are" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👥</span>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-              Who We Are
-            </span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Who We Are</span>
           </h2>
 
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-
             <p className="text-gray-300 leading-relaxed relative">
               Minimaverse is maintained by <strong className="text-white">community volunteers</strong> who believe
               in Minima's vision of true decentralization. We are developers, node operators, and community
               contributors supporting ecosystem growth through documentation and education.
             </p>
             <p className="text-gray-300 leading-relaxed mt-4 relative">
-              This project is maintained independently for the Minima community.
+              This project is developed independently for the Minima community.
             </p>
           </div>
         </section>
 
-        {}
         <section id="consensus" className="mb-10 opacity-0 animate-fade-in-up delay-200 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⛓️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Protocol Mechanics</span>
           </h2>
           <p className="text-gray-300 leading-relaxed mb-4">
-            Minima is a decentralized blockchain protocol designed to run on any device, from
-            mobile phones to IoT hardware, while maintaining full node participation for every
-            network member.
+            The Minima Protocol enables every participating device to operate as a Complete node,
+            regardless of hardware class — from mobile phones to IoT hardware — while maintaining
+            full node participation for every network member.
           </p>
 
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
             <div className="relative space-y-3">
               <p className="text-gray-300 text-sm">
                 <strong>Key principle:</strong> Every node is a Complete node. There are no miners,
@@ -292,16 +249,12 @@ export default function AboutPage() {
           </div>
           <p className="text-gray-500 text-xs mt-4">
             Source:{' '}
-            <ExternalLink
-              href="https://docs.minima.global/docs/core"
-              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-            >
+            <ExternalLink href="https://docs.minima.global/docs/core" className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300">
               docs.minima.global/docs/core
             </ExternalLink>
           </p>
         </section>
 
-        {}
         <section id="architecture" className="mb-10 opacity-0 animate-fade-in-up delay-300 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚙️</span>
@@ -317,8 +270,7 @@ export default function AboutPage() {
               { title: 'Maxima P2P Network', text: 'Layer 2 backbone for Lightning, Sidechains, DEX. All Maxima messages perform PoW, contributing to Layer 1 security.', status: 'confirmed' as const },
               { title: 'Pulse Network', text: 'Every 10 minutes, nodes send PING + PoW to peers. Verifies node health, syncs mempool, adds continuous security. No zombies allowed.', status: 'confirmed' as const },
             ].map((feature, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                 <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
                 <h3 className="text-white font-medium mb-2 relative">{feature.title}</h3>
                 <p className="text-gray-300 text-sm mb-3 relative">{feature.text}</p>
@@ -329,24 +281,19 @@ export default function AboutPage() {
 
           <p className="text-gray-500 text-xs mt-4">
             Explore technical docs:{' '}
-            <ExternalLink
-              href="https://docs.minima.global"
-              className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-            >
+            <ExternalLink href="https://docs.minima.global" className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300">
               docs.minima.global
             </ExternalLink>
           </p>
         </section>
 
-        {}
         <section id="comparison" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚖️</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Minima vs Traditional Blockchains</span>
           </h2>
 
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl overflow-hidden
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 overflow-x-auto">
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl overflow-hidden transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 overflow-x-auto">
             <div className="overflow-x-auto">
               <table className="w-full min-w-[600px]">
                 <thead className="bg-gray-800/60">
@@ -377,7 +324,6 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {}
         <section id="decentralization" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔐</span>
@@ -391,8 +337,7 @@ export default function AboutPage() {
               { title: 'Censorship Resistance', text: 'No central points of failure. Attacking requires attacking entire user base (millions).' },
               { title: 'Protocol Immutability', text: '"No soft forks allowed. No hard forks required — ever." Protocol is complete from inception.' },
             ].map((principle, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                 <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
                 <div className="flex items-start gap-3 relative">
                   <span className="text-purple-400 mt-1 text-lg">✓</span>
@@ -406,13 +351,90 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {}
+        <section id="status" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">📋</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Current Status & Considerations</span>
+          </h2>
+
+          <div className="space-y-4">
+            {[
+              { title: 'Protocol Maturity', text: 'The core Minima Protocol is complete and immutable by design. Future development focuses on application layers and tooling built atop the protocol.' },
+              { title: 'No Token Incentives', text: 'Minima does not implement token rewards for node operation. This conscious design choice avoids centralization pressures associated with paid mining.' },
+              { title: 'User Participation Requirement', text: 'The protocol requires periodic connection (minimum weekly) to update MMR proofs and validate the Cascading Proof Chain. This is the trade-off for extreme decentralization.' },
+            ].map((item, index) => (
+              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
+                <p className="text-gray-300 text-sm relative">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section id="crowdfunding" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">🚀</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Crowdfunding</span>
+          </h2>
+          <div className="relative bg-purple-900/20 border border-purple-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            <p className="text-gray-300 text-sm relative mb-3">
+              The Republic Europe crowdfunding campaign concluded successfully in May 2026, exceeding its funding target.
+            </p>
+            <Link href="/news" className="text-purple-400 hover:text-purple-300 underline decoration-purple-500/30 hover:decoration-purple-400 underline-offset-4 transition-all duration-300 font-medium inline-flex items-center gap-1 relative">
+              View campaign summary →
+              <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </Link>
+          </div>
+        </section>
+
+        <section id="dev-resources" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">🛠️</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Developer Resources</span>
+          </h2>
+          <p className="text-gray-300 leading-relaxed mb-4">
+            Official resources for building on the Minima Protocol:
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <ExternalLink
+              href="https://build.minima.global"
+              className="block relative bg-blue-900/30 border border-blue-700/50 rounded-2xl p-4 sm:p-6 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-300 group overflow-hidden"
+              ariaLabel="Visit Edge Pioneers developer portal"
+              hideArrow={true}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative">
+                <h3 className="text-white font-medium group-hover:text-blue-300 transition-colors mb-2">Edge Pioneers Program</h3>
+                <p className="text-gray-400 text-sm mb-3">Official developer portal including SDKs, tutorials, and community resources.</p>
+                <p className="text-blue-400 text-sm inline-flex items-center gap-1">🌐 build.minima.global</p>
+              </div>
+            </ExternalLink>
+
+            <ExternalLink
+              href="https://docs.minima.global/docs/development"
+              className="block relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 transition-all duration-300 group overflow-hidden"
+              ariaLabel="Visit How to Build on Minima guide"
+              hideArrow={true}
+            >
+              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="relative">
+                <h3 className="text-white font-medium group-hover:text-purple-300 transition-colors mb-2">How to Build on Minima</h3>
+                <p className="text-gray-400 text-sm mb-3">Official development guide covering MiniDapp fundamentals, prerequisites, and recommended learning path.</p>
+                <p className="text-purple-400 text-sm inline-flex items-center gap-1">🌐 docs.minima.global/docs/development</p>
+              </div>
+            </ExternalLink>
+          </div>
+        </section>
+
         <section id="contribute" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🤝</span>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-              How to Contribute
-            </span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">How to Contribute</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -422,8 +444,7 @@ export default function AboutPage() {
               { title: 'Translate', desc: 'Help translate Minimaverse into your native language.', icon: '🌐' },
               { title: 'Share Knowledge', desc: 'Write guides, tutorials, or technical deep-dives.', icon: '📝' },
             ].map((item, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative flex items-start gap-3">
                   <span className="text-2xl">{item.icon}</span>
@@ -436,7 +457,6 @@ export default function AboutPage() {
             ))}
           </div>
 
-          {}
           <div className="mt-6 text-center px-2">
             <ExternalLink
               href="https://github.com/KuA1bo/minimaverse-site"
@@ -451,88 +471,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {}
-        <section id="status" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📋</span>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Current Status & Considerations</span>
-          </h2>
-
-          <div className="space-y-4">
-            {[
-              { title: 'Protocol Maturity', text: 'The core Minima Protocol is complete and immutable by design. Future development focuses on application layers and tooling built atop the protocol.' },
-              { title: 'No Token Incentives', text: 'Minima does not implement token rewards for node operation. This conscious design choice avoids centralization pressures associated with paid mining.' },
-              { title: 'User Participation Requirement', text: 'The protocol requires periodic connection (minimum weekly) to update MMR proofs and validate the Cascading Proof Chain. This is the trade-off for extreme decentralization.' },
-            ].map((item, index) => (
-              <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6
-                              transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
-                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
-                <p className="text-gray-300 text-sm relative">{item.text}</p>
-              </div>
-            ))}
-
-            {}
-            <div className="relative bg-purple-900/20 border border-purple-700/40 rounded-2xl p-4 sm:p-6
-                            transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <h3 className="text-white font-medium mb-2 relative flex items-center gap-2">
-                <span className="text-lg">🚀</span>
-                Crowdfunding Opportunity
-              </h3>
-              <p className="text-gray-300 text-sm relative">
-                Minima AG is currently crowdfunding on Republic Europe. Learn more about this limited-time opportunity:{' '}
-                <Link href="/news" className="text-purple-400 hover:text-purple-300 underline decoration-purple-500/30 hover:decoration-purple-400 underline-offset-4 transition-all duration-300 font-medium">
-                  View announcement on News page →
-                </Link>
-              </p>
-            </div>
-          </div>
-        </section>
-
-        {}
-        <section id="dev-resources" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">🛠️</span>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Developer Resources</span>
-          </h2>
-          <p className="text-gray-300 leading-relaxed mb-4">
-            For developers interested in building on Minima Protocol:
-          </p>
-
-          <ExternalLink
-            href="https://build.minima.global"
-            className="block relative bg-blue-900/30 border border-blue-700/50 rounded-2xl p-4 sm:p-6
-                      hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/15
-                      transition-all duration-300 group overflow-hidden"
-            ariaLabel="Visit Edge Pioneers developer portal"
-            hideArrow={true}
-          >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-
-            <div className="relative flex items-start gap-4">
-              <div>
-                <h3 className="text-white font-medium group-hover:text-blue-300 transition-colors">
-                  Edge Pioneers Program
-                </h3>
-                <p className="text-gray-400 text-sm mt-2">
-                  Official developer portal: documentation, SDKs, tutorials, and community support.
-                </p>
-                <p className="text-blue-400 text-sm mt-3 inline-flex items-center gap-1">
-                  🌐 build.minima.global
-                  <svg className="w-3 h-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </p>
-              </div>
-            </div>
-          </ExternalLink>
-        </section>
-
-        {}
-        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-4 sm:p-6 mb-8
-                        transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10
-                        opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
+        <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-4 sm:p-6 mb-8 transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
             <strong className="flex items-center gap-2 mb-2">
@@ -547,18 +486,13 @@ export default function AboutPage() {
           </p>
         </div>
 
-        {}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: June 4, 2026
+            Last updated: July 21, 2026
           </p>
         </section>
-
       </article>
     </div>
   );
 }
-
-import { getCanonicalMetadata } from '@/lib/seo';
-export const metadata = getCanonicalMetadata('/about');
