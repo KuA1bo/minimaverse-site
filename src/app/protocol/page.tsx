@@ -1,9 +1,6 @@
-
-
-
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
-
+import { getCanonicalMetadata } from '@/lib/seo';
 
 const ExternalLink = ({
   href,
@@ -37,7 +34,6 @@ const ExternalLink = ({
   </a>
 );
 
-
 const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'community' }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: 'shadow-green-500/50' },
@@ -59,7 +55,6 @@ const StatusBadge = ({ status }: { status: 'confirmed' | 'in-development' | 'com
   );
 };
 
-
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "TechArticle",
@@ -79,19 +74,17 @@ const structuredData = {
   }
 };
 
+export const metadata = getCanonicalMetadata('/protocol');
+
 export default function ProtocolPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
-
-      {}
       <JsonLd data={structuredData} />
 
-      {}
       <header className="mb-6 sm:mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
 
         <div className="relative flex justify-between items-start gap-4">
-          {}
           <div className="relative inline-block w-full pb-2 sm:pb-3">
             <Link
               href="/"
@@ -100,7 +93,6 @@ export default function ProtocolPage() {
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
 
-            {}
             <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
               <Link href="/nodes" className="text-gray-400 hover:text-purple-400 transition-colors">Nodes</Link>
               <span className="text-gray-600">•</span>
@@ -109,21 +101,16 @@ export default function ProtocolPage() {
               <Link href="/ecosystem" className="text-gray-400 hover:text-purple-400 transition-colors">Ecosystem</Link>
             </div>
 
-            {}
             <h1 className="text-2xl sm:text-3xl font-bold text-white mb-1">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Minima Protocol Architecture
               </span>
             </h1>
-            {}
             <p className="text-gray-400 text-sm sm:text-base">Edge consensus, Tx-PoW, and lightweight full-node infrastructure</p>
-            {}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
 
-          {}
           <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
-            {}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
@@ -141,7 +128,6 @@ export default function ProtocolPage() {
         </div>
       </header>
 
-      {}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -187,7 +173,6 @@ export default function ProtocolPage() {
             </li>
           </ul>
 
-          {}
           <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
               <span className="block sm:inline">Status indicators:</span>
@@ -199,10 +184,7 @@ export default function ProtocolPage() {
         </div>
       </div>
 
-      {}
       <article className="prose prose-invert max-w-none">
-
-        {}
         <section id="about" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
@@ -224,7 +206,6 @@ export default function ProtocolPage() {
           </div>
         </section>
 
-        {}
         <section id="edge-consensus" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🌐</span>
@@ -237,12 +218,11 @@ export default function ProtocolPage() {
 
             <p className="text-gray-300 leading-relaxed">
               Minima implements <strong>edge consensus</strong>, where block production and validation
-              are carried out by every device connected to the network. Unlike traditional blockchains
-              that rely on specialized miners or validators, Minima supports universal participation:
-              smartphones, Raspberry Pi, and IoT devices are intended to participate in network validation without specialized hardware requirements.
+              are carried out collaboratively. Unlike traditional blockchains that rely on specialized
+              miners or validators, Minima supports universal participation across diverse hardware
+              without specialized requirements.
             </p>
 
-            {}
             <div className="mt-4 p-4 bg-blue-900/20 border border-blue-700/40 rounded-xl">
               <p className="text-blue-200 text-sm">
                 <strong className="text-white">Architectural characteristic:</strong> Through collaborative Tx-PoW, the complete blockchain
@@ -261,7 +241,6 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {}
         <section id="tx-pow" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⛏️</span>
@@ -297,7 +276,6 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {}
         <section id="data-structures" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🗄️</span>
@@ -305,8 +283,6 @@ export default function ProtocolPage() {
           </h2>
 
           <div className="space-y-4">
-
-            {}
             <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
@@ -324,16 +300,14 @@ export default function ProtocolPage() {
               </ExternalLink>
             </p>
 
-            {}
             <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">Merkle Mountain Range (MMR) UTXO</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                Minima utilizes a Merkle Mountain Range database to store only the UTXOs relevant to each node&apos;s private keys. This &quot;storage-less&quot; approach allows each node to operate with just ~300 MB RAM, reducing hardware requirements for node operation.
+                Minima utilizes a Merkle Mountain Range database to store only the UTXOs relevant to each node&apos;s private keys. This &quot;storage-less&quot; approach allows nodes to operate with minimal memory requirements while reducing hardware demands.
               </p>
             </div>
-
           </div>
           <p className="text-sm text-gray-500 mt-4">
             <ExternalLink
@@ -345,7 +319,6 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {}
         <section id="layers" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🧱</span>
@@ -390,7 +363,6 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {}
         <section id="specs" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">⚙️</span>
@@ -428,7 +400,6 @@ export default function ProtocolPage() {
           </p>
         </section>
 
-        {}
         <section id="participation" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">👥</span>
@@ -449,12 +420,11 @@ export default function ProtocolPage() {
               <li>Synchronization with the latest chain state</li>
             </ul>
             <p className="text-gray-300 text-sm mt-3 relative">
-              <strong className="text-white">Note:</strong> The protocol design aims to allow all users to operate complete validating nodes without reliance on specialized validator classes.
+              <strong className="text-white">Note:</strong> The protocol design ensures all users can participate equally in network validation without reliance on specialized validator classes.
             </p>
           </div>
         </section>
 
-        {}
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10
                         opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
@@ -472,18 +442,13 @@ export default function ProtocolPage() {
           </p>
         </div>
 
-        {}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 19, 2026
+            Last updated: July 21, 2026
           </p>
         </section>
-
       </article>
     </div>
   );
 }
-
-import { getCanonicalMetadata } from '@/lib/seo';
-export const metadata = getCanonicalMetadata('/protocol');
