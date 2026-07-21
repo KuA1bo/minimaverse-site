@@ -296,7 +296,7 @@ export default function ProtocolPage() {
                 href="https://docs.minima.global/docs/learn/the-blockchain#the-cascading-chain"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
               >
-                Learn more: The Cascading Chain
+                Source: The Cascading Chain
               </ExternalLink>
             </p>
 
