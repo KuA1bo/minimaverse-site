@@ -520,7 +520,7 @@ export default function EcosystemPage() {
                 Secure storage and recovery application built on Minima infrastructure.
               </p>
               <p className="text-gray-500 text-xs relative">
-                Status: <StatusBadge status="in-development" reducedGlow={true} /> • Partner project (LTA Labs × Minima)
+                Status: <StatusBadge status="in-development" reducedGlow={true} /> | Partner project (LTA Labs × Minima)
               </p>
             </div>
 
