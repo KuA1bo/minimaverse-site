@@ -401,33 +401,41 @@ export default function AboutPage() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <ExternalLink
-              href="https://build.minima.global"
-              className="block relative bg-blue-900/30 border border-blue-700/50 rounded-2xl p-4 sm:p-6 hover:border-blue-500/50 hover:shadow-2xl hover:shadow-blue-500/15 transition-all duration-300 group overflow-hidden"
-              ariaLabel="Visit Edge Pioneers developer portal"
-              hideArrow={true}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative">
-                <h3 className="text-white font-medium group-hover:text-blue-300 transition-colors mb-2">Edge Pioneers Program</h3>
-                <p className="text-gray-400 text-sm mb-3">Official developer portal including SDKs, tutorials, and community resources.</p>
-                <p className="text-blue-400 text-sm inline-flex items-center gap-1">🌐 build.minima.global</p>
+            <div className="flex flex-col">
+              <div className="relative bg-blue-900/30 border border-blue-700/50 rounded-2xl p-4 sm:p-6 transition-all duration-300 group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-cyan-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative">
+                  <h3 className="text-white font-medium group-hover:text-blue-300 transition-colors mb-2">Edge Pioneers Program</h3>
+                  <p className="text-gray-400 text-sm">Official developer portal including SDKs, tutorials, and community resources.</p>
+                </div>
               </div>
-            </ExternalLink>
+              <p className="text-gray-500 text-xs mt-2">
+                <ExternalLink
+                  href="https://build.minima.global"
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                >
+                  build.minima.global
+                </ExternalLink>
+              </p>
+            </div>
 
-            <ExternalLink
-              href="https://docs.minima.global/docs/development"
-              className="block relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 transition-all duration-300 group overflow-hidden"
-              ariaLabel="Visit How to Build on Minima guide"
-              hideArrow={true}
-            >
-              <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <div className="relative">
-                <h3 className="text-white font-medium group-hover:text-purple-300 transition-colors mb-2">How to Build on Minima</h3>
-                <p className="text-gray-400 text-sm mb-3">Official development guide covering MiniDapp fundamentals, prerequisites, and recommended learning path.</p>
-                <p className="text-purple-400 text-sm inline-flex items-center gap-1">🌐 docs.minima.global/docs/development</p>
+            <div className="flex flex-col">
+              <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 group overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="relative">
+                  <h3 className="text-white font-medium group-hover:text-purple-300 transition-colors mb-2">How to Build on Minima</h3>
+                  <p className="text-gray-400 text-sm">Official development guide covering MiniDapp fundamentals, prerequisites, and recommended learning path.</p>
+                </div>
               </div>
-            </ExternalLink>
+              <p className="text-gray-500 text-xs mt-2">
+                <ExternalLink
+                  href="https://docs.minima.global/docs/development"
+                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
+                >
+                  docs.minima.global/docs/development
+                </ExternalLink>
+              </p>
+            </div>
           </div>
         </section>
 
