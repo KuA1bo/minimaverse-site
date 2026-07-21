@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
+import { getCanonicalMetadata } from '@/lib/seo';
+
+export const metadata = getCanonicalMetadata('/developers');
 
 const ExternalLink = ({
   href,
@@ -109,7 +112,7 @@ export default function DevelopersPage() {
                 Developer Resources
               </span>
             </h1>
-            <p className="text-gray-400">Tools, SDKs, and documentation for Minima development</p>
+            <p className="text-gray-400">Official tools, SDKs, and technical resources for building on Minima.</p>
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
 
@@ -199,8 +202,7 @@ export default function DevelopersPage() {
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
             <p className="text-gray-300 leading-relaxed">
-              This page aggregates verified resources for developers building on or contributing to
-              the Minima Protocol. All links point to official or community-verified sources.
+              This page provides a curated collection of official and community-maintained development resources for building on the Minima Protocol. All references are publicly available and categorized for easier navigation.
             </p>
           </div>
         </section>
@@ -223,9 +225,7 @@ export default function DevelopersPage() {
                   Edge Pioneers Program
                 </h3>
                 <p className="text-gray-300 mt-2">
-                  The official starting point for Minima developers. Access SDKs, tutorials,
-                  code examples, and community support for building decentralized applications
-                  on the Minima Protocol.
+                  Official entry point for developers building on the Minima Protocol.
                 </p>
                 <ul className="text-gray-400 text-sm mt-3 space-y-1">
                   <li>• TypeScript/JavaScript SDK documentation</li>
@@ -296,7 +296,7 @@ export default function DevelopersPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
               {
-                title: '📚 Learn the Basics',
+                title: '📚 Protocol Fundamentals',
                 text: 'Foundational concepts and protocol overview for new developers.',
                 links: [
                   { href: 'https://docs.minima.global/docs/development/minidapp-structure', text: '📚 MiniDapp Structure' },
@@ -304,7 +304,7 @@ export default function DevelopersPage() {
                 ]
               },
               {
-                title: '📝 Build Applications',
+                title: '📝 Application Development',
                 text: 'Practical guides for creating MiniDapps and smart contracts on Minima.',
                 links: [
                   { href: 'https://docs.minima.global/docs/development/contracts-basics', text: '📚 KISS Scripting Basics' },
@@ -352,7 +352,7 @@ export default function DevelopersPage() {
                 link: { href: 'https://docs.minima.global/docs/buildonminima/txntutorial/start', text: '📚 Smart Contract Tutorial Series' }
               },
               {
-                title: '🐙 Community Tutorials',
+                title: '🐙 Community Guides',
                 text: 'Additional transaction examples and patterns from community contributors.',
                 link: { href: 'https://github.com/MBCOT/Minima-Tutorials/', text: 'MBCOT Minima Tutorials', icon: true, status: 'community' as const }
               },
@@ -498,7 +498,7 @@ export default function DevelopersPage() {
               <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                               transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <h3 className="text-white font-medium mb-2 relative">Mobile & Libraries</h3>
+                <h3 className="text-white font-medium mb-2 relative">Mobile Applications & Libraries</h3>
                 <p className="text-gray-300 text-sm mb-3 relative">
                   Official Android APK and third-party Kotlin library for Minima integration.
                 </p>
@@ -529,7 +529,7 @@ export default function DevelopersPage() {
                     minimak (Kotlin Library)
                   </ExternalLink>
                   <p className="text-gray-500 text-xs mt-1 ml-1">
-                    Status: <StatusBadge status="community" /> | Third-party library by @mihbor
+                    Status: <StatusBadge status="community" /> | Community-maintained Kotlin library
                   </p>
                 </div>
               </div>
@@ -556,7 +556,7 @@ export default function DevelopersPage() {
                 Status: <StatusBadge status="confirmed" /> | Official community channel
               </p>
               <p className="text-gray-500 text-xs mt-2 italic relative">
-                Tip: Discussions happen in <span className="text-gray-300">#dev-chat</span>.
+                Note: Discussions happen in <span className="text-gray-300">#dev-chat</span>.
                 To post there, select the <span className="text-gray-300">Community Developer</span> role
                 in <span className="text-gray-300">#role-picker</span>.
               </p>
@@ -590,7 +590,7 @@ export default function DevelopersPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-75">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: July 9, 2026
+            Last updated: July 22, 2026
           </p>
         </section>
 
@@ -598,6 +598,3 @@ export default function DevelopersPage() {
     </div>
   );
 }
-
-import { getCanonicalMetadata } from '@/lib/seo';
-export const metadata = getCanonicalMetadata('/developers');
