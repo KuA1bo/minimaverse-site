@@ -71,7 +71,7 @@ const structuredData = {
       "name": "How will protocol upgrades be decided in a fully decentralized Minima network?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "The core Minima Protocol is complete and immutable. As stated by Paddy Cerri, Co-Founder & Chief Architect, the foundational layer is finalized and will not undergo changes. Future development takes place on application layers built on top of the protocol rather than within the protocol itself."
+        "text": "The core Minima Protocol is designed to be complete and immutable. The foundational layer is finalized and is not intended to undergo changes. Future development takes place on application layers built on top of the protocol rather than within the protocol itself."
       }
     }
   ],
@@ -235,9 +235,7 @@ export default function OpenQuestionsPage() {
             </p>
             <div className="relative bg-green-900/30 border border-green-700/50 rounded-xl p-4">
               <p className="text-green-200 text-sm">
-                <strong>Answer:</strong> The core Minima Protocol is complete and immutable. As stated by Paddy Cerri, Co-Founder & Chief Architect,
-                the foundational layer is finalized and will not undergo changes. Future development takes place on application layers
-                built on top of the protocol rather than within the protocol itself.
+                <strong>Answer:</strong> The core Minima Protocol is designed to be complete and immutable. The foundational layer is finalized and is not intended to undergo changes. Future development takes place on application layers built on top of the protocol rather than within the protocol itself.
               </p>
               <p className="text-gray-500 text-xs mt-2">
                 Source: Paddy Cerri (Co-Founder & Chief Architect), Official Communications
