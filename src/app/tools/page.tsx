@@ -1,9 +1,8 @@
-
-
-
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
+import { getCanonicalMetadata } from '@/lib/seo';
 
+export const metadata = getCanonicalMetadata('/tools');
 
 const ExternalLink = ({
   href,
@@ -37,7 +36,6 @@ const ExternalLink = ({
   </a>
 );
 
-
 const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'in-development' | 'community', reducedGlow?: boolean }) => {
   const config = {
     'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: reducedGlow ? 'shadow-green-500/25' : 'shadow-green-500/50' },
@@ -58,7 +56,6 @@ const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'i
     </span>
   );
 };
-
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -87,11 +84,8 @@ const structuredData = {
 export default function ToolsPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
-
-      {}
       <JsonLd data={structuredData} />
 
-      {}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
 
@@ -139,7 +133,6 @@ export default function ToolsPage() {
         </div>
       </header>
 
-      {}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -218,10 +211,7 @@ export default function ToolsPage() {
         </div>
       </div>
 
-      {}
       <article className="prose prose-invert max-w-none">
-
-        {}
         <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
@@ -233,12 +223,11 @@ export default function ToolsPage() {
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
             <p className="text-gray-300 leading-relaxed">
-              Verified tools, wallets, explorers, and developer utilities for interacting with the Minima Protocol.
+              This page catalogs verified tools, wallets, explorers, and developer utilities available for interacting with the Minima Protocol.
             </p>
           </div>
         </section>
 
-        {}
         <section id="official" className="mb-10 opacity-0 animate-fade-in-up delay-300 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🛠️</span>
@@ -246,13 +235,12 @@ export default function ToolsPage() {
           </h2>
 
           <div className="space-y-4">
-
             <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">Minima Terminal</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                Command-line interface for advanced node management, transaction creation, and smart contract deployment.
+                Command-line interface for node management, transaction creation, and smart contract deployment.
               </p>
               <StatusBadge status="confirmed" />
             </div>
@@ -270,7 +258,7 @@ export default function ToolsPage() {
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">Minima Scan (Explorer)</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                Blockchain explorer for viewing transactions, blocks, addresses, and network statistics on the Minima protocol.
+                Blockchain explorer for viewing transactions, blocks, addresses, and network statistics.
               </p>
               <StatusBadge status="confirmed" />
             </div>
@@ -288,7 +276,7 @@ export default function ToolsPage() {
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">Web Wallet</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                Browser-based wallet for managing Minima tokens, sending/receiving transactions, and interacting with MiniDapps.
+                Browser-based wallet for managing assets and interacting with MiniDapps.
               </p>
               <StatusBadge status="confirmed" />
             </div>
@@ -316,7 +304,7 @@ export default function ToolsPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
               <h3 className="text-white font-medium mb-2 relative">Mobile Wallet</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                Official mobile wallet available on Google Play and as direct APK download.
+                Mobile wallet available via Google Play Store and direct APK download.
               </p>
               <StatusBadge status="confirmed" />
             </div>
@@ -337,11 +325,9 @@ export default function ToolsPage() {
                 Android APK (GitHub)
               </ExternalLink>
             </div>
-
           </div>
         </section>
 
-        {}
         <section id="dev" className="mb-10 opacity-0 animate-fade-in-up delay-75 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">💻</span>
@@ -349,13 +335,12 @@ export default function ToolsPage() {
           </h2>
 
           <div className="space-y-4">
-
             <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
                             transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">TypeScript SDK</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                Official SDK for building applications and MiniDapps using TypeScript/JavaScript. Provides high-level abstractions for protocol interaction.
+                SDK for building applications and MiniDapps using TypeScript/JavaScript.
               </p>
               <StatusBadge status="confirmed" />
             </div>
@@ -373,7 +358,7 @@ export default function ToolsPage() {
               <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
               <h3 className="text-white font-medium mb-2 relative">📜 KISS VM (Smart Contract Scripting)</h3>
               <p className="text-gray-300 text-sm mb-3 relative">
-                Complete language specification: grammar, globals, and 40+ functions for writing smart contracts on Minima (SHA2/3, CHECKSIG, MULTISIG, and more).
+                Official language reference covering grammar, globals, and built-in functions for Minima smart contracts.
               </p>
               <StatusBadge status="confirmed" />
             </div>
@@ -403,16 +388,14 @@ export default function ToolsPage() {
                 📚 RPC Startup Parameters
               </ExternalLink>
             </p>
-
           </div>
         </section>
 
-        {}
         <section id="emerging" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔧</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-              Emerging Ecosystem Utilities
+              Additional Ecosystem Tools
             </span>
           </h2>
 
@@ -421,15 +404,10 @@ export default function ToolsPage() {
             <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
 
             <p className="text-gray-300 leading-relaxed mb-2 relative">
-              Utilities extending core protocol functionality within the Minima ecosystem. Currently in soft launch / test run phase.
-            </p>
-            <p className="text-gray-400 text-sm leading-relaxed relative">
-              Typical usage flow: install MiniMask → authenticate on MinimaXT → swap assets via MXUSD Bridge.
+              Utilities extending core protocol functionality within the Minima ecosystem. Availability and functionality may change during ongoing development.
             </p>
 
             <div className="space-y-4 relative mt-6">
-
-              {}
               <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
@@ -459,7 +437,6 @@ export default function ToolsPage() {
 
               <div className="border-t border-gray-700/30" />
 
-              {}
               <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
@@ -482,7 +459,6 @@ export default function ToolsPage() {
 
               <div className="border-t border-gray-700/30" />
 
-              {}
               <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
@@ -504,11 +480,10 @@ export default function ToolsPage() {
               </div>
             </div>
 
-            {}
             <div className="mt-6 pt-4 border-t border-gray-700/40">
               <p className="text-amber-200 text-xs leading-relaxed">
                 <span className="text-base mr-1">⚠️</span>
-                <strong>Operational Notes:</strong> In-app chat on MinimaXT is unmoderated with a 5-minute delivery delay. Token visibility issues should be verified via{' '}
+                <strong>Notes:</strong> In-app chat on MinimaXT is unmoderated with a 5-minute delivery delay. Token visibility issues should be verified via{' '}
                 <ExternalLink
                   href="https://explorer.minima.global"
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
@@ -524,7 +499,6 @@ export default function ToolsPage() {
           </div>
         </section>
 
-        {}
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10
                         opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -534,7 +508,7 @@ export default function ToolsPage() {
               <span className="text-lg">⚠️</span>
               Disclaimer:
             </strong>
-            This site does not represent the official Minima Global team.
+            This site does not represent the official Minima team.
             All information is compiled from publicly available sources.{' '}
             <Link href="/disclaimer" aria-label="Read full disclaimer" className="underline hover:text-amber-100 decoration-amber-500/50 hover:decoration-amber-400 underline-offset-4 transition-all duration-300">
               Learn more
@@ -542,18 +516,13 @@ export default function ToolsPage() {
           </p>
         </div>
 
-        {}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: June 7, 2026
+            Last updated: July 22, 2026
           </p>
         </section>
-
       </article>
     </div>
   );
 }
-
-import { getCanonicalMetadata } from '@/lib/seo';
-export const metadata = getCanonicalMetadata('/tools');
