@@ -61,7 +61,7 @@ const JsonLd = () => (
             "@type": "WebSite",
             "name": "Minimaverse",
             "url": "https://minimaverse.com",
-            "description": "Independent information hub for the Minima Protocol. Verified documentation, node guides, ecosystem resources.",
+            "description": "Independent documentation hub for the Minima Protocol. Verified documentation, node guides, ecosystem resources.",
             "publisher": { "@type": "Organization", "name": "Minimaverse Community", "url": "https://minimaverse.com" },
             "inLanguage": "en",
             "potentialAction": {
@@ -74,7 +74,7 @@ const JsonLd = () => (
             "@type": "Organization",
             "name": "Minimaverse",
             "url": "https://minimaverse.com",
-            "description": "Independent information hub for the Minima Protocol",
+            "description": "Independent documentation hub for the Minima Protocol",
             "logo": "https://minimaverse.com/logo.webp",
             "sameAs": [
               "https://twitter.com/Minimaverse",
@@ -235,7 +235,7 @@ export default function HomePage() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3"><span className="text-2xl sm:text-3xl">📋</span><span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Site</span></h2>
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-            <p className="text-gray-300 text-sm mb-3 leading-relaxed"><strong className="text-white">Minimaverse</strong> is an independent, curated information hub dedicated to the Minima Protocol. This site provides verified technical information, documentation links, and ecosystem resources for developers, researchers, and institutional observers.</p>
+            <p className="text-gray-300 text-sm mb-3 leading-relaxed"><strong className="text-white">Minimaverse</strong> is an independent documentation hub dedicated to the Minima Protocol. This site provides verified technical information, documentation links, and ecosystem resources for developers, researchers, and institutional observers.</p>
             <p className="text-gray-300 text-sm leading-relaxed">We provide factual content with clear sourcing and status indicators.</p>
             <div className="mt-4 pt-3 border-t border-gray-700/40">
               <p className="text-gray-400 text-xs mb-2">Status legend:</p>
@@ -268,7 +268,7 @@ export default function HomePage() {
           <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3"><span className="text-2xl sm:text-3xl">🔗</span><span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Quick Links</span></h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { title: 'Protocol Information', icon: '📖', links: [{ href: '/links', text: 'Resources' }, { href: '/ecosystem', text: 'Ecosystem' }, { href: '/about', text: 'What is Minima' }, { href: '/open-questions', text: 'Open Questions' }, { href: '/timeline', text: 'Verified Milestones (Timeline)' }] },
+              { title: 'Protocol Information', icon: '📖', links: [{ href: '/resources', text: 'Resources' }, { href: '/ecosystem', text: 'Ecosystem' }, { href: '/about', text: 'What is Minima' }, { href: '/open-questions', text: 'Open Questions' }, { href: '/timeline', text: 'Verified Milestones (Timeline)' }] },
               { title: 'For Developers', icon: '⚙️', links: [{ href: '/nodes', text: 'Run a Node' }, { href: '/tools', text: 'Tools & Utilities' }, { href: '/submit-project', text: 'Project Submission' }, { href: '/developers', text: 'Developer Resources' }] },
             ].map((section, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
@@ -294,10 +294,9 @@ export default function HomePage() {
         </div>
 
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
-          <p className="text-gray-500 text-sm flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />Last updated: July 8, 2026</p>
+          <p className="text-gray-500 text-sm flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />Last updated: July 22, 2026</p>
         </section>
       </article>
     </div>
   );
 }
-
