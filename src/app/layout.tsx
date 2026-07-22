@@ -112,7 +112,10 @@ export default function RootLayout({
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 text-center md:text-left">
               <div className="space-y-2 sm:space-y-3">
                 <h4 className="text-white font-semibold flex items-center justify-center md:justify-start gap-2">
-                  <span className="text-lg">📚</span> Quick Links
+                  <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5V4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z" />
+                  </svg>
+                  Quick Links
                 </h4>
                 <div className="flex flex-wrap justify-center md:justify-start gap-1.5 sm:gap-2">
                   <Link href="/resources" className="group text-[11px] sm:text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
@@ -126,7 +129,11 @@ export default function RootLayout({
 
               <div className="space-y-2 sm:space-y-3">
                 <h4 className="text-white font-semibold flex items-center justify-center md:justify-start gap-2">
-                  <span className="text-lg">⚙️</span> Dev Resources
+                  <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
+                    <circle cx="12" cy="12" r="3" />
+                  </svg>
+                  Dev Resources
                 </h4>
                 <div className="flex flex-wrap justify-center md:justify-start gap-1.5 sm:gap-2">
                   <ExternalLink href="https://docs.minima.global" className="group text-[11px] sm:text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
@@ -140,7 +147,10 @@ export default function RootLayout({
 
               <div className="space-y-2 sm:space-y-3">
                 <h4 className="text-white font-semibold flex items-center justify-center md:justify-start gap-2">
-                  <span className="text-lg">📢</span> Legal
+                  <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                  </svg>
+                  Legal
                 </h4>
                 <div className="flex flex-wrap justify-center md:justify-start gap-1.5 sm:gap-2">
                   <Link href="/disclaimer" aria-label="Read full disclaimer" className="group text-[11px] sm:text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
@@ -185,8 +195,13 @@ export default function RootLayout({
               </p>
             </div>
 
-            <p className="text-gray-600 text-[11px] mt-3 text-center sm:text-right opacity-80 hover:opacity-100 transition-opacity duration-300">
-              Built for transparency &amp; community 🌐
+            <p className="text-gray-600 text-[11px] mt-3 text-center sm:text-right opacity-80 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center md:justify-end gap-1.5">
+              Built for transparency &amp; community
+              <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <circle cx="12" cy="12" r="10" />
+                <path d="M2 12h20" />
+                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+              </svg>
             </p>
           </div>
         </footer>

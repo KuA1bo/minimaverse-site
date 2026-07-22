@@ -47,7 +47,12 @@ export default function EconomyModeToggle() {
       title={enabled ? 'Low graphics mode: ON (animations reduced)' : 'Low graphics mode: OFF (full visuals)'}
     >
       <span className={`w-2 h-2 rounded-full transition-colors ${enabled ? 'bg-green-400 animate-pulse' : 'bg-gray-500'}`} />
-      <span>⚡ Low Graphics</span>
+      <span className="inline-flex items-center gap-1.5">
+        <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+        </svg>
+        Low Graphics
+      </span>
     </button>
   );
 }
