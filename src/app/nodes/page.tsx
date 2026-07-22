@@ -138,7 +138,10 @@ export default function NodesPage() {
 
         <div className="relative">
           <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
-            <span className="text-2xl">📚</span> Primary Sources
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5V4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z" />
+            </svg>
+            Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
@@ -190,7 +193,10 @@ export default function NodesPage() {
 
       <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-          <span className="text-2xl">📋</span>
+          <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+            <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+          </svg>
           <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
         </h2>
 
@@ -222,19 +228,32 @@ export default function NodesPage() {
               href="https://docs.minima.global/docs/run-a-node/android"
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
-              📱 Android
+              <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
+                <line x1="12" y1="18" x2="12.01" y2="18" />
+              </svg>
+              Android
             </ExternalLink>
             <ExternalLink
               href="https://docs.minima.global/docs/run-a-node/linux-vps-docker"
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
-              🐳 Docker
+              <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
+                <path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
+                <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
+                <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
+              </svg>
+              Docker
             </ExternalLink>
             <ExternalLink
               href="https://minidapps.minima.global/"
               className="inline-flex items-center justify-center gap-1.5 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white text-sm font-medium rounded-lg transition-all duration-300 hover:scale-105 active:scale-95 w-full sm:w-auto"
             >
-              🧩 MiniDapps
+              <svg className="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+              MiniDapps
             </ExternalLink>
           </div>
         </div>
@@ -242,7 +261,10 @@ export default function NodesPage() {
 
       <section id="peer-configuration" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-250">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-          <span className="text-2xl">🔗</span>
+          <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+          </svg>
           <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Initial Peer Configuration</span>
         </h2>
 
@@ -305,7 +327,11 @@ export default function NodesPage() {
 
       <section id="keyuses-guidance" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-275">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-          <span className="text-2xl">⚠️</span>
+          <svg className="w-6 h-6 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+            <line x1="12" y1="9" x2="12" y2="13" />
+            <line x1="12" y1="17" x2="12.01" y2="17" />
+          </svg>
           <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
             KeyUses During Seed Resync
           </span>
@@ -371,7 +397,10 @@ export default function NodesPage() {
 
       <section id="node-recovery" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-          <span className="text-2xl">🔒</span>
+          <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+          </svg>
           <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Node Recovery</span>
         </h2>
 
@@ -453,7 +482,12 @@ export default function NodesPage() {
 
             <div className="mt-4 pt-4 border-t border-gray-700/40">
               <h4 className="text-white text-xs font-medium mb-2 flex items-center gap-2">
-                <span>⚠️</span> Critical Notes
+                <svg className="w-4 h-4 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                  <line x1="12" y1="9" x2="12" y2="13" />
+                  <line x1="12" y1="17" x2="12.01" y2="17" />
+                </svg>
+                Critical Notes
               </h4>
               <ul className="space-y-1.5 text-xs text-gray-400">
                 <li className="flex items-start gap-2">
@@ -493,7 +527,11 @@ export default function NodesPage() {
 
       <section id="cold-storage" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
         <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-          <span className="text-2xl">🧊</span>
+          <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M12 2a10 10 0 0 1 10 10 4 4 0 0 1-4 4H6a4 4 0 0 1-4-4 10 10 0 0 1 10-10z" />
+            <path d="M12 12v10" />
+            <path d="M8 22h8" />
+          </svg>
           <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Cold Storage Setup</span>
         </h2>
 
@@ -534,7 +572,10 @@ export default function NodesPage() {
 
         <section id="requirements" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">⚙️</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">System Requirements</span>
           </h2>
 
@@ -569,15 +610,21 @@ export default function NodesPage() {
               <h3 className="text-white font-medium mb-3 relative">Recommended</h3>
               <ul className="space-y-2 text-gray-400 text-sm relative">
                 <li className="flex items-start gap-2">
-                  <span className="text-green-400">✓</span>
+                  <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   <span>4 GB RAM</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-400">✓</span>
+                  <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   <span>SSD storage</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-green-400">✓</span>
+                  <svg className="w-4 h-4 text-green-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   <span>Static IP address (for public nodes)</span>
                 </li>
               </ul>
@@ -596,7 +643,13 @@ export default function NodesPage() {
 
         <section id="why-run" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">🎯</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <circle cx="12" cy="12" r="4" />
+              <line x1="21.17" y1="8" x2="12" y2="8" />
+              <line x1="3.95" y1="6.06" x2="8.54" y2="14" />
+              <line x1="10.88" y1="21.94" x2="15.46" y2="14" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Why Run a Node?</span>
           </h2>
 
@@ -612,7 +665,9 @@ export default function NodesPage() {
                 { title: 'Verify independently', desc: 'Independently verify transactions and blockchain state.' }
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3 relative">
-                  <span className="text-blue-400 mt-1">✓</span>
+                  <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
                   <div>
                     <span className="text-white font-medium text-sm">{item.title}</span>
                     <p className="text-gray-400 text-xs">{item.desc}</p>
@@ -634,20 +689,24 @@ export default function NodesPage() {
 
         <section id="installation" className="mb-10 opacity-0 animate-fade-in-up delay-300 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📥</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Installation Guides by Platform</span>
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
             {[
-              { id: 'windows', href: 'https://docs.minima.global/docs/run-a-node/windows', icon: '🪟', title: 'Windows', desc: 'Desktop installation for Windows' },
-              { id: 'android', href: 'https://docs.minima.global/docs/run-a-node/android', icon: '📱', title: 'Android', desc: 'Run a full node on your phone' },
-              { id: 'macos', href: 'https://docs.minima.global/docs/run-a-node/mac', icon: '🍎', title: 'macOS', desc: 'Desktop installation for Apple computers' },
-              { id: 'linux-cli', href: 'https://docs.minima.global/docs/run-a-node/desktop-cli', icon: '🐧', title: 'Linux (CLI)', desc: 'Command-line interface for Linux desktops' },
-              { id: 'docker', href: 'https://docs.minima.global/docs/run-a-node/linux-vps-docker', icon: '🐳', title: 'Linux (Docker)', desc: 'Docker deployment for VPS' },
-              { id: 'linux-systemd', href: 'https://docs.minima.global/docs/run-a-node/linux-vps-service', icon: '⚙️', title: 'Linux (Systemd)', desc: 'Systemd service for VPS' },
-              { id: 'docker-desktop', href: 'https://docs.minima.global/docs/run-a-node/docker-desktop', icon: '📦', title: 'Docker Desktop', desc: 'Containerized deployment for desktop' },
-              { id: 'raspberry-pi', href: 'https://docs.minima.global/docs/run-a-node/node-types#supported-devices', icon: '🥧', title: 'Raspberry Pi', desc: 'Optimized for Pi 4+ devices' },
+              { id: 'windows', href: 'https://docs.minima.global/docs/run-a-node/windows', icon: <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2" ry="2" /><line x1="3" y1="12" x2="21" y2="12" /><line x1="12" y1="3" x2="12" y2="21" /></svg>, title: 'Windows', desc: 'Desktop installation for Windows' },
+              { id: 'android', href: 'https://docs.minima.global/docs/run-a-node/android', icon: <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2" /><line x1="12" y1="18" x2="12.01" y2="18" /></svg>, title: 'Android', desc: 'Run a full node on your phone' },
+              { id: 'macos', href: 'https://docs.minima.global/docs/run-a-node/mac', icon: <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 20h9" /><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" /></svg>, title: 'macOS', desc: 'Desktop installation for Apple computers' },
+              { id: 'linux-cli', href: 'https://docs.minima.global/docs/run-a-node/desktop-cli', icon: <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="4" y="4" width="16" height="16" rx="2" ry="2" /><rect x="9" y="9" width="6" height="6" /><line x1="9" y1="1" x2="9" y2="4" /><line x1="15" y1="1" x2="15" y2="4" /><line x1="9" y1="20" x2="9" y2="23" /><line x1="15" y1="20" x2="15" y2="23" /><line x1="20" y1="9" x2="23" y2="9" /><line x1="20" y1="14" x2="23" y2="14" /><line x1="1" y1="9" x2="4" y2="9" /><line x1="1" y1="14" x2="4" y2="14" /></svg>, title: 'Linux (CLI)', desc: 'Command-line interface for Linux desktops' },
+              { id: 'docker', href: 'https://docs.minima.global/docs/run-a-node/linux-vps-docker', icon: <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" /><path d="M12 15l-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" /><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" /><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" /></svg>, title: 'Linux (Docker)', desc: 'Docker deployment for VPS' },
+              { id: 'linux-systemd', href: 'https://docs.minima.global/docs/run-a-node/linux-vps-service', icon: <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>, title: 'Linux (Systemd)', desc: 'Systemd service for VPS' },
+              { id: 'docker-desktop', href: 'https://docs.minima.global/docs/run-a-node/docker-desktop', icon: <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" /><polyline points="3.27 6.96 12 12.01 20.73 6.96" /><line x1="12" y1="22.08" x2="12" y2="12" /></svg>, title: 'Docker Desktop', desc: 'Containerized deployment for desktop' },
+              { id: 'raspberry-pi', href: 'https://docs.minima.global/docs/run-a-node/node-types#supported-devices', icon: <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2a10 10 0 1 0 10 10 4 4 0 0 1-5-5 4 4 0 0 1-5-5" /><path d="M8.5 8.5v.01" /><path d="M16 15.5v.01" /><path d="M12 12v.01" /><path d="M11 17v.01" /><path d="M7 14v.01" /></svg>, title: 'Raspberry Pi', desc: 'Optimized for Pi 4+ devices' },
             ].map((guide, index) => (
               <ExternalLink
                 key={index}
@@ -659,7 +718,7 @@ export default function NodesPage() {
                 ariaLabel={`${guide.title} installation guide`}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <span className="text-white font-medium text-sm group-hover:text-purple-300 relative">{guide.icon} {guide.title}</span>
+                <span className="text-white font-medium text-sm group-hover:text-purple-300 relative flex items-center gap-2">{guide.icon} {guide.title}</span>
                 <p className="text-gray-500 text-xs mt-1 relative">{guide.desc}</p>
               </ExternalLink>
             ))}
@@ -676,7 +735,9 @@ export default function NodesPage() {
 
         <section id="expert-guide" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">✨</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Expert Guide</span>
           </h2>
 
@@ -701,17 +762,23 @@ export default function NodesPage() {
               <div className="space-y-2">
                 <ExternalLink
                   href="https://spartacusrex.com/downloads.html"
-                  className="text-purple-400 hover:text-purple-300 underline decoration-purple-500/30 hover:decoration-purple-400/60 underline-offset-4 transition-all duration-300 text-sm relative inline-flex items-center gap-1"
+                  className="text-purple-400 hover:text-purple-300 underline decoration-purple-500/30 hover:decoration-purple-400/60 underline-offset-4 transition-all duration-300 text-sm relative inline-flex items-center gap-1.5"
                 >
-                  <span className="text-base">⬇️</span>
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" y1="15" x2="12" y2="3" />
+                  </svg>
                   spartacusrex.com/downloads
                 </ExternalLink>
                 <br />
                 <ExternalLink
                   href="https://spartacusrex.com/run-a-node.html"
-                  className="text-purple-400 hover:text-purple-300 underline decoration-purple-500/30 hover:decoration-purple-400/60 underline-offset-4 transition-all duration-300 text-sm relative inline-flex items-center gap-1"
+                  className="text-purple-400 hover:text-purple-300 underline decoration-purple-500/30 hover:decoration-purple-400/60 underline-offset-4 transition-all duration-300 text-sm relative inline-flex items-center gap-1.5"
                 >
-                  <span className="text-base">📖</span>
+                  <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5V4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z" />
+                  </svg>
                   spartacusrex.com/run-a-node
                 </ExternalLink>
               </div>
@@ -721,7 +788,9 @@ export default function NodesPage() {
 
         <section id="advanced-nodes" className="mb-10 opacity-0 animate-fade-in-up delay-75 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">🔧</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Advanced Node Types</span>
           </h2>
 
@@ -770,7 +839,10 @@ export default function NodesPage() {
 
         <section id="configuration" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">⚙️</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Node Configuration</span>
           </h2>
 
@@ -802,7 +874,11 @@ export default function NodesPage() {
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
             <strong className="flex items-center gap-2 mb-2">
-              <span className="text-lg">⚠️</span>
+              <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
               Disclaimer:
             </strong>
             This site does not represent the official Minima team.
