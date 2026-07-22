@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 import CopyableEndpoint from '@/components/CopyableEndpoint';
-
 import { getCanonicalMetadata } from '@/lib/seo';
 
 export const metadata = getCanonicalMetadata('/nodes');
@@ -83,7 +82,6 @@ const structuredData = {
 export default function NodesPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
-
       <JsonLd data={structuredData} />
 
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
@@ -201,9 +199,7 @@ export default function NodesPage() {
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
           <p className="text-gray-300 leading-relaxed relative">
-            Running a Minima node is a standard process and can be done on various platforms including
-            desktop computers, mobile devices, Raspberry Pi, and cloud servers. Each node is a full
-            node, contributing to the network's decentralization and security.
+            This page provides verified installation guides, operational recommendations, and recovery procedures for running Minima nodes across supported platforms. Each node is a full node, contributing to the network's decentralization and security.
           </p>
           <p className="text-gray-300 leading-relaxed mt-4 relative">
             Public reports from Minima indicate over 100,000 node installations globally.
@@ -264,7 +260,7 @@ export default function NodesPage() {
 
           <div className="relative">
             <p className="text-gray-300 text-sm leading-relaxed mb-4">
-              Initial network discovery requires valid peer endpoints.
+              Initial network discovery requires one or more reachable peer endpoints.
               A public list of active nodes is available for initial synchronization.
             </p>
 
@@ -613,7 +609,7 @@ export default function NodesPage() {
                 { title: 'Support decentralized infrastructure', desc: 'Contribute to decentralized infrastructure by hosting reliable, secure nodes' },
                 { title: 'Enable peer-to-peer applications', desc: 'Power direct transactions and messaging without intermediaries or trusted third parties' },
                 { title: 'Support network reliability', desc: 'Every additional node increases Minima\'s resistance to attacks and single points of failure' },
-                { title: 'Verify independently', desc: 'Validate transactions and data integrity on your own terms, with independent verification' }
+                { title: 'Verify independently', desc: 'Independently verify transactions and blockchain state.' }
               ].map((item, index) => (
                 <li key={index} className="flex items-start gap-3 relative">
                   <span className="text-blue-400 mt-1">✓</span>
@@ -669,12 +665,11 @@ export default function NodesPage() {
             ))}
           </div>
           <p className="text-gray-500 text-xs mt-3">
-            All guides:{' '}
             <ExternalLink
               href="https://docs.minima.global/docs/run-a-node"
               className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
             >
-              docs.minima.global/docs/run-a-node
+              View all installation guides →
             </ExternalLink>
           </p>
         </section>
@@ -732,8 +727,8 @@ export default function NodesPage() {
 
           <div className="space-y-4">
             {[
-              { id: 'archive-node', title: 'Archive Node', text: 'Full historical blockchain data storage for archival purposes and complete transaction history verification.', link: { href: 'https://docs.minima.global/docs/run-a-node/archive-node', text: '→ Setup Guide' } },
-              { id: 'mega-node', title: 'Mega Node', text: 'High-performance node configuration designed for increased throughput.', link: { href: 'https://docs.minima.global/docs/run-a-node/mega-node', text: '→ Setup Guide' } },
+              { id: 'archive-node', title: 'Archive Node', text: 'Full historical blockchain data storage for archival purposes and complete transaction history verification.', link: { href: 'https://docs.minima.global/docs/run-a-node/archive-node', text: '→ Documentation' } },
+              { id: 'mega-node', title: 'Mega Node', text: 'High-performance node configuration designed for increased throughput.', link: { href: 'https://docs.minima.global/docs/run-a-node/mega-node', text: '→ Documentation' } },
               { id: 'meg', title: 'Minima E-Gateway (MEG)', text: 'Enterprise-grade gateway for integrating Minima with external systems and legacy infrastructure.', links: [
                 { href: 'https://docs.minima.global/docs/run-a-node/meg-about', text: '→ Documentation' },
                 { href: 'https://docs.minima.global/docs/run-a-node/meg-setup', text: '→ Configuration Guide' }
@@ -744,6 +739,7 @@ export default function NodesPage() {
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <h3 className="text-white font-medium mb-2 relative">{item.title}</h3>
                 <p className="text-gray-300 text-sm mb-3 relative">{item.text}</p>
+                
                 {item.link && (
                   <ExternalLink
                     href={item.link.href}
@@ -752,6 +748,7 @@ export default function NodesPage() {
                     {item.link.text}
                   </ExternalLink>
                 )}
+                
                 {item.links && (
                   <div className="space-y-2 text-sm relative">
                     {item.links.map((link, linkIndex) => (
@@ -819,7 +816,7 @@ export default function NodesPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: July 19, 2026
+            Last updated: July 22, 2026
           </p>
         </section>
 
