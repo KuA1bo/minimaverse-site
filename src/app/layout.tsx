@@ -109,15 +109,15 @@ export default function RootLayout({
 
         <footer className="relative z-10 mt-12 sm:mt-16 backdrop-blur-xl bg-black/30 border-t border-gray-700/40 transition-all duration-300 hover:border-purple-500/40">
           <div className="max-w-6xl mx-auto px-4 py-6 sm:py-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 text-center md:text-left">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 mb-6 sm:mb-8 text-center">
               <div className="space-y-2 sm:space-y-3">
-                <h4 className="text-white font-semibold flex items-center justify-center md:justify-start gap-2">
+                <h4 className="text-white font-semibold flex items-center justify-center gap-2">
                   <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5V4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z" />
                   </svg>
                   Quick Links
                 </h4>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1.5 sm:gap-2">
+                <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
                   <Link href="/resources" className="group text-[11px] sm:text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
                     <span className="transform group-hover:translate-x-1 transition-transform">→</span> Resources
                   </Link>
@@ -128,14 +128,14 @@ export default function RootLayout({
               </div>
 
               <div className="space-y-2 sm:space-y-3">
-                <h4 className="text-white font-semibold flex items-center justify-center md:justify-start gap-2">
+                <h4 className="text-white font-semibold flex items-center justify-center gap-2">
                   <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.1a2 2 0 0 1-1-1.72v-.51a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z" />
                     <circle cx="12" cy="12" r="3" />
                   </svg>
                   Dev Resources
                 </h4>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1.5 sm:gap-2">
+                <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
                   <ExternalLink href="https://docs.minima.global" className="group text-[11px] sm:text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
                     <span className="transform group-hover:translate-x-1 transition-transform">→</span> Docs
                   </ExternalLink>
@@ -146,13 +146,13 @@ export default function RootLayout({
               </div>
 
               <div className="space-y-2 sm:space-y-3">
-                <h4 className="text-white font-semibold flex items-center justify-center md:justify-start gap-2">
+                <h4 className="text-white font-semibold flex items-center justify-center gap-2">
                   <svg className="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
                   </svg>
                   Legal
                 </h4>
-                <div className="flex flex-wrap justify-center md:justify-start gap-1.5 sm:gap-2">
+                <div className="flex flex-wrap justify-center gap-1.5 sm:gap-2">
                   <Link href="/disclaimer" aria-label="Read full disclaimer" className="group text-[11px] sm:text-sm text-gray-400 hover:text-purple-400 transition-colors flex items-center gap-1">
                     <span className="transform group-hover:translate-x-1 transition-transform">→</span> Disclaimer
                   </Link>
