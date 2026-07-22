@@ -386,7 +386,7 @@ export default function ResourcesPage() {
           </h2>
 
           <p className="text-gray-300 leading-relaxed mb-4">
-            Verified links to official Minima Global services and platforms.
+            Verified links to official Minima Global platforms and services.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
