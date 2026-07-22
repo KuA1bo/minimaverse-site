@@ -146,7 +146,10 @@ export default function ResourcesPage() {
 
         <div className="relative">
           <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
-            <span className="text-2xl">📚</span> Primary Sources
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5V4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z" />
+            </svg>
+            Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
@@ -198,7 +201,10 @@ export default function ResourcesPage() {
       <article className="prose prose-invert max-w-none">
         <section id="about" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📋</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+              <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
           </h2>
 
@@ -214,7 +220,9 @@ export default function ResourcesPage() {
 
         <section id="feedback" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-100">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">💬</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Project Feedback</span>
           </h2>
 
@@ -240,7 +248,10 @@ export default function ResourcesPage() {
 
         <section id="response-time" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-125">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">⏱️</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <polyline points="12 6 12 12 16 14" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Response Time</span>
           </h2>
 
@@ -258,7 +269,13 @@ export default function ResourcesPage() {
 
         <section id="channels" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📡</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" />
+              <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" />
+              <circle cx="12" cy="12" r="2" />
+              <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" />
+              <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Communication Channels</span>
           </h2>
 
@@ -302,7 +319,11 @@ export default function ResourcesPage() {
 
         <section id="market" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📊</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10" />
+              <line x1="12" y1="20" x2="12" y2="4" />
+              <line x1="6" y1="20" x2="6" y2="14" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Market Data & Audits</span>
           </h2>
 
@@ -334,7 +355,10 @@ export default function ResourcesPage() {
 
         <section id="contacts" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-250">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📧</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Contact Addresses</span>
           </h2>
 
@@ -344,9 +368,9 @@ export default function ResourcesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {[
-              { icon: '🤝', title: 'Partnerships', desc: 'Enterprise collaborations & business inquiries', email: 'enterprise@minima.global' },
-              { icon: 'ℹ️', title: 'General Inquiries', desc: 'General questions & public inquiries', email: 'info@minima.global' },
-              { icon: '🔧', title: 'Technical Support', desc: 'Protocol issues & developer assistance', email: 'querysupport@minima.global' }
+              { icon: <svg className="w-6 h-6 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" /><circle cx="9" cy="7" r="4" /><path d="M23 21v-2a4 4 0 0 0-3-3.87" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /></svg>, title: 'Partnerships', desc: 'Enterprise collaborations & business inquiries', email: 'enterprise@minima.global' },
+              { icon: <svg className="w-6 h-6 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="12" y1="16" x2="12" y2="12" /><line x1="12" y1="8" x2="12.01" y2="8" /></svg>, title: 'General Inquiries', desc: 'General questions & public inquiries', email: 'info@minima.global' },
+              { icon: <svg className="w-6 h-6 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" /></svg>, title: 'Technical Support', desc: 'Protocol issues & developer assistance', email: 'querysupport@minima.global' }
             ].map((contact, index) => (
               <ExternalLink
                 key={index}
@@ -381,7 +405,10 @@ export default function ResourcesPage() {
 
         <section id="resources" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">🔗</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Resources</span>
           </h2>
 
@@ -400,7 +427,16 @@ export default function ResourcesPage() {
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-white font-semibold flex items-center gap-2">🚀 Minima AG on Republic Europe</span>
+                  <span className="text-white font-semibold flex items-center gap-2">
+                    <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" />
+                      <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" />
+                      <circle cx="12" cy="12" r="2" />
+                      <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" />
+                      <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19" />
+                    </svg>
+                    Minima AG on Republic Europe
+                  </span>
                 </div>
                 <p className="text-gray-300 text-sm mb-3">Archived campaign page documenting the 2026 Republic Europe crowdfunding round.</p>
                 <div className="flex items-center gap-2 text-xs font-mono text-purple-400">
@@ -411,13 +447,13 @@ export default function ResourcesPage() {
             </ExternalLink>
 
             {[
-              { href: 'https://minima.global/', icon: '🌐', title: 'Official Website', url: 'minima.global' },
-              { href: 'https://github.com/minima-global', icon: '💻', title: 'Official GitHub', url: 'github.com/minima-global' },
-              { href: 'https://twitter.com/Minima_Global', icon: '🐦', title: 'Twitter / X', url: 'twitter.com/Minima_Global' },
-              { href: 'https://www.linkedin.com/company/minimaglobal', icon: '💼', title: 'LinkedIn', url: 'linkedin.com/company/minimaglobal' },
-              { href: 'https://www.youtube.com/channel/UCDe2j57uQrUVtVizFbDpsoQ', icon: '📺', title: 'YouTube', url: 'youtube.com/channel/UCDe2j57uQrUVtVizFbDpsoQ' },
-              { href: 'https://newsletter.minima.global/', icon: '📰', title: 'SubStack Newsletter', url: 'newsletter.minima.global' },
-              { href: 'https://merch.minima.global/', icon: '👚', title: 'Official Merch', url: 'merch.minima.global' },
+              { href: 'https://minima.global/', icon: <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10" /><line x1="2" y1="12" x2="22" y2="12" /><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" /></svg>, title: 'Official Website', url: 'minima.global' },
+              { href: 'https://github.com/minima-global', icon: <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="16 18 22 12 16 6" /><polyline points="8 6 2 12 8 18" /></svg>, title: 'Official GitHub', url: 'github.com/minima-global' },
+              { href: 'https://twitter.com/Minima_Global', icon: <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="currentColor" viewBox="0 0 24 24"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" /></svg>, title: 'Twitter / X', url: 'twitter.com/Minima_Global' },
+              { href: 'https://www.linkedin.com/company/minimaglobal', icon: <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2" ry="2" /><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" /></svg>, title: 'LinkedIn', url: 'linkedin.com/company/minimaglobal' },
+              { href: 'https://www.youtube.com/channel/UCDe2j57uQrUVtVizFbDpsoQ', icon: <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="15" rx="2" ry="2" /><polyline points="17 2 12 7 7 2" /></svg>, title: 'YouTube', url: 'youtube.com/channel/UCDe2j57uQrUVtVizFbDpsoQ' },
+              { href: 'https://newsletter.minima.global/', icon: <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2" /><path d="M18 14h-8" /><path d="M15 18h-5" /><path d="M10 6h8v4h-8V6Z" /></svg>, title: 'SubStack Newsletter', url: 'newsletter.minima.global' },
+              { href: 'https://merch.minima.global/', icon: <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M20.38 3.46 16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.47a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.47a2 2 0 0 0-1.34-2.23z" /></svg>, title: 'Official Merch', url: 'merch.minima.global' },
               { href: 'https://discord.com/invite/minima', icon: 'discord', title: 'Official Discord', url: 'discord.com/invite/minima' }
             ].map((resource, index) => (
               <ExternalLink
@@ -432,7 +468,7 @@ export default function ResourcesPage() {
                 <div className="relative flex items-start justify-between gap-3">
                   <div className="flex-1">
                     <span className="text-white font-medium block mb-1 flex items-center gap-2">
-                      {resource.icon === 'discord' ? <DiscordIcon /> : <span>{resource.icon}</span>}
+                      {resource.icon === 'discord' ? <DiscordIcon /> : resource.icon}
                       {resource.title}
                     </span>
                     <p className="text-gray-400 text-xs font-mono break-all">{resource.url}</p>
@@ -445,7 +481,11 @@ export default function ResourcesPage() {
 
         <section id="regional" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">🌍</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Regional Community Channels</span>
           </h2>
 
@@ -486,7 +526,11 @@ export default function ResourcesPage() {
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
             <strong className="flex items-center gap-2 mb-2">
-              <span className="text-lg">⚠️</span>
+              <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
               Disclaimer:
             </strong>
             This site does not represent the official Minima team.
