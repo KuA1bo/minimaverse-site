@@ -1,9 +1,8 @@
-
-
-
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
+import { getCanonicalMetadata } from '@/lib/seo';
 
+export const metadata = getCanonicalMetadata('/timeline');
 
 const ExternalLink = ({
   href,
@@ -34,7 +33,6 @@ const ExternalLink = ({
   </a>
 );
 
-
 const StatusBadge = ({ status, reducedGlow = false }: {
   status: 'confirmed' | 'in-development' | 'community', reducedGlow?: boolean
 }) => {
@@ -58,7 +56,6 @@ const StatusBadge = ({ status, reducedGlow = false }: {
   );
 };
 
-
 const structuredData = {
   "@context": "https://schema.org",
   "@type": "ItemList",
@@ -66,7 +63,7 @@ const structuredData = {
   "description": "Verified milestones, releases, and execution history of the Minima Protocol.",
   "url": "https://minimaverse.com/timeline",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Protocol conception and whitepaper v1.0", "datePublished": "2020" },
+    { "@type": "ListItem", "position": 1, "name": "Protocol design and whitepaper v1.0", "datePublished": "2020" },
     { "@type": "ListItem", "position": 2, "name": "First testnet and early node software", "datePublished": "2021" },
     { "@type": "ListItem", "position": 3, "name": "Mobile node prototype and Android APK alpha", "datePublished": "2022" },
     { "@type": "ListItem", "position": 4, "name": "Mainnet launch and official wallet release", "datePublished": "2023" },
@@ -79,16 +76,12 @@ const structuredData = {
 export default function TimelinePage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
-
-      {}
       <JsonLd data={structuredData} />
 
-      {}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
 
         <div className="relative flex justify-between items-start">
-          {}
           <div className="relative inline-block w-full pb-3">
             <Link
               href="/"
@@ -97,7 +90,6 @@ export default function TimelinePage() {
               <span className="group-hover:-translate-x-1 transition-transform duration-300 inline-block">←</span> Back to Minimaverse
             </Link>
 
-            {}
             <div className="flex flex-wrap items-center gap-1.5 mb-3 text-sm">
               <Link href="/about" className="text-gray-400 hover:text-purple-400 transition-colors">About</Link>
               <span className="text-gray-600">•</span>
@@ -106,21 +98,16 @@ export default function TimelinePage() {
               <Link href="/news" className="text-gray-400 hover:text-purple-400 transition-colors">News</Link>
             </div>
 
-            {}
             <h1 className="text-3xl font-bold text-white mb-2">
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
                 Minima Protocol Timeline
               </span>
             </h1>
-            {}
             <p className="text-gray-400">Verified milestones, releases, and execution history of the Minima Protocol.</p>
-            {}
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
 
-          {}
           <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
-            {}
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
@@ -138,7 +125,6 @@ export default function TimelinePage() {
         </div>
       </header>
 
-      {}
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6 mb-8
                       transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15
                       opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
@@ -184,7 +170,6 @@ export default function TimelinePage() {
             </li>
           </ul>
 
-          {}
           <div className="mt-4 pt-4 border-t border-gray-700/40 text-xs text-gray-500">
             <div className="flex flex-col gap-1.5 sm:flex-row sm:items-center sm:gap-3">
               <span className="block sm:inline">Status indicators:</span>
@@ -196,10 +181,8 @@ export default function TimelinePage() {
         </div>
       </div>
 
-      {}
       <article className="prose prose-invert max-w-none">
 
-        {}
         <section id="intro" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📋</span>
@@ -215,12 +198,11 @@ export default function TimelinePage() {
             <p className="text-gray-300 leading-relaxed relative">
               This timeline documents completed and publicly verifiable milestones in the development
               and deployment of the Minima Protocol. It intentionally excludes speculative roadmaps
-              or future promises, reflecting Minima's commitment to evidence-based progress reporting.
+              or future announcements.
             </p>
           </div>
         </section>
 
-        {}
         <section id="philosophy" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🧭</span>
@@ -239,12 +221,9 @@ export default function TimelinePage() {
               dated roadmaps.
             </p>
             <p className="text-gray-300 text-sm relative">
-              This timeline documents only events that have occurred and can be independently
-              verified, reflecting Minima's commitment to evidence-based progress reporting
-              and long-term infrastructure building.
+              Only completed and independently verifiable events are included.
             </p>
 
-            {}
             <div className="mt-3 pt-3 border-t border-gray-700/40">
               <p className="text-gray-500 text-xs flex flex-col sm:flex-row sm:items-center gap-2 relative">
                 <span className="flex items-center gap-1">
@@ -265,7 +244,6 @@ export default function TimelinePage() {
           </div>
         </section>
 
-        {}
         <section id="timeline" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-6 flex items-center gap-3">
             <span className="text-2xl">📅</span>
@@ -320,22 +298,19 @@ export default function TimelinePage() {
               },
               {
                 date: '2020',
-                title: 'Protocol Conception',
+                title: 'Whitepaper Publication',
                 desc: 'Minima whitepaper v1.0 published. Core architecture designed for mobile-first, lightweight full nodes.',
                 link: { href: 'https://docs.minima.global/minima_pdfs/Minima_Whitepaper_v11.pdf', text: 'Whitepaper v1.1 (PDF)' },
                 status: 'confirmed' as const
               },
             ].map((item, index) => (
               <div key={index} className="relative mb-8 last:mb-0">
-                {}
                 <span className="absolute -left-[31px] top-1 w-4 h-4 rounded-full bg-purple-500 border-4 border-gray-900" />
 
-                {}
                 <span className="inline-block px-2.5 py-1 bg-gray-800/60 border border-gray-700/40 rounded text-xs text-gray-400 mb-2">
                   {item.date}
                 </span>
 
-                {}
                 <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-5
                                 transition-all duration-300 hover:border-purple-500/50 hover:shadow-xl hover:shadow-purple-500/10 group overflow-hidden">
                   <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -344,7 +319,6 @@ export default function TimelinePage() {
                     <h3 className="text-white font-medium mb-2">{item.title}</h3>
                     <p className="text-gray-300 text-sm mb-3">{item.desc}</p>
 
-                    {}
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                       <StatusBadge status={item.status} reducedGlow={true} />
                       <ExternalLink
@@ -366,12 +340,11 @@ export default function TimelinePage() {
           </p>
         </section>
 
-        {}
         <section id="entry-types" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📝</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
-              Example Entry Types
+              Included Milestone Types
             </span>
           </h2>
 
@@ -414,7 +387,6 @@ export default function TimelinePage() {
           </div>
         </section>
 
-        {}
         <section id="communications" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📢</span>
@@ -441,13 +413,14 @@ export default function TimelinePage() {
               <li>Emphasizing evidence of execution over speculative narratives</li>
               <li>Focusing on long-term investors and builders aligned with infrastructure durability</li>
             </ul>
-            <blockquote className="text-gray-400 text-sm italic border-l-2 border-gray-600 pl-3 mb-3 relative">
-              "Blockchain is not the product. Decentralisation is not the marketing. Speculation is not the strategy."
+            <blockquote className="text-gray-400 text-sm italic border-l-2 border-gray-600 pl-4 mb-3 relative leading-relaxed">
+              "Blockchain is not the product.<br />
+              Decentralisation is not the marketing.<br />
+              Speculation is not the strategy."
             </blockquote>
           </div>
         </section>
 
-        {}
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10
                         opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
@@ -465,11 +438,10 @@ export default function TimelinePage() {
           </p>
         </div>
 
-        {}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: May 20, 2026
+            Last updated: July 22, 2026
           </p>
         </section>
 
@@ -477,6 +449,3 @@ export default function TimelinePage() {
     </div>
   );
 }
-
-import { getCanonicalMetadata } from '@/lib/seo';
-export const metadata = getCanonicalMetadata('/timeline');
