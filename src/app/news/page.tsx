@@ -1,6 +1,9 @@
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
 import { newsArticles } from '@/data/news';
+import { getCanonicalMetadata } from '@/lib/seo';
+
+export const metadata = getCanonicalMetadata('/news');
 
 const ExternalLink = ({
   href,
@@ -109,8 +112,7 @@ export default function NewsPage() {
             <p className="text-gray-400 text-sm sm:text-base">Announcements, infrastructure updates, and ecosystem developments</p>
 
             <p className="text-gray-400 text-sm sm:text-base mt-2 leading-relaxed">
-              Independent archive of Minima Protocol announcements, infrastructure updates,
-              ecosystem developments, and public milestones.
+              Independent archive of publicly verifiable Minima Protocol milestones, technical updates, and official communications.
             </p>
 
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
@@ -204,9 +206,7 @@ export default function NewsPage() {
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
             <p className="text-gray-300 leading-relaxed relative">
-              This page serves as an independent, curated archive of Minima Protocol announcements,
-              ecosystem developments, and infrastructure milestones. All entries link to publicly
-              verifiable sources and are presented in a neutral format for informational purposes.
+              This page documents publicly verifiable Minima announcements, ecosystem developments, and technical milestones. All entries link to official sources and are presented in a neutral format for informational purposes.
             </p>
           </div>
         </section>
@@ -366,13 +366,10 @@ export default function NewsPage() {
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
             <p className="text-gray-300 text-sm leading-relaxed relative">
-              This page serves as a curated archive of significant Minima Protocol announcements
-              and development milestones. For real-time updates, please refer to the official
-              communication channels listed above.
+              This section documents significant public announcements and technical milestones. For the latest updates, refer to the official communication channels above.
             </p>
             <p className="text-gray-400 text-xs mt-4 relative">
-              <strong>Note:</strong> This page is maintained independently and is not an official
-              Minima Global publication.
+              <strong>Note:</strong> This page is maintained independently and is not an official Minima Global publication.
             </p>
           </div>
         </section>
@@ -397,7 +394,7 @@ export default function NewsPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: July 8, 2026
+            Last updated: July 22, 2026
           </p>
         </section>
 
@@ -405,6 +402,3 @@ export default function NewsPage() {
     </div>
   );
 }
-
-import { getCanonicalMetadata } from '@/lib/seo';
-export const metadata = getCanonicalMetadata('/news');
