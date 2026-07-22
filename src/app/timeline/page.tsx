@@ -335,8 +335,8 @@ export default function TimelinePage() {
           </div>
 
           <p className="text-gray-500 text-xs mt-6 italic">
-            Note: This timeline is maintained as a neutral, community-driven record.
-            All entries link to publicly verifiable sources. Contributions welcome via GitHub.
+            Note: This timeline is maintained as a neutral record.
+            All entries link to publicly verifiable sources. Additional verified milestones may be added as new public sources become available.
           </p>
         </section>
 
