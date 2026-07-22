@@ -161,13 +161,13 @@ export default function OpenQuestionsPage() {
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink
-                href="https://docs.minima.global"
+                href="https://minima.global/blog"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
               >
-                docs.minima.global
+                minima.global/blog
               </ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
-              <span className="text-gray-500 text-xs md:text-sm">Documentation</span>
+              <span className="text-gray-500 text-xs md:text-sm">Official Blog</span>
             </li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
@@ -183,13 +183,13 @@ export default function OpenQuestionsPage() {
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
               <span className="hidden md:inline text-gray-400">•</span>
               <ExternalLink
-                href="https://minima.global/blog"
+                href="https://docs.minima.global"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 break-all text-xs md:text-sm"
               >
-                minima.global/blog
+                docs.minima.global
               </ExternalLink>
               <span className="hidden md:inline text-gray-500">—</span>
-              <span className="text-gray-500 text-xs md:text-sm">Official Blog</span>
+              <span className="text-gray-500 text-xs md:text-sm">Documentation</span>
             </li>
           </ul>
         </div>
