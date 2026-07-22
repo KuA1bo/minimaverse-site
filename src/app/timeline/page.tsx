@@ -335,8 +335,7 @@ export default function TimelinePage() {
           </div>
 
           <p className="text-gray-500 text-xs mt-6 italic">
-            Note: This timeline is maintained as a neutral record.
-            All entries link to publicly verifiable sources. Additional verified milestones may be added as new public sources become available.
+            Note: This timeline is maintained as a neutral record. All entries link to publicly verifiable sources.
           </p>
         </section>
 
@@ -380,10 +379,6 @@ export default function TimelinePage() {
                 </li>
               ))}
             </ul>
-            <p className="text-gray-500 text-xs mt-4 italic relative">
-              Note: This timeline will be expanded with additional verified historical milestones
-              as they are documented and sourced.
-            </p>
           </div>
         </section>
 
