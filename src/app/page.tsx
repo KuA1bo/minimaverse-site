@@ -221,7 +221,12 @@ export default function HomePage() {
       <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 mb-8 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/0 via-blue-500/0 to-cyan-500/0 group-hover:from-purple-500/5 group-hover:via-blue-500/5 group-hover:to-cyan-500/5 transition-all duration-500 rounded-2xl" />
         <div className="relative">
-          <h3 className="text-white font-semibold mb-3 sm:mb-4 text-lg flex items-center gap-2"><span className="text-2xl">📚</span> Primary Sources</h3>
+          <h3 className="text-white font-semibold mb-3 sm:mb-4 text-lg flex items-center gap-2">
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5V4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z" />
+            </svg>
+            Primary Sources
+          </h3>
           <ul className="space-y-2 sm:space-y-3 text-sm">
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2"><span className="text-gray-400 hidden md:inline">•</span><ExternalLink href="https://minima.global" className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium break-all min-w-0">minima.global</ExternalLink><span className="text-gray-500 hidden md:inline">—</span><span className="text-gray-500 text-xs md:text-sm">Official Website</span></li>
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2"><span className="text-gray-400 hidden md:inline">•</span><ExternalLink href="https://docs.minima.global" className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 font-medium break-all min-w-0">docs.minima.global</ExternalLink><span className="text-gray-500 hidden md:inline">—</span><span className="text-gray-500 text-xs md:text-sm">Documentation</span></li>
@@ -232,7 +237,13 @@ export default function HomePage() {
 
       <article className="prose prose-invert max-w-none">
         <section id="about-site" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3"><span className="text-2xl sm:text-3xl">📋</span><span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Site</span></h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2" />
+              <rect x="8" y="2" width="8" height="4" rx="1" ry="1" />
+            </svg>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Site</span>
+          </h2>
           <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
             <p className="text-gray-300 text-sm mb-3 leading-relaxed"><strong className="text-white">Minimaverse</strong> is an independent documentation hub dedicated to the Minima Protocol. This site provides verified technical information, documentation links, and ecosystem resources for developers, researchers, and institutional observers.</p>
@@ -247,17 +258,39 @@ export default function HomePage() {
         </section>
 
         <section id="principles" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3"><span className="text-2xl sm:text-3xl">✅</span><span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Project Principles</span></h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
+            <svg className="w-6 h-6 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+              <polyline points="22 4 12 14.01 9 11.01" />
+            </svg>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Project Principles</span>
+          </h2>
           <div className="space-y-4">
             {[
-              { icon: '✓', title: 'Verified Facts Only', text: 'All information is sourced from official documentation, whitepapers, or publicly verified announcements. No speculation, price predictions, or unconfirmed rumors.' },
-              { icon: '✓', title: 'Transparent Sourcing', text: 'Every fact includes a link to its primary source. One fact = one verified source.' },
-              { icon: '✓', title: 'Clear Status Indicators', text: 'All features and projects are marked with clear status labels: confirmed, in development, or experimental.' },
-              { icon: '✓', title: 'Neutral Tone', text: 'No marketing language, hype, or subjective evaluations. Just facts.' },
+              { 
+                icon: <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>, 
+                title: 'Verified Facts Only', 
+                text: 'All information is sourced from official documentation, whitepapers, or publicly verified announcements. No speculation, price predictions, or unconfirmed rumors.' 
+              },
+              { 
+                icon: <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>, 
+                title: 'Transparent Sourcing', 
+                text: 'Every fact includes a link to its primary source. One fact = one verified source.' 
+              },
+              { 
+                icon: <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>, 
+                title: 'Clear Status Indicators', 
+                text: 'All features and projects are marked with clear status labels: confirmed, in development, or experimental.' 
+              },
+              { 
+                icon: <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12" /></svg>, 
+                title: 'Neutral Tone', 
+                text: 'No marketing language, hype, or subjective evaluations. Just facts.' 
+              },
             ].map((principle, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                 <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
-                <h3 className="text-white font-semibold mb-2 flex items-center gap-2"><span className="text-purple-400 text-lg">{principle.icon}</span>{principle.title}</h3>
+                <h3 className="text-white font-semibold mb-2 flex items-center gap-2">{principle.icon}{principle.title}</h3>
                 <p className="text-gray-300 text-sm leading-relaxed pl-1">{principle.text}</p>
               </div>
             ))}
@@ -265,15 +298,29 @@ export default function HomePage() {
         </section>
 
         <section id="quick-links" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
-          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3"><span className="text-2xl sm:text-3xl">🔗</span><span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Quick Links</span></h2>
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 flex items-center gap-3">
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+              <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+            </svg>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Quick Links</span>
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             {[
-              { title: 'Protocol Information', icon: '📖', links: [{ href: '/resources', text: 'Resources' }, { href: '/ecosystem', text: 'Ecosystem' }, { href: '/about', text: 'What is Minima' }, { href: '/open-questions', text: 'Open Questions' }, { href: '/timeline', text: 'Verified Milestones (Timeline)' }] },
-              { title: 'For Developers', icon: '⚙️', links: [{ href: '/nodes', text: 'Run a Node' }, { href: '/tools', text: 'Tools & Utilities' }, { href: '/submit-project', text: 'Project Submission' }, { href: '/developers', text: 'Developer Resources' }] },
+              { 
+                title: 'Protocol Information', 
+                icon: <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" /><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" /></svg>, 
+                links: [{ href: '/resources', text: 'Resources' }, { href: '/ecosystem', text: 'Ecosystem' }, { href: '/about', text: 'What is Minima' }, { href: '/open-questions', text: 'Open Questions' }, { href: '/timeline', text: 'Verified Milestones (Timeline)' }] 
+              },
+              { 
+                title: 'For Developers', 
+                icon: <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3" /><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" /></svg>, 
+                links: [{ href: '/nodes', text: 'Run a Node' }, { href: '/tools', text: 'Tools & Utilities' }, { href: '/submit-project', text: 'Project Submission' }, { href: '/developers', text: 'Developer Resources' }] 
+              },
             ].map((section, index) => (
               <div key={index} className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4 sm:p-6 transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden hover:-translate-y-1">
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                <h3 className="text-white font-semibold mb-3 sm:mb-4 flex items-center gap-2 relative"><span className="text-2xl">{section.icon}</span>{section.title}</h3>
+                <h3 className="text-white font-semibold mb-3 sm:mb-4 flex items-center gap-2 relative">{section.icon}{section.title}</h3>
                 <ul className="space-y-3 relative">
                   {section.links.map((link, linkIndex) => (
                     <li key={linkIndex}><Link href={link.href} className="group/link flex items-center gap-2 text-blue-400 hover:text-purple-400 transition-all duration-300 text-sm"><span className="transform group-hover/link:translate-x-2 transition-transform duration-300">→</span><span className="underline decoration-blue-500/30 group-hover/link:decoration-purple-500/60 underline-offset-4">{link.text}</span></Link></li>
@@ -287,7 +334,14 @@ export default function HomePage() {
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-4 sm:p-6 mb-8 transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10 opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
-            <strong className="flex items-center gap-2 mb-2"><span className="text-lg">⚠️</span>Disclaimer:</strong>
+            <strong className="flex items-center gap-2 mb-2">
+              <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
+              Disclaimer:
+            </strong>
             This site does not represent the official Minima team. All information is compiled from publicly available sources.{' '}
             <Link href="/disclaimer" aria-label="Read full disclaimer" className="underline hover:text-amber-100 decoration-amber-500/50 hover:decoration-amber-400 underline-offset-4 transition-all duration-300">Learn more</Link>
           </p>
