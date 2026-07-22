@@ -135,7 +135,10 @@ export default function ProtocolPage() {
 
         <div className="relative">
           <h3 className="text-white font-semibold mb-4 text-lg flex items-center gap-2">
-            <span className="text-2xl">📚</span> Primary Sources
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5V4.5A2.5 2.5 0 0 1 6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5z" />
+            </svg>
+            Primary Sources
           </h3>
           <ul className="space-y-3 text-sm">
             <li className="flex flex-col md:flex-row md:items-center gap-1 md:gap-2">
@@ -187,7 +190,10 @@ export default function ProtocolPage() {
       <article className="prose prose-invert max-w-none">
         <section id="about" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📋</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+              <polyline points="14 2 14 8 20 8" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
               About This Page
             </span>
@@ -208,7 +214,11 @@ export default function ProtocolPage() {
 
         <section id="edge-consensus" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">🌐</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="2" y1="12" x2="22" y2="12" />
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Edge Consensus Architecture</span>
           </h2>
 
@@ -243,7 +253,11 @@ export default function ProtocolPage() {
 
         <section id="tx-pow" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">⛏️</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M15 12l-8.5 8.5c-.83.83-2.17.83-3 0 0 0 0 0 0 0a2.12 2.12 0 0 1 0-3L12 9" />
+              <path d="M17.64 15L22 10.64" />
+              <path d="M20.91 11.7l-1.25-1.25c-.6-.6-.93-1.4-.93-2.25V7.86c0-.55-.45-1-1-1H16.14c-.85 0-1.65-.33-2.25-.93L12.64 4.64" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Tx-PoW: Collaborative Proof of Work</span>
           </h2>
 
@@ -278,7 +292,11 @@ export default function ProtocolPage() {
 
         <section id="data-structures" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">🗄️</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z" />
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96" />
+              <line x1="12" y1="22.08" x2="12" y2="12" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Efficient Data Structures</span>
           </h2>
 
@@ -321,7 +339,11 @@ export default function ProtocolPage() {
 
         <section id="layers" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">🧱</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M2 20h20" />
+              <path d="M5 20v-8l7-5 7 5v8" />
+              <path d="M12 12v8" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Protocol Layers</span>
           </h2>
 
@@ -365,7 +387,10 @@ export default function ProtocolPage() {
 
         <section id="specs" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">⚙️</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Technical Specifications</span>
           </h2>
 
@@ -402,7 +427,12 @@ export default function ProtocolPage() {
 
         <section id="participation" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">👥</span>
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+              <circle cx="9" cy="7" r="4" />
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Network Participation Requirements</span>
           </h2>
 
@@ -431,7 +461,11 @@ export default function ProtocolPage() {
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
             <strong className="flex items-center gap-2 mb-2">
-              <span className="text-lg">⚠️</span>
+              <svg className="w-5 h-5 text-amber-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+                <line x1="12" y1="9" x2="12" y2="13" />
+                <line x1="12" y1="17" x2="12.01" y2="17" />
+              </svg>
               Disclaimer:
             </strong>
             This site does not represent the official Minima team.
