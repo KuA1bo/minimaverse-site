@@ -1,5 +1,8 @@
 import Link from 'next/link';
 import JsonLd from '@/components/JsonLd';
+import { getCanonicalMetadata } from '@/lib/seo';
+
+export const metadata = getCanonicalMetadata('/resources');
 
 const ExternalLink = ({
   href,
@@ -71,7 +74,7 @@ const structuredData = {
   "@type": "CollectionPage",
   "name": "Minima Protocol Resources & Channels",
   "description": "Verified channels, documentation, market data, and community resources for Minima Protocol.",
-  "url": "https://minimaverse.com/links",
+  "url": "https://minimaverse.com/resources",
   "isPartOf": {
     "@type": "WebSite",
     "name": "Minimaverse",
@@ -84,7 +87,7 @@ const structuredData = {
   }
 };
 
-export default function LinksPage() {
+export default function ResourcesPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
       <JsonLd data={structuredData} />
@@ -193,7 +196,23 @@ export default function LinksPage() {
       </div>
 
       <article className="prose prose-invert max-w-none">
-        <section id="feedback" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section id="about" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">📋</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">About This Page</span>
+          </h2>
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
+                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+
+            <p className="text-gray-300 leading-relaxed relative">
+              This page provides verified links to official Minima resources, communication channels, community platforms, and external reference services.
+            </p>
+          </div>
+        </section>
+
+        <section id="feedback" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-100">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">💬</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Project Feedback</span>
@@ -216,6 +235,24 @@ export default function LinksPage() {
               </svg>
               Open an Issue on GitHub
             </ExternalLink>
+          </div>
+        </section>
+
+        <section id="response-time" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-125">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <span className="text-2xl">⏱️</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Response Time</span>
+          </h2>
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
+                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+
+            <p className="text-gray-300 leading-relaxed relative">
+              GitHub issues for this documentation project are typically reviewed within 7 days.
+              For urgent matters related to Minima Protocol itself, please use the communication
+              channels listed below.
+            </p>
           </div>
         </section>
 
@@ -295,10 +332,10 @@ export default function LinksPage() {
           </div>
         </section>
 
-        <section id="contacts" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
+        <section id="contacts" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-250">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">📧</span>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Email Contacts</span>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Contact Addresses</span>
           </h2>
 
           <p className="text-gray-300 leading-relaxed mb-4">
@@ -342,7 +379,7 @@ export default function LinksPage() {
           </p>
         </section>
 
-        <section id="resources" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
+        <section id="resources" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🔗</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Resources</span>
@@ -364,7 +401,7 @@ export default function LinksPage() {
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-white font-semibold flex items-center gap-2">🚀 Minima AG on Republic Europe</span>
                 </div>
-                <p className="text-gray-300 text-sm mb-3">Current crowdfunding page for Minima AG on Republic Europe platform.</p>
+                <p className="text-gray-300 text-sm mb-3">Archived campaign page documenting the 2026 Republic Europe crowdfunding round.</p>
                 <div className="flex items-center gap-2 text-xs font-mono text-purple-400">
                   europe.republic.com/minima <span className="opacity-50">→</span>
                 </div>
@@ -380,7 +417,7 @@ export default function LinksPage() {
               { href: 'https://www.youtube.com/channel/UCDe2j57uQrUVtVizFbDpsoQ', icon: '📺', title: 'YouTube', url: 'youtube.com/channel/UCDe2j57uQrUVtVizFbDpsoQ' },
               { href: 'https://newsletter.minima.global/', icon: '📰', title: 'SubStack Newsletter', url: 'newsletter.minima.global' },
               { href: 'https://merch.minima.global/', icon: '👚', title: 'Official Merch', url: 'merch.minima.global' },
-              { href: 'https://discord.com/invite/minima', icon: 'discord', title: 'Discord', url: 'discord.com/invite/minima' }
+              { href: 'https://discord.com/invite/minima', icon: 'discord', title: 'Official Discord', url: 'discord.com/invite/minima' }
             ].map((resource, index) => (
               <ExternalLink
                 key={index}
@@ -404,7 +441,7 @@ export default function LinksPage() {
           </div>
         </section>
 
-        <section id="regional" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-150">
+        <section id="regional" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <span className="text-2xl">🌍</span>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Regional Community Channels</span>
@@ -441,27 +478,9 @@ export default function LinksPage() {
           </p>
         </section>
 
-        <section id="response-time" className="scroll-mt-20 mb-8 opacity-0 animate-fade-in-up delay-200">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">⏱️</span>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Response Time</span>
-          </h2>
-
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-
-            <p className="text-gray-300 leading-relaxed relative">
-              GitHub issues for this documentation project are typically reviewed within 7 days.
-              For urgent matters related to Minima Protocol itself, please use Discord or Telegram
-              channels listed above.
-            </p>
-          </div>
-        </section>
-
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10
-                        opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
+                        opacity-0 animate-fade-in-up delay-150 group overflow-hidden">
           <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-amber-500 to-orange-500" />
           <p className="text-amber-200 text-sm leading-relaxed">
             <strong className="flex items-center gap-2 mb-2">
@@ -479,7 +498,7 @@ export default function LinksPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: July 9, 2026
+            Last updated: July 22, 2026
           </p>
         </section>
 
@@ -487,6 +506,3 @@ export default function LinksPage() {
     </div>
   );
 }
-
-import { getCanonicalMetadata } from '@/lib/seo';
-export const metadata = getCanonicalMetadata('/resources');
