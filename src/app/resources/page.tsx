@@ -339,13 +339,13 @@ export default function ResourcesPage() {
           </h2>
 
           <p className="text-gray-300 leading-relaxed mb-4">
-            For formal inquiries, partnerships, or technical support, contact Minima directly:
+            Official Minima Global contact addresses for business, general, and technical inquiries.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
             {[
               { icon: '🤝', title: 'Partnerships', desc: 'Enterprise collaborations & business inquiries', email: 'enterprise@minima.global' },
-              { icon: 'ℹ️', title: 'General Info', desc: 'General questions & public inquiries', email: 'info@minima.global' },
+              { icon: 'ℹ️', title: 'General Inquiries', desc: 'General questions & public inquiries', email: 'info@minima.global' },
               { icon: '🔧', title: 'Technical Support', desc: 'Protocol issues & developer assistance', email: 'querysupport@minima.global' }
             ].map((contact, index) => (
               <ExternalLink
@@ -386,7 +386,7 @@ export default function ResourcesPage() {
           </h2>
 
           <p className="text-gray-300 leading-relaxed mb-4">
-            Verified links to official Minima Global platforms:
+            Verified links to official Minima Global services and platforms.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
@@ -395,6 +395,7 @@ export default function ResourcesPage() {
               className="md:col-span-2 relative bg-gradient-to-r from-purple-900/20 to-blue-900/20 border-2 border-purple-500/40 rounded-2xl p-4
                         hover:border-purple-400/60 hover:shadow-lg hover:shadow-purple-500/15
                         transition-all duration-300 block group overflow-hidden"
+              hideArrow={true}
             >
               <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative">
@@ -425,6 +426,7 @@ export default function ResourcesPage() {
                 className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-4
                           hover:border-purple-500/50 hover:shadow-lg hover:shadow-purple-500/15
                           transition-all duration-300 block group overflow-hidden"
+                hideArrow={true}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <div className="relative flex items-start justify-between gap-3">
@@ -448,8 +450,8 @@ export default function ResourcesPage() {
           </h2>
 
           <p className="text-gray-300 leading-relaxed mb-4">
-            Telegram communities for non-English speakers.
-            These channels are community-maintained and not officially moderated by Minima Global:
+            Community-maintained Telegram groups for regional language communities.
+            These channels are not officially moderated by Minima Global.
           </p>
 
           <ul className="space-y-2">
