@@ -309,17 +309,6 @@ export default function OpenQuestionsPage() {
               <li className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
                 <span className="text-gray-400 hidden sm:inline">•</span>
                 <ExternalLink
-                  href="https://docs.minima.global"
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-                >
-                  docs.minima.global
-                </ExternalLink>
-                <span className="text-gray-500 text-xs md:text-sm hidden md:inline">—</span>
-                <span className="text-gray-500 text-xs md:text-sm">Official Documentation</span>
-              </li>
-              <li className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
-                <span className="text-gray-400 hidden sm:inline">•</span>
-                <ExternalLink
                   href="https://t.me/MinimaGlobal"
                   className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
                 >
@@ -327,17 +316,6 @@ export default function OpenQuestionsPage() {
                 </ExternalLink>
                 <span className="text-gray-500 text-xs md:text-sm hidden md:inline">—</span>
                 <span className="text-gray-500 text-xs md:text-sm">Telegram Announcements</span>
-              </li>
-              <li className="flex flex-col gap-1 md:flex-row md:items-center md:gap-2">
-                <span className="text-gray-400 hidden sm:inline">•</span>
-                <ExternalLink
-                  href="https://minima.global/blog"
-                  className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300"
-                >
-                  minima.global/blog
-                </ExternalLink>
-                <span className="text-gray-500 text-xs md:text-sm hidden md:inline">—</span>
-                <span className="text-gray-500 text-xs md:text-sm">Minima Blog (Announcements)</span>
               </li>
             </ul>
           </div>
