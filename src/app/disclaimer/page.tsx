@@ -1,8 +1,7 @@
-
-
-
 import Link from 'next/link';
+import { getCanonicalMetadata } from '@/lib/seo';
 
+export const metadata = getCanonicalMetadata('/disclaimer');
 
 const ExternalLink = ({
   href,
@@ -33,39 +32,13 @@ const ExternalLink = ({
   </a>
 );
 
-
-const StatusBadge = ({ status, reducedGlow = false }: { status: 'confirmed' | 'in-development' | 'community', reducedGlow?: boolean }) => {
-  const config = {
-    'confirmed': { bg: 'bg-green-900/40', text: 'text-green-300', border: 'border-green-700/50', dot: 'bg-green-500', glow: reducedGlow ? 'shadow-green-500/25' : 'shadow-green-500/50' },
-    'in-development': { bg: 'bg-yellow-900/40', text: 'text-yellow-300', border: 'border-yellow-700/50', dot: 'bg-yellow-500', glow: reducedGlow ? 'shadow-yellow-500/25' : 'shadow-yellow-500/50' },
-    'community': { bg: 'bg-gray-700/40', text: 'text-gray-300', border: 'border-gray-600/50', dot: 'bg-gray-400', glow: reducedGlow ? 'shadow-gray-400/25' : 'shadow-gray-400/50' },
-  };
-  const style = config[status];
-
-  return (
-    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ${style.bg} ${style.text} text-xs font-medium border ${style.border} shadow-lg ${style.glow} transition-all duration-300 hover:scale-105`}>
-      <span className="relative flex h-2 w-2">
-        {status === 'in-development' && (
-          <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-yellow-400 opacity-75" />
-        )}
-        <span className={`relative inline-flex rounded-full h-2 w-2 ${style.dot} animate-pulse`} />
-      </span>
-      {status === 'confirmed' ? 'confirmed' : status === 'in-development' ? 'in-development' : 'community-maintained'}
-    </span>
-  );
-};
-
 export default function DisclaimerPage() {
   return (
     <div className="max-w-4xl mx-auto relative px-4 sm:px-0">
-
-
-      {}
       <header className="mb-8 opacity-0 animate-fade-in-up delay-75 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-blue-500/10 to-cyan-500/10 rounded-2xl opacity-0 hover:opacity-100 transition-opacity duration-500" />
 
         <div className="relative flex justify-between items-start">
-          {}
           <div className="relative inline-block w-full pb-3">
             <Link
               href="/"
@@ -82,13 +55,12 @@ export default function DisclaimerPage() {
             <span className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-blue-500/60 via-cyan-400/40 to-transparent" />
           </div>
 
-          {}
           <div className="hidden sm:flex items-center justify-end relative -translate-x-10 mt-12 flex-shrink-0">
             <div className="absolute inset-0 flex items-center justify-center">
               <div className="w-8 h-8 bg-purple-500/80 rounded-full blur-lg" />
             </div>
             <ExternalLink
-              href="https://github.com/KuA1bo/minimaverse-site  "
+              href="https://github.com/KuA1bo/minimaverse-site"
               className="relative text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 hover:rotate-6 z-10"
               ariaLabel="View source on GitHub"
               hideArrow={true}
@@ -101,13 +73,13 @@ export default function DisclaimerPage() {
         </div>
       </header>
 
-      {}
       <article className="prose prose-invert max-w-none">
 
-        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📄</span>
+            <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Project Status</span>
           </h2>
 
@@ -123,10 +95,11 @@ export default function DisclaimerPage() {
           </div>
         </section>
 
-        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">🔗</span>
+            <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Official Resources</span>
           </h2>
 
@@ -176,10 +149,11 @@ export default function DisclaimerPage() {
           </div>
         </section>
 
-        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">✅</span>
+            <svg className="w-5 h-5 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Information Accuracy</span>
           </h2>
 
@@ -188,18 +162,18 @@ export default function DisclaimerPage() {
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-purple-500 via-blue-500 to-cyan-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
 
             <p className="text-gray-300 leading-relaxed relative">
-              All information presented on this website is sourced from publicly available
-              official Minima Global communications. Every factual claim is accompanied
-              by a direct link to its primary source. Content is maintained in a neutral,
-              factual tone without marketing language or speculation.
+              Content is based on publicly available primary sources. It is maintained in a neutral,
+              factual tone without marketing language or speculation, and references are provided 
+              wherever applicable to support the information presented.
             </p>
           </div>
         </section>
 
-        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">⚠️</span>
+            <svg className="w-5 h-5 text-yellow-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">No Financial Advice</span>
           </h2>
 
@@ -216,10 +190,11 @@ export default function DisclaimerPage() {
           </div>
         </section>
 
-        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-75">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">📜</span>
+            <svg className="w-5 h-5 text-purple-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
               License
             </span>
@@ -237,16 +212,16 @@ export default function DisclaimerPage() {
               >
                 MIT License
               </ExternalLink>.
-              You are free to use, modify, and distribute this content for non-commercial purposes,
-              provided you give appropriate credit and include this license notice.
+              You are free to use, modify, and distribute this content, provided the copyright notice and this license notice are included.
             </p>
           </div>
         </section>
 
-        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-150">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">™️</span>
+            <svg className="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
               Trademarks
             </span>
@@ -266,10 +241,11 @@ export default function DisclaimerPage() {
           </div>
         </section>
 
-        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-200">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">🔒</span>
+            <svg className="w-5 h-5 text-blue-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">
               Privacy & Data
             </span>
@@ -280,21 +256,24 @@ export default function DisclaimerPage() {
             <div className="absolute top-0 left-0 w-px h-full bg-gradient-to-b from-purple-500 to-blue-500 transform scale-y-0 group-hover:scale-y-100 transition-transform duration-300 origin-top" />
 
             <p className="text-gray-300 leading-relaxed relative">
-              This website does not collect, store, or process any personal data.
+              Minimaverse does not intentionally collect, store, or process personal data.
               We do not use cookies, analytics, or tracking scripts.
               Your visit to this site is completely private and anonymous.
             </p>
             <p className="text-gray-300 leading-relaxed mt-4 relative">
-              The site is hosted on Vercel, which may collect standard server logs
-              (IP address, browser type, access times) for operational purposes only.
+              Please note that the site is hosted on Vercel, which may collect standard server logs
+              (IP address, browser type, access times) for operational and security purposes only, 
+              in accordance with their standard privacy policy.
             </p>
           </div>
         </section>
 
-        {}
         <section className="mb-10 opacity-0 animate-fade-in-up delay-300">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <span className="text-2xl">🛠️</span>
+            <svg className="w-5 h-5 text-gray-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
             <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Project Maintenance</span>
           </h2>
 
@@ -320,7 +299,6 @@ export default function DisclaimerPage() {
           </div>
         </section>
 
-        {}
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10
                         opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
@@ -331,16 +309,14 @@ export default function DisclaimerPage() {
               Disclaimer:
             </strong>
             This site does not represent the official Minima team.
-            All information is compiled from publicly available sources.{' '}
-            <span className="text-amber-300">You are currently viewing the full disclaimer page.</span>
+            All information is compiled from publicly available sources.
           </p>
         </div>
 
-        {}
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: June 4, 2026
+            Last updated: July 22, 2026
           </p>
         </section>
 
@@ -348,6 +324,3 @@ export default function DisclaimerPage() {
     </div>
   );
 }
-
-import { getCanonicalMetadata } from '@/lib/seo';
-export const metadata = getCanonicalMetadata('/disclaimer');
