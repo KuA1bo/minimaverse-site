@@ -207,6 +207,26 @@ export default function PartnersPage() {
           </div>
         </section>
 
+        <section id="partnership-status" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-250">
+          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
+            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10" />
+              <line x1="12" y1="16" x2="12" y2="12" />
+              <line x1="12" y1="8" x2="12.01" y2="8" />
+            </svg>
+            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Partnership Status</span>
+          </h2>
+
+          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
+                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
+            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
+            <p className="text-gray-300 text-sm leading-relaxed relative">
+              Partnership announcements indicate publicly disclosed collaborations. They do not necessarily imply completed commercial deployment or production integration.
+            </p>
+          </div>
+        </section>
+
         <section id="verified" className="mb-10 opacity-0 animate-fade-in-up delay-150 scroll-mt-20">
           <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
             <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -292,26 +312,6 @@ export default function PartnersPage() {
           </div>
         </section>
 
-        <section id="partnership-status" className="scroll-mt-20 mb-10 opacity-0 animate-fade-in-up delay-250">
-          <h2 className="text-2xl font-bold mb-4 flex items-center gap-3">
-            <svg className="w-6 h-6 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10" />
-              <line x1="12" y1="16" x2="12" y2="12" />
-              <line x1="12" y1="8" x2="12.01" y2="8" />
-            </svg>
-            <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Partnership Status</span>
-          </h2>
-
-          <div className="relative bg-gray-800/40 border border-gray-700/40 rounded-2xl p-6
-                          transition-all duration-300 hover:border-purple-500/50 hover:shadow-2xl hover:shadow-purple-500/15 group overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-            
-            <p className="text-gray-300 text-sm leading-relaxed relative">
-              Partnership announcements indicate publicly disclosed collaborations. They do not necessarily imply completed commercial deployment or production integration.
-            </p>
-          </div>
-        </section>
-
         <div className="relative bg-amber-900/20 border border-amber-700/50 rounded-2xl p-6 mb-8
                         transition-all duration-300 hover:border-amber-600/70 hover:shadow-2xl hover:shadow-amber-500/10
                         opacity-0 animate-fade-in-up delay-200 group overflow-hidden">
@@ -336,7 +336,7 @@ export default function PartnersPage() {
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: July 22, 2026
+            Last updated: July 23, 2026
           </p>
         </section>
 
