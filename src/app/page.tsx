@@ -135,13 +135,13 @@ const LatestUpdatesStrip = () => {
 
   const content = (
     <Link
-      href="/news/republic-campaign-1-million-raised"
+      href="/news/developer-call-minima-core-demo"
       className="flex items-center whitespace-nowrap text-gray-400 hover:text-purple-400 transition-colors duration-200"
     >
       <span>•</span>
       <span className="ml-2 font-mono uppercase tracking-wider">Latest Verified Updates</span>
       <span className="mx-2">•</span>
-      <span className="mr-2">Republic fundraising campaign surpassed $1 million, ranking as largest Swiss-based company campaign on Republic/Seedrs platform with investors from 30 countries</span>
+      <span className="mr-2">Minima team published the latest Public Developer Call, featuring a demonstration of Minima Core, a lightweight client designed for improved efficiency compared to Minima Classic</span>
     </Link>
   );
 
@@ -348,7 +348,7 @@ export default function HomePage() {
         </div>
 
         <section className="border-t border-gray-700/40 pt-6 opacity-0 animate-fade-in-up delay-300">
-          <p className="text-gray-500 text-sm flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />Last updated: July 22, 2026</p>
+          <p className="text-gray-500 text-sm flex items-center gap-2"><span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />Last updated: July 24, 2026</p>
         </section>
       </article>
     </div>

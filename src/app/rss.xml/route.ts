@@ -24,6 +24,12 @@ export async function GET() {
 
   const newsItems = [
     {
+      title: 'Public Developer Call: Minima Core Demonstration',
+      url: 'https://minimaverse.com/news/developer-call-minima-core-demo',
+      desc: 'The Minima team has published the latest Public Developer Call, featuring a demonstration of Minima Core, a lightweight client designed for improved efficiency compared to Minima Classic. The presentation covers current development work and technical demonstrations. Source: MinimaGlobal/605. Status: confirmed.',
+      date: new Date('2026-07-24'),
+    },
+    {
       title: 'Republic Campaign Surpasses $1 Million',
       url: 'https://minimaverse.com/news/republic-campaign-1-million-raised',
       desc: 'Minima announced that its Republic fundraising campaign has raised more than $1 million. Campaign statistics include largest Swiss-based company campaign on Republic/Seedrs platform, investors from 30 countries. Source: MinimaGlobal/604. Status: confirmed.',

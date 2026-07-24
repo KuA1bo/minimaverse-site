@@ -14,6 +14,30 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    slug: 'developer-call-minima-core-demo',
+    date: '2026-07-24',
+    displayDate: 'July 24, 2026',
+    title: 'Public Developer Call: Minima Core Demonstration',
+    summary:
+      'The Minima team has published the latest Public Developer Call, featuring a demonstration of Minima Core, a lightweight client designed for improved efficiency compared to Minima Classic. The presentation covers current development work and technical demonstrations.',
+    details: [
+      {
+        label: 'Public Developer Call',
+        text: 'Latest recording published on YouTube, featuring a demonstration of Minima Core.',
+      },
+      {
+        label: 'Minima Core',
+        text: 'Presented as a lightweight client designed for improved efficiency compared to Minima Classic.',
+      },
+      {
+        label: 'Development Progress',
+        text: 'The presentation covers current development work and technical demonstrations.',
+      },
+    ],
+    source: 'https://t.me/MinimaGlobal/605',
+    sourceLabel: 'Official Telegram Announcement — MinimaGlobal/605',
+  },
+  {
     slug: 'republic-campaign-1-million-raised',
     date: '2026-07-08',
     displayDate: 'July 8, 2026',
