@@ -94,7 +94,7 @@ export default function KnowledgeArticlePage({ params }: { params: { slug: strin
             </span>
           </h1>
           <p className="text-gray-300 text-lg sm:text-xl leading-relaxed">
-            Embedding blockchain validation directly into hardware, rather than running it as software on top of a device.
+            Embedding a blockchain node directly into hardware, rather than running it as software on a general-purpose device.
           </p>
         </header>
 
@@ -161,7 +161,7 @@ export default function KnowledgeArticlePage({ params }: { params: { slug: strin
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Definition</span>
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
-              Blockchain-on-Chip is Minima&apos;s term for blockchain validation and consensus running directly on embedded hardware, rather than as software on a general-purpose computing device. According to Minima, the term has been used internally for some time because it describes the engineering work more precisely than existing labels: capability sits inside the device, not above or alongside it.
+              Blockchain-on-Chip is Minima&apos;s term for running blockchain validation and consensus on embedded hardware itself, instead of as software on a general-purpose device. According to Minima, the term has been used internally for some time because it describes the engineering work more precisely than existing labels: capability sits inside the device, not above or alongside it.
             </p>
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-400 mb-6">
               <span className="text-gray-500">Status:</span>
