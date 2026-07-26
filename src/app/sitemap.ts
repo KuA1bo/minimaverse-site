@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { newsArticles } from '@/data/news';
+import { knowledgeArticles } from '@/data/knowledge';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://minimaverse.com';
@@ -36,5 +37,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticPages, ...newsPages];
+  const knowledgePages = knowledgeArticles.map((article) => ({
+    url: `${baseUrl}/knowledge/${article.slug}`,
+    lastModified: new Date(article.date),
+    changeFrequency: 'monthly' as const,
+    priority: 0.7,
+  }));
+
+  return [...staticPages, ...newsPages, ...knowledgePages];
 }
