@@ -342,6 +342,38 @@ export const newsArticles: NewsArticle[] = [
     sourceLabel: 'Minima Global Blog Post',
   },
   {
+    slug: 'blockchain-on-chip-breakthrough',
+    date: '2025-12-15',
+    displayDate: 'December 15, 2025',
+    title: 'Blockchain-on-Chip Demonstrated on Embedded Hardware',
+    summary:
+      'Minima announced a working implementation of its Layer-1 blockchain node on embedded Arm-based hardware using a C++ client and FPGA-based cryptographic accelerators. The milestone demonstrates Minima operating directly on embedded systems and outlines the next phase of validation through a planned autonomous drone demonstration.',
+    details: [
+      {
+        label: 'Embedded Deployment',
+        text: 'Layer-1 Minima node running on Arm-based embedded hardware. Native C++ implementation for embedded environments.',
+      },
+      {
+        label: 'Hardware Platform',
+        text: 'Arm processor subsystem integrated with FPGA. Designed for embedded and edge computing deployments.',
+      },
+      {
+        label: 'Hardware Acceleration',
+        text: 'FPGA-based SHA-3 cryptographic acceleration. Dedicated arithmetic and fixed-decimal hardware modules. Prototype mining accelerator.',
+      },
+      {
+        label: 'Embedded Applications',
+        text: 'Demonstrated on an autonomous drone platform. Local processing of sensor and system-state data. On-device blockchain verification and logging.',
+      },
+      {
+        label: 'Next Steps',
+        text: 'Public autonomous drone demonstration planned for January 2026. Continued optimisation of the embedded C++ client. Further development of hardware accelerators. Collaboration with partners in robotics, automotive, drones, and industrial IoT.',
+      },
+    ],
+    source: 'https://minima.global/post/minima-achieves-major-breakthrough-blockchain-on-chip-is-here',
+    sourceLabel: 'Official Blog — Minima Global',
+  },
+  {
     slug: 'depin-integration-progress-2025',
     date: '2025-11-01',
     displayDate: 'November 2025',

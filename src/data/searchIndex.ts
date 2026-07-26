@@ -1,6 +1,3 @@
-
-
-
 import { newsArticles } from './news';
 
 export interface SearchItem {
@@ -9,7 +6,6 @@ export interface SearchItem {
   description: string;
   tags: string[];
 }
-
 
 const newsSearchItems: SearchItem[] = newsArticles.map((article) => ({
   title: article.title,
@@ -25,9 +21,7 @@ const newsSearchItems: SearchItem[] = newsArticles.map((article) => ({
 }));
 
 export const searchIndex: SearchItem[] = [
-
   ...newsSearchItems,
-
 
   { title: "Home", url: "/", description: "Neutral Minima Protocol Info Hub", tags: ["home", "minima", "hub", "start", "main", "landing"] },
   { title: "What is Minima", url: "/about", description: "Core features and architecture of the protocol", tags: ["about", "what is minima", "protocol", "intro", "overview", "basics"] },
@@ -41,13 +35,13 @@ export const searchIndex: SearchItem[] = [
   { title: "Protocol Deep Dive", url: "/protocol", description: "Technical overview of consensus and architecture", tags: ["protocol", "architecture", "consensus", "technical", "deep dive", "specs"] },
   { title: "Open Questions", url: "/open-questions", description: "FAQs and community discussions", tags: ["faq", "questions", "help", "support", "troubleshooting", "answers"] },
   { title: "Useful Links", url: "/links", description: "Verified channels, resources, and community links", tags: ["links", "resources", "channels", "contacts", "social", "documentation", "directory"] },
-
+  { title: "Knowledge Base", url: "/knowledge", description: "Evidence-based overviews and technical explanations of Minima Protocol concepts.", tags: ["knowledge", "articles", "explanations", "deep dive", "technical", "overview"] },
+  { title: "What Is Blockchain-on-Chip?", url: "/knowledge/what-is-blockchain-on-chip", description: "An evidence-based overview of Blockchain-on-Chip — what it is, why it emerged, and what has been publicly demonstrated so far.", tags: ["blockchain-on-chip", "hardware", "embedded", "arm", "fpga", "knowledge", "article", "trl 6"] },
 
   { title: "Minimaverse Hero", url: "/#hero", description: "Independent knowledge base entry point", tags: ["hero", "start", "landing", "understand minima", "set up node", "explore ecosystem"] },
   { title: "About This Site", url: "/#about-site", description: "Independent community-driven information hub", tags: ["about site", "community driven", "neutral", "verified facts", "no hype"] },
   { title: "Project Principles", url: "/#principles", description: "Verified facts, transparent sourcing, clear status indicators", tags: ["principles", "verified facts", "transparent", "status indicators", "neutral tone"] },
   { title: "Quick Links", url: "/#quick-links", description: "Navigation to protocol, ecosystem, and developer resources", tags: ["quick links", "navigation", "sitemap", "resources", "developer"] },
-
 
   { title: "Mobile-First Design", url: "/about#mobile", description: "Minima is designed to run full nodes on smartphones and IoT", tags: ["mobile", "phone", "lightweight", "efficiency", "mobile first", "battery", "iot", "any device"] },
   { title: "About This Project", url: "/about#about-project", description: "Independent documentation project focused on Minima Protocol", tags: ["about project", "independent", "documentation", "community", "minima global"] },
@@ -60,7 +54,6 @@ export const searchIndex: SearchItem[] = [
   { title: "Current Status", url: "/about#status", description: "Protocol maturity, no token incentives, participation requirements", tags: ["status", "maturity", "tokenomics", "no rewards", "periodic connection", "considerations"] },
   { title: "Developer Resources", url: "/about#dev-resources", description: "Edge Pioneers program and official dev portal", tags: ["dev resources", "edge pioneers", "build", "sdk", "developer portal"] },
 
-
   { title: "Edge Consensus Architecture", url: "/protocol#edge-consensus", description: "Universal participation: smartphones, Pi, IoT validate equally", tags: ["edge consensus", "universal", "participation", "iot", "smartphone", "validation", "decentralized"] },
   { title: "Tx-PoW: Collaborative Proof of Work", url: "/protocol#tx-pow", description: "Every transaction performs ~10s PoW, collaboratively securing network", tags: ["tx-pow", "collaborative", "proof of work", "10 seconds", "energy efficient", "no mining farms"] },
   { title: "Efficient Data Structures", url: "/protocol#data-structures", description: "Cascading Chain with Superblocks and MMR UTXO", tags: ["data structures", "cascading chain", "superblocks", "mmr", "utxo", "storage optimization"] },
@@ -68,14 +61,12 @@ export const searchIndex: SearchItem[] = [
   { title: "Technical Specifications", url: "/protocol#specs", description: "Detailed specs: Tx-PoW difficulty, block size, RAM, consensus, quantum resistance", tags: ["specifications", "specs", "difficulty", "block size", "ram", "ghost", "quantum", "keccak", "wots"] },
   { title: "Network Participation Requirements", url: "/protocol#participation", description: "Weekly connection required for MMR updates and Tx-PoW contribution", tags: ["participation", "requirements", "weekly", "sync", "mmr proof", "complete node", "forever"] },
 
-
   { title: "About Node Setup", url: "/nodes#intro", description: "Overview: desktop, mobile, Pi, cloud servers. Public reports indicate 100k+ installations", tags: ["intro", "overview", "100000 nodes", "depin", "decentralization", "global network"] },
   { title: "System Requirements", url: "/nodes#requirements", description: "Minimum: 2GB RAM, 10GB disk, Java 11+. Recommended: 4GB RAM, SSD, Static IP", tags: ["requirements", "specs", "ram", "ssd", "java", "hardware", "2gb", "4gb", "disk space"] },
   { title: "Why Run a Node?", url: "/nodes#why-run", description: "Practical benefits: DePIN infrastructure, P2P apps, network resilience, independent verification", tags: ["why run", "benefits", "depin", "p2p", "resilience", "verification", "infrastructure", "censorship resistance"] },
   { title: "Expert Guide by Paddy Cerri", url: "/nodes#expert-guide", description: "Alternative setup with peer lists, MDS config, Docker tips from Minima architect", tags: ["expert", "paddy cerri", "spartacusrex", "advanced", "troubleshooting", "peer lists", "mds", "alternative guide"] },
   { title: "Initial Peer Configuration", url: "/nodes#peer-configuration", description: "Network discovery requires valid peer endpoints. Public list of active nodes for initial synchronization", tags: ["peer configuration", "peers", "peer list", "network discovery", "bootstrap", "initial sync", "synchronization", "minimapeers", "spartacusrex", "paddy cerri", "chief architect", "community-maintained", "add peers", "import peers", "node connectivity", "network bootstrap", "peer endpoints", "active nodes", "plain text", "txt file"] },
   { title: "Node Recovery", url: "/nodes#node-recovery", description: "Recovery methods for restoring node access, wallet state, and chain synchronization via Security MiniDapp", tags: ["node recovery", "backup", "restore", "seed phrase", "wallet recovery", "chain resync", "quicksync", "megammr", "security minidapp", "restore backup", "import seed", "synchronization", "wallet state", "24 words", "recovery phrase", "backup file", "wallet mdb", "node data", "resync", "mega node mmr", "eurobuddha", "spartacusrex 9001", "confirmed", "official documentation"] },
-
 
   { title: "Quick Start: Android or Docker", url: "/nodes", description: "Beginner-friendly setup options for new Minima users", tags: ["quick start", "beginner", "android", "docker", "easy setup", "onboarding", "first time"] },
   { title: "Android Node Setup", url: "/nodes#android", description: "Run Minima node on Android via Termux or APK", tags: ["android", "mobile", "termux", "phone", "apk", "install android", "smartphone", "play store"] },
@@ -87,7 +78,6 @@ export const searchIndex: SearchItem[] = [
   { title: "macOS Node Setup", url: "/nodes#macos", description: "Run Minima node on macOS", tags: ["macos", "mac", "apple", "desktop", "darwin", "osx", "brew"] },
   { title: "Raspberry Pi Setup", url: "/nodes#raspberry-pi", description: "Optimized for Pi 4+ devices", tags: ["raspberry pi", "pi", "arm", "single board", "iot", "edge", "sbc", "low power"] },
 
-
   { title: "Archive Node", url: "/nodes#archive-node", description: "Full historical blockchain data storage", tags: ["archive", "archive node", "history", "full data", "blockchain storage", "historical", "backup"] },
   { title: "Mega Node", url: "/nodes#mega-node", description: "High-performance node configuration", tags: ["mega", "mega node", "high performance", "throughput", "power node", "advanced", "enterprise"] },
   { title: "Minima E-Gateway (MEG)", url: "/nodes#meg", description: "Enterprise-grade gateway integration", tags: ["meg", "e-gateway", "enterprise", "gateway", "integration", "legacy systems", "business", "api gateway"] },
@@ -95,14 +85,12 @@ export const searchIndex: SearchItem[] = [
   { title: "Firewall Rules", url: "/nodes#firewall", description: "Network configurations and port forwarding", tags: ["firewall", "ports", "network", "port forwarding", "connectivity", "security", "rules", "tcp", "udp", "nat"] },
   { title: "Startup Parameters", url: "/nodes#startup", description: "Advanced configuration options and CLI flags", tags: ["startup", "parameters", "cli flags", "configuration", "command line", "advanced settings", "init", "config"] },
 
-
   { title: "Ecosystem Intro & Status", url: "/ecosystem#intro", description: "Verified projects list with community contribution status legend", tags: ["ecosystem intro", "verified", "status legend", "confirmed", "in-development", "community"] },
   { title: "Core Infrastructure", url: "/ecosystem#infra", description: "Minima Protocol base layer and Integritas AI compliance", tags: ["minima", "protocol", "layer 1", "blockchain", "base layer", "core", "integritas", "ai", "compliance"] },
   { title: "Developer Tools", url: "/ecosystem#dev-tools", description: "Terminal, Explorer, SDKs, and Faucet for testing", tags: ["terminal", "cli", "commands", "node management", "explorer", "sdk", "api", "faucet", "test tokens"] },
   { title: "Wallets", url: "/ecosystem#wallets", description: "Official Web, Mobile, and community alternatives", tags: ["wallet", "web", "browser", "mobile", "android", "app", "apk", "play store", "minimammr", "mmr"] },
   { title: "Centralized Exchanges", url: "/ecosystem#defi", description: "MEXC, BitMart, XT.com trading pairs", tags: ["mexc", "bitmart", "xt.com", "exchange", "trading", "minima/usdt", "spot", "crypto", "liquidity"] },
   { title: "Edge Deployments", url: "/ecosystem#edge", description: "IoT & embedded systems full-node capability", tags: ["iot", "embedded", "edge", "constrained", "devices", "sensors", "hardware", "depin"] },
-
 
   { title: "Developer Intro", url: "/developers#intro", description: "Aggregated verified resources for building on Minima", tags: ["dev intro", "resources", "building", "aggregated", "official", "community"] },
   { title: "Official Developer Portal", url: "/developers#get-started", description: "Edge Pioneers Program: SDKs, tutorials, templates", tags: ["edge pioneers", "developer portal", "sdk", "tutorials", "build.minima.global", "onboarding", "templates"] },
@@ -113,7 +101,6 @@ export const searchIndex: SearchItem[] = [
   { title: "Getting Started", url: "/developers#getting-started", description: "Run a full node locally for development", tags: ["getting started", "run a node", "setup", "local development", "testing", "guide"] },
   { title: "Source Code", url: "/developers#source-code", description: "Core protocol, APK, minimak Kotlin library", tags: ["source code", "core", "protocol", "apk", "android", "kotlin", "library", "github", "open source"] },
   { title: "Community & Support", url: "/developers#community", description: "Discord dev-chat, role assignment, Q&A", tags: ["discord", "community", "dev-chat", "support", "q&a", "collaboration", "minima", "role picker"] },
-
 
   { title: "Zeekr Partnership", url: "/partners#verified", description: "EV charging solution with Zeekr for private station access", tags: ["zeekr", "ev", "charging", "electric vehicle", "mobility", "access", "private stations", "march 2025"] },
   { title: "SchoolTry Partnership", url: "/partners#verified", description: "Minima blockchain curriculum for 2M Nigerian students", tags: ["schooltry", "education", "curriculum", "nigeria", "students", "blockchain education", "march 2025"] },
@@ -130,23 +117,19 @@ export const searchIndex: SearchItem[] = [
   { title: "Wicrypt Partnership", url: "/partners#verified", description: "DePIN Wi-Fi network for global internet access", tags: ["wicrypt", "wifi", "depin", "internet access", "global", "democratize", "february 2024"] },
   { title: "LTA Labs Partnership", url: "/partners#verified", description: "Financial products suite leveraging Minima infrastructure", tags: ["lta labs", "financial products", "defi", "suite", "infrastructure", "february 2024"] },
 
-
   { title: "Emerging Ecosystem Utilities", url: "/tools#emerging", description: "Soft-launch utilities extending core protocol functionality", tags: ["emerging", "utilities", "soft launch", "test run", "new tools", "ecosystem", "minima global"] },
   { title: "MiniMaxt DEX", url: "/tools#emerging", description: "Decentralized exchange for Minima ↔ USDT trading (only pair available)", tags: ["minimaxt", "dex", "exchange", "trading", "minima", "usdt", "swap", "defi", "soft launch", "only pair", "test run"] },
   { title: "MXUSD Bridge", url: "/tools#emerging", description: "Cross-chain bridge for USDT swaps in/out of Minima", tags: ["mxusd", "bridge", "cross-chain", "usdt", "swap", "interoperability", "soft launch", "test run"] },
   { title: "MiniMask Wallet Extension", url: "/tools#emerging", description: "Browser wallet extension for Minima interaction (requires Developer Mode)", tags: ["minimask", "wallet", "extension", "browser", "chrome", "brave", "web3", "injection", "developer mode", "soft launch", "test run"] },
 
-
   { title: "Official Tools", url: "/tools#official", description: "Terminal CLI, Scan Explorer, Web/Mobile wallets", tags: ["terminal", "cli", "explorer", "scan", "web wallet", "mobile apk", "official"] },
   { title: "Development Tools", url: "/tools#dev", description: "TypeScript SDK, KISS VM spec, built-in functions, RPC API", tags: ["typescript", "sdk", "kiss", "vm", "specification", "sha2", "multisig", "rpc", "api", "automation"] },
-
 
   { title: "Open Questions Intro", url: "/open-questions#intro", description: "Directory for community questions with official channel references", tags: ["faq", "questions", "community", "official", "directory", "support"] },
   { title: "Node Monetization FAQ", url: "/open-questions#node-monetization", description: "Answer: Minima has no token incentives for nodes by design", tags: ["node incentives", "monetization", "no rewards", "decentralization", "design choice", "tokenomics"] },
   { title: "Protocol Immutability FAQ", url: "/open-questions#protocol-immutability", description: "Answer: Core protocol is complete, upgrades happen on app layers", tags: ["protocol upgrades", "immutability", "governance", "paddy cerri", "app layers", "finalized"] },
   { title: "Ask a Question on Discord", url: "/open-questions#ask", description: "Official #stage-question channel for community AMAs", tags: ["discord", "ask question", "stage-question", "ama", "community support", "official channel"] },
   { title: "Additional Resources", url: "/open-questions#resources", description: "Links to docs, Telegram, and Minima blog", tags: ["resources", "docs", "telegram", "blog", "official links", "announcements"] },
-
 
   { title: "Project Feedback", url: "/links#feedback", description: "GitHub issues for this documentation project", tags: ["feedback", "github", "issues", "bug report", "suggestions", "community", "minimaverse-site"] },
   { title: "Official Communication Channels", url: "/links#channels", description: "Discord and Telegram for Minima Protocol discussion", tags: ["discord", "telegram", "community", "chat", "support", "official channels", "minima"] },
@@ -156,7 +139,6 @@ export const searchIndex: SearchItem[] = [
   { title: "Minima AG on Republic Europe", url: "/links#resources", description: "Current crowdfunding page for Minima AG on Republic Europe platform", tags: ["republic", "crowdfunding", "minima ag", "investment", "series a", "europe", "fundraising"] },
   { title: "Regional Community Channels", url: "/links#regional", description: "Telegram communities: Russian, Spanish, Turkish, Vietnamese, Chinese", tags: ["regional", "telegram", "russian", "spanish", "turkish", "vietnamese", "chinese", "community", "localization"] },
   { title: "Response Time", url: "/links#response-time", description: "GitHub issues reviewed within 7 days, urgent matters via Discord/Telegram", tags: ["response time", "support", "github", "discord", "telegram", "urgent", "sla"] },
-
 
   { title: "PoW Consensus", url: "/about#consensus", description: "Transaction-based Proof of Work security model", tags: ["pow", "proof of work", "consensus", "tx-pow", "mining", "security", "validation"] },
   { title: "Complete Node", url: "/about", description: "Every participant stores, verifies, constructs blockchain", tags: ["complete node", "full node", "equal", "participation", "decentralization", "no light clients"] },

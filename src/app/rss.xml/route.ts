@@ -13,6 +13,7 @@ export async function GET() {
   const pages = [
     { title: 'Home', url: 'https://minimaverse.com', desc: 'Minimaverse independent information hub' },
     { title: 'Protocol', url: 'https://minimaverse.com/protocol', desc: 'How Minima Protocol works' },
+    { title: 'Knowledge', url: 'https://minimaverse.com/knowledge', desc: 'Evidence-based overviews and technical explanations' },
     { title: 'Ecosystem', url: 'https://minimaverse.com/ecosystem', desc: 'Verified projects in Minima ecosystem' },
     { title: 'Developers', url: 'https://minimaverse.com/developers', desc: 'Resources for Minima developers' },
     { title: 'Nodes', url: 'https://minimaverse.com/nodes', desc: 'Guides to run Minima nodes' },
@@ -67,9 +68,15 @@ export async function GET() {
     },
     {
       title: 'Engineering Update: DEX, Stablecoin Bridge, and Ecosystem Progress',
-      url: 'https://t.me/MinimaGlobal/593',
-      desc: 'The Minima ecosystem team published an engineering update covering progress across core products and infrastructure. Testing across the DEX, MiniMask, and Stablecoin Bridge has been completed, with all components moving into release preparation. The DEX (v1.0.1) introduces UI improvements, SIM bin restrictions for new users, a 5-minute timeout on trades and messages, and several bug fixes. The Stablecoin Bridge (v1.0) adds redesigned front-end support and enables USDT (ERC-20) bridging into Minima-native USDT, along with performance optimizations. Ongoing work continues across Integritas tooling and Minima Core development. Source: Official Minima Global Announcements (Telegram). Status: confirmed.',
+      url: 'https://minimaverse.com/news/engineering-update-2026-05-24',
+      desc: 'The Minima ecosystem team published an engineering update covering progress across core products and infrastructure. Testing across the DEX, MiniMask, and Stablecoin Bridge has been completed, with all components moving into release preparation. Source: MinimaGlobal/593. Status: confirmed.',
       date: new Date('2026-05-24'),
+    },
+    {
+      title: 'Blockchain-on-Chip Demonstrated on Embedded Hardware',
+      url: 'https://minimaverse.com/news/blockchain-on-chip-breakthrough',
+      desc: 'Minima announced a working implementation of its Layer-1 blockchain node on embedded Arm-based hardware using a C++ client and FPGA-based cryptographic accelerators. The milestone demonstrates Minima operating directly on embedded systems. Source: Minima Global Blog. Status: confirmed.',
+      date: new Date('2025-12-15'),
     },
   ];
 

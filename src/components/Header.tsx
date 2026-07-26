@@ -8,6 +8,7 @@ import Search from './Search';
 const navLinks = [
   { href: '/about', label: 'About' },
   { href: '/protocol', label: 'Protocol' },
+  { href: '/knowledge', label: 'Knowledge' },
   { href: '/ecosystem', label: 'Ecosystem' },
   { href: '/developers', label: 'Developers' },
   { href: '/tools', label: 'Tools' },
@@ -69,12 +70,12 @@ export default function Header() {
             </span>
           </Link>
 
-          <nav className="hidden md:flex flex-1 justify-end flex-wrap gap-x-1.5 gap-y-1 sm:gap-2">
+          <nav className="hidden md:flex flex-1 justify-end flex-nowrap gap-x-1 sm:gap-x-1.5">
             {navLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="group relative px-2 py-1.5 sm:px-3 sm:py-2 text-[11px] sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 whitespace-nowrap"
+                className="group relative px-1.5 py-1.5 sm:px-2 sm:py-2 text-[11px] sm:text-sm text-gray-400 hover:text-white transition-colors duration-300 whitespace-nowrap"
               >
                 {item.label}
                 <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-px bg-gradient-to-r from-purple-500 to-blue-500 group-hover:w-full transition-all duration-300" />
