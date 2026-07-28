@@ -89,7 +89,7 @@ export const searchIndex: SearchItem[] = [
   { title: "Core Infrastructure", url: "/ecosystem#infra", description: "Minima Protocol base layer and Integritas AI compliance", tags: ["minima", "protocol", "layer 1", "blockchain", "base layer", "core", "integritas", "ai", "compliance"] },
   { title: "Developer Tools", url: "/ecosystem#dev-tools", description: "Terminal, Explorer, SDKs, and Faucet for testing", tags: ["terminal", "cli", "commands", "node management", "explorer", "sdk", "api", "faucet", "test tokens"] },
   { title: "Wallets", url: "/ecosystem#wallets", description: "Official Web, Mobile, and community alternatives", tags: ["wallet", "web", "browser", "mobile", "android", "app", "apk", "play store", "minimammr", "mmr"] },
-  { title: "Centralized Exchanges", url: "/ecosystem#defi", description: "MEXC, BitMart, XT.com trading pairs", tags: ["mexc", "bitmart", "xt.com", "exchange", "trading", "minima/usdt", "spot", "crypto", "liquidity"] },
+  { title: "Centralized Exchanges", url: "/ecosystem#defi", description: "MEXC, XT.com trading pairs", tags: ["mexc", "xt.com", "exchange", "trading", "minima/usdt", "spot", "crypto", "liquidity"] },
   { title: "Edge Deployments", url: "/ecosystem#edge", description: "IoT & embedded systems full-node capability", tags: ["iot", "embedded", "edge", "constrained", "devices", "sensors", "hardware", "depin"] },
 
   { title: "Developer Intro", url: "/developers#intro", description: "Aggregated verified resources for building on Minima", tags: ["dev intro", "resources", "building", "aggregated", "official", "community"] },

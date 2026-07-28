@@ -534,15 +534,6 @@ export default function EcosystemPage() {
                 } 
               },
               { 
-                title: 'BitMart', 
-                pair: 'Trading pair: MINIMA/USDT', 
-                link: { 
-                  href: 'https://www.bitmart.com/trade/MINIMA_USDT?type=spot', 
-                  text: 'Trade on BitMart',
-                  icon: <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 3h5v5" /><path d="M8 3H3v5" /><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3" /><path d="m15 9 6-6" /></svg>
-                } 
-              },
-              { 
                 title: 'XT.com', 
                 pair: 'Trading pair: MINIMA/USDT', 
                 link: { 
@@ -761,7 +752,7 @@ export default function EcosystemPage() {
         <section className="border-t border-gray-700/40 pt-4 opacity-0 animate-fade-in-up delay-150">
           <p className="text-gray-500 text-sm flex items-center gap-2">
             <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
-            Last updated: July 22, 2026
+            Last updated: July 28, 2026
           </p>
         </section>
       </article>
