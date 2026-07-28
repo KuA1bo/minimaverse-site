@@ -161,7 +161,7 @@ export default function KnowledgeArticlePage({ params }: { params: { slug: strin
               <span className="bg-gradient-to-r from-purple-200 via-blue-200 to-white bg-clip-text text-transparent">Definition</span>
             </h2>
             <p className="text-gray-300 leading-relaxed mb-4">
-              Blockchain-on-Chip is Minima&apos;s term for running blockchain validation and consensus on embedded hardware itself, instead of as software on a general-purpose device. According to Minima, the term has been used internally for some time because it more accurately describes the engineering approach: capability sits inside the device, not above or alongside it.
+              Blockchain-on-Chip is Minima&apos;s term for running a blockchain node&apos;s validation and consensus directly on embedded hardware, instead of as software on a general-purpose device. According to Minima, the term has been used internally for some time because it more accurately describes the engineering approach: capability sits inside the device, not above or alongside it.
             </p>
             <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs sm:text-sm text-gray-400 mb-6">
               <span className="text-gray-500">Status:</span>
