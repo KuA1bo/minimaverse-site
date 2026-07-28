@@ -51,7 +51,7 @@ export default function Header() {
       <header className="relative sm:sticky sm:top-0 z-50 mb-8 sm:mb-12 backdrop-blur-xl bg-black/30 border-b border-gray-700/40 transition-all duration-300 hover:border-purple-500/40">
         <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-purple-500/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500" />
 
-        <div className="flex items-center justify-between gap-3 sm:gap-4 max-w-6xl mx-auto px-3 sm:px-4 py-2 sm:py-3">
+        <div className="flex items-center justify-between gap-3 sm:gap-4 max-w-6xl mx-auto px-3 sm:px-4 py-1 sm:py-2">
           <Link
             href="/"
             className="group flex items-center gap-2 hover:scale-105 transition-transform duration-300 flex-shrink-0"
@@ -59,9 +59,9 @@ export default function Header() {
             <Image
               src="/logo.webp"
               alt="Minimaverse Logo"
-              width={40}
-              height={40}
-              className="w-8 h-8 sm:w-10 sm:h-10 object-contain bg-transparent mix-blend-screen"
+              width={48}
+              height={48}
+              className="w-10 h-10 sm:w-12 sm:h-12 object-contain bg-transparent mix-blend-screen"
               priority
               unoptimized
             />
