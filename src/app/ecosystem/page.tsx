@@ -619,7 +619,7 @@ export default function EcosystemPage() {
 
             <div className="flex flex-col sm:flex-row sm:items-center sm:gap-4 gap-2 mt-2">
               <ExternalLink
-                href="https://secretsvault.xyz"
+                href="https://secretsvault.com/"
                 className="text-blue-400 hover:text-purple-400 underline decoration-blue-500/30 hover:decoration-purple-500/60 underline-offset-4 transition-all duration-300 text-sm inline-flex items-center gap-1.5"
               >
                 <svg className="w-4 h-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -627,7 +627,7 @@ export default function EcosystemPage() {
                   <line x1="2" y1="12" x2="22" y2="12" />
                   <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
                 </svg>
-                secretsvault.xyz
+                secretsvault.com
               </ExternalLink>
               <ExternalLink
                 href="https://minima.global/post/lta-labs-partners-with-minima-to-power-its-financial-product-suite"
