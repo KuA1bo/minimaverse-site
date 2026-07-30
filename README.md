@@ -70,7 +70,7 @@ Voluntary contributions cover domain registration and maintenance costs. Non-ref
 
 | Asset | Network | Address |
 |-------|---------|---------|
-| MINIMA | Native | `MxG081NYSWDGZMKSYCYBKW9TJRS3PCMFDV5NWKFKEQKQNPWBTYFYJ9CTVFU0BAR` |
+| MINIMA | Native | `MxG08582F7U0PS4QDRJ85U01MJVE41U8V8VZV4ZWDKM6FQAJG7A7WNT6U1C7JPC` |
 | USDT | TRC20 | `TF5NBncPz9d8BoRqK8EfAHhTzsapLDujv4` |
 
 ## Disclaimer

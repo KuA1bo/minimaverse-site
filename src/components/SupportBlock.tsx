@@ -1,5 +1,3 @@
-
-
 "use client";
 
 import { useState } from "react";
@@ -13,10 +11,9 @@ export default function SupportBlock() {
   const [copiedLabel, setCopiedLabel] = useState<string | null>(null);
 
   const wallets: Wallet[] = [
-    { label: 'MINIMA (Native)', address: 'MxG081NYSWDGZMKSYCYBKW9TJRS3PCMFDV5NWKFKEQKQNPWBTYFYJ9CTVFU0BAR' },
+    { label: 'MINIMA (Native)', address: 'MxG08582F7U0PS4QDRJ85U01MJVE41U8V8VZV4ZWDKM6FQAJG7A7WNT6U1C7JPC' },
     { label: 'USDT (TRC20)', address: 'TF5NBncPz9d8BoRqK8EfAHhTzsapLDujv4' },
   ];
-
 
   const handleCopy = async (wallet: Wallet) => {
     try {
@@ -31,7 +28,6 @@ export default function SupportBlock() {
   return (
     <div className="mt-6 pt-4 pb-4 sm:pb-0 border-t border-gray-700/50">
       <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
-        {}
         <div className="flex-1 text-center sm:text-left">
           <h4 className="text-sm font-medium text-gray-300">
             Support Minimaverse <span className="text-gray-500">(Optional)</span>
@@ -41,7 +37,6 @@ export default function SupportBlock() {
           </p>
         </div>
 
-        {}
         <div className="flex flex-wrap items-center justify-center gap-2 sm:justify-start sm:mt-0">
           {wallets.map((wallet) => (
             <button
