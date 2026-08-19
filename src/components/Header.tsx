@@ -57,7 +57,7 @@ export default function Header() {
             className="group flex items-center gap-2 hover:scale-105 transition-transform duration-300 flex-shrink-0"
           >
             <Image
-              src="/logo.webp"
+              src="/logo.webp?v=4"
               alt="Minimaverse Logo"
               width={40}
               height={40}
