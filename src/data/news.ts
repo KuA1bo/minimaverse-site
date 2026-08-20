@@ -14,6 +14,34 @@ export interface NewsArticle {
 
 export const newsArticles: NewsArticle[] = [
   {
+    slug: 'public-developer-call-2026-08-20',
+    date: '2026-08-20',
+    displayDate: 'August 20, 2026',
+    title: 'Public Developer Call — New Builds and Maxima Reimplementation',
+    summary:
+      'The latest Public Developer Call presents several new development builds, including secure seed-phrase generation, state-variable NFT collections, a decentralised social layer, and a reimplementation of Maxima designed to allow a mobile phone to operate as a network relay.',
+    details: [
+      {
+        label: 'Secure Seed-Phrase Generation',
+        text: 'New implementation demonstrated during the developer call.',
+      },
+      {
+        label: 'State-Variable NFT Collections',
+        text: 'Development work demonstrated using Minima.',
+      },
+      {
+        label: 'Decentralised Social Layer',
+        text: 'New application concept presented during the call.',
+      },
+      {
+        label: 'Maxima Reimplementation',
+        text: 'Full reimplementation presented, enabling a mobile phone to operate as a network relay.',
+      },
+    ],
+    source: 'https://t.me/MinimaGlobal/609',
+    sourceLabel: 'Official Telegram Announcement — MinimaGlobal/609',
+  },
+  {
     slug: 'developer-call-minima-core-demo',
     date: '2026-07-24',
     displayDate: 'July 24, 2026',

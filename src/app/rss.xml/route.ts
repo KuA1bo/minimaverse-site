@@ -1,10 +1,11 @@
+// Updated: Added Public Developer Call — New Builds and Maxima Reimplementation [20.08.2026]
 import RSS from 'rss';
 import { NextResponse } from 'next/server';
 
 export async function GET() {
   const feed = new RSS({
     title: 'Minimaverse',
-    description: 'Independent information hub for the Minima Protocol.',
+    description: 'Independent information hub for Minima Protocol.',
     feed_url: 'https://minimaverse.com/rss.xml',
     site_url: 'https://minimaverse.com',
     language: 'en',
@@ -24,6 +25,12 @@ export async function GET() {
   ];
 
   const newsItems = [
+    {
+      title: 'Public Developer Call — New Builds and Maxima Reimplementation',
+      url: 'https://minimaverse.com/news/public-developer-call-2026-08-20',
+      desc: 'The latest Public Developer Call presents several new development builds, including secure seed-phrase generation, state-variable NFT collections, a decentralised social layer, and a reimplementation of Maxima designed to allow a mobile phone to operate as a network relay. Source: MinimaGlobal/609. Status: confirmed.',
+      date: new Date('2026-08-20'),
+    },
     {
       title: 'Public Developer Call: Minima Core Demonstration',
       url: 'https://minimaverse.com/news/developer-call-minima-core-demo',
